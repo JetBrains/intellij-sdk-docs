@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 6a0bb2b6627d809eadddf13ff1f6348f5d5ce782 -->
+<!-- Revision: 1823819322bce2954377b90645795bd4b3bc8374 -->
 
 <!--
 EP List Directories:
@@ -14,7 +14,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-79 Extension Points and 9 Listeners
+79 Extension Points and 8 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -72,6 +72,14 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.jsHandlersFactory"/></include> | [`Angular2JSHandlersFactory`](%gh-ij-plugins%/Angular/angular-backend/src/org/angular2/codeInsight/Angular2HandlersFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.templateScopesProvider"/></include> | [`Angular2TemplateScopesProvider`](%gh-ij-plugins%/Angular/angular-backend/src/org/angular2/codeInsight/template/Angular2TemplateScopesProvider.kt) |
 
+### intellij.javascript.eslint
+
+[`intellij.javascript.eslint`](%gh-ij-plugins%/javascript/eslint/resources/META-INF/plugin.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.eslint.ruleMappersFactory"/></include> | [`EslintRuleMappersFactory`](%gh-ij-plugins%/javascript/eslint/src/com/intellij/lang/javascript/linter/eslint/importer/EslintRuleMappersFactory.java) |
+
 ### intellij.jhipster.xml
 
 [`intellij.jhipster.xml`](%gh-ij-plugins%/jhipster/resources/intellij.jhipster.xml)
@@ -114,25 +122,6 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.tslint.configDetector"/></include> | [`TsLintConfigDetector`](%gh-ij-plugins%/tslint/src/com/intellij/lang/javascript/linter/tslint/config/TsLintConfigDetector.java) |
-
-
-## Dart Plugin
-
-### Dart Plugin – Listeners
-
-| Topic | Listener |
-|-------|----------|
-| [`DartAnalysisServerMessages#DART_ANALYSIS_TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.lang.dart.analyzer.DartAnalysisServerMessages.DartAnalysisNotifier)  | [`DartAnalysisNotifier`](%gh-ij-plugins%/Dart/src/com/jetbrains/lang/dart/analyzer/DartAnalysisServerMessages.java) |
-
-
-### Dart
-
-[`Dart`](%gh-ij-plugins%/Dart/resources/META-INF/plugin.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="Dart.completionExtension"/></include> | [`DartCompletionExtension`](%gh-ij-plugins%/Dart/src/com/jetbrains/lang/dart/ide/completion/DartCompletionExtension.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="Dart.completionTimerExtension"/></include> | [`DartCompletionTimerExtension`](%gh-ij-plugins%/Dart/src/com/jetbrains/lang/dart/ide/completion/DartCompletionTimerExtension.java) |
 
 
 ## Devicetree Plugin
@@ -246,6 +235,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.circleCiConfigUpdateHandler"/></include> | [`CircleCIConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/CircleCIConfigHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.configUpdateHandler"/></include> | [`ConfigUpdateHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ConfigUpdateHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.contextMarginProvider"/></include> | [`ContextMarginProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/sarif/ContextMarginProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.customInspectionLicenseRule"/></include> | [`CustomInspectionLicenseRule`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/license/CustomInspectionLicenseRule.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.cyclomaticComplexityFileVisitor"/></include> | [`CyclomaticComplexityMetricFileVisitor`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/metrics/inspections/cyclomaticComplexity/CyclomaticComplexityMetricFileVisitor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.dynamicInspectionsInitializer"/></include> | [`DynamicInspectionInitializer`](%gh-ij-plugins%/qodana/util/src/org/jetbrains/qodana/util/DynamicInspectionInitializer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.externalToolsConfigurationProvider"/></include> | [`ExternalToolsConfigurationProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/runner/externalTools/ExternalToolsConfigurationProvider.kt) |

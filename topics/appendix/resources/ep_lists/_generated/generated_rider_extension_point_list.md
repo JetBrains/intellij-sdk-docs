@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 6a0bb2b6627d809eadddf13ff1f6348f5d5ce782 -->
+<!-- Revision: 1823819322bce2954377b90645795bd4b3bc8374 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-161 Extension Points and 9 Listeners
+161 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -27,6 +27,7 @@ EP List Directories:
 | [`SSHCredentialsInClipboardNotifier.Companion#SSH_CREDENTIALS_IN_CLIPBOARD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.debugger.attach.remoting.SSHCredentialsInClipboardNotifier)  | `SSHCredentialsInClipboardNotifier` |
 | [`DotnetDebuggerSymbolsLoadedListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.debugger.modulesView.actions.DotnetDebuggerSymbolsLoadedListener)  | `DotnetDebuggerSymbolsLoadedListener` |
 | [`FrontendTypedHandlerManager#BEFORE_TYPING_SENT`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.editorActions.IFrontendTypingListener)  | `IFrontendTypingListener` |
+| [`Tracker.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.ideaInterop.vfs.VfsWarmQueue.Tracker)  | `Tracker` |
 | [`AutoAttachDebuggerListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.run.AutoAttachDebuggerListener)  | `AutoAttachDebuggerListener` |
 | [`PublishConfigurationValidationListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.run.configurations.publishing.PublishConfigurationValidationListener)  | `PublishConfigurationValidationListener` |
 | [`MSBuildEvaluationListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.rider.run.environment.MSBuildEvaluationListener)  | `MSBuildEvaluationListener` |
@@ -209,7 +210,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.action.technical.support.info.provider"/></include> ![Non-Dynamic][non-dynamic] | `RiderTechnicalSupportInfoProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.breakpoint.customPanelProvider"/></include> ![Non-Dynamic][non-dynamic] | `IDotNetLineBreakpointCustomPanelsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.breakpoint.customPopupActionsProvider"/></include> ![Non-Dynamic][non-dynamic] | `IDotNetLineBreakpointPopupActionsProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.build.riderBuildConsoleDecorator"/></include> ![Project-Level][project-level] | `RiderBuildConsoleDecorator` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.build.riderBuildErrorExplainService"/></include> ![Project-Level][project-level] | `RiderBuildErrorExplainService` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.buildButtonModeProvider"/></include> | `BuildButtonModeProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.codeLens.vcsDeclarationRangesProvider"/></include> ![Non-Dynamic][non-dynamic] | `VcsDeclarationRangesProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.completion.csharpIdentifierPartHelper"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `CSharpIdentifierPartHelper` |

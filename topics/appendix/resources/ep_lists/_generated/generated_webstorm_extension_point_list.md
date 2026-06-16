@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 6a0bb2b6627d809eadddf13ff1f6348f5d5ce782 -->
+<!-- Revision: 1823819322bce2954377b90645795bd4b3bc8374 -->
 
 <!--
 EP List Directories:
@@ -50,9 +50,13 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.additionalScopeProvider"/></include> | `CssAdditionalScopeProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.classOrIdUsagesProvider"/></include> | `CssClassOrIdUsagesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.cssFileReferenceProvider"/></include> | `CssFileReferenceProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.elementDescriptorProvider"/></include> | `CssElementDescriptorProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.embeddedCssProvider"/></include> | `EmbeddedCssProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.inclusionContext"/></include> | `CssInclusionContext` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.structureViewChildrenProvider"/></include> | `CssStructureViewElementsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.supportedFileTypesProvider"/></include> | `CssSupportedFileTypesProvider` |
 
 ### intellij.css.common.xml
@@ -60,15 +64,6 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.dialect"/></include> | `CssDialect` |
-
-### intellij.css.psi.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.additionalScopeProvider"/></include> | `CssAdditionalScopeProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.classOrIdUsagesProvider"/></include> | `CssClassOrIdUsagesProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.cssFileReferenceProvider"/></include> | `CssFileReferenceProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.structureViewChildrenProvider"/></include> | `CssStructureViewElementsProvider` |
 
 ### intellij.css.xml
 
@@ -123,8 +118,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.webBundlerDefinition"/></include> | `WebBundlerDefinition` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="NodeJS.runConfigurationLocationFilter"/></include> | `NodeRunConfigurationLocationFilter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.JavaScript.linter.descriptor"/></include> | `JSLinterDescriptor` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.JavaScript.linter.execution.suppressor"/></include> | `JSLinterExecutionSuppressor` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.eslint.ruleMappersFactory"/></include> | `EslintRuleMappersFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssClassNameProvider"/></include> | `CssClassNameProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssDocGenerator"/></include> | `CssDocGenerator` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssFileExtensionProvider"/></include> | `CssFileExtensionProvider` |
@@ -152,6 +145,12 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.commonHandlersFactory"/></include> | `JSCommonHandlersFactory` |
+
+### intellij.javascript.ideaUltimate.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.webFileReferenceFileTypeProvider"/></include> | `IdeaWebFileReferenceFileTypeProvider` |
 
 ### intellij.javascript.psi.impl.xml
 
@@ -184,6 +183,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.xmlBackedClassProvider"/></include> | `XmlBackedJSClassProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssClassesProcessor"/></include> | `CssClassesProcessor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssModuleNameProvider"/></include> | `CssModuleNameProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssResolveSupport"/></include> | `CssResolveSupport` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssStylesheetDetector"/></include> | `CssStylesheetDetector` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.libReferenceSupport"/></include> | `JSLibReferenceSupport` |
 

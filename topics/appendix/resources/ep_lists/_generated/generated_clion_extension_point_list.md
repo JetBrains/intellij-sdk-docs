@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 6a0bb2b6627d809eadddf13ff1f6348f5d5ce782 -->
+<!-- Revision: 1823819322bce2954377b90645795bd4b3bc8374 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-174 Extension Points and 49 Listeners
+177 Extension Points and 50 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -24,6 +24,7 @@ EP List Directories:
 |-------|----------|
 | [`MakefileBuildTargetsManagerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.makefile.core.execution.build.MakefileBuildTargetsManagerListener)  | `MakefileBuildTargetsManagerListener` |
 | [`MakefileSettingsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.makefile.core.settings.MakefileSettingsListener)  | `MakefileSettingsListener` |
+| [`ProjectStatusUpdateListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.projectStatus.listeners.ProjectStatusUpdateListener)  ![Project-Level][project-level] | `ProjectStatusUpdateListener` |
 | [`CubeMXManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.stm32.cubemx.CubeMXManager.CubeStatusListener)  | `CubeStatusListener` |
 | [`WestProjectListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.WestProjectListener)  | `WestProjectListener` |
 | [`WestConfigListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.config.WestConfigListener)  | `WestConfigListener` |
@@ -195,6 +196,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileType"/></include> | `CidrDebugProfileType` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfilesEnabler"/></include> | `CidrDebugProfilesEnabler` |
 
 ### intellij.cidr.execution.xml
 
@@ -310,6 +312,12 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="clion.makefile.buildSystemDetector"/></include> | `MkBuildSystemDetector` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="clion.makefile.projectPreConfigurator"/></include> | `MkProjectPreConfigurator` |
 
+### intellij.clion.profiles.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.profileGroup"/></include> | `CLionProfileGroup` |
+
 ### intellij.clion.projectStatus.xml
 
 | Extension Point | Implementation |
@@ -366,6 +374,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.buildStep"/></include> | `CMakeBuildProcessListenerCreator` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.cmakeSettingsFlavorProvider"/></include> | `CMakeSettingsFlavorProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.defaultProfileProvider"/></include> | `CMakeDefaultProfileProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.execution.executionTargetCustomizer"/></include> | `CMakeBuildProfileExecutionTargetCustomizer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.flavorProvider"/></include> | `CMakeFlavorProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.languageKindRecognizer"/></include> | `CMakeLanguageKindRecognizer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.loadOnStartupDependency"/></include> | `FutureProvider` |

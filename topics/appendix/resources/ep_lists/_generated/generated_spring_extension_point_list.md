@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 6a0bb2b6627d809eadddf13ff1f6348f5d5ce782 -->
+<!-- Revision: 1823819322bce2954377b90645795bd4b3bc8374 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-66 Extension Points and 6 Listeners
+67 Extension Points and 6 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -30,6 +30,7 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.additionalBeanGutterDeclarationsContributor"/></include> | `AdditionalSpringBeanGutterDeclarationsContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.autodetected.models"/></include> | `SpringAutodetectedModelsSearcher` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.beanClassLineMarker"/></include> | `BeanClassLineMarker` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.beans.stereotype"/></include> | `SpringBeanStereotype` |
@@ -96,9 +97,9 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.configFileDetector"/></include> | `SpringBootConfigFileDetector` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.configKeyDescriptionExtractor"/></include> | `SpringBootConfigKeyDescriptionExtractor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.configUnresolvedClassReferenceFixesProvider"/></include> | `SpringBootConfigUnresolvedClassReferenceFixesProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.customHintReferenceProvider"/></include> | `SpringBootCustomHintReferenceProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.importsManager"/></include> | `SpringBootImportsManager` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.languageSpecificBridge"/></include> | `SpringBootLanguageSpecificBridge` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.modelConditionalContributor"/></include> | `ConditionalContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.boot.modelConfigFileContributor"/></include> | `SpringBootModelConfigFileContributor` |

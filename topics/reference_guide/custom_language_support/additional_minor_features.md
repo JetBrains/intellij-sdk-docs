@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Additional Minor Features
 
@@ -211,7 +211,7 @@ Extend from [`CopyPathProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/ide
 and return a custom (language-specific) path from `getPathToElement()`.
 Register the action with the popup menu group `<add-to-group group-id="CopyReferencePopupGroup"/>`.
 
-- [`CopyRepositoryRootPathProvider`](%gh-ic%/plugins/git4idea/src/git4idea/actions/CopyRepositoryRootPathProvider.kt)
+- [`CopyRepositoryRootPathProvider`](%gh-ic%/plugins/git4idea/backend/src/actions/CopyRepositoryRootPathProvider.kt)
 
 ### Label Files as Test Files
 

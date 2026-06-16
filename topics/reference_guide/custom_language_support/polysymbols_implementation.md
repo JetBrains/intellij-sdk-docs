@@ -67,8 +67,8 @@ how modifiers from different symbols in the sequence are merged for the resultin
 `psiContext`
 : A `PsiElement`, which is a file or an element, which can be used to roughly locate the source of the symbol within a project to provide a context for loading additional information, like types.
 If the symbol is
-[`PsiSourcedPolySymbol`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/search/PsiSourcedPolySymbol.kt)
-(see [](#psisourcedpolysymbol)), then `psiContext` is equal to `source`.
+[`PsiLinkedPolySymbolProvider`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/search/PsiLinkedPolySymbolProvider.kt)
+(see [](#psilinkedpolysymbolprovider)), then `psiContext` is equal to `source`.
 
 `presentation`
 : Returns
@@ -152,10 +152,10 @@ By default, only the current symbol framework from the `origin` property is chec
 : Returns the pointer to the symbol, which can survive between read actions.
 The dereferenced symbol should be valid, for example, any PSI-based properties should return valid `PsiElement`s.
 
-## `PsiSourcedPolySymbol`
+## `PsiLinkedPolySymbolProvider`
 
 A symbol should implement
-[`PsiSourcedPolySymbol`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/search/PsiSourcedPolySymbol.kt)
+[`PsiLinkedPolySymbolProvider`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/search/PsiLinkedPolySymbolProvider.kt)
 if its declaration is a regular `PsiElement`, for example, a variable or a declared type.
 Once a symbol implements this interface, it can be searched and refactored together with the PSI element declaration.
 In case a symbol is:
@@ -166,7 +166,7 @@ In case a symbol is:
 then, a contribution of a dedicated declaration provider instead of implementing this interface is recommended.
 
 ### Properties
-{#psisourcedpolysymbol-properties}
+{#psilinkedpolysymbolprovider-properties}
 
 {style="full"}
 `source`
@@ -348,7 +348,7 @@ Each time a symbol is matched, the list returned by `queryScope` property is add
 ## Declarations
 
 To provide locations of declarations of Poly Symbols, which are not
-[`PsiSourcedPolySymbol`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/search/PsiSourcedPolySymbol.kt)s,
+[`PsiLinkedPolySymbolProvider`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/search/PsiLinkedPolySymbolProvider.kt)s,
 a dedicated
 [`PolySymbolDeclarationProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/declarations/PolySymbolDeclarationProvider.kt)
 should be registered.

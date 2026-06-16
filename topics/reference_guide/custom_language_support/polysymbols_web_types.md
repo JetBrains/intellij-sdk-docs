@@ -120,7 +120,7 @@ To contribute a `foo` attribute, one could also write it in longer form:
 ```
 
 Each Web Types contribution is represented in the Poly Symbols framework by a
-[`PsiSourcedPolySymbol`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/search/PsiSourcedPolySymbol.kt)
+[`PsiLinkedPolySymbolProvider`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/search/PsiLinkedPolySymbolProvider.kt)
 object.
 All the Web Types contributions are mapped one-to-one, and custom properties are accessible through `properties` property.
 

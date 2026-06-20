@@ -19,7 +19,7 @@ Also, consider posting requests at [JetBrains Platform Forum: Collaboration & Id
 | Ilscipio GmbH      | [Paul Piper][il], [www.ilscipio.com][il2]                 | Custom Plugin Development                                                                |
 | Tamás Balog        | [www.picimako.com][pm]                                    | Custom Plugin Development                                                                |
 | Dmitry Kandalov    | [dmitry.kandalov@gmail.com][dk]                           | Custom Plugin Development (e.g. using [LivePlugin][lp])                                  |
-| Jonathan Lermitage | [jonathan@lermitage.biz][jle1]                            | Developer of [12 plugins][jle2] (e.g. [Extra Icons][jle3])                               |
+| Jonathan Lermitage | [jonathan@lermitage.biz][jle1]                            | Developer of [20 plugins][jle2] (e.g. [Extra Icons][jle3], [Extra Tools Pack][jle4])     |
 | Artsiom Chapialiou | [achapialiou@gmail.com][ac1]                              | Plugin's [author][ac2] and core developer ([Qodo][ac3], [Snyk][ac4], etc.)               |
 | Trent Jones        | [trent@revenate.io][tj1]                                  | Consulting and Custom Plugin Development, Developer of [Actionate][tj2]                  |
 | Libing Chen        | [libing.chen@gmail.com][lbc1]                             | Developer of [20+ plugins][lbc2] (e.g. [Just][lbc3], [Qoder][lbc4], etc.)                |
@@ -46,6 +46,7 @@ Also, consider posting requests at [JetBrains Platform Forum: Collaboration & Id
 [jle1]: mailto:jonathan@lermitage.biz
 [jle2]: https://plugins.jetbrains.com/author/ed9cc7eb-74f5-46c1-b0df-67162fe1a1c5
 [jle3]: https://plugins.jetbrains.com/plugin/11058-extra-icons/
+[jle4]: https://plugins.jetbrains.com/plugin/24559-extra-tools-pack/
 [ac1]: mailto:achapialiou@gmail.com
 [ac2]: https://plugins.jetbrains.com/vendor/achapialiou
 [ac3]: https://plugins.jetbrains.com/plugin/21206-qodo-gen-formerly-codiumate

@@ -149,7 +149,7 @@ TestCase(IdeProductProvider.IU, projectInfo = NoProject).withVersion("2024.3")
 The `testName` parameter defines the folder name for test artifacts, which is useful when running multiple IDE instances in a single test.
 The test case starts the IDE without any project, so the welcome screen will be shown.
 
-### 2. Plugin Installation (If needed)
+### 2. Plugin Installation (Optional)
 
 ```kotlin
 .apply {

@@ -2,7 +2,7 @@
 
 # Introduction to Integration Tests
 
-<primary-label ref="2023.2"/>
+<primary-label ref="2024.2"/>
 
 <link-summary>Walkthrough how to create the first integration tests.</link-summary>
 
@@ -20,10 +20,26 @@ The Starter framework exclusively supports JUnit 5, as it leverages JUnit 5's ex
 To create a new task - `integrationTest`, define new test source roots - `integrationTest`, and add required dependencies, update the `build.gradle.kts` file:
 
 ```kotlin
+// Necessary imports
+import org.gradle.kotlin.dsl.intellijPlatform
+import org.jetbrains.intellij.platform.gradle.*
+
+plugins {
+  //...
+  id("org.jetbrains.intellij.platform") version "2.16.0"
+}
+
 sourceSets {
   create("integrationTest") {
     compileClasspath += sourceSets.main.get().output
     runtimeClasspath += sourceSets.main.get().output
+  }
+}
+
+repositories {
+  //...
+  intellijPlatform {
+    defaultRepositories()
   }
 }
 
@@ -34,6 +50,7 @@ val integrationTestImplementation by configurations.getting {
 dependencies {
   intellijPlatform {
     //...
+    intellijIdeaUltimate("2026.1")
     testFramework(TestFrameworkType.Starter, configurationName = "integrationTestImplementation")
   }
 
@@ -57,6 +74,7 @@ The following dependencies are required:
 * `testFramework(TestFrameworkType.Starter)` will add all required dependencies for writing integration tests - Starter and Driver frameworks.
 * `org.kodein.di:kodein-di-jvm` is a dependency injection framework used by Starter for configuration.
 * `org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm` is required for Starter framework which is implemented using Kotlin coroutines.
+* `intellijIdeaUltimate(...)` the IDE version for which the plugin is compiled
 
 This configuration does the following:
 
@@ -85,11 +103,12 @@ Now that the configuration is complete, it's time to write the first integration
 Create a new Kotlin file in `src/integrationTest/kotlin` with the following code:
 
 ```kotlin
+import com.intellij.ide.starter.driver.engine.runIdeWithDriver
 import com.intellij.ide.starter.ide.IdeProductProvider
 import com.intellij.ide.starter.models.TestCase
-import com.intellij.ide.starter.plugins.PluginConfigurator
 import com.intellij.ide.starter.project.NoProject
 import com.intellij.ide.starter.runner.Starter
+import org.junit.jupiter.api.Test
 
 class PluginTest {
   @Test
@@ -97,7 +116,6 @@ class PluginTest {
     Starter.newContext(
       testName = "testExample",
       TestCase(IdeProductProvider.IC, projectInfo = NoProject)
-        .withVersion("2024.3"),
     ).apply {
       val pathToPlugin = System.getProperty("path.to.build.plugin")
       PluginConfigurator(this).installPluginFromDir(Path.of(pathToPlugin))
@@ -114,21 +132,24 @@ Let's break down each part of the test:
 ```kotlin
 Starter.newContext(
   testName = "testExample",
-  TestCase(IdeProductProvider.IC, projectInfo = NoProject
-).withVersion("2024.3"))
+  TestCase(IdeProductProvider.IU, projectInfo = NoProject))
 ```
 
 The Context object stores IDE runtime configuration:
 
 * IDE type (e.g., IntelliJ IDEA, PhpStorm, GoLand).
-* IDE version (2024.3 in this example).
 * Project configuration (using `NoProject` for this example).
 * Custom VM options, paths, and SDK settings.
 
-The `testName` parameter defines the folder name for test artifacts, which is useful when running multiple IDE instances in a single test.
-The test case uses IntelliJ IDEA version 2024.3, and starts the IDE without any project, so the welcome screen will be shown.
+By default, the latest IDE version is used for tests. Different version can be specified with
+```kotlin
+TestCase(IdeProductProvider.IU, projectInfo = NoProject).withVersion("2024.3")
+```
 
-### 2. Plugin Installation
+The `testName` parameter defines the folder name for test artifacts, which is useful when running multiple IDE instances in a single test.
+The test case starts the IDE without any project, so the welcome screen will be shown.
+
+### 2. Plugin Installation (If needed)
 
 ```kotlin
 .apply {
@@ -222,10 +243,8 @@ fun simpleTest() {
         branchName = "master",
         repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"
       )
-    ).withVersion("2024.2")
+    )
   ).apply {
-    val pathToPlugin = System.getProperty("path.to.build.plugin")
-    PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
   }.runIdeWithDriver().useDriverAndCloseIde {
     waitForIndicators(5.minutes)
   }
@@ -287,6 +306,22 @@ This extensibility pattern can be applied to customize other aspects of the Star
 Here's the complete test implementation that forms the foundation for future plugin testing:
 
 ```kotlin
+import com.intellij.driver.sdk.waitForIndicators
+import com.intellij.ide.starter.ci.CIServer
+import com.intellij.ide.starter.ci.NoCIServer
+import com.intellij.ide.starter.di.di
+import com.intellij.ide.starter.driver.engine.runIdeWithDriver
+import com.intellij.ide.starter.ide.IdeProductProvider
+import com.intellij.ide.starter.models.TestCase
+import com.intellij.ide.starter.project.GitHubProject
+import com.intellij.ide.starter.project.NoProject
+import com.intellij.ide.starter.runner.Starter
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.fail
+import org.kodein.di.DI
+import org.kodein.di.bindSingleton
+import kotlin.time.Duration.Companion.minutes
+
 class PluginTest {
   init {
     di = DI {
@@ -310,15 +345,13 @@ class PluginTest {
     val result = Starter.newContext(
       "testExample",
       TestCase(
-        IdeProductProvider.IC,
+        IdeProductProvider.IU,
         GitHubProject.fromGithub(
           branchName = "master",
           repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"
         )
-      ).withVersion("2024.2")
+      )
     ).apply {
-      val pathToPlugin = System.getProperty("path.to.build.plugin")
-      PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
     }.runIdeWithDriver().useDriverAndCloseIde {
       waitForIndicators(5.minutes)
     }

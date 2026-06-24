@@ -2,7 +2,7 @@
 
 # Integration Tests
 
-<primary-label ref="2023.2"/>
+<primary-label ref="2024.2"/>
 
 <link-summary>Tutorial on how to create UI and functional integration tests</link-summary>
 

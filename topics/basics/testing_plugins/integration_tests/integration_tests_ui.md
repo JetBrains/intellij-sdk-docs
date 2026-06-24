@@ -2,7 +2,7 @@
 
 # Integration Tests: UI Testing
 
-<primary-label ref="2023.2"/>
+<primary-label ref="2024.2"/>
 
 <link-summary>Walkthrough how to interact with UI in integration tests.</link-summary>
 
@@ -159,7 +159,7 @@ Beyond mouse clicks, keyboard input and shortcuts can be simulated:
 
 ```kotlin
 keyboard {
-  enterText("Sample text")
+  typeText("Sample text")
   enter()
   hotKey(if (SystemInfo.isMac) KeyEvent.VK_META else KeyEvent.VK_CONTROL, KeyEvent.VK_A)
   backspace()
@@ -190,12 +190,9 @@ fun simpleTestForCustomUIElement() {
         repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"
       )
     )
-      .withVersion("2024.3")
   )
     .apply {
-      val pathToPlugin = System.getProperty("path.to.build.plugin")
-      PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
-    }.runIdeWithDriver().useDriverAndCloseIde {
+      }.runIdeWithDriver().useDriverAndCloseIde {
       waitForIndicators(1.minutes)
       ideFrame {
         x(xQuery { byVisibleText("Current File") }).click() //1

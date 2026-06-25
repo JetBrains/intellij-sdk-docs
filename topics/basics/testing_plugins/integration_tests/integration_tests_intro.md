@@ -50,7 +50,7 @@ val integrationTestImplementation by configurations.getting {
 dependencies {
   intellijPlatform {
     //...
-    intellijIdeaUltimate("2026.1")
+    intellijIdea("2026.1")
     testFramework(TestFrameworkType.Starter, configurationName = "integrationTestImplementation")
   }
 

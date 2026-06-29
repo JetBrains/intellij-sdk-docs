@@ -5,7 +5,7 @@ rootProject.name = "settings"
 
 plugins {
   id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
-  id("org.jetbrains.intellij.platform.settings") version "2.16.1"
+  id("org.jetbrains.intellij.platform.settings") version "2.17.0"
 }
 
 dependencyResolutionManagement {

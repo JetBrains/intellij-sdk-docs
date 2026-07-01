@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 1823819322bce2954377b90645795bd4b3bc8374 -->
+<!-- Revision: df76278860ecaa8907a8f72d689ddbcb0c359ecc -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-161 Extension Points and 10 Listeners
+170 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -184,6 +184,12 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.rdclient.breakingWorkflowChangeInterceptor"/></include> ![Non-Dynamic][non-dynamic] ![Experimental][experimental] ![Internal][internal] | `RiderBreakingWorkflowChangeInterceptor` |
 
+### intellij.rider.ssh.remoteMac.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.multiplatform.remoteConfiguratorStep"/></include> | `ConfiguratorStep` |
+
 ### RiderDebugger.xml
 
 | Extension Point | Implementation |
@@ -191,6 +197,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dotNetHotReloadFileTypeProvider"/></include> ![Non-Dynamic][non-dynamic] | `DotNetHotReloadFileTypeProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debugger.evaluation.advice"/></include> | `DebugEvalAdviceProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debugger.remote.additionalFilesProvider"/></include> | `AdditionalRemoteDebuggerFilesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.debugger.remoteAttachSupport"/></include> | `RiderRemoteAttachSupport` |
 
 ### RiderExtensionPoints.xml
 
@@ -229,6 +236,11 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.fileTemplating.postCreateAction"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `RiderNewFileFromTemplateExtension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.filesIndexingRuleProvider"/></include> ![Non-Dynamic][non-dynamic] | `RiderFilesIndexingRuleProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.findPopupProjectScopeProvider"/></include> | `FindPopupProjectScopeProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.gameEngineAssetIndexProvider"/></include> ![Project-Level][project-level] | `IGameEngineAssetIndexProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.gameEngineInputSimulationProvider"/></include> ![Project-Level][project-level] | `IGameEngineInputSimulationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.gameEngineSceneProvider"/></include> ![Project-Level][project-level] | `IGameEngineSceneProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.gameEngineScreenshotProvider"/></include> ![Project-Level][project-level] | `IGameEngineScreenshotProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.gameEngineViewportCameraProvider"/></include> ![Project-Level][project-level] | `IGameEngineViewportCameraProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.godotDetector"/></include> | `GodotDetector` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.gotoCustomizer"/></include> | `GotoCustomizer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.guidPresenter"/></include> ![Project-Level][project-level] | `GuidGeneratorPresenter` |
@@ -239,8 +251,10 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.pencils.inspectionToolGroup"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.pencils.pencilsFilterGroup"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.problemsView.actionsHandler"/></include> ![Non-Dynamic][non-dynamic] | `RiderProblemsViewActionsHandler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.problemsView.problemTypeContributor"/></include> ![Non-Dynamic][non-dynamic] | `RiderProblemsViewTypeUiProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.problemsView.problems.notifier"/></include> ![Non-Dynamic][non-dynamic] | `ProblemsViewNotifier` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.problemsView.problems.processor"/></include> | `RiderProblemsDiffProcessor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.problemsView.safeCode.inspectionProblemContributor"/></include> ![Non-Dynamic][non-dynamic] | `RiderSafeCodeInspectionProblemContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.publish.publishSettingsProvider"/></include> ![Project-Level][project-level] | `IPublishRuntimeCoreSettingsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.publishConfigurationProvider"/></include> ![Non-Dynamic][non-dynamic] | `RiderContextPublishProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.reader.mode.matcher"/></include> | `RiderCustomReaderModeMatcher` |
@@ -282,7 +296,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.android.ndk.provider"/></include> | `AndroidNdkPathProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.multiplatform.remoteConfiguratorStep"/></include> | `ConfiguratorStep` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.multiplatform.remoteMacConnectionSupport"/></include> | `RemoteMacConnectionSupport` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.runConfigurationHandler"/></include> | `RunConfigurationHandlerBase` |
 
 ### RiderNuGet.xml

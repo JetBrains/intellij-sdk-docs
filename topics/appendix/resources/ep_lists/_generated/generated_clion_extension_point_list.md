@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 1823819322bce2954377b90645795bd4b3bc8374 -->
+<!-- Revision: df76278860ecaa8907a8f72d689ddbcb0c359ecc -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-177 Extension Points and 50 Listeners
+178 Extension Points and 50 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -242,7 +242,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.appleFrameworkFilter"/></include> ![Project-Level][project-level] | `AppleFrameworkFilter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.codeInsightUnavailabilityHighlighter"/></include> ![Non-Dynamic][non-dynamic] | `OCCodeInsightUnavailabilityHighlighter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.compilerKindProvider"/></include> | `OCCompilerKindProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.compilerResolver"/></include> ![Project-Level][project-level] | `OCCompilerResolver` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.compilerResolver"/></include> | `OCCompilerResolver` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.fileScopeProvider"/></include> ![Non-Dynamic][non-dynamic] | `OCFileScopeProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.fileWideHighlighter"/></include> ![Non-Dynamic][non-dynamic] ![DumbAware][dumb-aware] | `FileWideHighlighter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.headerSearchRootFactory"/></include> | `HeadersSearchRootFactory` |
@@ -373,6 +373,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.buildStep"/></include> | `CMakeBuildProcessListenerCreator` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.cmakeSettingsFlavorProvider"/></include> | `CMakeSettingsFlavorProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.commonDependencyFileProvider"/></include> | `CMakeCommonDependencyFileProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.defaultProfileProvider"/></include> | `CMakeDefaultProfileProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.execution.executionTargetCustomizer"/></include> | `CMakeBuildProfileExecutionTargetCustomizer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.cmake.flavorProvider"/></include> | `CMakeFlavorProvider` |

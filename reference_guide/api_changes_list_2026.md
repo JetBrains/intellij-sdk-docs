@@ -69,6 +69,38 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 <include from="snippets.topic" element-id="gradlePluginVersion"/>
 
+## 2026.2
+
+### IntelliJ Platform 2026.2
+
+#### PolySymbols 2026.2
+
+`com.intellij.polySymbols.search.PsiSourcedPolySymbol` class renamed to `com.intellij.polySymbols.search.PsiLinkedPolySymbol`
+: Use [`PsiLinkedPolySymbol`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/search/PsiLinkedPolySymbol.kt) instead.
+Additionally, the `source` property was renamed to `linkedElement`.
+
+`com.intellij.polySymbols.utils.PsiSourcedPolySymbolDelegate` class renamed to `com.intellij.polySymbols.utils.PsiLinkedPolySymbolDelegate`
+: Use [`PsiLinkedPolySymbolDelegate`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/utils/PsiLinkedPolySymbolDelegate.kt) instead.
+
+`com.intellij.polySymbols.refactoring.PsiSourcedPolySymbolRefactoringHelper` class renamed to `com.intellij.polySymbols.refactoring.PsiLinkedPolySymbolRefactoringHelper`
+: Use [`PsiLinkedPolySymbolRefactoringHelper`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/refactoring/PsiLinkedPolySymbolRefactoringHelper.kt) instead.
+
+`com.intellij.polySymbols.refactoring.PsiSourcedPolySymbolRenameHandler` class renamed to `com.intellij.polySymbols.refactoring.PsiLinkedPolySymbolRenameHandler`
+: Use [`PsiLinkedPolySymbolRenameHandler`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/refactoring/PsiLinkedPolySymbolRenameHandler.kt) instead.
+
+`com.intellij.polySymbols.search.PsiSourcedPolySymbolProvider` class renamed to `com.intellij.polySymbols.search.PsiLinkedPolySymbolProvider`
+: Use [`PsiLinkedPolySymbolProvider`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/search/PsiLinkedPolySymbolProvider.kt) instead.
+
+`com.intellij.polySymbols.search.PsiSourcedPolySymbolReference` class renamed to `com.intellij.polySymbols.search.PsiLinkedPolySymbolReference`
+: Use [`PsiLinkedPolySymbolReference`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/search/PsiLinkedPolySymbolReference.kt) instead.
+
+`com.intellij.polySymbols.search.PsiSourcedPolySymbolReferenceSearcher` class renamed to `com.intellij.polySymbols.search.PsiLinkedPolySymbolReferenceSearcher`
+: Use [`PsiLinkedPolySymbolReferenceSearcher`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/search/PsiLinkedPolySymbolReferenceSearcher.kt) instead.
+
+`com.intellij.polySymbols.search.PsiSourcedPolySymbolRequestResultProcessor` class renamed to `com.intellij.polySymbols.search.PsiLinkedPolySymbolRequestResultProcessor`
+: Use [`PsiLinkedPolySymbolRequestResultProcessor`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/search/PsiLinkedPolySymbolRequestResultProcessor.kt) instead.
+
+
 ## 2026.1
 
 ### IntelliJ Platform 2026.1
@@ -78,7 +110,7 @@ AWT input event handlers no longer run under write-intent lock
 Custom input handlers (`KeyListener`, `MouseAdapter`, etc.) no longer execute under the [write-intent lock](threading_model.md#read-write-lock).
 If PSI or other write-intent-protected data needs to be accessed in these handlers, explicitly acquire a read action using [`ReadAction.nonBlocking().submit()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) or coroutine-based equivalents such as [`readAction {}`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
 
-#### PolySymbols
+#### PolySymbols 2026.1
 
 `com.intellij.polySymbols.PolySymbol.getOrigin()` method removed
 : The property was confusing and in many cases was not used. Its functionality is replaced by:

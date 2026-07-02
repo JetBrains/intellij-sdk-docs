@@ -68,7 +68,7 @@ how modifiers from different symbols in the sequence are merged for the resultin
 : A `PsiElement`, which is a file or an element, which can be used to roughly locate the source of the symbol within a project to provide a context for loading additional information, like types.
 If the symbol is
 [`PsiLinkedPolySymbolProvider`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/search/PsiLinkedPolySymbolProvider.kt)
-(see [](#psilinkedpolysymbolprovider)), then `psiContext` is equal to `source`.
+(see [](#psilinkedpolysymbolprovider)), then `psiContext` is equal to `linkedElement` (`linkedElement` name exists since 2026.2; before, it was `source`).
 
 `presentation`
 : Returns
@@ -153,6 +153,11 @@ By default, only the current symbol framework from the `origin` property is chec
 The dereferenced symbol should be valid, for example, any PSI-based properties should return valid `PsiElement`s.
 
 ## `PsiLinkedPolySymbolProvider`
+
+> `PsiSourcedPolySymbol` was renamed to `PsiLinkedPolySymbolProvider` in 2026.2.
+> See the [incompatible changes list](api_changes_list_2026.md) for related breaking changes.
+>
+{style="note"}
 
 A symbol should implement
 [`PsiLinkedPolySymbolProvider`](%gh-ic%/platform/polySymbols/backend/src/com/intellij/polySymbols/search/PsiLinkedPolySymbolProvider.kt)

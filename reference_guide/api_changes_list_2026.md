@@ -300,3 +300,49 @@ The migration should be done according to the [migration guide](https://kotlin.g
 
 `org.jetbrains.kotlin.js.descriptorUtils.DescriptorUtilsKt.getNameIfStandardType(KotlinType)` method removed
 : [Migrate to K2 (Analysis API)](https://kotlin.github.io/analysis-api/migrating-from-k1.html).
+
+## 2026.3
+
+### IntelliJ Platform 2026.3
+
+#### Kotlin UI DSL 1.0 Removal
+
+Kotlin UI DSL Version 1 (the `com.intellij.ui.layout` DSL entry points) has been completely removed.
+Any access to the removed classes will lead to compilation or runtime errors.
+The migration should be done according to the [Kotlin UI DSL Version 2 migration guide](https://plugins.jetbrains.com/docs/intellij/kotlin-ui-dsl.html#migration-to-version-2).
+
+`com.intellij.ui.layout.BaseBuilder` class removed
+: [Migrate to Kotlin UI DSL Version 2](https://plugins.jetbrains.com/docs/intellij/kotlin-ui-dsl.html#migration-to-version-2).
+
+`com.intellij.ui.layout.CCFlags` class removed
+: [Migrate to Kotlin UI DSL Version 2](https://plugins.jetbrains.com/docs/intellij/kotlin-ui-dsl.html#migration-to-version-2).
+
+`com.intellij.ui.layout.Cell` class removed
+: [Migrate to Kotlin UI DSL Version 2](https://plugins.jetbrains.com/docs/intellij/kotlin-ui-dsl.html#migration-to-version-2).
+
+`com.intellij.ui.layout.CellBuilder` class removed
+: [Migrate to Kotlin UI DSL Version 2](https://plugins.jetbrains.com/docs/intellij/kotlin-ui-dsl.html#migration-to-version-2).
+
+`com.intellij.ui.layout.CellMarker` class removed
+: [Migrate to Kotlin UI DSL Version 2](https://plugins.jetbrains.com/docs/intellij/kotlin-ui-dsl.html#migration-to-version-2).
+
+`com.intellij.ui.layout.LCFlags` class removed
+: [Migrate to Kotlin UI DSL Version 2](https://plugins.jetbrains.com/docs/intellij/kotlin-ui-dsl.html#migration-to-version-2).
+
+`com.intellij.ui.layout.LayoutBuilder` class removed
+: [Migrate to Kotlin UI DSL Version 2](https://plugins.jetbrains.com/docs/intellij/kotlin-ui-dsl.html#migration-to-version-2).
+
+`com.intellij.ui.layout.LayoutBuilderImpl` class removed
+: [Migrate to Kotlin UI DSL Version 2](https://plugins.jetbrains.com/docs/intellij/kotlin-ui-dsl.html#migration-to-version-2).
+
+`com.intellij.ui.layout.LayoutImplKt` class removed
+: [Migrate to Kotlin UI DSL Version 2](https://plugins.jetbrains.com/docs/intellij/kotlin-ui-dsl.html#migration-to-version-2).
+
+`com.intellij.ui.layout.LayoutKt` class removed
+: [Migrate to Kotlin UI DSL Version 2](https://plugins.jetbrains.com/docs/intellij/kotlin-ui-dsl.html#migration-to-version-2).
+
+`com.intellij.ui.layout.Row` class removed
+: [Migrate to Kotlin UI DSL Version 2](https://plugins.jetbrains.com/docs/intellij/kotlin-ui-dsl.html#migration-to-version-2).
+
+`com.intellij.ui.layout.RowBuilder` class removed
+: [Migrate to Kotlin UI DSL Version 2](https://plugins.jetbrains.com/docs/intellij/kotlin-ui-dsl.html#migration-to-version-2).

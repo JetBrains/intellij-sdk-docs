@@ -191,8 +191,7 @@ fun simpleTestForCustomUIElement() {
       )
     )
   )
-    .apply {
-      }.runIdeWithDriver().useDriverAndCloseIde {
+    .runIdeWithDriver().useDriverAndCloseIde {
       waitForIndicators(1.minutes)
       ideFrame {
         x(xQuery { byVisibleText("Current File") }).click() //1

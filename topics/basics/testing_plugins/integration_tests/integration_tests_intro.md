@@ -20,8 +20,6 @@ The Starter framework exclusively supports JUnit 5, as it leverages JUnit 5's ex
 To create a new task - `integrationTest`, define new test source roots - `integrationTest`, and add required dependencies, update the `build.gradle.kts` file:
 
 ```kotlin
-// Necessary imports
-import org.gradle.kotlin.dsl.intellijPlatform
 import org.jetbrains.intellij.platform.gradle.*
 
 plugins {
@@ -50,7 +48,7 @@ val integrationTestImplementation by configurations.getting {
 dependencies {
   intellijPlatform {
     //...
-    intellijIdeaUltimate("2026.1")
+    intellijIdea("2026.1")
     testFramework(TestFrameworkType.Starter, configurationName = "integrationTestImplementation")
   }
 
@@ -141,7 +139,9 @@ The Context object stores IDE runtime configuration:
 * Project configuration (using `NoProject` for this example).
 * Custom VM options, paths, and SDK settings.
 
-By default, the latest IDE version is used for tests. Different version can be specified with
+Starting with version 262, the recommended IDE indication has been changed IdeProductProvider.IU -> IdeInfo.IdeaUltimate
+
+By default, the IDE version provided by the sandbox is used for tests. Different version can be specified with
 ```kotlin
 TestCase(IdeProductProvider.IU, projectInfo = NoProject).withVersion("2024.3")
 ```
@@ -158,7 +158,7 @@ The test case starts the IDE without any project, so the welcome screen will be 
 }
 ```
 
-This step configures plugin installation using the plugin path defined in the Gradle configuration with the `path.to.build.plugin` system property.
+This step configures the installation of the plugin being developed, using the plugin distribution path defined in the Gradle configuration with the `path.to.build.plugin` system property.
 
 > [`PluginConfigurator`](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/plugins/PluginConfigurator.kt) can install plugins from local paths or Marketplace.
 >

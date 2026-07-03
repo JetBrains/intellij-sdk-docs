@@ -156,7 +156,7 @@ The LSP support provided by the IntelliJ Platform covers the following features 
 - Rename Refactoring ([`textDocument/rename`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_rename)) [2026.1.1] ([IJPL-161013](https://youtrack.jetbrains.com/issue/IJPL-161013))
 - On-Type Formatting ([`textDocument/onTypeFormatting`](https://microsoft.github.io/language-server-protocol/specification/#textDocument_onTypeFormatting)) [2026.1.2] (disabled by default) ([IJPL-189559](https://youtrack.jetbrains.com/issue/IJPL-189559))
 
-> All the above features are enabled by default and can be controlled via [`LspClientDescriptor.lspCustomization`](%gh-ic%/platform/lsp/src/api/LspClientDescriptor.kt) (since 2026.2), or [`LspServerDescriptor.lspCustomization`](%gh-ic%/platform/lsp/src/api/LspServerDescriptor.kt)` (before 2026.2).
+> All the above features are enabled by default and can be controlled via [`LspClientDescriptor.lspCustomization`](%gh-ic%/platform/lsp/src/api/LspClientDescriptor.kt) (since 2026.1.4), or [`LspServerDescriptor.lspCustomization`](%gh-ic%/platform/lsp/src/api/LspServerDescriptor.kt)` (before 2026.1.4).
 > See the [Customization](#customization) section for details.
 >
 {style="note"}
@@ -224,13 +224,13 @@ The LSP support provided by the IntelliJ Platform covers the following features 
 
 As a reference, check out the [Prisma ORM](https://plugins.jetbrains.com/plugin/20686-prisma-orm) open-source plugin implementation: [Prisma ORM LSP](%gh-ij-plugins%/prisma/src/org/intellij/prisma/ide/lsp)
 
-> The basic implementation differs between version 2026.2 and older because of [LSP API classes renaming](#lsp-api-refactoring).
+> The basic implementation differs between version 2026.1.4 and older because of [LSP API classes renaming](#lsp-api-refactoring).
 
 <procedure title="Minimal LSP Plugin Setup">
 
 <tabs group="lsp-api-rename-version">
 
-<tab title="2026.2+" group-key="262">
+<tab title="2026.1.4+" group-key="2614">
 
 1. Implement [`LspIntegrationProvider`](%gh-ic%/platform/lsp/src/api/LspIntegrationProvider.kt) and within the `LspIntegrationProvider.fileOpened()` method, spin up the relevant LSP client descriptor, which can decide if the given file is supported by using the [`LspClientDescriptor.isSupportedFile()`](%gh-ic%/platform/lsp/src/api/LspClientDescriptor.kt) check method.
 2. [Register](plugin_extensions.md#declaring-extensions) it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.lsp.integrationProvider"/></include>.
@@ -268,7 +268,7 @@ As a reference, check out the [Prisma ORM](https://plugins.jetbrains.com/plugin/
    ```
 </tab>
 
-<tab title="Pre-2026.2" group-key="pre-262">
+<tab title="Pre-2026.1.4" group-key="pre-2614">
 
 1. Implement [`LspServerSupportProvider`](%gh-ic%/platform/lsp/src/api/LspServerSupportProvider.kt) and within the `LspServerSupportProvider.fileOpened()` method, spin up the relevant LSP server descriptor, which can decide if the given file is supported by using the [`LspServerDescriptor.isSupportedFile()`](%gh-ic%/platform/lsp/src/api/LspServerDescriptor.kt) check method.
 2. [Register](plugin_extensions.md#declaring-extensions) it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.lsp.serverSupportProvider"/></include>.
@@ -319,7 +319,7 @@ A dedicated <control>Language Services</control> status bar widget is available 
 
 <tabs group="lsp-api-rename-version">
 
-<tab title="2026.2+" group-key="262">
+<tab title="2026.1.4+" group-key="2614">
 
 Override [`LspIntegrationProvider.createWidgetItem()`](%gh-ic%/platform/lsp/src/api/LspIntegrationProvider.kt) to provide a custom icon and link to [the settings page](settings.md) (if available).
 
@@ -336,7 +336,7 @@ override fun createWidgetItem(
 
 </tab>
 
-<tab title="Pre-2026.2" group-key="pre-262">
+<tab title="Pre-2026.1.4" group-key="pre-2614">
 
 Override [`LspServerSupportProvider.createLspServerWidgetItem()`](%gh-ic%/platform/lsp/src/api/LspServerSupportProvider.kt) to provide a custom icon and link to [the settings page](settings.md) (if available).
 
@@ -380,7 +380,7 @@ For more complex cases, the plugin may request to provide a detailed configurati
 
 <tab title="2025.2+">
 
-To fine-tune or disable the implementation of LSP-based features, plugins may return a customized [`LspCustomization`](%gh-ic%/platform/lsp/src/api/customization/LspCustomization.kt) object from the `LspClientDescriptor.lspCustomization` (`LspServerDescriptor.lspCustomization` before 2026.2) property.
+To fine-tune or disable the implementation of LSP-based features, plugins may return a customized [`LspCustomization`](%gh-ic%/platform/lsp/src/api/customization/LspCustomization.kt) object from the `LspClientDescriptor.lspCustomization` (`LspServerDescriptor.lspCustomization` before 2026.1.4) property.
 Available customization options are described by `LspCustomization`'s properties.
 
 For example, see [`PrismaLspClientDescriptor`](%gh-ij-plugins%/prisma/src/org/intellij/prisma/ide/lsp/PrismaLspClientDescriptor.kt).
@@ -406,9 +406,9 @@ To fine-tune or disable the implementation of LSP-based features, plugins may ov
 >
 {style="warning"}
 
-To handle custom (undocumented) requests and notifications from the LSP server, override the `LspClientDescriptor.createLsp4jClient()` (`LspServerDescriptor.createLsp4jClient()` before 2026.2) function and the `Lsp4jClient` class according to their documentation.
+To handle custom (undocumented) requests and notifications from the LSP server, override the `LspClientDescriptor.createLsp4jClient()` (`LspServerDescriptor.createLsp4jClient()` before 2026.1.4) function and the `Lsp4jClient` class according to their documentation.
 
-To send custom (undocumented) requests and notifications to the LSP server, override `LspClientDescriptor.lsp4jServerClass` (`LspServerDescriptor.lsp4jServerClass` before 2026.2) property and implement the `LspClientNotification` and/or `LspRequest` classes.
+To send custom (undocumented) requests and notifications to the LSP server, override `LspClientDescriptor.lsp4jServerClass` (`LspServerDescriptor.lsp4jServerClass` before 2026.1.4) property and implement the `LspClientNotification` and/or `LspRequest` classes.
 The documentation in the source code includes implementation examples.
 
 ## Troubleshooting
@@ -437,12 +437,12 @@ When considering the LSP-based approach, it is important to assess the following
 ## Sample Plugins
 
 Explore third-party plugins using LSP:
-- [`com.intellij.platform.lsp.integrationProvider`](https://jb.gg/ipe?extensions=com.intellij.platform.lsp.integrationProvider) - since 2026.2
-- [`com.intellij.platform.lsp.serverSupportProvider`](https://jb.gg/ipe?extensions=com.intellij.platform.lsp.serverSupportProvider) - before 2026.2
+- [`com.intellij.platform.lsp.integrationProvider`](https://jb.gg/ipe?extensions=com.intellij.platform.lsp.integrationProvider) - since 2026.1.4
+- [`com.intellij.platform.lsp.serverSupportProvider`](https://jb.gg/ipe?extensions=com.intellij.platform.lsp.serverSupportProvider) - before 2026.1.4
 
 ## LSP API Refactoring
 
-In 2026.2, the LSP API classes were renamed to align with LSP terminology, where the IDE acts as the _client_ communicating with an external language server _process_.
+In 2026.1.4, the LSP API classes were renamed to align with LSP terminology, where the IDE acts as the _client_ communicating with an external language server _process_.
 Classes with old names are deprecated, but they are preserved in the API and fully functional.
 
 [//]: # (TODO: LspClientManager is a breaking change!)

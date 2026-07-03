@@ -110,6 +110,13 @@ AWT input event handlers no longer run under write-intent lock
 Custom input handlers (`KeyListener`, `MouseAdapter`, etc.) no longer execute under the [write-intent lock](threading_model.md#read-write-lock).
 If PSI or other write-intent-protected data needs to be accessed in these handlers, explicitly acquire a read action using [`ReadAction.nonBlocking().submit()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) or coroutine-based equivalents such as [`readAction {}`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/coroutines.kt).
 
+#### Language Server Protocol (LSP) 2026.1.4
+
+In 2026.1.4, key LSP classes were [renamed](language_server_protocol.md#lsp-api-refactoring).
+`LspServerManager` was renamed to `LspClientManager` and the service is registered only under the new interface.
+Plugins retrieving `LspServerManager` via `project.service<LspServerManager>()` or similar methods will get null.
+Use `LspClientManager.getInstance(project)` instead, or `LspServerManager.getInstance(project)` to support versions before 2026.4.1.
+
 #### PolySymbols 2026.1
 
 `com.intellij.polySymbols.PolySymbol.getOrigin()` method removed

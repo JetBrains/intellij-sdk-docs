@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: df76278860ecaa8907a8f72d689ddbcb0c359ecc -->
+<!-- Revision: e9abd8bfa3ed8166625bad10b0c57a2103204b7e -->
 
 <!--
 EP List Directories:
@@ -15,7 +15,7 @@ EP List Directories:
 
 <snippet id="content">
 
-98 Extension Points and 5 Listeners
+99 Extension Points and 5 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -176,6 +176,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.moduleExportsProvider"/></include> | `JSModuleExportsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.moduleReferenceContributor"/></include> | `JSModuleReferenceContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.resolveHelper"/></include> | `JSResolveHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.servicePoweredTypeEngineEvaluator"/></include> ![Internal][internal] | `JSServicePoweredTypeEngineEvaluator` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.typeScriptCompilerTypeFilter"/></include> | `TypeScriptCompilerTypeFilter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.unresolvedReferenceErrorUpdater"/></include> ![Experimental][experimental] | `JSUnresolvedReferenceErrorUpdater` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.webBundlerCssReferenceContributor"/></include> | `JSModuleReferenceContributor` |

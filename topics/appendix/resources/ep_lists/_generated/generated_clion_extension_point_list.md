@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: df76278860ecaa8907a8f72d689ddbcb0c359ecc -->
+<!-- Revision: e9abd8bfa3ed8166625bad10b0c57a2103204b7e -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-178 Extension Points and 50 Listeners
+183 Extension Points and 51 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -22,6 +22,7 @@ EP List Directories:
 
 | Topic | Listener |
 |-------|----------|
+| [`CidrDebugProfileListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.cidr.debugger.profiles.CidrDebugProfileListener)  | `CidrDebugProfileListener` |
 | [`MakefileBuildTargetsManagerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.makefile.core.execution.build.MakefileBuildTargetsManagerListener)  | `MakefileBuildTargetsManagerListener` |
 | [`MakefileSettingsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.makefile.core.settings.MakefileSettingsListener)  | `MakefileSettingsListener` |
 | [`ProjectStatusUpdateListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.projectStatus.listeners.ProjectStatusUpdateListener)  ![Project-Level][project-level] | `ProjectStatusUpdateListener` |
@@ -39,7 +40,7 @@ EP List Directories:
 | [`CompDBSettingsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.compdb.settings.CompDBSettingsListener)  | `CompDBSettingsListener` |
 | [`CLionExternalBuildManagerListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.execution.external.build.CLionExternalBuildManagerListener)  | `CLionExternalBuildManagerListener` |
 | [`ClionProjectToolManagerListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.execution.external.build.ClionProjectToolManagerListener)  | `ClionProjectToolManagerListener` |
-| [`DebugTargetService#changesTopic`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.execution.gdbserver.debugtargets.DebugTargetService.DebugTargetsChangeTopic)  | `DebugTargetsChangeTopic` |
+| [`DebugTargetService#changesTopic`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.execution.gdbserver.debugtargets.DebugTargetService.DebugTargetsChangeTopic)  ![Deprecated][deprecated] | `DebugTargetsChangeTopic` |
 | [`ExternalModuleImportListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.external.system.service.ExternalModuleImportListener)  | `ExternalModuleImportListener` |
 | [`ExternalWorkspaceListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.external.system.workspace.ExternalWorkspaceListener)  | `ExternalWorkspaceListener` |
 | [`CLionToolchainDebuggerProvider#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.toolchains.CLionToolchainDebuggerListener)  ![Experimental][experimental] ![Internal][internal] | `CLionToolchainDebuggerListener` |
@@ -135,6 +136,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="clangd.clangQuickFixProvider"/></include> | `ClangQuickFixProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="clangd.clangTidyAnnotationApplier"/></include> | `ClangTidyAnnotationApplier` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="clangd.clangTidyHtmlDescriptionPaneProvider"/></include> | `ClangTidyHtmlDescriptionPaneProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="clangd.clangTidyInspectionNameProvider"/></include> ![Internal][internal] | `CLionClangTidyInspectionNameProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="clangd.clangTidyResolveInfoProvider"/></include> | `ClangTidyResolveInfoProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="clangd.clangdAnnotatorUtil"/></include> | `ClangAnnotatorUtil` |
@@ -195,6 +197,9 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.currentDebugProfileSuggestor"/></include> ![Internal][internal] | `CidrCurrentDebugProfileSuggester` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileApplicationConverter"/></include> ![Internal][internal] | `CidrDebugProfileApplicationConverter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileProjectConverter"/></include> ![Internal][internal] | `CidrDebugProfileProjectConverter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileType"/></include> | `CidrDebugProfileType` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfilesEnabler"/></include> | `CidrDebugProfilesEnabler` |
 
@@ -352,6 +357,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.stm32.project.detection"/></include> | `STM32ProjectDetection` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.stm32.project.info"/></include> | `Stm32ProjectInfoProvider` |
 
 ### intellij.clion.toolchains.xml
 

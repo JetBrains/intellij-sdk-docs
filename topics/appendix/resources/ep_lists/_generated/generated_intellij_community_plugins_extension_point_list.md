@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: df76278860ecaa8907a8f72d689ddbcb0c359ecc -->
+<!-- Revision: e9abd8bfa3ed8166625bad10b0c57a2103204b7e -->
 
 <!--
 EP List Directories:
@@ -18,7 +18,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-676 Extension Points and 86 Listeners
+681 Extension Points and 86 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -28,9 +28,9 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Topic | Listener |
 |-------|----------|
-| [`AgentWorkbenchSettingsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.agent.workbench.sessions.core.settings.AgentWorkbenchSettingsListener)  | [`AgentWorkbenchSettingsListener`](%gh-ic%/plugins/agent-workbench/sessions-core/src/settings/AgentWorkbenchSettings.kt) |
 | [`AgentSessionProviderAvailabilityListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.agent.workbench.sessions.service.AgentSessionProviderAvailabilityListener)  ![Project-Level][project-level] | [`AgentSessionProviderAvailabilityListener`](%gh-ic%/plugins/agent-workbench/sessions/src/service/AgentSessionProviderAvailabilityService.kt) |
-| [`AgentSessionProviderSettingsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.agent.workbench.sessions.settings.AgentSessionProviderSettingsListener)  | [`AgentSessionProviderSettingsListener`](%gh-ic%/plugins/agent-workbench/sessions/src/settings/AgentSessionProviderSettingsService.kt) |
+| [`AgentSessionProviderSettingsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.agent.workbench.settings.AgentSessionProviderSettingsListener)  | [`AgentSessionProviderSettingsListener`](%gh-ic%/plugins/agent-workbench/settings/src/AgentSessionProviderSettingsService.kt) |
+| [`AgentWorkbenchSettingsListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.agent.workbench.settings.AgentWorkbenchSettingsListener)  | [`AgentWorkbenchSettingsListener`](%gh-ic%/plugins/agent-workbench/settings/src/AgentWorkbenchSettings.kt) |
 | [`CoverageLoadingListener#COVERAGE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.coverage.CoverageLoadingListener)  ![Internal][internal] ![Project-Level][project-level] | [`CoverageLoadingListener`](%gh-ic%/plugins/coverage-common/src/com/intellij/coverage/CoverageLoaderListener.kt) |
 | [`ToolCallListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.mcpserver.ToolCallListener)  | [`ToolCallListener`](%gh-ic%/plugins/mcp-server/src/com/intellij/mcpserver/ToolCallListener.kt) |
 | [`ChangeListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.mermaid.settings.MermaidSettingsConfigurable.ChangeListener)  | [`ChangeListener`](%gh-ic%/plugins/mermaid/src/com/intellij/mermaid/settings/MermaidSettingsConfigurable.kt) |
@@ -213,16 +213,8 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.chatProviderBehavior"/></include> ![Internal][internal] | [`AgentChatProviderBehavior`](%gh-ic%/plugins/agent-workbench/chat/src/AgentChatProviderBehavior.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.chatTerminalTitleThreadRebindContributor"/></include> ![Internal][internal] | [`AgentChatTerminalTitleThreadRebindContributor`](%gh-ic%/plugins/agent-workbench/chat/src/AgentChatTerminalTitleThreadRebindController.kt) |
-
-### intellij.agent.workbench.pi.sessions.xml
-
-[`intellij.agent.workbench.pi.sessions.xml`](%gh-ic%/plugins/agent-workbench/pi/sessions/resources/intellij.agent.workbench.pi.sessions.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.pi.jbCentralModelContributor"/></include> ![Internal][internal] | [`PiJbCentralModelContributor`](%gh-ic%/plugins/agent-workbench/pi/sessions/src/PiJbCentralModelContributor.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.pi.sessionUpdateEventsContributor"/></include> ![Internal][internal] | [`PiSessionUpdateEventsContributor`](%gh-ic%/plugins/agent-workbench/pi/sessions/src/PiSessionUpdateEventsContributor.kt) |
 
 ### intellij.agent.workbench.prompt.core.xml
 
@@ -238,19 +230,13 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.promptPaletteExtension"/></include> | [`AgentPromptPaletteExtension`](%gh-ic%/plugins/agent-workbench/prompt/core/src/AgentPromptPaletteExtension.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.promptSuggestionAiBackend"/></include> | [`AgentPromptSuggestionAiBackend`](%gh-ic%/plugins/agent-workbench/prompt/core/src/AgentPromptSuggestionGenerator.kt) |
 
-### intellij.agent.workbench.sessions.core.xml
+### intellij.agent.workbench.settings.xml
 
-[`intellij.agent.workbench.sessions.core.xml`](%gh-ic%/plugins/agent-workbench/sessions-core/resources/intellij.agent.workbench.sessions.core.xml)
+[`intellij.agent.workbench.settings.xml`](%gh-ic%/plugins/agent-workbench/settings/resources/intellij.agent.workbench.settings.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.mcpConfigProviderContributor"/></include> | [`AwbMcpConfigProviderContributor`](%gh-ic%/plugins/agent-workbench/sessions-core/src/launch/AwbMcpConfigProviderContributor.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.mcpStreamUrlProvider"/></include> | [`McpStreamUrlProvider`](%gh-ic%/plugins/agent-workbench/sessions-core/src/launch/McpStreamUrlProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.projectRuntimeConfigProvider"/></include> | [`AgentWorkbenchProjectRuntimeConfigProvider`](%gh-ic%/plugins/agent-workbench/sessions-core/src/config/AgentWorkbenchProjectRuntimeConfigProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.sessionLaunchContributor"/></include> | [`AgentSessionLaunchContributor`](%gh-ic%/plugins/agent-workbench/sessions-core/src/launch/AgentSessionLaunchContributor.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.sessionLaunchSpecAugmenter"/></include> | [`AgentSessionLaunchSpecAugmenter`](%gh-ic%/plugins/agent-workbench/sessions-core/src/launch/AgentSessionLaunchSpecAugmenter.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.sessionProvider"/></include> | [`AgentSessionProviderDescriptor`](%gh-ic%/plugins/agent-workbench/sessions-core/src/providers/AgentSessionProviderDescriptor.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.settingsContributor"/></include> | [`AgentWorkbenchSettingsContributor`](%gh-ic%/plugins/agent-workbench/sessions-core/src/settings/AgentWorkbenchSettingsContributor.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.settingsContributor"/></include> | [`AgentWorkbenchSettingsContributor`](%gh-ic%/plugins/agent-workbench/settings/src/AgentWorkbenchSettingsContributor.kt) |
 
 ### intellij.compose.ide.plugin.resources.xml
 
@@ -339,6 +325,31 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.performancePlugin.remotedriver.textExtractorExtension"/></include> | [`TextExtractorExtension`](%gh-ic%/plugins/performanceTesting/remote-driver/src/com/jetbrains/performancePlugin/remotedriver/dataextractor/TextExtractorExtension.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.performancePlugin.remotedriver.xpathDataModelExtension"/></include> | [`XpathDataModelExtension`](%gh-ic%/plugins/performanceTesting/remote-driver/src/com/jetbrains/performancePlugin/remotedriver/xpath/XpathDataModelExtension.kt) |
+
+### intellij.platform.ai.agent.pi.sessions.xml
+
+[`intellij.platform.ai.agent.pi.sessions.xml`](%gh-ic%/plugins/agent-workbench/lib-agent/providers/pi/sessions/resources/intellij.platform.ai.agent.pi.sessions.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.pi.jbCentralModelContributor"/></include> ![Internal][internal] | [`PiJbCentralModelContributor`](%gh-ic%/plugins/agent-workbench/lib-agent/providers/pi/sessions/src/PiJbCentralModelContributor.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.pi.sessionUpdateEventsContributor"/></include> ![Internal][internal] | [`PiSessionUpdateEventsContributor`](%gh-ic%/plugins/agent-workbench/lib-agent/providers/pi/sessions/src/PiSessionUpdateEventsContributor.kt) |
+
+### intellij.platform.ai.agent.sessions.core.xml
+
+[`intellij.platform.ai.agent.sessions.core.xml`](%gh-ic%/plugins/agent-workbench/lib-agent/sessions-core/resources/intellij.platform.ai.agent.sessions.core.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.mcpConfigProviderContributor"/></include> | [`AwbMcpConfigProviderContributor`](%gh-ic%/plugins/agent-workbench/lib-agent/sessions-core/src/launch/AwbMcpConfigProviderContributor.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.mcpStreamUrlProvider"/></include> | [`McpStreamUrlProvider`](%gh-ic%/plugins/agent-workbench/lib-agent/sessions-core/src/launch/McpStreamUrlProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.projectRuntimeConfigProvider"/></include> | [`AgentWorkbenchProjectRuntimeConfigProvider`](%gh-ic%/plugins/agent-workbench/lib-agent/sessions-core/src/config/AgentWorkbenchProjectRuntimeConfigProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.sessionLaunchContributor"/></include> | [`AgentSessionLaunchContributor`](%gh-ic%/plugins/agent-workbench/lib-agent/sessions-core/src/launch/AgentSessionLaunchContributor.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.sessionLaunchSpecAugmenter"/></include> | [`AgentSessionLaunchSpecAugmenter`](%gh-ic%/plugins/agent-workbench/lib-agent/sessions-core/src/launch/AgentSessionLaunchSpecAugmenter.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.sessionProvider"/></include> ![Internal][internal] | [`AgentSessionProviderImplementation`](%gh-ic%/plugins/agent-workbench/lib-agent/sessions-core/src/providers/AgentSessionProviderDescriptor.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.sessionProviderFeatureSettings"/></include> | [`AgentSessionProviderFeatureSettings`](%gh-ic%/plugins/agent-workbench/lib-agent/sessions-core/src/providers/AgentSessionProviderFeatureSettings.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.sessionProviderUiContributor"/></include> | [`AgentSessionProviderUiContributor`](%gh-ic%/plugins/agent-workbench/lib-agent/sessions-core/src/providers/AgentSessionProviderUiContributor.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.agent.workbench.sessionUsageCostCalculator"/></include> | [`AgentSessionUsageCostCalculator`](%gh-ic%/plugins/agent-workbench/lib-agent/sessions-core/src/cost/AgentSessionUsageSnapshot.kt) |
 
 ### intellij.platform.coverage.xml
 
@@ -1085,8 +1096,8 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Topic | Listener |
 |-------|----------|
-| [`JsonSchemaVfsListener#JSON_DEPS_CHANGED`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 | [`JsonSchemaVfsListener#JSON_SCHEMA_CHANGED`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
+| [`JsonSchemaVfsListener#JSON_DEPS_CHANGED`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 
 
 ### intellij.json.backend.xml
@@ -1116,6 +1127,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.json.jsonLiteralChecker"/></include> | [`JsonLiteralChecker`](%gh-ic%/json/src/com/intellij/json/codeinsight/JsonLiteralChecker.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.json.lazyParsingVetoer"/></include> ![Internal][internal] | [`JsonLazyParsingVetoer`](%gh-ic%/json/syntax/src/com/intellij/json/syntax/JsonLazyParsing.kt) |
 
 
 ## Kotlin Plugin
@@ -1569,7 +1581,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.customProcessHandlerProvider"/></include> ![Internal][internal] | [`PyCustomProcessHandlerProvider`](%gh-ic%/python/src/com/jetbrains/python/run/PyCustomProcessHandlerProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.dataViewPanelFactory"/></include> | [`PyDataViewPanelFactory`](%gh-ic%/python/src/com/jetbrains/python/debugger/containerview/PyDataViewPanelFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.debugSessionFactory"/></include> | [`PyDebugSessionFactory`](%gh-ic%/python/src/com/jetbrains/python/debugger/PyDebugSessionFactory.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.interpreterTargetEnvironmentFactory"/></include> ![Internal][internal] | [`PythonInterpreterTargetEnvironmentFactory`](%gh-ic%/python/src/com/jetbrains/python/run/PythonInterpreterTargetEnvironmentFactory.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.interpreterTargetEnvironmentFactory"/></include> ![Internal][internal] | [`PythonInterpreterTargetEnvironmentFactory`](%gh-ic%/python/python-sdk/src/com/jetbrains/python/run/PythonInterpreterTargetEnvironmentFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.magicLiteral"/></include> ![Internal][internal] | [`PyMagicLiteralExtensionPoint`](%gh-ic%/python/python-psi-impl/src/com/jetbrains/python/magicLiteral/PyMagicLiteralExtensionPoint.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.packageManagerProvider"/></include> ![Experimental][experimental] ![Internal][internal] | [`PyPackageManagerProvider`](%gh-ic%/python/src/com/jetbrains/python/packaging/PyCustomPackageManagers.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Pythonid.pep8ProblemSuppressor"/></include> | [`Pep8ProblemSuppressor`](%gh-ic%/python/src/com/jetbrains/python/validation/Pep8ProblemSuppressor.java) |
@@ -1690,7 +1702,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.python.pyproject.model.tool"/></include> | [`Tool`](%gh-ic%/python/python-pyproject/src/com/intellij/python/pyproject/model/spi/Tool.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.python.pyproject.model.pyprojectmanager"/></include> | [`PyProjectManager`](%gh-ic%/python/python-pyproject/src/com/intellij/python/pyproject/model/spi/PyProjectManager.kt) |
 
 ### intellij.python.pytools.xml
 

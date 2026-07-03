@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: df76278860ecaa8907a8f72d689ddbcb0c359ecc -->
+<!-- Revision: e9abd8bfa3ed8166625bad10b0c57a2103204b7e -->
 
 <!--
 EP List Directories:
@@ -19,7 +19,7 @@ EXCLUDING:
 
 <snippet id="content">
 
-1376 Extension Points and 247 Listeners
+1380 Extension Points and 248 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -258,6 +258,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.intentionAction"/></include> | [`CommonIntentionAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/CommonIntentionAction.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.documentationProvider"/></include> ![Obsolete][obsolete] | [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.localInspection"/></include> ![DumbAware][dumb-aware] | [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newRdCompletionVeto"/></include> ![Internal][internal] | [`NewRdCompletionVeto`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/NewRdCompletionVeto.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.weigher"/></include> | [`Weigher`](%gh-ic%/platform/analysis-api/src/com/intellij/psi/Weigher.java) |
 
 ### Analysis.xml
@@ -346,6 +347,14 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.postFormatProcessor"/></include> | [`PostFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PostFormatProcessor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.postQuickFixTaskService"/></include> ![Internal][internal] | [`PostQuickFixTaskService`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/service/PostQuickFixTaskService.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.preFormatProcessor"/></include> | [`PreFormatProcessor`](%gh-ic%/platform/code-style-api/src/com/intellij/psi/impl/source/codeStyle/PreFormatProcessor.java) |
+
+### com.intellij.platform.images
+
+[`com.intellij.platform.images`](%gh-ic%/images/resources/META-INF/plugin.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.images.svgImageViewerProvider"/></include> | [`SvgImageViewerProvider`](%gh-ic%/images/src/org/intellij/images/editor/impl/SvgImageViewerProvider.kt) |
 
 ### com.intellij.smartUpdate
 
@@ -839,7 +848,8 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editor.interLineBreakpointConfigurationProvider"/></include> ![Internal][internal] | [`InterLineBreakpointConfigurationProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/editor/impl/InterLineBreakpointConfigurationProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorEmptyTextPromotedActionProvider"/></include> ![Internal][internal] | [`EditorEmptyTextPromotedActionProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/EditorEmptyTextPromotedActionProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorEmptyStateComponentProvider"/></include> ![Internal][internal] | [`EditorEmptyStateComponentProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/EditorEmptyStateComponentProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.editorEmptyTextProvider"/></include> ![Internal][internal] | [`EditorEmptyTextProvider`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/fileEditor/impl/EditorEmptyTextProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.imageReaderWriterSpi"/></include> | `IIOServiceProvider` |
 
 ### intellij.platform.ide.newUiOnboarding.xml
@@ -1014,8 +1024,15 @@ EXCLUDING:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.recentFiles.advertisementProvider"/></include> ![Internal][internal] | [`RecentFilesAdvertisementProvider`](%gh-ic%/platform/recentFiles/frontend/src/com/intellij/platform/recentFiles/frontend/RecentFilesAdvertisementProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.recentFiles.excluder"/></include> ![Internal][internal] | [`RecentFilesExcluder`](%gh-ic%/platform/recentFiles/frontend/src/com/intellij/platform/recentFiles/frontend/RecentFilesExcluder.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.recentFiles.navigator"/></include> ![Internal][internal] | [`RecentFilesNavigator`](%gh-ic%/platform/recentFiles/frontend/src/com/intellij/platform/recentFiles/frontend/RecentFilesNavigator.kt) |
+
+### intellij.platform.recentFiles.xml
+
+[`intellij.platform.recentFiles.xml`](%gh-ic%/platform/recentFiles/shared/resources/intellij.platform.recentFiles.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.recentFiles.excluder"/></include> ![Internal][internal] | [`RecentFilesExcluder`](%gh-ic%/platform/recentFiles/shared/src/com/intellij/platform/recentFiles/shared/RecentFilesExcluder.kt) |
 
 ### intellij.platform.remoteServers.impl.xml
 
@@ -1946,6 +1963,7 @@ EXCLUDING:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newProjectWizard.language"/></include> ![Deprecated][deprecated] ![Internal][internal] | [`LanguageNewProjectWizard`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/LanguageNewProjectWizard.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.newProjectWizard.languageGenerator"/></include> | [`LanguageGeneratorNewProjectWizard`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/language/LanguageGeneratorNewProjectWizard.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.nonLockedIdeEventQueueDispatcher"/></include> | [`NonLockedEventDispatcher`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/IdeEventQueue.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.nonModalSettingsPolicy"/></include> ![Internal][internal] | [`NonModalSettingsPolicy`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/NonModalSettingsPolicy.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.nonProjectFileWritingAccessExtension"/></include> ![Project-Level][project-level] | [`NonProjectFileWritingAccessExtension`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/NonProjectFileWritingAccessExtension.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.notification.group"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.notification.parentGroup"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
@@ -2252,6 +2270,7 @@ EXCLUDING:
 
 | Topic | Listener |
 |-------|----------|
+| [`ExternalSystemAutoImportAwareListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.externalSystem.autoimport.ExternalSystemAutoImportAwareListener)  ![Internal][internal] ![Project-Level][project-level] | [`ExternalSystemAutoImportAwareListener`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/autoimport/ExternalSystemAutoImportAwareListener.kt) |
 | [`ExternalSystemProjectNotificationAware#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.externalSystem.autoimport.ExternalSystemProjectNotificationAware.Listener)  | [`Listener`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/autoimport/ExternalSystemProjectNotificationAware.kt) |
 | [`ProjectDataImportListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.openapi.externalSystem.service.project.manage.ProjectDataImportListener)  ![Project-Level][project-level] | [`ProjectDataImportListener`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/service/project/manage/ProjectDataImportListener.java) |
 | [`ExternalSystemTestUtil#SETTINGS_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.platform.externalSystem.testFramework.TestExternalSystemSettingsListener)  | [`TestExternalSystemSettingsListener`](%gh-ic%/platform/external-system-api/testFramework/src/com/intellij/platform/externalSystem/testFramework/TestExternalSystemSettingsListener.java) |

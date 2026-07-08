@@ -12,6 +12,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2026
 
+### July
+{#july-26}
+
+Error Reporting
+: Add a new page with details about [](error_reporting.md).
+
 ### March
 {#march-26}
 

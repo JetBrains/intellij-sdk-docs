@@ -97,8 +97,10 @@ The `submit()` method receives the [`IdeaLoggingEvent`](%gh-ic%/platform/platfor
 This is the main integration point for building a custom payload for an issue tracker or backend service.
 
 If `submit()` returns `true`, the submitter is declaring that the submission has started and the callback will be completed later.
-The callback must eventually receive a `SubmittedReportInfo` stating if a `NEW_ISSUE` has been filed, the report was a
-`DUPLICATE`, or if the submission has `FAILED` altogether.
+The callback must eventually receive a `SubmittedReportInfo` with the proper `SubmissionStatus`:
+- `NEW_ISSUE` - if the issue has been successfully filed
+- `DUPLICATE` - if the issue is actually a duplicate of the existing one
+- `FAILED` - if the submission failed
 
 If submission cannot even start, you must return `false` from `submit()`.
 

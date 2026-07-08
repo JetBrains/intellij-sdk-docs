@@ -218,8 +218,11 @@ Plugins should still keep sink processing short, deduplicate repeated failures, 
 
 ## Choosing Between the APIs
 
-Use `ErrorReportSubmitter` when the user should explicitly submit the report, when the plugin needs the user comment,
-when a custom privacy notice or account-aware reporting is required, or when the backend expects a richer user-facing reporting flow.
+Use `ErrorReportSubmitter` when:
+- the user should explicitly submit the report
+- the plugin needs the user comment
+- a custom privacy notice or account-aware reporting is required
+- the backend expects a richer user-facing reporting flow
 
 Use `ErrorReportSink` when:
 - the plugin should observe failures even if the user does nothing

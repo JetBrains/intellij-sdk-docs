@@ -212,8 +212,10 @@ Plugins should still keep sink processing short, deduplicate repeated failures, 
 Use `ErrorReportSubmitter` when the user should explicitly submit the report, when the plugin needs the user comment,
 when a custom privacy notice or account-aware reporting is required, or when the backend expects a richer user-facing reporting flow.
 
-Use `ErrorReportSink` when the plugin should observe failures even if the user does nothing, when the goal is telemetry,
-counting, alerting, or best-effort backend forwarding, or when automatic freeze visibility is important.
+Use `ErrorReportSink` when:
+- the plugin should observe failures even if the user does nothing
+- the goal is telemetry, counting, alerting, or best-effort backend forwarding
+- automatic freeze visibility is important
 
 Use both APIs when the plugin needs background observability during normal usage and also a richer user-driven reporting path for manual submission.
 

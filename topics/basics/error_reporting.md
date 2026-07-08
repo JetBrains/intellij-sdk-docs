@@ -183,7 +183,7 @@ Register it in <path>plugin.xml</path>:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
-  <errorReportSink implementation="my.plugin.MyErrorReportSink"/>
+  <errorReportSink implementation="com.example.MyErrorReportSink"/>
 </extensions>
 ```
 

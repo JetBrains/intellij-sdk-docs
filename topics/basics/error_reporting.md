@@ -205,8 +205,9 @@ class MyErrorReportSink : ErrorReportSink {
 }
 ```
 
-`ErrorReportSink` currently delivers two report types. `UnhandledExceptionReport` contains the exception class and stack trace.
-`UnhandledFreezeReport` contains a message, the freeze duration, attachments, and thread dumps.
+`ErrorReportSink` currently delivers two report types:
+- `UnhandledExceptionReport` contains the exception class and stack trace
+- `UnhandledFreezeReport` contains a message, the freeze duration, attachments, and thread dumps
 
 `ErrorReportSink` is intended for plugin observability, not guaranteed report delivery.
 Bundled IDE plugins are not notified about their errors, at most 10,000 exception reports per plugin per IDE session are forwarded,

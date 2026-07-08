@@ -83,11 +83,15 @@ The IDE will show fatal errors caught by itself as well as logging messages with
 
 For the latter, reporting is disabled by default — instead, there's an option to disable the plugin causing the exception.
 
-To let users report such errors to the vendor, plugins can use one of the solutions:
+To let plugins report errors, you can use the following supported solutions:
+
 - Use [JetBrains Exception Analyzer (EA)](https://plugins.jetbrains.com/docs/marketplace/exception-analyzer.html) that sends errors to the backend provided by JetBrains (2023.3+).
 - Implement custom [`ErrorReportSubmitter`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/ErrorReportSubmitter.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.errorHandler"/></include>.
-Existing implementations range from pre-filling web-based issue tracker forms to fully automated submission to log monitoring systems.
-This [tutorial](https://www.plugin-dev.com/intellij/general/error-reporting/) also offers a working solution for using _Sentry_.
+- For automatic background observability, plugins can also implement experimental [`ErrorReportSink`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/ErrorReportSink.kt) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.errorReportSink"/></include>.
+
+For the complete setup and API details, see [](error_reporting.md).
+That page explains when to use `ErrorReportSubmitter` or `ErrorReportSink`,
+how to submit reports without freezing the UI, and why freeze-specific attachments matter.
 
 The red exclamation notification icon in the status bar is controlled with the `idea.fatal.error.notification` system property.
 The property can be edited in <path>idea.properties</path> file opened with <ui-path>Help | Edit Custom Properties...</ui-path>:

@@ -91,7 +91,9 @@
       <toc-element topic="messaging_infrastructure.md"/>
       <!--<toc-element toc-title="Queries and Query Executors"/>--><!--TODO-->
     </toc-element>
-    <toc-element topic="ide_infrastructure.md"/>
+    <toc-element topic="ide_infrastructure.md">
+      <toc-element topic="error_reporting.md"/>
+    </toc-element>
     <toc-element topic="user_interface_components.md">
       <toc-element topic="tool_windows.md"/>
       <toc-element topic="dialog_wrapper.md"/>

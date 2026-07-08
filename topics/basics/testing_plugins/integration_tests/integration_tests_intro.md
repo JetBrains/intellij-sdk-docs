@@ -113,7 +113,7 @@ class PluginTest {
   fun simpleTestWithoutProject() {
     Starter.newContext(
       testName = "testExample",
-      TestCase(IdeProductProvider.IC, projectInfo = NoProject)
+      TestCase(IdeInfo.IdeaUltimate, projectInfo = NoProject)
     ).apply {
       val pathToPlugin = System.getProperty("path.to.build.plugin")
       PluginConfigurator(this).installPluginFromDir(Path.of(pathToPlugin))
@@ -127,11 +127,33 @@ Let's break down each part of the test:
 
 ### 1. Context Creation
 
+<tabs>
+
+<tab title="262+">
+
+```kotlin
+Starter.newContext(
+  testName = "testExample",
+  TestCase(IdeInfo.IdeaUltimate, projectInfo = NoProject))
+```
+
+</tab>
+
+<tab title="Pre-262">
+
 ```kotlin
 Starter.newContext(
   testName = "testExample",
   TestCase(IdeProductProvider.IU, projectInfo = NoProject))
 ```
+
+</tab>
+
+</tabs>
+
+> Starting with version 262, the recommended way to indicate the IDE has changed from `IdeProductProvider.IU` to `IdeInfo.IdeaUltimate`.
+>
+{style="note"}
 
 The Context object stores IDE runtime configuration:
 
@@ -139,12 +161,27 @@ The Context object stores IDE runtime configuration:
 * Project configuration (using `NoProject` for this example).
 * Custom VM options, paths, and SDK settings.
 
-Starting with version 262, the recommended IDE indication has been changed IdeProductProvider.IU -> IdeInfo.IdeaUltimate
+By default, the IDE version provided by the sandbox is used for tests. A different version can be specified with:
 
-By default, the IDE version provided by the sandbox is used for tests. Different version can be specified with
+<tabs>
+
+<tab title="262+">
+
+```kotlin
+TestCase(IdeInfo.IdeaUltimate, projectInfo = NoProject).withVersion("2024.3")
+```
+
+</tab>
+
+<tab title="Pre-262">
+
 ```kotlin
 TestCase(IdeProductProvider.IU, projectInfo = NoProject).withVersion("2024.3")
 ```
+
+</tab>
+
+</tabs>
 
 The `testName` parameter defines the folder name for test artifacts, which is useful when running multiple IDE instances in a single test.
 The test case starts the IDE without any project, so the welcome screen will be shown.
@@ -238,13 +275,15 @@ fun simpleTest() {
   Starter.newContext(
     "testExample",
     TestCase(
-      IdeProductProvider.IC,
+      IdeInfo.IdeaUltimate,
       GitHubProject.fromGithub(
         branchName = "master",
         repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"
       )
     )
   ).apply {
+    val pathToPlugin = System.getProperty("path.to.build.plugin")
+    PluginConfigurator(this).installPluginFromDir(Path.of(pathToPlugin))
   }.runIdeWithDriver().useDriverAndCloseIde {
     waitForIndicators(5.minutes)
   }
@@ -345,7 +384,7 @@ class PluginTest {
     val result = Starter.newContext(
       "testExample",
       TestCase(
-        IdeProductProvider.IU,
+        IdeInfo.IdeaUltimate,
         GitHubProject.fromGithub(
           branchName = "master",
           repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"

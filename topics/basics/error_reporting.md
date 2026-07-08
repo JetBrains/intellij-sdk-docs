@@ -102,7 +102,7 @@ The callback must eventually receive a `SubmittedReportInfo` with the proper `Su
 - `DUPLICATE` - if the issue is actually a duplicate of the existing one
 - `FAILED` - if the submission failed
 
-If submission cannot even start, you must return `false` from `submit()`.
+If submission cannot even start, `submit()` must return `false`.
 
 > Do not leave the callback unfinished after returning `true`.
 > The IDE uses that callback to update the reporting UI and final submission state.

@@ -89,7 +89,11 @@ Where:
 - `getPrivacyNoticeText()` must explain to users what data is sent and how it is used
 - `submit()` performs the actual submission
 
-The `submit()` method receives the [`IdeaLoggingEvent`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/IdeaLoggingEvent.java) data selected for the report, the free-form text entered by the user in the comment box as `additionalInfo`, a `parentComponent` for any necessary interaction, and a `consumer` callback that must receive the final [`SubmittedReportInfo`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/SubmittedReportInfo.java). An `IdeaLoggingEvent` gives access to the core report data, such as the throwable, message text, and attachments included in the report.
+The `submit()` method receives the [`IdeaLoggingEvent`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/IdeaLoggingEvent.java) data selected for the report:
+- events - `IdeaLoggingEvent` instances give access to the core report data, such as the throwable, message text, and attachments included in the report
+- `additionalInfo` - the free-form text entered by the user in the comment box as 
+- `parentComponent` - for any necessary interaction
+- `consumer` - callback that must receive the final [`SubmittedReportInfo`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/SubmittedReportInfo.java).
 This is the main integration point for building a custom payload for an issue tracker or backend service.
 
 If `submit()` returns `true`, the submitter is declaring that submission has started and the callback will be completed later.

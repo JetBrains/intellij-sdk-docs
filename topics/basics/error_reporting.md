@@ -96,7 +96,7 @@ The `submit()` method receives the [`IdeaLoggingEvent`](%gh-ic%/platform/platfor
 - `consumer` - callback that must receive the final [`SubmittedReportInfo`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/SubmittedReportInfo.java).
 This is the main integration point for building a custom payload for an issue tracker or backend service.
 
-If `submit()` returns `true`, the submitter is declaring that submission has started and the callback will be completed later.
+If `submit()` returns `true`, the submitter is declaring that the submission has started and the callback will be completed later.
 The callback must eventually receive a `SubmittedReportInfo` stating if a `NEW_ISSUE` has been filed, the report was a
 `DUPLICATE`, or if the submission has `FAILED` altogether.
 

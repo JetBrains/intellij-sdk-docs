@@ -84,8 +84,10 @@ class MyErrorReportSubmitter : ErrorReportSubmitter() {
 }
 ```
 
-Here, `getReportActionText()` defines the text shown on the report button in the reporting UI,
-`getPrivacyNoticeText()` must explain to users what data is sent and how it is used, and `submit()` performs the actual submission.
+Where:
+- `getReportActionText()` defines the text shown on the report button in the reporting UI
+- `getPrivacyNoticeText()` must explain to users what data is sent and how it is used
+- `submit()` performs the actual submission
 
 The `submit()` method receives the [`IdeaLoggingEvent`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/IdeaLoggingEvent.java) data selected for the report, the free-form text entered by the user in the comment box as `additionalInfo`, a `parentComponent` for any necessary interaction, and a `consumer` callback that must receive the final [`SubmittedReportInfo`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/SubmittedReportInfo.java). An `IdeaLoggingEvent` gives access to the core report data, such as the throwable, message text, and attachments included in the report.
 This is the main integration point for building a custom payload for an issue tracker or backend service.

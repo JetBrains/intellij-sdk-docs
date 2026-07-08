@@ -83,7 +83,7 @@ The IDE will show fatal errors caught by itself as well as logging messages with
 
 For the latter, reporting is disabled by default — instead, there's an option to disable the plugin causing the exception.
 
-To let plugins report errors, you can use the following supported solutions:
+To let plugins report errors, the following solutions are available:
 
 - Use [JetBrains Exception Analyzer (EA)](https://plugins.jetbrains.com/docs/marketplace/exception-analyzer.html) that sends errors to the backend provided by JetBrains (2023.3+).
 - Implement custom [`ErrorReportSubmitter`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/ErrorReportSubmitter.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.errorHandler"/></include>.

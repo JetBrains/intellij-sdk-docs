@@ -174,6 +174,14 @@ The most reliable way to do this is to perform `click` on the component first.
 >
 {style="note"}
 
+## Invoking UI Actions
+
+There is a shorthand method to trigger actions from tests in Test SDK:
+
+```kotlin
+driver.invokeAction("SearchEverywhere")
+```
+
 ## Asserting Properties
 
 The complete UI test:
@@ -221,3 +229,23 @@ The test does the following:
    The `shouldBe` method waits 15 seconds until the condition is met and can be used to assert various properties.
 5. Checking list contents by accessing the `rawItems` property to get all list items and asserting `backup-data` exists in the list.
 6. Including the full list content in the error message for debugging.
+
+## Waiting
+
+There are two ways to wait for a condition with a timeout:
+
+1. [Awaitility](https://github.com/awaitility/awaitility) library
+2. `should()` methods of UI components
+
+For common IDE states, the Test SDK also provides the following helpers:
+
+```kotlin
+// 1. there must be an opened project and all progresses finished
+waitForProjectOpen(timeout)
+
+// 2. all progresses must disappear from status bar
+waitForIndicators(project, timeout)
+
+// 3. daemon must finish analysis in a file
+waitForCodeAnalysis(file)
+```

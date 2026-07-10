@@ -234,7 +234,7 @@ They can be made accessible by implementing proper request [handlers](#event-han
 This approach requires implementing [`CefRequestHandler`](%gh-jcef-master%/org/cef/handler/CefRequestHandler.java), and [`CefResourceRequestHandler`](%gh-jcef-master%/org/cef/handler/CefResourceRequestHandler.java), which map resource paths to resource providers.
 
 Serving such resources is implemented by the Image Viewer component responsible for displaying SVG files in IntelliJ Platform-based IDEs.
-See [`JCefImageViewer`](%gh-ic%/images/src/org/intellij/images/editor/impl/jcef/JCefImageViewer.kt) and related classes for the implementation details.
+See [`JCefImageViewer`](%gh-ic%/images/jcef/src/com/intellij/platform/images/jcef/JCefImageViewer.kt) and related classes for the implementation details.
 
 ### Scrollbars Look and Feel
 

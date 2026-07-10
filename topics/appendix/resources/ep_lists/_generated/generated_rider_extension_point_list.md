@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: e9abd8bfa3ed8166625bad10b0c57a2103204b7e -->
+<!-- Revision: c34d79136fb2ce876164bfd441b226421ada30ad -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-170 Extension Points and 10 Listeners
+169 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -237,7 +237,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.filesIndexingRuleProvider"/></include> ![Non-Dynamic][non-dynamic] | `RiderFilesIndexingRuleProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.findPopupProjectScopeProvider"/></include> | `FindPopupProjectScopeProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.gameEngineAssetIndexProvider"/></include> ![Project-Level][project-level] | `IGameEngineAssetIndexProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.gameEngineInputSimulationProvider"/></include> ![Project-Level][project-level] | `IGameEngineInputSimulationProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.gameEngineSceneProvider"/></include> ![Project-Level][project-level] | `IGameEngineSceneProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.gameEngineScreenshotProvider"/></include> ![Project-Level][project-level] | `IGameEngineScreenshotProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.gameEngineViewportCameraProvider"/></include> ![Project-Level][project-level] | `IGameEngineViewportCameraProvider` |

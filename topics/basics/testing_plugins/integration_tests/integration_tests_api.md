@@ -10,6 +10,10 @@
 
 For introduction and setting up dependencies, refer to [](integration_tests_intro.md).
 
+The `com.intellij.driver.client.Driver` API provides a generic interface to call code in a running IntelliJ Platform-based IDE instance, such as service and utility methods.
+It connects to a process via [JMX](https://en.wikipedia.org/wiki/Java_Management_Extensions) protocol and creates remote proxies for classes of the running IDE.
+The main purpose of this API is to execute IDE actions and observe the state of the process in end-to-end testing.
+
 ## Java Management Extension
 
 The IDE and tests are running in different processes, which means some way to communicate between them is required.
@@ -195,6 +199,47 @@ service<ProjectManager>().getOpenProjects().singleOrNull()
 >
 {style="note"}
 
+## Contexts and Remote References
+
+Managing references to objects that reside in a separate JVM process is inherently non-trivial.
+To prevent memory leaks, Driver uses `java.lang.ref.WeakReference` for call results.
+
+Consider the following example:
+
+```kotlin
+val roots = driver.service(ProjectRootManager::class, driver.singleProject()).getContentRoots()
+val name = roots[0].getName() // may throw an error
+```
+
+In many cases, it throws an exception:
+
+> Weak reference to variable 12 expired. Please use `Driver.withContext { }` for hard variable references.
+>
+{style="warning"}
+
+To use a result later, there must be additional measures to preserve references between calls.
+Such measures are called context boundary:
+
+```kotlin
+driver.withContext {
+  val roots = service<ProjectRootManager>.getContentRoots()
+  val name = roots[0].getName() // always OK!
+
+  // results computed inside guaranteed to be alive till the end of the block
+}
+```
+
+Driver supports many nested context boundaries, and they can be used independently in helper methods, e.g.:
+
+```kotlin
+fun Driver.importGradleProject(project: Project? = null) {
+  withContext {
+    val forProject = project ?: singleProject()
+    this.utility(ImportGradleProjectUtil::class).importProject(forProject)
+  }
+}
+```
+
 ## JMX/RMI Limitations
 
 The main inconvenience of using JMX/RMI is that stubs need to be created for all objects which are used in tests.
@@ -210,4 +255,30 @@ As with any protocol, JMX/RMI has its limitations:
     * Lists of primitive values or `String` or `@Remote` references.
 * Only public methods can be called.
 * JMX/RMI can’t interact with suspend methods.
+
+## Connecting to a Running IDE
+
+The examples above obtain a `Driver` instance through Starter and `runIdeWithDriver()`.
+It is also possible to connect to an already running IDE manually.
+
+Driver uses JMX as the underlying protocol to call IDE code.
+To connect to an IDE via Driver, start it with the following VM Options:
+
+```bash
+-Dcom.sun.management.jmxremote=true
+-Dcom.sun.management.jmxremote.port=7777
+-Dcom.sun.management.jmxremote.rmi.port=5000
+-Dcom.sun.management.jmxremote.authenticate=false
+-Dcom.sun.management.jmxremote.ssl=false
+-Djava.rmi.server.hostname=<host-ip>
+```
+
+Then, a driver can be created to call the IDE:
+
+```kotlin
+val driver = Driver.create(JmxHost(null, null, "<host-ip>:7777"))
+assertTrue(driver.isConnected)
+println(driver.getProductVersion())
+driver.exitApplication()
+```
 

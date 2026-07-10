@@ -233,6 +233,18 @@ Integration tests operate across two separate processes:
 * IDE process:
     * Listens and executes commands from the test process.
 
+The IDE is driven by commands, which can be executed in two ways:
+
+1. Write a scenario to a file (a list of plain-text strings in a special format) and pass it to the IDE.
+2. Trigger a single command remotely with a JMX call (`Driver` implementation).
+
+In both cases, commands are executed via the
+[`performanceTestingPlugin`](%gh-ic%/plugins/performanceTesting) or its extension points.
+Despite its name, this plugin provides the command engine used for integration tests, not only performance tests.
+
+A list of basic out-of-the-box commands that comes with the `performanceTestingPlugin` is available in
+[`generalCommandChain`](%gh-ic%/plugins/performanceTesting/commands-model/src/com/intellij/tools/ide/performanceTesting/commands/generalCommandChain.kt).
+
 This dual-process architecture explains several key aspects of integration testing:
 
 * Why debugging requires special considerations.
@@ -339,6 +351,16 @@ The code above:
 * Provides `reportTestFailure` method which fails the test with detailed error information if any IDE exception is recorded during the test run.
 
 This extensibility pattern can be applied to customize other aspects of the Starter framework as needed.
+
+For finer-grained control, a test reports errors via
+[`ErrorReporter`](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/report/ErrorReporter.kt).
+The default implementation is
+[`ErrorReporterToCI`](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/report/ErrorReporterToCI.kt).
+To customize the header of the error message, provide a custom implementation of
+[`FailureDetailsOnCI`](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/report/FailureDetailsOnCI.kt),
+which is also registered via DI.
+
+For more ways to configure the Starter framework, see [](integration_tests_starter_config.md).
 
 ## Complete Example
 

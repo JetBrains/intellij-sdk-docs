@@ -390,8 +390,7 @@ class PluginTest {
           repoRelativeUrl = "JetBrains/ij-perf-report-aggregator"
         )
       )
-    ).apply {
-    }.runIdeWithDriver().useDriverAndCloseIde {
+    ).runIdeWithDriver().useDriverAndCloseIde {
       waitForIndicators(5.minutes)
     }
   }

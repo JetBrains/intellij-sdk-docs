@@ -133,7 +133,7 @@ The test case uses IntelliJ IDEA version 2024.3, and starts the IDE without any 
 ```kotlin
 .apply {
   val pathToPlugin = System.getProperty("path.to.build.plugin")
-  PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
+  PluginConfigurator(this).installPluginFromDir(Path.of(pathToPlugin))
 }
 ```
 
@@ -225,7 +225,7 @@ fun simpleTest() {
     ).withVersion("2024.2")
   ).apply {
     val pathToPlugin = System.getProperty("path.to.build.plugin")
-    PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
+    PluginConfigurator(this).installPluginFromDir(Path.of(pathToPlugin))
   }.runIdeWithDriver().useDriverAndCloseIde {
     waitForIndicators(5.minutes)
   }
@@ -318,7 +318,7 @@ class PluginTest {
       ).withVersion("2024.2")
     ).apply {
       val pathToPlugin = System.getProperty("path.to.build.plugin")
-      PluginConfigurator(this).installPluginFromFolder(File(pathToPlugin))
+      PluginConfigurator(this).installPluginFromDir(Path.of(pathToPlugin))
     }.runIdeWithDriver().useDriverAndCloseIde {
       waitForIndicators(5.minutes)
     }

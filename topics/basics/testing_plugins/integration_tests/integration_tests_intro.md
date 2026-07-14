@@ -123,7 +123,7 @@ class PluginTest {
 }
 ```
 
-Let's break down each part of the test:
+Each part of the test is described below:
 
 ### 1. Context Creation
 
@@ -233,18 +233,6 @@ Integration tests operate across two separate processes:
 * IDE process:
     * Listens and executes commands from the test process.
 
-The IDE is driven by commands, which can be executed in two ways:
-
-1. Write a scenario to a file (a list of plain-text strings in a special format) and pass it to the IDE.
-2. Trigger a single command remotely with a JMX call (`Driver` implementation).
-
-In both cases, commands are executed via the
-[`performanceTestingPlugin`](%gh-ic%/plugins/performanceTesting) or its extension points.
-Despite its name, this plugin provides the command engine used for integration tests, not only performance tests.
-
-A list of basic out-of-the-box commands that comes with the `performanceTestingPlugin` is available in
-[`generalCommandChain`](%gh-ic%/plugins/performanceTesting/commands-model/src/com/intellij/tools/ide/performanceTesting/commands/generalCommandChain.kt).
-
 This dual-process architecture explains several key aspects of integration testing:
 
 * Why debugging requires special considerations.
@@ -252,10 +240,55 @@ This dual-process architecture explains several key aspects of integration testi
 * Why a built plugin distribution is required.
 * The origin of certain test-specific exceptions.
 
+## Debugging the Test
+
+> If the `debugger.auto.attach.from.console` registry key is enabled,
+> the test can be run under the debugger in IntelliJ IDEA, and attachment happens automatically.
+>
+{style="tip"}
+
+Since the IDE runs as a separate process from the test, the test cannot be debugged directly.
+To debug a test, connect remotely to the IDE instance.
+
+General debugging workflow:
+
+1. Create a run configuration for <control>Remote JVM Debug</control>:
+  - <control>Debugger mode</control>: <control>Attach to Remote JVM</control>
+  - <control>Host</control>: `localhost`
+  - <control>Port</control>: `5005`
+  - <control>Command line arguments for remote JVM</control>: `-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005`
+2. Run the test.
+3. The required option will be added automatically.
+
+After seeing the console prompt to connect remotely to port 5005, run the created run configuration.
+
+## Modifying VM Options
+
+The IDE under test runs as a separate JVM process, and its startup flags (heap size, system properties, and other JVM options) can be adjusted from the test.
+
+VM options can be applied at two levels:
+
+* `IDETestContext.applyVMOptionsPatch()` applies them to the whole context, so they are reused across every run of that context.
+* `IDERunContext.addVMOptionsPatch()` applies them to the current run only.
+
+The patch block exposes a `VMOptions` receiver with helpers such as `withXmx()` and `addSystemProperty()`:
+
+```kotlin
+context.applyVMOptionsPatch {
+  withXmx(2048)
+  addSystemProperty("idea.trust.all.projects", true)
+  addSystemProperty("ide.show.tips.on.startup.default.value", false)
+}
+```
+
+* `withXmx(2048)` sets the maximum heap size to 2048 MB (`-Xmx2048m`), giving the IDE enough memory to open large projects.
+* `idea.trust.all.projects` trusts opened projects automatically, so the trust confirmation dialog does not block the test.
+* `ide.show.tips.on.startup.default.value` disables the <control>Tips of the Day</control> dialog on startup, so it does not interfere with UI interactions.
+
 ## Opening Projects in Tests
 
 While starting the IDE with an empty project is useful, often it is required to use actual projects to verify real-world scenarios.
-Let's modify the test to open a project.
+The test can be modified to open a project.
 
 The framework supports several ways to specify test projects:
 
@@ -311,7 +344,7 @@ While simple, this test verifies a critical aspect: the plugin doesn't interfere
 ## Catching Exceptions from IDE
 
 The test has one critical limitation: it won't detect exceptions or freezes occurring within the IDE process.
-Let's understand why and how to fix this.
+The reason and the fix are explained below.
 
 Due to the two-process architecture:
 
@@ -359,8 +392,6 @@ The default implementation is
 To customize the header of the error message, provide a custom implementation of
 [`FailureDetailsOnCI`](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/report/FailureDetailsOnCI.kt),
 which is also registered via DI.
-
-For more ways to configure the Starter framework, see [](integration_tests_starter_config.md).
 
 ## Complete Example
 

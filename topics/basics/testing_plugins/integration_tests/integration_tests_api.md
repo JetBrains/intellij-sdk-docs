@@ -10,15 +10,11 @@
 
 For introduction and setting up dependencies, refer to [](integration_tests_intro.md).
 
-The `com.intellij.driver.client.Driver` API provides a generic interface to call code in a running IntelliJ Platform-based IDE instance, such as service and utility methods.
-It connects to a process via [JMX](https://en.wikipedia.org/wiki/Java_Management_Extensions) protocol and creates remote proxies for classes of the running IDE.
-The main purpose of this API is to execute IDE actions and observe the state of the process in end-to-end testing.
-
 ## Java Management Extension
 
 The IDE and tests are running in different processes, which means some way to communicate between them is required.
 
-Driver framework uses Java Management Extensions (or JMX for short).
+Driver framework uses [Java Management Extensions](https://en.wikipedia.org/wiki/Java_Management_Extensions) (or JMX for short).
 JMX supports different connectors to manage the state of the JVM.
 Driver framework uses a standard Java Remote Method Invocation (RMI) protocol.
 This protocol allows tests to access objects and invoke methods in the JVM running the IDE.
@@ -282,3 +278,4 @@ println(driver.getProductVersion())
 driver.exitApplication()
 ```
 
+Example integration tests are available in the [ide-starter-examples](%gh-starter-examples-master%) repository.

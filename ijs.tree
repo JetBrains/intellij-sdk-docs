@@ -264,8 +264,6 @@
       <toc-element topic="integration_tests_intro.md" toc-title="Introduction"/>
       <toc-element topic="integration_tests_ui.md" toc-title="UI Testing"/>
       <toc-element topic="integration_tests_api.md" toc-title="API Interaction"/>
-      <toc-element topic="integration_tests_custom_commands.md" toc-title="Custom Commands"/>
-      <toc-element topic="integration_tests_starter_config.md" toc-title="Starter Configuration"/>
     </toc-element>
   </toc-element>
   <toc-element toc-title="Custom Languages">

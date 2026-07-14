@@ -42,6 +42,10 @@ This code demonstrates hierarchical navigation:
 3. Locate the <control>Search Everywhere</control> popup.
 4. Find and click the <control>Preview</control> button within the popup.
 
+`invokeAction()` triggers a registered IntelliJ Platform [action](action_system.md) directly by its action ID.
+In the example above, `SearchEverywhere` is the ID under which the _Search Everywhere_ action is registered.
+The action runs programmatically, the same way it would when invoked from a menu, toolbar, or keyboard shortcut, without simulating the underlying user gesture that would otherwise open the popup.
+
 The code could be more concise:
 
 ```kotlin
@@ -166,21 +170,13 @@ keyboard {
 }
 ```
 
-Keyboard methods perform presses using `java.awt.Robot` so to type to some particular component or invoke a shortcut in the appropriate place, you first need to make the component focused.
+Keyboard methods perform presses using `java.awt.Robot`, so to type into a particular component or invoke a shortcut in the appropriate place, the component must first be focused.
 The most reliable way to do this is to perform `click` on the component first.
 
 > On macOS, the interaction via `java.awt.Robot` requires special permissions.
 > IntelliJ IDEA should be granted the necessary permissions via the <control>Accessibility</control> page, which can be found under <ui-path>System Settings | Privacy & Security</ui-path>.
 >
 {style="note"}
-
-## Invoking UI Actions
-
-There is a shorthand method to trigger actions from tests in Test SDK:
-
-```kotlin
-driver.invokeAction("SearchEverywhere")
-```
 
 ## Asserting Properties
 

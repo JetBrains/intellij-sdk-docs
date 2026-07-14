@@ -301,6 +301,25 @@ The migration should be done according to the [migration guide](https://kotlin.g
 `org.jetbrains.kotlin.js.descriptorUtils.DescriptorUtilsKt.getNameIfStandardType(KotlinType)` method removed
 : [Migrate to K2 (Analysis API)](https://kotlin.github.io/analysis-api/migrating-from-k1.html).
 
+### CLion 2026.2
+
+The C/C++ language engine based on `com.intellij.cidr.lang` (CLion Classic) is no longer bundled with CLion.
+CLion Nova, based on the ReSharper C++ engine, is now the default and the only bundled C/C++ engine.
+The classic APIs remain available via the [C/C++ Language Support via Classic Engine](https://plugins.jetbrains.com/plugin/32355-c-c--language-support-via-classic-engine) plugin (ID `com.intellij.cidr.lang`).
+Plugins depending on these APIs must declare a dependency on the Marketplace plugin using [`plugin("com.intellij.cidr.lang", "<version>")`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#non-bundled-plugin).
+See [C/C++ Language Engine: Nova and Classic](clion.md#language-engine) for setup details and CLion Nova API replacements.
+
+`com.jetbrains.cidr.lang.OCFileType` class removed
+: The Classic C/C++ engine is no longer bundled. Depend on the [C/C++ Language Support via Classic Engine](https://plugins.jetbrains.com/plugin/32355-c-c--language-support-via-classic-engine) plugin to keep using it, or migrate to `com.jetbrains.rider.cpp.fileType.CppFileType` (CLion Nova).
+
+`com.jetbrains.cidr.lang.OCLanguage` class removed
+: The Classic C/C++ engine is no longer bundled. Depend on the [C/C++ Language Support via Classic Engine](https://plugins.jetbrains.com/plugin/32355-c-c--language-support-via-classic-engine) plugin to keep using it, or migrate to `com.jetbrains.rider.cpp.fileType.CppLanguage` (CLion Nova).
+
+`com.jetbrains.cidr.lang.psi.OCFile` class removed
+: Depend on the [C/C++ Language Support via Classic Engine](https://plugins.jetbrains.com/plugin/32355-c-c--language-support-via-classic-engine) plugin to keep using it, or use `com.jetbrains.rider.cpp.fileType.psi.CppFile` (CLion Nova) for file-level access only.
+
+CLion Nova has no frontend PSI, so the remaining `com.jetbrains.cidr.lang` classes — PSI, symbols, types, and resolve/references — have no replacement; depend on the Classic Engine plugin to keep using them.
+
 ## 2026.3
 
 ### IntelliJ Platform 2026.3

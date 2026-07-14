@@ -264,6 +264,7 @@
       <toc-element topic="integration_tests_intro.md" toc-title="Introduction"/>
       <toc-element topic="integration_tests_ui.md" toc-title="UI Testing"/>
       <toc-element topic="integration_tests_api.md" toc-title="API Interaction"/>
+      <toc-element topic="CHANGELOG.md"/>
     </toc-element>
   </toc-element>
   <toc-element toc-title="Custom Languages">

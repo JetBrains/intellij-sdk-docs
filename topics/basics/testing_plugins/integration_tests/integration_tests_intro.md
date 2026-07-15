@@ -457,3 +457,5 @@ This test provides a robust foundation for more elaborate tests by:
 * Waiting for all background processes to complete.
 * Monitoring for exceptions and freezes.
 * Performing a shutdown.
+
+Example integration tests are available in the [ide-starter-examples](%gh-starter-examples-master%) repository.

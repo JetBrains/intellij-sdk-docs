@@ -88,8 +88,8 @@ CLion provides two C/C++ language engines:
 * **Classic** – the original in-IDE engine, backed by the `com.intellij.cidr.lang` plugin and the `com.jetbrains.cidr.lang` APIs.
   Since CLion 2026.2, it is no longer bundled and is distributed only as a separate JetBrains Marketplace plugin.
 
-> The Classic engine plugin is provided as a temporary compatibility measure for existing plugins and will be removed in a future release.
-> Migrate to the Nova APIs where possible.
+> **The Classic C/C++ engine is deprecated.** Nova is the default engine, and the two are mutually exclusive, so a Classic-based plugin works only for users who switch back to Classic.
+> Target the Nova APIs for new plugins and migrate existing ones — otherwise their users remain stuck on Classic.
 >
 {style="warning"}
 

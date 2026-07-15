@@ -228,20 +228,74 @@ The test does the following:
 
 ## Waiting
 
-There are two ways to wait for a condition with a timeout:
+Integration tests often need to wait until the IDE reaches a certain state.
+The Test SDK provides its own waiting API with two families of methods:
 
-1. [Awaitility](https://github.com/awaitility/awaitility) library
-2. `should()` methods of UI components
+* `should()` methods on UI components, for asserting and waiting on a component state.
+* `waitFor()` methods, for waiting on arbitrary conditions and common IDE states.
 
-For common IDE states, the Test SDK also provides the following helpers:
+> Both families are provided by the Driver Test SDK itself and are unrelated to the [Awaitility](https://github.com/awaitility/awaitility) library, which can be used as an optional third-party alternative.
+>
+{style="note"}
+
+### `should()` Methods
+
+The Test SDK adds extension methods on UI components that poll a condition until it holds or the timeout elapses (`DEFAULT_FIND_TIMEOUT`, 15 seconds by default).
+Each method returns the same component, so calls can be chained, and a `WaitForException` is thrown when the condition is not met in time.
 
 ```kotlin
-// 1. there must be an opened project and all progresses finished
+// waits until the condition returns true
+component.should { isEnabled() }
+
+// same as should(); reads as a state assertion, often with a predefined condition
+component.shouldBe(enabled)
+
+// waits until the condition returns false
+component.shouldNot(present)
+
+// waits until the block runs without throwing; rethrows the last error on timeout
+component.shouldBeNoExceptions { /* assertions */ }
+```
+
+The condition can use one of the predefined checks: `enabled`, `notEnabled`, `present`, `notPresent`, or `focusOwner`.
+
+Specific component types add their own assertions, for example `JListUiComponent.shouldBeEqualTo()`, `JEditorUiComponent.shouldContainText()`, or `UiComponent.shouldHaveFocus()`.
+The full set of conditions and assertions is available in
+[`conditions.kt`](%gh-ic%/platform/remote-driver/test-sdk/src/com/intellij/driver/sdk/ui/conditions.kt).
+
+### `waitFor()` Methods
+
+The general-purpose `waitFor()` polls an arbitrary condition until it returns `true` or the timeout elapses (5 seconds by default, checked once per second), throwing `WaitForException` on timeout:
+
+```kotlin
+waitFor("the expected state description", timeout = 30.seconds) {
+  // return true once the expected state is reached
+}
+```
+
+For common IDE and UI states, the Test SDK provides ready-made helpers built on top of `waitFor()`:
+
+```kotlin
+// waits only until the Project reference becomes available (see the note below)
 waitForProjectOpen(timeout)
 
-// 2. all progresses must disappear from status bar
+// waits until the project is opened and no progress indicators remain for 10 seconds
 waitForIndicators(project, timeout)
 
-// 3. daemon must finish analysis in a file
-waitForCodeAnalysis(file)
+// waits until the code analysis daemon has finished analyzing the file
+waitForCodeAnalysis(file = file)
+
+// waits until no dialogs are open
+waitForNoOpenedDialogs()
 ```
+
+`waitForCodeAnalysis()` requires the `file` argument to be named, because the first parameter is an optional `Project`.
+
+> `waitForProjectOpen()` only guarantees that the `Project` reference is not `null`.
+> The UI, Project View, and services may still be uninitialized, which can lead to flaky tests.
+> To wait until the IDE is fully ready, prefer `waitForIndicators()`, which also waits for the project to open.
+>
+{style="warning"}
+
+The generic `waitFor()` and the IDE-state helpers are defined in the
+[`com.intellij.driver.sdk`](%gh-ic%/platform/remote-driver/test-sdk/src/com/intellij/driver/sdk) package and its subpackages.

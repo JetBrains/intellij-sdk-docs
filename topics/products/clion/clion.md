@@ -100,12 +100,6 @@ The classic C/C++ language support — including `OCFileType`, `OCLanguage`, `OC
 As this plugin is no longer bundled, declare a dependency on its Marketplace version using the [`plugin()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#non-bundled-plugin) function:
 
 ```kotlin
-repositories {
-  mavenCentral()
-  intellijPlatform {
-    defaultRepositories()
-  }
-}
 
 dependencies {
   intellijPlatform {

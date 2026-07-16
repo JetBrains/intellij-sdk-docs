@@ -242,7 +242,7 @@ This dual-process architecture explains several key aspects of integration testi
 
 ## Debugging the Test
 
-> If the `debugger.auto.attach.from.console` registry key is enabled,
+> If the `debugger.auto.attach.from.console` registry key is enabled (open <ui-path>Help | Find Action</ui-path> and search for Registry),
 > the test can be run under the debugger in IntelliJ IDEA, and attachment happens automatically.
 >
 {style="tip"}
@@ -264,7 +264,7 @@ After seeing the console prompt to connect remotely to port 5005, run the create
 
 ## Modifying VM Options
 
-The IDE under test runs as a separate JVM process, and its startup flags (heap size, system properties, and other JVM options) can be adjusted from the test.
+The VM options of the IDE under test (such as heap size or system properties) can be adjusted from the test.
 
 VM options can be applied at two levels:
 
@@ -281,7 +281,6 @@ context.applyVMOptionsPatch {
 }
 ```
 
-* `withXmx(2048)` sets the maximum heap size to 2048 MB (`-Xmx2048m`), giving the IDE enough memory to open large projects.
 * `idea.trust.all.projects` trusts opened projects automatically, so the trust confirmation dialog does not block the test.
 * `ide.show.tips.on.startup.default.value` disables the <control>Tips of the Day</control> dialog on startup, so it does not interfere with UI interactions.
 
@@ -384,14 +383,6 @@ The code above:
 * Provides `reportTestFailure` method which fails the test with detailed error information if any IDE exception is recorded during the test run.
 
 This extensibility pattern can be applied to customize other aspects of the Starter framework as needed.
-
-For finer-grained control, a test reports errors via
-[`ErrorReporter`](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/report/ErrorReporter.kt).
-The default implementation is
-[`ErrorReporterToCI`](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/report/ErrorReporterToCI.kt).
-To customize the header of the error message, provide a custom implementation of
-[`FailureDetailsOnCI`](%gh-ic%/tools/intellij.tools.ide.starter/src/com/intellij/ide/starter/report/FailureDetailsOnCI.kt),
-which is also registered via DI.
 
 ## Complete Example
 

@@ -42,9 +42,8 @@ This code demonstrates hierarchical navigation:
 3. Locate the <control>Search Everywhere</control> popup.
 4. Find and click the <control>Preview</control> button within the popup.
 
-`invokeAction()` triggers a registered IntelliJ Platform [action](action_system.md) directly by its action ID.
+`invokeAction()` triggers a registered IntelliJ Platform [action](action_system.md) directly by its action ID, without simulating a click or keyboard shortcut.
 In the example above, `SearchEverywhere` is the ID under which the _Search Everywhere_ action is registered.
-The action runs programmatically, the same way it would when invoked from a menu, toolbar, or keyboard shortcut, without simulating the underlying user gesture that would otherwise open the popup.
 
 The code could be more concise:
 
@@ -222,7 +221,7 @@ The test does the following:
 4. Using `shouldBe(<message>, present)` to ensure the list exists.
    This is important because `popup().jBlist` creates a lazy reference without actually checking the results.
    The actual check happens when `shouldBe` calls the `present` method.
-   The `shouldBe` method waits 15 seconds until the condition is met and can be used to assert various properties.
+   See [](#should-methods) for details on how `shouldBe()` waits for and asserts conditions.
 5. Checking list contents by accessing the `rawItems` property to get all list items and asserting `backup-data` exists in the list.
 6. Including the full list content in the error message for debugging.
 
@@ -233,10 +232,6 @@ The Test SDK provides its own waiting API with two families of methods:
 
 * `should()` methods on UI components, for asserting and waiting on a component state.
 * `waitFor()` methods, for waiting on arbitrary conditions and common IDE states.
-
-> Both families are provided by the Driver Test SDK itself and are unrelated to the [Awaitility](https://github.com/awaitility/awaitility) library, which can be used as an optional third-party alternative.
->
-{style="note"}
 
 ### `should()` Methods
 

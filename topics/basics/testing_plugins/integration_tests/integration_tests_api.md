@@ -197,7 +197,6 @@ service<ProjectManager>().getOpenProjects().singleOrNull()
 
 ## Contexts and Remote References
 
-Managing references to objects that reside in a separate JVM process is inherently non-trivial.
 To prevent memory leaks, Driver uses `java.lang.ref.WeakReference` for call results.
 
 Consider the following example:
@@ -213,25 +212,24 @@ In many cases, it throws an exception:
 >
 {style="warning"}
 
-To use a result later, there must be additional measures to preserve references between calls.
-Such measures are called context boundary:
+To keep results alive across calls, wrap them in a context:
 
 ```kotlin
 driver.withContext {
-  val roots = service<ProjectRootManager>.getContentRoots()
-  val name = roots[0].getName() // always OK!
+  val roots = service<ProjectRootManager>(singleProject()).getContentRoots()
+  val name = roots[0].getName()
 
-  // results computed inside guaranteed to be alive till the end of the block
+  // results computed inside are guaranteed to be alive until the end of the block
 }
 ```
 
-Driver supports many nested context boundaries, and they can be used independently in helper methods, e.g.:
+Contexts can be nested, and they can be used independently in helper methods, e.g.:
 
 ```kotlin
 fun Driver.importGradleProject(project: Project? = null) {
   withContext {
     val forProject = project ?: singleProject()
-    this.utility(ImportGradleProjectUtil::class).importProject(forProject)
+    utility(ImportGradleProjectUtil::class).importProject(forProject)
   }
 }
 ```
@@ -257,10 +255,9 @@ As with any protocol, JMX/RMI has its limitations:
 The examples above obtain a `Driver` instance through Starter and `runIdeWithDriver()`.
 It is also possible to connect to an already running IDE manually.
 
-Driver uses JMX as the underlying protocol to call IDE code.
 To connect to an IDE via Driver, start it with the following VM Options:
 
-```bash
+```
 -Dcom.sun.management.jmxremote=true
 -Dcom.sun.management.jmxremote.port=7777
 -Dcom.sun.management.jmxremote.rmi.port=5000
@@ -277,5 +274,3 @@ assertTrue(driver.isConnected)
 println(driver.getProductVersion())
 driver.exitApplication()
 ```
-
-Example integration tests are available in the [ide-starter-examples](%gh-starter-examples-master%) repository.

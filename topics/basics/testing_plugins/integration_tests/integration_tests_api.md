@@ -249,28 +249,3 @@ As with any protocol, JMX/RMI has its limitations:
     * Lists of primitive values or `String` or `@Remote` references.
 * Only public methods can be called.
 * JMX/RMI can’t interact with suspend methods.
-
-## Connecting to a Running IDE
-
-The examples above obtain a `Driver` instance through Starter and `runIdeWithDriver()`.
-It is also possible to connect to an already running IDE manually.
-
-To connect to an IDE via Driver, start it with the following VM Options:
-
-```
--Dcom.sun.management.jmxremote=true
--Dcom.sun.management.jmxremote.port=7777
--Dcom.sun.management.jmxremote.rmi.port=5000
--Dcom.sun.management.jmxremote.authenticate=false
--Dcom.sun.management.jmxremote.ssl=false
--Djava.rmi.server.hostname=<host-ip>
-```
-
-Then, a driver can be created to call the IDE:
-
-```kotlin
-val driver = Driver.create(JmxHost(null, null, "<host-ip>:7777"))
-assertTrue(driver.isConnected)
-println(driver.getProductVersion())
-driver.exitApplication()
-```

@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: c34d79136fb2ce876164bfd441b226421ada30ad -->
+<!-- Revision: 9db502cc722e2a68f4537c401575a8862f18923a -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-169 Extension Points and 10 Listeners
+168 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -295,7 +295,6 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.android.ndk.provider"/></include> | `AndroidNdkPathProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.multiplatform.remoteMacConnectionSupport"/></include> | `RemoteMacConnectionSupport` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.runConfigurationHandler"/></include> | `RunConfigurationHandlerBase` |
 
 ### RiderNuGet.xml

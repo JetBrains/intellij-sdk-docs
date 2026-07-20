@@ -78,6 +78,9 @@
             <p>Java version must be set depending on the target
                 <a href="build_number_ranges.md" anchor="platformVersions">platform version</a>.</p>
             <deflist type="narrow">
+                <def id="java_2026.2" title="2026.2+">
+                    Java 25
+                </def>
                 <def id="java_2024.2" title="2024.2+">
                     Java 21
                 </def>

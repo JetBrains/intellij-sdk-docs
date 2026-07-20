@@ -73,6 +73,12 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2026.3
 
+`com.intellij.openapi.projectRoots.Sdk` interface now extends `com.intellij.openapi.util.UserDataHolderEx` and inherits its abstract method `putUserDataIfAbsent(@NotNull Key<T> key, @NotNull T value)`
+: Do not implement `Sdk`: it is a non-extendable interface.
+
+`com.intellij.openapi.projectRoots.Sdk` interface now extends `com.intellij.openapi.util.UserDataHolderEx` and inherits its abstract method `replace(@NotNull Key<T> key, @Nullable T oldValue, @Nullable T newValue)`
+: Do not implement `Sdk`: it is a non-extendable interface.
+
 #### Kotlin UI DSL 1.0 Removal
 
 Kotlin UI DSL Version 1 (the `com.intellij.ui.layout` DSL entry points) has been completely removed.

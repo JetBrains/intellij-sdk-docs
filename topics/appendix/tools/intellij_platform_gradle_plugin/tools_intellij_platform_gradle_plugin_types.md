@@ -168,10 +168,10 @@ See also:
 - [Tasks: `printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases)
 
 
-## `ProductReleasesValueSource.FilterParameters`
-{#ProductReleasesValueSource-FilterParameters}
+## `ProductReleasesFilterParameters`
+{#ProductReleasesFilterParameters}
 
-[`ProductReleasesValueSource.FilterParameters`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/providers/ProductReleasesValueSource.kt)
+[`ProductReleasesValueSource`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/providers/ProductReleasesFilterParameters.kt)
 
 Interface that provides a clear way to filter binary product releases for IntelliJ Plugin Verifier.
 

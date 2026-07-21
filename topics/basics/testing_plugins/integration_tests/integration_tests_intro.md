@@ -252,15 +252,8 @@ To debug a test, connect remotely to the IDE instance.
 
 General debugging workflow:
 
-1. Create a run configuration for <control>Remote JVM Debug</control>:
-  - <control>Debugger mode</control>: <control>Attach to Remote JVM</control>
-  - <control>Host</control>: `localhost`
-  - <control>Port</control>: `5005`
-  - <control>Command line arguments for remote JVM</control>: `-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005`
-2. Run the test.
-3. The required option will be added automatically.
-
-After seeing the console prompt to connect remotely to port 5005, run the created run configuration.
+1. Run the test in debug mode.
+2. In the console, click the <control>Attach debugger</control> link that appears once the IDE starts listening for a debugger connection.
 
 ## Modifying VM Options
 

@@ -16,5 +16,4 @@ There are several important reasons to create integration tests, including:
 1. [](integration_tests_intro.md)
 2. [](integration_tests_ui.md)
 3. [](integration_tests_api.md)
-4. [](CHANGELOG.md)
 

@@ -208,9 +208,9 @@ val name = roots[0].getName() // may throw an error
 
 In many cases, it throws an exception:
 
-> Weak reference to variable 12 expired. Please use `Driver.withContext { }` for hard variable references.
->
-{style="warning"}
+```text
+Weak reference to variable x expired. Please use `Driver.withContext { }` for hard variable references.
+```
 
 To keep results alive across calls, wrap them in a context:
 

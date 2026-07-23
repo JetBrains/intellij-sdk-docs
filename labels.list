@@ -76,6 +76,9 @@
   <primary-label id="2026.1" short-name="2026.1+" name="2026.1+">
     Available in IDE version 2026.1 or later
   </primary-label>
+  <primary-label id="2026.2" short-name="2026.2+" name="2026.2+">
+    Available in IDE version 2026.2 or later
+  </primary-label>
 
   <secondary-label id="deprecated" name="Deprecated" color="red">
     This item is marked as deprecated.

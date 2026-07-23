@@ -42,7 +42,7 @@ This code demonstrates hierarchical navigation:
 3. Locate the <control>Search Everywhere</control> popup.
 4. Find and click the <control>Preview</control> button within the popup.
 
-`invokeAction()` triggers a registered IntelliJ Platform [action](action_system.md) directly by its action ID, without simulating a click or keyboard shortcut.
+`invokeAction()` triggers a registered [action](action_system.md) directly by its action ID, without simulating a click or keyboard shortcut.
 In the example above, `SearchEverywhere` is the ID under which the _Search Everywhere_ action is registered.
 
 The code could be more concise:
@@ -235,8 +235,8 @@ The Test SDK provides its own waiting API with two families of methods:
 
 ### `should()` Methods
 
-The Test SDK adds extension methods on UI components that poll a condition until it holds or the timeout elapses (`DEFAULT_FIND_TIMEOUT`, 15 seconds by default).
-Each method returns the same component, so calls can be chained, and a `WaitForException` is thrown when the condition is not met in time.
+The Test SDK adds extension methods on UI components that poll a condition until it holds or the timeout elapses (15 seconds by default).
+Each method returns the same component, so calls can be chained, and a [`WaitForException`](%gh-ic%/platform/remote-driver/test-sdk/src/com/intellij/driver/sdk/waits.kt) is thrown when the condition is not met in time.
 
 ```kotlin
 // waits until the condition returns true

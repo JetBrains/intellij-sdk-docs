@@ -242,24 +242,21 @@ This dual-process architecture explains several key aspects of integration testi
 
 ## Debugging the Test
 
-> If the `debugger.auto.attach.from.console` registry key is enabled (open <ui-path>Help | Find Action</ui-path> and search for Registry),
-> the test can be run under the debugger in IntelliJ IDEA, and attachment happens automatically.
+> To attach the debugger from the console to the test IDE instance automatically, enable the `debugger.auto.attach.from.console` registry key (open <ui-path>Help | Find Action</ui-path> and search for <control>Registry</control>).
 >
 {style="tip"}
 
 Since the IDE runs as a separate process from the test, the test cannot be debugged directly.
-To debug a test, connect remotely to the IDE instance.
+To debug a test, it is required to attach the debugger to the running IDE process.
 
 General debugging workflow:
 
 1. Run the test in debug mode.
-2. In the console, click the <control>Attach debugger</control> link that appears once the IDE starts listening for a debugger connection.
+2. In the <control>Console</control> tab of the <control>Debug</control> tool window, click the <control>Attach debugger</control> link that appears once the IDE starts listening for a debugger connection.
 
 ## Modifying VM Options
 
-The VM options of the IDE under test (such as heap size or system properties) can be adjusted from the test.
-
-VM options can be applied at two levels:
+The VM options of the IDE under test (such as heap size or system properties) can be adjusted from the test at two levels:
 
 * `IDETestContext.applyVMOptionsPatch()` applies them to the whole context, so they are reused across every run of that context.
 * `IDERunContext.addVMOptionsPatch()` applies them to the current run only.

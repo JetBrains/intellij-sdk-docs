@@ -89,7 +89,7 @@ A monolithic IDE is a single process.
 A split plugin works just fine in a monolithic IDE.
 The only difference is that both frontend and backend functionality are combined in the same process.
 
-IntelliJ Platform determines whether a particular module belongs to the frontend or the backend by examining its dependencies on the corresponding `intellij.platform.frontend` and `intellij.platform.frontend.backend` modules.
+IntelliJ Platform determines whether a particular module belongs to the frontend or the backend by examining its dependencies on the corresponding `intellij.platform.frontend` and `intellij.platform.backend` modules.
 If a dependency is not satisfied, the module does not get loaded.
 Both frontend and backend dependencies are satisfied when an IDE runs in monolithic mode.
 See [Plugin Management](plugin_management_in_split_mode.md) for more details.

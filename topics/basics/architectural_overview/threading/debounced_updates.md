@@ -1,6 +1,7 @@
 <!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Debouncing and Batching Updates
+<primary-label ref="2026.2"/>
 
 <link-summary>DebouncedUpdates is a utility for batching events over a time window and processing them after a delay, replacing the obsolete MergingUpdateQueue.</link-summary>
 

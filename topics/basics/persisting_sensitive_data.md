@@ -2,21 +2,66 @@
 
 # Persisting Sensitive Data
 
-<link-summary>Storing passwords, tokens, and other sensitive data securely with Credentials Store API.</link-summary>
+<link-summary>Storing passwords, tokens, and other sensitive data securely with the Credentials Store API.</link-summary>
 
-The Credentials Store API allows you to store sensitive user data securely, like passwords, server URLs, etc.
+The Credentials Store API stores sensitive user data securely, including passwords, API keys, private keys, and server URLs.
 
-## How to Use
-Use [`PasswordSafe`](%gh-ic%/platform/credential-store/src/ide/passwordSafe/PasswordSafe.kt) to work with credentials.
+Use [`PasswordSafe`](%gh-ic%/platform/credential-store/src/ide/passwordSafe/PasswordSafe.kt) to manage credentials.
+The required elements are:
 
-_Common Utility Method:_
+- a human-readable description of the credentials in the form of a _service name_,
+- _credential attributes_ (metadata) that include a service name and an optional username or other identity,
+- the actual credential value, such as a password or API key, usually as a `String`.
+
+This is a service-like class, and the [service retrieval rules apply](plugin_services.md#retrieving-a-service).
+
+## Human-Readable Description of Credentials with Service Names
+
+The [`generateServiceName()`](%gh-ic%/platform/credential-store/src/credentialStore/CredentialAttributes.kt) function available in the IntelliJ SDK API helps name credentials in a consistent way so that they can be easily recognized in password managers and when users are asked to allow the IDE to access a secret.
+Pass a subsystem name that identifies the plugin or its area of functionality, and a key that identifies the specific secret, such as an account name for a password or server name for an access token.
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
-private fun createCredentialAttributes(key: String): CredentialAttributes {
-  return CredentialAttributes(generateServiceName("MySystem", key))
+import com.intellij.credentialStore.generateServiceName
+
+val serviceName = generateServiceName("Password Storage Showcase", "john.doe")
+```
+</tab>
+<tab title="Java" group-key="java">
+
+```java
+String subsystem = "Password Storage Showcase";
+String serviceName = CredentialAttributesKt.generateServiceName(subsystem, "john.doe");
+```
+</tab>
+</tabs>
+
+This will generate the following service name:
+
+```text
+IntelliJ Platform Password Storage Showcase - john.doe
+```
+
+For example, such a service name appears in the macOS Keychain Access application as a keychain entry name.
+
+## Attaching Identity to Credentials with Credentials Attributes
+
+A [`CredentialAttributes`](%gh-ic%/platform/credential-store/src/credentialStore/CredentialAttributes.kt) instance wraps credential metadata.
+To store a username, account name or other identity, set it along with the service name.
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+import com.intellij.credentialStore.generateServiceName
+
+private const val SERVICE_NAME = "Password Storage Showcase"
+//...
+private fun credentialAttributesOf(username: String): CredentialAttributes {
+  val serviceName = generateServiceName(SERVICE_NAME, username)
+  return CredentialAttributes(serviceName, username)
 }
 ```
 
@@ -24,105 +69,301 @@ private fun createCredentialAttributes(key: String): CredentialAttributes {
 <tab title="Java" group-key="java">
 
 ```java
-private CredentialAttributes createCredentialAttributes(String key) {
-  return new CredentialAttributes(
-    CredentialAttributesKt.generateServiceName("MySystem", key)
-  );
+private static final String SERVICE_NAME = "Password Storage Showcase";
+
+// ...
+
+private static CredentialAttributes credentialAttributesOf(String username) {
+  String serviceName = CredentialAttributesKt.generateServiceName(SERVICE_NAME, username);
+  return new CredentialAttributes(serviceName, username);
 }
 ```
 
 </tab>
 </tabs>
 
-The [`generateServiceName()`](%gh-ic%/platform/credential-store/src/credentialStore/CredentialAttributes.kt) function helps name credentials in a consistent way so that they can be easily recognized in password managers and when users are asked to allow the IDE to access a secret.
-Consider passing a subsystem name that identifies the plugin or its area of functionality, and a key that identifies the specific secret (for example, account name for password, server name for access token, etc.).
-Examples:
+## Storing Passwords
 
-| Subsystem       | Key              | Generated Service Name                               |
-|-----------------|------------------|------------------------------------------------------|
-| MyService API   | joe.doe          | IntelliJ Platform MyService API — joe.doe            |
-| Acme Repository | example.com/repo | IntelliJ Platform Acme Repository — example.com/repo |
-
-
-### Retrieve Stored Credentials
+To store a `String`-based password, retrieve the `PasswordSafe` instance.
+Use the `setPassword()` method with credential attributes and the password value.
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
-val key = "serverURL" // e.g. serverURL, accountID
-val attributes = createCredentialAttributes(key)
-val passwordSafe = PasswordSafe.instance
-
-val credentials = passwordSafe.get(attributes)
-val password = credentials?.getPasswordAsString()
-
-// or get password only
-val passwordOnly = passwordSafe.getPassword(attributes)
+@Service
+class PasswordService {
+  suspend fun save(username: String, password: String) = withContext(Dispatchers.IO) {
+    val credentialAttributes: CredentialAttributes = credentialAttributesOf(username)
+    PasswordSafe.instance.setPassword(credentialAttributes, password)
+  }
+}
 ```
-
 </tab>
 <tab title="Java" group-key="java">
 
 ```java
-String key = null; // e.g. serverURL, accountID
-CredentialAttributes attributes = createCredentialAttributes(key);
-PasswordSafe passwordSafe = PasswordSafe.getInstance();
-
-Credentials credentials = passwordSafe.get(attributes);
-if (credentials != null) {
-  String password = credentials.getPasswordAsString();
+@Service
+public final class PasswordService {
+  @RequiresBackgroundThread
+  public void save(String username, String password) {
+    CredentialAttributes credentialAttributes = credentialAttributesOf(username);
+    PasswordSafe.getInstance().setPassword(credentialAttributes, password);
+  }
 }
-
-// or get password only
-String password = passwordSafe.getPassword(attributes);
 ```
-
 </tab>
 </tabs>
 
-> `PasswordSafe.get()` is blocking and shouldn't be called on EDT.
->
-{style="warning"}
+> The `setPassword()` method of `PasswordSafe` is blocking and must not be invoked on EDT.
+> In Kotlin, it is recommended to declare a [Light Service](plugin_services.md#light-services) with a suspending function that calls `PasswordSafe` methods on the I/O dispatcher.
+{style="warning" title="Do not use `PasswordSafe` on EDT"}
 
-#### Retrieving Credentials in Remote Development Context
+The password is persisted in [OS-specific storage](#storage).
 
-Since 2025.3, a new method was introduced in `PasswordSafe`:
+## Retrieving Passwords
+
+To retrieve a stored password, use the `getPassword()` method with a `CredentialAttributes` instance.
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+suspend fun find(username: String): String? = withContext(Dispatchers.IO) {
+  val credentialAttributes: CredentialAttributes = credentialAttributesOf(username)
+  PasswordSafe.instance.getPassword(credentialAttributes)
+}
+```
+</tab>
+<tab title="Java" group-key="java">
+
+```java
+@RequiresBackgroundThread
+public String find(String username) {
+  CredentialAttributes credentialAttributes = credentialAttributesOf(username);
+  return PasswordSafe.getInstance().getPassword(credentialAttributes);
+}
+```
+</tab>
+</tabs>
+
+> The `getPassword()` method of `PasswordSafe` is blocking and must not be invoked on EDT.
+{style="warning" title="Do not use `PasswordSafe` on EDT"}
+
+> `PasswordSafe` does not provide an API to retrieve all stored credentials,
+> nor does it allow retrieving all stored usernames or similar identites.
+> If the current user identity must be persisted, for example, authenticated user, store it separately using [](persisting_state_of_components.md).
+{style="note"}
+
+## API Key Management
+
+API key management is broadly similar to password management, with two distinct changes.
+
+1. The service name can be a constant string.
+2. The `userName` property in `CredentialAttributes` is not set.
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+@Service
+class ApiKeyService {
+
+  suspend fun save(apiKey: String) = withContext(Dispatchers.IO) {
+    PasswordSafe.instance.setPassword(credentialAttributes, apiKey)
+  }
+
+  suspend fun load(): String? = withContext(Dispatchers.IO) {
+    PasswordSafe.instance.getPassword(credentialAttributes)
+  }
+
+  companion object {
+    private val serviceName = generateServiceName("Credentials Showcase", "API Key")
+
+    private val credentialAttributes = CredentialAttributes(serviceName)
+  }
+}
+```
+</tab>
+<tab title="Java" group-key="java">
+
+```java
+@Service
+public final class ApiKeyService {
+
+  @RequiresBackgroundThread
+  public void save(String apiKey) {
+    PasswordSafe.getInstance().setPassword(CREDENTIAL_ATTRIBUTES, apiKey);
+  }
+
+  @RequiresBackgroundThread
+  public String load() {
+    return PasswordSafe.getInstance().getPassword(CREDENTIAL_ATTRIBUTES);
+  }
+
+  private static final String SERVICE_NAME =
+      CredentialAttributesKt.generateServiceName("Credentials Showcase", "API Key");
+
+  private static final CredentialAttributes CREDENTIAL_ATTRIBUTES =
+      new CredentialAttributes(SERVICE_NAME);
+}
+```
+</tab>
+</tabs>
+
+> The same rules for thread-safety apply: both methods must not be invoked on EDT.
+> Running these suspending functions on the correct dispatcher ensures correctness.
+{style="warning" title="Do not use `PasswordSafe` on EDT"}
+
+## Private Keys and Other Non-String Credentials
+
+When storing complex credentials that are not easily representable by strings, such as private keys, use map-like behavior of `PasswordSafe`.
+Use `CredentialAttributes` as keys, while `Credential` instances represent values.
+
+Use the following `PasswordSafe` methods:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+operator fun set(attributes: CredentialAttributes, credentials: Credentials?)
+operator fun get(attributes: CredentialAttributes): Credentials?
+```
+
+Both functions [allow `[key]` shorthand syntax](https://kotlinlang.org/docs/map-operations.html#retrieve-keys-and-values).
+</tab>
+<tab title="Java" group-key="java">
+
+```java
+public void set(CredentialAttributes attributes, @Nullable Credentials credentials);
+public @Nullable Credentials get(CredentialAttributes attributes);
+```
+</tab>
+</tabs>
+
+Construct a `Credential` instance that allows setting both the username and credential value from `String` instances, byte arrays, and char arrays.
+
+When retrieving `Credential` values, their credentials are represented by `OneTimeString`, a wrapper of sensitive data that can be used and cleared.
+Such string can be serialized to standard `String` instances, arrays of characters, or arrays of bytes.
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+@Service
+class PrivateKeyService {
+
+  suspend fun save(identity: String, privateKey: PrivateKey) = withContext(Dispatchers.IO) {
+    val credentialAttributes = credentialAttributesOf(identity)
+    privateKey.encoded?.let { keyBytes: ByteArray ->
+      PasswordSafe.instance[credentialAttributes] = Credentials(identity, keyBytes)
+    }
+  }
+
+  suspend fun find(identity: String): PrivateKey? = withContext(Dispatchers.IO) {
+    val credentialAttributes = credentialAttributesOf(identity)
+    val credentials: Credentials? = PasswordSafe.instance[credentialAttributes]
+    val keyBytes: ByteArray? = credentials?.password?.toByteArray()
+    keyBytes?.let {
+      loadPrivateKey(keyBytes)
+    }
+  }
+
+  private fun credentialAttributesOf(identity: String): CredentialAttributes
+    // see password management example
+
+  private fun loadPrivateKey(keyBytes: ByteArray): PrivateKey {
+    // implement as necessary
+  }
+}
+```
+</tab>
+<tab title="Java" group-key="java">
+
+```java
+@Service
+public final class PrivateKeyService {
+
+  @RequiresBackgroundThread
+  public void save(String identity, PrivateKey key) {
+    byte[] keyBytes = key.getEncoded();
+    if (keyBytes == null) {
+      return;
+    }
+
+    CredentialAttributes attributes = createCredentialAttributes(identity);
+    PasswordSafe.getInstance().set(attributes, new Credentials(identity, keyBytes));
+  }
+
+  @RequiresBackgroundThread
+  public PrivateKey find(String identity) {
+    CredentialAttributes credentialAttributes = createCredentialAttributes(identity)
+    Credentials credentials = PasswordSafe.getInstance().get(credentialAttributes);
+    if (credentials == null) {
+      return null;
+    }
+
+    OneTimeString password = credentials.getPassword();
+    if (password == null) {
+      return null;
+    }
+
+    byte[] keyBytes = password.toByteArray();
+    if (keyBytes == null) {
+      return null;
+    }
+    return loadPrivateKey(keyBytes);
+  }
+
+  private CredentialAttributes credentialAttributesOf(String identity) {
+    // see password management example
+  }
+
+  private PrivateKey loadPrivateKey(byte[] keyBytes) {
+    // implement as necessary
+  }
+}
+```
+</tab>
+</tabs>
+
+## Removing Credentials
+
+To remove stored credentials, pass `null` for the `credentials` parameter.
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+PasswordSafe.instance[credentialAttributesOf(identity)] = null
+```
+</tab>
+<tab title="Java" group-key="java">
+
+```java
+CredentialAttributes credentialAttributes = credentialAttributesOf(identity);
+PasswordSafe.getInstance().set(credentialAttributes, null);
+```
+</tab>
+</tabs>
+
+## Retrieving Credentials in Remote Development Context
+<primary-label ref="2025.3"/>
+
+For [Remote Development](https://www.jetbrains.com/help/idea/remote-development-overview.html), `PasswordSafe` provides an alternative way to retrieve credentials.
+
 ```kotlin
 suspend fun getAsync(attributes: CredentialAttributes): Ephemeral<Credentials>
 ```
 
 Besides being coroutine-friendly, it returns "ephemeral" credentials that are valid only while the client is connected to the backend in the [Remote Development](https://www.jetbrains.com/help/idea/remote-development-overview.html) context.
-When the client disconnects, the credentials are erased so that nothing can be done on the user's behalf without the user.
+When the client disconnects, the credentials are erased, preventing further actions on the user's behalf.
 
-### Store Credentials
-
-<tabs group="languages">
-<tab title="Kotlin" group-key="kotlin">
-
-```kotlin
-val attributes = createCredentialAttributes(key)
-val credentials = Credentials(username, password)
-PasswordSafe.instance.set(attributes, credentials)
-```
-
-</tab>
-<tab title="Java" group-key="java">
-
-```java
-CredentialAttributes attributes = createCredentialAttributes(key);
-Credentials credentials = new Credentials(username, password);
-PasswordSafe.getInstance().set(attributes, credentials);
-```
-
-</tab>
-</tabs>
-
-To remove stored credentials, pass `null` for the `credentials` parameter.
-
-> `PasswordSafe.set()` is blocking and shouldn't be called on EDT.
+> The `getAsync()` and `Ephemeral` APIs are under development
+> and experimental.
+> Some aspects of it may change in future releases.
 >
-{style="warning"}
+{style="warning" title="Experimental"}
 
 ## Storage
 
@@ -139,10 +380,10 @@ The default storage format depends on the OS.
 [linux]: https://specifications.freedesktop.org/secret-service-spec/latest/
 [linux2]: https://wiki.gnome.org/Projects/Libsecret
 
-Users can override the default behavior in <ui-path>Settings | Appearance & Behavior | System Settings | Passwords</ui-path>.
+The default behavior can be overridden in <ui-path>Settings | Appearance & Behavior | System Settings | Passwords</ui-path>.
 
 ### Storage in Remote Development Context
 
-Before 2025.3, passwords were stored on the backend side in plain text.
+Since 2025.3, credentials are transparently redirected to the frontend and stored according to the local environment and settings, such as KeePass or macOS Keychain.
 
-Since 2025.3, they are being transparently redirected to the frontend and are stored according to the local environment and settings (KeePass, keychain, etc.).
+Before 2025.3, credentials are stored on the backend side in plain text.

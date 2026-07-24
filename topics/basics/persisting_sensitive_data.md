@@ -82,10 +82,15 @@ private static CredentialAttributes credentialAttributesOf(String username) {
 </tab>
 </tabs>
 
-## Storing Passwords
+## Password Management
+
+### Storing Passwords
 
 To store a `String`-based password, retrieve the `PasswordSafe` instance.
-Use the `setPassword()` method with credential attributes and the password value.
+
+1. Generate [a service name](#human-readable-description-of-credentials-with-service-names).
+2. Create [credential attributes](#attaching-identity-to-credentials-with-credentials-attributes).
+3. Use the `setPassword()` method with [credential attributes](#attaching-identity-to-credentials-with-credentials-attributes) and the password value.
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -96,6 +101,10 @@ class PasswordService {
   suspend fun save(username: String, password: String) = withContext(Dispatchers.IO) {
     val credentialAttributes: CredentialAttributes = credentialAttributesOf(username)
     PasswordSafe.instance.setPassword(credentialAttributes, password)
+  }
+
+  private fun credentialAttributesOf(username: String): CredentialAttributes {
+    // see above for definition
   }
 }
 ```
@@ -110,6 +119,10 @@ public final class PasswordService {
     CredentialAttributes credentialAttributes = credentialAttributesOf(username);
     PasswordSafe.getInstance().setPassword(credentialAttributes, password);
   }
+
+  private CredentialAttributes credentialAttributesOf(String username) {
+    // see above for definition
+  }
 }
 ```
 </tab>
@@ -121,9 +134,13 @@ public final class PasswordService {
 
 The password is persisted in [OS-specific storage](#storage).
 
-## Retrieving Passwords
+### Retrieving Passwords
 
-To retrieve a stored password, use the `getPassword()` method with a `CredentialAttributes` instance.
+To retrieve a stored password,
+
+1. Generate [a service name](#human-readable-description-of-credentials-with-service-names).
+2. Create [credential attributes](#attaching-identity-to-credentials-with-credentials-attributes).
+3. Use the `getPassword()` method with these credential attributes to query for the password.
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -157,7 +174,7 @@ public String find(String username) {
 
 ## API Key Management
 
-API key management is broadly similar to password management, with two distinct changes.
+API key management is broadly similar to [password management](#password-management), with two distinct changes.
 
 1. The service name can be a constant string.
 2. The `userName` property in `CredentialAttributes` is not set.

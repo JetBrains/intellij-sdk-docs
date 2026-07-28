@@ -26,14 +26,16 @@ Pass a subsystem name that identifies the plugin or its area of functionality, a
 ```kotlin
 import com.intellij.credentialStore.generateServiceName
 
-val serviceName = generateServiceName("Password Storage Showcase", "john.doe")
+val serviceName = generateServiceName("My Password Storage", "john.doe")
 ```
 </tab>
 <tab title="Java" group-key="java">
 
 ```java
-String subsystem = "Password Storage Showcase";
-String serviceName = CredentialAttributesKt.generateServiceName(subsystem, "john.doe");
+import com.intellij.credentialStore.CredentialAttributesKt;
+
+String serviceName = CredentialAttributesKt
+    .generateServiceName("My Password Storage", "john.doe");
 ```
 </tab>
 </tabs>
@@ -41,7 +43,7 @@ String serviceName = CredentialAttributesKt.generateServiceName(subsystem, "john
 This will generate the following service name:
 
 ```text
-IntelliJ Platform Password Storage Showcase - john.doe
+IntelliJ Platform My Password Storage - john.doe
 ```
 
 For example, such a service name appears in the macOS Keychain Access application as a keychain entry name.
@@ -57,7 +59,7 @@ To store a username, account name or other identity, set it along with the servi
 ```kotlin
 import com.intellij.credentialStore.generateServiceName
 
-private const val SERVICE_NAME = "Password Storage Showcase"
+private const val SERVICE_NAME = "My Password Storage"
 //...
 private fun credentialAttributesOf(username: String): CredentialAttributes {
   val serviceName = generateServiceName(SERVICE_NAME, username)
@@ -69,7 +71,9 @@ private fun credentialAttributesOf(username: String): CredentialAttributes {
 <tab title="Java" group-key="java">
 
 ```java
-private static final String SERVICE_NAME = "Password Storage Showcase";
+import com.intellij.credentialStore.CredentialAttributesKt;
+
+private static final String SERVICE_NAME = "My Password Storage";
 
 // ...
 
@@ -86,7 +90,7 @@ private static CredentialAttributes credentialAttributesOf(String username) {
 
 ### Storing Passwords
 
-To store a `String`-based password, retrieve the `PasswordSafe` instance.
+To store a `String`-based password, use the `PasswordSafe` instance:
 
 1. Generate [a service name](#human-readable-description-of-credentials-with-service-names).
 2. Create [credential attributes](#attaching-identity-to-credentials-with-credentials-attributes).
@@ -136,7 +140,7 @@ The password is persisted in [OS-specific storage](#storage).
 
 ### Retrieving Passwords
 
-To retrieve a stored password,
+To retrieve a stored password:
 
 1. Generate [a service name](#human-readable-description-of-credentials-with-service-names).
 2. Create [credential attributes](#attaching-identity-to-credentials-with-credentials-attributes).
@@ -183,21 +187,19 @@ API key management is broadly similar to [password management](#password-managem
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
+private val SERVICE_NAME = generateServiceName(
+  "My Credentials Storage", "API Key")
 @Service
 class ApiKeyService {
 
   suspend fun save(apiKey: String) = withContext(Dispatchers.IO) {
+    val credentialAttributes = CredentialAttributes(serviceName)
     PasswordSafe.instance.setPassword(credentialAttributes, apiKey)
   }
 
   suspend fun load(): String? = withContext(Dispatchers.IO) {
+    val credentialAttributes = CredentialAttributes(serviceName)
     PasswordSafe.instance.getPassword(credentialAttributes)
-  }
-
-  companion object {
-    private val serviceName = generateServiceName("Credentials Showcase", "API Key")
-
-    private val credentialAttributes = CredentialAttributes(serviceName)
   }
 }
 ```
@@ -207,22 +209,25 @@ class ApiKeyService {
 ```java
 @Service
 public final class ApiKeyService {
+  private static final String SERVICE_NAME =
+    CredentialAttributesKt
+      .generateServiceName("My Credentials Storage", "API Key");
 
   @RequiresBackgroundThread
   public void save(String apiKey) {
-    PasswordSafe.getInstance().setPassword(CREDENTIAL_ATTRIBUTES, apiKey);
+    CredentialAttributes credentialAttributes =
+      new CredentialAttributes(SERVICE_NAME);
+    PasswordSafe.getInstance()
+      .setPassword(credentialAttributes, apiKey);
   }
 
   @RequiresBackgroundThread
   public String load() {
-    return PasswordSafe.getInstance().getPassword(CREDENTIAL_ATTRIBUTES);
-  }
-
-  private static final String SERVICE_NAME =
-      CredentialAttributesKt.generateServiceName("Credentials Showcase", "API Key");
-
-  private static final CredentialAttributes CREDENTIAL_ATTRIBUTES =
+    CredentialAttributes credentialAttributes =
       new CredentialAttributes(SERVICE_NAME);
+    return PasswordSafe.getInstance()
+      .getPassword(credentialAttributes);
+  }
 }
 ```
 </tab>
@@ -367,7 +372,7 @@ PasswordSafe.getInstance().set(credentialAttributes, null);
 ## Retrieving Credentials in Remote Development Context
 <primary-label ref="2025.3"/>
 
-For [Remote Development](https://www.jetbrains.com/help/idea/remote-development-overview.html), `PasswordSafe` provides an alternative way to retrieve credentials.
+For [Remote Development](https://www.jetbrains.com/help/idea/remote-development-overview.html), `PasswordSafe` provides an alternative way to retrieve credentials in Kotlin code.
 
 ```kotlin
 suspend fun getAsync(attributes: CredentialAttributes): Ephemeral<Credentials>
@@ -376,8 +381,9 @@ suspend fun getAsync(attributes: CredentialAttributes): Ephemeral<Credentials>
 Besides being coroutine-friendly, it returns "ephemeral" credentials that are valid only while the client is connected to the backend in the [Remote Development](https://www.jetbrains.com/help/idea/remote-development-overview.html) context.
 When the client disconnects, the credentials are erased, preventing further actions on the user's behalf.
 
-> The `getAsync()` and `Ephemeral` APIs are under development
-> and experimental.
+> The `getAsync()` and `Ephemeral` APIs are under development and experimental.
+> Additionally, there are available in Kotlin only.
+>
 > Some aspects of it may change in future releases.
 >
 {style="warning" title="Experimental"}
@@ -397,7 +403,7 @@ The default storage format depends on the OS.
 [linux]: https://specifications.freedesktop.org/secret-service-spec/latest/
 [linux2]: https://wiki.gnome.org/Projects/Libsecret
 
-The default behavior can be overridden in <ui-path>Settings | Appearance & Behavior | System Settings | Passwords</ui-path>.
+Users can override the default behavior <ui-path>Settings | Appearance & Behavior | System Settings | Passwords</ui-path>.
 
 ### Storage in Remote Development Context
 

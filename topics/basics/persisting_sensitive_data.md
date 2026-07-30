@@ -27,7 +27,7 @@ Pass a subsystem name that identifies the plugin or its area of functionality, a
 import com.intellij.credentialStore.generateServiceName
 
 val serviceName =
-    generateServiceName("My Password Storage", "john.doe")
+    generateServiceName("My Service", "john.doe")
 ```
 </tab>
 <tab title="Java" group-key="java">
@@ -36,7 +36,7 @@ val serviceName =
 import com.intellij.credentialStore.CredentialAttributesKt;
 
 String serviceName = CredentialAttributesKt
-    .generateServiceName("My Password Storage", "john.doe");
+    .generateServiceName("My Service", "john.doe");
 ```
 </tab>
 </tabs>
@@ -44,7 +44,7 @@ String serviceName = CredentialAttributesKt
 This will generate the following service name:
 
 ```text
-IntelliJ Platform My Password Storage - john.doe
+IntelliJ Platform My Service - john.doe
 ```
 
 For example, such a service name appears in the macOS Keychain Access application as a keychain entry name.
@@ -63,7 +63,7 @@ import com.intellij.credentialStore.generateServiceName
 //...
 
 private fun credentialAttributesOf(username: String): CredentialAttributes {
-  val serviceName = generateServiceName("My Password Storage", username)
+  val serviceName = generateServiceName("My Service", username)
   return CredentialAttributes(serviceName, username)
 }
 ```
@@ -78,7 +78,7 @@ import com.intellij.credentialStore.CredentialAttributesKt;
 
 private static CredentialAttributes credentialAttributesOf(String username) {
   String serviceName = CredentialAttributesKt
-      .generateServiceName("My Password Storage", username);
+      .generateServiceName("My Service", username);
   return new CredentialAttributes(serviceName, username);
 }
 ```

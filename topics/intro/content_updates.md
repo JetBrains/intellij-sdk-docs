@@ -22,7 +22,7 @@ Error Reporting
 : Add a new page with details about [](error_reporting.md).
 
 Debouncing and Batching Updates
-: Add a new page describing [how to debounce and batch events](debounced_updates.md) with [`DebouncedUpdates`](%gh-ic%/platform/ide-core/src/com/intellij/util/ui/update/DebouncedUpdates) - a builder API for debounced/throttled update queues.
+: Add a new page describing [how to debounce and batch events](debounced_updates.md) with [`DebouncedUpdates`](%gh-ic%/platform/ide-core/src/com/intellij/util/ui/update/DebouncedUpdates.kt) - a builder API for debounced/throttled update queues.
 
 ### March
 {#march-26}

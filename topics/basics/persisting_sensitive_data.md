@@ -376,6 +376,8 @@ For [Remote Development](https://www.jetbrains.com/help/idea/remote-development-
 suspend fun getAsync(attributes: CredentialAttributes): Ephemeral<Credentials>
 ```
 
+[//]: # (TODO: add Java example or state that it is possible only in Kotlin)
+
 Besides being coroutine-friendly, it returns "ephemeral" credentials that are valid only while the client is connected to the backend in the [Remote Development](https://www.jetbrains.com/help/idea/remote-development-overview.html) context.
 When the client disconnects, the credentials are erased, preventing further actions on the user's behalf.
 

@@ -26,7 +26,8 @@ Pass a subsystem name that identifies the plugin or its area of functionality, a
 ```kotlin
 import com.intellij.credentialStore.generateServiceName
 
-val serviceName = generateServiceName("My Password Storage", "john.doe")
+val serviceName =
+    generateServiceName("My Password Storage", "john.doe")
 ```
 </tab>
 <tab title="Java" group-key="java">
@@ -59,10 +60,10 @@ To store a username, account name or other identity, set it along with the servi
 ```kotlin
 import com.intellij.credentialStore.generateServiceName
 
-private const val SERVICE_NAME = "My Password Storage"
 //...
+
 private fun credentialAttributesOf(username: String): CredentialAttributes {
-  val serviceName = generateServiceName(SERVICE_NAME, username)
+  val serviceName = generateServiceName("My Password Storage", username)
   return CredentialAttributes(serviceName, username)
 }
 ```
@@ -73,12 +74,11 @@ private fun credentialAttributesOf(username: String): CredentialAttributes {
 ```java
 import com.intellij.credentialStore.CredentialAttributesKt;
 
-private static final String SERVICE_NAME = "My Password Storage";
-
 // ...
 
 private static CredentialAttributes credentialAttributesOf(String username) {
-  String serviceName = CredentialAttributesKt.generateServiceName(SERVICE_NAME, username);
+  String serviceName = CredentialAttributesKt
+      .generateServiceName("My Password Storage", username);
   return new CredentialAttributes(serviceName, username);
 }
 ```
@@ -102,9 +102,11 @@ To store a `String`-based password, use the `PasswordSafe` instance:
 ```kotlin
 @Service
 class PasswordService {
-  suspend fun save(username: String, password: String) = withContext(Dispatchers.IO) {
-    val credentialAttributes: CredentialAttributes = credentialAttributesOf(username)
-    PasswordSafe.instance.setPassword(credentialAttributes, password)
+  suspend fun save(username: String, password: String) {
+    withContext(Dispatchers.IO) {
+      PasswordSafe.instance
+          .setPassword(credentialAttributesOf(username), password)
+    }
   }
 
   private fun credentialAttributesOf(username: String): CredentialAttributes {
@@ -120,8 +122,8 @@ class PasswordService {
 public final class PasswordService {
   @RequiresBackgroundThread
   public void save(String username, String password) {
-    CredentialAttributes credentialAttributes = credentialAttributesOf(username);
-    PasswordSafe.getInstance().setPassword(credentialAttributes, password);
+    PasswordSafe.getInstance()
+        .setPassword(credentialAttributesOf(username), password);
   }
 
   private CredentialAttributes credentialAttributesOf(String username) {
@@ -151,8 +153,7 @@ To retrieve a stored password:
 
 ```kotlin
 suspend fun find(username: String): String? = withContext(Dispatchers.IO) {
-  val credentialAttributes: CredentialAttributes = credentialAttributesOf(username)
-  PasswordSafe.instance.getPassword(credentialAttributes)
+  PasswordSafe.instance.getPassword(credentialAttributesOf(username))
 }
 ```
 </tab>
@@ -161,8 +162,8 @@ suspend fun find(username: String): String? = withContext(Dispatchers.IO) {
 ```java
 @RequiresBackgroundThread
 public String find(String username) {
-  CredentialAttributes credentialAttributes = credentialAttributesOf(username);
-  return PasswordSafe.getInstance().getPassword(credentialAttributes);
+  return PasswordSafe.getInstance()
+      .getPassword(credentialAttributesOf(username));
 }
 ```
 </tab>
@@ -187,49 +188,47 @@ API key management is broadly similar to [password management](#password-managem
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
-private val SERVICE_NAME = generateServiceName(
-  "My Credentials Storage", "API Key")
 @Service
 class ApiKeyService {
+  private val serviceName =
+      generateServiceName("My Credentials Storage", "API Key")
 
   suspend fun save(apiKey: String) = withContext(Dispatchers.IO) {
-    val credentialAttributes = CredentialAttributes(serviceName)
-    PasswordSafe.instance.setPassword(credentialAttributes, apiKey)
+    PasswordSafe.instance
+        .setPassword(CredentialAttributes(serviceName), apiKey)
   }
 
   suspend fun load(): String? = withContext(Dispatchers.IO) {
-    val credentialAttributes = CredentialAttributes(serviceName)
-    PasswordSafe.instance.getPassword(credentialAttributes)
+    PasswordSafe.instance
+        .getPassword(CredentialAttributes(serviceName))
   }
 }
 ```
+
 </tab>
+
 <tab title="Java" group-key="java">
 
 ```java
 @Service
 public final class ApiKeyService {
-  private static final String SERVICE_NAME =
-    CredentialAttributesKt
+  private static final String SERVICE_NAME = CredentialAttributesKt
       .generateServiceName("My Credentials Storage", "API Key");
 
   @RequiresBackgroundThread
   public void save(String apiKey) {
-    CredentialAttributes credentialAttributes =
-      new CredentialAttributes(SERVICE_NAME);
     PasswordSafe.getInstance()
-      .setPassword(credentialAttributes, apiKey);
+        .setPassword(new CredentialAttributes(SERVICE_NAME), apiKey);
   }
 
   @RequiresBackgroundThread
   public String load() {
-    CredentialAttributes credentialAttributes =
-      new CredentialAttributes(SERVICE_NAME);
     return PasswordSafe.getInstance()
-      .getPassword(credentialAttributes);
+        .getPassword(new CredentialAttributes(SERVICE_NAME));
   }
 }
 ```
+
 </tab>
 </tabs>
 
@@ -319,7 +318,7 @@ public final class PrivateKeyService {
 
   @RequiresBackgroundThread
   public PrivateKey find(String identity) {
-    CredentialAttributes credentialAttributes = createCredentialAttributes(identity)
+    CredentialAttributes credentialAttributes = createCredentialAttributes(identity);
     Credentials credentials = PasswordSafe.getInstance().get(credentialAttributes);
     if (credentials == null) {
       return null;
@@ -363,8 +362,7 @@ PasswordSafe.instance[credentialAttributesOf(identity)] = null
 <tab title="Java" group-key="java">
 
 ```java
-CredentialAttributes credentialAttributes = credentialAttributesOf(identity);
-PasswordSafe.getInstance().set(credentialAttributes, null);
+PasswordSafe.getInstance().set(credentialAttributesOf(identity), null);
 ```
 </tab>
 </tabs>

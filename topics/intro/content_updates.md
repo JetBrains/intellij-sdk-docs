@@ -24,6 +24,17 @@ Error Reporting
 Debouncing and Batching Updates
 : Add a new page describing [how to debounce and batch events](debounced_updates.md) with [`DebouncedUpdates`](%gh-ic%/platform/ide-core/src/com/intellij/util/ui/update/DebouncedUpdates.kt) - a builder API for debounced/throttled update queues.
 
+Persisting Sensitive Data
+: Add more information about [persisting sensitive data](persisting_sensitive_data.md).
+
+Integration Tests
+: Update [](integration_tests.md) guide with information about new APIs, debugging, and more.
+
+Minor Changes and Additions
+:
+- Document [CLion Classic engine deprecation and migration hints](clion.md#language-engine).
+- Add a notice about sunsetting [Kotlin Notebooks](tools_kotlin_notebook.md) from IntelliJ IDEA 2026.2.
+
 ### March
 {#march-26}
 

@@ -33,6 +33,7 @@ EP List Directories:
 | [`RectorChangesListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.rector.RectorChangesListener)  | `RectorChangesListener` |
 | [`PhpRemoteInterpreterChangedListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.remote.interpreter.ui.PhpRemoteInterpreterConfigurationForm.PhpRemoteInterpreterChangedListener)  | `PhpRemoteInterpreterChangedListener` |
 | [`CustomExpectationNotifier.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.pestphp.pest.features.customExpectations.CustomExpectationNotifier)  ![Project-Level][project-level] | `CustomExpectationNotifier` |
+{sticky-header="true"}
 
 
 ### com.intellij.phing
@@ -40,18 +41,21 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.phing.propertyFilesManager"/></include> ![Non-Dynamic][non-dynamic] | `PropertyFilesManager` |
+{sticky-header="true"}
 
 ### com.intellij.php.psalm
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.Psalm.PsalmConfigurationProvider"/></include> ![Non-Dynamic][non-dynamic] | `PsalmConfigurationProvider` |
+{sticky-header="true"}
 
 ### com.intellij.php.tools.quality.phpstan
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.PhpStan.PhpStanConfigurationProvider"/></include> ![Non-Dynamic][non-dynamic] | `PhpStanConfigurationProvider` |
+{sticky-header="true"}
 
 ### com.jetbrains.php
 
@@ -112,6 +116,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.typeInferenceExclusion"/></include> | `PhpTypeInferenceExclusion` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.typeProvider3"/></include> ![Deprecated][deprecated] | `PhpTypeProvider3` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.typeProvider4"/></include> | `PhpTypeProvider4` |
+{sticky-header="true"}
 
 ### com.jetbrains.php.behat
 
@@ -119,24 +124,28 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.behat.gherkinAttributePrefixProvider"/></include> ![Internal][internal] | `GherkinAttributePrefixProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.behat.gherkinContextProvider"/></include> | `ContextInterfaceProvider` |
+{sticky-header="true"}
 
 ### com.jetbrains.php.blade
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.blade.bladeDirectiveContributor"/></include> ![Experimental][experimental] | `BladeDirectiveContributor` |
+{sticky-header="true"}
 
 ### com.jetbrains.php.framework
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.framework.descriptionProvider"/></include> ![Internal][internal] | `FrameworkDescriptionProvider` |
+{sticky-header="true"}
 
 ### intellij.php.frontback.impl.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.php.docTagParserExtension"/></include> ![Internal][internal] | `PhpDocTagParser` |
+{sticky-header="true"}
 
 ### org.jetbrains.plugins.phpstorm-remote-interpreter
 
@@ -146,12 +155,14 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.remote.phpHelperScriptProvider"/></include> | `PhpHelperScriptProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.remote.remoteProcessCoverageManager"/></include> | `PhpRemoteProcessCoverageManager` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.remote.remoteProcessManager"/></include> | `PhpRemoteProcessManager` |
+{sticky-header="true"}
 
 ### phpstorm-customization.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.webcore.phpFrameworkExclusionProvider"/></include> ![Internal][internal] | `PhpFrameworkExclusionProvider` |
+{sticky-header="true"}
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

@@ -58,6 +58,7 @@ EP List Directories:
 | [`OpenProfilerTaskTabListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.profilers.taskbased.task.OpenProfilerTaskTabListener)  | [`OpenProfilerTaskTabListener`](%gh-ij-android%/profilers/src/com/android/tools/profilers/taskbased/task/OpenProfilerTaskTabListener.kt) |
 | [`ResourceFolderManager#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.android.facet.ResourceFolderManager.ResourceFolderListener)  ![Project-Level][project-level] | [`ResourceFolderListener`](%gh-ij-android%/android/src/org/jetbrains/android/facet/ResourceFolderManager.kt) |
 | [`ResourceFolderManager#EARLY_TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.android.facet.ResourceFolderManager.ResourceFolderListener)  | [`ResourceFolderListener`](%gh-ij-android%/android/src/org/jetbrains/android/facet/ResourceFolderManager.kt) |
+{sticky-header="true"}
 
 
 ### adt-ui.xml
@@ -67,6 +68,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.android.toolWindow"/></include> ![Non-Dynamic][non-dynamic] ![DumbAware][dumb-aware] | [`ToolWindowFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/wm/ToolWindowFactory.kt) |
+{sticky-header="true"}
 
 ### aiplugin-api.xml
 
@@ -76,6 +78,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gemini.geminiPluginApi"/></include> ![Non-Dynamic][non-dynamic] | [`GeminiPluginApi`](%gh-ij-android%/ml-api/src/main/kotlin/com/android/tools/idea/gemini/GeminiPluginApi.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.ml.studioBotExternalFlags"/></include> ![Non-Dynamic][non-dynamic] | [`StudioBotExternalFlags`](%gh-ij-android%/ml-api/src/main/kotlin/com/android/tools/idea/gemini/StudioBotExternalFlags.kt) |
+{sticky-header="true"}
 
 ### android-adb.xml
 
@@ -85,6 +88,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.run.deviceNameRenderer"/></include> ![Non-Dynamic][non-dynamic] | [`DeviceNameRendererEx`](%gh-ij-android%/android-adb/src/com/android/tools/idea/ddms/DeviceNameRendererEx.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.deviceProvisioner"/></include> ![Non-Dynamic][non-dynamic] | [`DeviceProvisionerFactory`](%gh-ij-android%/android-adb/src/com/android/tools/idea/deviceprovisioner/DeviceProvisionerFactory.kt) |
+{sticky-header="true"}
 
 ### android-common.xml
 
@@ -94,6 +98,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.googleapis.googleApiKeyProvider"/></include> | [`GoogleApiKeyProvider`](%gh-ij-android%/android-common/src/com/android/tools/idea/googleapis/GoogleApiKeyProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.login.googleLoginCredentialProvider"/></include> | [`GoogleLoginCredentialProvider`](%gh-ij-android%/android-common/src/com/android/tools/idea/login/GoogleLoginCredentialProvider.kt) |
+{sticky-header="true"}
 
 ### android-editing-metrics.xml
 
@@ -102,6 +107,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.editing.metrics.codeEditedListener"/></include> | [`CodeEditedListener`](%gh-ij-android%/android/editing/metrics/src/com/android/tools/idea/editing/metrics/CodeEditedListener.kt) |
+{sticky-header="true"}
 
 ### android-execution-common.xml
 
@@ -111,6 +117,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.execution.common.androidConfigurationExecutorProvider"/></include> ![Non-Dynamic][non-dynamic] | [`Provider`](%gh-ij-android%/execution/common/src/com/android/tools/idea/execution/common/AndroidConfigurationExecutor.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.execution.common.debug.utils.facetFinderToken"/></include> ![Non-Dynamic][non-dynamic] | [`FacetFinderToken`](%gh-ij-android%/execution/common/src/com/android/tools/idea/execution/common/debug/utils/FacetFinder.kt) |
+{sticky-header="true"}
 
 ### android-kotlin.common.xml
 
@@ -119,6 +126,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.kotlin.androidDexer"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | [`AndroidDexer`](%gh-ic%/plugins/kotlin/jvm-debugger/evaluation/src/org/jetbrains/kotlin/idea/debugger/evaluate/classLoading/AndroidDexer.kt) |
+{sticky-header="true"}
 
 ### android-lang.xml
 
@@ -127,6 +135,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.lang.androidSql.contextProvider"/></include> ![Non-Dynamic][non-dynamic] | [`Provider`](%gh-ij-android%/android-lang/src/com/android/tools/idea/lang/androidSql/AndroidSqlContext.kt) |
+{sticky-header="true"}
 
 ### android-navigator.xml
 
@@ -135,6 +144,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.navigator.androidViewNodeProvider"/></include> ![Non-Dynamic][non-dynamic] | [`AndroidViewNodeProvider`](%gh-ij-android%/android-navigator/src/com/android/tools/idea/navigator/nodes/AndroidViewNodeProvider.kt) |
+{sticky-header="true"}
 
 ### android-npw.xml
 
@@ -144,6 +154,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.androidProjectEntryProvider"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.moduleDescriptionProvider"/></include> ![Non-Dynamic][non-dynamic] | [`ModuleDescriptionProvider`](%gh-ij-android%/android-npw/src/com/android/tools/idea/npw/module/ModuleDescriptionProvider.kt) |
+{sticky-header="true"}
 
 ### android-plugin.xml
 
@@ -189,6 +200,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.wizard.template.wizardTemplateProvider"/></include> ![Non-Dynamic][non-dynamic] | `WizardTemplateProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.android.actions.newResourceCreationHandler"/></include> ![Non-Dynamic][non-dynamic] | [`NewResourceCreationHandler`](%gh-ij-android%/android/src/org/jetbrains/android/actions/NewResourceCreationHandler.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.android.refactoring.unusedResourcesToken"/></include> ![Non-Dynamic][non-dynamic] | [`UnusedResourcesToken`](%gh-ij-android%/android/src/org/jetbrains/android/refactoring/UnusedResourcesProcessor.kt) |
+{sticky-header="true"}
 
 ### android-templates.xml
 
@@ -197,6 +209,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.templates.additionalTemplateActionsProvider"/></include> ![Non-Dynamic][non-dynamic] | [`AdditionalTemplateActionsProvider`](%gh-ij-android%/android-templates/src/com/android/tools/idea/templates/AdditionalTemplateActionsProvider.java) |
+{sticky-header="true"}
 
 ### apkanalyzer.xml
 
@@ -205,6 +218,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.apk.viewer.apkAnalyzerToken"/></include> ![Non-Dynamic][non-dynamic] | [`ApkAnalyzerToken`](%gh-ij-android%/apkanalyzer/src/com/android/tools/idea/apk/viewer/ApkAnalyzerToken.kt) |
+{sticky-header="true"}
 
 ### app-inspection.xml
 
@@ -213,6 +227,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.appinspection.ide.resolver.artifactResolverFactoryToken"/></include> ![Non-Dynamic][non-dynamic] | [`ArtifactResolverFactoryToken`](%gh-ij-android%/app-inspection/ide/src/com/android/tools/idea/appinspection/ide/resolver/ArtifactResolverFactory.kt) |
+{sticky-header="true"}
 
 ### app-inspector.xml
 
@@ -221,6 +236,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.appinspection.inspector.ide.appInspectorTabProvider"/></include> ![Non-Dynamic][non-dynamic] | [`AppInspectorTabProvider`](%gh-ij-android%/app-inspection/inspector/ide/src/com/android/tools/idea/appinspection/inspector/ide/AppInspectorTabProvider.kt) |
+{sticky-header="true"}
 
 ### assistant.xml
 
@@ -234,6 +250,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.assistant.navlistener"/></include> ![Non-Dynamic][non-dynamic] | [`AssistNavListener`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/AssistNavListener.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.assistant.panelFactory"/></include> ![Non-Dynamic][non-dynamic] | [`PanelFactory`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/PanelFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.assistant.scrollHandler"/></include> ![Non-Dynamic][non-dynamic] | [`ScrollHandler`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/ScrollHandler.java) |
+{sticky-header="true"}
 
 ### com.android.tools.gradle.dcl
 
@@ -242,6 +259,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.gradle.dcl.ide.declarativeSchemaProvider"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
+{sticky-header="true"}
 
 ### compose-designer.xml
 
@@ -251,6 +269,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.compose.preview.composeEditorNotificationProvider"/></include> ![Non-Dynamic][non-dynamic] ![DumbAware][dumb-aware] | [`EditorNotificationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.compose.preview.composeStudioBotActionFactory"/></include> ![Non-Dynamic][non-dynamic] | [`ComposeStudioBotActionFactory`](%gh-ij-android%/compose-designer/src/com/android/tools/idea/compose/preview/ComposeStudioBotActionFactory.kt) |
+{sticky-header="true"}
 
 ### customview.xml
 
@@ -259,6 +278,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.customview.preview.customViewEditorNotificationProvider"/></include> ![Non-Dynamic][non-dynamic] ![DumbAware][dumb-aware] | [`EditorNotificationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationProvider.java) |
+{sticky-header="true"}
 
 ### databinding.xml
 
@@ -267,6 +287,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.databinding.bindingLayoutToken"/></include> ![Non-Dynamic][non-dynamic] | [`BindingLayoutToken`](%gh-ij-android%/databinding/src/com/android/tools/idea/databinding/BindingLayoutToken.kt) |
+{sticky-header="true"}
 
 ### designer.xml
 
@@ -285,6 +306,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.property.motionEditorNlPropertiesViewProvider"/></include> | [`NlPropertiesViewProvider`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/property/NlPropertiesView.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.scene.decorator.nlDecoratorProvider"/></include> | [`Provider`](%gh-ij-android%/designer/src/com/android/tools/idea/uibuilder/scene/decorator/NlSceneDecoratorFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.uibuilder.troubleshooting.infoCollector"/></include> ![Non-Dynamic][non-dynamic] | [`TroubleInfoCollector`](%gh-ic%/platform/platform-impl/src/com/intellij/troubleshooting/TroubleInfoCollector.java) |
+{sticky-header="true"}
 
 ### gradle-dsl-android.xml
 
@@ -294,6 +316,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.dsl.gradleDeclarativeBuildModelProvider"/></include> | [`GradleDeclarativeBuildModelProvider`](%gh-ij-android%/gradle-dsl/src/com/android/tools/idea/gradle/dsl/model/GradleDeclarativeBuildModelProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.dsl.gradleDeclarativeSettingsModelProvider"/></include> | [`GradleDeclarativeSettingsModelProvider`](%gh-ij-android%/gradle-dsl/src/com/android/tools/idea/gradle/dsl/model/GradleDeclarativeSettingsModelProvider.kt) |
+{sticky-header="true"}
 
 ### gradle-dsl.xml
 
@@ -305,6 +328,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.dsl.blockModelProvider"/></include> ![Experimental][experimental] | [`BlockModelProvider`](%gh-ij-android%/gradle-dsl/src/com/android/tools/idea/gradle/dsl/model/BlockModelProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.dsl.transformerFactory"/></include> | [`GradleDslTransformerFactory`](%gh-ij-android%/gradle-dsl/src/com/android/tools/idea/gradle/dsl/parser/GradleDslTransformerFactory.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.versionCatalogFilesGradleModel"/></include> ![Non-Dynamic][non-dynamic] | [`VersionCatalogFilesModel`](%gh-ij-android%/gradle-dsl/src/com/android/tools/idea/gradle/dsl/model/VersionCatalogFilesModel.kt) |
+{sticky-header="true"}
 
 ### intellij.android.gradle.dsl.android.xml
 
@@ -314,6 +338,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.dsl.gradleDeclarativeBuildModelProvider"/></include> | [`GradleDeclarativeBuildModelProvider`](%gh-ij-android%/gradle-dsl/src/com/android/tools/idea/gradle/dsl/model/GradleDeclarativeBuildModelProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.dsl.gradleDeclarativeSettingsModelProvider"/></include> | [`GradleDeclarativeSettingsModelProvider`](%gh-ij-android%/gradle-dsl/src/com/android/tools/idea/gradle/dsl/model/GradleDeclarativeSettingsModelProvider.kt) |
+{sticky-header="true"}
 
 ### layout-inspector.xml
 
@@ -324,6 +349,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.layoutinspector.pipeline.appinspection.compose.getComposeLayoutInspectorJarToken"/></include> ![Non-Dynamic][non-dynamic] | [`GetComposeLayoutInspectorJarToken`](%gh-ij-android%/layout-inspector/src/com/android/tools/idea/layoutinspector/pipeline/appinspection/compose/ComposeLayoutInspectorClient.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.layoutinspector.stateinspection.filterProvider"/></include> ![Non-Dynamic][non-dynamic] | [`LayoutInspectorStateInspectionFilterProvider`](%gh-ij-android%/layout-inspector/src/com/android/tools/idea/layoutinspector/stateinspection/LayoutInspectorStateInspectionFilterProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.layoutinspector.stateinspection.stateReadRewriter"/></include> ![Non-Dynamic][non-dynamic] | [`LayoutInspectorStateReadRewriter`](%gh-ij-android%/layout-inspector/src/com/android/tools/idea/layoutinspector/stateinspection/LayoutInspectorStateReadRewriter.kt) |
+{sticky-header="true"}
 
 ### lint-plugin.xml
 
@@ -334,6 +360,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.lint.common.lintIdeSupport"/></include> ![Non-Dynamic][non-dynamic] | [`LintIdeSupport`](%gh-ij-android%/lint/src/com/android/tools/idea/lint/common/LintIdeSupport.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.lint.common.lintQuickFixProvider"/></include> ![Non-Dynamic][non-dynamic] | [`LintIdeQuickFixProvider`](%gh-ij-android%/lint/src/com/android/tools/idea/lint/common/LintIdeQuickFixProvider.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.lint.common.updateDepsProvider"/></include> ![Non-Dynamic][non-dynamic] | [`DependencyUpdateProvider`](%gh-ij-android%/lint/src/com/android/tools/idea/lint/common/AndroidLintUpdatableDependencyInspection.kt) |
+{sticky-header="true"}
 
 ### logcat.xml
 
@@ -344,6 +371,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.logcat.consoleFilterProvider"/></include> ![Non-Dynamic][non-dynamic] | [`LogcatConsoleFilterProvider`](%gh-ij-android%/logcat/src/com/android/tools/idea/logcat/LogcatConsoleFilterProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.logcat.logcatR8MappingToken"/></include> ![Non-Dynamic][non-dynamic] | [`LogcatR8MappingsToken`](%gh-ij-android%/logcat/src/com/android/tools/idea/logcat/LogcatR8MappingsToken.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.logcat.messages.exceptionMessageRewriter"/></include> ![Non-Dynamic][non-dynamic] | [`ExceptionMessageRewriter`](%gh-ij-android%/logcat/src/com/android/tools/idea/logcat/messages/ExceptionMessageRewriter.kt) |
+{sticky-header="true"}
 
 ### native-symbolizer.xml
 
@@ -352,6 +380,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.nativeSymbolizer.moduleSymbolSourceContributor"/></include> ![Non-Dynamic][non-dynamic] | [`ModuleSymbolSourceContributor`](%gh-ij-android%/native-symbolizer/src/com/android/tools/nativeSymbolizer/SymbolSource.kt) |
+{sticky-header="true"}
 
 ### naveditor.xml
 
@@ -362,6 +391,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.naveditor.dialogs.addDeeplinkDialogToken"/></include> ![Non-Dynamic][non-dynamic] | [`AddDeeplinkDialogToken`](%gh-ij-android%/nav/editor/src/com/android/tools/idea/naveditor/dialogs/AddDeeplinkDialog.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.naveditor.editor.addDestinationMenuToken"/></include> ![Non-Dynamic][non-dynamic] | [`AddDestinationMenuToken`](%gh-ij-android%/nav/editor/src/com/android/tools/idea/naveditor/editor/AddDestinationMenu.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.naveditor.surface.navDesignSurfaceToken"/></include> ![Non-Dynamic][non-dynamic] | [`NavDesignSurfaceToken`](%gh-ij-android%/nav/editor/src/com/android/tools/idea/naveditor/surface/NavDesignSurfaceToken.java) |
+{sticky-header="true"}
 
 ### pipeline.xml
 
@@ -370,6 +400,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.transport.transportConfigContributor"/></include> ![Non-Dynamic][non-dynamic] | [`TransportConfigContributor`](%gh-ij-android%/android-transport/src/com/android/tools/idea/transport/TransportConfigContributor.java) |
+{sticky-header="true"}
 
 ### profilers.xml
 
@@ -378,6 +409,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.profilers.profilerProgramRunnerToken"/></include> ![Non-Dynamic][non-dynamic] | [`ProfilerProgramRunnerToken`](%gh-ij-android%/profilers-android/src/com/android/tools/idea/profilers/ProfilerProgramRunnerToken.kt) |
+{sticky-header="true"}
 
 ### project-system-gradle-plugin.xml
 
@@ -392,6 +424,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.errorQuickFixProvider"/></include> ![Non-Dynamic][non-dynamic] | [`GradleErrorQuickFixProvider`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/build/events/GradleErrorQuickFixProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gradle.project.importing.gradleProjectImporter"/></include> ![Non-Dynamic][non-dynamic] | [`GradleProjectImporterExtension`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/importing/GradleProjectImporterExtension.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.testartifacts.testsuite.temp.testSuiteViewAdaptorProvider"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | [`TestSuiteViewAdaptorProvider`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/testartifacts/testsuite/temp/TestSuiteViewAdaptorProvider.kt) |
+{sticky-header="true"}
 
 ### project-system-plugin.xml
 
@@ -410,6 +443,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.projectsystem.libraryDependenciesTroubleInfoCollectorToken"/></include> ![Non-Dynamic][non-dynamic] | [`LibraryDependenciesTroubleInfoCollectorToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/LibraryDependenciesTroubleInfoCollectorToken.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.projectsystem.pseudoLocalesToken"/></include> ![Non-Dynamic][non-dynamic] | [`PseudoLocalesToken`](%gh-ij-android%/project-system/src/com/android/tools/idea/projectsystem/PseudoLocalesToken.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.android.facet.resourceFolderManagerToken"/></include> ![Non-Dynamic][non-dynamic] | [`ResourceFolderManagerToken`](%gh-ij-android%/project-system/src/org/jetbrains/android/facet/ResourceFolderManagerToken.kt) |
+{sticky-header="true"}
 
 ### resources-explorer.xml
 
@@ -419,6 +453,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.resourceImporter"/></include> ![Non-Dynamic][non-dynamic] | [`ResourceImporter`](%gh-ij-android%/android/src/com/android/tools/idea/ui/resourcemanager/plugin/ResourceImporter.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.resourceViewer"/></include> ![Non-Dynamic][non-dynamic] | [`DesignAssetRenderer`](%gh-ij-android%/android/src/com/android/tools/idea/ui/resourcemanager/plugin/DesignAssetRenderer.kt) |
+{sticky-header="true"}
 
 ### safeargs.common.xml
 
@@ -427,6 +462,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.nav.safeargs.module.safeArgsModeToken"/></include> ![Non-Dynamic][non-dynamic] | [`SafeArgsModeToken`](%gh-ij-android%/nav/safeargs/common/src/com/android/tools/idea/nav/safeargs/module/SafeArgsModeModuleService.kt) |
+{sticky-header="true"}
 
 ### server-flags.xml
 
@@ -435,6 +471,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.mendelFlagsProvider"/></include> ![Non-Dynamic][non-dynamic] | [`MendelFlagsProvider`](%gh-ij-android%/server-flags/src/com/android/tools/idea/mendel/MendelFlagsProvider.kt) |
+{sticky-header="true"}
 
 ### testartifacts.xml
 
@@ -445,6 +482,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.testartifacts.instrumented.androidRunConfigurationToken"/></include> ![Non-Dynamic][non-dynamic] | [`AndroidRunConfigurationToken`](%gh-ij-android%/testartifacts/src/com/android/tools/idea/testartifacts/instrumented/AndroidRunConfigurationToken.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.testartifacts.instrumented.testsuite.AndroidTestSuiteActionProvider"/></include> ![Non-Dynamic][non-dynamic] | [`AndroidTestSuiteDetailsActionProvider`](%gh-ij-android%/testartifacts/src/com/android/tools/idea/testartifacts/instrumented/testsuite/actions/AndroidTestSuiteDetailsActionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.testartifacts.instrumented.testsuite.api.testResultsPsiElementProvider"/></include> ![Non-Dynamic][non-dynamic] | [`TestResultsPsiElementProvider`](%gh-ij-android%/testartifacts/src/com/android/tools/idea/testartifacts/instrumented/testsuite/api/TestResultsPsiElementProvider.kt) |
+{sticky-header="true"}
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

@@ -28,6 +28,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.diagnostics.toolchainDescriptionProvider"/></include> | [`ToolchainDescriptionProvider`](%gh-ij-plugins%/cpp-diagnostics/src/com/jetbrains/cidr/cpp/diagnostics/toolchain/ToolchainDescriptionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.diagnostics.workspaceDescriptionProvider"/></include> | [`WorkspaceDescriptionProvider`](%gh-ij-plugins%/cpp-diagnostics/src/com/jetbrains/cidr/cpp/diagnostics/workspace/WorkspaceDescriptionProvider.kt) |
+{sticky-header="true"}
 
 ### com.intellij.openRewrite
 
@@ -38,6 +39,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openRewrite.externalSystemBridge"/></include> | [`OpenRewriteExternalSystemBridge`](%gh-ij-plugins%/open-rewrite/src/com/intellij/openRewrite/run/OpenRewriteExternalSystemBridge.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openRewrite.libraryResolver"/></include> | [`OpenRewriteLibraryResolver`](%gh-ij-plugins%/open-rewrite/src/com/intellij/openRewrite/recipe/OpenRewriteLibraryResolver.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openRewrite.recipeLibraryContributor"/></include> | [`OpenRewriteRecipeLibraryContributor`](%gh-ij-plugins%/open-rewrite/src/com/intellij/openRewrite/OpenRewriteRecipeLibraryContributor.kt) |
+{sticky-header="true"}
 
 ### com.thoughtworks.gauge
 
@@ -46,6 +48,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.thoughtworks.gauge.moduleImporter"/></include> | [`GaugeModuleImporter`](%gh-ij-plugins%/gauge/src/com/thoughtworks/gauge/wizard/GaugeModuleImporter.java) |
+{sticky-header="true"}
 
 ### gherkin
 
@@ -55,6 +58,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.cucumber.injector.injectorExtensionPoint"/></include> | [`GherkinInjectorExtensionPoint`](%gh-ij-plugins%/cucumber/src/org/jetbrains/plugins/cucumber/injector/GherkinInjectorExtensionPoint.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.cucumber.steps.cucumberJvmExtensionPoint"/></include> | [`CucumberJvmExtensionPoint`](%gh-ij-plugins%/cucumber/src/org/jetbrains/plugins/cucumber/CucumberJvmExtensionPoint.java) |
+{sticky-header="true"}
 
 ### idea.plugin.protoeditor
 
@@ -68,6 +72,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.protobuf.nameGeneratorContributor"/></include> | [`NameGeneratorContributor`](%gh-ij-plugins%/protobuf/protoeditor-core/src/com/intellij/protobuf/lang/names/NameGeneratorContributor.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.protobuf.projectSettingsConfigurator"/></include> ![Project-Level][project-level] | [`ProjectSettingsConfigurator`](%gh-ij-plugins%/protobuf/protoeditor-core/src/com/intellij/protobuf/ide/settings/ProjectSettingsConfigurator.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.protobuf.schemaProvider"/></include> ![Project-Level][project-level] | [`SchemaProvider`](%gh-ij-plugins%/protobuf/protoeditor-core/src/com/intellij/protobuf/lang/resolve/SchemaProvider.java) |
+{sticky-header="true"}
 
 ### intellij.angular.backend.xml
 
@@ -81,6 +86,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.importsHandler"/></include> | [`Angular2ImportsHandler`](%gh-ij-plugins%/Angular/angular-backend/src/org/angular2/codeInsight/imports/Angular2ImportsHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.jsHandlersFactory"/></include> | [`Angular2JSHandlersFactory`](%gh-ij-plugins%/Angular/angular-backend/src/org/angular2/codeInsight/Angular2HandlersFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.templateScopesProvider"/></include> | [`Angular2TemplateScopesProvider`](%gh-ij-plugins%/Angular/angular-backend/src/org/angular2/codeInsight/template/Angular2TemplateScopesProvider.kt) |
+{sticky-header="true"}
 
 ### intellij.javascript.eslint
 
@@ -89,6 +95,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.eslint.ruleMappersFactory"/></include> | [`EslintRuleMappersFactory`](%gh-ij-plugins%/javascript/eslint/src/com/intellij/lang/javascript/linter/eslint/importer/EslintRuleMappersFactory.java) |
+{sticky-header="true"}
 
 ### intellij.jhipster.xml
 
@@ -97,6 +104,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jhipster.fieldTypeReferenceProvider"/></include> | [`JdlFieldTypeReferenceProvider`](%gh-ij-plugins%/jhipster/src/com/intellij/jhipster/psi/JdlFieldTypeReferenceProvider.java) |
+{sticky-header="true"}
 
 ### intellij.prettierJS
 
@@ -105,6 +113,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.prettierjs.codeStyleInstaller"/></include> | [`PrettierCodeStyleInstaller`](%gh-ij-plugins%/prettierJS/src/com/intellij/prettierjs/codeStyle/PrettierCodeStyleInstaller.java) |
+{sticky-header="true"}
 
 ### intellij.vuejs.backend.xml
 
@@ -115,6 +124,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.containerInfoProvider"/></include> | [`VueContainerInfoProvider`](%gh-ij-plugins%/vuejs/vuejs-backend/src/org/jetbrains/vuejs/model/source/VueContainerInfoProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.templateScopesProvider"/></include> | [`VueTemplateScopesProvider`](%gh-ij-plugins%/vuejs/vuejs-backend/src/org/jetbrains/vuejs/codeInsight/template/VueTemplateScopesProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.templateSymbolScopesProvider"/></include> | [`VueTemplateSymbolScopesProvider`](%gh-ij-plugins%/vuejs/vuejs-backend/src/org/jetbrains/vuejs/codeInsight/template/VueTemplateSymbolScopesProvider.kt) |
+{sticky-header="true"}
 
 ### name.kropp.intellij.makefile
 
@@ -124,6 +134,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.makefile.runConfigurationCustomizer"/></include> | [`MakefileRunConfigurationCustomizer`](%gh-ij-plugins%/makefile/src/com/jetbrains/lang/makefile/MakefileRunConfigurationCustomizer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.makefile.toolWindowStripeController"/></include> | [`MakefileToolWindowStripeController`](%gh-ij-plugins%/makefile/src/com/jetbrains/lang/makefile/toolWindow/MakefileToolWindowStripeController.kt) |
+{sticky-header="true"}
 
 ### tslint
 
@@ -132,6 +143,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.tslint.configDetector"/></include> | [`TsLintConfigDetector`](%gh-ij-plugins%/tslint/src/com/intellij/lang/javascript/linter/tslint/config/TsLintConfigDetector.java) |
+{sticky-header="true"}
 
 
 ## Devicetree Plugin
@@ -141,6 +153,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Topic | Listener |
 |-------|----------|
 | [`ChangeListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.dts.settings.DtsSettings.ChangeListener)  ![Project-Level][project-level] | [`ChangeListener`](%gh-ij-plugins%/dts/src/com/intellij/dts/settings/DtsSettings.kt) |
+{sticky-header="true"}
 
 
 ### com.intellij.dts
@@ -151,6 +164,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.dtsUtil"/></include> | [`DtsCMakeUtil`](%gh-ij-plugins%/dts/src/com/intellij/dts/cmake/DtsCMakeUtil.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dts.settings.disabler"/></include> | [`DtsSettingsDisabler`](%gh-ij-plugins%/dts/src/com/intellij/dts/settings/DtsSettingsDisabler.kt) |
+{sticky-header="true"}
 
 ### intellij.dts.cmake.xml
 
@@ -159,6 +173,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.dts.cmake.configurationDataProvider"/></include> | [`DtsCMakeModelConfigurationDataProvider`](%gh-ij-plugins%/dts/cmake/src/com/intellij/dts/cmake/impl/DtsCMakeModelConfigurationDataProvider.kt) |
+{sticky-header="true"}
 
 
 ## Flex Plugin
@@ -168,6 +183,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Topic | Listener |
 |-------|----------|
 | [`FlexBuildConfigurationChangeListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.flex.projectStructure.model.impl.FlexBuildConfigurationChangeListener)  | [`FlexBuildConfigurationChangeListener`](%gh-ij-plugins%/flex/src/com/intellij/lang/javascript/flex/projectStructure/model/impl/FlexBuildConfigurationChangeListener.java) |
+{sticky-header="true"}
 
 
 ### com.intellij.flex
@@ -177,6 +193,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.flex.breakpoint.type.provider"/></include> ![Non-Dynamic][non-dynamic] | [`BreakpointTypeProvider`](%gh-ij-plugins%/flex/src/com/intellij/lang/javascript/flex/debug/FlexBreakpointsHandler.java) |
+{sticky-header="true"}
 
 
 ## Perforce Helix Core
@@ -188,6 +205,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | [`PerforceSettings#OFFLINE_MODE_EXITED`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 | [`P4ConfigListener#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.idea.perforce.perforce.connections.P4ConfigListener)  ![Internal][internal] ![Project-Level][project-level] | [`P4ConfigListener`](%gh-ij-plugins%/PerforceIntegration/src/org/jetbrains/idea/perforce/perforce/connections/PerforceExternalConfigTracker.kt) |
 | [`P4EnvHelper#P4_ENV_CHANGED`](https://jb.gg/ipe/listeners?topics=org.jetbrains.idea.perforce.perforce.connections.P4EnvHelper.P4EnvListener)  ![Project-Level][project-level] | [`P4EnvListener`](%gh-ij-plugins%/PerforceIntegration/src/org/jetbrains/idea/perforce/perforce/connections/P4EnvHelper.java) |
+{sticky-header="true"}
 
 
 ### PerforceDirectPlugin
@@ -197,6 +215,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="Perforce.P4ConnectionParametersProvider"/></include> ![Experimental][experimental] | [`P4ConnectionParametersProvider`](%gh-ij-plugins%/PerforceIntegration/src/org/jetbrains/idea/perforce/perforce/connections/P4ConnectionParametersProvider.kt) |
+{sticky-header="true"}
 
 
 ## PlatformIO for CLion Plugin
@@ -207,6 +226,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 |-------|----------|
 | [`PlatformioServiceKt#PLATFORMIO_UPDATES_TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.embedded.platformio.PlatformioUpdatesNotifier)  ![Project-Level][project-level] | [`PlatformioUpdatesNotifier`](%gh-ij-plugins%/platformio/src/com/jetbrains/cidr/cpp/embedded/platformio/PlatformioService.kt) |
 | [`PlatformioSettingsListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.cpp.embedded.platformio.project.PlatformioSettingsListener)  | [`PlatformioSettingsListener`](%gh-ij-plugins%/platformio/src/com/jetbrains/cidr/cpp/embedded/platformio/project/PlatformioSettings.kt) |
+{sticky-header="true"}
 
 
 
@@ -219,6 +239,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.qodana.coverage.cloudArtifactsProcessor"/></include> | [`CoverageCloudArtifactsProcessor`](%gh-ij-plugins%/qodana/coverage/src/org/jetbrains/qodana/staticAnalysis/inspections/coverage/CoverageCloudArtifactsProcessor.kt) |
+{sticky-header="true"}
 
 ### intellij.qodana.inspectionKts.xml
 
@@ -233,6 +254,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.postProcessorFactory"/></include> | [`CompiledInspectionKtsPostProcessorFactory`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/InspectionKtsFileStatus.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.psiViewerSupport"/></include> | [`PsiViewerSupport`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/ui/psi-viewer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.templates.provider"/></include> | [`Provider`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/templates/InspectionKtsTemplate.kt) |
+{sticky-header="true"}
 
 ### org.intellij.qodana
 
@@ -281,6 +303,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.vcsIgnoredFilesProvider"/></include> | [`VcsIgnoredFilesProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/VcsIgnoredFilesProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.vcsRevisionProvider"/></include> | [`VcsRevisionProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/vcs/VcsRevisionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.workflowExtension"/></include> ![Internal][internal] | [`QodanaWorkflowExtension`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/workflow/QodanaWorkflowExtension.kt) |
+{sticky-header="true"}
 
 
 ## Serial Port Monitor Plugin
@@ -290,6 +313,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Topic | Listener |
 |-------|----------|
 | [`SerialPortsListener.Companion#SERIAL_PORTS_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.plugins.serialmonitor.service.SerialPortsListener)  | [`SerialPortsListener`](%gh-ij-plugins%/serial-monitor/src/main/java/com/intellij/plugins/serialmonitor/service/SerialPortsListener.kt) |
+{sticky-header="true"}
 
 
 

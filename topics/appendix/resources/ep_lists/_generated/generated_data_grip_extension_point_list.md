@@ -51,6 +51,7 @@ EP List Directories:
 | [`ConnectionTemplatesSideTab#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.ui.cloud.jba.ConnectionTemplatesSideTab.Listener)  | `Listener` |
 | [`DataSourceTemplateConfigurable#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.view.ui.cloud.jba.DataSourceTemplateConfigurable.Listener)  | `Listener` |
 | [`DatabaseSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
+{sticky-header="true"}
 
 
 ### intellij.database.connectivity.ex.xml
@@ -58,6 +59,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.artifactRepositoriesProvider"/></include> | `ArtifactRepositoriesProvider` |
+{sticky-header="true"}
 
 ### intellij.database.connectivity.xml
 
@@ -80,6 +82,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.remoteProcessInitializer"/></include> | `RemoteProcessInitializer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.sshTunnelsProvider"/></include> | `DatabaseSshTunnelsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.toDatabaseScriptTranslator"/></include> | `ToDatabaseScriptTranslator` |
+{sticky-header="true"}
 
 ### intellij.database.core.impl.xml
 
@@ -127,12 +130,14 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.urlEditorInspector"/></include> | `UrlEditorInspector` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.urlParamEditorProvider"/></include> | `TypeDescriptorFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.virtualFileDataSourceProvider"/></include> | `VirtualFileDataSourceProvider` |
+{sticky-header="true"}
 
 ### intellij.database.dialects.mongo.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.mongo.resolveHelper"/></include> | `MongoJSResolveHelper` |
+{sticky-header="true"}
 
 ### intellij.database.impl.xml
 
@@ -151,6 +156,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.selectInProvider"/></include> | `Extension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.sshPanelProvider"/></include> | `DataSourceSshPanelBridgeProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.urlParamEditorUiProvider"/></include> | `TypeDescriptorUiFactory` |
+{sticky-header="true"}
 
 ### intellij.database.sql.core.impl.xml
 
@@ -168,18 +174,21 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.sql.membersHelper"/></include> | `SqlMembersHelper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.sql.navigationHelper"/></include> | `NavigationHelper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.sql.resolveExtension"/></include> | `SqlResolveExtension` |
+{sticky-header="true"}
 
 ### intellij.database.ssh.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.sshCredentialsProvider"/></include> | `DatabaseSshCredentialsProvider` |
+{sticky-header="true"}
 
 ### intellij.grid.scripting.impl.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.grid.scripting.ivyLocalRepository"/></include> | `IvyLocalRepository` |
+{sticky-header="true"}
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

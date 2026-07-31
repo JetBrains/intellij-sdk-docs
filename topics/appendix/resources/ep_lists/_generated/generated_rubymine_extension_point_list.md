@@ -33,6 +33,7 @@ EP List Directories:
 | [`RubyRemoteInterpreterManager#RUBY_REMOTE_SDK_TRANSFER_LISTENER_TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.remote.RubyRemoteSdkTransferListener)  | `RubyRemoteSdkTransferListener` |
 | [`RubySdkType#SDK_PATHS_INITIALIZED_TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.ruby.sdk.RubySdkType.SdkPathsInitializedListener)  | `SdkPathsInitializedListener` |
 | [`RVMSupportUtil#RVM_GEMSET_ADDED_TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.plugins.ruby.version.management.rvm.RVMSupportUtil.RVMGemsetListener)  | `RVMGemsetListener` |
+{sticky-header="true"}
 
 
 ### intellij.ruby.backend.xml
@@ -127,12 +128,14 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.testing.rspec.rspecContextNameProvider"/></include> | `RSpecContextNameProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.testing.rspec.rspecContextSymbolProvider"/></include> | `RSpecContextSymbolProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.versionManagerHandler"/></include> | `RubyVersionManagerHandler` |
+{sticky-header="true"}
 
 ### intellij.ruby.coverage.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.coverage.deserializer"/></include> | `RubyCoverageDeserializationProvider` |
+{sticky-header="true"}
 
 ### intellij.ruby.impl.xml
 
@@ -143,12 +146,14 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.rubyBuilderFactory"/></include> | `RubyBuilderFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.settings.supportedExternalFormatter"/></include> | `RubySupportedExternalFormatter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.templates.elements.provider"/></include> | `TemplateElementsProvider` |
+{sticky-header="true"}
 
 ### intellij.ruby.psi.impl.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.callTypeProvider"/></include> | `RubyCallTypeProvider` |
+{sticky-header="true"}
 
 ### intellij.ruby.psi.xml
 
@@ -166,6 +171,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.rubyTypeProvider"/></include> | `RubyTypeProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.serializableTypeResolver"/></include> | `RubySerializableTypeResolver` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.ruby.templates.integration"/></include> | `TemplateIntegration` |
+{sticky-header="true"}
 
 ### intellij.ruby.rbs.backend.xml
 
@@ -173,6 +179,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.ruby.rbs.containerHierarchyMapper"/></include> | `RbsContainerHierarchyMapper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.lang.ruby.rbs.psi.typeSignatureSerializer"/></include> | `RbsTypeSignatureSerializer` |
+{sticky-header="true"}
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

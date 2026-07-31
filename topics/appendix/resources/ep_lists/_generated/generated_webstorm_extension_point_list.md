@@ -30,6 +30,7 @@ EP List Directories:
 | [`VitestConsoleProperties#COVERAGE_CONFIG_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.javascript.testing.vitest.VitestCoverageConfigListener)  ![Project-Level][project-level] | `VitestCoverageConfigListener` |
 | [`JSLibraryManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.library.JSLibraryManager.JSLibraryManagerChangeListener)  ![Project-Level][project-level] | `JSLibraryManagerChangeListener` |
 | [`JSRemoteModulesRegistry#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.lang.javascript.modules.remote.JSRemoteModulesChangeListener)  | `JSRemoteModulesChangeListener` |
+{sticky-header="true"}
 
 
 ### intellij.css.analysis.xml
@@ -38,6 +39,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.cssInspectionFilter"/></include> | `CssInspectionFilter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.unknownHtmlTagQuickFixesProvider"/></include> | `UnknownHtmlTagQuickFixesProvider` |
+{sticky-header="true"}
 
 ### intellij.css.backend.xml
 
@@ -45,6 +47,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.cssIntentionFilter"/></include> | `CssIntentionFilter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.cssRelatedStylesheetsProvider"/></include> | `CssRelatedStylesheetsProvider` |
+{sticky-header="true"}
 
 ### intellij.css.common.psi.xml
 
@@ -58,12 +61,14 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.inclusionContext"/></include> | `CssInclusionContext` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.structureViewChildrenProvider"/></include> | `CssStructureViewElementsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.supportedFileTypesProvider"/></include> | `CssSupportedFileTypesProvider` |
+{sticky-header="true"}
 
 ### intellij.css.common.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.dialect"/></include> | `CssDialect` |
+{sticky-header="true"}
 
 ### intellij.css.xml
 
@@ -73,18 +78,21 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.descriptorHandler"/></include> | `CssDescriptorHandler` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.selectorMatcher"/></include> ![Experimental][experimental] | `CssMatcher` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.css.styleSheetResolver"/></include> | `CssStylesheetResolver` |
+{sticky-header="true"}
 
 ### intellij.javascript.backend.diagrams.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.module.provider"/></include> | `JSModuleConnectionProvider` |
+{sticky-header="true"}
 
 ### intellij.javascript.backend.spellchecker.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.spellcheckerProvider"/></include> | `JSSpellcheckerProvider` |
+{sticky-header="true"}
 
 ### intellij.javascript.backend.xml
 
@@ -131,6 +139,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jsbtFileManagerProvider"/></include> | `JsbtFileManagerProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jsbtService"/></include> | `JsbtApplicationService` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.typescript.kolar.transpiler"/></include> ![Project-Level][project-level] | `KolarTranspiler` |
+{sticky-header="true"}
 
 ### intellij.javascript.codeinsight.xml
 
@@ -138,18 +147,21 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.analysisHandlersFactory"/></include> | `JSAnalysisHandlersFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.jsxCopyPasteActionsProvider"/></include> | `JSXCopyPasteActionsProvider` |
+{sticky-header="true"}
 
 ### intellij.javascript.common.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.commonHandlersFactory"/></include> | `JSCommonHandlersFactory` |
+{sticky-header="true"}
 
 ### intellij.javascript.ideaUltimate.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.webFileReferenceFileTypeProvider"/></include> | `IdeaWebFileReferenceFileTypeProvider` |
+{sticky-header="true"}
 
 ### intellij.javascript.psi.impl.xml
 
@@ -186,30 +198,35 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssResolveSupport"/></include> | `CssResolveSupport` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.cssStylesheetDetector"/></include> | `CssStylesheetDetector` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.libReferenceSupport"/></include> | `JSLibReferenceSupport` |
+{sticky-header="true"}
 
 ### intellij.javascript.structureView.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.frameworkSpecificStructureViewExtension"/></include> | `JSFrameworkSpecificStructureExtension` |
+{sticky-header="true"}
 
 ### intellij.javascript.ultimate.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="JavaScript.jestPackageProvider"/></include> | `JestPackageProvider` |
+{sticky-header="true"}
 
 ### intellij.sass.backend.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.sass.extension"/></include> | `SassExtension` |
+{sticky-header="true"}
 
 ### org.jetbrains.plugins.node-remote-interpreter
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.plugins.node-remote-interpreter.nodeRemoteTargetRunSetupFactory"/></include> | `NodeRemoteTargetRunSetupFactory` |
+{sticky-header="true"}
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

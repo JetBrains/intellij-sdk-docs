@@ -32,6 +32,7 @@ EP List Directories:
 | [`VgoToolchainService#TOOLCHAIN_SCAN_TOPIC`](https://jb.gg/ipe/listeners?topics=com.goide.vgo.sdk.VgoToolchainService.ToolchainScanListener)  ![Project-Level][project-level] | `ToolchainScanListener` |
 | [`GoLinterFmtOnSaveSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.go.linter.fmt.GoLinterFmtOnSaveSettings.FmtOnSaveListener)  | `FmtOnSaveListener` |
 | [`GoEscapeAnalysisSettingsKt#SETTINGS_CHANGED_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.go.performance.escapeAnalysis.GoEscapeAnalysisSettingsChangeListener)  ![Project-Level][project-level] | `GoEscapeAnalysisSettingsChangeListener` |
+{sticky-header="true"}
 
 
 ### intellij.go.impl.xml
@@ -54,12 +55,14 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdk.targetSdkVersionProvider"/></include> | `GoTargetSdkVersionProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdkProvider"/></include> | `GoSdkProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.support"/></include> | `GoLangSupport` |
+{sticky-header="true"}
 
 ### intellij.go.watchers.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.fileWatcherMigrationHandler"/></include> | `GoFileWatcherMigrationHandler` |
+{sticky-header="true"}
 
 ### openapi.xml
 
@@ -69,12 +72,14 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.importPathsProvider"/></include> | `GoImportPathsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.imports.weigher"/></include> | `GoImportsWeigher` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.rootsProvider"/></include> | `GoRootsProvider` |
+{sticky-header="true"}
 
 ### vgo.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.go126FeaturesTabOpener"/></include> | `Go126FeaturesTabOpener` |
+{sticky-header="true"}
 
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square

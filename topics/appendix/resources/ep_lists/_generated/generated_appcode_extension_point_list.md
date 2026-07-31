@@ -36,7 +36,7 @@
 | [XcodeProjectTestListener#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.xcode.model.XcodeProjectTestListener)  | `XcodeProjectTestListener` |
 | [XcodeIsBrokenListener.Companion#XCODE_IS_BROKEN_TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.cidr.xcode.refresh.XcodeIsBrokenListener)  | `XcodeIsBrokenListener` |
 | [SwiftPackageManagerSettingsListener.Companion#TOPIC](https://jb.gg/ipe/listeners?topics=com.jetbrains.swift.swiftpm.SwiftPackageManagerSettingsListener)  | `SwiftPackageManagerSettingsListener` |
-
+{sticky-header="true"}
 
 ### AppCodeCorePlugin.xml
 
@@ -51,6 +51,7 @@
 | [appcode.xcodeExternalBuildProvider](https://jb.gg/ipe?extensions=appcode.xcodeExternalBuildProvider) ![Non-Dynamic][non-dynamic] | `XcodeExternalBuildProvider` |
 | [appcode.xcodeTemplatePathsProvider](https://jb.gg/ipe?extensions=appcode.xcodeTemplatePathsProvider) ![Non-Dynamic][non-dynamic] | `XcodeTemplatePathsProvider` |
 | [appcode.xcodeTemplatesProvider](https://jb.gg/ipe?extensions=appcode.xcodeTemplatesProvider) | `XcodeTemplatesProvider` |
+{sticky-header="true"}
 
 ### CocoaCommonPlugin.xml
 
@@ -59,6 +60,7 @@
 | [appcode.breakpointHandlersProvider](https://jb.gg/ipe?extensions=appcode.breakpointHandlersProvider) ![Non-Dynamic][non-dynamic] | `IPhoneBreakpointHandlersProvider` |
 | [appcode.lldbInitializerProvider](https://jb.gg/ipe?extensions=appcode.lldbInitializerProvider) ![Non-Dynamic][non-dynamic] | `LLDBInitializerProvider` |
 | [cidr.cocoa.xcodeProjectFileProvider](https://jb.gg/ipe?extensions=cidr.cocoa.xcodeProjectFileProvider) | `XcodeProjectFileProvider` |
+{sticky-header="true"}
 
 ### CocoaPlugin.xml
 
@@ -66,6 +68,7 @@
 |-----------------|----------------|
 | [cidr.cocoa.documentation.search.candidates.helper](https://jb.gg/ipe?extensions=cidr.cocoa.documentation.search.candidates.helper) | `XcodeDocumentationCandidateBasedSearchHelper` |
 | [cidr.cocoa.documentation.search.usr.provider](https://jb.gg/ipe?extensions=cidr.cocoa.documentation.search.usr.provider) | `XcodeDocumentationUsrProvider` |
+{sticky-header="true"}
 
 ### SwiftLanguageInternalPlugin.xml
 
@@ -76,6 +79,7 @@
 | [swift.sdkInfo.extractor](https://jb.gg/ipe?extensions=swift.sdkInfo.extractor) | `OCResolveConfigurationSdkInfoExtractor` |
 | [swift.sourcekit.blacklistedModulesProvider](https://jb.gg/ipe?extensions=swift.sourcekit.blacklistedModulesProvider) ![Non-Dynamic][non-dynamic] | `SourceKitBlacklistedModulesProvider` |
 | [swift.sourcekit.dependenciesLoader](https://jb.gg/ipe?extensions=swift.sourcekit.dependenciesLoader) | `SourceKitPlatformBinaryDependenciesLoader` |
+{sticky-header="true"}
 
 ### SwiftPlugin.xml
 
@@ -89,6 +93,7 @@
 | [swift.lang.sourceKit.declarationLocationValidator](https://jb.gg/ipe?extensions=swift.lang.sourceKit.declarationLocationValidator) | `SourceKitDeclarationLocationValidator` |
 | [swift.lang.sourceKitFixExtension](https://jb.gg/ipe?extensions=swift.lang.sourceKitFixExtension) | `SwiftSourceKitFixExtension` |
 | [swift.lang.swiftSupportProvider](https://jb.gg/ipe?extensions=swift.lang.swiftSupportProvider) | `SwiftSupportProvider` |
+{sticky-header="true"}
 
 ### SwiftPMCommon.xml
 
@@ -99,18 +104,21 @@
 | [swift.packageManager.launcher](https://jb.gg/ipe?extensions=swift.packageManager.launcher) | `SwiftPackageManagerConfigurationLauncher` |
 | [swift.packageManager.modulemapsCollector](https://jb.gg/ipe?extensions=swift.packageManager.modulemapsCollector) | `SwiftPackageModuleMapsCollector` |
 | [swift.packageManager.systemModuleResolver](https://jb.gg/ipe?extensions=swift.packageManager.systemModuleResolver) | `SwiftPackageManagerSystemModuleResolver` |
+{sticky-header="true"}
 
 ### SwiftTestsExtension.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [test.cidr.OCCodeInsightDelegate](https://jb.gg/ipe?extensions=test.cidr.OCCodeInsightDelegate) ![Non-Dynamic][non-dynamic] | `OCCodeInsightDelegate` |
+{sticky-header="true"}
 
 ### XcodeModelCorePlugin.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | [xcode.pbxReferenceBuildSettingsProvider](https://jb.gg/ipe?extensions=xcode.pbxReferenceBuildSettingsProvider) ![Non-Dynamic][non-dynamic] | `PBXReferenceBuildSettingProvider` |
+{sticky-header="true"}
 
 [deprecated]: https://img.shields.io/badge/-Deprecated-lightgrey?style=flat-square
 [removal]: https://img.shields.io/badge/-Removal-red?style=flat-square

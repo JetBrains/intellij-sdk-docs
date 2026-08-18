@@ -83,7 +83,7 @@ by calling the `getSpacing()` method of the `SpacingBuilder`.
 
 Much of the work when implementing `AbstractBlock` goes into implementing `buildChildren()` that calculates blocks for the children of the current block's AST node.
 Use `getNode().getChildren()` to retrieve the AST node's children of the current block,
-and or each child that is not whitespace, build a subblock which is then added to the list of subblocks.
+and for each child that is not whitespace, build a subblock which is then added to the list of subblocks.
 While the exact method of building a subblock highly depends on the specific language,
 in general, the code for determining the correct `Alignment`, `Indent` and `Wrap` of a block inspects `IElementType`,
 checks if the node is in a specific `TokenSet` or asserts other properties.

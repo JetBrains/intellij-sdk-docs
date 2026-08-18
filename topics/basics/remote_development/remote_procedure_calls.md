@@ -389,7 +389,7 @@ class BackendChatRepositoryModel {
     val userMessage = chatMessageFactory.createUserMessage(messageContent)
     _messages.value += userMessage
 
-    NEW_MESSAGE_TOPIC.send(
+    NEW_MESSAGE_TOPIC.broadcast(
        NewMessageEvent(project.projectId(), userMessage.id)
     )
   }

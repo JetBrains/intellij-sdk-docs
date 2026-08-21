@@ -85,6 +85,8 @@ plugins {
 {#platform-available-tasks}
 
 [`buildPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#buildPlugin),
+[`buildPluginVariants`](tools_intellij_platform_gradle_plugin_tasks.md#buildPluginVariants),
+[`buildPluginVariants_<os>_<arch>`](tools_intellij_platform_gradle_plugin_tasks.md#buildPluginVariants-variant-tasks),
 [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions),
 [`cleanSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#cleanSandbox),
 [`composedJar`](tools_intellij_platform_gradle_plugin_tasks.md#composedJar),
@@ -95,7 +97,11 @@ plugins {
 [`instrumentedJar`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentedJar),
 [`jarSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#jarSearchableOptions),
 [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml),
+[`preparePluginVariant_<os>_<arch>`](tools_intellij_platform_gradle_plugin_tasks.md#preparePluginVariant),
 [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox),
+[`prepareSandbox_runIde`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox-runIde),
+[`prepareSandbox_runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox-runIde),
+[`prepareSandbox_runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox-runIde),
 [`prepareTest`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTest),
 [`prepareTestIdePerformanceSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestIdePerformanceSandbox),
 [`prepareTestSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestSandbox),
@@ -274,6 +280,11 @@ To merge submodule content into the main plugin JAR file, use `pluginComposedMod
 If you define project repositories within the <path>settings.gradle.kts</path> using the `dependencyResolutionManagement`, make sure to include the Settings plugin in <path>settings.gradle.kts</path>.
 
 This approach allows for omitting the `repositories {}` definition in the <path>build.gradle.kts</path> files. See [](tools_intellij_platform_gradle_plugin.md#configuration.dependencyResolutionManagement) for more details.
+
+The Settings plugin also defaults the `kotlin.stdlib.default.dependency` property to `false` for every project before project plugins are applied.
+This prevents the Kotlin Gradle plugin from adding the Kotlin Standard Library dependency automatically, which could conflict with the version bundled in the IntelliJ Platform.
+An explicitly configured Gradle property or an existing project extra property with the same name takes precedence and is left unchanged.
+See [](using_kotlin.md#kotlin-standard-library) for more information about the Kotlin Standard Library dependency.
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">

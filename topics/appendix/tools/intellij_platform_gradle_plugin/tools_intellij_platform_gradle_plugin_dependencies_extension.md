@@ -302,11 +302,12 @@ The list of bundled plugin IDs is available via [`printBundledPlugins`](tools_in
 
 Use `bundledModule(id)` or `bundledModules(ids)` to add a dependency on an IntelliJ Platform bundled module.
 This is useful when a specific platform module is required on the classpath.
+The `id` value can be either a bundled module ID or a module alias exported by the target IDE, for example `com.intellij.modules.vcs`.
 
-| Function              | Description                                    |
-|-----------------------|------------------------------------------------|
-| `bundledModule(id)`   | Adds a dependency on a bundled module.         |
-| `bundledModules(ids)` | Adds a dependency on multiple bundled modules. |
+| Function              | Description                                                 |
+|-----------------------|-------------------------------------------------------------|
+| `bundledModule(id)`   | Adds a dependency on a bundled module or module alias.      |
+| `bundledModules(ids)` | Adds dependencies on multiple bundled modules or aliases.   |
 
 ### Non-Bundled Plugin
 
@@ -406,15 +407,68 @@ dependencies {
 See [`TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) reference for other test-frameworks,
 for example, `Plugin.Java` when testing Java-based functionality.
 
-The provided `testFramework(type, version)` helper method makes it possible to add the base artifact to the test classpath or its variants, such as Java, Go, ReSharper, etc.
+The provided helpers make it possible to add the base artifact to the test classpath or its variants, such as Java, Go, ReSharper, etc.
 
-| Function                       | Description                                                                                                                                            |
-|--------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `testFramework(type, version)` | Adds a dependency on Test Framework or its variant using [`TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) type. |
+| Function                                          | Description                                                                                                                                                                      |
+|---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `testFramework(type, version)`                    | Adds a dependency on Test Framework or its variant using [`TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) type.                           |
+| `testFrameworks(vararg types)`                    | Adds dependencies on all provided Test Framework variants. Each version is selected to match the configured IntelliJ Platform build.                                            |
+| `testFrameworks(types: List<TestFrameworkType>)` | Adds dependencies on all Test Framework variants in the provided list. Each version is selected to match the configured IntelliJ Platform build.                                |
 
-> In rare cases, when the presence of a bundled <path>\$PLATFORM_PATH\$/lib/testFramework.jar</path> library is necessary (like in the case of [Rider](rider.md), as its `test-framework` is not published as an artifact),
-> it is possible to attach it by using the [`TestFrameworkType.Platform.Bundled`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType) type.
-> {style="warning"}
+Use either plural overload to add multiple Test Framework variants at once:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+
+dependencies {
+  intellijPlatform {
+    testFrameworks(
+      TestFrameworkType.Platform,
+      TestFrameworkType.Plugin.Java,
+    )
+    testFrameworks(
+      listOf(
+        TestFrameworkType.JUnit5,
+        TestFrameworkType.Plugin.Maven,
+      )
+    )
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+
+dependencies {
+  intellijPlatform {
+    testFrameworks(
+      TestFrameworkType.Platform.INSTANCE,
+      TestFrameworkType.Plugin.Java.INSTANCE
+    )
+    testFrameworks([
+      TestFrameworkType.JUnit5.INSTANCE,
+      TestFrameworkType.Plugin.Maven.INSTANCE
+    ])
+  }
+}
+```
+
+</tab>
+</tabs>
+
+The plural overloads do not accept an explicit version.
+To pin a specific version, call `testFramework(type, version)` separately.
+
+> In rare cases when the bundled <path>\$PLATFORM_PATH\$/lib/testFramework.jar</path> library is required,
+> attach it with [`TestFrameworkType.Bundled`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType).
+>
+{style="warning"}
 
 There are two known issues related to `Platform` and `JUnit5` Test Frameworks:
 
@@ -436,10 +490,60 @@ The extension also provides helpers to add dependencies needed only for tests:
 | `testBundledPlugin(id)`          | Adds a test dependency on a bundled plugin by ID.                                                               |
 | `testBundledPlugins(vararg ids)` | Adds test dependencies on multiple bundled plugins by IDs.                                                      |
 | `testLocalPlugin(localPath)`     | Adds a test dependency on a local plugin; accepts a path or a project dependency.                               |
-| `testBundledModule(id)`          | Adds a test dependency on a specific bundled platform module.                                                   |
-| `testBundledModules(vararg ids)` | Adds test dependencies on multiple bundled platform modules.                                                    |
+| `testBundledModule(id)`          | Adds a test dependency on a specific bundled platform module or module alias.                                  |
+| `testBundledModules(vararg ids)` | Adds test dependencies on multiple bundled platform modules or aliases.                                        |
 
 Provider and list-based overloads are available for the above helpers, mirroring their production-scope counterparts.
+
+## Sandbox Runtime Classpaths
+{#sandbox-runtime-classpaths}
+
+The plugin uses dedicated resolvable configurations for dependencies copied to the developed plugin's <path>lib/</path> directory in a sandbox:
+
+| Configuration                                    | Description                                                                                                                                                                                   |
+|--------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `intellijPlatformSandboxRuntimeClasspath`        | Extends the project's `runtimeClasspath` and supplies runtime dependencies for regular sandboxes, such as the one created by [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox). |
+| `intellijPlatformTestSandboxRuntimeClasspath`    | Extends `intellijPlatformSandboxRuntimeClasspath` and `intellijPlatformTestRuntimeClasspath`, and supplies runtime dependencies for test sandboxes created by [`prepareTestSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestSandbox). |
+
+Excluding a dependency from either configuration changes only the contents of the corresponding sandbox.
+It does not remove the dependency from the project's compile, runtime, or test classpaths.
+Because the test sandbox configuration extends the regular sandbox configuration, exclusions added to `intellijPlatformSandboxRuntimeClasspath` apply to both regular and test sandboxes.
+Configure `intellijPlatformTestSandboxRuntimeClasspath` instead when an exclusion should apply only to test sandboxes.
+
+For example, the following keeps Joda-Time available to compile the plugin but prevents its JAR from being copied into either sandbox:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+dependencies {
+  implementation("joda-time:joda-time:2.8.1")
+}
+
+configurations.named("intellijPlatformSandboxRuntimeClasspath") {
+  exclude(group = "joda-time", module = "joda-time")
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+  implementation 'joda-time:joda-time:2.8.1'
+}
+
+configurations.named('intellijPlatformSandboxRuntimeClasspath') {
+  exclude group: 'joda-time', module: 'joda-time'
+}
+```
+
+</tab>
+</tabs>
+
+By default, both sandbox configurations exclude `org.jetbrains.kotlin:kotlin-stdlib`, `org.jetbrains.kotlin:kotlin-stdlib-jdk8`, and the known Kotlin Coroutines modules supplied by the IntelliJ Platform.
+The Coroutines exclusions cover the `org.jetbrains.kotlinx`, `com.intellij.platform`, and `org.jetbrains.intellij.deps.kotlinx` groups.
+Set [`org.jetbrains.intellij.platform.useDefaultSandboxExclusions=false`](tools_intellij_platform_gradle_plugin_gradle_properties.md#useDefaultSandboxExclusions) to opt out.
 
 ## Tools
 

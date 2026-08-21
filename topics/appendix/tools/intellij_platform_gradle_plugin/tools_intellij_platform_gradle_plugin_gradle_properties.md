@@ -224,6 +224,40 @@ org.jetbrains.intellij.platform.selfUpdateCheck=false
 ```
 
 
+## `testIdeBundledPluginsClasspathEnabled`
+{#testIdeBundledPluginsClasspathEnabled}
+
+Controls whether bundled plugins declared in the IntelliJ Platform's <path>product-info.json</path> file are added to the classpaths used by the [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde) and ordinary Gradle [`test`](tools_intellij_platform_gradle_plugin_tasks.md#test) tasks.
+
+{type="narrow"}
+Default value
+: `false`
+
+Example
+:
+```text
+org.jetbrains.intellij.platform.testIdeBundledPluginsClasspathEnabled=true
+```
+
+
+## `testIdeBundledPluginsClasspathExcludes`
+{#testIdeBundledPluginsClasspathExcludes}
+
+Specifies a comma-separated list of bundled plugin IDs or module IDs excluded from the classpaths used by the [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde) and ordinary Gradle [`test`](tools_intellij_platform_gradle_plugin_tasks.md#test) tasks.
+This property applies only when [`testIdeBundledPluginsClasspathEnabled`](#testIdeBundledPluginsClasspathEnabled) is enabled.
+Set it to an empty value to include all bundled plugins.
+
+{type="narrow"}
+Default value
+: `com.intellij.openRewrite,com.intellij.ja,com.intellij.ko,com.intellij.zh,org.jetbrains.plugins.vue`
+
+Example
+:
+```text
+org.jetbrains.intellij.platform.testIdeBundledPluginsClasspathExcludes=
+```
+
+
 ## `verifyPluginDefaultRecommendedIdes`
 {#verifyPluginDefaultRecommendedIdes}
 
@@ -273,6 +307,24 @@ Example
 :
 ```
 org.jetbrains.intellij.platform.useCacheRedirector=false
+```
+
+
+## `useDefaultSandboxExclusions`
+{#useDefaultSandboxExclusions}
+
+Controls whether Kotlin standard library and Kotlin Coroutines dependencies provided by the IntelliJ Platform are excluded from sandbox runtime classpaths by default.
+The exclusions apply to sandboxes prepared for running the IDE and tests, including the [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) and [`prepareTestSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestSandbox) tasks.
+Set this property to `false` to opt out of the default exclusions.
+
+{type="narrow"}
+Default value
+: `true`
+
+Example
+:
+```text
+org.jetbrains.intellij.platform.useDefaultSandboxExclusions=false
 ```
 
 

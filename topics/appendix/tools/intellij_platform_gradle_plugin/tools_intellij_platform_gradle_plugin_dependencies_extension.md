@@ -333,6 +333,49 @@ If defined explicitly, can be used along with any custom plugin repository, like
 | `plugin(notation)`           | Adds a dependency on a plugin.         |
 | `plugins(notations)`         | Adds a dependency on multiple plugins. |
 
+The `plugin(id, version, group)` and `plugin(notation)` functions accept an optional trailing configuration block for [excluding bundled libraries](#excluding-plugin-bundled-libraries) shipped with the plugin.
+
+#### Excluding Plugin Bundled Libraries
+{#excluding-plugin-bundled-libraries}
+
+A non-bundled plugin may ship libraries in its <path>lib/</path> and <path>lib/modules/</path> directories that conflict with the ones already provided by the target IntelliJ Platform or by the developed plugin.
+To exclude such files, pass a configuration block to `plugin(...)` and declare patterns with `excludeBundledLibrary(pattern)` or `excludeBundledLibraries(vararg patterns)`:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+dependencies {
+  intellijPlatform {
+    plugin("pluginId", "1.0.0") {
+      excludeBundledLibrary("jena-*.jar")
+    }
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+  intellijPlatform {
+    plugin('pluginId', '1.0.0') {
+      excludeBundledLibrary 'jena-*.jar'
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
+The patterns use Gradle's Ant-style matching, relative to the plugin's <path>lib/</path> and <path>lib/modules/</path> directories, for example `jena-*.jar`.
+Exclusions apply consistently to both the project classpaths and the sandbox installations.
+Patterns declared for the same plugin ID are combined build-wide.
+
+The same configuration block is available for the test-scope [`testPlugin(...)`](#test-scope-plugin-and-module-helpers) helpers.
+
 ### Compatible Plugins
 
 Helpers that automatically pick a version compatible with the currently configured IntelliJ Platform by requesting the JetBrains Marketplace API.
@@ -494,6 +537,7 @@ The extension also provides helpers to add dependencies needed only for tests:
 | `testBundledModules(vararg ids)` | Adds test dependencies on multiple bundled platform modules or aliases.                                        |
 
 Provider and list-based overloads are available for the above helpers, mirroring their production-scope counterparts.
+The `testPlugin(...)` helpers also accept the same configuration block as [`plugin(...)`](#excluding-plugin-bundled-libraries) for excluding libraries bundled with the plugin.
 
 ## Sandbox Runtime Classpaths
 {#sandbox-runtime-classpaths}

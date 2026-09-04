@@ -2197,8 +2197,8 @@ The base Gradle `test` task is preconfigured using the [`TestCompanion`](%gh-ijp
 
 The task itself isn't mutated and a dedicated [`prepareTest`](#prepareTest) task is involved to request for required IntelliJ Platform and sandbox configuration.
 
-Bundled plugins declared in the target IDE's <path>product-info.json</path> are not added to the test classpath by default.
-Set [`testIdeBundledPluginsClasspathEnabled`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathEnabled) to opt in and use [`testIdeBundledPluginsClasspathExcludes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathExcludes) to control exclusions.
+Bundled plugins declared in the target IDE's <path>product-info.json</path> are added to the test classpath by default.
+Set [`testIdeBundledPluginsClasspathEnabled`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathEnabled) to `false` to opt out and use [`testIdeBundledPluginsClasspathExcludes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathExcludes) to control exclusions.
 These properties configure both this task and custom [`testIde`](#testIde) tasks.
 
 
@@ -2225,7 +2225,7 @@ The [`TestIdeTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/g
 
 To register an additional customized test task, use [`intellijPlatformTesting.testIde`](tools_intellij_platform_gradle_plugin_testing_extension.md).
 
-Bundled plugins declared in <path>product-info.json</path> can be added to its classpath with [`testIdeBundledPluginsClasspathEnabled`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathEnabled) and filtered with [`testIdeBundledPluginsClasspathExcludes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathExcludes).
+Bundled plugins declared in <path>product-info.json</path> are added to its classpath by default, controlled with [`testIdeBundledPluginsClasspathEnabled`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathEnabled) and filtered with [`testIdeBundledPluginsClasspathExcludes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathExcludes).
 
 
 

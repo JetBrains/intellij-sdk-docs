@@ -228,15 +228,16 @@ org.jetbrains.intellij.platform.selfUpdateCheck=false
 {#testIdeBundledPluginsClasspathEnabled}
 
 Controls whether bundled plugins declared in the IntelliJ Platform's <path>product-info.json</path> file are added to the classpaths used by the [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde) and ordinary Gradle [`test`](tools_intellij_platform_gradle_plugin_tasks.md#test) tasks.
+Set it to `false` to opt out.
 
 {type="narrow"}
 Default value
-: `false`
+: `true`
 
 Example
 :
 ```text
-org.jetbrains.intellij.platform.testIdeBundledPluginsClasspathEnabled=true
+org.jetbrains.intellij.platform.testIdeBundledPluginsClasspathEnabled=false
 ```
 
 

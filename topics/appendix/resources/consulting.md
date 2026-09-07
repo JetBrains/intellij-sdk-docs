@@ -23,6 +23,7 @@ Also, consider posting requests at [JetBrains Platform Forum: Collaboration & Id
 | Artsiom Chapialiou | [achapialiou@gmail.com][ac1]                              | Plugin's [author][ac2] and core developer ([Qodo][ac3], [Snyk][ac4], etc.)               |
 | Trent Jones        | [trent@revenate.io][tj1]                                  | Consulting and Custom Plugin Development, Developer of [Actionate][tj2]                  |
 | Libing Chen        | [libing.chen@gmail.com][lbc1]                             | Developer of [20+ plugins][lbc2] (e.g. [Just][lbc3], [Qoder][lbc4], etc.)                |
+| Callstack          | [hello@callstack.com][callstack1]                         | Developers of the Storybook plugin. Custom web and mobile plugin development. React Foundation members. |
 
 [ja]: https://www.j-a.dev
 [ja2]: https://www.plugin-dev.com
@@ -57,5 +58,6 @@ Also, consider posting requests at [JetBrains Platform Forum: Collaboration & Id
 [lbc2]: https://plugins.jetbrains.com/vendor/5f47aa04-3398-4eea-98f1-d27c0a115f9b
 [lbc3]: https://plugins.jetbrains.com/plugin/18658-just
 [lbc4]: https://plugins.jetbrains.com/plugin/28926-qoder--think-deeper-build-better-
+[callstack1]: https://www.callstack.com
 
 Please [submit a PR or file a YouTrack issue](getting_help.topic) for changes or additions to this list.

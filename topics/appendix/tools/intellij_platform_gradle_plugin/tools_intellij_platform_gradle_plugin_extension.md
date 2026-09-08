@@ -1632,6 +1632,29 @@ See also:
 - [Tasks: `verifyPlugin.verificationReportsFormats`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-verificationReportsFormats)
 
 
+### `useBundledRuntime`
+{#intellijPlatform-pluginVerification-useBundledRuntime}
+
+Determines whether the IntelliJ Plugin Verifier resolves plugin classes against the JetBrains Runtime (JBR) bundled with each verified IDE, instead of a single runtime shared across all verified IDEs.
+
+When enabled (default), the `-runtime-dir` option is not passed to the Plugin Verifier, so it resolves classes against the JBR bundled within each target IDE.
+The runtime associated with the IntelliJ Platform used to build the plugin is still exposed through the `JAVA_HOME` environment variable and used only as a fallback for IDEs that don't ship a bundled JBR.
+
+When disabled, the runtime associated with the IntelliJ Platform used to build the plugin is forced for all verified IDEs via the `-runtime-dir` option — the behavior from before this option was introduced.
+
+This property sets the convention for all [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) tasks, while a task-level [`verifyPlugin.useBundledRuntime`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-useBundledRuntime) override remains available.
+
+{type="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `true`
+
+See also:
+- [Tasks: `verifyPlugin.useBundledRuntime`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-useBundledRuntime)
+
+
 ## Verify Plugin IDEs
 {#intellijPlatform-pluginVerification-ides}
 

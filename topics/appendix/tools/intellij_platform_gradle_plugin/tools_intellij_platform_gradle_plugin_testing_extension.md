@@ -54,6 +54,7 @@ By default, created tasks depend on the IntelliJ Platform defined with [](tools_
 However, it is possible to adjust it to any requirements with passing custom values directly to the created object, `task`, or `sandboxTask` task instances.
 
 Each registered entry extends the IntelliJ Platform dependency configuration model, so properties like `type`, `version`, `productMode`, `useInstaller`, `useCache`, and `localPath` can be configured directly on the created object.
+The `version` accepts `"latest"` (or `Constraints.LATEST_VERSION`) to resolve the [newest available installer release](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions-latest) for the configured `type`.
 
 In projects using the [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin, this extension can register custom `testIde` tasks only.
 Register custom `runIde`, `testIdeUi`, and `testIdePerformance` tasks in the root project using the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin.

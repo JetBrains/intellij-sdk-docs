@@ -275,6 +275,57 @@ It is advised to rely on installer releases, but targeting EAP multi-OS archives
 
 To apply required repositories, use [](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) or explicit [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories) helpers.
 
+### Latest Version
+
+{#target-versions-latest}
+
+Set the version of an installer-based IntelliJ Platform dependency to `"latest"` (or the `Constraints.LATEST_VERSION` constant) to resolve the newest available release for the requested platform type.
+The version is resolved from the product releases listing across all channels for the requested type, picking the newest matching release by build number:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+import org.jetbrains.intellij.platform.gradle.Constants.Constraints
+
+dependencies {
+  intellijPlatform {
+    intellijIdea("latest")
+    // or:
+    intellijIdea(Constraints.LATEST_VERSION)
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+  intellijPlatform {
+    intellijIdea 'latest'
+  }
+}
+```
+
+</tab>
+</tabs>
+
+The `"latest"` version works only with the installer distribution (the default `useInstaller = true`); combining it with `useInstaller = false` fails the build.
+
+The same version value can be used for [custom testing configurations](tools_intellij_platform_gradle_plugin_testing_extension.md) registered with `intellijPlatformTesting`:
+
+```kotlin
+val runLatestIde = intellijPlatformTesting.runIde.register("runLatestIde") {
+  type = IntelliJPlatformType.IntellijIdea
+  version = "latest"
+}
+```
+
+> Because the resolved version follows the latest release, the exact IntelliJ Platform used may change over time, which affects build reproducibility.
+>
+{style="warning"}
+
 ## Plugins
 
 Make sure that required [plugin repositories](tools_intellij_platform_gradle_plugin_repositories_extension.md#plugin-repositories) are defined to access non-bundled plugins.

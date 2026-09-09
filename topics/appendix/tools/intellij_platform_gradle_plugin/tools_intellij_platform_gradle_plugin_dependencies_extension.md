@@ -279,18 +279,20 @@ To apply required repositories, use [](tools_intellij_platform_gradle_plugin_rep
 
 {#target-versions-latest}
 
-Use `latestVersion(type)` to resolve the latest available installer version for the given IntelliJ Platform `type`.
-The helper returns a `Provider<String>`, so it can be passed directly to any dependency helper that accepts a version provider, such as [`intellijIdeaCommunity(version)`](#default-target-platforms) or [`create(type, version)`](#custom-target-platforms):
+Set the version of an installer-based IntelliJ Platform dependency to `"latest"` (or the `Constraints.LATEST_VERSION` constant) to resolve the newest available release for the requested platform type.
+The version is resolved from the product releases listing across all channels for the requested type, picking the newest matching release by build number:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
-import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
+import org.jetbrains.intellij.platform.gradle.Constants.Constraints
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity(latestVersion(IntelliJPlatformType.IntellijIdeaCommunity))
+    intellijIdeaCommunity("latest")
+    // or:
+    intellijIdeaCommunity(Constraints.LATEST_VERSION)
   }
 }
 ```
@@ -299,11 +301,9 @@ dependencies {
 <tab title="Groovy" group-key="groovy">
 
 ```groovy
-import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
-
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity latestVersion(IntelliJPlatformType.IntellijIdeaCommunity)
+    intellijIdeaCommunity 'latest'
   }
 }
 ```
@@ -311,54 +311,18 @@ dependencies {
 </tab>
 </tabs>
 
-The version is resolved from the product releases listing and used with the installer distribution (the default `useInstaller = true`), picking the newest matching release by build number.
-By default, releases from the `RELEASE`, `EAP`, and `RC` channels are considered, mirroring [`intellijPlatform.pluginVerification.ides.latest()`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-ides).
-Narrow the selection with the trailing configuration block, for example to track the latest EAP build:
+The `"latest"` version works only with the installer distribution (the default `useInstaller = true`); combining it with `useInstaller = false` fails the build.
 
-<tabs group="languages">
-<tab title="Kotlin" group-key="kotlin">
+The same version value can be used for [custom testing configurations](tools_intellij_platform_gradle_plugin_testing_extension.md) registered with `intellijPlatformTesting`:
 
 ```kotlin
-import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
-import org.jetbrains.intellij.platform.gradle.models.ProductRelease
-
-dependencies {
-  intellijPlatform {
-    intellijIdeaCommunity(latestVersion(IntelliJPlatformType.IntellijIdeaCommunity) {
-      channels = listOf(ProductRelease.Channel.EAP)
-    })
-  }
+val customRun = intellijPlatformTesting.runIde.register("customRun") {
+  type = IntelliJPlatformType.IntellijIdea
+  version = "latest"
 }
 ```
-
-</tab>
-<tab title="Groovy" group-key="groovy">
-
-```groovy
-import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
-import org.jetbrains.intellij.platform.gradle.models.ProductRelease
-
-dependencies {
-  intellijPlatform {
-    intellijIdeaCommunity latestVersion(IntelliJPlatformType.IntellijIdeaCommunity) {
-      channels = [ProductRelease.Channel.EAP]
-    }
-  }
-}
-```
-
-</tab>
-</tabs>
-
-The configuration block accepts the same `channels`, `sinceBuild`, and `untilBuild` filters as the [`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases) task.
-The requested `type` remains authoritative even if `types` is also configured in the block.
-
-> This helper is incubating.
->
-{style="note"}
 
 > Because the resolved version follows the latest release, the exact IntelliJ Platform used may change over time, which affects build reproducibility.
-> The same helper is available for [custom testing tasks](tools_intellij_platform_gradle_plugin_testing_extension.md) registered with `intellijPlatformTesting`.
 >
 {style="warning"}
 

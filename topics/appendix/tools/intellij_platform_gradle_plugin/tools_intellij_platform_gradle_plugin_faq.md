@@ -391,18 +391,13 @@ tasks {
 </tab>
 </tabs>
 
-To make the build always target the latest available release instead of only listing it, pass the latest resolved version straight to a platform dependency helper with [`latestVersion(type)`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions-latest).
-This incubating helper is the 2.x equivalent of the 1.x `LATEST-EAP-SNAPSHOT` version keyword, which is no longer supported:
+To make the build always target the latest available release instead of only listing it, set the version of an installer-based IntelliJ Platform dependency to [`"latest"`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions-latest).
+This resolves the newest release across all channels (including EAP) for the requested platform type and is the 2.x counterpart of the 1.x `LATEST-EAP-SNAPSHOT` version keyword, which is no longer supported:
 
 ```kotlin
-import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
-import org.jetbrains.intellij.platform.gradle.models.ProductRelease
-
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity(latestVersion(IntelliJPlatformType.IntellijIdeaCommunity) {
-      channels = listOf(ProductRelease.Channel.EAP)
-    })
+    intellijIdeaCommunity("latest")
   }
 }
 ```

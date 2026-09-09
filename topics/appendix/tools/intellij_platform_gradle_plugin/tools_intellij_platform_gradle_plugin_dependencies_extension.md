@@ -290,9 +290,9 @@ import org.jetbrains.intellij.platform.gradle.Constants.Constraints
 
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("latest")
+    intellijIdea("latest")
     // or:
-    intellijIdeaCommunity(Constraints.LATEST_VERSION)
+    intellijIdea(Constraints.LATEST_VERSION)
   }
 }
 ```
@@ -303,7 +303,7 @@ dependencies {
 ```groovy
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity 'latest'
+    intellijIdea 'latest'
   }
 }
 ```
@@ -316,7 +316,7 @@ The `"latest"` version works only with the installer distribution (the default `
 The same version value can be used for [custom testing configurations](tools_intellij_platform_gradle_plugin_testing_extension.md) registered with `intellijPlatformTesting`:
 
 ```kotlin
-val customRun = intellijPlatformTesting.runIde.register("customRun") {
+val runLatestIde = intellijPlatformTesting.runIde.register("runLatestIde") {
   type = IntelliJPlatformType.IntellijIdea
   version = "latest"
 }

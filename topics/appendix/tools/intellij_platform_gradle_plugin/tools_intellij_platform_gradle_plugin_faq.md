@@ -397,7 +397,7 @@ This resolves the newest release across all channels (including EAP) for the req
 ```kotlin
 dependencies {
   intellijPlatform {
-    intellijIdeaCommunity("latest")
+    intellijIdea("latest")
   }
 }
 ```

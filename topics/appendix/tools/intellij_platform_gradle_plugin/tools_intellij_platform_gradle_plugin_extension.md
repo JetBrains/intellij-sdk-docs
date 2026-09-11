@@ -26,6 +26,7 @@ intellijPlatform {
   instrumentCode = true
   projectName = project.name
   sandboxContainer = "..."
+  subscriptionKey = layout.projectDirectory.file("idea.key")
 
   pluginConfiguration {
     // ...
@@ -51,6 +52,7 @@ intellijPlatform {
   instrumentCode = true
   projectName = project.name
   sandboxContainer = '...'
+  subscriptionKey = layout.projectDirectory.file('idea.key')
 
   pluginConfiguration {
     // ...
@@ -184,6 +186,23 @@ Default value
 See also:
 - [Tasks: `prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
 - [Task Awares: `SandboxAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SandboxAware)
+
+
+### `subscriptionKey`
+{#intellijPlatform-subscriptionKey}
+
+<secondary-label ref="incubating"/>
+
+Specifies the IntelliJ IDEA subscription key file used by sandbox-producing tasks.
+The key file is copied to <path>config/idea.key</path>, and `com.intellij.modules.ultimate` is removed from <path>config/disabled_plugins.txt</path> in each prepared sandbox.
+An individual [`PrepareSandboxTask`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox-subscriptionKey) can override this project-level value.
+
+{type="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`subscriptionKey`](tools_intellij_platform_gradle_plugin_gradle_properties.md#subscriptionKey) Gradle property
 
 
 ### `splitMode`

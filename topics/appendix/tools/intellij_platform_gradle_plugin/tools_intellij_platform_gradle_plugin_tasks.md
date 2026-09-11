@@ -1418,6 +1418,22 @@ Type
 : `SetProperty<String>`
 
 
+### `subscriptionKey`
+{#prepareSandbox-subscriptionKey}
+
+<secondary-label ref="incubating"/>
+
+Specifies the IntelliJ IDEA subscription key file used in this sandbox.
+The key file is copied to <path>config/idea.key</path>, and `com.intellij.modules.ultimate` is removed from <path>config/disabled_plugins.txt</path>.
+
+{type="narrow"}
+Type
+: `RegularFileProperty`
+
+Default value
+: [`intellijPlatform.subscriptionKey`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-subscriptionKey)
+
+
 ### `pluginJar`
 {#prepareSandbox-pluginJar}
 

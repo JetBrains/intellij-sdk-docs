@@ -224,6 +224,30 @@ org.jetbrains.intellij.platform.selfUpdateCheck=false
 ```
 
 
+## `subscriptionKey`
+{#subscriptionKey}
+
+Specifies the path to an IntelliJ IDEA subscription key file used as the default for [`intellijPlatform.subscriptionKey`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-subscriptionKey).
+The key file is copied to <path>config/idea.key</path>, and `com.intellij.modules.ultimate` is removed from <path>config/disabled_plugins.txt</path> in each prepared sandbox.
+Set [`PrepareSandboxTask.subscriptionKey`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox-subscriptionKey) to override this value for a specific sandbox task.
+
+> Keep the key file outside version control. The property contains its path, not the subscription key itself.
+>
+{style="warning"}
+
+{type="narrow"}
+Default value
+: empty (subscription activation is disabled)
+
+Example
+:
+```text
+org.jetbrains.intellij.platform.subscriptionKey=/path/to/idea.key
+```
+
+To configure the key-file path globally for all projects, set the corresponding Gradle project property through the `ORG_GRADLE_PROJECT_org.jetbrains.intellij.platform.subscriptionKey` environment variable.
+
+
 ## `testIdeBundledPluginsClasspathEnabled`
 {#testIdeBundledPluginsClasspathEnabled}
 

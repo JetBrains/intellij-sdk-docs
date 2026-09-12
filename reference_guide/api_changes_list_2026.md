@@ -82,6 +82,32 @@ This shouldn't affect binary compatibility, but an explicit dependency should be
 `com.intellij.openapi.projectRoots.Sdk` interface now extends `com.intellij.openapi.util.UserDataHolderEx` and inherits its abstract method `replace(@NotNull Key<T> key, @Nullable T oldValue, @Nullable T newValue)`
 : Do not implement `Sdk`: it is a non-extendable interface.
 
+#### JNA Library 2026.3
+
+The [JNA](https://github.com/java-native-access/jna) library is no longer loaded by the core classloader.
+It stays bundled as the content module `intellij.libraries.jna`, but a plugin does not see it implicitly anymore.
+A plugin that uses `com.sun.jna.*` classes or `com.intellij.jna.JnaLoader` must declare an explicit dependency.
+Without it, the plugin fails at runtime with `NoClassDefFoundError`.
+
+Add the module dependency to <path>plugin.xml</path>:
+
+```xml
+<dependencies>
+  <module name="intellij.libraries.jna"/>
+</dependencies>
+```
+
+and to <path>build.gradle.kts</path>: `bundledModule("intellij.libraries.jna")`.
+A plugin that ships its own JNA jars is not affected.
+
+Consider this a chance to stop using JNA.
+Plugins for 2026.2 and later target Java 25, where the [Foreign Function and Memory API](https://docs.oracle.com/en/java/javase/25/core/foreign-function-and-memory-api.html) (`java.lang.foreign`) is final.
+The IDE runs with `--enable-native-access=ALL-UNNAMED`, so plugin code can call native functions through FFM without a warning.
+The platform itself migrated its native bindings from JNA to FFM in 2026.3.
+
+`com.intellij.jna.JnaLoader.load(Logger)` method parameter `Logger` removed
+: Use `load()`. The class moved from `intellij.platform.util` to the `intellij.libraries.jna` module, so declare the dependency described above.
+
 #### Kotlin UI DSL 1.0 Removal
 
 Kotlin UI DSL Version 1 (the `com.intellij.ui.layout` DSL entry points) has been completely removed.

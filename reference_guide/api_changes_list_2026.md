@@ -82,6 +82,20 @@ This shouldn't affect binary compatibility, but an explicit dependency should be
 `com.intellij.openapi.projectRoots.Sdk` interface now extends `com.intellij.openapi.util.UserDataHolderEx` and inherits its abstract method `replace(@NotNull Key<T> key, @Nullable T oldValue, @Nullable T newValue)`
 : Do not implement `Sdk`: it is a non-extendable interface.
 
+#### OkHttp Library 2026.3
+
+The [OkHttp](https://square.github.io/okhttp/) library is no longer bundled with the IDE.
+The content module `intellij.libraries.okhttp` and its `okhttp3` classes are gone from every product.
+A plugin that used the bundled library fails at runtime with `NoClassDefFoundError`.
+
+Bundle `com.squareup.okhttp3:okhttp` in the plugin, or switch to `java.net.http.HttpClient`.
+`com.intellij.util.net.PlatformHttpClient` returns a JDK client that follows the IDE proxy, certificate and user agent settings.
+The platform itself migrated all its OkHttp usages to the JDK client in 2026.3.
+The Okio library (`intellij.libraries.squareup.okio.jvm`) stays bundled.
+
+`okhttp3` package removed
+: Bundle `com.squareup.okhttp3:okhttp` in the plugin, or use `java.net.http.HttpClient` through `com.intellij.util.net.PlatformHttpClient`.
+
 #### Kotlin UI DSL 1.0 Removal
 
 Kotlin UI DSL Version 1 (the `com.intellij.ui.layout` DSL entry points) has been completely removed.

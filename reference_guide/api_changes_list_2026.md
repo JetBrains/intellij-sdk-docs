@@ -100,6 +100,11 @@ Add the module dependency to <path>plugin.xml</path>:
 and to <path>build.gradle.kts</path>: `bundledModule("intellij.libraries.jna")`.
 A plugin that ships its own JNA jars is not affected.
 
+Consider this a chance to stop using JNA.
+Plugins for 2026.2 and later target Java 25, where the [Foreign Function and Memory API](https://docs.oracle.com/en/java/javase/25/core/foreign-function-and-memory-api.html) (`java.lang.foreign`) is final.
+The IDE runs with `--enable-native-access=ALL-UNNAMED`, so plugin code can call native functions through FFM without a warning.
+The platform itself migrated its native bindings from JNA to FFM in 2026.3.
+
 `com.intellij.jna.JnaLoader.load(Logger)` method parameter `Logger` removed
 : Use `load()`. The class moved from `intellij.platform.util` to the `intellij.libraries.jna` module, so declare the dependency described above.
 

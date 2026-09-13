@@ -6,7 +6,7 @@ rootProject.name = "code_inspection"
 pluginManagement {
   plugins {
     id("org.jetbrains.kotlin.jvm") version "2.3.21"
-    id("org.jetbrains.qodana") version "2026.1.3"
+    id("org.jetbrains.qodana") version "2026.2.1"
   }
 }
 

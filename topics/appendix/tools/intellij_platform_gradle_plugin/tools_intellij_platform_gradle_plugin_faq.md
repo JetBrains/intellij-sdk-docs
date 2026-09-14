@@ -405,6 +405,20 @@ dependencies {
 When targeting Multi-OS ZIP archives instead (`useInstaller = false`), the 1.x `LATEST-EAP-SNAPSHOT` version keyword (and similar `*-EAP-SNAPSHOT` snapshot coordinates) is still supported, resolved from the [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories) added with the [`snapshots()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories) helper.
 
 
+### How does the plugin behave in Gradle offline mode?
+
+The plugin fully honors Gradle's [`--offline`](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:command_line_execution_options) flag across its custom, out-of-band network paths, including the product releases listing, installer and IDE download URLs, [`"latest"`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions-latest)/`LATEST-EAP-SNAPSHOT` resolution, JetBrains Marketplace listings, and `maven-metadata.xml` lookups.
+
+When the build runs offline, the plugin reuses already-cached artifacts instead of reaching the network.
+If the required data isn't cached yet, it fails fast with a message naming the missing artifact instead of hanging or throwing an opaque network error:
+
+```
+No cached version of <artifact> available for offline mode. Run the build once without the `--offline` flag to populate the cache, then retry.
+```
+
+Run the build once without `--offline` to populate the caches, then subsequent offline builds reuse them.
+
+
 ### The currently selected Java Runtime is not JetBrains Runtime (JBR)
 
 When running tests or IDE with your plugin loaded, it is necessary to use JetBrains Runtime (JBR).

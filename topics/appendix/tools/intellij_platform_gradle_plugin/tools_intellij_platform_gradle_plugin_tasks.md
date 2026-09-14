@@ -16,6 +16,14 @@ Tasks have dependencies on each other, they inherit from [](tools_intellij_platf
 and can be configured independently.
 However, most cases will be covered by the [](tools_intellij_platform_gradle_plugin_extension.md).
 
+The plugin organizes the tasks it registers into dedicated Gradle groups, visible in the <control>Gradle</control> tool window and in the `gradle tasks` output:
+
+- <control>intellij platform</control> – building and running tasks, such as [`buildPlugin`](#buildPlugin), [`runIde`](#runIde), [`signPlugin`](#signPlugin), and [`publishPlugin`](#publishPlugin).
+- <control>intellij platform verification</control> – verification tasks, such as [`verifyPlugin`](#verifyPlugin), [`verifyPluginProjectConfiguration`](#verifyPluginProjectConfiguration), [`verifyPluginStructure`](#verifyPluginStructure), and [`verifyPluginSignature`](#verifyPluginSignature).
+- <control>intellij platform info</control> – informational tasks that print resolved data, such as [`printBundledPlugins`](#printBundledPlugins), [`printBundledModules`](#printBundledModules), and [`printProductsReleases`](#printProductsReleases).
+
+Intermediate and internal tasks, such as [`prepareSandbox`](#prepareSandbox) or [`instrumentCode`](#instrumentCode), are not assigned to any group and appear under Gradle's other tasks.
+
 
 
 ## `buildPlugin`
@@ -1791,6 +1799,9 @@ To register a customized task, use [`intellijPlatformTesting.runIde`](tools_inte
 When [`splitMode`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware-splitMode) is enabled, the task starts the IDE in Split Mode.
 To run the backend and frontend as separate Gradle tasks, use [`runIdeBackend`](#runIdeBackend) and [`runIdeFrontend`](#runIdeFrontend), or generate IDE run configurations with [`generateSplitModeRunConfigurations`](#generateSplitModeRunConfigurations).
 
+On launch, the task logs the path to the sandbox log file (<path>idea.log</path> in the sandbox log directory) at the lifecycle level, prefixed with `IDE logs:`.
+In Split Mode, the backend and frontend processes report their paths separately, prefixed with `IDE logs (backend):` and `IDE logs (frontend):`.
+
 
 ### `executionMode`
 {#runIde-executionMode}
@@ -2362,6 +2373,9 @@ Due to caching, the latest Plugin Verifier release version (%plugin-verifier-ver
 In such cases, [refresh dependencies](https://docs.gradle.org/current/userguide/dependency_caching.html#sec:refreshing-dependencies)
 manually.
 
+The task derives its pass/fail verdict from the Plugin Verifier report files rather than the console output, so the outcome no longer depends on [`teamCityOutputFormat`](#verifyPlugin-teamCityOutputFormat).
+If the Plugin Verifier finishes without writing a verdict for any of the target IDEs, the task fails instead of reporting a false-positive success.
+
 See also:
 - [Extension: `intellijPlatform.pluginVerification`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification)
 - [Types: `FailureLevel`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
@@ -2488,6 +2502,9 @@ Default value
 
 Specifies whether to use the TeamCity-compatible output format.
 If set to `true`, outputs in a format compatible with [TeamCity](https://www.jetbrains.com/teamcity/), directing the output to stdout.
+
+The [`NOT_DYNAMIC`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel) failure level can't be combined with `teamCityOutputFormat = true` (also when selected via [`FailureLevel.ALL`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)), as the dynamic-plugin eligibility status is neither persisted in the report files nor emitted as a TeamCity service message.
+The [`verifyPlugin`](#verifyPlugin) task fails fast with a configuration error if both are set.
 
 {type="narrow"}
 Type

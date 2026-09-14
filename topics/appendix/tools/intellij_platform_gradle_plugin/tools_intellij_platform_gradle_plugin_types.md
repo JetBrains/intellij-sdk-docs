@@ -32,6 +32,8 @@ Enum class describing the failure level of the IntelliJ Plugin Verifier CLI tool
 | `ALL`                              | EnumSet constant containing all possible options.                                   |
 | `NONE`                             | EnumSet constant containing no options.                                             |
 
+`NOT_DYNAMIC` is detected only from the plain console output and can't be combined with [`verifyPlugin.teamCityOutputFormat = true`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-teamCityOutputFormat) (also when selected via `ALL`); the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task fails fast if both are set.
+
 See also:
 - [Extension: `intellijPlatform.pluginVerification.failureLevel`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-failureLevel)
 - [Tasks: `verifyPlugin.failureLevel`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-failureLevel)

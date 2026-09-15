@@ -108,6 +108,21 @@ The platform itself migrated its native bindings from JNA to FFM in 2026.3.
 `com.intellij.jna.JnaLoader.load(Logger)` method parameter `Logger` removed
 : Use `load()`. The class moved from `intellij.platform.util` to the `intellij.libraries.jna` module, so declare the dependency described above.
 
+#### OkHttp Library Unbundling
+
+The [OkHttp](https://square.github.io/okhttp/) library is no longer bundled with the IDE.
+The content module `intellij.libraries.okhttp` and its `okhttp3` classes are gone from every product.
+A plugin that used the bundled library fails at runtime with `NoClassDefFoundError`.
+
+Bundle `com.squareup.okhttp3:okhttp` in the plugin, or switch to `java.net.http.HttpClient`.
+`com.intellij.util.net.PlatformHttpClient` returns a JDK client that follows the IDE proxy, certificate and user agent settings.
+The platform itself migrated all its OkHttp usages to the JDK client in 2026.3.
+The Okio library (`intellij.libraries.squareup.okio.jvm`) stays bundled.
+
+`okhttp3` package removed
+: Bundle `com.squareup.okhttp3:okhttp` in the plugin, or use `java.net.http.HttpClient` through `com.intellij.util.net.PlatformHttpClient`.
+
+
 #### Kotlin UI DSL 1.0 Removal
 
 Kotlin UI DSL Version 1 (the `com.intellij.ui.layout` DSL entry points) has been completely removed.

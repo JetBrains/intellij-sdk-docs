@@ -82,7 +82,7 @@ This shouldn't affect binary compatibility, but an explicit dependency should be
 `com.intellij.openapi.projectRoots.Sdk` interface now extends `com.intellij.openapi.util.UserDataHolderEx` and inherits its abstract method `replace(@NotNull Key<T> key, @Nullable T oldValue, @Nullable T newValue)`
 : Do not implement `Sdk`: it is a non-extendable interface.
 
-#### OkHttp Library 2026.3
+#### OkHttp Library Unbundling
 
 The [OkHttp](https://square.github.io/okhttp/) library is no longer bundled with the IDE.
 The content module `intellij.libraries.okhttp` and its `okhttp3` classes are gone from every product.

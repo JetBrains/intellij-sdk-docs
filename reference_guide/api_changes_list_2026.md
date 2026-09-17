@@ -73,8 +73,11 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2026.3
 
-The debugger functionality of the platform has been extracted into separate modules with their own classloaders.
-This shouldn't affect binary compatibility, but an explicit dependency should be added in `build.gradle.kts` using `bundledModule("intellij.platform.debugger")` if a plugin uses the API from that module.
+Several modules were extracted from the core plugin to separate modules with their own classloaders.
+This shouldn't affect binary compatibility, but an explicit dependency should be added in `build.gradle.kts` using `bundledModule(<moduleName>)` if a plugin uses API from these modules:
+* `intellij.platform.debugger`
+* `intellij.platform.externalSystem`
+* `intellij.platform.remoteServers`
 
 `com.intellij.openapi.projectRoots.Sdk` interface now extends `com.intellij.openapi.util.UserDataHolderEx` and inherits its abstract method `putUserDataIfAbsent(@NotNull Key<T> key, @NotNull T value)`
 : Do not implement `Sdk`: it is a non-extendable interface.

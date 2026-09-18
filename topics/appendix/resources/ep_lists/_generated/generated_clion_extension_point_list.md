@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 0b6db099218edf465d512609a04796a0c678177d -->
+<!-- Revision: 1dfe5ce6ce2e9aedb93c1a7cc6affb232468624c -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-183 Extension Points and 51 Listeners
+184 Extension Points and 50 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -28,7 +28,6 @@ EP List Directories:
 | [`ProjectStatusUpdateListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.projectStatus.listeners.ProjectStatusUpdateListener)  ![Project-Level][project-level] | `ProjectStatusUpdateListener` |
 | [`CubeMXManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.stm32.cubemx.CubeMXManager.CubeStatusListener)  | `CubeStatusListener` |
 | [`WestProjectListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.WestProjectListener)  | `WestProjectListener` |
-| [`WestConfigListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.config.WestConfigListener)  | `WestConfigListener` |
 | [`Listener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.clion.west.settings.WestSettings.Listener)  | `Listener` |
 | [`FileSymbolTablesCache#OUT_OF_CODE_BLOCK_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.psi.util.PsiModificationTracker.Listener)  ![Project-Level][project-level] | [`Listener`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) |
 | [`ConsistencyErrorTopicListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.rml.dfa.utils.ConsistencyErrorTopicListener)  | `ConsistencyErrorTopicListener` |
@@ -207,6 +206,7 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.currentDebugProfileSuggestor"/></include> ![Internal][internal] | `CidrCurrentDebugProfileSuggester` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileApplicationConverter"/></include> ![Internal][internal] | `CidrDebugProfileApplicationConverter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileCompatibilityChecker"/></include> | `CidrDebugProfileCompatibilityChecker` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileProjectConverter"/></include> ![Internal][internal] | `CidrDebugProfileProjectConverter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileType"/></include> | `CidrDebugProfileType` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfilesEnabler"/></include> | `CidrDebugProfilesEnabler` |

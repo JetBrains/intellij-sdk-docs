@@ -153,6 +153,11 @@ The migration should be done according to the [Kotlin UI DSL Version 2 migration
 `com.intellij.ui.layout.RowBuilder` class removed
 : [Migrate to Kotlin UI DSL Version 2](kotlin_ui_dsl.md#migration-to-version-2).
 
+### Java Plugin 2026.3
+
+`com.intellij.openapi.module.StdModuleTypes` class removed
+: Use `com.intellij.openapi.module.JavaModuleType.getModuleType()` instead. Avoid a check of the module type if possible. See `com.intellij.openapi.module.ModuleType` for details.
+
 ## 2026.2
 
 ### IntelliJ Platform 2026.2

@@ -97,6 +97,18 @@ This shouldn't affect binary compatibility, but an explicit dependency should be
 `com.intellij.openapi.projectRoots.Sdk` interface now extends `com.intellij.openapi.util.UserDataHolderEx` and inherits its abstract method `replace(@NotNull Key<T> key, @Nullable T oldValue, @Nullable T newValue)`
 : Do not implement `Sdk`: it is a non-extendable interface.
 
+`com.intellij.openapi.actionSystem.LangDataKeys.RUN_PROFILE` field type changed from `DataKey<RunProfile>` to `DataKey<?>`
+: Use `com.intellij.openapi.actionSystem.ExecutionDataKeys.RUN_PROFILE` or add an explicit cast.
+
+`com.intellij.openapi.actionSystem.LangDataKeys.CONSOLE_VIEW` field type changed from `DataKey<ConsoleView>` to `DataKey<?>`
+: Use `com.intellij.openapi.actionSystem.ExecutionDataKeys.CONSOLE_VIEW` or add an explicit cast.
+
+`com.intellij.openapi.actionSystem.LangDataKeys.EXECUTION_ENVIRONMENT` field type changed from `DataKey<ExecutionEnvironment>` to `DataKey<?>`
+: Use `com.intellij.openapi.actionSystem.ExecutionDataKeys.EXECUTION_ENVIRONMENT` or add an explicit cast.
+
+`com.intellij.openapi.actionSystem.LangDataKeys.RUN_CONTENT_DESCRIPTOR` field type changed from `DataKey<RunContentDescriptor>` to `DataKey<?>`
+: Use `com.intellij.openapi.actionSystem.ExecutionDataKeys.RUN_CONTENT_DESCRIPTOR` or add an explicit cast.
+
 #### OkHttp Library Unbundling
 
 The [OkHttp](https://square.github.io/okhttp/) library is no longer bundled with the IDE.

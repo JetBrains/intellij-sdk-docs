@@ -349,13 +349,298 @@ Otherwise, the returned state is serialized in XML and stored.
 
 ## Using `PropertiesComponent` for Simple Non-Roamable Persistence
 
-If the plugin needs to persist a few simple values, the easiest way to do so is to use the [`PropertiesComponent`](%gh-ic%/platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service.
-It can save both application-level values and project-level values in the workspace file.
-Roaming is disabled for `PropertiesComponent`, so use it only for temporary, non-roamable properties.
+Use the [`PropertiesComponent`](%gh-ic%/platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service
+to persist a small number of simple values, such as toggle states, counters, or strings.
 
-Use the `PropertiesComponent.getInstance()` method for storing application-level values and the `PropertiesComponent.getInstance(Project)` method for storing project-level values.
+This map-like API supports primitive types (`boolean`, `int`, `long`, and `float`),
+`String` values, and collections of `String` values.
+It can persist application-level and project-level values.
 
-Since all plugins share the same namespace, it is highly recommended to prefix key names (for example, using plugin ID `com.example.myCustomSetting`).
+> Roaming is disabled for `PropertiesComponent`, so use it only for local or temporary properties that do not need backup or sync.
+>
+{style="warning"}
+
+To retrieve a `PropertiesComponent` instance, use:
+
+* `PropertiesComponent.getInstance()` for application-level values.
+* `PropertiesComponent.getInstance(Project)` for project-level values.
+
+> When using `PropertiesComponent`, follow these guidelines:
+> - `PropertiesComponent` is a service-like class, so [service retrieval rules](plugin_services.md#retrieving-a-service) apply.
+> - Prefix keys with the plugin ID because all plugins share the same persistence namespace.
+>
+{style="warning"}
+
+### Persisting a Toggle, Switch or Other Boolean Values
+
+To persist a boolean value that is disabled by default:
+
+<tabs>
+<tab title="Java">
+
+```java
+// Key is prefixed with plugin ID to prevent conflicts
+private static final String PREVIEW_KEY = "com.example.plugin.preview";
+
+// Persist a toggle
+PropertiesComponent.getInstance().setValue(PREVIEW_KEY, value);
+// Retrieve the value only when the persisted value is `true`
+if (PropertiesComponent.getInstance().isTrueValue(PREVIEW_KEY)) {
+  enablePreview();
+}
+```
+
+</tab>
+<tab title="Kotlin">
+
+```kotlin
+// Key is prefixed with plugin ID to prevent conflicts
+private const val PREVIEW_KEY = "com.example.plugin.preview"
+
+// Persist a toggle
+PropertiesComponent.getInstance().setValue(PREVIEW_KEY, value)
+// Retrieve the value only when the persisted value is `true`
+if (PropertiesComponent.getInstance().isTrueValue(PREVIEW_KEY)) {
+  enablePreview()
+}
+```
+
+</tab>
+</tabs>
+
+Initially, the key is absent, so `isTrueValue()` returns `false`.
+When the user enables the preview in the plugin UI, `setValue()` persists the `true` value;
+when the user disables it, `setValue()` removes the key.
+`isTrueValue()` returns `true` only when the stored value is `true`.
+
+To persist a boolean value that should be enabled by default, specify the default value.
+
+<tabs>
+<tab title="Java">
+
+```java
+// Retrieve a value with `true` as the default
+boolean isPreviewVisible = PropertiesComponent.getInstance().getBoolean(PREVIEW_KEY, true);
+// Persist a value only when it differs from the default
+PropertiesComponent.getInstance().setValue(PREVIEW_KEY, value, true);
+```
+
+</tab>
+<tab title="Kotlin">
+
+```kotlin
+// Retrieve a value with `true` as the default
+val isPreviewVisible = PropertiesComponent.getInstance().getBoolean(PREVIEW_KEY, true)
+// Persist a value only when it differs from the default
+PropertiesComponent.getInstance().setValue(PREVIEW_KEY, value, true)
+```
+
+</tab>
+</tabs>
+
+The three-argument `setValue()` stores the value only when it differs from the default.
+Otherwise, it removes the key.
+
+Use `updateValue()` when a value change must also trigger additional work:
+
+<tabs>
+<tab title="Java">
+
+```java
+if (PropertiesComponent.getInstance().updateValue(PREVIEW_KEY, enabled)) {
+  updatePreview();
+}
+```
+
+</tab>
+<tab title="Kotlin">
+
+```kotlin
+if (PropertiesComponent.getInstance().updateValue(PREVIEW_KEY, enabled)) {
+  updatePreview()
+}
+```
+
+</tab>
+</tabs>
+
+`updateValue()` always stores `true` or `false` and returns `true` only when the value changed.
+Unlike `setValue()`, it does not remove the key when the value equals a default.
+
+### Persisting Primitive Values
+
+Use typed methods for `int`, `float`, and `String` values.
+Use the same default value in the getter and setter.
+
+<tabs>
+<tab title="Java">
+
+```java
+private static final String PREVIEW_LIMIT_KEY = "com.example.plugin.previewLimit";
+private static final String PREVIEW_ZOOM_KEY = "com.example.plugin.previewZoom";
+private static final String PREVIEW_STYLE_KEY = "com.example.plugin.previewStyle";
+private static final int DEFAULT_LIMIT = 20;
+private static final float DEFAULT_ZOOM = 1.0f;
+private static final String DEFAULT_STYLE = "compact";
+
+int getPreviewLimit() {
+  return PropertiesComponent.getInstance()
+    .getInt(PREVIEW_LIMIT_KEY, DEFAULT_LIMIT);
+}
+
+void setPreviewLimit(int value) {
+  PropertiesComponent.getInstance()
+    .setValue(PREVIEW_LIMIT_KEY, value, DEFAULT_LIMIT);
+}
+
+float getPreviewZoom() {
+  return PropertiesComponent.getInstance()
+    .getFloat(PREVIEW_ZOOM_KEY, DEFAULT_ZOOM);
+}
+
+void setPreviewZoom(float value) {
+  PropertiesComponent.getInstance()
+    .setValue(PREVIEW_ZOOM_KEY, value, DEFAULT_ZOOM);
+}
+
+String getPreviewStyle() {
+  return PropertiesComponent.getInstance()
+    .getValue(PREVIEW_STYLE_KEY, DEFAULT_STYLE);
+}
+
+void setPreviewStyle(String value) {
+  PropertiesComponent.getInstance()
+    .setValue(PREVIEW_STYLE_KEY, value, DEFAULT_STYLE);
+}
+```
+
+</tab>
+<tab title="Kotlin">
+
+```kotlin
+private const val PREVIEW_LIMIT_KEY = "com.example.plugin.previewLimit"
+private const val PREVIEW_ZOOM_KEY = "com.example.plugin.previewZoom"
+private const val PREVIEW_STYLE_KEY = "com.example.plugin.previewStyle"
+private const val DEFAULT_LIMIT = 20
+private const val DEFAULT_ZOOM = 1.0f
+private const val DEFAULT_STYLE = "compact"
+
+var previewLimit: Int
+    get() = PropertiesComponent.getInstance()
+      .getInt(PREVIEW_LIMIT_KEY, DEFAULT_LIMIT)
+    set(value) = PropertiesComponent.getInstance()
+      .setValue(PREVIEW_LIMIT_KEY, value, DEFAULT_LIMIT)
+
+var previewZoom: Float
+    get() = PropertiesComponent.getInstance()
+      .getFloat(PREVIEW_ZOOM_KEY, DEFAULT_ZOOM)
+    set(value) = PropertiesComponent.getInstance()
+      .setValue(PREVIEW_ZOOM_KEY, value, DEFAULT_ZOOM)
+
+var previewStyle: String
+    get() = PropertiesComponent.getInstance()
+      .getValue(PREVIEW_STYLE_KEY, DEFAULT_STYLE)
+    set(value) = PropertiesComponent.getInstance()
+      .setValue(PREVIEW_STYLE_KEY, value, DEFAULT_STYLE)
+```
+
+</tab>
+</tabs>
+
+`getInt()` and `getFloat()` return the default when the key is absent or invalid,
+whereas `getValue()` returns it only when the key is absent.
+Each three-argument `setValue()` follows the same default-value rule:
+it stores the value only when it differs from the default and otherwise removes the key.
+
+### Persisting Multiple Strings
+
+Use `setList()` and `getList()` to persist a collection of strings.
+
+<tabs>
+<tab title="Java">
+
+```java
+private static final String RECENT_PREVIEWS_KEY
+  = "com.example.plugin.recentPreviews";
+
+List<String> getRecentPreviews() {
+  List<String> previews = PropertiesComponent.getInstance()
+      .getList(RECENT_PREVIEWS_KEY);
+  if (previews == null) {
+    return Collections.emptyList();
+  }
+  return previews;
+}
+
+void setRecentPreviews(List<String> value) {
+  PropertiesComponent.getInstance()
+    .setList(RECENT_PREVIEWS_KEY, value);
+}
+```
+
+</tab>
+<tab title="Kotlin">
+
+```kotlin
+private const val RECENT_PREVIEWS_KEY
+  = "com.example.plugin.recentPreviews"
+
+var recentPreviews: List<String>
+  get() = PropertiesComponent.getInstance()
+    .getList(RECENT_PREVIEWS_KEY) ?: emptyList()
+  set(value) = PropertiesComponent.getInstance()
+    .setList(RECENT_PREVIEWS_KEY, value)
+```
+
+</tab>
+</tabs>
+
+`setList()` copies the collection, and `getList()` returns `null` when no list is stored.
+
+### Resetting Stored Values
+
+Use `unsetValue()` to remove a stored value for a key.
+
+<tabs>
+<tab title="Java">
+
+```java
+PropertiesComponent.getInstance().unsetValue(PREVIEW_STYLE_KEY);
+```
+
+</tab>
+<tab title="Kotlin">
+
+```kotlin
+PropertiesComponent.getInstance().unsetValue(PREVIEW_STYLE_KEY)
+```
+
+</tab>
+</tabs>
+
+The next read returns the default value because the key is absent.
+
+### Detecting the Presence of a Value
+
+<tabs>
+<tab title="Java">
+
+```java
+boolean hasSavedStyle = PropertiesComponent.getInstance().isValueSet(PREVIEW_STYLE_KEY);
+```
+
+</tab>
+<tab title="Kotlin">
+
+```kotlin
+val hasSavedStyle = PropertiesComponent.getInstance().isValueSet(PREVIEW_STYLE_KEY)
+```
+
+</tab>
+</tabs>
+
+Use `isValueSet()` only when you must distinguish a saved value from an absent key.
+
 
 ## Legacy API (`JDOMExternalizable`) {collapsible="true"}
 

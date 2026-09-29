@@ -641,6 +641,11 @@ val hasSavedStyle = PropertiesComponent.getInstance().isValueSet(PREVIEW_STYLE_K
 
 Use `isValueSet()` only when you must distinguish a saved value from an absent key.
 
+### Storage Mechanism
+
+The underlying storage mechanism is an internal implementation detail.
+
+Project-level values are stored in the project’s `.idea/workspace.xml` file, while application-level values are stored in the IDE [configuration directory](https://www.jetbrains.com/help/idea/directories-used-by-the-ide-to-store-settings-caches-plugins-and-logs.html#config-directory).
 
 ## Legacy API (`JDOMExternalizable`) {collapsible="true"}
 

@@ -260,7 +260,7 @@ If the help text applies to several UI controls, place it at the bottom of the g
 
 <chapter title="Implementation" id="implementation_group" collapsible="true" default-state="collapsed">
 
-Use [`Panel.group()`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder/Panel.kt) as the border for panels that need title and possibly the gray line on the right of the title:
+Use [`Panel.group()`](%gh-ic%/platform/platform-api/src/com/intellij/ui/dsl/builder/Panel.kt) as the border for panels that need title and possibly the gray line on the right of the title:
 
 ```kotlin
 panel {

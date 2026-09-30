@@ -36,7 +36,7 @@ Users can change the default font in <control>Settings | Appearance</control>. I
 
 Use the built-in text styles from the table below whenever possible.
 
-> Implementation example for font styles: [`LabelSizeDemoAction`](%gh-ic%/platform/platform-impl/internal/src/com/intellij/internal/LabelSizeDemoAction.kt)
+> Implementation example for font styles: [`LabelSizeDemoAction`](%gh-ic%/plugins/devkit/devkit-core/src/internal/ui/LabelSizeDemoAction.kt)
 >
 {style="note"}
 

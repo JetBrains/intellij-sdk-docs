@@ -59,7 +59,7 @@ Use one of the existing predefined widget appearance options:
   Widget with only a text.
 
   Example:
-  [`SkipWindowDeactivationEventsAction.StatusWidget`](%gh-ic%/platform/platform-impl/internal/src/com/intellij/internal/SkipWindowDeactivationEventsAction.kt)
+  [`SkipWindowDeactivationEventsAction`](%gh-ic%/plugins/dev/intellij.dev.core/src/SkipWindowDeactivationEventsAction.kt)
 
 - `com.intellij.openapi.wm.StatusBarWidget.MultipleTextValuesPresentation`
 

@@ -211,7 +211,7 @@ Registering actions in <path>[plugin.xml](plugin_configuration_file.md)</path> i
 #### Action Declaration Reference
 
 The places where actions can appear are defined by constants in [`ActionPlaces`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/actionSystem/ActionPlaces.java).
-Group IDs for the IntelliJ Platform are defined in [`PlatformActions.xml`](%gh-ic%/platform/platform-resources/src/idea/PlatformActions.xml).
+Group IDs for the IntelliJ Platform are defined in [`PlatformActions.xml`](%gh-ic%/platform/platform-impl/resources/idea/PlatformActions.xml).
 
 This and additional information can also be found by using the [Code Completion](https://www.jetbrains.com/help/idea/auto-completing-code.html#invoke-basic-completion), [Quick Definition](https://www.jetbrains.com/help/idea/viewing-reference-information.html#view-definition-symbols), and [Quick Documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation) features.
 

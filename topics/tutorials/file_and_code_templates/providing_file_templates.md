@@ -83,7 +83,7 @@ Example:
 
 The description file must be located in the same directory as the template file.
 It is recommended to follow the convention from the
-[`default.html`](%gh-ic%/platform/platform-resources-en/src/fileTemplates/default.html)
+[`default.html`](%gh-ic%/platform/platform-resources-en-file-templates/src/fileTemplates/default.html)
 file.
 
 > If a plugin project is multi-module, and it combines resources into a single JAR, make sure that all template description files have unique names or paths.

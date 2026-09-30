@@ -36,7 +36,7 @@ The _Kotlin UI DSL Version 1_ functions are located in the [`com.intellij.ui.lay
 > See [](layout.md) topic in UI Guidelines for recommendations on arranging UI controls in dialogs.
 >
 
-Use [`panel`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/layout/layout.kt) to create UI:
+Use [`panel`](%gh-ic-262-master%/platform/platform-impl/src/com/intellij/ui/layout/layout.kt) to create UI:
 
 ```kotlin
 panel {

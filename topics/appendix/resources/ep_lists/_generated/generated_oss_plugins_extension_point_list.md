@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 1dfe5ce6ce2e9aedb93c1a7cc6affb232468624c -->
+<!-- Revision: 25694d215dc6682d56569faf594e4d38401c8e1b -->
 
 <!--
 EP List Directories:
@@ -14,21 +14,11 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-84 Extension Points and 8 Listeners
+88 Extension Points and 8 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
 ## IntelliJ Open Source Plugins
-
-### com.intellij.cpp-diagnostics
-
-[`com.intellij.cpp-diagnostics`](%gh-ij-plugins%/cpp-diagnostics/resources/META-INF/plugin.xml)
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.diagnostics.toolchainDescriptionProvider"/></include> | [`ToolchainDescriptionProvider`](%gh-ij-plugins%/cpp-diagnostics/src/com/jetbrains/cidr/cpp/diagnostics/toolchain/ToolchainDescriptionProvider.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.diagnostics.workspaceDescriptionProvider"/></include> | [`WorkspaceDescriptionProvider`](%gh-ij-plugins%/cpp-diagnostics/src/com/jetbrains/cidr/cpp/diagnostics/workspace/WorkspaceDescriptionProvider.kt) |
-{sticky-header="true"}
 
 ### com.intellij.openRewrite
 
@@ -39,6 +29,15 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openRewrite.externalSystemBridge"/></include> | [`OpenRewriteExternalSystemBridge`](%gh-ij-plugins%/open-rewrite/src/com/intellij/openRewrite/run/OpenRewriteExternalSystemBridge.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openRewrite.libraryResolver"/></include> | [`OpenRewriteLibraryResolver`](%gh-ij-plugins%/open-rewrite/src/com/intellij/openRewrite/recipe/OpenRewriteLibraryResolver.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.openRewrite.recipeLibraryContributor"/></include> | [`OpenRewriteRecipeLibraryContributor`](%gh-ij-plugins%/open-rewrite/src/com/intellij/openRewrite/OpenRewriteRecipeLibraryContributor.kt) |
+{sticky-header="true"}
+
+### com.jetbrains.plugins.jade
+
+[`com.jetbrains.plugins.jade`](%gh-ij-plugins%/jade/resources/META-INF/plugin.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.jade.cssSupport"/></include> | [`JadeCssSupport`](%gh-ij-plugins%/jade/src/com/jetbrains/plugins/jade/css/JadeCssSupport.java) |
 {sticky-header="true"}
 
 ### com.thoughtworks.gauge
@@ -88,6 +87,16 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.angular2.templateScopesProvider"/></include> | [`Angular2TemplateScopesProvider`](%gh-ij-plugins%/Angular/angular-backend/src/org/angular2/codeInsight/template/Angular2TemplateScopesProvider.kt) |
 {sticky-header="true"}
 
+### intellij.clion.diagnostics.core.xml
+
+[`intellij.clion.diagnostics.core.xml`](%gh-ij-plugins%/cpp-diagnostics/core/resources/intellij.clion.diagnostics.core.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.diagnostics.toolchainDescriptionProvider"/></include> | [`ToolchainDescriptionProvider`](%gh-ij-plugins%/cpp-diagnostics/core/src/com/jetbrains/cidr/cpp/diagnostics/toolchain/ToolchainDescriptionProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.diagnostics.workspaceDescriptionProvider"/></include> | [`WorkspaceDescriptionProvider`](%gh-ij-plugins%/cpp-diagnostics/core/src/com/jetbrains/cidr/cpp/diagnostics/workspace/WorkspaceDescriptionProvider.kt) |
+{sticky-header="true"}
+
 ### intellij.javascript.eslint
 
 [`intellij.javascript.eslint`](%gh-ij-plugins%/javascript/eslint/resources/META-INF/plugin.xml)
@@ -124,6 +133,15 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.containerInfoProvider"/></include> | [`VueContainerInfoProvider`](%gh-ij-plugins%/vuejs/vuejs-backend/src/org/jetbrains/vuejs/model/source/VueContainerInfoProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.templateScopesProvider"/></include> | [`VueTemplateScopesProvider`](%gh-ij-plugins%/vuejs/vuejs-backend/src/org/jetbrains/vuejs/codeInsight/template/VueTemplateScopesProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.vuejs.templateSymbolScopesProvider"/></include> | [`VueTemplateSymbolScopesProvider`](%gh-ij-plugins%/vuejs/vuejs-backend/src/org/jetbrains/vuejs/codeInsight/template/VueTemplateSymbolScopesProvider.kt) |
+{sticky-header="true"}
+
+### Karma
+
+[`Karma`](%gh-ij-plugins%/js-karma/resources/META-INF/plugin.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.javascript.karma.debugSupport"/></include> | [`KarmaDebugSupport`](%gh-ij-plugins%/js-karma/src/com/intellij/javascript/karma/execution/KarmaDebugSupport.kt) |
 {sticky-header="true"}
 
 ### name.kropp.intellij.makefile
@@ -193,6 +211,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.flex.breakpoint.type.provider"/></include> ![Non-Dynamic][non-dynamic] | [`BreakpointTypeProvider`](%gh-ij-plugins%/flex/src/com/intellij/lang/javascript/flex/debug/FlexBreakpointsHandler.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.flex.cssSupport"/></include> | [`FlexCssSupport`](%gh-ij-plugins%/flex/src/com/intellij/javascript/flex/css/FlexCssSupport.java) |
 {sticky-header="true"}
 
 
@@ -241,17 +260,26 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.qodana.coverage.cloudArtifactsProcessor"/></include> | [`CoverageCloudArtifactsProcessor`](%gh-ij-plugins%/qodana/coverage/src/org/jetbrains/qodana/staticAnalysis/inspections/coverage/CoverageCloudArtifactsProcessor.kt) |
 {sticky-header="true"}
 
+### intellij.qodana.inspectionKts.base.xml
+
+[`intellij.qodana.inspectionKts.base.xml`](%gh-ij-plugins%/qodana/inspectionKts/api/resources/intellij.qodana.inspectionKts.base.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.btaCompiler"/></include> | [`InspectionKtsBtaCompiler`](%gh-ij-plugins%/qodana/inspectionKts/api/src/org/jetbrains/qodana/inspectionKts/api/bta/InspectionKtsBtaCompiler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.defaultImportProvider"/></include> | [`InspectionKtsDefaultImportProvider`](%gh-ij-plugins%/qodana/inspectionKts/api/src/org/jetbrains/qodana/inspectionKts/imports.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.postProcessorFactory"/></include> | [`CompiledInspectionKtsPostProcessorFactory`](%gh-ij-plugins%/qodana/inspectionKts/api/src/org/jetbrains/qodana/inspectionKts/InspectionKtsFileStatus.kt) |
+{sticky-header="true"}
+
 ### intellij.qodana.inspectionKts.xml
 
 [`intellij.qodana.inspectionKts.xml`](%gh-ij-plugins%/qodana/inspectionKts/core/resources/intellij.qodana.inspectionKts.xml)
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.customPluginsForKtsClasspathProvider"/></include> | [`CustomPluginsForKtsClasspathProvider`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/CustomPluginsForKtsClasspathProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.customPluginsForKtsClasspathProvider"/></include> | [`CustomPluginsForKtsClasspathProvider`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/core/CustomPluginsForKtsClasspathProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.customPsiFileFactory"/></include> | [`CustomPsiFileFactory`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/fileFactory/CustomPsiFileFactory.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.defaultImportProvider"/></include> | [`InspectionKtsDefaultImportProvider`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/imports.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.examples.provider"/></include> | [`Provider`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/examples/InspectionKtsExample.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.postProcessorFactory"/></include> | [`CompiledInspectionKtsPostProcessorFactory`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/InspectionKtsFileStatus.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.psiViewerSupport"/></include> | [`PsiViewerSupport`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/ui/psi-viewer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.jetbrains.qodana.inspectionKts.templates.provider"/></include> | [`Provider`](%gh-ij-plugins%/qodana/inspectionKts/core/src/org/jetbrains/qodana/inspectionKts/templates/InspectionKtsTemplate.kt) |
 {sticky-header="true"}
@@ -286,11 +314,11 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.metricsAggregator"/></include> | [`MetricAggregator`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/inspections/metrics/aggregators/MetricAggregator.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.problemsViewModuleSupport"/></include> | [`QodanaGroupByModuleSupport`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/ui/problemsView/QodanaGroupByModuleSupport.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.projectDescriber"/></include> | [`QodanaProjectDescriber`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/projectDescription/QodanaProjectDescriber.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.psiStructuralFingerprintsProvider"/></include> | [`QodanaPsiStructuralFingerprintsProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/sarif/fingerprints/psi/QodanaPsiStructuralFingerprintsProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaHighlightInfoComparator"/></include> | [`QodanaHighlightInfoComparator`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaHighlightInfoComparator.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaHighlightInfoTypeProvider"/></include> | [`QodanaHighlightInfoTypeProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaHighlightInfoTypeProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaHighlightingSupportInfoProvider"/></include> | [`QodanaHighlightingSupportInfoProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaHighlightingSupportInfoProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaInspectionRetrievalLauncher"/></include> | [`QodanaInspectionRetrievalLauncher`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/QodanaInspectionRetrievalLauncher.kt) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaInspectionVetoer"/></include> ![Internal][internal] | [`QodanaInspectionVetoer`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/scopes/QodanaInspectionVetoer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaScriptFactory"/></include> ![Internal][internal] | [`QodanaScriptFactory`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/script/QodanaScriptFactory.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.qodanaYamlItemProvider"/></include> | [`QodanaYamlItemProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/settings/QodanaYamlItem.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.quickFixesStrategyProvider"/></include> | [`QuickFixesStrategyProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/sarif/QuickFixesStrategyProvider.kt) |

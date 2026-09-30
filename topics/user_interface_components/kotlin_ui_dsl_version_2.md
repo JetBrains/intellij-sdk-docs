@@ -18,7 +18,7 @@ The library is written in [Kotlin](using_kotlin.md) and makes it easy to develop
 The Kotlin UI DSL is not intended to build general UIs, like [tool windows](tool_window.md) controls that trigger some actions and do not contain any input components bound to state objects.
 For this purpose, use [custom Swing components](user_interface_components.md) from the IntelliJ Platform or the standard ones.
 
-The _Kotlin UI DSL_ functions are located in the [`com.intellij.ui.dsl.builder`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder) package.
+The _Kotlin UI DSL_ functions are located in the [`com.intellij.ui.dsl.builder`](%gh-ic%/platform/platform-api/src/com/intellij/ui/dsl/builder) package.
 
 ## UI DSL Examples
 
@@ -69,7 +69,7 @@ If there are unoccupied cells at the end of a row, they are merged into one cell
 
 ## `Panel`
 
-[`Panel`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder/Panel.kt) is the start interface for building content.
+[`Panel`](%gh-ic%/platform/platform-api/src/com/intellij/ui/dsl/builder/Panel.kt) is the start interface for building content.
 It can consist of several rows and different UI groups.
 
 ### `Panel.row`
@@ -165,7 +165,7 @@ Registers callbacks that will be called from `DialogPanel.apply()`/`reset()`/`is
 
 ## `Row`
 
-Every row is represented by the [`Row`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder/Row.kt) interface.
+Every row is represented by the [`Row`](%gh-ic%/platform/platform-api/src/com/intellij/ui/dsl/builder/Row.kt) interface.
 It contains all available factory methods for creating components (like `button()`, `label()`, `textField()`, etc.) and methods for row configuration.
 
 ### `Row.layout`
@@ -213,7 +213,7 @@ Visibility and enabled state of the row affects row comment as well.
 ### `Row.cell`
 
 Adds `component`.
-Use it only for custom specific components, all standard components like `label()`, `button()`, `checkbox()` etc. are covered by dedicated [`Row`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder/Row.kt) factory methods.
+Use it only for custom specific components, all standard components like `label()`, `button()`, `checkbox()` etc. are covered by dedicated [`Row`](%gh-ic%/platform/platform-api/src/com/intellij/ui/dsl/builder/Row.kt) factory methods.
 
 For example, there is no method for password field so that the following code can be used:
 
@@ -270,8 +270,8 @@ For example, it is possible to create several columns by creating a row with sev
 
 ## `Cell`
 
-Every component in the UI DSL builder is wrapped into [`Cell`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder/Cell.kt) class.
-Standard components should not be created directly but with factory methods from [`Row`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/dsl/builder/Row.kt) class like `checkBox()`, `button()` and others because of additional functionality, e.g., `textField()` is configured with the column's width, radio buttons are placed into radio buttons groups.
+Every component in the UI DSL builder is wrapped into [`Cell`](%gh-ic%/platform/platform-api/src/com/intellij/ui/dsl/builder/Cell.kt) class.
+Standard components should not be created directly but with factory methods from [`Row`](%gh-ic%/platform/platform-api/src/com/intellij/ui/dsl/builder/Row.kt) class like `checkBox()`, `button()` and others because of additional functionality, e.g., `textField()` is configured with the column's width, radio buttons are placed into radio buttons groups.
 
 ### `Cell.component`
 

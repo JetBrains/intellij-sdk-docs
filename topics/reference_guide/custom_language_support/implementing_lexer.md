@@ -30,7 +30,7 @@ In contrast, lexers used in other contexts are always called to process an entir
 ### Lexer State
 
 A lexer that can be used incrementally may need to return its *state*, which means the context corresponding to each position in a file.
-For example, a [Java lexer](%gh-ic%/java/java-psi-impl/src/com/intellij/lang/java/lexer/JavaLexer.java) could have separate states for top-level context, comment context, and string literal context.
+For example, a [Java lexer](%gh-ic%/java/java-syntax/src/com/intellij/java/syntax/lexer/JavaLexer.kt) could have separate states for top-level context, comment context, and string literal context.
 
 An essential requirement for a syntax highlighting lexer is that its state must be represented by a single integer number returned from `Lexer.getState()`.
 That state will be passed to the `Lexer.start()` method, along with the start offset of the fragment to process, when lexing is resumed from the middle of a file.

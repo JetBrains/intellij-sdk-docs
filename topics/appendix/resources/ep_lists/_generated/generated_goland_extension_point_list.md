@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 1dfe5ce6ce2e9aedb93c1a7cc6affb232468624c -->
+<!-- Revision: 25694d215dc6682d56569faf594e4d38401c8e1b -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-22 Extension Points and 10 Listeners
+39 Extension Points and 10 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -35,6 +35,28 @@ EP List Directories:
 {sticky-header="true"}
 
 
+### intellij.go.impl.analyzer.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.dfa.api"/></include> | `GoDfaApi` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.dlv.positionConverterFactory"/></include> | `DlvPositionConverterFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.documentation.packageVersionProvider"/></include> | `GoDocumentationPackageVersionProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.execution.defaultTargetEnvironmentProvider"/></include> | `DefaultTargetEnvironmentProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.executorExtension"/></include> | `GoExecutorExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.fileWatcherBridge"/></include> | `GoFileWatcherBridge` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.highlighting.errorAnnotatorSuppressor"/></include> | `GoErrorAnnotatorSuppressor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.importResolver"/></include> | `GoImportResolver` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.importsFilter"/></include> | `GoImportsFilter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.packageFactory"/></include> | `GoPackageFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.runConfigurationExtension"/></include> | `GoRunConfigurationExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdk.sdkVetoer"/></include> | `GoBasedSdkVetoer` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdk.targetSdkVersionProvider"/></include> | `GoTargetSdkVersionProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdkProvider"/></include> | `GoSdkProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.support"/></include> | `GoLangSupport` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.trustedProjectsLocator"/></include> | [`TrustedProjectsLocator`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/trustedProjects/TrustedProjectsLocator.kt) |
+{sticky-header="true"}
+
 ### intellij.go.impl.xml
 
 | Extension Point | Implementation |
@@ -55,6 +77,13 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdk.targetSdkVersionProvider"/></include> | `GoTargetSdkVersionProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.sdkProvider"/></include> | `GoSdkProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.goide.support"/></include> | `GoLangSupport` |
+{sticky-header="true"}
+
+### intellij.go.performance.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.go.performance.profilerGraphComponentFactory"/></include> ![Internal][internal] | `GoProfilerGraphComponentFactory` |
 {sticky-header="true"}
 
 ### intellij.go.watchers.xml

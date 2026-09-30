@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 1dfe5ce6ce2e9aedb93c1a7cc6affb232468624c -->
+<!-- Revision: 25694d215dc6682d56569faf594e4d38401c8e1b -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-88 Extension Points and 29 Listeners
+91 Extension Points and 29 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -28,11 +28,11 @@ EP List Directories:
 | [`DatabaseSessionManager#topic`](https://jb.gg/ipe/listeners?topics=com.intellij.database.console.session.DatabaseSessionManagerListener)  | `DatabaseSessionManagerListener` |
 | [`DatabaseSession.Companion#topic`](https://jb.gg/ipe/listeners?topics=com.intellij.database.console.session.DatabaseSessionStateListener)  | `DatabaseSessionStateListener` |
 | [`AbstractDataSource#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.AbstractDataSource.Listener)  | `Listener` |
+| [`DataSourceConnectionTester#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.DataSourceConnectionTester.Listener)  | `Listener` |
 | [`DataSourceModelStorage#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.DataSourceModelStorage.Listener)  | `Listener` |
 | [`DataSourceStorage#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.DataSourceStorage.Listener)  | `Listener` |
 | [`DatabaseConnectionManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.DatabaseConnectionManager.Listener)  | `Listener` |
 | [`DatabaseArtifactManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.artifacts.DatabaseArtifactManager.ArtifactListener)  | `ArtifactListener` |
-| [`DataSourceTestConnectionManager#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.dataSource.ui.DataSourceTestConnectionManager.Listener)  | `Listener` |
 | [`DatabaseTopics#AUDIT_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.datagrid.DataAuditor)  | `DataAuditor` |
 | [`DatabaseTopics#RESPONSE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.datagrid.DataConsumer)  | [`DataConsumer`](%gh-ic%/grid/core-impl/src/datagrid/DataConsumer.java) |
 | [`DatabaseTopics#REQUEST_TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.database.datagrid.DataProducer)  | [`DataProducer`](%gh-ic%/grid/core-impl/src/datagrid/DataProducer.java) |
@@ -70,18 +70,11 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.dataConsumer"/></include> | [`DataConsumer`](%gh-ic%/grid/core-impl/src/datagrid/DataConsumer.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.dataProducer"/></include> | [`DataProducer`](%gh-ic%/grid/core-impl/src/datagrid/DataProducer.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.errorProvider"/></include> | `ConsoleErrorProviderFactory` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.gridHelper"/></include> | [`CoreGridHelper`](%gh-ic%/grid/core-impl/src/datagrid/CoreGridHelper.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.jdbcHelper"/></include> | `JdbcHelper` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.jdbcMetadataWrapper"/></include> | `MDFactory` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.jdbcSourceLoader"/></include> | `JdbcSourceLoader` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.localArtifactStorage"/></include> ![Internal][internal] | `LocalArtifactStorage` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.objectEditorFactory"/></include> | `DbmsObjectEditorFactory` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.objectEditorModelFactory"/></include> | `DbmsObjectEditorModelFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.queryParametersProvider"/></include> | `QueryParametersProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.queryValidator"/></include> | `DbQueryValidator` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.remoteProcessInitializer"/></include> | `RemoteProcessInitializer` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.sshTunnelsProvider"/></include> | `DatabaseSshTunnelsProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.toDatabaseScriptTranslator"/></include> | `ToDatabaseScriptTranslator` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.transactionControlLanguageHandler"/></include> ![Internal][internal] | `TransactionControlLanguageHandler` |
 {sticky-header="true"}
 
 ### intellij.database.core.impl.xml
@@ -108,10 +101,15 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.extensionFallback"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.geoHelper"/></include> | `GeoHelper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.gridColumnsManagerFactory"/></include> | `GridColumnsManagerFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.gridHelper"/></include> | [`CoreGridHelper`](%gh-ic%/grid/core-impl/src/datagrid/CoreGridHelper.java) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.hookUpHelper"/></include> | `HookUpHelper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.introspector"/></include> ![Internal][internal] | `Factory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.introspectorStatsProvider"/></include> | `DBIntrospectorStatsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.jdbcHelper"/></include> | `JdbcHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.jdbcMetadataWrapper"/></include> | `MDFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.jdbcSourceLoader"/></include> | `JdbcSourceLoader` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.linkedDataSourceHelper"/></include> | `LinkedDataSourceHelper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.localDataSourceKind"/></include> | `LocalDataSourceKind` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.modelExternalData"/></include> | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.modelFacade"/></include> | `ModelFacade` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.modelRelationProvider"/></include> | `ModelRelationProvider` |
@@ -120,12 +118,14 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.parameterPatternProvider"/></include> | `DatabaseParameterPatternProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.predicatesHelper"/></include> | `PredicatesHelper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.processParamProvider"/></include> | `ConsoleConfigurationParamProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.queryValidator"/></include> | `DbQueryValidator` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.routineExecutionHelper"/></include> | `RoutineExecutionHelper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.runtimeErrorFixProvider"/></include> | [`RuntimeErrorActionProvider`](%gh-ic%/grid/core-impl/src/connection/throwable/info/RuntimeErrorActionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.scriptGenerator"/></include> | `ScriptGenerator` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.sqlObjectBuilder"/></include> | `SqlObjectBuilder` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.sshConfigurationProvider"/></include> | `DataSourceSshConfigurationProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.synchronizeHandler"/></include> | `SynchronizeHandler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.toDatabaseScriptTranslator"/></include> | `ToDatabaseScriptTranslator` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.typeSystem"/></include> | `DasTypeSystem` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.urlEditorInspector"/></include> | `UrlEditorInspector` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.urlParamEditorProvider"/></include> | `TypeDescriptorFactory` |
@@ -151,6 +151,8 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.dbDocumentationDelegate"/></include> | `DbDocumentationDelegate` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.debuggerFacade"/></include> | `SqlDebuggerFacade` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.explorer.decoration"/></include> ![Experimental][experimental] | `DvDecorationExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.objectEditorFactory"/></include> | `DbmsObjectEditorFactory` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.objectEditorModelFactory"/></include> | `DbmsObjectEditorModelFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.runConsoleAvailable"/></include> | `RunQueryIntentionActionAvailable` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.schemaDiffCustomization"/></include> | `SchemaDiffCustomization` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.database.selectInProvider"/></include> | `Extension` |
@@ -174,6 +176,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.sql.membersHelper"/></include> | `SqlMembersHelper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.sql.navigationHelper"/></include> | `NavigationHelper` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.sql.resolveExtension"/></include> | `SqlResolveExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.sql.resolveInspectionDelegate"/></include> ![Internal][internal] | `SqlResolveInspectionDelegate` |
 {sticky-header="true"}
 
 ### intellij.database.ssh.xml

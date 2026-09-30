@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 1dfe5ce6ce2e9aedb93c1a7cc6affb232468624c -->
+<!-- Revision: 25694d215dc6682d56569faf594e4d38401c8e1b -->
 
 <!--
 EP List Directories:
@@ -57,7 +57,29 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.PhpStan.PhpStanConfigurationProvider"/></include> ![Non-Dynamic][non-dynamic] | `PhpStanConfigurationProvider` |
 {sticky-header="true"}
 
-### com.jetbrains.php
+### com.jetbrains.php.behat
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.behat.gherkinAttributePrefixProvider"/></include> ![Internal][internal] | `GherkinAttributePrefixProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.behat.gherkinContextProvider"/></include> | `ContextInterfaceProvider` |
+{sticky-header="true"}
+
+### com.jetbrains.php.blade
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.blade.bladeDirectiveContributor"/></include> ![Experimental][experimental] | `BladeDirectiveContributor` |
+{sticky-header="true"}
+
+### com.jetbrains.php.framework
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.framework.descriptionProvider"/></include> ![Internal][internal] | `FrameworkDescriptionProvider` |
+{sticky-header="true"}
+
+### intellij.php.backend.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
@@ -87,6 +109,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.docTagValuesStubProvider"/></include> | `PhpCustomDocTagValuesStubProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.expressionClassNamesProvider"/></include> ![Internal][internal] | `PhpExpressionClassNamesProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.externalUsagesSearcher"/></include> | `PhpExternalUsagesSearcher` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.frameworkExclusionProvider"/></include> ![Internal][internal] | `FrameworkExclusionProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.frameworkProjectConfigurableProvider"/></include> | `PhpFrameworkConfigurableProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.frameworkUsageProvider"/></include> | `PhpFrameworkUsageProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.includedPathsContributor"/></include> | `PhpIncludedPathsContributor` |
@@ -100,8 +123,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.noReturnProvider"/></include> | `PhpNoReturnProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.openSettingsProvider"/></include> | `Settings` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.phpunit.phpUnitSettingsLoader"/></include> ![Internal][internal] | `PhpUnitSettingsLoader` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.predefinedVariableProvider"/></include> | `PhpPredefinedVariableProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.referenceResolver2"/></include> | `PhpMultipleDeclarationFilter` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.referenceScopeExtension"/></include> ![Experimental][experimental] | `PhpReferenceScopeExtension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.relatedToPhpFilesContributor"/></include> | `RelatedToPhpFilesContributor` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.remote.remoteInterpreterManager"/></include> | `PhpRemoteInterpreterManager` |
@@ -118,33 +139,13 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.typeProvider4"/></include> | `PhpTypeProvider4` |
 {sticky-header="true"}
 
-### com.jetbrains.php.behat
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.behat.gherkinAttributePrefixProvider"/></include> ![Internal][internal] | `GherkinAttributePrefixProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.behat.gherkinContextProvider"/></include> | `ContextInterfaceProvider` |
-{sticky-header="true"}
-
-### com.jetbrains.php.blade
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.blade.bladeDirectiveContributor"/></include> ![Experimental][experimental] | `BladeDirectiveContributor` |
-{sticky-header="true"}
-
-### com.jetbrains.php.framework
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.framework.descriptionProvider"/></include> ![Internal][internal] | `FrameworkDescriptionProvider` |
-{sticky-header="true"}
-
 ### intellij.php.frontback.impl.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.php.docTagParserExtension"/></include> ![Internal][internal] | `PhpDocTagParser` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.predefinedVariableProvider"/></include> | `PhpPredefinedVariableProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.referenceResolver2"/></include> | `PhpMultipleDeclarationFilter` |
 {sticky-header="true"}
 
 ### org.jetbrains.plugins.phpstorm-remote-interpreter
@@ -155,13 +156,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.remote.phpHelperScriptProvider"/></include> | `PhpHelperScriptProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.remote.remoteProcessCoverageManager"/></include> | `PhpRemoteProcessCoverageManager` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.remote.remoteProcessManager"/></include> | `PhpRemoteProcessManager` |
-{sticky-header="true"}
-
-### phpstorm-customization.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.webcore.phpFrameworkExclusionProvider"/></include> ![Internal][internal] | `PhpFrameworkExclusionProvider` |
 {sticky-header="true"}
 
 

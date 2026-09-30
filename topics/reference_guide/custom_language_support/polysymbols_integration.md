@@ -307,7 +307,7 @@ Alternatively, `JS_SYMBOLS_SYMBOL_QUERY_PATTERNS` constant may be used as the pa
 
 Dedicated support for `PolySymbol` `get` properties:
 - `JSTypeProperty` - the type will be used in JavaScript type evaluator as the type of the symbol
-- `JsSymbolKindProperty` - the kind of the symbol, one of [`JsSymbolSymbolKind`](%gh-ic%/platform/polySymbols/src-web/com/intellij/polySymbols/js/JsSymbolSymbolKind.kt) enum values.
+- `JsSymbolKindProperty` - the kind of the symbol, one of [`JsSymbolSymbolKind`](%gh-ic%/platform/polySymbols-web/src/com/intellij/polySymbols/js/JsSymbolSymbolKind.kt) enum values.
   The kind will be used to render the appropriate icon in the code completion popup
 
   *Integration with unqualified reference resolution is not available in TypeScript code*

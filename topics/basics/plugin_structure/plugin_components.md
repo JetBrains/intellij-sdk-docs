@@ -52,7 +52,7 @@ See also [Running Tasks Once](ide_infrastructure.md#running-tasks-once).
 Using [Kotlin coroutines](kotlin_coroutines.md), implement [`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.postStartupActivity"/></include>.
 Examples:
 - [`PowerSaveModeNotifier`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/PowerSaveModeNotifier.kt)
-- [`TipOfTheDayStartupActivity`](%gh-ic%/platform/tips-of-the-day/src/com/intellij/ide/TipOfTheDayStartupActivity.kt)
+- [`TipOfTheDayStartupActivity`](%gh-ic%/plugins/tips-of-the-day/src/com/intellij/ide/TipOfTheDayStartupActivity.kt)
 
 Implementation in [Kotlin](using_kotlin.md) is required because Java doesn't support suspending functions.
 

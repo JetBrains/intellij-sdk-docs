@@ -6,7 +6,7 @@
 Lists private APIs and their replacements in IntelliJ Platform and plugins.
 </web-summary>
 
-<link-summary>Lists private API annotated with @ApiStatus.Internal/@IntellijInternalApi and corresponding replacement.</link-summary>
+<link-summary>Lists private API annotated with @ApiStatus.Internal and corresponding replacement.</link-summary>
 
 > How to address the **private API** usage violations:
 > 1. Look through the suggested replacements below, update your plugin accordingly, and upload a new version to JetBrains Marketplace.
@@ -15,8 +15,7 @@ Lists private APIs and their replacements in IntelliJ Platform and plugins.
 > 3. If you have any other issues or questions related to the Internal API usage, please [create a dedicated YouTrack issue](https://youtrack.jetbrains.com/newIssue?project=IJPL&c=Type%20Task&c=Subsystem%20Internal%20API).
 >
 
-This page lists commonly used API annotated with [`@ApiStatus.Internal`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java)
-or [`@IntellijInternalApi`](%gh-ic%/platform/util/src/com/intellij/openapi/util/IntellijInternalApi.kt)
+This page lists commonly used API annotated with [`@ApiStatus.Internal`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java),
 which indicates it is _private API_ and must not be used outside of IntelliJ Platform itself:
 
 > Indicates that the annotated element (class, method, field, etc.) **must not be considered as a public API**. It's made visible to allow

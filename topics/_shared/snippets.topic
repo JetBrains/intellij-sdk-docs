@@ -69,8 +69,7 @@
                     href="%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java"><code>ApiStatus</code></a>
                 <code>@Experimental</code>, <code>@ScheduledForRemoval</code>, or <code>@Internal</code> are not listed
                 here, as incompatible changes are to be expected.</p>
-            <p>For API annotated with <code>@ApiStatus.Internal</code>/<code>@IntellijInternalApi</code>, see <a
-                    href="api_internal.md"/> for more details and replacements.</p>
+            <p>For API annotated with <code>@ApiStatus.Internal</code>, see <a href="api_internal.md"/> for more details and replacements.</p>
         </note>
     </snippet>
     <snippet id="apiChangesJavaVersion">

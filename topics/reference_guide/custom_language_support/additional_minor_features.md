@@ -10,7 +10,7 @@ _EP: `fully.qualified.extensionPointName`_ — Extension Point Name (must be spe
 
 _`com.extensionPoint.class`_ _description text_ — Extension Point class/interface to provide functionality
 
-> See also [](intellij_platform_extension_point_list.md#langextensionpointsxml) to discover more Language-related Extension Points
+> See also [](intellij_platform_extension_point_list.md) to discover more Language-related Extension Points
 > as well as the general guide [](explore_api.md).
 >
 {title="Locating more Language EPs"}

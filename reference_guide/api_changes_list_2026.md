@@ -105,8 +105,8 @@ Plugins for 2026.2 and later target Java 25, where the [Foreign Function and Mem
 The IDE runs with `--enable-native-access=ALL-UNNAMED`, so plugin code can call native functions through FFM without a warning.
 The platform itself migrated its native bindings from JNA to FFM in 2026.3.
 
-`com.intellij.jna.JnaLoader.load(Logger)` method parameter `Logger` removed
-: Use `load()`. The class moved from `intellij.platform.util` to the `intellij.libraries.jna` module, so declare the dependency described above.
+`com.intellij.jna.JnaLoader` moved from `intellij.platform.util` to the `intellij.libraries.jna` module, so it also needs the dependency described above.
+`JnaLoader.load(Logger)` is deprecated and scheduled for removal; call `JnaLoader.isLoaded()` instead.
 
 #### OkHttp Library Unbundling
 
@@ -121,7 +121,6 @@ The Okio library (`intellij.libraries.squareup.okio.jvm`) stays bundled.
 
 `okhttp3` package removed
 : Bundle `com.squareup.okhttp3:okhttp` in the plugin, or use `java.net.http.HttpClient` through `com.intellij.util.net.PlatformHttpClient`.
-
 
 #### Kotlin UI DSL 1.0 Removal
 

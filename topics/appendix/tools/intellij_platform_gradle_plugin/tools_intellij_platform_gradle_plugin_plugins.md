@@ -112,7 +112,6 @@ plugins {
 [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde),
 [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend),
 [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend),
-[`setupDependencies`](tools_intellij_platform_gradle_plugin_tasks.md#setupDependencies),
 [`signPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin),
 [`test`](tools_intellij_platform_gradle_plugin_tasks.md#test),
 [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance),
@@ -263,7 +262,6 @@ To merge submodule content into the main plugin JAR file, use `pluginComposedMod
 [`printBundledModules`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledModules),
 [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins),
 [`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases),
-[`setupDependencies`](tools_intellij_platform_gradle_plugin_tasks.md#setupDependencies),
 [`test`](tools_intellij_platform_gradle_plugin_tasks.md#test),
 [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde),
 [`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi),
@@ -449,7 +447,6 @@ plugins {
 [`printBundledModules`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledModules),
 [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins),
 [`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases),
-[`setupDependencies`](tools_intellij_platform_gradle_plugin_tasks.md#setupDependencies)
 
 
 ## Base
@@ -521,4 +518,3 @@ See [](tools_intellij_platform_gradle_plugin_recipes.md) for more details.
 [`printBundledModules`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledModules),
 [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins),
 [`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases),
-[`setupDependencies`](tools_intellij_platform_gradle_plugin_tasks.md#setupDependencies),

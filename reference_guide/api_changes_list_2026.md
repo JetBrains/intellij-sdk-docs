@@ -73,14 +73,41 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 
 ### IntelliJ Platform 2026.3
 
-The debugger functionality of the platform has been extracted into separate modules with their own classloaders.
-This shouldn't affect binary compatibility, but an explicit dependency should be added in `build.gradle.kts` using `bundledModule("intellij.platform.debugger")` if a plugin uses the API from that module.
+Several modules were extracted from the core plugin to separate modules with their own classloaders.
+This shouldn't affect binary compatibility, but an explicit dependency should be added in `build.gradle.kts` using `bundledModule(<moduleName>)` if a plugin uses API from these modules:
+* `intellij.platform.debugger`
+* `intellij.platform.externalSystem`
+* `intellij.platform.remoteServers`
+* `intellij.platform.webide.impl`
+
+Several modules were moved from the core plugin to separate bundled plugins.
+This shouldn't affect binary compatibility, but an explicit dependency should be added in `build.gradle.kts` using `bundledPlugin(<pluginId>)` if a plugin uses API from these modules:
+* `com.intellij.platform.vcs` (*Version Control*): `intellij.platform.vcs`, `intellij.platform.vcs.impl`, `intellij.platform.vcs.log`, `intellij.platform.vcs.log.impl`, `intellij.platform.vcs.log.graph`, `intellij.platform.vcs.dvcs`, `intellij.platform.vcs.dvcs.impl`.
+  A dependency on the `com.intellij.modules.vcs` plugin alias is sufficient, see [](plugin_compatibility.md#modules-available-in-all-products).
+* `com.intellij.xml` (*XML and HTML*): `intellij.xml.parser`, `intellij.xml.syntax`, `intellij.xml.psi`, `intellij.xml.psi.impl`, `intellij.xml.dom`, `intellij.xml.dom.impl`, `intellij.xml.analysis`, `intellij.xml.analysis.impl`, `intellij.xml.impl`, `intellij.xml.ui.common`, `intellij.xml.structureView`, `intellij.xml.structureView.impl`, `intellij.xml.emmet`, `intellij.xml.emmet.frontend`, `intellij.relaxng`.
+  A dependency on the `com.intellij.modules.xml` plugin alias is sufficient, see [](plugin_compatibility.md#modules-available-in-all-products).
+* `com.intellij.platform.tasks` (*Tasks and Contexts*): `intellij.platform.tasks`, `intellij.platform.tasks.impl`.
+  Not to be confused with the `com.intellij.tasks` (*Issue Trackers*) plugin.
+* `com.intellij.problemsView` (*Problems View*): `intellij.platform.problemsView.shared`, which was renamed to `intellij.platform.problemView.shared`.
+
 
 `com.intellij.openapi.projectRoots.Sdk` interface now extends `com.intellij.openapi.util.UserDataHolderEx` and inherits its abstract method `putUserDataIfAbsent(@NotNull Key<T> key, @NotNull T value)`
 : Do not implement `Sdk`: it is a non-extendable interface.
 
 `com.intellij.openapi.projectRoots.Sdk` interface now extends `com.intellij.openapi.util.UserDataHolderEx` and inherits its abstract method `replace(@NotNull Key<T> key, @Nullable T oldValue, @Nullable T newValue)`
 : Do not implement `Sdk`: it is a non-extendable interface.
+
+`com.intellij.openapi.actionSystem.LangDataKeys.RUN_PROFILE` field type changed from `DataKey<RunProfile>` to `DataKey<?>`
+: Use `com.intellij.openapi.actionSystem.ExecutionDataKeys.RUN_PROFILE` or add an explicit cast.
+
+`com.intellij.openapi.actionSystem.LangDataKeys.CONSOLE_VIEW` field type changed from `DataKey<ConsoleView>` to `DataKey<?>`
+: Use `com.intellij.openapi.actionSystem.ExecutionDataKeys.CONSOLE_VIEW` or add an explicit cast.
+
+`com.intellij.openapi.actionSystem.LangDataKeys.EXECUTION_ENVIRONMENT` field type changed from `DataKey<ExecutionEnvironment>` to `DataKey<?>`
+: Use `com.intellij.openapi.actionSystem.ExecutionDataKeys.EXECUTION_ENVIRONMENT` or add an explicit cast.
+
+`com.intellij.openapi.actionSystem.LangDataKeys.RUN_CONTENT_DESCRIPTOR` field type changed from `DataKey<RunContentDescriptor>` to `DataKey<?>`
+: Use `com.intellij.openapi.actionSystem.ExecutionDataKeys.RUN_CONTENT_DESCRIPTOR` or add an explicit cast.
 
 #### JNA Library 2026.3
 
@@ -164,9 +191,34 @@ The migration should be done according to the [Kotlin UI DSL Version 2 migration
 `com.intellij.ui.layout.RowBuilder` class removed
 : [Migrate to Kotlin UI DSL Version 2](kotlin_ui_dsl.md#migration-to-version-2).
 
+### Java Plugin 2026.3
+
+`com.intellij.openapi.module.StdModuleTypes` class removed
+: Use `com.intellij.openapi.module.JavaModuleType.getModuleType()` instead. Avoid a check of the module type if possible. See `com.intellij.openapi.module.ModuleType` for details.
+
 ## 2026.2
 
 ### IntelliJ Platform 2026.2
+
+Several modules were extracted from the core plugin to separate modules with their own classloaders.
+This shouldn't affect binary compatibility, but an explicit dependency should be added in `build.gradle.kts` using `bundledModule(<moduleName>)` if a plugin uses API from these modules:
+* `intellij.xml.emmet`
+* `intellij.xml.structureView`
+
+Several modules were moved from the core plugin to separate bundled plugins.
+This shouldn't affect binary compatibility, but an explicit dependency should be added in `build.gradle.kts` using `bundledPlugin(<pluginId>)` if a plugin uses API from these modules:
+* `com.intellij.bookmarks` (*Bookmarks Manager*): `intellij.platform.bookmarks`
+* `com.intellij.platform.serviceView` (*Services View*): `intellij.platform.execution.dashboard`
+* `com.intellij.modules.jcef` (*Web Browser (JCEF)*): `intellij.platform.ui.jcef`
+* `com.intellij.navbar` (*Navbar*): `intellij.platform.navbar`
+* `com.intellij.platform.ssh` (*SSH*): `intellij.platform.ssh.core`, `intellij.platform.ssh`, `intellij.platform.ssh.ui`, `intellij.platform.ssh.attach`
+* `com.intellij.structuralSearch` (*Structural Search*): `intellij.platform.structuralSearch`
+* `com.intellij.structureView` (*Structure View*): `intellij.platform.structureView`
+* `com.intellij.platform.testRunner` (*Test Runner*): `intellij.platform.testRunner`, `intellij.platform.smRunner`
+* `com.intellij.todo` (*TODO Comments*): `intellij.platform.todo`
+
+In 2026.2, these plugins were shipped with IDs following the `intellij.<name>.plugin` scheme (for example, `intellij.bookmarks.plugin`).
+Starting from 2026.3, the plugins use the IDs listed above, and the old IDs are kept as plugin aliases for backward compatibility.
 
 #### PolySymbols 2026.2
 

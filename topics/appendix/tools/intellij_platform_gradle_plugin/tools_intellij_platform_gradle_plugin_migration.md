@@ -256,6 +256,10 @@ To completely drop this approach, it is mandatory to remove its reference manual
 
 Alternatively, edit the <path>.idea/workspace.xml</path> file and remove the `setupDependencies` entry.
 
+> The `setupDependencies` task has been removed in IntelliJ Platform Gradle Plugin 2.19.0.
+>
+{style="warning"}
+
 ## Other
 
 ### Unresolved 'idea-ext' Plugin

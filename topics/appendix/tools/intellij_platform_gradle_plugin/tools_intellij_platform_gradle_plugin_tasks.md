@@ -1967,35 +1967,6 @@ intellijPlatformTesting.runIde {
 </tab>
 </tabs>
 
-
-## `setupDependencies`
-{#setupDependencies}
-
-<link-summary>Deprecated. A deprecated method for setting up IntelliJ Platform dependencies.</link-summary>
-
-<secondary-label ref="deprecated"/>
-
-<tldr>
-
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module), [](tools_intellij_platform_gradle_plugin_plugins.md#base), [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit)
-
-**Extends**: [`DefaultTask`][gradle-default-task]
-
-**Sources**: [`SetupDependenciesTask`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/SetupDependenciesTask.kt)
-
-</tldr>
-
-A deprecated method for setting up IntelliJ Platform dependencies.
-
-The `setupDependencies` task was automatically added to the ["After Sync" Gradle trigger](https://www.jetbrains.com/help/idea/work-with-gradle-tasks.html#config_triggers_gradle) to make the IntelliJ Platform dependency available for IntelliJ IDEA right after the Gradle synchronization.
-This method is no longer needed as the dependency on IntelliJ Platform is declared directly in Gradle dependencies.
-
-> It's recommended to remove any references to `setupDependencies` task. See the [Migration](tools_intellij_platform_gradle_plugin_migration.md#setupdependencies) page for more details.
->
-{style="warning"}
-
-
-
 ## `signPlugin`
 {#signPlugin}
 

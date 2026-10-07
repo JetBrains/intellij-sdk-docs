@@ -109,6 +109,32 @@ This shouldn't affect binary compatibility, but an explicit dependency should be
 `com.intellij.openapi.actionSystem.LangDataKeys.RUN_CONTENT_DESCRIPTOR` field type changed from `DataKey<RunContentDescriptor>` to `DataKey<?>`
 : Use `com.intellij.openapi.actionSystem.ExecutionDataKeys.RUN_CONTENT_DESCRIPTOR` or add an explicit cast.
 
+#### JNA Library 2026.3
+
+The [JNA](https://github.com/java-native-access/jna) library is no longer loaded by the core classloader.
+It stays bundled as the content module `intellij.libraries.jna`, but a plugin does not see it implicitly anymore.
+A plugin that uses `com.sun.jna.*` classes or `com.intellij.jna.JnaLoader` must declare an explicit dependency.
+Without it, the plugin fails at runtime with `NoClassDefFoundError`.
+
+Add the module dependency to <path>plugin.xml</path>:
+
+```xml
+<dependencies>
+  <module name="intellij.libraries.jna"/>
+</dependencies>
+```
+
+and to <path>build.gradle.kts</path>: `bundledModule("intellij.libraries.jna")`.
+A plugin that ships its own JNA jars is not affected.
+
+Consider this a chance to stop using JNA.
+Plugins for 2026.2 and later target Java 25, where the [Foreign Function and Memory API](https://docs.oracle.com/en/java/javase/25/core/foreign-function-and-memory-api.html) (`java.lang.foreign`) is final.
+The IDE runs with `--enable-native-access=ALL-UNNAMED`, so plugin code can call native functions through FFM without a warning.
+The platform itself migrated its native bindings from JNA to FFM in 2026.3.
+
+`com.intellij.jna.JnaLoader` moved from `intellij.platform.util` to the `intellij.libraries.jna` module, so it also needs the dependency described above.
+`JnaLoader.load(Logger)` is deprecated and scheduled for removal; call `JnaLoader.isLoaded()` instead.
+
 #### OkHttp Library Unbundling
 
 The [OkHttp](https://square.github.io/okhttp/) library is no longer bundled with the IDE.

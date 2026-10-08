@@ -109,6 +109,11 @@ This shouldn't affect binary compatibility, but an explicit dependency should be
 `com.intellij.openapi.actionSystem.LangDataKeys.RUN_CONTENT_DESCRIPTOR` field type changed from `DataKey<RunContentDescriptor>` to `DataKey<?>`
 : Use `com.intellij.openapi.actionSystem.ExecutionDataKeys.RUN_CONTENT_DESCRIPTOR` or add an explicit cast.
 
+`com.intellij.ide.ApplicationLoadListener` class removed
+: The interface and its `com.intellij.ApplicationLoadListener` extension point were internal API and are not available to plugins anymore, even if a plugin used them before.
+Plugins may not run code at early application startup.
+Use [`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) instead, see [](plugin_components.md#project-open).
+
 #### JNA Library 2026.3
 
 The [JNA](https://github.com/java-native-access/jna) library is no longer loaded by the core classloader.

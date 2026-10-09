@@ -228,23 +228,16 @@ Starting from 2026.3, the plugins use the IDs listed above, and the old IDs are 
 #### Error Reporting 2026.2
 
 [`MessagePool`](%gh-ic%/platform/platform-impl/src/com/intellij/diagnostic/MessagePool.kt) and [`MessagePoolListener`](%gh-ic%/platform/platform-impl/src/com/intellij/diagnostic/MessagePoolListener.java) are now internal API and are not available to plugins.
-Plugins may not observe all IDE exceptions and diagnostics.
+Plugins must not observe all IDE exceptions and diagnostics.
 
-To observe its own exceptions and freezes, a plugin can implement the experimental [`ErrorReportSink`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/ErrorReportSink.kt) and register it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.errorReportSink"/></include>.
-The sink receives `UnhandledExceptionReport` and `UnhandledFreezeReport` reports attributed to the plugin, in the background and without user interaction.
-Use it to count crashes, group repeated stack traces, or forward summaries to services like Sentry.
-Delivery is best-effort, and the platform does not deduplicate reports.
-The sink does not replace [`ErrorReportSubmitter`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/diagnostic/ErrorReportSubmitter.java), which handles reports that the user submits from the IDE error dialog.
-A plugin can use both.
-
-See [](error_reporting.md#automatic-reporting-with-errorreportsink) and the [Experimental API for automatic error reports](https://platform.jetbrains.com/t/experimental-api-for-automatic-error-reports/4389) announcement for details.
+To observe plugin's own exceptions and freezes, use [`error report sink`](error_reporting.md#automatic-reporting-with-errorreportsink).
 
 #### Plugin Management 2026.2
 
 `PluginManagerCore.enablePlugin()`, `PluginManagerCore.disablePlugin()`, and `PluginManagerCore.getPlugins()` are now internal API and are not available to plugins.
-Plugins may not manage other plugins.
+Plugins must not manage other plugins.
 
-A plugin that only needs information about plugins, such as IDs, versions, vendors, license, modules, or dependencies, should use [`PluginDetailsService`](%gh-ic%/platform/core-impl/src/com/intellij/ide/plugins/PluginDetails.kt).
+A plugin that only needs information about other plugins, such as IDs, versions, vendors, license, modules, or dependencies, should use [`PluginDetailsService`](%gh-ic%/platform/core-impl/src/com/intellij/ide/plugins/PluginDetails.kt).
 
 #### PolySymbols 2026.2
 

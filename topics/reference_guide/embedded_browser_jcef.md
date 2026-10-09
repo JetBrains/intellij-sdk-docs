@@ -37,6 +37,50 @@ See [JavaFX and JCEF in the IntelliJ Platform](https://blog.jetbrains.com/platfo
 >
 {style="warning"}
 
+## Plugin Dependency
+<primary-label ref="2026.2"/>
+
+Starting with 2026.2, JCEF is provided by the bundled *Web Browser (JCEF)* plugin.
+A plugin using JCEF API must declare an explicit [dependency](plugin_dependencies.md) on it in <path>plugin.xml</path>:
+
+<tabs>
+<tab title="Classic plugin">
+
+```xml
+<depends>com.intellij.modules.jcef</depends>
+```
+
+> The `com.intellij.modules.jcef` alias is available since 2025.3.1, so a plugin declaring this dependency remains compatible with 2025.3.1 and later.
+> It is not available in earlier versions.
+> To support pre-2025.3 releases, publish separate plugin versions for releases before and after this change.
+>
+{style="warning"}
+</tab>
+<tab title="Modular plugin">
+
+```xml
+<dependencies>
+  <module name="intellij.platform.ui.jcef"/>
+</dependencies>
+```
+
+</tab>
+</tabs>
+
+Add the corresponding build dependency in <path>build.gradle.kts</path> using the [IntelliJ Platform Gradle Plugin](tools_intellij_platform_gradle_plugin.md):
+
+```kotlin
+dependencies {
+  intellijPlatform {
+    bundledPlugin("com.intellij.modules.jcef")
+  }
+}
+```
+
+> **Known issue:** JCEF does not load when the IDE dependency is configured with `useInstaller = false`, as such builds use the SDK archive without native components.
+>
+{style="note"}
+
 ## Using JCEF In a Plugin
 
 The core JCEF class exposed by IntelliJ Platform API is [`JBCefApp`](%gh-ic%/platform/ui.jcef/jcef/JBCefApp.java).

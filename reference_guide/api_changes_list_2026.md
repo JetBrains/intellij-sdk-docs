@@ -225,6 +225,10 @@ This shouldn't affect binary compatibility, but an explicit dependency should be
 In 2026.2, these plugins were shipped with IDs following the `intellij.<name>.plugin` scheme (for example, `intellij.bookmarks.plugin`).
 Starting from 2026.3, the plugins use the IDs listed above, and the old IDs are kept as plugin aliases for backward compatibility.
 
+#### JCEF 2026.2
+
+A plugin that uses the [embedded browser (JCEF)](embedded_browser_jcef.md) API must now declare an explicit dependency on the bundled *Web Browser (JCEF)* plugin.
+See [](embedded_browser_jcef.md#plugin-dependency) for the required <path>plugin.xml</path> and <path>build.gradle.kts</path> changes and the compatibility notes for older IDE versions.
 #### Error Reporting 2026.2
 
 [`MessagePool`](%gh-ic%/platform/platform-impl/src/com/intellij/diagnostic/MessagePool.kt) and [`MessagePoolListener`](%gh-ic%/platform/platform-impl/src/com/intellij/diagnostic/MessagePoolListener.java) are now internal API and are not available to plugins.

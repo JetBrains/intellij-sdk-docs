@@ -44,14 +44,19 @@ Starting with 2026.2, JCEF is provided by the bundled *Web Browser (JCEF)* plugi
 A plugin using JCEF API must declare an explicit [dependency](plugin_dependencies.md) on it in <path>plugin.xml</path>:
 
 <tabs>
-<tab title="Plugin descriptor">
+<tab title="Classic plugin">
 
 ```xml
 <depends>com.intellij.modules.jcef</depends>
 ```
 
+> The `com.intellij.modules.jcef` alias is available since 2025.3.1, so a plugin declaring this dependency remains compatible with 2025.3.1 and later.
+> It is not available in earlier versions.
+> To support pre-2025.3 releases, publish separate plugin versions for releases before and after this change.
+>
+{style="warning"}
 </tab>
-<tab title="Modular plugin (v2)">
+<tab title="Modular plugin">
 
 ```xml
 <dependencies>
@@ -71,12 +76,6 @@ dependencies {
   }
 }
 ```
-
-> The `com.intellij.modules.jcef` alias is available since 2025.3.1, so a plugin declaring this dependency remains compatible with 2025.3.1 and later.
-> It is not available in earlier versions.
-> To support pre-2025.3 releases, publish separate plugin versions for releases before and after this change.
->
-{style="warning"}
 
 > **Known issue:** JCEF does not load when the IDE dependency is configured with `useInstaller = false`, as such builds use the SDK archive without native components.
 >

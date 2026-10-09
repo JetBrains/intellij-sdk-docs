@@ -109,6 +109,11 @@ This shouldn't affect binary compatibility, but an explicit dependency should be
 `com.intellij.openapi.actionSystem.LangDataKeys.RUN_CONTENT_DESCRIPTOR` field type changed from `DataKey<RunContentDescriptor>` to `DataKey<?>`
 : Use `com.intellij.openapi.actionSystem.ExecutionDataKeys.RUN_CONTENT_DESCRIPTOR` or add an explicit cast.
 
+`com.intellij.ide.ApplicationLoadListener` class removed
+: The interface and its `com.intellij.ApplicationLoadListener` extension point were internal API and are not available to plugins anymore, even if a plugin used them before.
+Plugins may not run code at early application startup.
+Use [`ProjectActivity`](%gh-ic%/platform/core-api/src/com/intellij/openapi/startup/StartupActivity.kt) instead, see [](plugin_components.md#project-open).
+
 #### JNA Library 2026.3
 
 The [JNA](https://github.com/java-native-access/jna) library is no longer loaded by the core classloader.
@@ -224,6 +229,19 @@ Starting from 2026.3, the plugins use the IDs listed above, and the old IDs are 
 
 A plugin that uses the [embedded browser (JCEF)](embedded_browser_jcef.md) API must now declare an explicit dependency on the bundled *Web Browser (JCEF)* plugin.
 See [](embedded_browser_jcef.md#plugin-dependency) for the required <path>plugin.xml</path> and <path>build.gradle.kts</path> changes and the compatibility notes for older IDE versions.
+#### Error Reporting 2026.2
+
+[`MessagePool`](%gh-ic%/platform/platform-impl/src/com/intellij/diagnostic/MessagePool.kt) and [`MessagePoolListener`](%gh-ic%/platform/platform-impl/src/com/intellij/diagnostic/MessagePoolListener.java) are now internal API and are not available to plugins.
+Plugins must not observe all IDE exceptions and diagnostics.
+
+To observe plugin's own exceptions and freezes, use [`error report sink`](error_reporting.md#automatic-reporting-with-errorreportsink).
+
+#### Plugin Management 2026.2
+
+`PluginManagerCore.enablePlugin()`, `PluginManagerCore.disablePlugin()`, and `PluginManagerCore.getPlugins()` are now internal API and are not available to plugins.
+Plugins must not manage other plugins.
+
+A plugin that only needs information about other plugins, such as IDs, versions, vendors, license, modules, or dependencies, should use [`PluginDetailsService`](%gh-ic%/platform/core-impl/src/com/intellij/ide/plugins/PluginDetails.kt).
 
 #### PolySymbols 2026.2
 

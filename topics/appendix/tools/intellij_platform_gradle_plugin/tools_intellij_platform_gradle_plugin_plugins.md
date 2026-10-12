@@ -415,6 +415,8 @@ plugins {
 
 This plugin applies the [](#base) plugin and adds task support for generating lexers with JFlex and parsers with GrammarKit.
 
+See [](tools_intellij_platform_gradle_plugin_recipes.md#generate-a-lexer-and-parser-with-grammar-kit) for a complete setup that registers the generator tasks and wires their output into the source set.
+
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
 

@@ -74,7 +74,8 @@ Note that the `SimpleTypes` class in the `elementTypeHolderClass` attribute abov
 Now that the grammar is defined, generate a parser with PSI classes via <control>Generate Parser Code</control> from the context menu on the <path>Simple.bnf</path> file.
 This step generates a parser and PSI elements in the <path>/src/main/gen</path> folder of the project.
 
-> [](tools_gradle_grammar_kit_plugin.md) can be used alternatively.
+> The parser and PSI classes can also be generated during the Gradle build.
+> See [](tools_intellij_platform_gradle_plugin_recipes.md#generate-a-lexer-and-parser-with-grammar-kit) when using the IntelliJ Platform Gradle Plugin, or [](tools_gradle_grammar_kit_plugin.md) for the standalone plugin.
 >
 
 ![Parser](generated_parser.png){width="800"}

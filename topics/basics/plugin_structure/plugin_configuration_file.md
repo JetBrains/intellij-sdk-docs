@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin Configuration File
 
@@ -79,10 +79,12 @@ Deprecated elements are omitted in the list below.
       - [`<override-text>`](#idea-plugin__actions__action__override-text)
       - [`<reference>`](#idea-plugin__actions__group__reference)
         - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
+        - [`<synonym>`](#idea-plugin__actions__action__synonym)
       - [`<separator>`](#idea-plugin__actions__group__separator)
         - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
     - [`<reference>`](#idea-plugin__actions__group__reference)
       - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
+      - [`<synonym>`](#idea-plugin__actions__action__synonym)
   - [`<applicationListeners>`](#idea-plugin__applicationListeners)
     - [`<listener>`](#idea-plugin__applicationListeners__listener)
   - [`<projectListeners>`](#idea-plugin__projectListeners)
@@ -284,12 +286,12 @@ Attributes
   The lowest IDE version compatible with the plugin.
 - `until-build` _(optional)_<br/>
   The highest version of the IDE the plugin is compatible with.
-  It's highly recommended not to set this attribute, so the plugin will be compatible with all IDE versions since the 
+  It's highly recommended not to set this attribute, so the plugin will be compatible with all IDE versions since the
   version specified by the `since-build`.<br/>
   If it becomes necessary to specify the highest compatible IDE version later, it'll be possible to do that via JetBrains
   Marketplace.<br/>
   Only if the publishing process for the plugin is configured to upload a new version for each major IDE version, it makes
-  sense to limit the highest compatible IDE version from the beginning. 
+  sense to limit the highest compatible IDE version from the beginning.
   In that case, use `strict-until-build` instead.
 - `strict-until-build` _(optional; available since 2025.3)_<br/>
 
@@ -606,7 +608,7 @@ Attributes
   `order`.
   <br/>
   To not clash with other plugins defining extensions with the same identifier,
-  consider prepending the identifier with a prefix related to the plugin [`<id>`](#idea-plugin__id) or 
+  consider prepending the identifier with a prefix related to the plugin [`<id>`](#idea-plugin__id) or
   [`<name>`](#idea-plugin__name), for example, `id="com.example.myplugin.myExtension"`.
 - `order` _(optional)_<br/>
   Allows for ordering the extension relative to other instances of the same extension point.
@@ -630,7 +632,7 @@ Attributes
       - `mac`
       - `unix`
       - `windows`
-    
+
     For example, `os="windows"` registers the extension on Windows only.
 
 ### `extensionPoints`
@@ -708,12 +710,12 @@ Attributes
 
     The scope in which the [extension](plugin_extensions.md) is
     instantiated.
-    
+
     Allowed values:
       - `IDEA_APPLICATION` _(default)_
       - `IDEA_PROJECT`
       - `IDEA_MODULE` (**deprecated**)
-    
+
     **It is strongly recommended not to introduce new project- and module-level extension points.**
     If an extension point needs to operate on a `Project` or `Module` instance, declare an application-level extension
     point and pass the instance as a method parameter.
@@ -756,7 +758,7 @@ Example
   An extension point which restricts the type provided in a `myClass` attribute to be an instance
   of `com.example.ParentType`, and the type provided in a `someClass` element to be an instance
   of `java.lang.Comparable`:
-  
+
   ```xml
   <extensionPoint
       name="myExtension"
@@ -769,18 +771,18 @@ Example
         implements="java.lang.Comparable"/>
   </extensionPoint>
   ```
-  
+
   When using the above extension point, an implementation could be registered as follows:
-  
+
   ```xml
   <myExtension ...
       myClass="com.example.MyCustomType">
     <someClass>com.example.MyComparable</someClass>
   </myExtension>
   ```
-  
+
   where:
-  
+
   - `com.example.MyCustomType` must be a subtype of `com.example.ParentType`
   - `com.example.MyComparable` must be a subtype of `java.lang.Comparable`
 
@@ -1278,9 +1280,12 @@ of the [`<actions>`](#idea-plugin__actions) element:
 ##### `reference`
 {#idea-plugin__actions__group__reference}
 
-Allows adding an existing action to the group.
-The element can be used directly under the [`<actions>`](#idea-plugin__actions) element, or in
-the [`<group>`](#idea-plugin__actions__group) element.
+Refers to an existing action.
+The element can be used in:
+- the [`<actions>`](#idea-plugin__actions) element - must contain
+  the [`<add-to-group>`](#idea-plugin__actions__action__add-to-group) element adding the referenced action to a group,
+  the [`<synonym>`](#idea-plugin__actions__action__synonym) element adding a synonym to the referenced action, or both.
+- the [`<group>`](#idea-plugin__actions__group) element - adds the referenced action to the group.
 
 {type="narrow"}
 Required
@@ -1300,6 +1305,7 @@ Attributes
 Children
 :
   - [`<add-to-group>`](#idea-plugin__actions__action__add-to-group)
+  - [`<synonym>`](#idea-plugin__actions__action__synonym)
 
 Examples
 :
@@ -1315,7 +1321,15 @@ Examples
       <reference ref="com.example.MyAction">
         <add-to-group group-id="ToolsMenu"/>
       </reference>
-    </group>
+    </actions>
+    ```
+- A synonym added to an existing action:
+    ```xml
+    <actions>
+      <reference ref="EditorCopy">
+        <synonym text="Copy to Clipboard"/>
+      </reference>
+    </actions>
     ```
 
 ##### `separator`
@@ -1506,7 +1520,7 @@ Children
 Example
 :
   Given a plugin descriptor:
-  
+
   ```xml
   <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
     <id>com.example.myplugin</id>
@@ -1515,18 +1529,18 @@ Example
     ...
   </idea-plugin>
   ```
-  
+
   and <path>/META-INF/another-plugin.xml</path>:
-  
+
   ```xml
   <idea-plugin>
     <extensions>...</extensions>
     <actions>...</actions>
   </idea-plugin>
   ```
-  
+
   The effective plugin descriptor loaded to memory will contain the following elements:
-  
+
   ```xml
   <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
     <id>com.example.myplugin</id>

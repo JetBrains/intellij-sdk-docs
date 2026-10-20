@@ -37,6 +37,24 @@ val result = PluginPermissionService.getInstance().withPermission(
 This API replaces the `PluginManagerCore` methods that enable and disable plugins, which are now internal.
 See [](api_changes_list_2026.md#plugin-management-20262).
 
+Old Search Everywhere API is deprecated
+:
+The old Search Everywhere API in the `com.intellij.ide.actions.searcheverywhere` package is deprecated in favor of the new Search Everywhere API in `com.intellij.platform.searchEverywhere`, which is enabled by default since 2026.2.
+Migrate to the following replacements:
+- [`SearchEverywhereContributor`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/SearchEverywhereContributor.java), `WeightedSearchEverywhereContributor`, and `AbstractGotoSEContributor` – implement [`SeItemsProvider`](%gh-ic%/platform/searchEverywhere/shared/src/SeItemsProvider.kt).
+- `SearchEverywhereContributorFactory` registered in the `com.intellij.searchEverywhereContributor` extension point – implement [`SeItemsProviderFactory`](%gh-ic%/platform/searchEverywhere/shared/src/SeItemsProviderFactory.kt) and register it in the `com.intellij.searchEverywhere.itemsProviderFactory` extension point.
+- `FoundItemDescriptor`, `ContributorSearchResult`, and `SearchEverywhereFoundElementInfo` – use [`SeItem`](%gh-ic%/platform/searchEverywhere/shared/src/SeItem.kt).
+- `SearchEverywhereExtendedInfoProvider` and `ExtendedInfo` – use `SeItemPresentation.extendedInfo` and `SeExtendedInfoCalculator`.
+- `SearchEverywherePreviewProvider` – implement `SeItemsPreviewProvider`.
+- `SearchEverywhereCommandInfo` – use `SeCommandInfo` and `SeCommandInfoFactory`.
+- Custom tabs – implement [`SeTabFactory`](%gh-ic%/platform/searchEverywhere/frontend/src/SeTabFactory.kt) and register it in the `com.intellij.searchEverywhere.tabFactory` extension point.
+
+The `com.intellij.ide.actions.searcheverywhere.remote` classes are obsolete without replacement, because the new API supports remote development by design.
+The new API is marked as `@ApiStatus.Experimental`.
+In 2027.1, the deprecated API will be disabled by default via a registry key. In 2027.2, it will be removed.
+
+Report missing functionality on the [JetBrains Platform Forum](https://platform.jetbrains.com).
+
 ## 2026.2
 
 ### IntelliJ Platform 2026.2

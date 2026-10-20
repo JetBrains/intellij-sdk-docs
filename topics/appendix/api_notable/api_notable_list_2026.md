@@ -14,46 +14,48 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 Plugin management with user consent
 :
-The experimental [`PluginPermissionService`](%gh-ic%/platform/core-impl/src/com/intellij/ide/plugins/PluginPermissionService.kt) lets a plugin ask the user to allow an operation on other plugins.
-The plugin passes a request and an action to `withPermission()`.
-The IDE shows the request message in a permission dialog, and runs the action only if the user allows the request.
-If the user denies the request, `withPermission()` returns a failure with `PluginPermissionNotGrantedException`.
-[`PluginManagementPermissions.kt`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/updateSettings/PluginManagementPermissions.kt) defines these requests:
-* `EnablePluginRequest`, `DisablePluginRequest`, and `InstallPluginRequest` give the action a `PluginManagementAction`, and its `apply()` starts the operation.
-* `AccessPluginClassLoadersRequest` gives the action a `ReadPluginDescriptorsAction`, which returns the descriptors of all installed plugins and their class loaders.
+  The experimental [`PluginPermissionService`](%gh-ic-master%/platform/core-impl/src/com/intellij/ide/plugins/PluginPermissionService.kt) lets a plugin ask the user to allow an operation on other plugins.
+  The plugin passes a request and an action to `withPermission()`.
+  The IDE shows the request message in a permission dialog, and runs the action only if the user allows the request.
+  If the user denies the request, `withPermission()` returns a failure with `PluginPermissionNotGrantedException`.
+  [`PluginManagementPermissions.kt`](%gh-ic-master%/platform/platform-impl/src/com/intellij/openapi/updateSettings/PluginManagementPermissions.kt) defines these requests:
+  - `EnablePluginRequest`, `DisablePluginRequest`, and `InstallPluginRequest` give the action a `PluginManagementAction`, and its `apply()` starts the operation.
+  - `AccessPluginClassLoadersRequest` gives the action a `ReadPluginDescriptorsAction`, which returns the descriptors of all installed plugins and their class loaders.
 
-Each permission works for one call only, so the plugin must send a new request to repeat the operation.
-Call `withPermission()` directly from the plugin code, because the service identifies the requesting plugin by the calling class.
-Java code can use `PluginPermissionJavaShim.withPermission()`, which returns a `CompletableFuture`.
+  Each permission works for one call only, so the plugin must send a new request to repeat the operation.
+  Call `withPermission()` directly from the plugin code, because the service identifies the requesting plugin by the calling class.
+  Java code can use `PluginPermissionJavaShim.withPermission()`, which returns a `CompletableFuture`.
 
-```kotlin
-val result = PluginPermissionService.getInstance().withPermission(
-  DisablePluginRequest(pluginId, MyBundle.message("disable.conflicting.plugin.reason"))
-) { action ->
-  action.apply()
-}
-```
+  ```kotlin
+  val result = PluginPermissionService.getInstance().withPermission(
+    DisablePluginRequest(
+      pluginId,
+      MyBundle.message("disable.conflicting.plugin.reason")
+    )
+  ) { action -> action.apply() }
+  ```
 
-This API replaces the `PluginManagerCore` methods that enable and disable plugins, which are now internal.
-See [](api_changes_list_2026.md#plugin-management-20262).
+  This API replaces the `PluginManagerCore` methods that enable and disable plugins, which are now internal.
+  See [](api_changes_list_2026.md#plugin-management-20262).
 
-Old Search Everywhere API is deprecated
+The Old Search Everywhere API is deprecated
 :
-The old Search Everywhere API in the `com.intellij.ide.actions.searcheverywhere` package is deprecated in favor of the new Search Everywhere API in `com.intellij.platform.searchEverywhere`, which is enabled by default since 2026.2.
-Migrate to the following replacements:
-- [`SearchEverywhereContributor`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/SearchEverywhereContributor.java), `WeightedSearchEverywhereContributor`, and `AbstractGotoSEContributor` – implement [`SeItemsProvider`](%gh-ic%/platform/searchEverywhere/shared/src/SeItemsProvider.kt).
-- `SearchEverywhereContributorFactory` registered in the `com.intellij.searchEverywhereContributor` extension point – implement [`SeItemsProviderFactory`](%gh-ic%/platform/searchEverywhere/shared/src/SeItemsProviderFactory.kt) and register it in the `com.intellij.searchEverywhere.itemsProviderFactory` extension point.
-- `FoundItemDescriptor`, `ContributorSearchResult`, and `SearchEverywhereFoundElementInfo` – use [`SeItem`](%gh-ic%/platform/searchEverywhere/shared/src/SeItem.kt).
-- `SearchEverywhereExtendedInfoProvider` and `ExtendedInfo` – use `SeItemPresentation.extendedInfo` and `SeExtendedInfoCalculator`.
-- `SearchEverywherePreviewProvider` – implement `SeItemsPreviewProvider`.
-- `SearchEverywhereCommandInfo` – use `SeCommandInfo` and `SeCommandInfoFactory`.
-- Custom tabs – implement [`SeTabFactory`](%gh-ic%/platform/searchEverywhere/frontend/src/SeTabFactory.kt) and register it in the `com.intellij.searchEverywhere.tabFactory` extension point.
+  The old Search Everywhere API in the [`com.intellij.ide.actions.searcheverywhere`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere) package is deprecated in favor of the new Search Everywhere API in [`com.intellij.platform.searchEverywhere`](%gh-ic%/platform/searchEverywhere/shared/src), which is enabled by default since 2026.2.
+  <br>
+  Migrate to the following replacements:
+  - [`SearchEverywhereContributor`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/SearchEverywhereContributor.java), [`WeightedSearchEverywhereContributor`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/WeightedSearchEverywhereContributor.kt), and [`AbstractGotoSEContributor`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/AbstractGotoSEContributor.kt) – implement [`SeItemsProvider`](%gh-ic%/platform/searchEverywhere/shared/src/SeItemsProvider.kt).
+  - [`SearchEverywhereContributorFactory`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/SearchEverywhereContributorFactory.java) registered in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.searchEverywhereContributor"/></include> extension point – implement [`SeItemsProviderFactory`](%gh-ic%/platform/searchEverywhere/shared/src/SeItemsProviderFactory.kt) and register it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.searchEverywhere.itemsProviderFactory"/></include> extension point.
+  - [`FoundItemDescriptor`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/FoundItemDescriptor.java), [`ContributorSearchResult`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/ContributorSearchResult.java), and [`SearchEverywhereFoundElementInfo`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/SearchEverywhereFoundElementInfo.java) – use [`SeItem`](%gh-ic%/platform/searchEverywhere/shared/src/SeItem.kt).
+  - [`SearchEverywhereExtendedInfoProvider`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/SearchEverywhereExtendedInfoProvider.kt) and [`ExtendedInfo`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/ExtendedInfo.kt) – use [`SeItemPresentation.extendedInfo`](%gh-ic%/platform/searchEverywhere/shared/src/presentations/SeItemPresentation.kt) and [`SeExtendedInfoCalculator`](%gh-ic-master%/platform/searchEverywhere/shared/src/providers/target/SeExtendedInfoCalculator.kt).
+  - [`SearchEverywherePreview`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/SearchEverywherePreview.kt) – implement [`SeItemsPreviewProvider`](%gh-ic%/platform/searchEverywhere/shared/src/SeItemsPreviewProvider.kt).
+  - [`SearchEverywhereCommandInfo`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/SearchEverywhereCommandInfo.java) – use [`SeCommandInfo`](%gh-ic%/platform/searchEverywhere/shared/src/SeCommandInfo.kt) and [`SeCommandInfoFactory`](%gh-ic%/platform/searchEverywhere/shared/src/SeCommandInfo.kt).
+  - Custom tabs – implement [`SeTabFactory`](%gh-ic%/platform/searchEverywhere/frontend/src/SeTabFactory.kt) and register it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.searchEverywhere.tabFactory"/></include> extension point.
 
-The `com.intellij.ide.actions.searcheverywhere.remote` classes are obsolete without replacement, because the new API supports remote development by design.
-The new API is marked as `@ApiStatus.Experimental`.
-In 2027.1, the deprecated API will be disabled by default via a registry key. In 2027.2, it will be removed.
-
-Report missing functionality on the [JetBrains Platform Forum](https://platform.jetbrains.com).
+  The [`com.intellij.ide.actions.searcheverywhere.remote`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/remote) classes are obsolete without replacement, because the new API supports remote development by design.
+  The new API is marked as `@ApiStatus.Experimental`.
+  In 2027.1, the deprecated API will be disabled by default via a registry key. In 2027.2, it will be removed.
+  <br>
+  Report missing functionality on the [JetBrains Platform Forum](https://platform.jetbrains.com).
 
 ## 2026.2
 

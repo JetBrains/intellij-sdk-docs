@@ -39,6 +39,14 @@
 
         <automaticLinkSummaries>false</automaticLinkSummaries>
         <resizable-sidebar>true</resizable-sidebar>
+
+        <custom-banner
+                label="Conference"
+                link="https://lp.jetbrains.media/plugin-developer-conf-2026?utm_source=sdk_docs&amp;utm_medium=ribbon&amp;utm_campaign=plugindevconf2026/"
+                date="2026-11-10"
+                bg-theme="default">
+            Join Plugin Developer Conf 2026 — a free online event on November 10 at 1:00 PM UTC. Register
+        </custom-banner>
     </variables>
 
     <build-profile instance="ijs"/>

@@ -11,5 +11,7 @@ There are two distinct approaches, depending on the type of data being persisted
 * [Persisting State of Components](persisting_state_of_components.md)
 * [Persisting Sensitive Data](persisting_sensitive_data.md)
 
+To share application-level settings between different IDE installations, see [](roaming_settings.md).
+
 [Split plugins](split_mode_and_remote_development.md) may also need explicit synchronization metadata for persisted settings.
 See [](persistent_state_in_split_mode.md).

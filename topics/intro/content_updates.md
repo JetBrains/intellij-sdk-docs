@@ -27,6 +27,9 @@ Debouncing and Batching Updates
 Persisting Sensitive Data
 : Add more information about [persisting sensitive data](persisting_sensitive_data.md).
 
+Roaming Settings
+: Add a new page about [](roaming_settings.md) describing how to share the state of application-level components via _Export Settings_ and the _Backup and Sync_ plugin.
+
 Integration Tests
 : Update [](integration_tests.md) guide with information about new APIs, debugging, and more.
 
@@ -300,7 +303,7 @@ Minor Changes and Additions
 :
 - Clarify [the syntax highlighting](testing_highlighting.md#syntax-highlighting) test file format and test implementation initial approach.
 - Clarify referencing icons by paths and icon holder class constants in [](icons.md).
-- Add information about requirements for persistent state components to be included in [the _Settings Sync_ plugin synchronization mechanism](persisting_state_of_components.md#backup-and-sync-plugin).
+- Add information about requirements for persistent state components to be included in [the _Settings Sync_ plugin synchronization mechanism](roaming_settings.md#backup-and-sync-plugin).
 
 ### April
 {#april-23}
@@ -366,7 +369,7 @@ Minor Changes and Additions
 
 Minor Changes and Additions
 :
-- Add information about [sharing settings](persisting_state_of_components.md#sharing-settings-between-ide-installations) between different IDEs installations.
+- Add information about [sharing settings](roaming_settings.md) between different IDEs installations.
 
 ### September
 {#september-22}

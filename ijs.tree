@@ -125,6 +125,7 @@
     <toc-element topic="persistence.md" toc-title="Persistence">
       <toc-element topic="persisting_state_of_components.md"/>
       <toc-element topic="persisting_sensitive_data.md"/>
+      <toc-element topic="roaming_settings.md"/>
     </toc-element>
     <toc-element topic="settings.md">
       <toc-element topic="settings_guide.md"/>

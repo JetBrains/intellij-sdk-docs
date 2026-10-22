@@ -514,72 +514,59 @@ Use the same default value in the getter and setter.
 <tab title="Java">
 
 ```java
+// Keys are prefixed with plugin ID to prevent conflicts
 private static final String PREVIEW_LIMIT_KEY = "com.example.plugin.previewLimit";
 private static final String PREVIEW_ZOOM_KEY = "com.example.plugin.previewZoom";
 private static final String PREVIEW_STYLE_KEY = "com.example.plugin.previewStyle";
-private static final int DEFAULT_LIMIT = 20;
-private static final float DEFAULT_ZOOM = 1.0f;
-private static final String DEFAULT_STYLE = "compact";
 
-int getPreviewLimit() {
-  return PropertiesComponent.getInstance()
-    .getInt(PREVIEW_LIMIT_KEY, DEFAULT_LIMIT);
-}
-
-void setPreviewLimit(int value) {
-  PropertiesComponent.getInstance()
-    .setValue(PREVIEW_LIMIT_KEY, value, DEFAULT_LIMIT);
-}
-
-float getPreviewZoom() {
-  return PropertiesComponent.getInstance()
-    .getFloat(PREVIEW_ZOOM_KEY, DEFAULT_ZOOM);
-}
-
-void setPreviewZoom(float value) {
-  PropertiesComponent.getInstance()
-    .setValue(PREVIEW_ZOOM_KEY, value, DEFAULT_ZOOM);
-}
-
-String getPreviewStyle() {
-  return PropertiesComponent.getInstance()
-    .getValue(PREVIEW_STYLE_KEY, DEFAULT_STYLE);
-}
-
-void setPreviewStyle(String value) {
-  PropertiesComponent.getInstance()
-    .setValue(PREVIEW_STYLE_KEY, value, DEFAULT_STYLE);
-}
+PropertiesComponent properties = PropertiesComponent.getInstance();
+// Persist values only when they differ from the defaults
+properties.setValue(PREVIEW_LIMIT_KEY, limit, 20);
+properties.setValue(PREVIEW_ZOOM_KEY, zoom, 1.0f);
+properties.setValue(PREVIEW_STYLE_KEY, style, "compact");
 ```
 
 </tab>
 <tab title="Kotlin">
 
 ```kotlin
+// Keys are prefixed with plugin ID to prevent conflicts
 private const val PREVIEW_LIMIT_KEY = "com.example.plugin.previewLimit"
 private const val PREVIEW_ZOOM_KEY = "com.example.plugin.previewZoom"
 private const val PREVIEW_STYLE_KEY = "com.example.plugin.previewStyle"
-private const val DEFAULT_LIMIT = 20
-private const val DEFAULT_ZOOM = 1.0f
-private const val DEFAULT_STYLE = "compact"
 
-var previewLimit: Int
-    get() = PropertiesComponent.getInstance()
-      .getInt(PREVIEW_LIMIT_KEY, DEFAULT_LIMIT)
-    set(value) = PropertiesComponent.getInstance()
-      .setValue(PREVIEW_LIMIT_KEY, value, DEFAULT_LIMIT)
+val properties = PropertiesComponent.getInstance()
+// Persist values only when they differ from the defaults
+properties.setValue(PREVIEW_LIMIT_KEY, limit, 20)
+properties.setValue(PREVIEW_ZOOM_KEY, zoom, 1.0f)
+properties.setValue(PREVIEW_STYLE_KEY, style, "compact")
+```
 
-var previewZoom: Float
-    get() = PropertiesComponent.getInstance()
-      .getFloat(PREVIEW_ZOOM_KEY, DEFAULT_ZOOM)
-    set(value) = PropertiesComponent.getInstance()
-      .setValue(PREVIEW_ZOOM_KEY, value, DEFAULT_ZOOM)
+</tab>
+</tabs>
 
-var previewStyle: String
-    get() = PropertiesComponent.getInstance()
-      .getValue(PREVIEW_STYLE_KEY, DEFAULT_STYLE)
-    set(value) = PropertiesComponent.getInstance()
-      .setValue(PREVIEW_STYLE_KEY, value, DEFAULT_STYLE)
+To retrieve the values, pass the same default values:
+
+<tabs>
+<tab title="Java">
+
+```java
+PropertiesComponent properties = PropertiesComponent.getInstance();
+// Retrieve values with the same defaults as used when persisting them
+int limit = properties.getInt(PREVIEW_LIMIT_KEY, 20);
+float zoom = properties.getFloat(PREVIEW_ZOOM_KEY, 1.0f);
+String style = properties.getValue(PREVIEW_STYLE_KEY, "compact");
+```
+
+</tab>
+<tab title="Kotlin">
+
+```kotlin
+val properties = PropertiesComponent.getInstance()
+// Retrieve values with the same defaults as used when persisting them
+val limit = properties.getInt(PREVIEW_LIMIT_KEY, 20)
+val zoom = properties.getFloat(PREVIEW_ZOOM_KEY, 1.0f)
+val style = properties.getValue(PREVIEW_STYLE_KEY, "compact")
 ```
 
 </tab>
@@ -598,42 +585,51 @@ Use `setList()` and `getList()` to persist a collection of strings.
 <tab title="Java">
 
 ```java
-private static final String RECENT_PREVIEWS_KEY
-  = "com.example.plugin.recentPreviews";
+// Key is prefixed with plugin ID to prevent conflicts
+private static final String RECENT_PREVIEWS_KEY = "com.example.plugin.recentPreviews";
 
-List<String> getRecentPreviews() {
-  List<String> previews = PropertiesComponent.getInstance()
-      .getList(RECENT_PREVIEWS_KEY);
-  if (previews == null) {
-    return Collections.emptyList();
-  }
-  return previews;
-}
-
-void setRecentPreviews(List<String> value) {
-  PropertiesComponent.getInstance()
-    .setList(RECENT_PREVIEWS_KEY, value);
-}
+// Persist a list of strings
+PropertiesComponent.getInstance().setList(RECENT_PREVIEWS_KEY, recentPreviews);
 ```
 
 </tab>
 <tab title="Kotlin">
 
 ```kotlin
-private const val RECENT_PREVIEWS_KEY
-  = "com.example.plugin.recentPreviews"
+// Key is prefixed with plugin ID to prevent conflicts
+private const val RECENT_PREVIEWS_KEY = "com.example.plugin.recentPreviews"
 
-var recentPreviews: List<String>
-  get() = PropertiesComponent.getInstance()
-    .getList(RECENT_PREVIEWS_KEY) ?: emptyList()
-  set(value) = PropertiesComponent.getInstance()
-    .setList(RECENT_PREVIEWS_KEY, value)
+// Persist a list of strings
+PropertiesComponent.getInstance().setList(RECENT_PREVIEWS_KEY, recentPreviews)
 ```
 
 </tab>
 </tabs>
 
-`setList()` copies the collection, and `getList()` returns `null` when no list is stored.
+`setList()` stores a copy of the collection.
+
+To retrieve the list:
+
+<tabs>
+<tab title="Java">
+
+```java
+// Retrieve the list, or `null` if no list is stored
+List<String> recentPreviews = PropertiesComponent.getInstance().getList(RECENT_PREVIEWS_KEY);
+```
+
+</tab>
+<tab title="Kotlin">
+
+```kotlin
+// Retrieve the list, or `null` if no list is stored
+val recentPreviews = PropertiesComponent.getInstance().getList(RECENT_PREVIEWS_KEY)
+```
+
+</tab>
+</tabs>
+
+If the key is missing, `getList()` returns `null`, so handle this case before using the list.
 
 ### Resetting Stored Values
 

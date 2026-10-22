@@ -182,8 +182,8 @@ The following example shows a minimal annotation of an exportable component:
 
 ```kotlin
 @State(
-    name = "MyPluginSettings",
-    storages = [Storage("myPlugin.xml")]
+  name = "MyPluginSettings",
+  storages = [Storage("myPlugin.xml")]
 )
 ```
 

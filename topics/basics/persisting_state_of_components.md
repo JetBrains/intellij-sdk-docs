@@ -384,10 +384,6 @@ private static final String PREVIEW_KEY = "com.example.plugin.preview";
 
 // Persist a toggle
 PropertiesComponent.getInstance().setValue(PREVIEW_KEY, value);
-// Retrieve the value only when the persisted value is `true`
-if (PropertiesComponent.getInstance().isTrueValue(PREVIEW_KEY)) {
-  enablePreview();
-}
 ```
 
 </tab>
@@ -399,7 +395,32 @@ private const val PREVIEW_KEY = "com.example.plugin.preview"
 
 // Persist a toggle
 PropertiesComponent.getInstance().setValue(PREVIEW_KEY, value)
-// Retrieve the value only when the persisted value is `true`
+```
+
+</tab>
+</tabs>
+
+Calling `setValue(PREVIEW_KEY, true)` stores `true` under the key.
+Calling `setValue(PREVIEW_KEY, false)` doesn't store `false`.
+Instead, it removes the key, because `false` is the default value for the two-argument `setValue()`.
+
+To retrieve the value:
+
+<tabs>
+<tab title="Java">
+
+```java
+// Enable the preview if the stored value is "true" (a missing key counts as "false")
+if (PropertiesComponent.getInstance().isTrueValue(PREVIEW_KEY)) {
+  enablePreview();
+}
+```
+
+</tab>
+<tab title="Kotlin">
+
+```kotlin
+// Enable the preview if the stored value is "true" (a missing key counts as `false`)
 if (PropertiesComponent.getInstance().isTrueValue(PREVIEW_KEY)) {
   enablePreview()
 }
@@ -408,10 +429,8 @@ if (PropertiesComponent.getInstance().isTrueValue(PREVIEW_KEY)) {
 </tab>
 </tabs>
 
-Initially, the key is absent, so `isTrueValue()` returns `false`.
-When the user enables the preview in the plugin UI, `setValue()` persists the `true` value;
-when the user disables it, `setValue()` removes the key.
-`isTrueValue()` returns `true` only when the stored value is `true`.
+`isTrueValue()` parses the stored value with [`Boolean.parseBoolean()`](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Boolean.html#parseBoolean(java.lang.String)),
+so it returns `true` only if the value is the string `true` (ignoring case), and `false` for any other value or a missing key.
 
 To persist a boolean value that should be enabled by default, specify the default value.
 

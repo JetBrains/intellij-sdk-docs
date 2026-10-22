@@ -438,8 +438,6 @@ To persist a boolean value that should be enabled by default, specify the defaul
 <tab title="Java">
 
 ```java
-// Retrieve a value with `true` as the default
-boolean isPreviewVisible = PropertiesComponent.getInstance().getBoolean(PREVIEW_KEY, true);
 // Persist a value only when it differs from the default
 PropertiesComponent.getInstance().setValue(PREVIEW_KEY, value, true);
 ```
@@ -448,8 +446,6 @@ PropertiesComponent.getInstance().setValue(PREVIEW_KEY, value, true);
 <tab title="Kotlin">
 
 ```kotlin
-// Retrieve a value with `true` as the default
-val isPreviewVisible = PropertiesComponent.getInstance().getBoolean(PREVIEW_KEY, true)
 // Persist a value only when it differs from the default
 PropertiesComponent.getInstance().setValue(PREVIEW_KEY, value, true)
 ```
@@ -459,6 +455,29 @@ PropertiesComponent.getInstance().setValue(PREVIEW_KEY, value, true)
 
 The three-argument `setValue()` stores the value only when it differs from the default.
 Otherwise, it removes the key.
+
+To retrieve the value, pass the same default value to `getBoolean()`:
+
+<tabs>
+<tab title="Java">
+
+```java
+// Retrieve a value with `true` as the default
+boolean isPreviewVisible = PropertiesComponent.getInstance().getBoolean(PREVIEW_KEY, true);
+```
+
+</tab>
+<tab title="Kotlin">
+
+```kotlin
+// Retrieve a value with `true` as the default
+val isPreviewVisible = PropertiesComponent.getInstance().getBoolean(PREVIEW_KEY, true)
+```
+
+</tab>
+</tabs>
+
+If the key is missing, `getBoolean()` returns the specified default value.
 
 Use `updateValue()` when a value change must also trigger additional work:
 

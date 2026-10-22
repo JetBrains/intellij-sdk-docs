@@ -63,7 +63,7 @@ The service instance will be created in the scope according to the caller (see [
 * There is no separate headless/test implementation required.
 * Service class must be `final`.
 * [Constructor injection](#ctor) of dependency services is not supported.
-* If an application-level service is a [PersistentStateComponent](persisting_state_of_components.md), roaming must be disabled (`roamingType = RoamingType.DISABLED`).
+* If an application-level light service is a [PersistentStateComponent](persisting_state_of_components.md), [roaming](roaming_settings.md#requirements-for-roamable-components) must be disabled (`roamingType = RoamingType.DISABLED`).
 
 Use these inspections to verify above restrictions and highlight non-light services that can be converted (2023.3):
 

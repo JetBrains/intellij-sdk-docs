@@ -29,8 +29,7 @@ The standard way of writing a light test is to extend one of the following class
 <tabs>
 <tab title="Default">
 
-Use [`LightPlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/LightPlatformTestCase.java)
-or [`BasePlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java)
+Use [`BasePlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java)
 for tests that don't have any dependency on Java functionality.
 
 **Examples:**

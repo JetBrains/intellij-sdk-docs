@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 25694d215dc6682d56569faf594e4d38401c8e1b -->
+<!-- Revision: 5ca38b9a135fbc746482a0e3191cb5cdf3f96037 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-175 Extension Points and 11 Listeners
+177 Extension Points and 11 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -288,6 +288,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.newFileListener"/></include> ![Project-Level][project-level] | `RiderNewFileListener` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.newRunConfigurationTreeGroupingProvider"/></include> ![Non-Dynamic][non-dynamic] | `RiderNewRunConfigurationTreeGroupingProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.patchCommandLine"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `PatchCommandLineExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.patchExeCommandLine"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `PatchExeCommandLineExtension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.pencils.filters.provider"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `PencilsFiltersProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.pencils.inspectionToolGroup"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.pencils.pencilsFilterGroup"/></include> ![Non-Dynamic][non-dynamic] | `n/a` |
@@ -297,6 +298,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.publishConfigurationProvider"/></include> ![Non-Dynamic][non-dynamic] | `RiderContextPublishProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.reader.mode.matcher"/></include> | `RiderCustomReaderModeMatcher` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.repoViewIconProvider"/></include> | `RepoViewIconProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.repositoryViewFeedbackProvider"/></include> ![Internal][internal] | `RepositoryViewFeedbackProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.resolveContextWidgetProvider"/></include> ![Non-Dynamic][non-dynamic] | `RiderResolveContextWidgetProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.run.configurations.dotNetExe"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `DotNetExeConfigurationExtension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.run.configurations.externalRunConfigurationGenerator"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `ExternalRunConfigurationGeneratorExtension` |

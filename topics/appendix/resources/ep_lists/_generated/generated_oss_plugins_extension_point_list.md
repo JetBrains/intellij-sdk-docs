@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 25694d215dc6682d56569faf594e4d38401c8e1b -->
+<!-- Revision: 5ca38b9a135fbc746482a0e3191cb5cdf3f96037 -->
 
 <!--
 EP List Directories:
@@ -14,7 +14,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-88 Extension Points and 8 Listeners
+89 Extension Points and 8 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -293,6 +293,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.azureCiConfigUpdateHandler"/></include> | [`AzureCIConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/AzureCIConfigHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.bitbucketCiConfigUpdateHandler"/></include> | [`BitbucketCIConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/BitbucketCIConfigHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.circleCiConfigUpdateHandler"/></include> | [`CircleCIConfigHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ci/CircleCIConfigHandler.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.codeQualityCategoryProvider"/></include> | [`CodeQualityCategoryProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/sarif/CodeQualityCategoryProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.configUpdateHandler"/></include> | [`ConfigUpdateHandler`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/extensions/ConfigUpdateHandler.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.contextMarginProvider"/></include> | [`ContextMarginProvider`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/staticAnalysis/sarif/ContextMarginProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="org.intellij.qodana.customInspectionLicenseRule"/></include> | [`CustomInspectionLicenseRule`](%gh-ij-plugins%/qodana/core/src/org/jetbrains/qodana/license/CustomInspectionLicenseRule.kt) |

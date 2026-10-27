@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 25694d215dc6682d56569faf594e4d38401c8e1b -->
+<!-- Revision: 5ca38b9a135fbc746482a0e3191cb5cdf3f96037 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-72 Extension Points and 6 Listeners
+73 Extension Points and 6 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -26,6 +26,13 @@ EP List Directories:
 | [`SpringBeansViewSettings#TOPIC`](https://jb.gg/ipe/listeners?topics=com.intellij.spring.ide.ux.toolWindow.SpringBeansViewSettings.Listener)  | `Listener` |
 {sticky-header="true"}
 
+
+### com.intellij.spring.modulith
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.modulith.packageMetadataWriter"/></include> ![Internal][internal] | `SpringModulithPackageMetadataWriter` |
+{sticky-header="true"}
 
 ### intellij.spring.core.analysis.services.xml
 
@@ -72,7 +79,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.autodetected.filesets"/></include> | `SpringAutodetectedFilesetsSearcher` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.beans.stereotype"/></include> | `SpringBeanStereotype` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.spring.beans.stereotype"/></include> ![Experimental][experimental] | `SpringBeanStereotype` |
 {sticky-header="true"}
 
 ### intellij.spring.el.xml

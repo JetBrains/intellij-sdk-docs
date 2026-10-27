@@ -105,7 +105,7 @@ A `SettingsEditor` implementation must provide the following methods:
 In the case of run configuration settings, the settings object is `RunConfiguration` itself.
 Settings specific to a program runner must implement [`ConfigurationPerRunnerSettings`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ConfigurationPerRunnerSettings.java).
 
-If the settings editor requires validation, implement [`CheckableRunConfigurationEditor`](%gh-ic%/platform/lang-api/src/com/intellij/execution/impl/CheckableRunConfigurationEditor.java).
+If the settings editor requires validation, implement [`CheckableRunConfigurationEditor`](%gh-ic%/platform/execution/src/com/intellij/execution/impl/CheckableRunConfigurationEditor.java).
 
 If the settings editor is complex, see [](#simplifying-settings-editors) for solutions.
 
@@ -128,12 +128,12 @@ If a plugin requires creating run configurations programmatically, .e.g, from a 
 ## Creating a Run Configuration from Context
 
 Run configurations can be created and run from context, e.g., by right-clicking an application main method, a test class/method, etc., directly in the editor or the project view.
-This is achieved by implementing [`LazyRunConfigurationProducer`](%gh-ic%/platform/lang-api/src/com/intellij/execution/actions/LazyRunConfigurationProducer.kt) and registering
+This is achieved by implementing [`LazyRunConfigurationProducer`](%gh-ic%/platform/execution/src/com/intellij/execution/actions/LazyRunConfigurationProducer.kt) and registering
 it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.runConfigurationProducer"/></include>.
 
 The extension requires implementing the following methods:
 * `getConfigurationFactory()` - returns the factory creating run configurations of the type specified in the extension class implementation.
-* `setupConfigurationFromContext()` - receives a blank configuration of the specified type and a [`ConfigurationContext`](%gh-ic%/platform/lang-api/src/com/intellij/execution/actions/ConfigurationContext.java) containing information about a source code location (accessible by calling `getLocation()` or `getPsiLocation()`).
+* `setupConfigurationFromContext()` - receives a blank configuration of the specified type and a [`ConfigurationContext`](%gh-ic%/platform/execution/src/com/intellij/execution/actions/ConfigurationContext.java) containing information about a source code location (accessible by calling `getLocation()` or `getPsiLocation()`).
   The implementation needs to check whether the location is applicable to the configuration type (e.g., if it is in a file of the supported language).
   If it is, put the correct context-specific settings into the run configuration and return `true`.
   Return `false` otherwise.
@@ -141,7 +141,7 @@ The extension requires implementing the following methods:
   This method allows reusing an existing run configuration, which applies to the current context, instead of creating a new one and possibly ignoring the user's customizations in the existing one.
 
 If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
-If the run configuration requires additional data before it is executed for the first time, override [`RunConfigurationProducer.onFirstRun()`](%gh-ic%/platform/lang-api/src/com/intellij/execution/actions/RunConfigurationProducer.java) to provide it or display UI to get the data from the user.
+If the run configuration requires additional data before it is executed for the first time, override [`RunConfigurationProducer.onFirstRun()`](%gh-ic%/platform/execution/src/com/intellij/execution/actions/RunConfigurationProducer.java) to provide it or display UI to get the data from the user.
 
 To support the automatic naming of configurations created from context, the configuration should extend [`LocatableConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/LocatableConfigurationBase.java).
 It supports generating a name for a configuration from its settings and tracking whether the user changed the name.

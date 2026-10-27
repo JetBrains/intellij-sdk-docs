@@ -86,19 +86,19 @@ Each entry is mapped to its corresponding _Replacement_, pointing to the recomme
 The API listed in this table is currently (or was previously) marked with `@ApiStatus.Internal`, but its status has changed in the meantime (or will change).
 Therefore, any reported violations can be disregarded.
 
-| Internal API                                                                                                                                         | Note                                            |
-|------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| [`AnAction.setShortcutSet()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)                                    | Made public in 2023.3                           |
-| [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java)                                      | Made public in 2021.3                           |
-| [`BaseExpirableExecutor.expireWith()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/BaseExpirableExecutor.java)                    | Made public in 2023.2                           |
-| [`BundleBase`](%gh-ic%/platform/util/src/com/intellij/BundleBase.kt)                                                                                 | Made public in 2022.1                           |
-| [`CodeVisionPlaceholderCollector`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/CodeVisionPlaceholderCollector.kt)             | Made public in 2024.2                           |
-| [`IdFilter`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/IdFilter.java)                                                             | Made public in 2021.2/3                         |
-| [`HashingStrategy`](%gh-ic%/platform/util/base/src/com/intellij/util/containers/HashingStrategy.java)                                                | Made public in 2023.1                           |
-| [`JsonCustomStructureViewFactory`](%gh-ic%/json/backend/src/com/intellij/json/structureView/JsonCustomStructureViewFactory.java)                     | Made public in 2023.2                           |
-| [`RunAnythingCommandLineProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingCommandLineProvider.kt)   | Made public in 2021.3                           |
-| [`SearchEverywhereFoundElementInfo`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/searcheverywhere/SearchEverywhereFoundElementInfo.java) | Made public in 2023.3                           |
-| `PhpExpectedFunctionArgument`                                                                                                                        | Made public in 2022.1                           |
-| `org.jetbrains.yaml.meta.*`                                                                                                                          | YAML Metadata API will be made public in 2023.1 |
+| Internal API                                                                                                                                            | Note                                            |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| [`AnAction.setShortcutSet()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java)                                       | Made public in 2023.3                           |
+| [`AnimatedIcon.ANIMATION_IN_RENDERER_ALLOWED`](%gh-ic%/platform/ide-core/src/com/intellij/ui/AnimatedIcon.java)                                         | Made public in 2021.3                           |
+| [`BaseExpirableExecutor.expireWith()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/BaseExpirableExecutor.java)                       | Made public in 2023.2                           |
+| [`BundleBase`](%gh-ic%/platform/util/src/com/intellij/BundleBase.kt)                                                                                    | Made public in 2022.1                           |
+| [`CodeVisionPlaceholderCollector`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/CodeVisionPlaceholderCollector.kt)                | Made public in 2024.2                           |
+| [`IdFilter`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/IdFilter.java)                                                                | Made public in 2021.2/3                         |
+| [`HashingStrategy`](%gh-ic%/platform/util/base/src/com/intellij/util/containers/HashingStrategy.java)                                                   | Made public in 2023.1                           |
+| [`JsonCustomStructureViewFactory`](%gh-ic%/json/backend/src/com/intellij/json/structureView/JsonCustomStructureViewFactory.java)                        | Made public in 2023.2                           |
+| [`RunAnythingCommandLineProvider`](%gh-ic%/platform/execution-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingCommandLineProvider.kt) | Made public in 2021.3                           |
+| [`SearchEverywhereFoundElementInfo`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/SearchEverywhereFoundElementInfo.java)     | Made public in 2023.3                           |
+| `PhpExpectedFunctionArgument`                                                                                                                           | Made public in 2022.1                           |
+| `org.jetbrains.yaml.meta.*`                                                                                                                             | YAML Metadata API will be made public in 2023.1 |
 
 <include from="api_internal.md" element-id="notComplete"/>

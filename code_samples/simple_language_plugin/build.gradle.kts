@@ -19,6 +19,7 @@ dependencies {
   intellijPlatform {
     intellijIdea("2026.1.5")
     bundledPlugin("com.intellij.java")
+    bundledModule("intellij.spellchecker")
 
     testFramework(TestFrameworkType.Platform)
     testFramework(TestFrameworkType.Plugin.Java)

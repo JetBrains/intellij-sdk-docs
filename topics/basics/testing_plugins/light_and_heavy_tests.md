@@ -34,7 +34,7 @@ or [`BasePlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/test
 for tests that don't have any dependency on Java functionality.
 
 **Examples:**
-- [`JavaCopyrightTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/copyright/JavaCopyrightTest.kt)
+- [`JavaCopyrightTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/java/copyright/JavaCopyrightTest.kt)
 - [`HtmlDocumentationTest`](%gh-ic%/xml/tests/src/com/intellij/html/HtmlDocumentationTest.kt)
 - [`AcceptWordAsCorrectTest`](%gh-ic%/plugins/grazie/src/test/kotlin/com/intellij/grazie/spellchecker/inspector/AcceptWordAsCorrectTest.java)
 

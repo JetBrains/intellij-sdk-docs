@@ -25,7 +25,7 @@ This section covers working with text in the IntelliJ Platform editor:
 
 | Context                    | API                                                                                                                 |
 |----------------------------|---------------------------------------------------------------------------------------------------------------------|
-| Generic                    | [`FileEditorManager`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/fileEditor/FileEditorManager.java)     |
+| Generic                    | [`FileEditorManager`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/fileEditor/FileEditorManager.kt)     |
 | [Action](action_system.md) | [`CommonDataKeys.EDITOR`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/CommonDataKeys.java) |
 | [](psi_elements.md)        | [`PsiEditorUtil.findEditor()`](%gh-ic%/platform/editor-ui-api/src/com/intellij/psi/util/PsiEditorUtil.java)         |
 
@@ -50,4 +50,4 @@ If access to indexes is not required, it can be marked [dumb aware](indexing_and
 ### How do I open a text editor for a "fake" file?
 
 Create a [`LightVirtualFile`](%gh-ic%/platform/core-api/src/com/intellij/testFramework/LightVirtualFile.java) with the contents
-and open it via [`FileEditorManager.openFile()`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/fileEditor/FileEditorManager.java).
+and open it via [`FileEditorManager.openFile()`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/fileEditor/FileEditorManager.kt).

@@ -91,7 +91,7 @@ The content is built by the `ProgramRunner` executing the process.
 
 [`ExecutionResult`](%gh-ic%/platform/execution/src/com/intellij/execution/ExecutionResult.java) is prepared by `RunProfileState` class before execution and contains `ExecutionConsole` and `ProcessHandler`.
 
-[`ExecutionConsole`](%gh-ic%/platform/execution/src/com/intellij/execution/ui/ExecutionConsole.java) is a component displaying the result of executing the process.
+[`ExecutionConsole`](%gh-ic%/platform/consoleView/src/com/intellij/execution/ui/ExecutionConsole.java) is a component displaying the result of executing the process.
 It can be a console, a test results view, or another similar component.
 
 [`ProcessHandler`](%gh-ic%/platform/util/src/com/intellij/execution/process/ProcessHandler.java) is an object attached to the executed process and allows controlling and accessing the information about the process.
@@ -122,7 +122,7 @@ A standard implementation of `ProgramRunner.execute()` goes through the followin
 3. The `RunContentBuilder` object is created and invoked to display the execution console in a <control>Run</control> or <control>Debug</control> tool window tab.
 
 **Example:**
-[`RunAnythingCommandProvider.runCommand()`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingCommandProvider.java), which programmatically executes a command typed by a user in the <control>Run Anything</control> popup
+[`RunAnythingCommandProvider.runCommand()`](%gh-ic%/platform/execution-impl/src/com/intellij/ide/actions/runAnything/activity/RunAnythingCommandProvider.java), which programmatically executes a command typed by a user in the <control>Run Anything</control> popup
 
 ## Standard Base Classes
 
@@ -148,18 +148,18 @@ When a process execution is handled with `CommandLineState`, a console view will
 
 Alternatively, it can be handled with the following steps:
 
-1. [`TextConsoleBuilderFactory.createBuilder(project).getConsole()`](%gh-ic%/platform/execution/src/com/intellij/execution/filters/TextConsoleBuilderFactory.java) creates a [`ConsoleView`](%gh-ic%/platform/execution/src/com/intellij/execution/ui/ConsoleView.java) instance.
+1. [`TextConsoleBuilderFactory.createBuilder(project).getConsole()`](%gh-ic%/platform/consoleView/src/com/intellij/execution/filters/TextConsoleBuilderFactory.java) creates a [`ConsoleView`](%gh-ic%/platform/consoleView/src/com/intellij/execution/ui/ConsoleView.java) instance.
 2. `ConsoleView.attachToProcess()` attaches it to the output of a process.
 
 If the running process uses [ANSI escape codes to color its output](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors), use the [`ColoredProcessHandler`](%gh-ic%/platform/platform-util-io/src/com/intellij/execution/process/ColoredProcessHandler.java) class to display the colors in the IDE console.
 
 #### Console Filters
 
-Console [`Filter`](%gh-ic%/platform/execution/src/com/intellij/execution/filters/Filter.java) allows converting certain strings found in the process output to clickable hyperlinks.
-To attach a filter to the console, use `CommandLineState.addConsoleFilters()` or [`TextConsoleBuilder.addFilter()`](%gh-ic%/platform/execution/src/com/intellij/execution/filters/TextConsoleBuilder.java) if the console is created manually.
-Two standard filter implementations are [`RegexpFilter`](%gh-ic%/platform/lang-api/src/com/intellij/execution/filters/RegexpFilter.java) and [`UrlFilter`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/filters/UrlFilter.java).
+Console [`Filter`](%gh-ic%/platform/consoleView/src/com/intellij/execution/filters/Filter.java) allows converting certain strings found in the process output to clickable hyperlinks.
+To attach a filter to the console, use `CommandLineState.addConsoleFilters()` or [`TextConsoleBuilder.addFilter()`](%gh-ic%/platform/consoleView/src/com/intellij/execution/filters/TextConsoleBuilder.java) if the console is created manually.
+Two standard filter implementations are [`RegexpFilter`](%gh-ic%/platform/consoleView/src/com/intellij/execution/filters/RegexpFilter.java) and [`UrlFilter`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/filters/UrlFilter.java).
 
-Console filters can be also provided by implementing [`ConsoleFilterProvider`](%gh-ic%/platform/lang-api/src/com/intellij/execution/filters/ConsoleFilterProvider.java) and registering
+Console filters can be also provided by implementing [`ConsoleFilterProvider`](%gh-ic%/platform/consoleView/src/com/intellij/execution/filters/ConsoleFilterProvider.java) and registering
 it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.consoleFilterProvider"/></include>.
 
 ## Listening for Execution Events

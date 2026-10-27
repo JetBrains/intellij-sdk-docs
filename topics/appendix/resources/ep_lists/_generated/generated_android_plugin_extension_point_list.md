@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 25694d215dc6682d56569faf594e4d38401c8e1b -->
+<!-- Revision: 5ca38b9a135fbc746482a0e3191cb5cdf3f96037 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-133 Extension Points and 37 Listeners
+135 Extension Points and 37 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -26,8 +26,8 @@ EP List Directories:
 | [`StatefulButtonNotifier#BUTTON_STATE_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.assistant.StatefulButtonNotifier)  ![Project-Level][project-level] | [`StatefulButtonNotifier`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/StatefulButtonNotifier.java) |
 | [`TutorialCardRefreshNotifier#TUTORIAL_CARD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.assistant.TutorialCardRefreshNotifier)  | [`TutorialCardRefreshNotifier`](%gh-ij-android%/assistant/src/com/android/tools/idea/assistant/TutorialCardRefreshNotifier.java) |
 | [`EmulatorLogListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.avdmanager.EmulatorLogListener)  | [`EmulatorLogListener`](%gh-ij-android%/android/src/com/android/tools/idea/avdmanager/EmulatorLogListener.kt) |
-| [`IssueProviderListener#UI_CHECK`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
 | [`IssueProviderListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
+| [`IssueProviderListener#UI_CHECK`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.common.error.IssueProviderListener)  ![Project-Level][project-level] | [`IssueProviderListener`](%gh-ij-android%/designer/src/com/android/tools/idea/common/error/IssueProvider.kt) |
 | [`ComposeAnimationListener.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.compose.preview.ComposePreviewRepresentation.ComposeAnimationListener)  | [`ComposeAnimationListener`](%gh-ij-android%/compose-designer/src/com/android/tools/idea/compose/preview/ComposePreviewRepresentation.kt) |
 | [`FastPreviewManager#FAST_PREVIEW_MANAGER_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.editors.fast.FastPreviewManager.Companion.FastPreviewManagerListener)  | [`FastPreviewManagerListener`](%gh-ij-android%/android/src/com/android/tools/idea/editors/fast/FastPreviewManager.kt) |
 | [`GradleBuildState#GRADLE_BUILD_TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.idea.gradle.project.build.GradleBuildListener)  | [`GradleBuildListener`](%gh-ij-android%/project-system-gradle/src/com/android/tools/idea/gradle/project/build/GradleBuildListener.java) |
@@ -78,6 +78,7 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gemini.geminiPluginApi"/></include> ![Non-Dynamic][non-dynamic] | [`GeminiPluginApi`](%gh-ij-android%/ml-api/src/main/kotlin/com/android/tools/idea/gemini/GeminiPluginApi.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gemini.geminiPluginApiV2"/></include> ![Non-Dynamic][non-dynamic] | [`GeminiPluginApiV2`](%gh-ij-android%/ml-api/src/main/kotlin/com/android/tools/idea/gemini/GeminiPluginApiV2.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.gemini.nepFineTuneDataListener"/></include> ![Non-Dynamic][non-dynamic] | [`NepFineTuneDataListener`](%gh-ij-android%/ml-api/src/main/kotlin/com/android/tools/idea/gemini/NepDataCollection.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.ml.studioBotExternalFlags"/></include> ![Non-Dynamic][non-dynamic] | [`StudioBotExternalFlags`](%gh-ij-android%/ml-api/src/main/kotlin/com/android/tools/idea/gemini/StudioBotExternalFlags.kt) |
 {sticky-header="true"}
@@ -158,6 +159,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.moduleDescriptionProvider"/></include> ![Non-Dynamic][non-dynamic] | [`ModuleDescriptionProvider`](%gh-ij-android%/android-npw/src/com/android/tools/idea/npw/module/ModuleDescriptionProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.npw.firebaseAiWizardLauncher"/></include> ![Non-Dynamic][non-dynamic] | [`FirebaseAiWizardLauncher`](%gh-ij-android%/android-npw/src/com/android/tools/idea/npw/ui/FirebaseAiWizardLauncher.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.npw.template.wizardPluginPromotionTemplateProvider"/></include> ![Non-Dynamic][non-dynamic] | [`WizardPluginPromotionTemplateProvider`](%gh-ij-android%/android-npw/src/com/android/tools/idea/npw/template/WizardPluginPromotionTemplateProvider.kt) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.android.tools.idea.npw.templateRenderer"/></include> | [`TemplateRendererStrategy`](%gh-ij-android%/android-npw/src/com/android/tools/idea/npw/model/TemplateRendererStrategy.kt) |
 {sticky-header="true"}
 
 ### android-plugin.xml

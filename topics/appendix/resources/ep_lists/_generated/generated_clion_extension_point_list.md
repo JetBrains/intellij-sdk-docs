@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 25694d215dc6682d56569faf594e4d38401c8e1b -->
+<!-- Revision: 5ca38b9a135fbc746482a0e3191cb5cdf3f96037 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-186 Extension Points and 51 Listeners
+187 Extension Points and 51 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -209,11 +209,11 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.currentDebugProfileSuggestor"/></include> ![Internal][internal] | `CidrCurrentDebugProfileSuggester` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileApplicationConverter"/></include> ![Internal][internal] | `CidrDebugProfileApplicationConverter` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileCompatibilityChecker"/></include> | `CidrDebugProfileCompatibilityChecker` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileConverter262"/></include> | `CidrDebugProfileConverter262` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileCompatibilityChecker"/></include> ![Experimental][experimental] | `CidrDebugProfileCompatibilityChecker` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileConverter262"/></include> ![Experimental][experimental] | `CidrDebugProfileConverter262` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileProjectConverter"/></include> ![Internal][internal] | `CidrDebugProfileProjectConverter` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileType"/></include> | `CidrDebugProfileType` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfilesEnabler"/></include> | `CidrDebugProfilesEnabler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfileType"/></include> ![Experimental][experimental] | `CidrDebugProfileType` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.debugger.debugProfilesEnabler"/></include> ![Experimental][experimental] | `CidrDebugProfilesEnabler` |
 {sticky-header="true"}
 
 ### intellij.cidr.execution.xml
@@ -265,6 +265,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.compilerResolver"/></include> | `OCCompilerResolver` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.fileScopeProvider"/></include> ![Non-Dynamic][non-dynamic] | `OCFileScopeProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.fileWideHighlighter"/></include> ![Non-Dynamic][non-dynamic] ![DumbAware][dumb-aware] | `FileWideHighlighter` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.followSymlinkRootsProvider"/></include> ![Non-Dynamic][non-dynamic] ![Internal][internal] | `OCFollowSymlinkRootsProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.headerSearchRootFactory"/></include> | `HeadersSearchRootFactory` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.lang.resolveConfigurationSelector"/></include> | `OCResolveConfigurationSelector` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="cidr.projectModel.additionalProjectSourcesContributor"/></include> | `CidrAdditionalProjectSourcesContributor` |
@@ -350,7 +351,7 @@ EP List Directories:
 
 | Extension Point | Implementation |
 |-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.profileGroup"/></include> | `CLionProfileGroup` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.profileGroup"/></include> ![Experimental][experimental] | `CLionProfileGroup` |
 {sticky-header="true"}
 
 ### intellij.clion.projectStatus.xml
@@ -367,7 +368,6 @@ EP List Directories:
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.radler.core.inspections.headlessStartupExtension"/></include> ![Non-Dynamic][non-dynamic] | `RadHeadlessStartupExtension` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.radler.junie.testRunner"/></include> | `TestRunner` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.radler.radQuickFixHandler"/></include> ![Non-Dynamic][non-dynamic] | `RadQuickFixHandler` |
 {sticky-header="true"}
 
@@ -391,6 +391,13 @@ EP List Directories:
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.stm32.project.detection"/></include> | `STM32ProjectDetection` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.stm32.project.info"/></include> | `Stm32ProjectInfoProvider` |
+{sticky-header="true"}
+
+### intellij.clion.testFramework.nolang.junit5.core.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.clion.testFramework.languageEngine"/></include> | `LanguageEngine` |
 {sticky-header="true"}
 
 ### intellij.clion.toolchains.xml

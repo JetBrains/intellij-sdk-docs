@@ -314,6 +314,7 @@ Dedicated support for `PolySymbol` `get` properties:
 
 #### DOM Events
 {#js-events}
+
 **Namespace**: `js`
 
 **Kind**: `events`

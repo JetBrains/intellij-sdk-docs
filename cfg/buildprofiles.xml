@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 <buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <variables>
@@ -39,6 +39,14 @@
 
         <automaticLinkSummaries>false</automaticLinkSummaries>
         <resizable-sidebar>true</resizable-sidebar>
+
+        <custom-banner
+                label="Conference"
+                link="https://lp.jetbrains.media/plugin-developer-conf-2026?utm_source=sdk_docs&amp;utm_medium=ribbon&amp;utm_campaign=plugindevconf2026/"
+                date="2026-11-10"
+                bg-theme="default">
+            Join Plugin Developer Conf 2026 — a free online event on November 10 at 1:00 PM UTC. Register
+        </custom-banner>
     </variables>
 
     <build-profile instance="ijs"/>
@@ -52,7 +60,7 @@
         <social type="twitter" href="https://x.com/JBPlatform/"/>
         <social type="blog" href="https://blog.jetbrains.com/platform/"/>
         <social type="youtube" href="https://www.youtube.com/playlist?list=PLQ176FUIyIUZRWGCFY7G9V5zaM00THymY"/>
-        <social type="linkedin" href="https://www.linkedin.com/showcase/jetbrains-marketplace"/>
+        <social type="linkedin" href="https://www.linkedin.com/showcase/jetbrains-platform/"/>
 
         <link href="https://platform.jetbrains.com">JetBrains Platform Forum</link>
         <link href="https://jb.gg/ipe">IntelliJ Platform Explorer</link>

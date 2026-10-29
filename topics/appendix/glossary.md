@@ -96,7 +96,7 @@ Language Server Protocol _(LSP)_ {#language-server-protocol}
 Local History _(LVCS)_ {#local-history}
 : A builtin [&rarr;&nbsp;_Version Control System_](#version-control-system) tracking all changes in the project [locally](https://www.jetbrains.com/help/idea/local-history.html).
 
-Look and Feel _(LaF)_ {#}
+Look and Feel _(LaF)_ {#look-and-feel}
 : Defines the visual appearance and behavior of the user interface; see [Swing Tutorial](https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/index.html).
 
 ## J

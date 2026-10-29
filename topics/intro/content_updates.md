@@ -12,6 +12,12 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2026
 
+### October
+{#october-26}
+
+Roaming Settings
+: Add a new page about [](roaming_settings.md) describing how to share the state of application-level components via _Export Settings_ and the _Backup and Sync_ plugin.
+
 ### July
 {#july-26}
 
@@ -26,9 +32,6 @@ Debouncing and Batching Updates
 
 Persisting Sensitive Data
 : Add more information about [persisting sensitive data](persisting_sensitive_data.md).
-
-Roaming Settings
-: Add a new page about [](roaming_settings.md) describing how to share the state of application-level components via _Export Settings_ and the _Backup and Sync_ plugin.
 
 Integration Tests
 : Update [](integration_tests.md) guide with information about new APIs, debugging, and more.

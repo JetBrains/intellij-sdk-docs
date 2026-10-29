@@ -248,63 +248,8 @@ A project-level custom file should be preferred for storing plugin settings.
 To store cached values, use `@Storage(StoragePathMacros.CACHE_FILE)`.
 Refer to [`StoragePathMacros`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/StoragePathMacros.java) for commonly used macros.
 
-The `roamingType` parameter of the `@Storage` annotation specifies the roaming type when the [settings are shared](#sharing-settings-between-ide-installations):
-
-- `RoamingType.DEFAULT` – settings are shared
-- `RoamingType.PER_OS` – settings are shared per operating system
-- `RoamingType.DISABLED` – settings sharing is disabled
-
-> If there are multiple components that store state in the same file, they must have the same `roamingType` attribute value.
->
-{style="warning"}
-
-### Sharing Settings Between IDE Installations
-
-<tldr>
-
-**Product Help:** [Share IDE settings](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html)
-
-</tldr>
-
-It is possible to share the persistent state of components between different IDE installations.
-This allows users to have the same settings on every development machine or to share their settings within a team.
-
-Settings can be shared via the following functionalities:
-- _[Backup and Sync](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#IDE_settings_sync)_ (formerly _Settings Sync_) plugin that allows synchronizing settings on JetBrains servers. Users can select the category of settings that are synchronized.
-- _[Settings Repository](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#settings-repository)_ plugin that allows synchronizing settings in a Git repository created and configured by a user.
-- _[Export Settings](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#import-export-settings)_ feature that allows for the manual import and export of settings.
-
-> Synchronization via the _Backup and Sync_ or _Settings Repository_ plugins only works when these plugins are installed and enabled.
-
-The decision about making a specific component's state shareable should be made carefully.
-Only the settings that aren't specific to a given machine should be shared, for example, paths to user-specific directories shouldn't be shared.
-If a component contains both shareable and non-shareable data, it should be split into two separate components.
-
-#### Backup and Sync Plugin
-<primary-label ref="2022.3"/>
-
-> The _Settings Sync_ plugin has been renamed to _Backup and Sync_ in 2024.3.
-
-To include a plugin's component state in the _Backup and Sync_ plugin synchronization, the following requirements must be met:
-- The `RoamingType` is defined via the `roamingType` attribute of the `@Storage` annotation and is not equal to `DISABLED`.
-- The `SettingsCategory` is defined via the `category` attribute of the `@State` annotation and is not equal to `OTHER`.
-- There is no other `PersistentStateComponent`, which is stored in the same XML file and has a different `RoamingType`.
-
-If the component state is OS-dependent, the `roamingType` of the `@Storage` annotation must be set to `RoamingType.PER_OS`.
-
-> Note that <path>other.xml</path> file is non-roamable and declaring it in the `@Storage` annotation will disable roaming of the component state.
-> It is recommended to use a separate XML file for the component or use another existing storage file.
->
-{style="warning"}
-
-#### Settings Repository Plugin and Export Settings Feature
-
-> The _Settings Repository_ plugin is unbundled starting with version 2022.3 and will be no longer maintained.
->
-{style="warning"}
-
-Persistent components can be shared via the _Settings Repository_ plugin and _Export Settings_ feature, depending on the `roamingType` of the `@Storage` annotation.
-See the [](#defining-the-storage-location) for more details.
+The `roamingType` parameter of the `@Storage` annotation specifies whether and how the settings are shared between IDE installations.
+See [](roaming_settings.md#roaming-types) for details.
 
 ### Customizing the XML Format of Persisted Values
 
@@ -356,7 +301,7 @@ This map-like API supports primitive types (`boolean`, `int`, `long`, and `float
 `String` values, and collections of `String` values.
 It can persist application-level and project-level values.
 
-> Roaming is disabled for `PropertiesComponent`, so use it only for local or temporary properties that do not need backup or sync.
+> [Roaming](roaming_settings.md) is disabled for `PropertiesComponent`, so use it only for local or temporary properties that do not need backup or sync.
 >
 {style="warning"}
 

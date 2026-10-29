@@ -30,7 +30,7 @@ Settings can be shared in the following ways:
 > which stores them in a Git repository created and configured by the user.
 > The plugin has been unbundled since then and is no longer maintained.
 >
-{style="warning"}
+{style="note"}
 
 Decide carefully which persistent component state is shareable.
 Share only settings that aren't specific to a given machine.

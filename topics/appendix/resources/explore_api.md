@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Explore the IntelliJ Platform API
 
@@ -201,7 +201,7 @@ The following techniques allow finding code responsible for specific features by
 
 <procedure>
 
-1. Add a breakpoint at the beginning of [`DocumentImpl.changedUpdate()`](%gh-ic%/platform/core-impl/src/com/intellij/openapi/editor/impl/DocumentImpl.java).
+1. Add a breakpoint at the beginning of [`DocumentMutatorImpl.changeText()`](%gh-ic%/platform/core-impl/src/com/intellij/openapi/editor/impl/DocumentMutatorImpl.kt) (or [`DocumentImpl.changedUpdate()`](%gh-ic%/platform/core-impl/src/com/intellij/openapi/editor/impl/DocumentImpl.java) in 2026.2 and older).
 2. In the sandbox IDE instance, invoke the intention, quick fix, or other feature modifying code.
 3. The execution suspends at the breakpoint.
 4. In the stacktrace, find the responsible class.

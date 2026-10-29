@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 1dfe5ce6ce2e9aedb93c1a7cc6affb232468624c -->
+<!-- Revision: 5ca38b9a135fbc746482a0e3191cb5cdf3f96037 -->
 
 <!--
 EP List Directories:
@@ -26,10 +26,10 @@ EP List Directories:
 | [`RepositoriesComposerConfig#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.composer.json.cache.ComposerRepositoriesChangedListener)  | `ComposerRepositoriesChangedListener` |
 | [`StateChangedListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectSharedConfiguration.StateChangedListener)  | `StateChangedListener` |
 | [`StateChangedListener#LANGUAGE_LEVEL_CHANGED_TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectSharedConfiguration.StateChangedListener)  | `StateChangedListener` |
-| [`PhpProjectWorkspaceConfiguration#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectWorkspaceConfigurationListener)  | `PhpProjectWorkspaceConfigurationListener` |
+| [`PhpProjectWorkspaceConfiguration#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectWorkspaceConfigurationListener)  ![Internal][internal] | `PhpProjectWorkspaceConfigurationListener` |
 | [`DefaultStubsPathListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpRuntimeConfiguration.DefaultStubsPathListener)  | `DefaultStubsPathListener` |
 | [`PhpInterpreterConflictResolveListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.interpreters.PhpInterpretersManagerImpl.PhpInterpreterConflictResolveListener)  | `PhpInterpreterConflictResolveListener` |
-| [`StateChangedListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.debug.listener.PhpDebugExternalConnectionsAccepter.StateChangedListener)  | `StateChangedListener` |
+| [`StateChangedListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.debug.listener.PhpDebugExternalConnectionsAccepter.StateChangedListener)  ![Internal][internal] | `StateChangedListener` |
 | [`RectorChangesListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.rector.RectorChangesListener)  | `RectorChangesListener` |
 | [`PhpRemoteInterpreterChangedListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.remote.interpreter.ui.PhpRemoteInterpreterConfigurationForm.PhpRemoteInterpreterChangedListener)  | `PhpRemoteInterpreterChangedListener` |
 | [`CustomExpectationNotifier.Companion#TOPIC`](https://jb.gg/ipe/listeners?topics=com.pestphp.pest.features.customExpectations.CustomExpectationNotifier)  ![Project-Level][project-level] | `CustomExpectationNotifier` |
@@ -57,67 +57,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.PhpStan.PhpStanConfigurationProvider"/></include> ![Non-Dynamic][non-dynamic] | `PhpStanConfigurationProvider` |
 {sticky-header="true"}
 
-### com.jetbrains.php
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.php.debug.template.configurable"/></include> ![Internal][internal] ![Project-Level][project-level] | `PhpTemplateDebugConfigurable` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.php.debug.templateLanguage"/></include> ![Internal][internal] | `PhpTemplateLanguagePathMapper` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.php.typeProvider2"/></include> ![Deprecated][deprecated] | `PhpTypeProvider2` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.phpDeadCode"/></include> | [`EntryPoint`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/reference/EntryPoint.java) |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.phpRunConfigurationExtension"/></include> | `PhpRunConfigurationExtension` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.arrayShapesProvider"/></include> | `PhpArrayShapesProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.baseLexerProvider"/></include> ![Internal][internal] | `PhpBaseLexerProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.classAliasProvider"/></include> | `PhpClassAliasProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.composer.execProvider"/></include> | `ComposerExecutionProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.composerConfigClient"/></include> ![Internal][internal] | `ComposerConfigClient` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.config.customFormatFunctionsProvider"/></include> | `PhpCustomFormatFunctionsProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.config.interpreterFormProvider"/></include> | `PhpInterpreterFormProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.config.interpreters.PhpInterpretersStateListener"/></include> | `PhpInterpretersStateListener` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.coreMethodProvider"/></include> ![Internal][internal] | `PhpCoreHandler` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.customFunctionIndex"/></include> | `PhpCustomFunctionIndex` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.customFunctionPredicate"/></include> ![Internal][internal] | `PhpCustomFunctionPredicateIndex` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.customTemplatesNamesProvider"/></include> ![Experimental][experimental] | `PhpCustomTemplatesNamesProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.debug.mapping.localPathFixer"/></include> | `PhpLocalPathFixer` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.deploymentIntegration"/></include> ![Internal][internal] | `PhpDeploymentIntegration` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.deprecationFixesProvider"/></include> | `PhpDeprecationQuickFixesProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.deprecationProvider"/></include> | `PhpDeprecationProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.dfaStateFromAssertionProvider"/></include> | `PhpDfaStateFromAssertionProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.docPrefixProvider"/></include> ![Internal][internal] | `PhpDocPrefixProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.docTagValuesStubProvider"/></include> | `PhpCustomDocTagValuesStubProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.expressionClassNamesProvider"/></include> ![Internal][internal] | `PhpExpressionClassNamesProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.externalUsagesSearcher"/></include> | `PhpExternalUsagesSearcher` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.frameworkProjectConfigurableProvider"/></include> | `PhpFrameworkConfigurableProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.frameworkUsageProvider"/></include> | `PhpFrameworkUsageProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.includedPathsContributor"/></include> | `PhpIncludedPathsContributor` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.injectableLanguageProvider"/></include> ![Internal][internal] | `PhpInjectableLanguageProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.injectionExternalFragmentSubstProvider"/></include> ![Project-Level][project-level] | `PhpInjectionExternalFragmentSubstProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.keyTypeProvider"/></include> ![Internal][internal] | `PhpKeyTypeProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.libraryRoot"/></include> ![Internal][internal] | `PhpLibraryRootProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.magicMethodProvider"/></include> ![Internal][internal] | `PhpMagicHandler` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.metaSignatureResolver"/></include> ![Internal][internal] | `PhpMetaSignatureResolver` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.metaTableProvider"/></include> ![Internal][internal] | `PhpMetaTableProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.noReturnProvider"/></include> | `PhpNoReturnProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.openSettingsProvider"/></include> | `Settings` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.phpunit.phpUnitSettingsLoader"/></include> ![Internal][internal] | `PhpUnitSettingsLoader` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.predefinedVariableProvider"/></include> | `PhpPredefinedVariableProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.referenceResolver2"/></include> | `PhpMultipleDeclarationFilter` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.referenceScopeExtension"/></include> ![Experimental][experimental] | `PhpReferenceScopeExtension` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.relatedToPhpFilesContributor"/></include> | `RelatedToPhpFilesContributor` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.remote.remoteInterpreterManager"/></include> | `PhpRemoteInterpreterManager` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.templateLanguageHighlightingExtension"/></include> ![Internal][internal] | `TemplateLanguageBackgroundColorProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.testFramework.phpTestOldConfigHolder"/></include> ![Deprecated][deprecated] ![Internal][internal] | `PhpTestFrameworkOldConfigHolder` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.testFrameworkType"/></include> | `PhpTestFrameworkType` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.laravelPint.laravelPintConfigurationProvider"/></include> | `LaravelPintConfigurationProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.messDetector.messDetectorConfigurationProvider"/></include> | `MessDetectorConfigurationProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.phpCSFixer.phpCSFixerConfigurationProvider"/></include> | `PhpCSFixerConfigurationProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.phpcs.phpCSConfigurationProvider"/></include> | `PhpCSConfigurationProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.type"/></include> | `QualityToolType` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.typeInferenceExclusion"/></include> | `PhpTypeInferenceExclusion` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.typeProvider3"/></include> ![Deprecated][deprecated] | `PhpTypeProvider3` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.typeProvider4"/></include> | `PhpTypeProvider4` |
-{sticky-header="true"}
-
 ### com.jetbrains.php.behat
 
 | Extension Point | Implementation |
@@ -140,11 +79,73 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.framework.descriptionProvider"/></include> ![Internal][internal] | `FrameworkDescriptionProvider` |
 {sticky-header="true"}
 
+### intellij.php.backend.xml
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.php.debug.template.configurable"/></include> ![Internal][internal] ![Project-Level][project-level] | `PhpTemplateDebugConfigurable` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.php.debug.templateLanguage"/></include> | `PhpTemplateLanguagePathMapper` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.php.typeProvider2"/></include> ![Deprecated][deprecated] | `PhpTypeProvider2` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.phpDeadCode"/></include> | [`EntryPoint`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/reference/EntryPoint.java) |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.phpRunConfigurationExtension"/></include> | `PhpRunConfigurationExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.arrayShapesProvider"/></include> | `PhpArrayShapesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.baseLexerProvider"/></include> ![Internal][internal] | `PhpBaseLexerProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.classAliasProvider"/></include> | `PhpClassAliasProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.composer.execProvider"/></include> | `ComposerExecutionProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.composerConfigClient"/></include> ![Internal][internal] | `ComposerConfigClient` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.config.customFormatFunctionsProvider"/></include> | `PhpCustomFormatFunctionsProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.config.interpreterFormProvider"/></include> ![Internal][internal] | `PhpInterpreterFormProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.config.interpreters.PhpInterpretersStateListener"/></include> | `PhpInterpretersStateListener` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.coreMethodProvider"/></include> ![Internal][internal] | `PhpCoreHandler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.customFunctionIndex"/></include> ![Internal][internal] | `PhpCustomFunctionIndex` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.customFunctionPredicate"/></include> ![Internal][internal] | `PhpCustomFunctionPredicateIndex` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.customTemplatesNamesProvider"/></include> ![Experimental][experimental] | `PhpCustomTemplatesNamesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.debug.mapping.localPathFixer"/></include> ![Internal][internal] | `PhpLocalPathFixer` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.deploymentIntegration"/></include> ![Internal][internal] | `PhpDeploymentIntegration` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.deprecationFixesProvider"/></include> ![Internal][internal] | `PhpDeprecationQuickFixesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.deprecationProvider"/></include> | `PhpDeprecationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.dfaStateFromAssertionProvider"/></include> ![Internal][internal] | `PhpDfaStateFromAssertionProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.docPrefixProvider"/></include> ![Internal][internal] | `PhpDocPrefixProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.docTagValuesStubProvider"/></include> ![Internal][internal] | `PhpCustomDocTagValuesStubProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.expressionClassNamesProvider"/></include> ![Internal][internal] | `PhpExpressionClassNamesProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.externalUsagesSearcher"/></include> | `PhpExternalUsagesSearcher` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.frameworkExclusionProvider"/></include> ![Internal][internal] | `FrameworkExclusionProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.frameworkProjectConfigurableProvider"/></include> | `PhpFrameworkConfigurableProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.frameworkUsageProvider"/></include> | `PhpFrameworkUsageProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.includedPathsContributor"/></include> | `PhpIncludedPathsContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.injectableLanguageProvider"/></include> ![Internal][internal] | `PhpInjectableLanguageProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.injectionExternalFragmentSubstProvider"/></include> ![Internal][internal] ![Project-Level][project-level] | `PhpInjectionExternalFragmentSubstProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.keyTypeProvider"/></include> ![Internal][internal] | `PhpKeyTypeProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.libraryRoot"/></include> ![Internal][internal] | `PhpLibraryRootProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.magicMethodProvider"/></include> ![Internal][internal] | `PhpMagicHandler` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.metaSignatureResolver"/></include> ![Internal][internal] | `PhpMetaSignatureResolver` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.metaTableProvider"/></include> ![Internal][internal] | `PhpMetaTableProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.noReturnProvider"/></include> | `PhpNoReturnProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.openSettingsProvider"/></include> | `Settings` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.phpunit.phpUnitSettingsLoader"/></include> ![Internal][internal] | `PhpUnitSettingsLoader` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.referenceScopeExtension"/></include> ![Experimental][experimental] | `PhpReferenceScopeExtension` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.relatedToPhpFilesContributor"/></include> ![Internal][internal] | `RelatedToPhpFilesContributor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.remote.remoteInterpreterManager"/></include> | `PhpRemoteInterpreterManager` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.templateLanguageHighlightingExtension"/></include> ![Internal][internal] | `TemplateLanguageBackgroundColorProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.testFramework.phpTestOldConfigHolder"/></include> ![Deprecated][deprecated] ![Internal][internal] | `PhpTestFrameworkOldConfigHolder` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.testFrameworkType"/></include> | `PhpTestFrameworkType` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.laravelPint.laravelPintConfigurationProvider"/></include> ![Internal][internal] | `LaravelPintConfigurationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.messDetector.messDetectorConfigurationProvider"/></include> ![Internal][internal] | `MessDetectorConfigurationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.phpCSFixer.phpCSFixerConfigurationProvider"/></include> ![Internal][internal] | `PhpCSFixerConfigurationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.phpcs.phpCSConfigurationProvider"/></include> ![Internal][internal] | `PhpCSConfigurationProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.tools.quality.type"/></include> | `QualityToolType` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.typeInferenceExclusion"/></include> ![Internal][internal] | `PhpTypeInferenceExclusion` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.typeProvider3"/></include> ![Deprecated][deprecated] | `PhpTypeProvider3` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.typeProvider4"/></include> | `PhpTypeProvider4` |
+{sticky-header="true"}
+
 ### intellij.php.frontback.impl.xml
 
 | Extension Point | Implementation |
 |-----------------|----------------|
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.php.docTagParserExtension"/></include> ![Internal][internal] | `PhpDocTagParser` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.predefinedVariableProvider"/></include> | `PhpPredefinedVariableProvider` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.referenceResolver2"/></include> | `PhpMultipleDeclarationFilter` |
 {sticky-header="true"}
 
 ### org.jetbrains.plugins.phpstorm-remote-interpreter
@@ -155,13 +156,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.remote.phpHelperScriptProvider"/></include> | `PhpHelperScriptProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.remote.remoteProcessCoverageManager"/></include> | `PhpRemoteProcessCoverageManager` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.php.remote.remoteProcessManager"/></include> | `PhpRemoteProcessManager` |
-{sticky-header="true"}
-
-### phpstorm-customization.xml
-
-| Extension Point | Implementation |
-|-----------------|----------------|
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.webcore.phpFrameworkExclusionProvider"/></include> ![Internal][internal] | `PhpFrameworkExclusionProvider` |
 {sticky-header="true"}
 
 

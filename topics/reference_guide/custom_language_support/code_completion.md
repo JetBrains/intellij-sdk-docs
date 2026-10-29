@@ -62,7 +62,7 @@ If completion items do not depend on indexes (e.g., keywords), it can be marked 
 
 **Examples:**
 
-- [`JUnitPropertiesCompletionContributor`](%gh-ic%/plugins/junit/src/com/intellij/execution/junit2/properties/JUnitPropertiesCompletionContributor.kt) for completing properties in <path>junit-platform.properties</path> files.
+- [`JUnitPropertiesCompletionContributor`](%gh-ic%/plugins/junit/properties/src/com/intellij/junit/properties/JUnitPropertiesCompletionContributor.kt) for completing properties in <path>junit-platform.properties</path> files.
 - [Custom Language Support Tutorial: Completion Contributor](completion_contributor.md)
 
 ## Lookup Items

@@ -334,5 +334,5 @@ The parent theme's ID is the `id` attribute of the `themeProvider` element regis
 <themeProvider id="ParentThemeId" path="/themes/mytheme.theme.json"/>
 ```
 
-> See `themeProvider` elements in [`PlatformExtensions.xml`](%gh-ic%/platform/platform-resources/src/META-INF/PlatformExtensions.xml)
+> See `themeProvider` elements in [`intellij.platform.ide.impl.xml`](%gh-ic%/platform/platform-impl/resources/intellij.platform.ide.impl.xml)
 > for the IDs of built-in themes.

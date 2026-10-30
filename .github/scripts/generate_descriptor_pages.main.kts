@@ -1,6 +1,6 @@
 #!/usr/bin/env kotlin
 
-// Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
+// Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 
 /**
  * Generates the elements content for pages defined in [descriptors].
@@ -119,9 +119,10 @@ fun StringBuilder.appendElementsHierarchy(elements: List<Element>, level: Int, p
 fun StringBuilder.appendHierarchyLink(element: Element, level: Int, elementSectionLink: String) {
   val elementName = if (element.isWildcard()) (element.descriptiveName ?: "*") else "`<${element.name}>`"
   val internalLabelOrEmpty = if (element.getOwnOrParentInternalNote() != null) "  ![Internal][internal]" else ""
+  val experimentalLabelOrEmpty = if (element.getOwnOrParentExperimentalNote() != null) "  ![Experimental][experimental]" else ""
   val deprecationLabelOrEmpty = if (element.deprecatedSince != null) "  ![Deprecated][deprecated]" else ""
   appendLine(
-    """${"  ".repeat(level)}- [$elementName](#$elementSectionLink)$internalLabelOrEmpty$deprecationLabelOrEmpty"""
+    """${"  ".repeat(level)}- [$elementName](#$elementSectionLink)$internalLabelOrEmpty$experimentalLabelOrEmpty$deprecationLabelOrEmpty"""
   )
 }
 
@@ -161,6 +162,7 @@ fun StringBuilder.appendElement(
 
   appendSectionHeader(element, level, elementSectionLink, addDeprecationLabel)
   appendInternalNote(element)
+  appendExperimentalNote(element)
   appendDeprecationNote(element)
   appendReferences(element.references)
   element.description?.trim()?.let { appendLine("$it\n") }
@@ -206,16 +208,26 @@ fun StringBuilder.appendInternalNote(item: DocumentationItem) {
   appendWarningNote(internalNote)
 }
 
+fun StringBuilder.appendExperimentalNote(item: DocumentationItem) {
+  val experimentalNote = item.getOwnOrParentExperimentalNote() ?: return
+  appendCallout(experimentalNote, style = "note", title = "Experimental")
+}
+
 fun StringBuilder.appendDeprecationNote(element: Element) {
   val deprecationNote = element.deprecationNote ?: return
   appendWarningNote(deprecationNote)
 }
 
 fun StringBuilder.appendWarningNote(text: String) {
-  val warning = text.lines().filter { it.isNotEmpty() }.joinToString(separator = "\n") { "> $it" }
-  appendLine(warning)
+  appendCallout(text, style = "warning")
+}
+
+fun StringBuilder.appendCallout(text: String, style: String, title: String? = null) {
+  val content = text.lines().filter { it.isNotEmpty() }.joinToString(separator = "\n") { "> $it" }
+  appendLine(content)
   appendLine(">")
-  appendLine("{style=\"warning\"}\n")
+  val titleOrEmpty = if (title != null) " title=\"$title\"" else ""
+  appendLine("{style=\"$style\"$titleOrEmpty}\n")
 }
 
 fun StringBuilder.appendReferences(references: List<String>) {
@@ -300,6 +312,7 @@ fun StringBuilder.appendAttribute(
   append("- `${attribute.name}`")
   appendAttributeRequirementAndAvailability(attribute)
   appendAttributeInternalNote(attribute)
+  appendAttributeExperimentalNote(attribute)
   appendAttributeDeprecationInfo(attribute)
   if (isLast) {
     append("\n")
@@ -345,6 +358,14 @@ fun StringBuilder.appendAttributeInternalNote(attribute: Attribute) {
   val internalNote = attribute.getOwnOrParentInternalNote() ?: return
   append("**Internal Use Only:** ".indentLines(2))
   val noteWithoutLineBreaks = internalNote.replace('\n', ' ').trimEnd()
+  append(noteWithoutLineBreaks)
+  appendLine()
+}
+
+fun StringBuilder.appendAttributeExperimentalNote(attribute: Attribute) {
+  val experimentalNote = attribute.getOwnOrParentExperimentalNote() ?: return
+  append("**Experimental:** ".indentLines(2))
+  val noteWithoutLineBreaks = experimentalNote.replace('\n', ' ').trimEnd()
   append(noteWithoutLineBreaks)
   appendLine()
 }
@@ -515,6 +536,7 @@ interface DocumentationItem {
   val parent: DocumentationItem?
   val renderContexts: List<RenderContext>
   val internalNote: String?
+  val experimentalNote: String?
 
   fun shouldBeRenderedIn(context: RenderContext): Boolean {
     generateSequence(this) { it.parent }.toList().reversed().forEach {
@@ -527,6 +549,10 @@ interface DocumentationItem {
 
   fun getOwnOrParentInternalNote(): String? {
     return internalNote ?: parent?.getOwnOrParentInternalNote()
+  }
+
+  fun getOwnOrParentExperimentalNote(): String? {
+    return experimentalNote ?: parent?.getOwnOrParentExperimentalNote()
   }
 }
 
@@ -541,6 +567,7 @@ data class Element(
   var deprecationNote: String? = null,
   var description: String? = null,
   override var internalNote: String? = null,
+  override var experimentalNote: String? = null,
   var sdkDocsSupportDetails: String? = null,
   var attributes: List<AttributeWrapper> = emptyList(),
   var containsItself: Boolean = false,
@@ -586,6 +613,7 @@ data class Attribute(
   var requirement: Requirement? = null,
   var description: String? = null,
   override var internalNote: String? = null,
+  override var experimentalNote: String? = null,
   var defaultValue: String? = null,
   var path: List<String> = emptyList(),
   override var parent: DocumentationItem? = null,

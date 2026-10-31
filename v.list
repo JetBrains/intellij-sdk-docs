@@ -50,7 +50,7 @@
   <var name="gradle-intellij-plugin-version" value="1.17.4"/>
   <var name="gradle-grammar-kit-plugin-version" value="2023.3.0.4"/>
   <var name="plugin-verifier-version" value="1.411"/>
-  <var name="marketplace-zip-signer-version" value="0.1.43"/>
+  <var name="marketplace-zip-signer-version" value="0.1.45"/>
   <!-- GENERATED CONTENT END -->
 
 </vars>

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # 5. Syntax Highlighter and Color Settings Page
 
@@ -82,7 +82,61 @@ AttributesDescriptor[] DESCRIPTORS = new AttributesDescriptor[] {
 
 ### Register the Color Settings Page
 
-Register the Simple Language color settings page with the IntelliJ Platform in the plugin configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.colorSettingsPage"/></include>.
+Register the Simple Language color settings page with the IntelliJ Platform in the plugin configuration file.
+The extension point to use depends on the IntelliJ Platform version the plugin targets.
+
+#### Registering with `com.intellij.colorSettings`
+<primary-label ref="2026.3"/>
+
+Starting with 2026.3, register the color settings page using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.colorSettings"/></include>.
+The declaration states the name, the ID, and the order of the page.
+This lets the IDE build the <ui-path>Settings | Editor | Color Scheme</ui-path> tree without loading the page class.
+The IDE creates the `ColorSettingsPage` instance only when the user opens the page.
+
+```xml
+<extensions defaultExtensionNs="com.intellij">
+  <colorSettings
+      implementation="org.intellij.sdk.language.SimpleColorSettingsPage"
+      displayName="Simple"/>
+</extensions>
+```
+
+For a localized page name, use the `key` and `bundle` attributes instead of `displayName`, for example:
+
+```xml
+<extensions defaultExtensionNs="com.intellij">
+  <colorSettings
+      implementation="com.example.MyColorSettingsPage"
+      bundle="messages.MyBundle"
+      key="color.settings.my.language.name"/>
+</extensions>
+```
+
+The page class still implements `ColorSettingsPage`.
+The values in the declaration must match the values that the page class returns, because the IDE uses the declaration in the Settings tree and the class on the page itself.
+
+The [`ColorSettingsPageEP`](%gh-ic-master%/platform/platform-impl/src/com/intellij/application/options/colors/ColorSettingsPageEP.java) bean supports the following attributes:
+
+| Attribute          | Required                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|--------------------|---------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `implementation`   | **yes**                         | FQN of the `ColorSettingsPage` implementation.                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `displayName`      | **yes** [(1)](#attribute-notes) | <p>The non-localized page name. It must match `getDisplayName()`.</p><p>For a localized name, omit `displayName` and use `key` and `bundle`.</p>                                                                                                                                                                                                                                                                                                                          |
+| `key` and `bundle` | **yes** [(1)](#attribute-notes) | <p>The [localization](internationalization.md#message-bundles) key and bundle for the page name. The resolved name must match `getDisplayName()`.</p><p>If `bundle` is omitted, the plugin's [`<resource-bundle>`](plugin_configuration_file.md#idea-plugin__resource-bundle) is used.</p>                                                                                                                                                                                |
+| `pageId`           | no                              | <p>The ID of the page. The default is the `implementation` value, which is also what `getId()` returns by default.</p><p>Specify it only if the page class overrides `getId()`, and use the same value.</p><p>The common [`id`](plugin_configuration_file.md#idea-plugin__extensions__-) attribute of extensions does not set the page ID.</p>                                                                                                                            |
+| `priority`         | no                              | <p>The group of the page in the Color Scheme tree, as a [`DisplayPriority`](%gh-ic%/platform/lang-api/src/com/intellij/psi/codeStyle/DisplayPriority.java) value, for example, `COMMON_SETTINGS`. The default is `LANGUAGE_SETTINGS`.</p><p>Specify it if the page class implements [`DisplayPrioritySortable`](%gh-ic%/platform/lang-api/src/com/intellij/psi/codeStyle/DisplayPrioritySortable.java), and use the value that `getPriority()` returns.</p>               |
+| `keyLanguageIn`    | no                              | <p>A comma-separated list of [platform prefixes](%gh-ic%/platform/core-api/src/com/intellij/util/PlatformUtils.java) of the products in which the page belongs to the `KEY_LANGUAGE_SETTINGS` group, for example, `keyLanguageIn="WebStorm,PhpStorm"`. In all other products, the page uses the `priority` value.</p><p>Use it if `getPriority()` returns a different value depending on the product.</p>                                                                 |
+| `groupWeight`      | no                              | <p>The order of the page within its `priority` group. Pages with a higher weight come first. Pages with equal weight are sorted by name. The default is 0.</p><p>Specify it if the page class implements `DisplayPrioritySortable.getWeight()`, and use the same value.</p>                                                                                                                                                                                               |
+| `beta`             | no                              | `true` adds a <control>Beta</control> label next to the page name in the Settings tree.                                                                                                                                                                                                                                                                                                                                                                                   |
+
+##### Attribute Notes
+
+(1) Either `displayName` or `key` and `bundle` must be specified, depending on whether the page name is localized.
+If the declaration states no name, the IDE reports an error.
+
+#### Registering with `com.intellij.colorSettingsPage`
+
+For versions earlier than 2026.3, register the color settings page using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.colorSettingsPage"/></include>.
+The Simple Language sample plugin targets an earlier version, so it uses this extension point:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -90,6 +144,18 @@ Register the Simple Language color settings page with the IntelliJ Platform in t
       implementation="org.intellij.sdk.language.SimpleColorSettingsPage"/>
 </extensions>
 ```
+
+The `com.intellij.colorSettingsPage` extension point is deprecated since 2026.3, but it still works.
+The [Plugin DevKit](https://plugins.jetbrains.com/plugin/22851-plugin-devkit) plugin highlights its registrations as deprecated in plugins built against 2026.3 or later.
+Keep using it only if the plugin also supports versions earlier than 2026.3:
+
+- If the plugin's [`since-build`](plugin_configuration_file.md#idea-plugin__idea-version) is 263 or later, use only `com.intellij.colorSettings`.
+- If a single plugin build also supports earlier versions, keep using `com.intellij.colorSettingsPage` until the lowest supported version is 2026.3.
+- Plugins that publish a separate build for each IDE version can switch to `com.intellij.colorSettings` in the build for 2026.3 and later.
+
+Declaring the same class with both extension points also works.
+In 2026.3 and later, the `com.intellij.colorSettings` declaration takes precedence, and the IDE ignores the `com.intellij.colorSettingsPage` declaration of the same class.
+Earlier versions ignore the unknown `com.intellij.colorSettings` declaration, but the plugin can then no longer be loaded or unloaded [without a restart](dynamic_plugins.md) in these versions.
 
 ### Run the Project
 

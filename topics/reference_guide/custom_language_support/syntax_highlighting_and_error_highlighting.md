@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Syntax and Error Highlighting
 
@@ -31,8 +31,10 @@ Highlighting from multiple `TextAttributesKey` items can be layered — for exam
 ## Color Settings
 
 The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class.
-It can be configured by the user via <ui-path>Settings | Editor | Color Scheme</ui-path> by providing an implementation of [`ColorSettingPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) registered
-in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.colorSettingsPage"/></include>.
+It can be configured by the user via <ui-path>Settings | Editor | Color Scheme</ui-path> by providing an implementation of [`ColorSettingsPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java).
+Starting with 2026.3, register it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.colorSettings"/></include> and state the page name and order in the declaration, so the IDE does not load the page class to build the Settings tree.
+For earlier versions, register it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.colorSettingsPage"/></include>, which is deprecated since 2026.3.
+See [](syntax_highlighter_and_color_settings_page.md#register-the-color-settings-page) for details.
 To look up the external name for a setting in the IDE, use [UI Inspector](internal_ui_inspector.md#inspecting-settings).
 
 The <ui-path>File | Export | Files or Selection to HTML</ui-path> feature uses the same syntax highlighting mechanism as the editor.
@@ -41,6 +43,7 @@ Thus, it will work automatically for custom languages that provide a syntax high
 **Examples:**
 
 - [`ColorSettingsPage`](%gh-ic%/plugins/properties/src/com/intellij/lang/properties/PropertiesColorsPage.java) for [Properties language plugin](%gh-ic%/plugins/properties)
+- [`DebuggerColorsPage`](%gh-ic%/platform/xdebugger-impl/ui/src/com/intellij/xdebugger/impl/ui/DebuggerColorsPage.java) and its [`com.intellij.colorSettings` declaration](%gh-ic-master%/platform/xdebugger-impl/ui/resources/intellij.platform.debugger.impl.ui.xml) with a localized name
 - [Custom Language Support Tutorial: Color Settings Page](syntax_highlighter_and_color_settings_page.md)
 
 > See the note about Language Defaults and support for additional color schemes in [](color_scheme_management.md).

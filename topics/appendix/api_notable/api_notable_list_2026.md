@@ -64,6 +64,20 @@ The Old Search Everywhere API is deprecated
   <br>
   Report missing functionality on the [JetBrains Platform Forum](https://platform.jetbrains.com).
 
+Declarative color settings pages
+:
+  The new <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.colorSettings"/></include> registers a [`ColorSettingsPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) together with its name, ID, and order.
+  The IDE builds the <ui-path>Settings | Editor | Color Scheme</ui-path> tree from the declaration and creates the page only when the user opens it.
+  The <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.colorSettingsPage"/></include> is deprecated.
+  See [](syntax_highlighter_and_color_settings_page.md#register-the-color-settings-page) for the supported attributes and for plugins that also support earlier versions.
+
+Settings Beta label is declared in XML
+:
+  The <control>Settings</control> tree no longer reads the [`Configurable.Beta`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java) marker interface, which is now deprecated and scheduled for removal.
+  To keep the <control>Beta</control> label, add the `beta="true"` attribute to the `com.intellij.applicationConfigurable` or `com.intellij.projectConfigurable` declaration.
+  A color settings page declared in `com.intellij.colorSettings` supports the same attribute.
+  See [](settings_guide.md#table-of-attributes).
+
 ## 2026.2
 
 ### IntelliJ Platform 2026.2

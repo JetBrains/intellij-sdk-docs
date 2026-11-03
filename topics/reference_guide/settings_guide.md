@@ -101,6 +101,7 @@ The attributes supported by <include from="snippets.topic" element-id="ep"><var 
 | `groupWeight`       | no                              | <p>Specifies the weight (stacking order) of this component within the group of a parent configurable component. The default weight is 0, meaning lowest in the order.</p><p>If one child in a group or a parent component has non-zero weight, all children will be sorted descending by their weight. If the weights are equal, the components will be sorted ascending by their display name.</p> | <p>`Configurable`</p><p>`ConfigurableProvider`</p> |
 | `dynamic`           | no                              | <p>This component's children are dynamically calculated by calling the `getConfigurables()` method.</p><p>Not recommended because it requires loading additional classes while building a Settings tree. If possible, use XML attributes instead.</p>                                                                                                                                               | `Configurable.Composite`                           |
 | `childrenEPName`    | no                              | Specifies the FQN name of the Extension Point that will be used to calculate the children of this component.                                                                                                                                                                                                                                                                                        | `Configurable`                                     |
+| `beta`              | no                              | <p>_(2026.3)_ `true` adds a <control>Beta</control> label next to the Settings name in the <control>Settings</control> tree.</p><p>It replaces the deprecated [`Configurable.Beta`](#configurable-marker-interfaces) marker interface.</p>                                                                                                                                                          | <p>`Configurable`</p><p>`ConfigurableProvider`</p> |
 
 ##### Attribute Notes
 
@@ -180,6 +181,7 @@ Implementations based on `Configurable` can implement marker interfaces, which p
 
 `Configurable.Beta`
 : _(2022.3)_ Adds <control>Beta</control> label next to settings page title in <control>Settings</control> tree.
+  **_Deprecated since 2026.3 and scheduled for removal_**: The <control>Settings</control> tree no longer reads this interface. Use the [`beta="true"`](#table-of-attributes) attribute instead.
 
 #### Additional Interfaces Based on `Configurable`
 

@@ -12,6 +12,14 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 
 ## 2026
 
+### November
+{#november-26}
+
+Minor Changes and Additions
+:
+- Document registering [color settings pages](syntax_highlighter_and_color_settings_page.md#register-the-color-settings-page) with the declarative `com.intellij.colorSettings` extension point available since 2026.3.
+- Document the [`beta`](settings_guide.md#table-of-attributes) attribute of settings declarations, which replaces the deprecated `Configurable.Beta` interface.
+
 ### October
 {#october-26}
 

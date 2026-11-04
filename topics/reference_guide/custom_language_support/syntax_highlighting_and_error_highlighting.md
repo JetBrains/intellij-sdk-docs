@@ -55,8 +55,7 @@ The extension point to use depends on the IntelliJ Platform version the plugin t
 <tabs>
 <tab title="2026.3+">
 
-Register the color settings page in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.colorSettings"/></include>.
-The declaration states the name, the ID, and the order of the page:
+Register the color settings page in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.colorSettings"/></include>:
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -109,17 +108,13 @@ Register the color settings page in <include from="snippets.topic" element-id="e
 </extensions>
 ```
 
-> The `com.intellij.colorSettingsPage` extension point is deprecated since 2026.3, but it still works.
-> The [Plugin DevKit](https://plugins.jetbrains.com/plugin/22851-plugin-devkit) plugin highlights its registrations as deprecated in plugins built against 2026.3 or later.
-> Keep using it only if the plugin also supports versions earlier than 2026.3:
+> The `com.intellij.colorSettingsPage` extension point is deprecated since 2026.3 but still works.
+> If the plugin's [`since-build`](plugin_configuration_file.md#idea-plugin__idea-version) is 263 or later, use `com.intellij.colorSettings` instead.
 >
-> - If the plugin's [`since-build`](plugin_configuration_file.md#idea-plugin__idea-version) is 263 or later, use only `com.intellij.colorSettings`.
-> - If a single plugin build also supports earlier versions, keep using `com.intellij.colorSettingsPage` until the lowest supported version is 2026.3.
-> - Plugins that publish a separate build for each IDE version can switch to `com.intellij.colorSettings` in the build for 2026.3 and later.
->
-> Declaring the same class with both extension points also works.
-> In 2026.3 and later, the `com.intellij.colorSettings` declaration takes precedence, and the IDE ignores the `com.intellij.colorSettingsPage` declaration of the same class.
-> Earlier versions ignore the unknown `com.intellij.colorSettings` declaration, but the plugin can then no longer be loaded or unloaded [without a restart](dynamic_plugins.md) in these versions.
+> A plugin that also supports earlier versions can register the page class with both extension points.
+> 2026.3 and later use the `com.intellij.colorSettings` declaration and ignore the `com.intellij.colorSettingsPage` one.
+> Earlier versions ignore the unknown `com.intellij.colorSettings` declaration, but the plugin then can't be loaded or unloaded [without a restart](dynamic_plugins.md) in them.
+> If that matters, register only `com.intellij.colorSettingsPage` until the plugin drops support for versions earlier than 2026.3.
 >
 {style="warning" title="Deprecated extension point"}
 

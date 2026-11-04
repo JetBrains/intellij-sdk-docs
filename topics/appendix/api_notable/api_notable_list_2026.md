@@ -67,7 +67,7 @@ The Old Search Everywhere API is deprecated
 Declarative color settings pages
 :
   The new <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.colorSettings"/></include> registers a [`ColorSettingsPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java) together with its name, ID, and order.
-  The IDE builds the <ui-path>Settings | Editor | Color Scheme</ui-path> tree from the declaration and creates the page only when the user opens it.
+  The IDE builds the <ui-path>Settings | Editor | Color Scheme</ui-path> tree from the declaration without loading the page class, and creates the `ColorSettingsPage` instance only when the user opens the page.
   The <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.colorSettingsPage"/></include> is deprecated.
   See [](syntax_highlighting_and_error_highlighting.md#registering-a-color-settings-page) for the supported attributes and for plugins that also support earlier versions.
 

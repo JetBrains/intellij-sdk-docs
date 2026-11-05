@@ -90,7 +90,7 @@ Usually you should omit the product ID and use only the branch number and build 
 
 {id="multipleIDEVersions"}
 
-<include from="configuring_plugin_project.md" element-id="whichPlatformVersion"/>
+<include from="configuring_gradle.md" element-id="whichPlatformVersion"/>
 
 When supporting multiple major versions, it is strongly recommended to build against the _lowest_ supported version to guarantee backwards-compatibility.
 In the case of supporting a range of platform versions with different underlying Java level ([see below](#platformVersions)), it is _required_.

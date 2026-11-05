@@ -115,13 +115,12 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 | IntelliJ Platform version | Branch                                                          | Java version |
 |---------------------------|-----------------------------------------------------------------|--------------|
-| 2026.2                    | [261](https://github.com/JetBrains/intellij-community/tree/261) | **25**       |
+| 2026.3                    | [263](https://github.com/JetBrains/intellij-community/tree/263) | 25       |
+| 2026.2                    | [262](https://github.com/JetBrains/intellij-community/tree/262) | **25**       |
 | 2026.1                    | [261](https://github.com/JetBrains/intellij-community/tree/261) | 21           |
 | 2025.3                    | [253](https://github.com/JetBrains/intellij-community/tree/253) | 21           |
 | 2025.2                    | [252](https://github.com/JetBrains/intellij-community/tree/252) | 21           |
 | 2025.1                    | [251](https://github.com/JetBrains/intellij-community/tree/251) | 21           |
-| 2024.3                    | [243](https://github.com/JetBrains/intellij-community/tree/243) | 21           |
-| 2024.2                    | [242](https://github.com/JetBrains/intellij-community/tree/242) | **21**       |
 
 #### Earlier Versions
 
@@ -129,6 +128,8 @@ _Early Access Program_ (EAP) releases of upcoming versions are available [here](
 
 | IntelliJ Platform version | Branch                                                          | Java version                                                                                            |
 |---------------------------|-----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| 2024.3                    | [243](https://github.com/JetBrains/intellij-community/tree/243) | 21                                                                                                      |
+| 2024.2                    | [242](https://github.com/JetBrains/intellij-community/tree/242) | **21**                                                                                                  |
 | 2024.1                    | [241](https://github.com/JetBrains/intellij-community/tree/241) | 17                                                                                                      |
 | 2023.3                    | [233](https://github.com/JetBrains/intellij-community/tree/233) | 17                                                                                                      |
 | 2023.2                    | [232](https://github.com/JetBrains/intellij-community/tree/232) | 17                                                                                                      |

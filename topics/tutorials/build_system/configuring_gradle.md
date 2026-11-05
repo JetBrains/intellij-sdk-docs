@@ -38,10 +38,10 @@ See [](tools_intellij_platform_gradle_plugin.md#configuration) for the necessary
 <snippet id="whichPlatformVersion">
 
 > For new plugins, it is recommended to support current and previous stable versions.
-> For example, if the current platform version is 2026.2.\*, start developing your plugin by targeting 2026.1.\*.
+> For example, if the current platform version is 2026.3.\*, start developing your plugin by targeting 2026.2.\*.
 > This will support:
-> - **2026.2**.* - current major version
-> - **2026.1**.* - previous major version
+> - **2026.3**.* - current major version
+> - **2026.2**.* - previous major version
 >
 > With this approach, plugins can use modern APIs, which makes them more performant.
 >

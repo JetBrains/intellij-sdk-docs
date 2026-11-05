@@ -127,6 +127,7 @@ See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html
 
 | IntelliJ Platform version (latest update) | Bundled `stdlib` version |
 |-------------------------------------------|--------------------------|
+| 2026.3                                    | 2.4.21-RC                    |
 | 2026.2                                    | 2.4.0                    |
 | 2026.1                                    | 2.3.20                   |
 | 2025.3                                    | 2.2.20                   |
@@ -168,6 +169,7 @@ See [](kotlin_coroutines.md) on how to use them in plugins.
 
 | IntelliJ Platform version (latest update) | Bundled `kotlinx-coroutines` version |
 |-------------------------------------------|--------------------------------------|
+| 2026.3                                    | 1.11.0-intellij-1                    |
 | 2026.2                                    | 1.10.2-intellij-1                    |
 | 2026.1                                    | 1.10.2-intellij-1                    |
 | 2025.3                                    | 1.10.1-intellij-5                    |

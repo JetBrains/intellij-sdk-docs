@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 5ca38b9a135fbc746482a0e3191cb5cdf3f96037 -->
+<!-- Revision: 3a77aa4f2f0f4341b4c7471e5b66ab133272ea28 -->
 
 <!--
 EP List Directories:
@@ -18,7 +18,7 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 
 <snippet id="content">
 
-707 Extension Points and 86 Listeners
+708 Extension Points and 86 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -281,6 +281,15 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.transferSettings.thirdPartyProductSettingItem"/></include> | [`ThirdPartyProductSettingItemProvider`](%gh-ic%/plugins/ide-startup/importSettings/src/com/intellij/ide/startup/importSettings/transfer/ThirdPartyProductSettingItemProvider.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.transferSettings.thirdPartyProductSettingsTransfer"/></include> | [`ThirdPartyProductSettingsTransfer`](%gh-ic%/plugins/ide-startup/importSettings/src/com/intellij/ide/startup/importSettings/transfer/ThirdPartyProductSettingsTransfer.kt) |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.transferSettings.vscode.pluginMapping"/></include> | [`VSCodePluginMapping`](%gh-ic%/plugins/ide-startup/importSettings/src/com/intellij/ide/startup/importSettings/transfer/backend/providers/vscode/mappings/PluginMappings.kt) |
+{sticky-header="true"}
+
+### intellij.mcpserver.skills.xml
+
+[`intellij.mcpserver.skills.xml`](%gh-ic%/plugins/mcp-server/mcpserver.skills/resources/intellij.mcpserver.skills.xml)
+
+| Extension Point | Implementation |
+|-----------------|----------------|
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.mcpServer.bundledSkillsProvider"/></include> ![Experimental][experimental] | [`BundledSkillsProvider`](%gh-ic%/plugins/mcp-server/mcpserver.skills/src/com/intellij/mcpserver/skills/BundledSkillsProvider.kt) |
 {sticky-header="true"}
 
 ### intellij.mcpserver.toolsets.xml
@@ -1196,8 +1205,8 @@ There must be no top-level "Listeners" group, adjust com.jetbrains.sdk.tool.anal
 | Topic | Listener |
 |-------|----------|
 | [`RemoteSchemaDownloadListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.jsonSchema.remote.http.RemoteSchemaDownloadListener)  ![Internal][internal] ![Project-Level][project-level] | [`RemoteSchemaDownloadListener`](%gh-ic%/json/backend/src/com/jetbrains/jsonSchema/remote/http/JsonSchemaRemoteContentService.kt) |
-| [`JsonSchemaVfsListener#JSON_SCHEMA_CHANGED`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 | [`JsonSchemaVfsListener#JSON_DEPS_CHANGED`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
+| [`JsonSchemaVfsListener#JSON_SCHEMA_CHANGED`](https://jb.gg/ipe/listeners?topics=java.lang.Runnable)  | `Runnable` |
 {sticky-header="true"}
 
 

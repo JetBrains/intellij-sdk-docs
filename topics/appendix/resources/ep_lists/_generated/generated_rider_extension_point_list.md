@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 5ca38b9a135fbc746482a0e3191cb5cdf3f96037 -->
+<!-- Revision: 3a77aa4f2f0f4341b4c7471e5b66ab133272ea28 -->
 
 <!--
 EP List Directories:
@@ -12,7 +12,7 @@ EP List Directories:
 
 <snippet id="content">
 
-177 Extension Points and 11 Listeners
+176 Extension Points and 11 Listeners
 
 <include from="snippets.topic" element-id="ep_list_legend"/>
 
@@ -298,7 +298,6 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.publishConfigurationProvider"/></include> ![Non-Dynamic][non-dynamic] | `RiderContextPublishProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.reader.mode.matcher"/></include> | `RiderCustomReaderModeMatcher` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.repoViewIconProvider"/></include> | `RepoViewIconProvider` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.repositoryViewFeedbackProvider"/></include> ![Internal][internal] | `RepositoryViewFeedbackProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.resolveContextWidgetProvider"/></include> ![Non-Dynamic][non-dynamic] | `RiderResolveContextWidgetProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.run.configurations.dotNetExe"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `DotNetExeConfigurationExtension` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.rider.run.configurations.externalRunConfigurationGenerator"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `ExternalRunConfigurationGeneratorExtension` |
@@ -329,7 +328,7 @@ EP List Directories:
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.solutionExplorerCustomization"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `SolutionExplorerCustomization` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.solutionExplorerRootProvider"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `SolutionExplorerRootProvider` |
 | <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.solutionViewPsiNodeNavigator"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `SolutionViewPsiNodeNavigator` |
-| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.rider.projectFileIndexAugmentor"/></include> ![Non-Dynamic][non-dynamic] ![Project-Level][project-level] | `ProjectFileIndexAugmentor` |
+| <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.jetbrains.rider.projectFileIndexAugmentor"/></include> ![Non-Dynamic][non-dynamic] | `ProjectFileIndexAugmentor` |
 {sticky-header="true"}
 
 ### RiderMultiPlatform.xml

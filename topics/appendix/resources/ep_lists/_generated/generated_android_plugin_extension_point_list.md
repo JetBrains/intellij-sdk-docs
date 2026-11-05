@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 5ca38b9a135fbc746482a0e3191cb5cdf3f96037 -->
+<!-- Revision: 3a77aa4f2f0f4341b4c7471e5b66ab133272ea28 -->
 
 <!--
 EP List Directories:
@@ -57,8 +57,8 @@ EP List Directories:
 | [`OpenPastRecordingsTabListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.profilers.taskbased.pastrecordings.OpenPastRecordingsTabListener)  | [`OpenPastRecordingsTabListener`](%gh-ij-android%/profilers/src/com/android/tools/profilers/taskbased/pastrecordings/OpenPastRecordingsTabListener.kt) |
 | [`CreateProfilerTaskTabListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.profilers.taskbased.task.CreateProfilerTaskTabListener)  | [`CreateProfilerTaskTabListener`](%gh-ij-android%/profilers/src/com/android/tools/profilers/taskbased/task/CreateProfilerTaskTabListener.kt) |
 | [`OpenProfilerTaskTabListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.android.tools.profilers.taskbased.task.OpenProfilerTaskTabListener)  | [`OpenProfilerTaskTabListener`](%gh-ij-android%/profilers/src/com/android/tools/profilers/taskbased/task/OpenProfilerTaskTabListener.kt) |
-| [`ResourceFolderManager#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.android.facet.ResourceFolderManager.ResourceFolderListener)  ![Project-Level][project-level] | [`ResourceFolderListener`](%gh-ij-android%/android/src/org/jetbrains/android/facet/ResourceFolderManager.kt) |
 | [`ResourceFolderManager#EARLY_TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.android.facet.ResourceFolderManager.ResourceFolderListener)  | [`ResourceFolderListener`](%gh-ij-android%/android/src/org/jetbrains/android/facet/ResourceFolderManager.kt) |
+| [`ResourceFolderManager#TOPIC`](https://jb.gg/ipe/listeners?topics=org.jetbrains.android.facet.ResourceFolderManager.ResourceFolderListener)  ![Project-Level][project-level] | [`ResourceFolderListener`](%gh-ij-android%/android/src/org/jetbrains/android/facet/ResourceFolderManager.kt) |
 {sticky-header="true"}
 
 

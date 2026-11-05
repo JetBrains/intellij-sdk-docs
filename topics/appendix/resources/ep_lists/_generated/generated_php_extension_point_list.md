@@ -2,7 +2,7 @@
 
 <!-- GENERATED FILE, DO NOT EDIT -->
 <!-- This file is generated with the SDK Docs Authoring Tools plugin ('Generate SDK Docs EP Lists' action) -->
-<!-- Revision: 5ca38b9a135fbc746482a0e3191cb5cdf3f96037 -->
+<!-- Revision: 3a77aa4f2f0f4341b4c7471e5b66ab133272ea28 -->
 
 <!--
 EP List Directories:
@@ -24,8 +24,8 @@ EP List Directories:
 |-------|----------|
 | [`ComposerInstalledPackagesService#PACKAGE_MANAGER_TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.composer.actions.update.ComposerInstalledPackagesService.ComposerUpdateListener)  ![Project-Level][project-level] | `ComposerUpdateListener` |
 | [`RepositoriesComposerConfig#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.composer.json.cache.ComposerRepositoriesChangedListener)  | `ComposerRepositoriesChangedListener` |
-| [`StateChangedListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectSharedConfiguration.StateChangedListener)  | `StateChangedListener` |
 | [`StateChangedListener#LANGUAGE_LEVEL_CHANGED_TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectSharedConfiguration.StateChangedListener)  | `StateChangedListener` |
+| [`StateChangedListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectSharedConfiguration.StateChangedListener)  | `StateChangedListener` |
 | [`PhpProjectWorkspaceConfiguration#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpProjectWorkspaceConfigurationListener)  ![Internal][internal] | `PhpProjectWorkspaceConfigurationListener` |
 | [`DefaultStubsPathListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.PhpRuntimeConfiguration.DefaultStubsPathListener)  | `DefaultStubsPathListener` |
 | [`PhpInterpreterConflictResolveListener#TOPIC`](https://jb.gg/ipe/listeners?topics=com.jetbrains.php.config.interpreters.PhpInterpretersManagerImpl.PhpInterpreterConflictResolveListener)  | `PhpInterpreterConflictResolveListener` |

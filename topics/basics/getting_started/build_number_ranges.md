@@ -79,8 +79,8 @@ Usually you should omit the product ID and use only the branch number and build 
 
 </compare>
 
-> Specific build numbers and their corresponding release version are available via _Previous Releases_ on the corresponding product's download page, for example, [Previous IntelliJ IDEA Releases](https://www.jetbrains.com/idea/download/previous.html).
-> For upcoming versions, see [Early Access Program](https://eap.jetbrains.com).
+> Specific build numbers and their corresponding release version are available via _Other versions_ on the corresponding product's download page, for example, [Other Versions of IntelliJ IDEA](https://www.jetbrains.com/idea/download/other/).
+> For upcoming versions, see [The Early Access Program](https://www.jetbrains.com/resources/eap/).
 >
 > See also ["What versions of IntelliJ-based IDEs are supported?"](https://intellij-support.jetbrains.com/hc/en-us/articles/360019574859-What-versions-of-IntelliJ-based-IDEs-are-supported-) for JetBrains IDE support policy.
 >

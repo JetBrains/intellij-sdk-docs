@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Configuring IntelliJ Platform Gradle Plugin
 
@@ -35,7 +35,22 @@ See [](tools_intellij_platform_gradle_plugin.md#configuration) for the necessary
 
 ## Target Platform and Dependencies
 
-<include from="configuring_plugin_project.md" element-id="whichPlatformVersion"/>
+<snippet id="whichPlatformVersion">
+
+> For new plugins, it is recommended to support current and previous stable versions.
+> For example, if the current platform version is 2026.2.\*, start developing your plugin by targeting 2026.1.\*.
+> This will support:
+> - **2026.2**.* - current major version
+> - **2026.1**.* - previous major version
+>
+> With this approach, plugins can use modern APIs, which makes them more performant.
+>
+> After the plugin is released, it is not strictly required to update plugin to support only two latest major versions.
+> Consider supporting some older versions based on download statistics in [Statistics: Product Versions in Use](https://plugins.jetbrains.com/docs/marketplace/product-versions-in-use-statistics.html).
+>
+{title="Which versions should your plugin support?"}
+
+</snippet>
 
 If a matching version of the specified IntelliJ Platform is not present on the local machine, the Gradle plugin will download it.
 IntelliJ IDEA then indexes the build and any associated source code and [JetBrains Java Runtime](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md).

@@ -2,7 +2,7 @@
 
 # Persistent State Component in Split Mode
 
-<primary-label ref="2025.3"/>
+<primary-label ref="2026.1"/>
 
 <link-summary>Synchronize persistent plugin settings correctly between frontend and backend in Split Mode.</link-summary>
 

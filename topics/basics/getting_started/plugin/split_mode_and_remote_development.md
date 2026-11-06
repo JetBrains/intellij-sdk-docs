@@ -2,7 +2,7 @@
 
 # Split Mode (Remote Development)
 
-<primary-label ref="2025.3"/>
+<primary-label ref="2026.1"/>
 
 <link-summary>Design plugins for both monolithic IDEs and split-process IDE sessions, and validate frontend and backend behavior from the start.</link-summary>
 

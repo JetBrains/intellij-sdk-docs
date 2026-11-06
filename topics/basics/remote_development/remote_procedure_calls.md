@@ -2,7 +2,7 @@
 
 # Remote Procedure Calls (RPC)
 
-<primary-label ref="2025.3"/>
+<primary-label ref="2026.1"/>
 
 <link-summary>Set up RPC between shared, frontend, and backend plugin modules in Split Mode.</link-summary>
 

@@ -2,7 +2,7 @@
 
 # Modular Plugins (Experimental)
 
-<primary-label ref="2025.3"/>
+<primary-label ref="2026.1"/>
 
 <link-summary>Split a plugin into modules to support remote development and other use cases.</link-summary>
 

@@ -2,7 +2,7 @@
 
 # Implementing a Feature for Split Mode
 
-<primary-label ref="2025.3"/>
+<primary-label ref="2026.1"/>
 
 <link-summary>Refactor an existing plugin feature or design a new one, so it behaves well in both split-mode and monolithic IDEs.</link-summary>
 

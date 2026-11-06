@@ -2,7 +2,7 @@
 
 # Plugin Management in Split Mode
 
-<primary-label ref="2025.3"/>
+<primary-label ref="2026.1"/>
 
 <link-summary>Understand compatibility checks, plugin synchronization, and installation paths for plugins in split mode.</link-summary>
 

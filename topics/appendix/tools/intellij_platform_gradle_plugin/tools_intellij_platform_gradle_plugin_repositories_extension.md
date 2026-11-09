@@ -105,6 +105,15 @@ Installer repositories (Ivy):
 - JetBrains IDE installers: `https://download.jetbrains.com`
 - Android Studio installers: `https://redirector.gvt1.com/edgedl/android/studio`
 
+Repository helpers accept a configuration action to override the URL, credentials, or content filters of the created repository.
+For example, `releases { url = uri("https://example.com/intellij-releases") }` replaces the release repository URL without changing the other repositories.
+
+Repository mirrors do not redirect separate metadata requests, such as IDE release listings or the plugin update check.
+For these requests, see the [`productsReleasesCdnBuildsUrl`](tools_intellij_platform_gradle_plugin_gradle_properties.md#productsReleasesCdnBuildsUrl),
+[`productsReleasesAndroidStudioUrl`](tools_intellij_platform_gradle_plugin_gradle_properties.md#productsReleasesAndroidStudioUrl),
+and [`selfUpdateCheck`](tools_intellij_platform_gradle_plugin_gradle_properties.md#selfUpdateCheck) properties.
+See also [](tools_intellij_platform_gradle_plugin_faq.md#offline-mode).
+
 ## IntelliJ Platform Installers
 
 IntelliJ Platform installers are the final IDE distributions delivered to end-users for installing and running products on their machines.
@@ -178,17 +187,17 @@ repositories {
 <tab title="Groovy" group-key="groovy">
 
 ```groovy
-import com.jetbrains.plugin.structure.intellij.repository.CustomPluginRepositoryListingType
+import org.jetbrains.intellij.platform.gradle.CustomPluginRepositoryType
 
 repositories {
   intellijPlatform {
-    customPluginRepository('https://example.com/plugins.xml', CustomPluginRepositoryListingType.SIMPLE) { repository ->
+    customPluginRepository('https://example.com/plugins.xml', CustomPluginRepositoryType.SIMPLE) { repository ->
       repository.credentials(HttpHeaderCredentials) {
         name = 'Authorization'
         value = 'Automation amFrdWJfdGVzdDotX...MkV2UkFwekFWTnNwZjA='
       }
-      authentication {
-        create<HttpHeaderAuthentication>("header")
+      repository.authentication {
+        header(HttpHeaderAuthentication)
       }
     }
   }

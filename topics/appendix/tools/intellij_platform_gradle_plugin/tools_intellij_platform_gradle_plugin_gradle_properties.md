@@ -41,6 +41,7 @@ org.jetbrains.intellij.platform.downloadSources=true
 Specifies the location of the local IntelliJ Platform cache directory for storing files related to the current project, like:
 - XML files generated for the [`localPlatformArtifacts`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) local Ivy repository
 - self-update lock file used by the [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin) task
+- cached product release listings used to resolve IDE versions
 
 > This directory should be excluded from versioning.
 >
@@ -63,6 +64,7 @@ org.jetbrains.intellij.platform.intellijPlatformCache=/path/to/intellijPlatformC
 Specifies the location of the IntelliJ Platform IDEs cache directory for storing downloaded IDE distributions
 and related artifacts.
 This cache is used to avoid re-downloading the same IDE versions across different project builds and can be shared between multiple projects.
+Serialized IDE layout indices are stored in its <path>layoutIndex/</path> subdirectory.
 
 **Note:** this directory can be shared across projects and should be excluded from versioning.
 
@@ -170,11 +172,11 @@ org.jetbrains.intellij.platform.paidPluginSearchableOptionsWarning=false
 {#productsReleasesAndroidStudioUrl}
 
 Specifies the URL from which the list of all Android Studio releases is fetched.
-This listing is later parsed by `ProductReleasesValueSource` to provide a list of IDEs matching the filtering criteria for running the IntelliJ Plugin Verifier tool with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
+The JSON listing is used to resolve Android Studio distributions and select IDEs for the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
 
 {type="narrow"}
 Default value
-: `https://jb.gg/android-studio-releases-list.xml`
+: `https://jb.gg/android-studio-releases-list.json`
 
 Example
 :
@@ -186,26 +188,15 @@ org.jetbrains.intellij.platform.productsReleasesAndroidStudioUrl=https://...
 ## `productsReleasesJetBrainsIdesUrl`
 {#productsReleasesJetBrainsIdesUrl}
 
-Specifies the URL from which the list of all JetBrains IDE releases is fetched.
-This listing is later parsed by `ProductReleasesValueSource` to provide a list of IDEs matching the filtering criteria for running the IntelliJ Plugin Verifier tool with the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
-
-{type="narrow"}
-Default value
-: `https://www.jetbrains.com/updates/updates.xml`
-
-Example
-:
-```properties
-org.jetbrains.intellij.platform.productsReleasesJetBrainsIdesUrl=https://...
-```
+This property is no longer used.
+JetBrains IDE release listings are configured with [`productsReleasesCdnBuildsUrl`](#productsReleasesCdnBuildsUrl) instead.
 
 
 ## `selfUpdateCheck`
 {#selfUpdateCheck}
 
 Checks whether the currently used IntelliJ Platform Gradle Plugin is outdated and if a new release is available.
-The plugin performs an update check on every run asking the GitHub Releases page for the redirection URL
-to the latest version with `HEAD` HTTP request: [](https://github.com/JetBrains/intellij-platform-gradle-plugin/releases/latest).
+The update check reads Maven metadata from the [Gradle Plugin Portal](https://plugins.gradle.org/m2/).
 
 If the current version is outdated, the plugin will emit a warning with its current and the latest version.
 
@@ -251,30 +242,27 @@ To configure the key-file path globally for all projects, set the corresponding 
 ## `testIdeBundledPluginsClasspathEnabled`
 {#testIdeBundledPluginsClasspathEnabled}
 
-Controls whether bundled plugins declared in the IntelliJ Platform's <path>product-info.json</path> file are added to the classpaths used by the [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde) and ordinary Gradle [`test`](tools_intellij_platform_gradle_plugin_tasks.md#test) tasks.
-Set it to `false` to opt out.
-
-{type="narrow"}
-Default value
-: `true`
-
-Example
-:
-```text
-org.jetbrains.intellij.platform.testIdeBundledPluginsClasspathEnabled=false
-```
+Removed in `2.20.0`.
+Bundled plugins declared in the IntelliJ Platform's <path>product-info.json</path> file are now always added to the classpaths used by the [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde) and ordinary Gradle [`test`](tools_intellij_platform_gradle_plugin_tasks.md#test) tasks.
+Use [`testIdeBundledPluginsClasspathExcludes`](#testIdeBundledPluginsClasspathExcludes) to exclude optional bundled plugins instead.
 
 
 ## `testIdeBundledPluginsClasspathExcludes`
 {#testIdeBundledPluginsClasspathExcludes}
 
 Specifies a comma-separated list of bundled plugin IDs or module IDs excluded from the classpaths used by the [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde) and ordinary Gradle [`test`](tools_intellij_platform_gradle_plugin_tasks.md#test) tasks.
-This property applies only when [`testIdeBundledPluginsClasspathEnabled`](#testIdeBundledPluginsClasspathEnabled) is enabled.
-Set it to an empty value to include all bundled plugins.
+Bundled plugins that require an excluded plugin are excluded, too.
+Plugins required by the tested plugin, its plugin dependencies, or explicitly declared bundled plugins and modules are never excluded.
+
+Setting this property explicitly replaces all defaults, including the version-specific exclusions below.
+Set it to an empty value to disable the default ID exclusions.
 
 {type="narrow"}
 Default value
-: `com.intellij.openRewrite,com.intellij.ja,com.intellij.ko,com.intellij.zh,org.jetbrains.plugins.vue`
+: `com.intellij.openRewrite,com.intellij.ja,com.intellij.ko,com.intellij.zh,org.jetbrains.plugins.vue,org.jetbrains.plugins.clion.radler`
+
+  The defaults additionally exclude `com.intellij.spring.boot` on IntelliJ Platform `2023.3` (build `233`) and `com.intellij.swagger` on `2024.1` (build `241`).
+  These IDE versions do not ship the corresponding test-service implementations.
 
 Example
 :
@@ -302,8 +290,9 @@ org.jetbrains.intellij.platform.verifyPluginDefaultRecommendedIdes=false
 ## `shimServerPort`
 {#shimServerPort}
 
-Specifies the default Shim server port at which the local webserver is run.
-The Shim server is used to proxy requests to the authorized custom plugin repositories registered with [`customPluginRepository()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories).
+Specifies the starting port for the local Shim server.
+The Shim server is used to proxy requests to the authorized custom plugin repositories registered with [`customPluginRepository()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#plugin-repositories).
+If the port is occupied, the server tries subsequent ports until one is available.
 
 {type="narrow"}
 Default value
@@ -319,10 +308,10 @@ org.jetbrains.intellij.platform.shimServerPort=7348
 ## `useCacheRedirector`
 {#useCacheRedirector}
 
-By default, JetBrains Cache Redirector is used when resolving Maven repositories or any resources used by the IntelliJ Platform Gradle Plugin.
-Due to limitations, sometimes it is desired to limit the list of remote endpoints accessed by Gradle.
-
-It is possible to refer to the direct location (whenever it is possible) by switching off JetBrains Cache Redirector globally.
+Controls whether Maven repositories added by the IntelliJ Platform Gradle Plugin use JetBrains Cache Redirector or their direct URLs.
+Set this property to `false` to use direct URLs where an alternative is available.
+Repositories without a direct alternative, such as the JetBrains Runtime repository, retain their configured URLs.
+For isolated networks, see [](tools_intellij_platform_gradle_plugin_repositories_extension.md#mirrored-repositories).
 
 {type="narrow"}
 Default value
@@ -373,11 +362,13 @@ org.jetbrains.intellij.platform.addDefaultIntelliJPlatformDependencies=false
 ## `productsReleasesCdnBuildsUrl`
 {#productsReleasesCdnBuildsUrl}
 
-Specifies the URL from which the list of JetBrains IDE CDN release builds is fetched. This listing is used for mapping IDE releases to build numbers (for example, to download the corresponding JetBrains Client archive).
+Specifies the URL from which JetBrains IDE release listings are fetched.
+The `{type}` placeholder is replaced with the product code.
+The JSON listing supplies versions, build numbers, release channels, and download links for IDE resolution, JetBrains Client, and IntelliJ Plugin Verifier targets.
 
 {type="narrow"}
 Default value
-: `https://data.services.jetbrains.com/products?code={type}&fields=code,releases.type,releases.version,releases.build`
+: `https://data.services.jetbrains.com/products?code={type}&fields=code,releases.type,releases.version,releases.build,releases.downloads`
 
 Example
 :

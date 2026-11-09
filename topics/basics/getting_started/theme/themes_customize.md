@@ -19,7 +19,7 @@ For plugin developers, [](themes_metadata.md) discusses the format of customizat
 
 <include from="developing_themes.md" element-id="themeSamplePlugin"/>
 
-## Introduction to Theme Description File Syntax
+## Theme Description File Syntax
 
 The syntax of a Theme description file follows the JSON open-standard file format of key-value pairs.
 The minimum valid default file is the output of the [DevKit Theme Wizard](creating_theme_project.md).

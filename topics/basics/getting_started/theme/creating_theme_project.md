@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Creating a Theme Project
 
@@ -53,7 +53,7 @@ end title
   - <path>pluginIcon.svg</path> file that is a [plugin logo](plugin_icon_file.md)
 
     Replace it with a custom logo representing the Theme.
-- <path>my_theme.theme.json</path> - a minimal [theme description file](themes_customize.md#introduction-to-theme-description-file-syntax)
+- <path>my_theme.theme.json</path> - a minimal [theme description file](themes_customize.md#theme-description-file-syntax)
 - <path>my_theme.iml</path> - [IntelliJ IDEA Module](https://www.jetbrains.com/help/idea/creating-and-managing-modules.html) configuration file
 
 See [](theme_structure.md) for more details.
@@ -74,7 +74,7 @@ The wizard can be used for both DevKit-based and Gradle-based plugins.
    It is a good practice to include the name of the plugin in the created theme name.
 3. Check the <control>Dark theme</control> checkbox if the created theme should be based on IntelliJ IDEA _Darcula_ theme.
    Otherwise, the _Light_ theme will be used as the base.
-4. Click <control>OK</control> button to generate the [theme description file](themes_customize.md#introduction-to-theme-description-file-syntax) with <path>\$THEME_NAME\$.theme.json</path> name. The generated theme will be automatically configured in the <path>plugin.xml</path> file.
+4. Click <control>OK</control> button to generate the [theme description file](themes_customize.md#theme-description-file-syntax) with <path>\$THEME_NAME\$.theme.json</path> name. The generated theme will be automatically configured in the <path>plugin.xml</path> file.
 
 </procedure>
 

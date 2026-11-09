@@ -36,7 +36,7 @@ The track can contain optional markers for quicker navigation between the import
 
 * Changed parts of a file.
 
-A marker can fit the track width or be placed to the left of the track. Use the latter when you expect the marked region to be tall.
+A marker can fit the track width or be placed to the left of the track. Use the latter when the marked region is expected to be tall.
 
 Hovering over the track can also show a lens with a preview of the content at the corresponding position in the document.
 This can be useful in large documents when it is not desirable to change the viewpoint:
@@ -49,7 +49,7 @@ A thumb represents the visible portion of the content. For example, a small thum
 
 ### Status icon (optional)
 
-A status icon shows the overall status of inspections performed on the content and allows you to avoid scrolling over the entire view.
+A status icon shows the overall status of inspections performed on the content and allows the user to avoid scrolling over the entire view.
 If at least one inspection has failed, the overall status should be the status of that inspection.
 
 ![](commit.png){width=492}
@@ -57,7 +57,7 @@ If at least one inspection has failed, the overall status should be the status o
 ## How to use
 
 Respect the OS settings when showing the scrollbar.
-For example, on macOS you can hide the scrollbar until you scroll the content.
+For example, on macOS the scrollbar can be hidden until the user scrolls the content.
 Always show the scrollbar when it is important to understand which part of the content is currently shown.
 For example, the scrollbar in the Editor helps users understand the location of the current code fragment and the overall size of the currently opened file.
 
@@ -66,9 +66,9 @@ Show the track on hover to make the clickable area clearer. Consider not showing
 Increase the thumb contrast against the background on hover and when scrolling to make it more prominent.
 
 Clicking the track above/below the thumb scrolls one page up/down the viewpoint.
-This allows you to hide the up/down icons on the scrollbar to lessen the visual noise and to scroll with mouse-clicks.
+This allows hiding the up/down icons on the scrollbar to lessen the visual noise and to scroll with mouse-clicks.
 Track markers serve as a mini-map of the document.
-If they are present, clicking them takes you to the position that this marker is pointing to without having to scroll down the page.
+If they are present, clicking them takes the user to the position that this marker is pointing to without having to scroll down the page.
 Change the cursor to "Hand" when hovering such scrollbars.
 
 When showing a text, wrap it instead of showing the horizontal scrollbar when possible. With both scrollbars, it is harder to manipulate the content.

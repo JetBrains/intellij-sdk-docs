@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Testing Overview
 
@@ -19,10 +19,10 @@ In a product with 20+ years of a lifetime that has gone through many internal re
 
 ### Mocks
 
-Another consequence of our testing approach is that we do not provide a recommended approach to mocking.
-We have a few tests in our codebase that use JMock.
-Still, in general, we find it difficult to mock all the interactions with IntelliJ Platform components that your plugin class will need to have.
-We recommend working with real components instead.
+Another consequence of this testing approach is that there is no recommended approach to mocking.
+A few tests in the IntelliJ Platform codebase use JMock.
+Still, in general, it is difficult to mock all the interactions with IntelliJ Platform components that a plugin class will need to have.
+Work with real components instead.
 See also [](testing_faq.md#how-to-replace-a-componentservice-in-tests) and [](testing_faq.md#how-to-replace-extension-points-in-tests).
 
 ### Integration and UI Tests
@@ -35,7 +35,7 @@ Check out [](integration_tests_intro.md) tutorial that guides through setup proc
 
 <snippet id="testSamples">
 
-> Check out [this step-by-step tutorial](writing_tests_for_plugins.md) teaching how to write and run automated tests for your custom language plugin.
+> Check out [this step-by-step tutorial](writing_tests_for_plugins.md) teaching how to write and run automated tests for a custom language plugin.
 >
 > Also, code samples
 > [comparing_string_references_inspection](%gh-sdk-samples-master%/comparing_string_references_inspection)

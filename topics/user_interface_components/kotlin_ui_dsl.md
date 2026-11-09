@@ -47,7 +47,7 @@ panel {
 ```
 
 Rows are created vertically from top to bottom, in the same order as lines of code that call `row`.
-Inside one row, you add components from left to right in the same order calls to factory method or `()` appear in each row.
+Inside one row, the DSL places components from left to right in the same order calls to factory method or `()` appear in each row.
 Every component is effectively placed in its own grid cell.
 
 The label for the row can be specified as a parameter for the `row` method:
@@ -102,9 +102,9 @@ row {
 
 There are two ways to add child components.
 The recommended way is to use factory methods `label`, `button`, `radioButton`, `link`, etc.
-It allows you to create consistent UI and reuse common patterns.
+It allows creating consistent UI and reusing common patterns.
 
-These methods also support **property bindings**, allowing you to automatically load the value displayed in the component from a property and to store it back.
+These methods also support **property bindings**, which automatically load the value displayed in the component from a property and store it back.
 The easiest way to do that is to pass a reference to a Kotlin bound property:
 
 ```kotlin
@@ -122,7 +122,7 @@ checkBox(
   { uiSettings.hideKnownExtensionInTabs = !it })
 ```
 
-If you want to add a component for which there are no factory methods, you can simply invoke an instance of your component, using the `()` overloaded operator:
+To add a component for which there are no factory methods, invoke an instance of the component, using the `()` overloaded operator:
 
 ```kotlin
 val customComponent = MyCustomComponent()
@@ -184,7 +184,7 @@ For entering numbers, use `intTextField`:
 intTextField(uiSettings::editorTabLimit, columns = 4, range = EDITOR_TABS_RANGE)
 ```
 
-For password text fields, there is no factory function available, so you need to use `()`:
+For password text fields, there is no factory function available, so use `()`:
 
 ```kotlin
 val passwordField = JPasswordField()
@@ -269,7 +269,7 @@ This base class supports the standard `apply()`, `reset()`, and `isModified()` m
 
 **Reference**: [DialogWrapper](dialog_wrapper.md)
 
-If you're using a [`DialogPanel`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) as the main panel of a `DialogWrapper`, the `apply()` method will be automatically called when the dialog is closed using <control>OK</control> action.
+If a [`DialogPanel`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogPanel.kt) is used as the main panel of a `DialogWrapper`, the `apply()` method will be automatically called when the dialog is closed using <control>OK</control> action.
 The other methods are unused in this case.
 
 Use the `focused()` method to specify which control should be focused when the dialog is initialized:
@@ -286,7 +286,7 @@ return panel {
 
 **Reference**: [Settings Guide](settings_guide.md)
 
-If you're using the UI DSL to implement a [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java), use [`BoundConfigurable`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/BoundConfigurable.kt) as the base class.
+If the UI DSL is used to implement a [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java), use [`BoundConfigurable`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/BoundConfigurable.kt) as the base class.
 In this case, the `Configurable` methods will be automatically delegated to the panel.
 
 ## Enabling and Disabling Controls

@@ -328,8 +328,9 @@ Use a concise and neutral voice when describing topics:
    - **Avoid:** "A custom icon for files with a substituted language would be a great addition to the plugin. It is easy as implementing the `xyz` extension point."
    - **Prefer:** "To add a custom icon for files with a substituted language, implement the `xyz` extension point."
 
-Avoid directly addressing the reader and the author with "you", "your", "we", etc.
-   - **Avoid:** "Add a dependency in your plugin descriptor."
+Avoid "your" and "we": the reader may not own the plugin, and the author is ambiguous.
+Prefer the imperative over "you can" or "you should", but keep "you" if the alternative is passive or "it is possible to…" phrasing.
+   - **Avoid:** "You can add a dependency in your plugin descriptor."
    - **Prefer:** "Add a dependency in the plugin descriptor."
 
 ## Table of Contents

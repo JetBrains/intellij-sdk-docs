@@ -62,7 +62,7 @@ Plugins can store additional data associated with a module by creating facets or
 
 <include from="project.md" element-id="useWorkspaceModelAPI"/>
 
-The IntelliJ Platform provides a number of classes and interfaces you can use to work with modules:
+The IntelliJ Platform provides a number of classes and interfaces to work with modules:
 
 * [`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java)
 * [`ModuleUtil`](%gh-ic%/platform/lang-api/src/com/intellij/openapi/module/ModuleUtil.java) and [`ModuleUtilCore`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/module/ModuleUtilCore.java)
@@ -87,11 +87,11 @@ Use the `ModuleManager.getModules()` method.
 ### How do I get dependencies and classpath of a module?
 
 _Order entries_ include SDK, libraries and other modules the module uses.
-With the IntelliJ IDEA UI, you can view order entries for a module on the <control>Dependencies</control> tab of the <control>Project Structure</control> dialog box.
+In the IntelliJ IDEA UI, order entries for a module are shown on the <control>Dependencies</control> tab of the <control>Project Structure</control> dialog box.
 
 To explore the module dependencies, use the [`OrderEnumerator`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) class.
 
-The following code snippet illustrates how you can get classpath (classes root of all dependencies) for a module:
+The following code snippet illustrates how to get classpath (classes root of all dependencies) for a module:
 
 ```java
 VirtualFile[] roots = ModuleRootManager.getInstance(module).orderEntries().classes().getRoots();
@@ -102,7 +102,7 @@ VirtualFile[] roots = ModuleRootManager.getInstance(module).orderEntries().class
 Use the `ModuleRootManager.getSdk()` method.
 This method returns a value of the [`Sdk`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/projectRoots/Sdk.java) type.
 
-The following code snippet illustrates how you can get detailed information on SDK the specified module uses:
+The following code snippet illustrates how to get detailed information on SDK the specified module uses:
 
 ```java
 ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(module);
@@ -128,7 +128,7 @@ String[] dependentModulesNames = moduleRootManager.getDependencyModuleNames();
 
 Use the `ModuleManager.getModuleDependentModules(module)` method.
 
-Note that you can also check whether a module (*module1*) depends on another specified module (*module2*) using the `ModuleManager.isModuleDependent()` method in the following way:
+Note that `ModuleManager.isModuleDependent()` also checks whether a module (*module1*) depends on another specified module (*module2*), in the following way:
 
 ```java
 boolean isDependent = ModuleManager.getInstance(project).isModuleDependent(module1, module2);

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Incompatible PHP OpenAPI changes in PhpStorm 2020.2
 
@@ -13,7 +13,7 @@ In earlier versions, type hints in parameters, properties, and return types were
 
 As of PhpStorm 2020.2, class references with the question mark are uniformly wrapped into the `PhpTypeDeclaration` element, which is the parent for `PhpReturnType`, `PhpFieldType`, and `PhpParameterType`.
 
-If your existing code fetches a class reference directly from the parent element, it is now required to get `PhpTypeDeclaration` first, and then call `PhpTypeDeclaration#getClassReferences()`.
+If existing code fetches a class reference directly from the parent element, it is now required to get `PhpTypeDeclaration` first, and then call `PhpTypeDeclaration#getClassReferences()`.
 
 Before 2020.2:
 

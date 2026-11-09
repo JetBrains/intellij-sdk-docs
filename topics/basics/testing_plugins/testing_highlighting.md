@@ -22,8 +22,8 @@ Alternatively, you can use `CodeInsightTestFixture.testHighlighting()`, which lo
 
 ### Inspections
 
-If you need to test inspections, they must be enabled explicitly.
-This is done by calling `CodeInsightTestFixture.enableInspections()` in the setup method of your test or directly in a test method, before the call to `CodeInsightTestFixture.checkHighlighting()`.
+Inspections to be tested must be enabled explicitly.
+This is done by calling `CodeInsightTestFixture.enableInspections()` in the setup method of the test or directly in a test method, before the call to `CodeInsightTestFixture.checkHighlighting()`.
 
 ### Syntax Highlighting
 

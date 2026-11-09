@@ -56,7 +56,7 @@ specifying the context in which this completion variant is applicable.
 The [`CompletionProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionProvider.java) then adds the items to show in the completion list.
 
 Keep in mind that the pattern is checked against the leaf PSI element.
-If you want to match a composite element, use `withParent()` or `withSuperParent()` methods.
+To match a composite element, use `withParent()` or `withSuperParent()` methods.
 
 If completion items do not depend on indexes (e.g., keywords), it can be marked as [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 2. Editor Coordinates System. Positions and Offsets
 
@@ -155,7 +155,7 @@ Be sure to use the keyboard shortcut to invoke the action so that the caret posi
 The line containing the `String` variable declaration contains bidirectional text.
 Starting on the left end of the line, and using the arrow key to advance a line-shaped cursor to between the `("` characters reveals discontinuities in caret coordinate column positions.
 * After the caret first moves from between `g(` to between `("`, the Logical and Visual Positions have equal column positions of 26, and neither leans.
-  Note the value of the caret positions you measure may have different starting values because of line indentation, but the sign and magnitude of the changes in position will be the same.
+  Note the measured caret position values may have different starting values because of line indentation, but the sign and magnitude of the changes in position will be the same.
 * Advancing the caret once more does not appear to visually move the cursor.
   However, the Logical Position column increases to 59, and although the Visual Position column does not change, it leans right.
 * Continuing to advance the cursor (to the right) through the string causes the Logical Position column to _decrease_, and the Visual Position column to _increase_.

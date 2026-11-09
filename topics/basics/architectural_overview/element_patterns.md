@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Element Patterns
 
@@ -14,7 +14,7 @@ Their two main applications inside the IntelliJ Platform are:
 2. Specifying PSI elements that provide further references via [a PSI reference contributor](psi_references.md#contributed-references).
 
 However, plugin authors rarely implement the [`ElementPattern`](%gh-ic%/platform/core-api/src/com/intellij/patterns/ElementPattern.java) interface directly.
-Instead, we recommend using the high-level pattern classes provided by the IntelliJ Platform:
+Instead, use the high-level pattern classes provided by the IntelliJ Platform:
 
 | Class                                                                                               | Main Contents                                                                                                             | Notable Examples                                                                                                                                                                                                                                                                          |
 |-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -84,7 +84,7 @@ Therefore, finding the correct locations in the IntelliJ Platform for debugging 
 
 However, setting breakpoints inside `ElementPattern` will result in many false-positives since element patterns are used extensively throughout the IDE.
 One way to filter out these false-positives is to use a condition on the breakpoints.
-The following steps can help you investigate where patterns are checked:
+To find where patterns are checked, follow these steps:
 
 1. Set breakpoints at the `ElementPattern.accepts()` methods.
 2. Set a condition on the breakpoints that checks whether the string representation of the pattern contains an _identifiable part_ of the pattern.
@@ -95,7 +95,7 @@ Note that finding an identifiable part of a pattern can be achieved by setting a
 
 ### Debugging Example
 
-Using the Markdown code example from above, we note that the `MarkdownLinkDestinationImpl` class is used in the element pattern.
+In the Markdown code example from above, the `MarkdownLinkDestinationImpl` class is used in the element pattern.
 Now, set a breakpoint at:
 
 ```text

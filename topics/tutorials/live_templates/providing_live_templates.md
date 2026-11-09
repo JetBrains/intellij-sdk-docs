@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Providing Live Templates
 
@@ -93,8 +93,8 @@ Within the `<template>...</template>` elements in the <path>Markdown.xml</path> 
 </template>
 ```
 
-It is not always necessary to define your own `TemplateContextType`, as there are many existing template contexts already defined in the IntelliJ Platform.
-Consider reusing one of the many existing template context types that inherit from `TemplateContextType` if you are augmenting language support to an existing area.
+It is not always necessary to define a custom `TemplateContextType`, as there are many existing template contexts already defined in the IntelliJ Platform.
+Consider reusing one of the many existing template context types that inherit from `TemplateContextType` if the plugin augments language support to an existing area.
 
 ## Completing the Live Template Implementation
 

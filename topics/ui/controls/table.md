@@ -46,7 +46,7 @@ Do **not** use tables:
 
 A label is optional for tables.
 
-Add a label if the table content is not obvious from the dialog title or the table header. For example, in the table that lets you configure filters for import and completion per-scope:
+Add a label if the table content is not obvious from the dialog title or the table header. For example, in the table that lets the user configure filters for import and completion per-scope:
 
 ![](table_label.png){width=448}
 
@@ -149,7 +149,7 @@ Use the [`ToolbarDecorator`](%gh-ic%/platform/platform-api/src/com/intellij/ui/T
 
 Zebra striping is alternate highlighting of lines or rows in data tables or forms.
 
-Use stripes if you want to help users distinguish between different data sets. For example, the current branch is highlighted differently from other branches:
+Use stripes to help users distinguish between different data sets. For example, the current branch is highlighted differently from other branches:
 
 ![](history-zebra.png){width=488}
 
@@ -282,9 +282,9 @@ Choose a column width appropriate for the most common values, but no less than *
 
 ![](fileColorsTooWide.png){width=592}
 
-The minimum table width is **350px**. If a table is too narrow after you have adjusted column widths, add space to the rightmost column.
+The minimum table width is **350px**. If a table is too narrow after adjusting column widths, add space to the rightmost column.
 
-Add space to the rightmost column if you need to align it with other tables in the same window.
+Add space to the rightmost column if it needs to be aligned with other tables in the same window.
 
 If content doesn't fit a cell's width, cut the text by the right border:
 

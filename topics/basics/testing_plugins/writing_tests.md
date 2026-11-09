@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Writing Tests
 
@@ -8,7 +8,7 @@
 
 <include from="tests_and_fixtures.md" element-id="testFrameworkDependencies"/>
 
-In most cases, once you have the necessary files copied to the test project and loaded into the in-memory editor, writing the test itself involves invoking your plugin code and has few dependencies on the test framework.
+In most cases, once the necessary files are copied to the test project and loaded into the in-memory editor, writing the test itself involves invoking the plugin code and has few dependencies on the test framework.
 
 However, for many common cases, the framework provides helper methods that can make testing easier:
 * `type()` simulates the typing of a character or string into the in-memory editor.
@@ -18,8 +18,8 @@ However, for many common cases, the framework provides helper methods that can m
 * `findSingleIntention()` in combination with `launchAction()` simulate the invocation of an intention action or inspection quick fix with the specified name.
 * `renameElementAtCaret()` or `rename()` simulate the execution of a rename refactoring.
 
-To compare the results of executing the action with the expected results, you can use the `checkResultByFile()` method.
+To compare the results of executing the action with the expected results, use the `checkResultByFile()` method.
 The file with the expected results can also contain [markup](test_project_and_testdata_directories.md#special-markup) to specify the expected caret position or selected text range.
-Suppose you're testing an action that modifies multiple files (a project-wide refactoring, for example). In that case, you can compare an entire directory under the test project with the expected output using `PlatformTestUtil.assertDirectoriesEqual()`.
+Suppose the tested action modifies multiple files (a project-wide refactoring, for example). In that case, compare an entire directory under the test project with the expected output using `PlatformTestUtil.assertDirectoriesEqual()`.
 
 See [Useful Classes](testing_faq.md#useful-classes) for other common testing functionality.

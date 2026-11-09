@@ -38,7 +38,7 @@ See [](tools_intellij_platform_gradle_plugin.md#configuration) for the necessary
 <snippet id="whichPlatformVersion">
 
 > For new plugins, it is recommended to support current and previous stable versions.
-> For example, if the current platform version is 2026.3.\*, start developing your plugin by targeting 2026.2.\*.
+> For example, if the current platform version is 2026.3.\*, start developing the plugin by targeting 2026.2.\*.
 > This will support:
 > - **2026.3**.* - current major version
 > - **2026.2**.* - previous major version
@@ -48,7 +48,7 @@ See [](tools_intellij_platform_gradle_plugin.md#configuration) for the necessary
 > After the plugin is released, it is not strictly required to update plugin to support only two latest major versions.
 > Consider supporting some older versions based on download statistics in [Statistics: Product Versions in Use](https://plugins.jetbrains.com/docs/marketplace/product-versions-in-use-statistics.html).
 >
-{title="Which versions should your plugin support?"}
+{title="Which versions should a plugin support?"}
 
 </snippet>
 

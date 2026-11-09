@@ -77,7 +77,7 @@ Consequently, without the `com.intellij.modules.platform` declaration the plugin
 {style="note"}
 
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries in `DatabaseTools`.
-Test your plugin with any version of DataGrip you wish to support.
+Test the plugin with every supported version of DataGrip.
 
 ## Getting Help
 

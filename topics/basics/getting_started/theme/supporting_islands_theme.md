@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Supporting Islands Theme
 
@@ -10,7 +10,7 @@ Follow these guidelines to convert an existing custom theme to an Islands theme.
 
 ## Defining the Parent Theme
 
-We recommend creating Islands custom themes based on the default Islands themes.
+Create Islands custom themes based on the default Islands themes.
 To do that, define the parent theme at the beginning of the <path>\*.theme.json</path> file.
 An example for a **dark** custom theme:
 

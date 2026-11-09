@@ -23,7 +23,7 @@ The [Gradle Grammar-Kit Plugin](https://github.com/JetBrains/gradle-grammar-kit-
 > Before visiting the [Issue Tracker](https://github.com/JetBrains/gradle-grammar-kit-plugin/issues), update both plugin and Gradle to the latest versions.
 
 ## Usage
-To enable this plugin in your Gradle-based project, register the plugin in the Gradle build script's `plugins` section:
+To enable this plugin in a Gradle-based project, register the plugin in the Gradle build script's `plugins` section:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">

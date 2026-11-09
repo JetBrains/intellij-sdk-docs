@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Incompatible Changes in IntelliJ Platform and Plugins API 2024.*
 
@@ -113,7 +113,7 @@ Unbundled JUnit library
 : Use new class
 
 Interface `com.intellij.openapi.externalSystem.model.task.event.TaskOperationDescriptor` changed to class
-: Recompile your plugin with new class
+: Recompile the plugin with new class
 
 `com.intellij.openapi.externalSystem.importing.AbstractOpenProjectProvider.linkToExistingProjectAsync(VirtualFile arg0, Project arg1, Continuation arg2)` method marked final
 : Override method `com.intellij.openapi.externalSystem.importing.AbstractOpenProjectProvider#linkProject` instead
@@ -261,7 +261,7 @@ Constructor of `com.intellij.ui.tabs.TabInfo` requires not-null `JComponent` arg
 ### Dependency Analysis Plugin 2024.2
 
 `com.jetbrains.dependencyAnalysis` package removed
-: The package `com.jetbrains.dependencyAnalysis` has been removed. Please update your code to use the new package `com.jetbrains.dependencyAnalysis.core` instead.
+: The package `com.jetbrains.dependencyAnalysis` has been removed. Please update the code to use the new package `com.jetbrains.dependencyAnalysis.core` instead.
 
 ## 2024.1
 
@@ -307,7 +307,7 @@ Constructor of `com.intellij.ui.tabs.TabInfo` requires not-null `JComponent` arg
 : Parameter `filters: VcsLogFilterCollection` was added to provide filtering capabilities to file history. Implement `com.intellij.vcs.log.VcsLogFileHistoryHandler.getSupportedFilters` to specify which filters are supported by this extension (currently, branch filter, revision filter and range filter are available).
 
 `org.apache.tools` package removed
-: Please provide all necessary libraries in your plugin distribution.
+: Please provide all necessary libraries in the plugin distribution.
 
 `com.intellij.openapi.projectRoots.impl.ProjectJdkImpl.readExternal(Element, ProjectJdkTable)` method removed
 : Use `com.intellij.openapi.projectRoots.impl.ProjectJdkImpl.readExternal(Element, Function<String, SdkTypeId>)` instead.
@@ -441,10 +441,10 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 : Use `org.jetbrains.idea.maven.indices.MavenRepositoryIndex.getRepository().getUrl()` instead. Also, `MavenRepositoryInfo.getKind()` could be used to distinguish between local and remote repo.
 
 `org.jetbrains.idea.maven.indices.MavenIndicesManager.scheduleUpdateContent(List<MavenIndex>, boolean)` method removed
-: Use `org.jetbrains.idea.maven.indices.searcher.MavenLuceneIndexer.update(List<MavenRepositoryInfo>, Boolean)` to update content for lucene indices. You should not care of GAV indices update.
+: Use `org.jetbrains.idea.maven.indices.searcher.MavenLuceneIndexer.update(List<MavenRepositoryInfo>, Boolean)` to update content for lucene indices. GAV indices do not need to be updated explicitly.
 
 `org.jetbrains.idea.maven.indices.MavenIndicesManager.scheduleUpdateIndicesList(Consumer<MavenIndex>)` method removed
-: Use `org.jetbrains.idea.maven.indices.searcher.MavenIndicesManager.scheduleUpdateIndicesList()` to update an indices list for a specific project. To get all search indices for specific project use `MavenSystemIndicesManager.getClassIndexForRepository()`, you can get a list of all repositories with `MavenIndexUtils.getAllRepositories(Project)`.
+: Use `org.jetbrains.idea.maven.indices.searcher.MavenIndicesManager.scheduleUpdateIndicesList()` to update an indices list for a specific project. To get all search indices for specific project use `MavenSystemIndicesManager.getClassIndexForRepository()`, and get a list of all repositories with `MavenIndexUtils.getAllRepositories(Project)`.
 
 ### Database Plugin 2024.1
 

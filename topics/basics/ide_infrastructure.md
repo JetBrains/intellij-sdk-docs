@@ -1,16 +1,16 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IDE Infrastructure
 
 <web-summary>
-How to log messages, report errors, access runtime info, help users report fatal errors, and manage plugins in your IDE.
+How to log messages, report errors, access runtime info, help users report fatal errors, and manage plugins in the IDE.
 </web-summary>
 
 <link-summary>General IDE-level functionality (logging, error reporting, environment/installation info).</link-summary>
 
 ### Logging
 
-> If your plugin uses the **log4j** library directly: it is removed from IntelliJ Platform in 2022.1; please see this [blog post](https://blog.jetbrains.com/platform/2022/02/removing-log4j-from-the-intellij-platform/) for migration instructions.
+> If a plugin uses the **log4j** library directly: it is removed from IntelliJ Platform in 2022.1; please see this [blog post](https://blog.jetbrains.com/platform/2022/02/removing-log4j-from-the-intellij-platform/) for migration instructions.
 >
 {style="note"}
 
@@ -112,7 +112,7 @@ For paid plugins, see also [Marketplace docs](https://plugins.jetbrains.com/docs
 
 ## Context Help
 
-To show custom context web-based help for your plugin's functionality (e.g., for [dialogs](dialog_wrapper.md)), provide [`WebHelpProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/help/WebHelpProvider.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.webHelpProvider"/></include>.
+To show custom context web-based help for the plugin's functionality (e.g., for [dialogs](dialog_wrapper.md)), provide [`WebHelpProvider`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/help/WebHelpProvider.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.webHelpProvider"/></include>.
 
 > To [localize](providing_translations.md) the help page URL, retrieve the current locale and language tag from the [dynamic bundle](providing_translations.md#getting-the-current-locale-programmatically).
 
@@ -144,7 +144,7 @@ Use the [`LafManagerListener`](%gh-ic%/platform/platform-api/src/com/intellij/id
 ## Power Save Mode
 
 <ui-path>File | Power Save Mode</ui-path> can be enabled to limit power-consuming features on laptops.
-Use [`PowerSaveMode`](%gh-ic%/platform/core-api/src/com/intellij/ide/PowerSaveMode.java) service and `PowerSaveMode.Listener` topic to disable such features in your plugin accordingly.
+Use [`PowerSaveMode`](%gh-ic%/platform/core-api/src/com/intellij/ide/PowerSaveMode.java) service and `PowerSaveMode.Listener` topic to disable such features in the plugin accordingly.
 
 ## Plugin Management
 

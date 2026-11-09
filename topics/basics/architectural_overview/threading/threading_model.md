@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Threading Model
 
@@ -606,7 +606,7 @@ With `ReadAction.nonBlocking()`, use `expireWith()` or `expireWhen()` for that.
 In particular, don't traverse [VFS](virtual_file_system.md), parse [PSI](psi.md), resolve [references,](psi_references.md) or query [indexes](indexing_and_psi_stubs.md).
 
 There are still some cases when the platform itself invokes such expensive code (for example, resolve in `AnAction.update()`), but these are being worked on.
-Meanwhile, try to speed up what you can in your plugin as it will be generally beneficial and will also improve background highlighting performance.
+Meanwhile, try to speed up as much as possible in the plugin as it will be generally beneficial and will also improve background highlighting performance.
 
 #### Action Update
 

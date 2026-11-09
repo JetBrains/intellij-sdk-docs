@@ -83,7 +83,7 @@ Otherwise, the plugin is assumed to be a [legacy plugin](plugin_compatibility.md
 {style="note"}
 
 See [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer).
-Test your plugin with any version of WebStorm you wish to support.
+Test the plugin with every supported version of WebStorm.
 
 ### JavaScript Test Framework
 

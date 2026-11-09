@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Modifying Project View Structure
 
@@ -39,6 +39,6 @@ Register the implementation in <include from="snippets.topic" element-id="ep"><v
 
 See [Code Samples](code_samples.md) on how to set up and run the plugin.
 
-After going through the steps described above, you can see only text files and directories belonging to a project in the Project View.
+After going through the steps described above, the Project View shows only text files and directories belonging to a project.
 
 ![Text Files](text_only.png)

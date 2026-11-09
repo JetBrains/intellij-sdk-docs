@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Notable Changes in IntelliJ Platform and Plugins API 2019.*
 
@@ -30,7 +30,7 @@ User-customizable date/time formatting
 
 Unbundled plugins
 : Several plugins (Heroku integration, RubyMotion support, Java Applets Support) for no longer actively maintained technology have been moved to a [separate repository](https://github.com/JetBrains/intellij-obsolete-plugins/).
-If your plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
+If a plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 ## 2019.2
 
@@ -78,10 +78,10 @@ New API for Editor Inlay Hints
 ### IntelliJ IDEA 2019.2
 
 Java functionality extracted as a plugin
-: If your plugin depends on Java, it must be specified now; see [](plugin_compatibility.md#java) for details.
+: If a plugin depends on Java, it must be specified now; see [](plugin_compatibility.md#java) for details.
 
 Unbundled plugins
-: Several plugins (J2ME, JsTestDriver, Struts 1.x) for no longer actively maintained technology have been moved to a [separate repository](https://github.com/JetBrains/intellij-obsolete-plugins/). If your plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
+: Several plugins (J2ME, JsTestDriver, Struts 1.x) for no longer actively maintained technology have been moved to a [separate repository](https://github.com/JetBrains/intellij-obsolete-plugins/). If a plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 ## 2019.1
 

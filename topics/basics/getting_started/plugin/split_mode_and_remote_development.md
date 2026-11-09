@@ -36,7 +36,7 @@ This article explains the terminology, motivation, and architecture behind remot
 Remote development support in the IDE provides several benefits for end users:
 
 * Use more powerful hardware than a local laptop.
-* Work on a different OS than the one you’re running locally (useful for cross-platform development).
+* Work on a different OS than the local one (useful for cross-platform development).
 * Use the laptop as a thin client (often no need to keep source code locally).
 * Keep sensitive code on company servers while still working “from anywhere”.
 
@@ -145,7 +145,7 @@ To add it in an existing project, use the steps below.
 
 <procedure title="Creating the Run IDE (Split Mode) Run Configuration">
 
-1. Make sure you are using the IntelliJ Platform Gradle Plugin version 2.14 or higher.
+1. Make sure to use the IntelliJ Platform Gradle Plugin version 2.14 or higher.
 2. Call the `:generateSplitModeRunConfigurations` task via Execute Gradle Task action or via terminal.
 3. Once finished, the task will produce a compound `Run IDE (Split Mode)` run configuration that can be selected in the run widget and used for debugging or running as usual.
    > Starting with IntelliJ Platform Gradle Plugin 2.15.0, generated run configurations show the full backend or frontend IDE log files in additional tabs.
@@ -160,7 +160,7 @@ Deploying the backend to a real remote machine is not the easiest or fastest way
 
 <procedure title="Emulating Slow Connection to the Backend">
 
-1. Enable the [internal mode](enabling_internal.md) in the IDE your plugin is being tested against by specifying the system property `-Didea.is.internal=true`.
+1. Enable the [internal mode](enabling_internal.md) in the IDE the plugin is being tested against by specifying the system property `-Didea.is.internal=true`.
 2. Open the **Split Mode** widget in the upper left corner of the target IDE.
 3. Switch to the **Connection Config (internal)** tab.
 4. Select the **Enable Connection Widget** checkbox.

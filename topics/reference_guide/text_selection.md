@@ -7,9 +7,9 @@
 ## Extending/Shrinking Text Selection
 
 Implementing [`ExtendWordSelectionHandler`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/ExtendWordSelectionHandler.java) and registering
-it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.extendWordSelectionHandler"/></include> in your <path>[plugin.xml](plugin_configuration_file.md)</path> allows you to provide additional text ranges to be used when extending or shrinking a selection.
-Return `true` from `canSelect(PsiElement)` for the PSI elements that you want to provide additional text-ranges for.
-The IntelliJ Platform will call `select(PsiElement, CharSequence, int, Editor)` for these elements where you can compute additional text ranges and return them as `List<TextRange>`.
+it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.extendWordSelectionHandler"/></include> in the <path>[plugin.xml](plugin_configuration_file.md)</path> provides additional text ranges to be used when extending or shrinking a selection.
+Return `true` from `canSelect(PsiElement)` for the PSI elements that need additional text ranges.
+The IntelliJ Platform will call `select(PsiElement, CharSequence, int, Editor)` for these elements; compute additional text ranges there and return them as `List<TextRange>`.
 
 See also:
 
@@ -18,10 +18,10 @@ See also:
 
 ### Implementation
 
-The two actions [Extend Selection and Shrink Selection](https://www.jetbrains.com/help/idea/working-with-source-code.html#editor_code_selection) in IntelliJ Platform IDEs let you adjust selected text based on the structure of the source code.
+The two actions [Extend Selection and Shrink Selection](https://www.jetbrains.com/help/idea/working-with-source-code.html#editor_code_selection) in IntelliJ Platform IDEs adjust selected text based on the structure of the source code.
 This makes it easy to select not only expressions, blocks, and function definitions, but also code like whole lines or tags in Javadoc comments.
 
-When implementing a custom language, the IntelliJ Platform provides basic implementations of this EP, allowing you to select code based on your PSI structure and to select whole lines.
+When implementing a custom language, the IntelliJ Platform provides basic implementations of this EP, which select code based on the PSI structure, as well as whole lines.
 In many cases this is sufficient to provide a good user experience.
 However, sometimes it's advantageous to provide additional regions that the user may wish to be able to select when extending or shrinking a selection.
 
@@ -35,18 +35,18 @@ This EP has two methods that need to be implemented:
 
 A possible use-case for custom language developers is a function call `f(a, b)` where the function call node has its two arguments as children.
 If the cursor is located at argument `a`, extending the selection would first select argument `a` itself and in the next step grow to cover the whole function call.
-However, you might want to select the list of all arguments as an intermediate step.
+However, an intermediate step selecting the list of all arguments might be useful.
 This can be achieved by implementing this EP in the following way:
 
-1. Create a class that implements the `ExtendWordSelectionHandler` interface and register it in a <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.extendWordSelectionHandler"/></include> in your <path>plugin.xml</path>.
+1. Create a class that implements the `ExtendWordSelectionHandler` interface and register it in a <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.extendWordSelectionHandler"/></include> in the <path>plugin.xml</path>.
 2. The `canSelect(PsiElement)` method should return `true` for the function call node.
    That indicates that `select(PsiElement, CharSequence, int, Editor)` will be called for the function-call node.
-3. When the `select()` method is called, you can use the function call PSI element or the editor text to extract the text range that spans the arguments `a` and `b` and return it as `List<TextRange>` with one element.
+3. When the `select()` method is called, use the function call PSI element or the editor text to extract the text range that spans the arguments `a` and `b` and return it as `List<TextRange>` with one element.
 
 ### Further Insight and Debugging
 
 Looking at other implementations can be an effective way to get a better understanding of how this EP works.
-To get further insight into this EP, you may want to take a look at [`DocTagSelectioner`](%gh-ic%/java/java-frontback-impl/src/com/intellij/codeInsight/editorActions/wordSelection/DocTagSelectioner.java).
+For further insight into this EP, see [`DocTagSelectioner`](%gh-ic%/java/java-frontback-impl/src/com/intellij/codeInsight/editorActions/wordSelection/DocTagSelectioner.java).
 It provides the ability to select tag names like `@param` in Javadoc comments.
 Browse the list of open-source plugins with implementations of the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.extendWordSelectionHandler"/></include>.
 

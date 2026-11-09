@@ -48,7 +48,7 @@ See [notes](api_changes_list_2021.md#20213).
 
 ### How to avoid flaky tests?
 
-Always call `super.tearDown()` inside the `finally {}` block of your test class to avoid leaks and side effects from previously run (failed) tests:
+Always call `super.tearDown()` inside the `finally {}` block of the test class to avoid leaks and side effects from previously run (failed) tests:
 
 <tabs>
 <tab title="Java" group-key="java">
@@ -94,7 +94,7 @@ When targeting 2024.2 or later, see also [](#how-to-handle-projectactivity).
 ### How to avoid test failure when using resources?
 
 In some situations, added or changed files (e.g. XML DTDs provided by a plugin) are not refreshed in [](virtual_file_system.md).
-In such cases, delete the <path>test-system/caches</path> folder in your [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) and try again.
+In such cases, delete the <path>test-system/caches</path> folder in the [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) and try again.
 
 ### How to enable DEBUG/TRACE logging?
 
@@ -145,7 +145,7 @@ Use [`FileBasedTestCaseHelper`](%gh-ic%/platform/testFramework/src/com/intellij/
 
 ### How to modify setup on a per-test basis?
 
-Use `UsefulTestCase.getTestName()` or create your own annotation which can be checked via `UsefulTestCase.annotatedWith()`.
+Use `UsefulTestCase.getTestName()` or create a custom annotation which can be checked via `UsefulTestCase.annotatedWith()`.
 
 ### How to run a performance test?
 

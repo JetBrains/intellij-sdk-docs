@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Virtual Files
 
@@ -46,7 +46,7 @@ If a file is deleted, its corresponding `VirtualFile` instance becomes invalid (
 
 ## How do I create a virtual file?
 
-Usually, you don't.
+Usually, there is no need to.
 As a general rule, files are created either through the [PSI API](psi.md) or through the regular [`java.io.File`](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/io/File.html) API.
 
 If one needs to create a file through VFS, use `VirtualFile.createChildData()` to create a `VirtualFile` instance and `VirtualFile.setBinaryContent()` to write some data to the file.
@@ -99,8 +99,8 @@ Use [`ProjectLocator`](%gh-ic%/platform/core-api/src/com/intellij/openapi/projec
 
 ## How do I extend VFS?
 
-To provide an alternative file system implementation (for example, an FTP file system), implement the [`VirtualFileSystem`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) class (most likely you'll also need to implement `VirtualFile`),
-and register your implementation via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.virtualFileSystem"/></include>.
+To provide an alternative file system implementation (for example, an FTP file system), implement the [`VirtualFileSystem`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/VirtualFileSystem.java) class (most likely, together with `VirtualFile`),
+and register the implementation via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.virtualFileSystem"/></include>.
 
 To hook into operations performed in the local file system (for example, when developing a version control system integration that needs custom rename/move handling), implement [`LocalFileOperationsHandler`](%gh-ic%/platform/analysis-api/src/com/intellij/openapi/vfs/LocalFileOperationsHandler.java) and register it via `LocalFileSystem.registerAuxiliaryFileOperationsHandler()`.
 

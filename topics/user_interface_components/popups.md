@@ -1,15 +1,15 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Popups
 
 <link-summary>Creating different kinds of popups.</link-summary>
 
 The IntelliJ Platform user interface makes extensive use of popups - semi-modal windows that have no chrome (explicit closing buttons) and disappear automatically on focus loss.
-Making use of these controls in your plugin ensures a consistent user experience between your plugin and the rest of the IDE.
+Making use of these controls in a plugin ensures a consistent user experience between the plugin and the rest of the IDE.
 
 Popups can optionally display a title, are optionally movable and resizable (and support remembering their size), and can be nested (show another popup when an item is selected).
 
-The [`JBPopupFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java) interface allows you to create popups that display different kinds of components, depending on your specific needs.
+The [`JBPopupFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java) interface creates popups that display different kinds of components, depending on specific needs.
 The most commonly used methods are:
 
 | Method                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -22,7 +22,7 @@ The most commonly used methods are:
 ### Action Groups
 
 Action group popups support different ways of choosing an action from the keyboard, in addition to the normal arrow keys.
-By passing one of the constants in the [`JBPopupFactory.ActionSelectionAid`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java) enumeration, you can choose whether an action can be selected by
+Pass one of the constants in the [`JBPopupFactory.ActionSelectionAid`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java) enumeration to choose whether an action can be selected by
 - pressing a key corresponding to its sequential number
 - typing part of its text (speed search)
 - pressing a mnemonic character
@@ -43,12 +43,12 @@ The key methods to override are:
 - `getTextFor()` - returning the text to display for an item
 - `onChosen()` - called when an item is selected
 
-By returning a new popup step from the `onChosen()` method, you can implement hierarchical (nested) popups.
+Return a new popup step from the `onChosen()` method to implement hierarchical (nested) popups.
 
 ### Showing Popup
 
-Once you've created the popup, you need to display it by calling one of the `show()` methods.
-You can let the IntelliJ Platform automatically choose the position based on the context, by calling `showInBestPositionFor()`, or specify the position explicitly through methods like `showUnderneathOf()` and `showInCenterOf()`.
+Once the popup is created, display it by calling one of the `show()` methods.
+Let the IntelliJ Platform automatically choose the position based on the context, by calling `showInBestPositionFor()`, or specify the position explicitly through methods like `showUnderneathOf()` and `showInCenterOf()`.
 
 > The `show()` methods return immediately and do not wait for the popup to be closed.
 >
@@ -57,4 +57,4 @@ You can let the IntelliJ Platform automatically choose the position based on the
 To perform some action when the popup is closed, use one of the following approaches:
 - attach a listener to it using the `addListener()` method
 - override a method of the popup contents such as [`PopupStep.onChosen()`](%gh-ic%/platform/core-ui/src/openapi/ui/popup/PopupStep.java)
-- attach an event handler to your own component within the popup
+- attach an event handler to a custom component within the popup

@@ -8,8 +8,8 @@
 
 The IntelliJ Platform Gradle Plugin introduces a set of tasks to handle activities of the plugin development for IntelliJ-based IDEs, such as building, verifying, testing, and publishing the plugin archive.
 
-Tasks related to the IntelliJ Platform Gradle Plugin are selectively applied to your project based on specific conditions or criteria defined within the plugin's context.
-This means that the plugin intelligently determines which tasks are relevant and necessary based on the current state or configuration of your project.
+Tasks related to the IntelliJ Platform Gradle Plugin are selectively applied to the project based on specific conditions or criteria defined within the plugin's context.
+This means that the plugin intelligently determines which tasks are relevant and necessary based on the current state or configuration of the project.
 This contextual application of tasks ensures that the plugin operates efficiently, performing only those actions that are appropriate for the given project environment at any time.
 
 Tasks have dependencies on each other, they inherit from [](tools_intellij_platform_gradle_plugin_task_awares.md) interfaces, respect configuration and build cache,

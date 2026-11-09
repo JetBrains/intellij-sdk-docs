@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Messaging Infrastructure
 
@@ -289,15 +289,15 @@ C3 *-- T1H3
 
 The example setup presents a simple hierarchy (the *application bus* is a parent of the *project bus*) with three subscribers for the same topic.
 
-If *topic1* defines broadcast direction as `TO_CHILDREN`, we get the following:
+If *topic1* defines broadcast direction as `TO_CHILDREN`, the following happens:
 1. A message is sent to *topic1* via *application bus*.
 2. *handler1* is notified about the message.
 3. The message is delivered to the subscribers of the same topic within *project bus* (*handler2* and *handler3*).
 
 The main benefit of broadcasting is managing subscribers that are bound to child buses but interested in parent bus-level events.
-In the example above, we may want to have project-specific functionality that reacts to the application-level events.
-All we need to do is to subscribe to the target topic within the *project bus*.
-No hard reference to the project-level subscriber will be stored at application-level then, i.e., we just avoided memory leak on project re-opening.
+In the example above, there may be project-specific functionality that reacts to the application-level events.
+All it needs to do is to subscribe to the target topic within the *project bus*.
+No hard reference to the project-level subscriber will be stored at application-level then, i.e., a memory leak is avoided on project re-opening.
 
 Broadcast configuration is defined per-topic.
 The following options are available:
@@ -356,7 +356,7 @@ When a message is sent to the target topic, the following happens:
 ### Relief Listeners Management
 
 Messaging infrastructure is very light-weight, so it's possible to reuse it at local sub-systems in order to relieve [Subscribers](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern){ignore-vars="true"} construction.
-Let's see what is necessary to do then:
+The following steps are necessary then:
 
 1. Define business interface to work with.
 2. Create shared message bus and topic that uses the interface above (_shared_ here means that either _subject_ or _subscribers_ know about them).
@@ -370,7 +370,7 @@ A manual implementation would require:
 
 ### Avoid Shared Data Modification from Subscribers
 
-We had a problem in a situation when two subscribers tried to modify the same document
+A problem occurred in a situation when two subscribers tried to modify the same document
 ([IDEA-71701](https://youtrack.jetbrains.com/issue/IDEA-71701)).
 
 The thing is that every document change is performed by the following scenario:
@@ -379,7 +379,7 @@ The thing is that every document change is performed by the following scenario:
 2. actual change is performed;
 3. _after change_ event is sent to all document listeners;
 
-We had the following then:
+The following happened then:
 
 1. _message1_ is sent to the topic with two subscribers;
 2. _message1_ is queued for both subscribers;

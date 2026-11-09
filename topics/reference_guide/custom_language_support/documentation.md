@@ -34,7 +34,7 @@ Detailed information on implementing these EPs can be found in the [](#documenta
 <primary-label ref="2023.1"/>
 
 Custom language developers have the flexibility to select from three distinct EPs for providing documentation to their users.
-To ensure clarity and avoid confusion, we provide a high-level summary of the overall approach,
+To ensure clarity and avoid confusion, the following is a high-level summary of the overall approach,
 outlining the primary components and their interactions.
 
 <procedure title="Overall Approach">
@@ -119,7 +119,7 @@ This implementation needs to be registered in <include from="snippets.topic" ele
 
 The main work is done in `generateDoc()`, which has two PSI element arguments:
 the target element for which the documentation is requested and the original element under the cursor.
-If IntelliJ Platform's choice of the target element isn't suitable for your language, you can override `getCustomDocumentationElement()`
+If IntelliJ Platform's choice of the target element is not suitable for the language, override `getCustomDocumentationElement()`
 and provide the correct element.
 
 Once these steps are completed, the following additional features can be implemented:
@@ -147,7 +147,7 @@ This provider should be registered with the <include from="snippets.topic" eleme
 
 How the documentation for the target element is created is up to the custom language developer.
 A common choice is to extract and format documentation comments.
-To format the documentation contents, you should use
+To format the documentation contents, use
 [`DocumentationMarkup`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationMarkup.java)
 to achieve a consistent output.
 

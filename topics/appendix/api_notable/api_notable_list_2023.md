@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Notable Changes in IntelliJ Platform and Plugins API 2023.*
 
@@ -24,7 +24,7 @@ Local inspections performance
 ### IntelliJ IDEA 2023.3
 
 Unbundled plugins
-: Several plugins (Android, Ant, GlassFish, Plugin DevKit) have been unbundled. The IDE will suggest installation if the project contains related framework dependency. If your plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
+: Several plugins (Android, Ant, GlassFish, Plugin DevKit) have been unbundled. The IDE will suggest installation if the project contains related framework dependency. If a plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 ## 2023.2
 
@@ -48,7 +48,7 @@ JCEF-based SVG viewer
 ### IntelliJ IDEA 2023.2
 
 Unbundled plugins
-: Several plugins (Play 1, Resin, Struts 2, tcServer) have been unbundled. The IDE will suggest installation if the project contains related framework dependency. If your plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
+: Several plugins (Play 1, Resin, Struts 2, tcServer) have been unbundled. The IDE will suggest installation if the project contains related framework dependency. If a plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 ## 2023.1
 

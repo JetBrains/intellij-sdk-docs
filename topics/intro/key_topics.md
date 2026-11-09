@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Key Topics
 
@@ -15,7 +15,7 @@ This page is intended to list the key topics that a plugin author would be inter
   Understanding this is necessary for building plugins.
 - [Extension Points](plugin_extensions.md) - how to register components with extension points, and how to find out what extension points are available.
 - [](virtual_file.md) - all file access should go through the Virtual File System, which abstracts and caches the file system.
-  It means you can work with files that are on the local file system, in a zip file or are old versions from version control.
+  It means that plugins can work with files that are on the local file system, in a zip file or are old versions from version control.
 
 > See also [](glossary.md) for a handy reference of common terms.
 >

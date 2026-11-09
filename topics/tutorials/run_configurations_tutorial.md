@@ -55,7 +55,7 @@ Implement corresponding configuration options class extending [`RunConfiguration
 
 ## Implement a `RunConfiguration`
 
-To make your changes visible from the UI, implement a new run configuration.
+To make the changes visible from the UI, implement a new run configuration.
 
 > In most of the cases it is sufficient derive a custom run configuration class from the [`RunConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfigurationBase.java).
 > If implementing specific settings externalization rules and I/O behaviour is required, use [`RunConfiguration`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfiguration.java) interface.

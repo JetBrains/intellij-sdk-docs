@@ -57,7 +57,7 @@ On clicking the Hamburger button, the menu items are shown on the right:
 
 <img src="ui_overview_main_toolbar_windows_expanded.png" alt="Main menu expanded" width="1000"/>
 
-You can also opt for showing the menu above the toolbar:
+The user can also opt for showing the menu above the toolbar:
 
 <img src="ui_overview_main_toolbar_windows_expanded_dark_down.png" alt="Main menu expanded on a separate line" width="1000"/>
 
@@ -122,7 +122,7 @@ Hints that show additional information like parameter types or variable values a
 See more in [implementation details](inlay_hints.md) and [user guidelines](https://www.jetbrains.com/help/idea/inlay-hints.html).
 
 ### Floating toolbar
-A small toolbar that appears when you select a code fragment in the editor. It contains buttons and controls for the most popular actions relevant in the current context,
+A small toolbar that appears when the user selects a code fragment in the editor. It contains buttons and controls for the most popular actions relevant in the current context,
 such as quick fixes, AI-actions, basic refactorings, and code-formatting options:
 
 <img src="ui_overview_floating_toolbar.png" alt="Floating toolbar" width="706"/>
@@ -137,7 +137,7 @@ The status bar on the bottom of the main window displays information on the curr
 
 ### Navigation bar
 The left part of the status bar by default is occupied by the navigation bar that is a compact alternative for the Project tool window.
-It shows a path to the selected file and allows you to go to other files and directories using this path:
+It shows a path to the selected file and allows the user to go to other files and directories using this path:
 
 <img src="ui_overview_navigation_bar.png" alt="Navigation bar" width="706"/>
 

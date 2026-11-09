@@ -11,13 +11,13 @@ Strategies and tools for exploring the IntelliJ Platform API, navigate extension
 Sometimes it can be challenging to implement plugin features for the IntelliJ Platform.
 This usually happens in two situations:
 
-- You're trying to implement a feature that you've already seen in the IDE, and now you need to find the appropriate extension point or
-  class that allows you to hook into the relevant mechanisms.
-- You've already started working on a feature, but you're unsure how the different parts of the IntelliJ Platform interact with each other.
+- Implementing a feature similar to one already existing in the IDE requires finding the appropriate extension point or
+  class to hook into the relevant mechanisms.
+- A feature is already in progress, but it is unclear how the different parts of the IntelliJ Platform interact with each other.
   In such situations, it is helpful to be able to navigate the IntelliJ Platform code confidently and to find relevant examples in other plugins.
 
-This guide provides a list of proven strategies that can help you overcome these challenges and gather enough information to continue your work.
-Furthermore, the tips below will help build your confidence as you explore the IntelliJ Platform.
+This guide provides a list of proven strategies that can help overcome these challenges and gather enough information to continue the work.
+Furthermore, the tips below will help build confidence when exploring the IntelliJ Platform.
 
 <include from="intellij_platform.md" element-id="pluginAlternatives"/>
 
@@ -29,23 +29,23 @@ Furthermore, the tips below will help build your confidence as you explore the I
 
 The most important resource for discovering new EPs is the extensive list provided directly in the
 [IntelliJ Platform SDK Documentation](intellij_platform_extension_point_list.md).
-On this page, you will find all the EPs, and each entry includes a link to the online source code and a link to the
+This page lists all the EPs, and each entry includes a link to the online source code and a link to the
 [IntelliJ Platform Explorer](https://jb.gg/ipe),
-which helps you find examples of this EP in other plugins.
+which shows examples of this EP in other plugins.
 Additionally, dedicated Extension Point Lists specific to IDEs are available under _Product Specific_.
 
 ### Use Autocompletion Information
 
 Another way to discover EPs is by using autocompletion or navigating through EP XML files.
-When you open a new tag in your <path>[plugin.xml](plugin_configuration_file.md)</path> file (inside the [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) block with `defaultExtensionNs="com.intellij"`),
+When opening a new tag in the <path>[plugin.xml](plugin_configuration_file.md)</path> file (inside the [`<extensions>`](plugin_configuration_file.md#idea-plugin__extensions) block with `defaultExtensionNs="com.intellij"`),
 the IDE will automatically suggest possible EPs.
 
 <img src="plugin_xml_completion_suggestion.gif" alt="Using Completion Suggestions" width="706" border-effect="rounded"/>
 
 This is the first step in discovering new features that haven't been explicitly mentioned in the IntelliJ Platform Docs.
-Note that in the completion popup, you can call
-[quick documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation),
-which then shows its properties, the implementation class, as well as a direct link to open usage results from
+Note that calling
+[quick documentation](https://www.jetbrains.com/help/idea/viewing-reference-information.html#inline-quick-documentation)
+in the completion popup shows the EP's properties, the implementation class, as well as a direct link to open usage results from
 [IntelliJ Platform Explorer](https://jb.gg/ipe).
 
 ### Search the IntelliJ Platform Code
@@ -53,11 +53,11 @@ which then shows its properties, the implementation class, as well as a direct l
 Use
 [Go to Declaration](https://www.jetbrains.com/help/idea/navigating-through-the-source-code.html#go_to_declaration)
 on EPs that are implemented in <path>plugin.xml</path> to navigate to its definition in the XML file.
-There you'll find more EPs, and browsing through this list helps you discover features you might not have been aware of.
+It contains more EPs, and browsing through this list helps to discover related features.
 [Search everywhere](https://www.jetbrains.com/help/idea/searching-everywhere.html)
 or
 [Go to file](https://www.jetbrains.com/help/idea/discover-intellij-idea.html#navigation-and-search)
-helps you search for all files containing extension points.
+finds all files containing extension points.
 Use <path>*ExtensionPoints.xml</path> as the search pattern and select the <control>All Places</control> scope.
 
 However, if a bundled or third-party plugin exposes EPs for others to implement, these EPs are defined in the <path>plugin.xml</path> files
@@ -67,8 +67,8 @@ One such example is the EPs exposed by the Markdown plugin that adds support for
 ### Use Advanced Search
 
 Explore the <path>plugin.xml</path> files of bundled or third party plugins.
-If you have the IntelliJ Platform sources available either in your own plugin project or in a separate instance,
-you can use
+If the IntelliJ Platform sources are available either in the plugin project or in a separate instance,
+use
 [Structural Search](https://www.jetbrains.com/help/idea/structural-search-and-replace.html)
 to find all the files that meet the following criteria:
 
@@ -80,13 +80,13 @@ to find all the files that meet the following criteria:
 
 The search results will contain many plugin XML files.
 To find specific implementations of EPs in third-party plugins, use the IntelliJ Platform Explorer ([](explore_api.md#search-the-intellij-platform-explorer)).
-Inspecting the <path>plugin.xml</path> files of other plugins not only helps you discover new features but also shows how things like menu entries or
+Inspecting the <path>plugin.xml</path> files of other plugins not only helps to discover new features but also shows how things like menu entries or
 notification groups can be defined in the XML file.
 
 ## Navigating the IntelliJ Platform Source Code
 
-The following tips will help you navigate through the IntelliJ Platform source code if you already have an idea of what you're looking for.
-It's important that you're familiar with
+The following tips help navigate through the IntelliJ Platform source code when the target of the search is roughly known.
+It's important to be familiar with
 [navigating](https://www.jetbrains.com/help/idea/reference-keymap-win-default.html#navigate_from_symbols) and
 [searching](https://www.jetbrains.com/help/idea/reference-keymap-win-default.html#find_everything)
 source code, as well as other basic features of IntelliJ IDEA.
@@ -113,26 +113,26 @@ Access to many features is provided through the `Manager` and `Service` classes,
 - `com.intellij.psi.PsiManager`
 
 Therefore, it can be helpful to search for classes that match the pattern `com.intellij.*Manager` and look through the list of results.
-Note that not all of these classes have the `com.intellij` prefix, and also that you can
-[define custom scopes](https://www.jetbrains.com/help/idea/configuring-scopes-and-file-colors.html)
-to limit your searches, for example, to only <path>idea-xxx.jar</path> files.
+Note that not all of these classes have the `com.intellij` prefix, and also that
+[custom scopes](https://www.jetbrains.com/help/idea/configuring-scopes-and-file-colors.html)
+can limit the searches, for example, to only <path>idea-xxx.jar</path> files.
 
 ### Inspect the Contents of Packages
 
-If you open an EP's interface or abstract class, it is always helpful to inspect the contents of its package.
+When opening an EP's interface or abstract class, it is always helpful to inspect the contents of its package.
 For instance, the interface of the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.sdkType"/></include> lives in the `com.intellij.openapi.projectRoots` package.
-Inspecting the contents of this package shows many related classes that will be useful if you are implementing this feature.
+Inspecting the contents of this package shows many related classes that will be useful when implementing this feature.
 
 ### Search for Symbol Names
 
-It is sometimes helpful to search directly for a method, class, and class member if you can guess a part of its name.
-You can either use
+It is sometimes helpful to search directly for a method, class, and class member if a part of its name can be guessed.
+Use either
 [Search Everything or Go to Symbol](https://www.jetbrains.com/help/idea/reference-keymap-win-default.html#find_everything).
-Note that you need to change the search scope to <control>All Places</control> in the search window to find all occurrences of symbols.
+To find all occurrences of symbols, change the search scope to <control>All Places</control> in the search window.
 
 ### Search by UI Text
 
-If you want to implement a functionality that is similar to an existing IDE feature, but you can't guess the name of the extension point or implementation class, the underlying implementation can be found by the texts displayed in the UI.
+To find the implementation of an existing IDE feature without knowing the name of its extension point or implementation class, search for the texts displayed in the UI.
 
 * Use the displayed text or its part as the [target for a search](https://www.jetbrains.com/help/idea/finding-and-replacing-text-in-project.html) within the IntelliJ Platform project.
   * If the text is localized, this will identify a bundle file there the text is defined. Copy the key from the bundle file identified by the search.
@@ -161,15 +161,15 @@ must not be used, see [](api_internal.md) for more details and replacements.
 {id="internalMode"}
 
 When developing plugins, always enable the [internal mode](enabling_internal.md) in IntelliJ IDEA.
-This provides access to a suite of tools to help you develop, debug, and test IntelliJ Platform plugins.
+This provides access to a suite of tools to help develop, debug, and test IntelliJ Platform plugins.
 
 One of its most helpful features is the [UI Inspector](internal_ui_inspector.md),
-which lets you investigate all parts of the UI of every IntelliJ-based IDE by simply clicking on them.
+which shows details of any part of the UI of every IntelliJ-based IDE after clicking on it.
 Equally important is the <ui-path>Tools | Internal Actions | UI Debugger</ui-path> tool.
-It will display all actions that are run by the IDE when you interact with UI elements, for example, by clicking a button.
+It will display all actions that are run by the IDE when interacting with UI elements, for example, by clicking a button.
 
 Finally, the internal mode provides the <ui-path>Tools | View PSI Structure…</ui-path> and <ui-path>Tools | View PSI Structure of Current File…</ui-path> actions,
-which allow you to analyze the [PSI tree](psi.md), please see [documentation](https://www.jetbrains.com/help/idea/psi-viewer.html).
+which visualize the [PSI tree](psi.md), please see [documentation](https://www.jetbrains.com/help/idea/psi-viewer.html).
 The [PsiViewer plugin](https://plugins.jetbrains.com/plugin/227-psiviewer) is a separate plugin with similar capabilities for inspecting PSI trees,
 and it comes with a dedicated tool window that displays information on the fly.
 However, it does not display information about [stubs](stub_indexes.md) or [formatting models](code_formatting.md).
@@ -178,12 +178,12 @@ However, it does not display information about [stubs](stub_indexes.md) or [form
 
 The [IntelliJ Platform Explorer](https://jb.gg/ipe)
 is a search tool for browsing [Extension Points](plugin_extensions.md) (EP) and [Listeners](plugin_listeners.md) inside existing implementations of all open-source IntelliJ Platform plugins published on [JetBrains Marketplace](https://plugins.jetbrains.com).
-You can navigate directly to the source files to find inspiration when implementing your own extensions and listeners for IntelliJ-based IDEs.
+Search results link directly to the source files, providing inspiration when implementing custom extensions and listeners for IntelliJ-based IDEs.
 
 ### Browse Available References
 
-The IntelliJ Platform SDK Documentation should always be the first resource you check for information.
-Here is a condensed list you can use for further reference:
+The IntelliJ Platform SDK Documentation should always be the first resource to check for information.
+Here is a condensed list for further reference:
 
 - [](useful_links.md)
 - [](learning_resources.md)

@@ -125,7 +125,7 @@ Within `DemoProjectSdkSetupValidator`:
 * `getFixHandler()` returns an `EditorNotificationPanel.ActionHandler` that enables the user to execute a quick fix to resolve the validation issue.
 
 > `ProjectSdkSetupValidator` will not work in IntelliJ Platform-based IDEs such as PyCharm.
-> In such cases, you should register an implementation of [`EditorNotificationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationProvider.java)
-> via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.editorNotificationProvider"/></include> and override the `createNotificationPanel()` method with the conditionality and panel setup you want.
+> In such cases, register an implementation of [`EditorNotificationProvider`](%gh-ic%/platform/platform-api/src/com/intellij/ui/EditorNotificationProvider.java)
+> via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.editorNotificationProvider"/></include> and override the `createNotificationPanel()` method with the required conditionality and panel setup.
 >
 {style="warning"}

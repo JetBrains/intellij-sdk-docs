@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Incompatible PHP OpenAPI changes in PhpStorm 2020.3
 
@@ -13,7 +13,7 @@ In PHP 8, the [throw expression has been converted to a statement](https://wiki.
 The following changes were introduced:
 * The PSI element `com.jetbrains.php.lang.psi.elements.PhpThrow` is now deprecated, and the new PSI element `com.jetbrains.php.lang.psi.elements.PhpThrowExpression` is introduced instead.
 
-* We encourage using `PhpThrowExpression`, since such expressions can appear in more places.
+* Prefer using `PhpThrowExpression`, since such expressions can appear in more places.
 
 * `PhpThrow` PSI layout has changed: it is now a `Statement` with a single child `PhpThrowExpression`. The `PhpThrow#getArgument` delegates to `PhpThrowExpression#getArgument` for now.
 
@@ -27,7 +27,7 @@ Previously supported only in argument lists, [trailing commas can now be used in
 The following changes were introduced:
 * The last psi-element of parameter lists can now be `PhpTokenTypes.opCOMMA`. This might affect getting the last parameter: earlier the last psi-element of `ParameterList` was always a parameter but now it can also  be a comma.
 
-* If you are using `PsiElement.getLastChild()` to get the last parameter, it is now recommended replacing it with getting a parameter by index via `ParameterList.getParameter(int)`.
+* If a plugin uses `PsiElement.getLastChild()` to get the last parameter, it is now recommended replacing it with getting a parameter by index via `ParameterList.getParameter(int)`.
 
 See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54481) for details.
 
@@ -37,7 +37,7 @@ With this PHP 8 change, it is now possible to catch exceptions [without capturin
 The following changes were introduced:
 * `Catch` now might not have a variable inside.
   The `@Nullable` annotation for the method `Catch.getException()` that returns a variable was already available.
-  However, if you are getting a variable from `Catch` differently, or ignoring the `@Nullable` annotation, you need to be aware of this case effective since PHP 8.0.
+  However, if a plugin gets a variable from `Catch` differently, or ignores the `@Nullable` annotation, it must handle this case effective since PHP 8.0.
 
 See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54484) for details.
 
@@ -74,10 +74,10 @@ The following changes were introduced:
 
 * Possible attributes' owners (`com.jetbrains.php.lang.psi.elements.Function`, `com.jetbrains.php.lang.psi.elements.Parameter`, and so on) can now have zero or more instances of `PhpAttributesList` as first children.
   This means that now it is not safe to assume that `PhpPsiElement#getFirstChild` will return some token.
-  We encourage finding the needed tokens by `IElementType` manually.
+  Prefer finding the needed tokens by `IElementType` manually.
 
 * If a PHPDoc comment of a named element is preceded by `PhpAttribute`, it will not be a sibling of a named element, but rather a child.
-  We encourage using `PhpNamedElement#getDocComment` (which is already updated to reflect the changes) instead of finding the PHPDoc comment manually.
+  Prefer using `PhpNamedElement#getDocComment` (which is already updated to reflect the changes) instead of finding the PHPDoc comment manually.
 
 * The stub tree structure has changed for some elements.
   If this causes problems in plugins, consider using higher-level facilities or [contact support](https://www.jetbrains.com/help/phpstorm/getting-started.html#contact-support) for additional help.

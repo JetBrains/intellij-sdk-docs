@@ -117,7 +117,7 @@ Note that this method returns `null` if the file or directory does not belong to
 
 ### Checking Whether a File or Directory Is Related to the Project Libraries
 
-The [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods you can use to check whether the specified file belongs to the project library classes or library sources:
+The [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods to check whether the specified file belongs to the project library classes or library sources:
 * `isLibraryClassFile()`: Returns `true` if the specified `virtualFile` is a compiled class file.
 * `isInLibraryClasses()`: Returns `true` if the specified `virtualFileOrDirectory` belongs to library classes.
 * `isInLibrarySource()`: Returns `true` if the specified `virtualFileOrDirectory` belongs to library sources.

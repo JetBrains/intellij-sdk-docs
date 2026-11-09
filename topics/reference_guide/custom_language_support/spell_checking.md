@@ -32,10 +32,10 @@ by providing methods to define:
 
 The class already contains a default strategy for spell checking of basic parts such as comments,
 identifiers and plain text.
-If you don't need anything else, you can just inherit from this class and register it.
+If nothing else is needed, just inherit from this class and register it.
 
-If you need to check spelling for some specific elements in your language, then override `getTokenizer()`
-and use `isMyContext()` to determine if a PSI element should be checked by your strategy.
+To check spelling for some specific elements in the language, override `getTokenizer()`
+and use `isMyContext()` to determine if a PSI element should be checked by the strategy.
 The `getTokenizer()` method returns an instance of
 [Tokenizer](%gh-ic%/spellchecker/src/com/intellij/spellchecker/tokenizer/Tokenizer.java)
 and is explained below.
@@ -57,8 +57,8 @@ For these simple cases, `SpellcheckingStrategy` already contains predefined toke
 However, there are situations where only fragments of the PSI element are textual content.
 In these cases, `tokenize()` can take care of extracting the correct text-ranges and feed them
 sequentially into the `TokenConsumer`.
-If elements in your language require such special handling, then define a tokenizer by deriving from `Tokenizer`
-and implement `tokenize()` with the logic you need.
+If elements in the language require such special handling, then define a tokenizer by deriving from `Tokenizer`
+and implement `tokenize()` with the required logic.
 
 **Example:**
 [`MethodNameTokenizerJava`](%gh-ic%/java/java-impl/src/com/intellij/spellchecker/MethodNameTokenizerJava.java)

@@ -135,13 +135,13 @@ NPM
 The property accepts a string or an array of strings with relative paths to Web Types files shipped with the package.
 
 Local Project
-: In your JavaScript projects in `package.json` files, you can specify `web-types` property similarly to the NPM package.
+: In JavaScript projects, specify the `web-types` property in `package.json` files similarly to the NPM package.
 The property accepts a string or an array of strings with relative paths to Web Types files within the project.
 
 IDE Plugin
-: You can ship Web Types JSON with your IDE plugin.
+: Web Types JSON can be shipped with an IDE plugin.
 To point an IDE to its location, use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.polySymbols.webTypes"/></include> and pass the file location in `source` attribute value.
-With `enableByDefault` attribute, you can choose whether the Web Types file should be contributed to Poly Symbols scope by default,
+The `enableByDefault` attribute specifies whether the Web Types file should be contributed to Poly Symbols scope by default,
 or only if an NPM package with the same name is present in the project.
 
 ## Special Properties
@@ -359,7 +359,7 @@ A Vue `/html/vue-directives` contribution supports:
 
 ### Web Components
 
-For Lit support, install it in your Node project as a `devDependency` `@web-types/lit`.
+For Lit support, install it in the Node project as a `devDependency` `@web-types/lit`.
 Web Types are available
 [here](https://github.com/JetBrains/web-types/blob/master/packages/lit/lit%402.0.0/lit.web-types.json)
 for reference.

@@ -244,7 +244,7 @@ Use `ErrorReportSubmitter` when:
 
 Use `ErrorReportSink` when:
 - the plugin should observe failures even if the user does nothing
-- the goal is telemetry, counting, alerting, or sending reports to your backend when possible, without guaranteeing delivery
+- the goal is telemetry, counting, alerting, or sending reports to a backend when possible, without guaranteeing delivery
 - automatic freeze visibility is important
 
 Use both APIs when the plugin needs background observability during normal usage and also a richer user-driven reporting path for manual submission.

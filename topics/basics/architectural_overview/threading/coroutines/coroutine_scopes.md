@@ -150,7 +150,7 @@ Using these scopes could easily lead to project or plugin class leaks.
 ### Do Not Use Intersection Scopes
 
 There is no API for retrieving **Application×Plugin** and **Project×Plugin** [intersection scopes](#intersection-scopes),
-but let's assume there is a method exposing the **Project×Plugin** scope:
+but assume there is a method exposing the **Project×Plugin** scope:
 
 ```kotlin
 /**

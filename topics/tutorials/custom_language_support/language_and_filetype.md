@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 2. Language and File Type
 
@@ -71,7 +71,7 @@ The Simple Language file type is registered via the <include from="snippets.topi
 
 [Run](creating_plugin_project.md#running-the-plugin) the plugin.
 
-Create an empty file with the extension <path>.simple</path>, and IntelliJ IDEA automatically associates it with our language.
+Create an empty file with the extension <path>.simple</path>, and IntelliJ IDEA automatically associates it with the Simple language.
 Note the appearance of the Simple Language file icon next to the <path>test.simple</path> file in the <control>Project</control> Tool Window, and the editor tab for the file.
 
 ![File Type Factory](file_type_factory.png){width="800"}

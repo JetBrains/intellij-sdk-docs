@@ -4,7 +4,7 @@
 
 <link-summary>Defining product compatibility by specifying plugin since-build and until-build ranges.</link-summary>
 
-Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in your plugin descriptor.
+Use this reference of build number ranges to specify the correct `since-build` and `until-build` values in the plugin descriptor.
 
 Setting the actual values in <path>[plugin.xml](plugin_configuration_file.md)</path> is managed by the `patchPluginXml` Gradle task
 (Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml), [1.x](tools_gradle_intellij_plugin.md#tasks-patchpluginxml)).
@@ -63,7 +63,7 @@ This gives more flexibility for third-party plugins and IDE developers.
 Plugins may specify compatibility versions more precisely (for example, requiring a specific bugfix release); IDE vendors may have build numbers based on a specific IntelliJ Platform version and specify an additional internal version (for example, `256.42` in `XX-162.94.11.256.42`) to allow plugin developers for their IDE to specify compatibility.
 
 Multipart build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`.
-Usually you should omit the product ID and use only the branch number and build number, for example:
+Usually, omit the product ID and use only the branch number and build number, for example:
 
 <compare type="top-bottom" first-title="Any 213 branch version" second-title="Specific build number">
 

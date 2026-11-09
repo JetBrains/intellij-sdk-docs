@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Version Control Systems
 
@@ -105,7 +105,7 @@ Register `AbstractVcs` implementation in <include from="snippets.topic" element-
 </idea-plugin>
 ```
 
-Here `name` is the unique name of the VCS (this must match the string returned by your implementation of `AbstractVcs.getName()`), and `vcsClass` is your implementation class.
+Here `name` is the unique name of the VCS (this must match the string returned by the implementation of `AbstractVcs.getName()`), and `vcsClass` is the implementation class.
 
 ### `ChangeProvider`
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Incompatible Changes in IntelliJ Platform and Plugins API 2020.*
 
@@ -166,7 +166,7 @@ Support for JavaFX deprecated
 : This was an internal utility method not intended for use in plugins. Use `FileTypeManager.getInstance().findFileTypeByName()` instead.
 
 `javassist` package removed
-: [Javassist](https://github.com/jboss-javassist/javassist) library was removed, bundle it with your plugin instead.
+: [Javassist](https://github.com/jboss-javassist/javassist) library was removed, bundle it with the plugin instead.
 
 `com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter.INSTANCES` field removed
 : This field leaked instances of plugin's extensions on plugin unloading. Use `com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter#EP_NAME.getExtensionList()` directly instead.
@@ -354,7 +354,7 @@ Images module functionality (package `org.intellij.images.*`) extracted to plugi
       plugins = ['platform-images']
     }
     ```
-  * If your plugin depends on other plugins using `com.intellij.platform.images` (e.g., CSS), please make sure to use `gradle-intellij-plugin` >=0.4.19
+  * If a plugin depends on other plugins using `com.intellij.platform.images` (e.g., CSS), please make sure to use `gradle-intellij-plugin` >=0.4.19
 
 ### Python Plugin 2020.1
 

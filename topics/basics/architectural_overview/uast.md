@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # UAST – Unified Abstract Syntax Tree
 
@@ -183,7 +183,7 @@ Otherwise, `UastVisitor` will continue the walk into depth.
 or [`UastHintedVisitorAdapter`](%gh-ic%/java/java-analysis-api/src/com/intellij/uast/UastHintedVisitorAdapter.kt).
 The latter is preferable as it offers better performance and more predictable results.
 
-As a general rule, it's recommended to abstain from using `UastVisitor`: if you don't need to process many `UElement`s of different types and if the structure of elements is not very important, then it is better to walk the PSI-tree using `PsiElementVisitor` and [convert](#psi-to-uast-conversion) each `PsiElement` to its corresponding UAST explicitly via `UastContext.toUElement()`.
+As a general rule, it's recommended to abstain from using `UastVisitor`: if there is no need to process many `UElement`s of different types and if the structure of elements is not very important, then it is better to walk the PSI-tree using `PsiElementVisitor` and [convert](#psi-to-uast-conversion) each `PsiElement` to its corresponding UAST explicitly via `UastContext.toUElement()`.
 
 See also inspection <control>Plugin DevKit | Code | 'UastHintedVisitorAdapter' hints problems</control> (2024.2+).
 
@@ -197,7 +197,7 @@ Converting to UAST should be performed only when necessary.
 For instance, converting the whole `PsiFile` to `UFile` and then walk it solely to collect `UMethod` declarations is inefficient.
 Instead, walk the `PsiFile` and convert each encountered matching element to `UMethod` explicitly.
 
-UAST is lazy when you pass visitors to `UElement.accept()` or getting `UElement#uastParent`.
+UAST is lazy when passing visitors to `UElement.accept()` or getting `UElement#uastParent`.
 
 For really hard performance optimization consider using `UastLanguagePlugin.getPossiblePsiSourceTypes()` to pre-filter `PsiElement`s before converting them to UAST.
 
@@ -230,8 +230,8 @@ But at the same time, all JVM language plugins implement `PsiMethod`, `PsiClass`
 These implementations could be [obtained](#uast-to-psi-conversion) via the `UElement#javaPsi` property.
 
 So the question is: "What should I use to represent the Java declaration in my code?".
-The answer is: We encourage using `PsiMethod`, `PsiClass` as common interfaces for Java declarations regardless of the JVM language
-and discourage exposing the UAST interfaces in the API.
+The answer is: prefer using `PsiMethod`, `PsiClass` as common interfaces for Java declarations regardless of the JVM language
+and avoid exposing the UAST interfaces in the API.
 
 Note: for method bodies, there are no such alternatives, so exposing, for instance, the `UExpression` is not discouraged.
 Still, consider exposing the raw `PsiElement` instead.
@@ -253,7 +253,7 @@ could be different, not only in the number of elements, but also in their order.
 
 ## Using UAST in Plugins
 
-To use UAST in your plugin, add a [dependency](plugin_dependencies.md) on the bundled [](idea.md#java-plugin).
+To use UAST in a plugin, add a [dependency](plugin_dependencies.md) on the bundled [](idea.md#java-plugin).
 
 ### Language Extensions
 

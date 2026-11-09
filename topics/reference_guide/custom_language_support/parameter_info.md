@@ -29,7 +29,7 @@ to display parameter information at the caret position as well as methods to upd
 Language authors implement
 [`ParameterInfoHandler`](%gh-ic%/platform/lang-api/src/com/intellij/lang/parameterInfo/ParameterInfoHandler.java)
 which takes two type parameters: `ParameterOwner` and `ParameterType`.
-For the explanations that follow, we assume that `ParameterOwner` is a PSI element that represents a function call in a language,
+The explanations that follow assume that `ParameterOwner` is a PSI element that represents a function call in a language,
 and `ParameterType` represents (possibly several) function definitions.
 
 Additionally, `ParameterInfoHandler` uses several context types that are mutable and used to adjust what and how parameter information is displayed.

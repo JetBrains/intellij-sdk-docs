@@ -11,7 +11,7 @@ Run the test and make sure it's successful.
 
 1. Open the <control>Gradle</control> Tool Window.
 2. Select the <control>simple_language_plugin</control> node.
-  You may need to reimport it as a Gradle project.
+  It may be necessary to reimport it as a Gradle project.
 3. Drill down under <control>simple_language_plugin</control> to <control>Tasks</control>, <control>verification</control>, <control>test</control> task.
 4. Run the <control>test</control> task.
 

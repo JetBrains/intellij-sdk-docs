@@ -39,7 +39,7 @@ Add actions and settings that are frequently used:
   * If possible, add usage statistics logging for toolbar items that lack it. Check statistics after 3–4 weeks of use. If the items are used by less than 5% of the feature's users, consider removing them from the toolbar.
 
 
-<note>Exception: some actions can be used most frequently because they are widely known, like the Copy and Paste actions. Place such actions on the toolbar only if you want to promote them. Otherwise, place them only in a context menu or the main menu.</note>
+<note>Exception: some actions can be used most frequently because they are widely known, like the Copy and Paste actions. Place such actions on the toolbar only to promote them. Otherwise, place them only in a context menu or the main menu.</note>
 
 ### New items
 When adding a new action or setting for a UI area that already has a toolbar: if the new item is expected to be used frequently, add it to increase its discoverability.

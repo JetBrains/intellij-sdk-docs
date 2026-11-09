@@ -54,7 +54,7 @@ This results in the `NoClassDefFoundError` exception:
 java.lang.NoClassDefFoundError: org/opentest4j/AssertionFailedError
 ```
 
-To apply the workaround, add the missing `org.opentest4j:opentest4j` test dependency to your Gradle build configuration:
+To apply the workaround, add the missing `org.opentest4j:opentest4j` test dependency to the Gradle build configuration:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -92,7 +92,7 @@ Caused by: java.lang.NoClassDefFoundError: junit/framework/TestCase
 Caused by: java.lang.NoClassDefFoundError: org/junit/rules/TestRule
 ```
 
-To apply the workaround, add the JUnit4 test runtime dependency to your Gradle build configuration:
+To apply the workaround, add the JUnit4 test runtime dependency to the Gradle build configuration:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -212,7 +212,7 @@ intellijPlatform {
 </tabs>
 
 
-As a result of disabling building searchable options, the [Settings](settings.md) that your plugin provides won't be searchable in the <ui-path>Settings</ui-path> dialog.
+As a result of disabling building searchable options, the [Settings](settings.md) that the plugin provides won't be searchable in the <ui-path>Settings</ui-path> dialog.
 Disabling of the task is suggested for plugins that are not intended to provide custom settings.
 
 ### Gradle fails with `The request for this plugin could not be satisfied`
@@ -292,7 +292,7 @@ Because of that, JaCoCo – and other external tools that rely on classes availa
 
 In addition, if the code instrumentation is enabled (see [`intellij.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode)), it's required to switch to the compiled and instrumented output instead of default compiled classes.
 
-The following changes to your Gradle configuration file:
+The following changes to the Gradle configuration file:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -345,7 +345,7 @@ Please upgrade to Kotlin 1.9.0. See the [](using_kotlin.md#incremental-compilati
 
 ### How to check the latest available EAP release?
 
-To list the IntelliJ Platform releases matching your criteria (IntelliJ Platform type, release channels, or build range),
+To list the IntelliJ Platform releases matching specific criteria (IntelliJ Platform type, release channels, or build range),
 use the [](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases) task as follows:
 
 <tabs group="languages">
@@ -421,7 +421,7 @@ Run the build once without `--offline` to populate the caches, then subsequent o
 
 ### The currently selected Java Runtime is not JetBrains Runtime (JBR)
 
-When running tests or IDE with your plugin loaded, it is necessary to use JetBrains Runtime (JBR).
+When running tests or IDE with the plugin loaded, it is necessary to use JetBrains Runtime (JBR).
 In the case, no JBR is found in the plugin configuration, there's the following warning logged by the [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration) task:
 
 ```text
@@ -431,7 +431,7 @@ Please use IntelliJ Platform binary release with bundled JBR
 or define it explicitly with project dependencies or JVM Toolchain.
 ```
 
-To correctly run your tests or a specific IDE:
+To correctly run the tests or a specific IDE:
 
 - use a binary IDE distribution with bundled JetBrains Runtime, i.e., by referring to a local IDE [`local(localPath)`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#custom-target-platforms)
   <tabs group="languages">
@@ -564,13 +564,13 @@ This is caused by the `undertow` library used for custom repository creation, wh
 
 To resolve this issue:
 
-1. Set the `smallrye.cpu.determine-cache-level` system property to `false` in your <path>gradle.properties</path> file:
+1. Set the `smallrye.cpu.determine-cache-level` system property to `false` in the <path>gradle.properties</path> file:
 
    ```properties
    systemProp.smallrye.cpu.determine-cache-level=false
    ```
 
-2. Force the `io.smallrye.common:smallrye-common-cpu` dependency version to `2.10.0` in the `buildscript` block of your <path>build.gradle.kts</path> (or <path>build.gradle</path>) file:
+2. Force the `io.smallrye.common:smallrye-common-cpu` dependency version to `2.10.0` in the `buildscript` block of the <path>build.gradle.kts</path> (or <path>build.gradle</path>) file:
 
    <tabs group="languages">
    <tab title="Kotlin" group-key="kotlin">

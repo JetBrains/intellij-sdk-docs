@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Internal API Migration
 
@@ -9,10 +9,10 @@ Lists private APIs and their replacements in IntelliJ Platform and plugins.
 <link-summary>Lists private API annotated with @ApiStatus.Internal and corresponding replacement.</link-summary>
 
 > How to address the **private API** usage violations:
-> 1. Look through the suggested replacements below, update your plugin accordingly, and upload a new version to JetBrains Marketplace.
-> 2. If you need help with the replacements, please [create a YouTrack issue](https://youtrack.jetbrains.com/newIssue?project=IJPL&c=Type%20Task&c=Subsystem%20Internal%20API).
->   Please note that we may not be able to provide a replacement quickly, and in some cases, a replacement might not be available at all.
-> 3. If you have any other issues or questions related to the Internal API usage, please [create a dedicated YouTrack issue](https://youtrack.jetbrains.com/newIssue?project=IJPL&c=Type%20Task&c=Subsystem%20Internal%20API).
+> 1. Look through the suggested replacements below, update the plugin accordingly, and upload a new version to JetBrains Marketplace.
+> 2. For help with the replacements, please [create a YouTrack issue](https://youtrack.jetbrains.com/newIssue?project=IJPL&c=Type%20Task&c=Subsystem%20Internal%20API).
+>   Please note that JetBrains may not be able to provide a replacement quickly, and in some cases, a replacement might not be available at all.
+> 3. For any other issues or questions related to the Internal API usage, please [create a dedicated YouTrack issue](https://youtrack.jetbrains.com/newIssue?project=IJPL&c=Type%20Task&c=Subsystem%20Internal%20API).
 >
 
 This page lists commonly used API annotated with [`@ApiStatus.Internal`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java),
@@ -36,7 +36,7 @@ Each entry is mapped to its corresponding _Replacement_, pointing to the recomme
 > In some cases, such documentation might not be available inside the IDE for the current target platform version.
 > Use <control>Go to file</control> to browse the latest version in the [intellij-community](%gh-ic%/) GitHub repository instead.
 >
-> Use the <control>Feedback</control> widget displayed on the right if you encounter missing or unclear information.
+> Use the <control>Feedback</control> widget displayed on the right to report missing or unclear information.
 >
 {style="note"}
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PSI References
 
@@ -56,7 +56,7 @@ Typically, references can be contributed to elements that don't have their own r
 References are also often contributed to non-code files, such as XML or JSON.
 
 Contributing references is one of the most common ways to extend an existing language.
-For example, your plugin can contribute references to Java code, even though the Java PSI is part of the platform and not defined in your plugin.
+For example, a plugin can contribute references to Java code, even though the Java PSI is part of the platform and not defined in the plugin.
 
 Implement [`PsiReferenceContributor`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceContributor.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.psi.referenceContributor"/></include>.
 
@@ -81,11 +81,11 @@ JavaScript is a dynamically typed language, so the IDE cannot always precisely d
 To handle this, it provides a reference that can be resolved to multiple possible elements.
 Such references implement the [`PsiPolyVariantReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiPolyVariantReference.java) interface.
 
-For resolving a `PsiPolyVariantReference`, you call its `multiResolve()` method.
+To resolve a `PsiPolyVariantReference`, call its `multiResolve()` method.
 The call returns an array of [`ResolveResult`](%gh-ic%/platform/core-api/src/com/intellij/psi/ResolveResult.java) objects.
 Each of the objects identifies a PSI element and also specifies whether the result is valid.
-For example, suppose you have multiple Java method overloads and a call with arguments not matching any of the overloads.
-In that case, you will get back `ResolveResult` objects for all the overloads, and `isValidResult()` returns `false` for all of them.
+For example, suppose there are multiple Java method overloads and a call with arguments not matching any of the overloads.
+In that case, `multiResolve()` returns `ResolveResult` objects for all the overloads, and `isValidResult()` returns `false` for all of them.
 
 ## Searching for References
 

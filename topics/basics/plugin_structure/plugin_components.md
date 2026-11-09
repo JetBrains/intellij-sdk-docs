@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Components (Deprecated)
 <primary-label ref="Deprecated"/>
@@ -25,7 +25,7 @@ To manage some state or logic that is only necessary when the user performs a sp
 
 ### Persisting State
 
-To store the state of your plugin at the application or project level, use a [Service](plugin_services.md) and implement the `PersistentStateComponent` interface.
+To store the state of a plugin at the application or project level, use a [Service](plugin_services.md) and implement the `PersistentStateComponent` interface.
 See [Persisting State of Components](persisting_state_of_components.md) for details.
 
 ### Subscribing to Events

@@ -31,7 +31,7 @@ plugins {
 
 Early 2.x releases introduced a dedicated migration plugin to ease the transition from Gradle IntelliJ Plugin 1.x.
 
-When you apply the [](#plugin-id-change), Gradle will fail to process the <path>build.gradle.kts</path> file as the old [](#intellij-extension) doesn't exist anymore.
+After applying the [](#plugin-id-change), Gradle will fail to process the <path>build.gradle.kts</path> file as the old [](#intellij-extension) doesn't exist anymore.
 
 > The `org.jetbrains.intellij.platform.migration` plugin was removed in IntelliJ Platform Gradle Plugin `2.12.0`.
 > Use this migration guide as a manual checklist and apply only `org.jetbrains.intellij.platform`.
@@ -240,7 +240,7 @@ This task is no longer required, but when switching from 1.x, Gradle may still w
 > Task 'setupDependencies' not found in root project 'projectName'.
 > ```
 >
-> To fix this problem, remove any references to `setupDependencies` task from your project.
+> To fix this problem, remove any references to `setupDependencies` task from the project.
 >
 {title="Task 'setupDependencies' not found" style="warning"}
 

@@ -134,7 +134,7 @@ providing buttons for configuring options in custom dialogs
 
 ## UI-Based Inspection Options
 
-> If you target versions 2023.1+ only, it is highly recommended to implement [](#declarative-inspection-options).
+> If the plugin targets versions 2023.1+ only, it is highly recommended to implement [](#declarative-inspection-options).
 
 UI-based inspection options are provided by implementing a configuration panel using Swing components and returning it from [`InspectionProfileEntry.createOptionsPanel()`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/InspectionProfileEntry.java).
 It returns the panel with option components that bind the provided values to the inspection class fields or other properties, similarly as in the [declarative](#declarative-inspection-options) approach.
@@ -149,8 +149,8 @@ For simple customization requirements, see also:
 * [`MultipleCheckboxOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/MultipleCheckboxOptionsPanel.java) for multiple checkboxes
 * [`SingleIntegerFieldOptionsPanel`](%gh-ic%/platform/lang-api/src/com/intellij/codeInspection/ui/SingleIntegerFieldOptionsPanel.java) for a single Integer (text field)
 
-> Be careful when you have a hierarchy of inspection classes.
+> Be careful with a hierarchy of inspection classes.
 > For example, if an inspection superclass is converted to the declarative approach, any `createOptionsPanel()` methods in subclasses will be ignored.
-> If you can't convert all of them at once, you may temporarily add `getOptionsPane()` returning `OptPane.EMPTY` to subclasses, where `createOptionsPanel()` is still used.
+> If not all of them can be converted at once, temporarily add `getOptionsPane()` returning `OptPane.EMPTY` to subclasses, where `createOptionsPanel()` is still used.
 >
 {style="warning"}

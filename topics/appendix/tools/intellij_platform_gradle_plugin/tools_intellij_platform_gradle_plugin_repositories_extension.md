@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Repositories Extension
 
@@ -82,7 +82,7 @@ It includes:
 {#mirrored-repositories}
 
 When Gradle runs in an isolated network, it cannot reach the public repositories used by IntelliJ Platform artifacts, plugins, and additional dependencies.
-In such setups, avoid using `defaultRepositories()` and replace it with your internal mirror repositories.
+In such setups, avoid using `defaultRepositories()` and replace it with internal mirror repositories.
 Even with mirrors, keep `localPlatformArtifacts()` in `repositories {}` because it is a local Ivy repository required for bundled plugins, local IDEs, and other local artifacts.
 
 The `defaultRepositories()` helper adds the following remote repositories.

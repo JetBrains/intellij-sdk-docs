@@ -29,7 +29,7 @@ the dropdown menu:
 ![Related actions in a split button](split_button_related_actions.png){width=706}
 ### The second action is dangerous and uncommon
 Dangerous actions can destroy users’ data and cannot be easily undone.
-To avoid accidental clicks on a dangerous action, you can hide it in the dropdown menu if this action is uncommon, for example <control>Force Push</control>:
+To avoid accidental clicks on a dangerous action, hide it in the dropdown menu if this action is uncommon, for example <control>Force Push</control>:
 
 ![Dangerous action in a split button](split_button_dangerous_action.png){width=706}
 

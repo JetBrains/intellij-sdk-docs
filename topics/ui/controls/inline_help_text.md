@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Inline Help Text
 
@@ -291,7 +291,7 @@ panel {
 }
 ```
 
-You can find more examples by invoking the **Tools | Internal Actions | UI | Kotlin UI DSL | UI DSL Showcase** action (available in [internal mode](enabling_internal.md) and clicking the **View source** links on specific pages.
+Find more examples by invoking the **Tools | Internal Actions | UI | Kotlin UI DSL | UI DSL Showcase** action (available in [internal mode](enabling_internal.md) and clicking the **View source** links on specific pages.
 
 </chapter>
 </chapter>

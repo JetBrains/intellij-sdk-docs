@@ -139,7 +139,7 @@ The following helpers are still available for resolving pre-2025.3 product lines
 ### Dependency Configuration Parameters
 
 The last argument passed to the dependency helpers is a `configure` closure that allows to configure the dependency.
-It allows you to specify the following parameters:
+The following parameters can be specified:
 
 | Parameter           | Type                   | Description                                                                                                                         |
 |---------------------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
@@ -271,7 +271,7 @@ dependencies {
 The Multi-OS Archives don't bundle [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) needed to run the IDE locally, perform testing, and other crucial operations.
 Therefore, it is required to explicitly add a dependency on JetBrains Runtime (JBR) by adding extra `jetbrainsRuntime()` repository and dependency entries.
 
-It is advised to rely on installer releases, but targeting EAP multi-OS archives helps when making sure your plugin will work in the upcoming IDE releases.
+It is advised to rely on installer releases, but targeting EAP multi-OS archives helps when making sure the plugin will work in the upcoming IDE releases.
 
 To apply required repositories, use [](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) or explicit [](tools_intellij_platform_gradle_plugin_repositories_extension.md#intellij-maven-repositories) helpers.
 

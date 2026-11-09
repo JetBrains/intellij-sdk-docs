@@ -1,10 +1,10 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Notable Changes in IntelliJ Platform and Plugins API 2020.*
 
 <link-summary>List of known Notable API Changes in 2020.*</link-summary>
 
-We've published our roadmap for the IntelliJ Platform for 2020: [Part I](https://blog.jetbrains.com/idea/2019/12/intellij-platform-roadmap-for-2020/) [Part II](https://blog.jetbrains.com/idea/2020/01/intellij-based-ide-features-roadmap-for-2020/)
+JetBrains has published the roadmap for the IntelliJ Platform for 2020: [Part I](https://blog.jetbrains.com/idea/2019/12/intellij-platform-roadmap-for-2020/) [Part II](https://blog.jetbrains.com/idea/2020/01/intellij-based-ide-features-roadmap-for-2020/)
 
 ## 2020.3
 
@@ -89,7 +89,7 @@ Delegate Run Anything/Terminal commands to IDE features
 : Switch to matching IDE feature by implementing [`TerminalShellCommandHandler`](%gh-ic%/platform/execution-impl/src/com/intellij/terminal/TerminalShellCommandHandler.kt) (<include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.terminal.shellCommandHandler"/></include>). [Blog post](https://blog.jetbrains.com/idea/2020/07/run-ide-features-from-the-terminal/)
 
 Deprecating JavaFX in favor of JCEF
-: We recommend switching to [JCEF](embedded_browser_jcef.md), please see [blog post](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) for details.
+: JetBrains recommends switching to [JCEF](embedded_browser_jcef.md), please see [blog post](https://blog.jetbrains.com/platform/2020/07/javafx-and-jcef-in-the-intellij-platform/) for details.
 
 ASM Library 8.0.1
 : Updated from 7.0.1.
@@ -100,7 +100,7 @@ Validating Lexer for editor highlighting
 ### IntelliJ IDEA 2020.2
 
 Unbundled plugins
-: Several plugins (ASP, CFML, Flash/Flex, GWT, JBoss Seam Pageflow, JBoss Seam, JBoss jBPM, OSGi, Play Framework, Resin, Seam Navigation, Tapestry, Virgo/dmServer) for no longer actively maintained technology have been unbundled. If your plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
+: Several plugins (ASP, CFML, Flash/Flex, GWT, JBoss Seam Pageflow, JBoss Seam, JBoss jBPM, OSGi, Play Framework, Resin, Seam Navigation, Tapestry, Virgo/dmServer) for no longer actively maintained technology have been unbundled. If a plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 ## 2020.1
 
@@ -140,4 +140,4 @@ EOL for JetBrains TFS Plugin
 : Please use [Azure DevOps](https://plugins.jetbrains.com/plugin/7981-azure-devops) plugin instead, see [blog post](https://blog.jetbrains.com/idea/2020/01/end-of-support-for-tfs-2014-and-older/) for more details.
 
 Unbundled plugins
-: Several plugins (Cloud Foundry, Google App Engine) for no longer actively maintained technology have been unbundled. If your plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
+: Several plugins (Cloud Foundry, Google App Engine) for no longer actively maintained technology have been unbundled. If a plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).

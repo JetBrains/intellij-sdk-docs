@@ -37,7 +37,7 @@ Implementations of `NamesValidator` are registered in the <include from="snippet
 
 Another way to check is
 [`RenameInputValidator`](%gh-ic%/platform/refactoring/src/com/intellij/refactoring/rename/RenameInputValidator.java),
-unlike `NamesValidator` it allows you to more flexibly check the entered name for correctness based on the rule defined in the `isInputValid()` method.
+unlike `NamesValidator` it checks the entered name for correctness more flexibly, based on the rule defined in the `isInputValid()` method.
 
 To determine which elements this validator will apply to, override the `getPattern()` method returning the pattern of the element to validate.
 
@@ -58,16 +58,16 @@ Implementations of `RenameInputValidator` or `RenameInputValidatorEx` are regist
 
 ### Custom Rename UI and Workflow
 Further customization of the Rename refactoring processing is possible on multiple levels.
-Providing a custom implementation of the [`RenameHandler`](%gh-ic%/platform/refactoring/src/com/intellij/refactoring/rename/RenameHandler.java) interface allows you to entirely replace the UI and workflow of the rename refactoring, and also to support renaming something which is not a [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) at all.
+A custom implementation of the [`RenameHandler`](%gh-ic%/platform/refactoring/src/com/intellij/refactoring/rename/RenameHandler.java) interface entirely replaces the UI and workflow of the rename refactoring, and can also support renaming something which is not a [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) at all.
 
 **Example:**
 [`PropertyRenameHandler`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/refactoring/rename/PropertyRenameHandler.java) for renaming a Groovy property
 
-If you're okay with the standard UI but need to extend the default logic of renaming, you can provide an implementation of the [`RenamePsiElementProcessor`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/rename/RenamePsiElementProcessor.java) interface.
-This allows you to:
+If the standard UI is sufficient but the default logic of renaming needs to be extended, provide an implementation of the [`RenamePsiElementProcessor`](%gh-ic%/platform/lang-impl/src/com/intellij/refactoring/rename/RenamePsiElementProcessor.java) interface.
+Such a processor can:
 
 * Rename an element different from the one on which the action was invoked (a super method, for example)
-* Rename multiple elements at once (if their names are linked according to the logic of your language)
+* Rename multiple elements at once (if their names are linked according to the logic of the language)
 * Check for name conflicts (existing names, etc.)
 * Customize how a search for code references or text references is performed
 * etc.

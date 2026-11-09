@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Legacy Project Wizard API
 
@@ -36,12 +36,12 @@ Functionality which is mandatory to implement consists of:
 
 See [`JavaModuleBuilder`](%gh-ic%/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java) to understand better how to implement a module builder.
 
-> If your module type is based on the Java module and meant to support Java as well, extending [`JavaModuleBuilder`](%gh-ic%/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java) is enough.
+> If the module type is based on the Java module and meant to support Java as well, extending [`JavaModuleBuilder`](%gh-ic%/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java) is enough.
 > No extension point needs to be registered.
 > Refer to the [`GroovyAwareModuleBuilder`](%gh-ic%/plugins/groovy/src/org/jetbrains/plugins/groovy/config/GroovyAwareModuleBuilder.java) to see how [`JavaModuleBuilder`](%gh-ic%/java/openapi/src/com/intellij/ide/util/projectWizard/JavaModuleBuilder.java) can be extended.
 
 > Starting with the 2022.1 release, IntelliJ-based IDEs use the refreshed project wizard, and some module builder base classes return `false` from `isAvailable()` when the new wizard is enabled.
-> If your module builder is not visible in 2022.1, make sure that your `ModuleBuilder.isAvailable()` returns `true`.
+> If the module builder is not visible in 2022.1, make sure that `ModuleBuilder.isAvailable()` returns `true`.
 >
 {style="note"}
 
@@ -69,8 +69,8 @@ To understand facets better from the end-user's point of view, see the [](facet.
 
 ## Implementing Project Structure Detector
 
-To support the creation of your module when a project is imported from existing sources, extend [`ProjectStructureDetector`](%gh-ic%/java/idea-ui/src/com/intellij/ide/util/projectWizard/importSources/ProjectStructureDetector.java).
-To detect the files your module supports, implement `ProjectStructureDetector.detectRoots()`.
+To support the creation of a custom module when a project is imported from existing sources, extend [`ProjectStructureDetector`](%gh-ic%/java/idea-ui/src/com/intellij/ide/util/projectWizard/importSources/ProjectStructureDetector.java).
+To detect the files the module supports, implement `ProjectStructureDetector.detectRoots()`.
 
 Detecting files is not enough - it is also required to create a module for the project, if appropriate, by implementing `setupProjectStructure()`.
 Here is an example that creates a module if no other modules exist in the project structure.

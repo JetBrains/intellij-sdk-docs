@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Entity Mutation
 
@@ -214,7 +214,7 @@ The diagram below shows a schematic example of the
 operation.
 The color represents the type of entity source.
 In this example it is called with the predicate `{ entitySource is YellowEntitySource }`.
-In the resulting storage we can see that the function automatically calculates the changes for entities with `YellowEntitySource` and
+The resulting storage shows that the function automatically calculates the changes for entities with `YellowEntitySource` and
 doesn't touch entities not matching the predicate.
 
 ```mermaid
@@ -303,7 +303,7 @@ Some exemplary use cases are listed below.
 
 ##### Importing a Project Model from External System
 
-In a Maven project, the project model can be created each time we detect the <path>pom.xml</path> file was changed.
+In a Maven project, the project model can be created each time the IDE detects that the <path>pom.xml</path> file was changed.
 The new project model is applied to the main storage using the `replaceBySource()` operation.
 This will affect only changed entities created from Maven.
 

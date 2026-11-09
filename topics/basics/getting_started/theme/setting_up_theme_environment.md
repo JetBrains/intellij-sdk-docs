@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Setting Up a Development Environment
 
@@ -8,13 +8,13 @@
 
 <include from="snippets.topic" element-id="pluginDevKitAvailability"/>
 
-Use the following checklist to ensure that you are ready to develop your custom theme:
+Use the following checklist to ensure that the environment is ready for custom theme development:
 
 1. **[IntelliJ IDEA](https://www.jetbrains.com/idea/download/)** is installed.
 2. **Plugin DevKit** plugin is installed and [enabled in IntelliJ IDEA](https://www.jetbrains.com/help/idea/managing-plugins.html).
 3. **IntelliJ IDEA CE source code** is checked out. _(Optional)_
 
-   This step is needed only when you plan to debug the IntelliJ Platform code.
+   This step is needed only for debugging the IntelliJ Platform code.
    See [](#get-intellij-idea-ce-source-code) for more details.
 4. **IntelliJ Platform SDK** is [configured](#configuring-intellij-platform-plugin-sdk).
 
@@ -23,7 +23,7 @@ Use the following checklist to ensure that you are ready to develop your custom 
 ## Get IntelliJ IDEA CE Source Code
 
 Getting the IntelliJ IDEA CE source code is not a requirement for theme development as debugging the platform code while developing a theme is a rare situation.
-In case you are developing a plugin extending IDE behavior, or you need to understand how some components work internally, having sources makes debugging much more straightforward.
+When developing a plugin that extends IDE behavior or investigating how some components work internally, having sources makes debugging much more straightforward.
 
 For detailed instructions on how to check out the code efficiently, refer to the _Getting IntelliJ Platform_ section of the [IntelliJ Platform README file](%gh-ic%/README.md).
 Note that building the checked-out sources is not required in this case.
@@ -48,10 +48,10 @@ The first step of configuring a theme plugin SDK is adding the JDK.
 
 1. Go to <ui-path>File | Project Structure | Platform Settings | SDKs</ui-path>.
 2. Click the <control>Add</control> button (<control>+</control>).
-3. If you have the required JDK installation on your machine, and it is detected, select it from the <control>Detected SDKs</control> list.
-   If your JDK is not detected, select the <control>Add JDK...</control> option and choose the installation folder.
+3. If the required JDK is installed on the machine, and it is detected, select it from the <control>Detected SDKs</control> list.
+   If the JDK is not detected, select the <control>Add JDK...</control> option and choose the installation folder.
 
-   If the required JDK is not installed on your machine, the simplest option is using <control>Download JDK...</control> and choosing the distribution options.
+   If the required JDK is not installed on the machine, the simplest option is using <control>Download JDK...</control> and choosing the distribution options.
 4. Click the <control>Apply</control> button.
 
 </procedure>

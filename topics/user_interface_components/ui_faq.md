@@ -73,8 +73,8 @@ Always create borders and insets via factory methods from [`JBUI.Borders`](%gh-i
 Using standard DPI-agnostic instances (reported by inspection <ui-path>Plugin DevKit | Code | Use DPI-aware borders</ui-path> and <ui-path>Plugin DevKit | Code | Use DPI-aware insets</ui-path>)
 can result in UI layout problems.
 
-If you use DPI-aware insets in an empty border (`JBUI.Borders.empty()`), then the insets will be updated automatically, for example, if scaling is changed because the <ui-path>IDE Zoom</ui-path> action was performed or for any other reason.
-If you use the insets elsewhere, you need to manually call `JBInsets.update()` in your component's `updateUI()` method to update the insets accordingly.
+If DPI-aware insets are used in an empty border (`JBUI.Borders.empty()`), then the insets will be updated automatically, for example, if scaling is changed because the <ui-path>IDE Zoom</ui-path> action was performed or for any other reason.
+If the insets are used elsewhere, manually call `JBInsets.update()` in the component's `updateUI()` method to update the insets accordingly.
 
 ## Icons
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PHP Open API
 
@@ -38,7 +38,7 @@
     Using this method in conjunction with
     [PsiReferenceContributor](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceContributor.java)
     you can add autocompletion for string literals in the specific contexts.
-    For example, if certain PHP functions in your code accept paths, you can autocomplete them when writing arguments.
+    For example, if certain PHP functions accept paths, the plugin can autocomplete paths when the user writes their arguments.
 
     Note that PhpStorm automatically adds references for concatenation expressions with `__DIR__` or `dirname(__FILE__)` function call.
 

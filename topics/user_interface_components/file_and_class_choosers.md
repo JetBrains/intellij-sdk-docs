@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # File and Class Choosers
 
@@ -12,12 +12,12 @@ This method has multiple overloads.
 The best method to use is the one which returns void and takes a callback receiving the list of selected files as a parameter.
 This is the only overload which will display a native file open dialog on macOS.
 
-The [`FileChooserDescriptor`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileChooser/FileChooserDescriptor.java) class allows you to control which files can be selected.
+The [`FileChooserDescriptor`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileChooser/FileChooserDescriptor.java) class controls which files can be selected.
 The constructor parameters specify whether files and/or directories can be selected, and whether multiple selection is allowed (see [`FileChooserDescriptorFactory`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileChooser/FileChooserDescriptorFactory.java) for common variants).
 
-For more fine-grained control over the allowed selection, you can overload the `isFileSelectable()` method.
-You can also customize the presentation of files by overriding `getIcon()`, `getName()` and `getComment()` methods.
-Note that the native macOS file chooser does not support most of the customizations, so if you rely on them, you need to use an overload of `chooseFiles()` which displays the standard IntelliJ Platform dialog.
+For more fine-grained control over the allowed selection, overload the `isFileSelectable()` method.
+To customize the presentation of files, override `getIcon()`, `getName()` and `getComment()` methods.
+Note that the native macOS file chooser does not support most of the customizations, so if the plugin relies on them, use an overload of `chooseFiles()` which displays the standard IntelliJ Platform dialog.
 
 ### Via Text Field
 
@@ -39,10 +39,10 @@ To show the dialog, call `showDialog()` on the chooser returned from `createFile
 
 ## Class and Package Choosers
 
-If you want to offer the user a possibility to select a Java class, you can use the [`TreeClassChooserFactory`](%gh-ic%/java/openapi/src/com/intellij/ide/util/TreeClassChooserFactory.java) class.
-Its different methods allow you to specify the scope from which the classes are taken, to restrict the choice to descendants of a specific class or implementations of an interface, and to include or exclude inner classes from the list.
+To offer the user a possibility to select a Java class, use the [`TreeClassChooserFactory`](%gh-ic%/java/openapi/src/com/intellij/ide/util/TreeClassChooserFactory.java) class.
+Its different methods provide options to specify the scope from which the classes are taken, to restrict the choice to descendants of a specific class or implementations of an interface, and to include or exclude inner classes from the list.
 
-For choosing a Java package, you can use the [`PackageChooserDialog`](%gh-ic%/java/java-impl/src/com/intellij/ide/util/PackageChooserDialog.java) class.
+For choosing a Java package, use the [`PackageChooserDialog`](%gh-ic%/java/java-impl/src/com/intellij/ide/util/PackageChooserDialog.java) class.
 
 > To use Java-specific components, an explicit dependency on the Java plugin is required.
 > See [](plugin_compatibility.md#java) for details.

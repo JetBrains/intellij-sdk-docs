@@ -2,7 +2,7 @@
 
 # Marketing
 
-> Make sure to follow the guidelines from the [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html) for an optimal presentation of your plugin on JetBrains Marketplace.
+> Make sure to follow the guidelines from the [Plugin Overview page](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html) for an optimal presentation of the plugin on JetBrains Marketplace.
 >
 > The _Busy Plugin Developers. Episode 2_ discusses [5 tips for optimizing JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52) in more detail.
 >
@@ -12,10 +12,10 @@
 
 ## Embeddable Widgets
 
-[JetBrains Marketplace](https://plugins.jetbrains.com) provides embeddable widgets that you can place on your website using a simple code snippet:
+[JetBrains Marketplace](https://plugins.jetbrains.com) provides embeddable widgets that plugin authors can place on their website using a simple code snippet:
 
 - Embeddable **Plugin Card** – renders an information card with the plugin name, icon, description, last update, and download counter,
-- Embeddable **Install Plugin** Button – provides a button that allows installing your plugin right in the user's IDE, if it is currently open.
+- Embeddable **Install Plugin** Button – provides a button that allows installing the plugin right in the user's IDE, if it is currently open.
 
 For more details, follow the [Embeddable Content](https://plugins.jetbrains.com/docs/marketplace/embeddable-content.html) section in the JetBrains Marketplace documentation.
 
@@ -27,7 +27,7 @@ Below are listed a few badges related to the IntelliJ SDK and plugins developmen
 
 > The following code snippets contain `:pluginId` and `:packageName` placeholders.
 >
-> `:pluginId` can be obtained from your plugin page URL, like: `https://plugins.jetbrains.com/plugin/6954-kotlin` – in this case `6954`.
+> `:pluginId` can be obtained from the plugin page URL, like: `https://plugins.jetbrains.com/plugin/6954-kotlin` – in this case `6954`.
 >
 > `:pluginId` also accepts a string ID that can be found in the <control>Versions</control> tab, like `https://plugins.jetbrains.com/plugin/6954-kotlin/versions`.
 >

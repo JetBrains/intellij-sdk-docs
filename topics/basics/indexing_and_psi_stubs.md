@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Indexing and PSI Stubs
 
@@ -18,8 +18,8 @@ File-based indexes are built directly over the content of files.
 Stub indexes are built over serialized *stub trees*.
 A stub tree for a source file is a subset of its [PSI](psi.md) tree, which contains only externally visible declarations and is serialized in a compact binary format.
 
-Querying a file-based index gets you the set of files matching a specific condition.
-Querying a stub index gets you the set of matching PSI elements.
+Querying a file-based index returns the set of files matching a specific condition.
+Querying a stub index returns the set of matching PSI elements.
 Therefore, custom language plugin developers typically use [stub indexes](stub_indexes.md) in their plugin implementations.
 
 > [Index Viewer](https://plugins.jetbrains.com/plugin/13029-index-viewer/) plugin can be used to inspect indexes' contents and properties.
@@ -107,7 +107,7 @@ Use [lexer](implementing_lexer.md) information instead of parsed trees if possib
 
 If impossible, use light AST which doesn't create memory-hungry AST nodes inside, so traversing it might be faster.
 Obtain [`LighterAST`](%gh-ic%/platform/core-api/src/com/intellij/lang/LighterAST.java) by casting `FileContent` input parameter to [`PsiDependentFileContent`](%gh-ic%/platform/core-api/src/com/intellij/util/indexing/PsiDependentFileContent.java) and calling `getLighterAST()`.
-Make sure to traverse only the nodes you need to.
+Make sure to traverse only the required nodes.
 See also [`RecursiveLighterASTNodeWalkingVisitor`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/source/tree/RecursiveLighterASTNodeWalkingVisitor.java) and [`LightTreeUtil`](%gh-ic%/platform/core-impl/src/com/intellij/psi/impl/source/tree/LightTreeUtil.java) for useful utility methods.
 
 For [stub index](stub_indexes.md), implement [`LightStubBuilder`](%gh-ic%/platform/core-impl/src/com/intellij/psi/stubs/LightStubBuilder.java).

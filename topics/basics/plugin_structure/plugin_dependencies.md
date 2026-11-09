@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin Dependencies
 
@@ -108,7 +108,7 @@ See also [](plugin_compatibility.md#modules-specific-to-functionality).
 
 ### Preparing Sandbox
 
-If the plugin is not bundled with the target IDE, run the (sandbox) [](ide_development_instance.md) of your target IDE and install the plugin there.
+If the plugin is not bundled with the target IDE, run the (sandbox) [](ide_development_instance.md) of the target IDE and install the plugin there.
 
 ## 2. Project Setup
 {#project-setup}
@@ -146,7 +146,7 @@ See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) 
 >
 {style="note"}
 
-Add the dependency to the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) parameter in your build script:
+Add the dependency to the [`intellij.plugins`](tools_gradle_intellij_plugin.md#intellij-extension-plugins) parameter in the build script:
 
 <tabs>
 <tab title="Kotlin">

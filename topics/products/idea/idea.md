@@ -100,7 +100,7 @@ See also [UAST](uast.md) on how to support multiple JVM languages, including Kot
 > Analysis API is available since version 2024.2.
 
 Starting from IntelliJ IDEA 2025.1, K2 Kotlin mode is enabled by default.
-To ensure your plugin works with the newest versions of IntelliJ IDEA, you must migrate to the Analysis API and declare compatibility with the K2 compiler.
+To ensure the plugin works with the newest versions of IntelliJ IDEA, migrate to the Analysis API and declare compatibility with the K2 compiler.
 
 For migration details, see [Migrating from K1](https://kotlin.github.io/analysis-api/migrating-from-k1.html).
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Writing Short and Clear
 
@@ -73,7 +73,7 @@ A user interface is for a person who uses it. Addressing this person is unnecess
 
 ## Remove duplicates
 
-If the repeating word appears in element labels, move it to the beginning. Finding a setting becomes faster as you scan only meaningful words:
+If the repeating word appears in element labels, move it to the beginning. Finding a setting becomes faster as the user scans only meaningful words:
 
 ![](writing_short_duplicates.png){width=438}
 
@@ -112,7 +112,7 @@ Remove duplicates in meaning:
 </tr>
 <tr>
     <td> <format color="#cc4700"> click I agree</format> </td>
-    <td> <format color="#999999"> The verb "click" is obvious from context: you cannot do much with a link other than click. </format> </td>
+    <td> <format color="#999999"> The verb "click" is obvious from context: there is not much to do with a link other than click it. </format> </td>
 </tr>
 <tr>
     <td> <format color="#cc4700"> click... I don’t agree otherwise </format> </td>
@@ -126,7 +126,7 @@ Remove duplicates in meaning:
 
 ## Translate from tech to human
 
-When you make a feature, you know how it works from the inside and can describe it from the implementation point of view:
+Feature authors know how it works from the inside and tend to describe it from the implementation point of view:
 
 ![](indent-options-before.png){width=560}
 
@@ -149,7 +149,7 @@ After writing a UI text, imagine seeing it for the first time and try to underst
 More examples:
 
 ![](first-time-auto-insert.png){width=318 style=block}
-*Before: The title can be read as "Auto-insert when only one checkbox is on" making you ask how it works when both checkboxes are on. After: Replacing choice with completion option makes the title unambiguous.*
+*Before: The title can be read as "Auto-insert when only one checkbox is on" raising the question of how it works when both checkboxes are on. After: Replacing choice with completion option makes the title unambiguous.*
 
 ![](first-time-smart-keys.png){width=318 style=block}
 *Before: What do smart Home and End keys do? What do they do if they are not smart? After: The added text explains what the options do so that the reader can make an informed choice.*
@@ -184,7 +184,7 @@ More examples:
 <tr>
     <td> A directory corresponding to each module <format color="#cc4700">is created</format> under this path. This directory contains <format color="#cc4700">two</format> subdirectories... </td>
     <td> It has a separate directory for each module, with the Production and Test subdirectories. </td>
-    <td> <format color="#999999"> "is created" is not relevant to the meaning of this phrase. "two" is obvious from context: you see that there are two subdirectories because only two are named. </format> </td>
+    <td> <format color="#999999"> "is created" is not relevant to the meaning of this phrase. "two" is obvious from context: it is clear that there are two subdirectories because only two are named. </format> </td>
 </tr>
 </table>
 

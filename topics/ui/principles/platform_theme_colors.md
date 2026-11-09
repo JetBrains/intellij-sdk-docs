@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Platform Theme Colors
 
@@ -37,7 +37,7 @@ See a complete list of keys with their descriptions in the JSON files: [`Intelli
 See the color values for the currently selected theme in the <control>LaF Defaults</control> dialog:
 
 > To store color values between theme switching, use a scratch <path>*.theme.json</path> file.
-> This might be useful if you want to test colors before implementing them.
+> This might be useful for testing colors before implementing them.
 > See guidelines for the [Theme JSON Structure](themes_customize.md#defining-named-colors).
 
 * The dialog is available in the [internal mode](enabling_internal.md). See <ui-path>Tools | Internal Actions | UI</ui-path> in the main menu or find it with <control>Help | Find Action</control>.

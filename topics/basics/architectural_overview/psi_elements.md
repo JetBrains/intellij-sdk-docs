@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PSI Elements
 
@@ -9,7 +9,7 @@ A single [PSI file](psi_files.md) (itself being a PSI element) may expose severa
 A PSI element, in its turn, can have child PSI elements.
 
 PSI elements and operations at the level of individual PSI elements are used to explore the source code's internal structure as it is interpreted by the IntelliJ Platform.
-For example, you can use PSI elements to perform code analysis, such as [code inspections](https://www.jetbrains.com/help/idea/code-inspection.html) or [intention actions](https://www.jetbrains.com/idea/help/intention-actions.html).
+For example, PSI elements can be used to perform code analysis, such as [code inspections](https://www.jetbrains.com/help/idea/code-inspection.html) or [intention actions](https://www.jetbrains.com/idea/help/intention-actions.html).
 
 The [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) class is the common base class for PSI elements.
 

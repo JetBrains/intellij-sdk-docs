@@ -243,7 +243,7 @@ The state is persisted in a separate file by specifying a different setting for 
 >
 {style="note"}
 
-When planning your storage location, consider its intended purpose.
+When planning the storage location, consider its intended purpose.
 A project-level custom file should be preferred for storing plugin settings.
 To store cached values, use `@Storage(StoragePathMacros.CACHE_FILE)`.
 Refer to [`StoragePathMacros`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/StoragePathMacros.java) for commonly used macros.
@@ -258,7 +258,7 @@ See [](roaming_settings.md#roaming-types) for details.
 >
 {style="note"}
 
-If you want to use the default bean serialization but need to customize the storage format in XML (for example, for compatibility with previous versions of a plugin or externally defined XML formats), use the
+To use the default bean serialization but customize the storage format in XML (for example, for compatibility with previous versions of a plugin or externally defined XML formats), use the
 [`@Tag`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Tag.java),
 [`@Attribute`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Attribute.java),
 [`@Property`](%gh-ic%/platform/util/src/com/intellij/util/xmlb/annotations/Property.java),
@@ -618,7 +618,7 @@ val hasSavedStyle = PropertiesComponent.getInstance().isValueSet(PREVIEW_STYLE_K
 </tab>
 </tabs>
 
-Use `isValueSet()` only when you must distinguish a saved value from an absent key.
+Use `isValueSet()` only when a saved value must be distinguished from an absent key.
 
 ### Storage Mechanism
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # AppCode Plugin Development
 
@@ -14,7 +14,7 @@ Plugin projects targeting [AppCode](https://www.jetbrains.com/objc/) can be deve
 
 <snippet id="appCodeSunset">
 
-> With the release of AppCode 2022.3, we're sunsetting the product.
+> With the release of AppCode 2022.3, JetBrains is sunsetting the product.
 > Please see this [blog post](https://blog.jetbrains.com/appcode/2022/12/appcode-2022-3-release-and-end-of-sales-and-support/) for details.
 >
 {style="warning"}
@@ -52,4 +52,4 @@ As described in [Modules Specific to Functionality](plugin_compatibility.md#modu
 {style="note"}
 
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the libraries in AppCode.
-Test your plugin with any version of AppCode you wish to support.
+Test the plugin with every supported version of AppCode.

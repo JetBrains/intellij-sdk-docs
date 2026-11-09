@@ -34,10 +34,10 @@ To associate the file type in the IDE, specify one or more associations listed i
 - [Custom Language Support Tutorial: Language and File Type](language_and_filetype.md)
 - [`LanguageFileType`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) subclass in [Properties language plugin](%gh-ic%/plugins/properties/properties-psi-api/src/com/intellij/lang/properties/PropertiesFileType.java)
 
-To verify that the file type is registered correctly, you can implement the [`LanguageFileType.getIcon()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) method and verify that the correct icon (see [](icons.md)) is displayed for files associated with your file type.
+To verify that the file type is registered correctly, implement the [`LanguageFileType.getIcon()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/LanguageFileType.java) method and verify that the correct icon (see [](icons.md)) is displayed for files associated with the file type.
 
 ### Additional Features
 
-If you want IDEs to show a hint prompting users that your plugin supports a specific file type, see [Plugin Recommendations](https://plugins.jetbrains.com/docs/marketplace/intellij-plugin-recommendations.html).
+To make IDEs show a hint prompting users that the plugin supports a specific file type, see [Plugin Recommendations](https://plugins.jetbrains.com/docs/marketplace/intellij-plugin-recommendations.html).
 
 To control file type association with the IDE in the operating system, implement [`OSFileIdeAssociation`](%gh-ic%/platform/core-api/src/com/intellij/openapi/fileTypes/OSFileIdeAssociation.java).

@@ -78,9 +78,9 @@ Three or more actions would make it harder to choose what to start from.
   </tr>
 </table>
 
-In rare cases, when you need to list all possible starting points, use the list layout.
+In rare cases, when all possible starting points need to be listed, use the list layout.
 
-If there is enough space (for example, in horizontal tool windows), you may use the table layout to place action links, shortcuts, and action descriptions:
+If there is enough space (for example, in horizontal tool windows), you can use the table layout to place action links, shortcuts, and action descriptions:
 <img src="empty_state_table.png" alt="Table layout for actions" width="706"/>
 
 ### Open menus from the toolbar

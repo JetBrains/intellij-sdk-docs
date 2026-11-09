@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Spring API
 <primary-label ref="IntelliJIDEA"/>
@@ -12,19 +12,19 @@ Please see [Spring Framework Support](https://lp.jetbrains.com/intellij-idea-spr
 
 A popular plugin using Spring API is [hybris integration](https://plugins.jetbrains.com/plugin/7525-hybris-integration).
 
-To develop plugins, you will need to use _IntelliJ IDEA_.
+Developing plugins requires _IntelliJ IDEA_.
 
 ## Setting up Project
 
 Set up [Gradle](creating_plugin_project.md) to target [IntelliJ IDEA](idea.md), then [add dependency](plugin_dependencies.md) to the bundled Spring plugin with ID `com.intellij.spring`.
 
-Please use only Spring-related functionality exposed in <path>spring-api.jar</path> (sources are provided in <path>\$IDEA_HOME\$/lib/src/src_spring-boot-openapi.zip</path>) in your plugin.
+Please use only Spring-related functionality exposed in <path>spring-api.jar</path> (sources are provided in <path>\$IDEA_HOME\$/lib/src/src_spring-boot-openapi.zip</path>) in the plugin.
 Using any other "internal" (implementation) classes from the Spring plugin itself (<path>spring.jar</path>) is _not_ supported.
 
 ### plugin.xml
-Add `<depends>com.intellij.spring</depends>` to your <path>[plugin.xml](plugin_configuration_file.md)</path> to require the "Spring Support" plugin to be activated.
+Add `<depends>com.intellij.spring</depends>` to the <path>[plugin.xml](plugin_configuration_file.md)</path> to require the "Spring Support" plugin to be activated.
 All available extension points are provided under the `com.intellij.spring` prefix.
-Note that the "Spring Support" plugin itself has dependencies on a few other plugins which need to be enabled in your sandbox (see notifications on startup).
+Note that the "Spring Support" plugin itself has dependencies on a few other plugins which need to be enabled in the sandbox (see notifications on startup).
 
 ## Main Concepts
 A Spring facet can be attached to a Module.
@@ -35,7 +35,7 @@ Spring facets usually contain one more user-configured or automatically provided
 A fileset usually corresponds to an actual application context configuration at runtime.
 Hierarchies can be modeled by depending on another fileset (possibly from another module).
 
-As an API user, you will usually prefer working with `SpringModel`, which is built on top of fileset(s).
+API consumers usually prefer working with `SpringModel`, which is built on top of fileset(s).
 
 ## API Updates
 > 2017.3: `LocalXmlModel#setActiveProfiles` & `LocalAnnotationModel#setActiveProfiles` have been deprecated and will be removed in 2018.1.
@@ -114,7 +114,7 @@ _Version 14_: implement `SpringInfrastructureBean`, such beans obtain a special 
 All support for XML-based Spring configuration files is provided via [DOM-API](xml_dom_api.md).
 
 #### Add Support for Additional Spring Namespace
-See <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.spring.customNamespaces"/></include>, the registered namespace-key must match the one registered with your DOM elements via `@Namespace`.
+See <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.spring.customNamespaces"/></include>, the registered namespace-key must match the one registered with the plugin's DOM elements via `@Namespace`.
 Register available elements via standard `DomExtender<Beans>` EP or `com.intellij.spring.dom.SpringCustomNamespaces#registerExtensions` (Version 14).
 
 Please pay attention to `getModelVersion` and `getStubVersion` (see Javadoc).
@@ -169,7 +169,7 @@ _2018.1_
 
 Spring Boot API allows extending/accessing Spring Boot-specific support in the IDE.
 
-> While we try to maintain compatibility, please be prepared for a less strict policy.
+> While JetBrains tries to maintain compatibility, please be prepared for a less strict policy.
 >
 {style="warning"}
 
@@ -178,7 +178,7 @@ Spring Boot API allows extending/accessing Spring Boot-specific support in the I
 Sources for Spring Boot API are available in <path>\$IDEA_HOME\$/lib/src/src_spring-boot-openapi.zip</path>.
 
 ### Update plugin.xml
-Add `<depends>com.intellij.spring.boot</depends>` to your <path>[plugin.xml](plugin_configuration_file.md)</path> to require the "Spring Boot" plugin to be activated.
+Add `<depends>com.intellij.spring.boot</depends>` to the <path>[plugin.xml](plugin_configuration_file.md)</path> to require the "Spring Boot" plugin to be activated.
 All available extension points are provided under the `com.intellij.spring.boot` prefix.
 
 ### Spring Boot Library

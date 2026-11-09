@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Listeners
 
@@ -124,6 +124,6 @@ Registration of listeners can be restricted using the following attributes.
 : Set to `false` to disable the listener if [`Application.isHeadlessEnvironment()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/Application.java) returns `true`.
   Also covers `activeInTestMode` as test mode implies headless mode.
 
-> If declared listener topics are intended to be used by other plugins depending on your plugin, consider [bundling their sources](bundling_plugin_openapi_sources.md) in the plugin distribution.
+> If declared listener topics are intended to be used by other plugins depending on the plugin, consider [bundling their sources](bundling_plugin_openapi_sources.md) in the plugin distribution.
 >
 {style="note"}

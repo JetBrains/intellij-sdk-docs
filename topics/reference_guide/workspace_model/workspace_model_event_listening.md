@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Event Listening
 
@@ -73,7 +73,7 @@ or the project model will be updated.
 
 To perform incremental computations, the last known version of the storage and the event of updates is required.
 This can be obtained by collecting indexed events.
-Assume we build some index and keep it updated:
+Assume some index is built and kept updated:
 
 ```kotlin
 workspaceModel.eventLog.collectIndexed { index, event ->

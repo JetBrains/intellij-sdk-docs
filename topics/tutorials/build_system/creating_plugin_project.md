@@ -16,7 +16,7 @@ It is also possible to create plugins via the web [IDE Plugin generator](https:/
 > This page describes the wizard available in IntelliJ IDEA 2026.1 and newer.
 >
 > The <control>IDE Plugin</control> wizard available in older versions may differ in available options.
-> If you can't use the newest IDE, consider generating a project via the [web generator](https://plugins.jetbrains.com/generator) and opening the generated project in the IDE.
+> If the newest IDE cannot be used, consider generating a project via the [web generator](https://plugins.jetbrains.com/generator) and opening the generated project in the IDE.
 >
 {style="note"}
 
@@ -36,7 +36,7 @@ Launch the <control>[New Project](https://www.jetbrains.com/help/idea/new-projec
    > If supporting an older platform version is planned, configure the JDK version compatible with the [target platform version](build_number_ranges.md#platformVersions).
    >
    {style="note"}
-7. Enable the <control>Add sample code</control> checkbox if you want to generate a sample tool window code.
+7. Enable the <control>Add sample code</control> checkbox to generate a sample tool window code.
 8. Click the <control>Next</control> button.
 9. Select <control>Features</control> to include in the generated plugin.<br/>
    > New plugin projects should be implemented in a way that supports working in [Remote Development mode](split_mode_and_remote_development.md).
@@ -82,6 +82,6 @@ Then double-click tasks to execute.
 
 </tabs>
 
-To debug your plugin in a _standalone_ IDE instance, please see [How to Debug Your Own IntelliJ IDEA Instance](https://medium.com/agorapulse-stories/how-to-debug-your-own-intellij-idea-instance-7d7df185a48d) blog post.
+To debug a plugin in a _standalone_ IDE instance, please see [How to Debug Your Own IntelliJ IDEA Instance](https://medium.com/agorapulse-stories/how-to-debug-your-own-intellij-idea-instance-7d7df185a48d) blog post.
 
 > For more information about how to work with Gradle-based projects see the [Working with Gradle in IntelliJ IDEA](https://www.youtube.com/watch?v=6V6G3RyxEMk) screencast and working with [Gradle tasks](https://www.jetbrains.com/help/idea/work-with-gradle-tasks.html) in the IntelliJ IDEA help.

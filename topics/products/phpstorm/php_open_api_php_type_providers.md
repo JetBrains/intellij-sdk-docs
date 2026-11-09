@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PHP Type Providers
 
@@ -50,7 +50,7 @@ Here, since the `$a` parameter has a `string` type hint, PhpStorm can infer the 
 
 Incomplete types are types that need additional information from other project files besides the containing file.
 
-Suppose we have two files:
+Consider two files:
 
 <path>foo.php</path>:
 
@@ -71,7 +71,7 @@ $a = foo();
 echo $a;
 ```
 
-In the <path>main.php</path> file, we call the `foo()`, which is defined in another <path>foo.php</path> file.
+In the <path>main.php</path> file, `foo()` is called, which is defined in another <path>foo.php</path> file.
 Because of this, PhpStorm won't be able to infer the type of the `$a` variable during the indexing stage, since it depends on the definition of the `foo()` from another file.
 
 For such cases, PhpStorm will create an Incomplete type in which writes all the necessary information to resolve the type when it finishes indexing.
@@ -195,7 +195,7 @@ public interface PhpTypeProvider4 {
 }
 ```
 
-To implement `PhpTypeProvider4`, you need to override 4 methods:
+To implement `PhpTypeProvider4`, override 4 methods:
 
 1. `getKey()` returns a character that will be unique for this type provider.
    This can be any character, as long as it's unique, for example, PhpStorm uses hieroglyphs.
@@ -208,14 +208,14 @@ To implement `PhpTypeProvider4`, you need to override 4 methods:
 
 2. `getType()` returns the type of the expression for the given element.
    It's called at the indexing stage, and therefore its implementation **can't access** any information from the index and **must** rely only on local information.
-   If you need some information, then pack the required data into a string and return an Incomplete type based on this string.
+   If some information is needed, then pack the required data into a string and return an Incomplete type based on this string.
 
 3. `complete()` resolves an Incomplete type into a Complete type.
    All strings of Incomplete types are sequentially passed to this method, it should return a Complete type for them.
 
 4. `getBySignature()` provides additional elements or references.
 
-You can also override the `emptyResultIsComplete()`, which indicates whether the `null` returned from the `complete()` is a valid result, which means that PhpStorm won't add the `mixed` to the resulting type.
+Optionally, override the `emptyResultIsComplete()`, which indicates whether the `null` returned from the `complete()` is a valid result, which means that PhpStorm won't add the `mixed` to the resulting type.
 
 ## Example Implementation
 

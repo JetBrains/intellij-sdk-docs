@@ -93,7 +93,7 @@ The `org.intellij.intelliLang` plugin requires Gradle dependency on bundled modu
 : Change `bundledPlugin("org.intellij.intelliLang")` to `bundledModule("intellij.platform.langInjection")` in Gradle build script.
 
 Write-Intent lock acquisition was removed during processing of input events in Swing and AWT
-: Consider using explicit calls to `com.intellij.openapi.application.WriteIntentReadAction#run` in your input event listeners. See [IJPL-219144](https://youtrack.jetbrains.com/issue/IJPL-219144) for details.
+: Consider using explicit calls to `com.intellij.openapi.application.WriteIntentReadAction#run` in input event listeners. See [IJPL-219144](https://youtrack.jetbrains.com/issue/IJPL-219144) for details.
 
 com.intellij.openapi.application.Application.acquireReadActionLock() method removed
 : Consider using higher-order functions like `com.intellij.openapi.application.Application#runReadAction`.
@@ -133,7 +133,7 @@ com.intellij.openapi.application.WriteIntentReadAction.run(com.intellij.openapi.
 : Instantiate `com.intellij.json.JsonParser` directly.
 
 After porting JSON parsers to syntax-api, `com.intellij.json.JsonParserDefinition.createParser(Project)` that creates `com.intellij.lang.PsiParser` became obsolete.
-`com.intellij.json.JsonFileElementTypesKt#JSON_FILE` has been refactored to use syntax-api to parse JSON files, but you it is still possible to instantiate the legacy `com.intellij.json.JsonParser`.
+`com.intellij.json.JsonFileElementTypesKt#JSON_FILE` has been refactored to use syntax-api to parse JSON files, but it is still possible to instantiate the legacy `com.intellij.json.JsonParser`.
 The `createParser` method can't be removed from the `com.intellij.lang.ParserDefinition` interface, so to prevent accidental usage of this method, it throws `UnsupportedOperationException` now.
 These changes shouldn't affect plugins that implement `ParserDefinition` on their own or that call `JsonParser` directly in any other way.
 However, if the plugin uses `com.intellij.psi.tree.IFileElementType(JsonLanguage.INSTANCE)` for non-JSON files, it can cause an exception to be thrown.
@@ -150,7 +150,7 @@ This shouldn't affect binary compatibility, but an explicit dependency should be
 * `intellij.relaxng`
 
 `icons.JavaUltimateIcons` class moved to package `com.intellij.java.ultimate.icons`
-: Update code usages and make sure your plugin [depends](plugin_dependencies.md) on the Java plugin.
+: Update code usages and make sure the plugin [depends](plugin_dependencies.md) on the Java plugin.
 
 `com.intellij.psi.xml.HtmlFileElementType.getHtmlStubVersion()` method removed
 : Use `com.intellij.xml.HtmlLanguageStubVersionUtil.getHtmlStubVersion()` instead.

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # File-Based Indexes
 
@@ -19,7 +19,7 @@ In the simplest case, when one needs to know in what files some data is present,
 
 When the index implementation indexes a file, it receives a file's content and returns a map from the keys found in the file to the associated values.
 
-When accessing an index, specify the key you're interested in and get back the list of files in which the key occurs, and the value associated with each file.
+When accessing an index, specify the key of interest and get back the list of files in which the key occurs, and the value associated with each file.
 
 > In some cases, using [Gists](indexing_and_psi_stubs.md#gists) can be considered as an alternative.
 >
@@ -54,7 +54,7 @@ Please see also [Improving indexing performance](indexing_and_psi_stubs.md#impro
 > Value class must implement `equals()` and `hashCode()` properly, so a value deserialized from binary data should be equal to original one.
 >
 > The data returned by `DataIndexer.map()` must depend only on input data passed to the method, and must not depend on any external files.
-> Otherwise, your index will not be correctly updated when the external data changes, and you will have stale data in your index.
+> Otherwise, the index will not be correctly updated when the external data changes, and it will contain stale data.
 >
 > Please set system property `intellij.idea.indices.debug`/`intellij.idea.indices.debug.extra.sanity` to `true` to enable additional debugging assertions during development to assert correct index implementation.
 >

@@ -2,13 +2,13 @@
 
 # Plugin User Experience (UX)
 
-<link-summary>Ensuring a good user experience for your plugin.</link-summary>
+<link-summary>Ensuring a good user experience for a plugin.</link-summary>
 
 _User Experience (UX)_ is a term describing the experience users feel when using a product.
 It covers not only aspects like visual presentation, performance, stability, or ease of use, but anything that affects the user's satisfaction.
 It's an overall impression of using a product that strongly indicates whether a user likes it or not.
 
-IntelliJ Platform-based plugins are products, and providing a good UX is very important for retaining users and making them recommend your plugin to others.
+IntelliJ Platform-based plugins are products, and providing a good UX is very important for retaining users and making them recommend the plugin to others.
 A bad plugin UX can negatively impact the user base, as users tend to abandon plugins that bring frustration, e.g., by instability, poor performance, or complexity.
 
 The following sections explain the selected plugin UX areas.
@@ -16,9 +16,9 @@ The following sections explain the selected plugin UX areas.
 ## General Advice
 
 Great IntelliJ Platform plugins, like any other products, should bring significant value to users.
-When planning your work, talk and try to understand what your users need the most and prioritize crucial functionalities.
+When planning the work, talk to users and try to understand what they need the most and prioritize crucial functionalities.
 
-If you are unsure about an implemented solution, consider sharing the work in progress with a limited group of users (e.g., your colleagues or active community members) and gathering the feedback that will help you improve the final result.
+If unsure about an implemented solution, consider sharing the work in progress with a limited group of users (e.g., colleagues or active community members) and gathering the feedback that will help improve the final result.
 See the [Custom Release Channels](publishing_plugin.md#specifying-a-release-channel) section for information on how to automate sharing the pre-release plugin versions.
 
 ### Feedback
@@ -47,7 +47,7 @@ Plugins that are hard to configure with features that are hard to find may be qu
 Plugins that throw a lot of errors visible in the messages panel and execute actions resulting in incorrect behavior, e.g., generating incorrect code, are considered unstable and unreliable.
 
 To improve the overall stability and minimize the risk of introducing regression issues, it is critical to implement [functional tests](testing_plugins.md) with a low maintenance cost.
-It is a great safety net, which in the long term, will speed up your development and help you release new versions without the fear of breaking existing plugin features.
+It is a great safety net, which in the long term, will speed up development and help release new versions without the fear of breaking existing plugin features.
 
 It's nearly impossible to develop software without bugs, so it is recommended to set up an issue tracker where users can report errors.
 In addition, it's worth implementing [error reporting](ide_infrastructure.md#error-reporting) that allows sending reports directly from within the IDE, with all required information attached.
@@ -84,7 +84,7 @@ Users with a poor internet connection may cancel the download when they realize 
 
 Consider the following techniques for optimizing the plugin distribution size:
 
-* Decrease the number of dependencies. Check if the target platform includes utilities (like those mentioned in [](ui_faq.md)) or [libraries](api_changes_list.md#bundled-library-updates) you need and reuse them.
+* Decrease the number of dependencies. Check if the target platform includes utilities (like those mentioned in [](ui_faq.md)) or [libraries](api_changes_list.md#bundled-library-updates) the plugin needs and reuse them.
 * Make sure no unneeded or multiple versions of the same dependencies are packaged in the plugin distribution.
 * Optimize assets like icons, images, videos, etc.
 * If large resources (e.g., SDKs, reference documentation) are needed only in specific setups, consider downloading them by the plugin on-demand instead of bundling them in the plugin distribution.
@@ -93,10 +93,10 @@ Consider the following techniques for optimizing the plugin distribution size:
 
 ## Consistent Behavior
 
-When designing and implementing features, review existing functionalities of the IDE and plugins and design your features in a similar and consistent way.
-A consistent approach will make it easier for users to work with your plugin, increasing overall satisfaction.
+When designing and implementing features, review existing functionalities of the IDE and plugins and design new features in a similar and consistent way.
+A consistent approach will make it easier for users to work with the plugin, increasing overall satisfaction.
 
-If you implement [custom language support](custom_language_support.md), review and consider implementing extension points from the [](additional_minor_features.md) list so that your plugin provides an experience consistent with other plugins.
+When implementing [custom language support](custom_language_support.md), review and consider implementing extension points from the [](additional_minor_features.md) list so that the plugin provides an experience consistent with other plugins.
 
 ## Consistent and Good-Looking UI
 

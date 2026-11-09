@@ -78,11 +78,11 @@ Threading Model changes
 
 Removal of commons-lang2 and commons-collections libraries
 : _commons-lang2_ library is going to be removed, a temporary compatibility layer (marked with `@Deprecated(forRemoval = true)` to highlight usages) is bundled.
-Please consider migrating to either _commons-lang3_ or _commons-text_ libraries and bundle them with your plugin.
+Please consider migrating to either _commons-lang3_ or _commons-text_ libraries and bundle them with the plugin.
 Library _commons-collections_ is going to be removed.
 
 JsonPath library unbundled
-: Bundle it [explicitly](https://youtrack.jetbrains.com/issue/IDEA-328219) with your plugin.
+: Bundle it [explicitly](https://youtrack.jetbrains.com/issue/IDEA-328219) with the plugin.
 
 `com.intellij.codeInsight.intention.BaseElementAtCaretIntentionAction.isAvailable` method `Editor` parameter marked `@NotNull`
 : This may break source-compatibility with inheritors written in Kotlin if they declare it as nullable.
@@ -387,7 +387,7 @@ Apache Batik library unbundled
 : Local port is the part of the tunnel configuration, not SSH settings.
 
 `com.intellij.openapi.fileEditor.impl.HTMLEditorProvider.Companion.getAFFINITY_KEY()` method removed
-: It was an accidentally exposed internal API. Please use `HTMLEditorProvider.openEditor()` methods, or implement your own file editor provider.
+: It was an accidentally exposed internal API. Please use `HTMLEditorProvider.openEditor()` methods, or implement a custom file editor provider.
 
 `com.intellij.execution.RunnerAndConfigurationSettings.setFocusToolWindowBeforeRun(boolean)` abstract method added
 : The interface is not intended to be implemented in external plugins.

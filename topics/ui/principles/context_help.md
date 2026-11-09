@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Context Help
 
@@ -35,7 +35,7 @@ Fill in [empty states](empty_state.md) of tool windows, tables, trees, and other
 
 ## When to use
 
-Below you will find rules for [tooltips](tooltip.md) and [inline texts](inline_help_text.md).
+Below are rules for [tooltips](tooltip.md) and [inline texts](inline_help_text.md).
 <table style="none" border="false" column-width="fixed">
   <tr>
     <td width="378">
@@ -98,7 +98,7 @@ Below you will find rules for [tooltips](tooltip.md) and [inline texts](inline_h
 ## When not to use
 
 ### Do not explain UI
-Do not use context help to explain how the user interface works. If you need to explain that, consider redesigning the UI.
+Do not use context help to explain how the user interface works. If it needs explaining, consider redesigning the UI.
 
 <table style="none" border="false" column-width="fixed">
   <tr>

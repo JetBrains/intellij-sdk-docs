@@ -115,7 +115,7 @@ When matched along with a non-extension symbol, it can provide or override some 
 {style="full"}
 `get(property: PolySymbolProperty<T>)`
 : Accessor for various symbol properties. All properties supported by the PolySymbol framework are defined through `*Property`
-objects within the `PolySymbol` interface. Check their documentation for further reference. Overall, you should avoid
+objects within the `PolySymbol` interface. Check their documentation for further reference. Overall, avoid
 overriding this method to provide property values and instead define property getters by annotating properties,
 fields, or methods with `PolySymbol.Property` annotation.
 
@@ -248,7 +248,7 @@ On extension of this class, it's only necessary to override `initialize()` and p
 Poly Symbols can contain patterns, which allow composing them from other Poly Symbols.
 Such symbols should implement the [`PolySymbolWithPattern`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolWithPattern.kt) interface.
 
-To find which symbols match available patterns, we need to make a match query.
+To find which symbols match available patterns, make a match query.
 One can also run a code completion query, which will produce a list of valid completions in the provided context,
 or a symbol list query, which will list all available symbols.
 
@@ -278,7 +278,7 @@ will be provided.
 ### Example
 {#model-queries-example}
 
-Let's consider a Vue directive.
+Consider a Vue directive.
 
 It is a special HTML attribute processed by the Vue framework at runtime or during compilation, which results in additional code being attached to the DOM element.
 Its structure looks as follows:
@@ -286,7 +286,7 @@ Its structure looks as follows:
 ![JavaScript Example Image](polysymbols_web_types.svg){ width="706"}
 
 An example of how a Vue directive might be declared in Web Types is here.
-Once a match query is run on `v-on:click.once.alt`, we will get a
+Once a match query is run on `v-on:click.once.alt`, the result is a
 [`PolySymbolMatch`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolMatch.kt)
 with the following segments:
 
@@ -303,7 +303,7 @@ with the following segments:
 Usually one would create such elements using Web Types, but sometimes there might be a need to do that programmatically.
 
 To simplify resolution and make it less ambiguous, a segment to match is selected by taking everything up to static prefixes of the following patterns.
-Thus, if we want to have symbol references and regular expressions in the pattern, they either have to terminate the pattern or must be followed by a static text.
+Thus, symbol references and regular expressions in the pattern either have to terminate the pattern or must be followed by a static text.
 A regular pattern static prefix is also considered a static text.
 
 There are seven types of patterns:
@@ -333,7 +333,7 @@ There are seven types of patterns:
 ### Query Context
 
 When performing queries, some symbols should be excluded and others included in particular contexts.
-For instance, if we have an Angular project, none of the Vue components should be available.
+For instance, in an Angular project, none of the Vue components should be available.
 [`PolyContext`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/context/PolyContext.kt)
 is created using rules provided by [`PolySymbolQueryConfigurator`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryConfigurator.kt)s with the addition of custom
 [`PolyContextProvider`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/context/PolyContextProvider.kt).

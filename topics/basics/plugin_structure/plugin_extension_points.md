@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Extension Points
 
@@ -8,14 +8,14 @@ Extend a plugin's functionality by defining extension points for other plugins.
 
 <link-summary>Allowing extending a plugin's functionality by other plugins.</link-summary>
 
-> See [Plugin Extensions](plugin_extensions.md) for _using_ extension points in your plugin.
+> See [Plugin Extensions](plugin_extensions.md) for _using_ extension points in a plugin.
 >
 {style="note"}
 
-By defining _extension points_ in your plugin, you can allow other plugins to extend your plugin's functionality.
+Defining _extension points_ in a plugin allows other plugins to extend its functionality.
 There are two types of extension points:
 
-* _Interface_ extension points allow other plugins to extend your plugins with _code_.
+* _Interface_ extension points allow other plugins to extend the plugin with _code_.
   When defining an interface extension point, specify an interface, and other plugins will provide classes implementing that interface.
   The providing plugin can then invoke methods on this interface.
   In most cases, the interface can be annotated with `@ApiStatus.OverrideOnly` (see [](verifying_plugin_compatibility.md#override-only-api)).

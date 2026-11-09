@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # External System Integration
 
@@ -20,7 +20,7 @@ Most of the project management systems provide a similar set of facilities from 
 * allow executing a particular task
 * and more
 
-That means that we can separate external system-specific logic and general IDE processing.
+That means that external system-specific logic and general IDE processing can be kept separate.
 The *External System* subsystem provides an API for wrapping external system elements and extensible IDE-specific processing logic.
 
 ## Project Management
@@ -100,11 +100,11 @@ The IDE provides a set of built-in `Key` and `ExternalEntityData` classes but an
 
 Processing project data built on an external system config basis can be performed with [`ProjectDataService`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/service/project/manage/ProjectDataService.java).
 It is a strategy which knows how to manage particular `ExternalEntityData`.
-For example, when we want to import a project from an external model, we can start with the top level `DataNode` which references project info and then import its data using the corresponding service.
+For example, to import a project from an external model, start with the top level `DataNode` which references project info and then import its data using the corresponding service.
 
 Custom services can be registered via the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.externalProjectDataService"/></include>.
 
-The good thing is that we can separate project parsing and management here.
+This separates project parsing and management.
 That means that a set of `DataNode`, `Key` and `ProjectDataServices` can be introduced for a particular technology and then every external system integration can build corresponding data if necessary using it.
 
 ### Importing from External Model

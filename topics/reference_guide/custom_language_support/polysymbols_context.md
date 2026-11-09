@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Poly Symbols Context
 <primary-label ref="2025.2"/>
@@ -210,8 +210,8 @@ Web Types can be embedded with a plugin by pointing to the file via extension po
 ```
 
 Web Types are designed to correlate to package manager dependencies, so their name should correspond to a
-package dependency. However, in this case, we only want to contribute some context rules, which do not
-correspond to any dependency, so we can name the file as we want to. Currently, only Node Package Manager
+package dependency. However, in this case, the file only contributes some context rules, which do not
+correspond to any dependency, so the file can have any name. Currently, only Node Package Manager
 is supported, and JavaScript plugin must be loaded for the extension point to work. In the future, support
 for other package managers should be added and extension point should work regardless of the presence of JavaScript plugin.
 

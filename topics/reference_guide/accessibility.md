@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Accessibility
 
@@ -292,7 +292,7 @@ Screen readers announce accessible property changes of the currently focused com
 For example, when a user checks a checkbox, the screen reader announces the new state.
 This happens through property change events fired by the component.
 
-However, in some cases, users need to be notified of changes outside the focused component. Or the event that you want to notify about doesn't fit into existing property change support.
+However, in some cases, users need to be notified of changes outside the focused component. Or the event to notify about doesn't fit into existing property change support.
 
 For these scenarios, use [`AccessibleAnnouncerUtil.announce()`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/accessibility/AccessibleAnnouncerUtil.java) to make screen readers announce a specific string.
 

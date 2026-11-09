@@ -34,7 +34,7 @@ Any widget must implement the
 [`StatusBarWidget`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/wm/StatusBarWidget.kt)
 interface.
 
-To reuse the IntelliJ Platform implementation, you can extend one of two classes:
+To reuse the IntelliJ Platform implementation, extend one of two classes:
 
 - [`EditorBasedWidget`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedWidget.kt)
 - [`EditorBasedStatusBarPopup`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/wm/impl/status/EditorBasedStatusBarPopup.kt)
@@ -89,12 +89,12 @@ For example, the encoding widget of the current file.
 
 The component to display is returned from `createComponent()`.
 Each update of the widget IDE calls `updateComponent()` to update this component.
-In `updateComponent()` implementation, you can describe how the widget should change depending on the current state.
+In `updateComponent()` implementation, describe how the widget should change depending on the current state.
 
 Implement `getWidgetState()` to return the current state of the widget.
 This state will be passed to the `updateComponent()` when the widget is updated.
 The method accepts a file currently opened in the editor.
-To create your own state class, inherit it from `EditorBasedStatusBarPopup.WidgetState.WidgetState`.
+To create a custom state class, inherit it from `EditorBasedStatusBarPopup.WidgetState.WidgetState`.
 
 Implement `ID()` and return the unique ID of the widget.
 This identifier may be necessary to later get a widget instance.
@@ -112,7 +112,7 @@ To update a widget, use `update()`.
 By default, widgets aren't shown in [LightEdit](https://www.jetbrains.com/help/idea/lightedit-mode.html) mode.
 To show a widget, implement
 [`LightEditCompatible`](%gh-ic%/platform/core-api/src/com/intellij/ide/lightEdit/LightEditCompatible.java)
-in your factory.
+in the widget factory.
 
 ## FAQ
 

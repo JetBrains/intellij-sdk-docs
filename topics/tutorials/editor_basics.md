@@ -1,10 +1,10 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Basics of Working with the Editor
 
 <link-summary>Overview of tutorial on working with editor.</link-summary>
 
-This tutorial will lead you through a series of steps showing how to work with the IntelliJ Platform Editor, how to access and modify text it contains, and how to handle events sent to the editor.
+This tutorial walks through a series of steps showing how to work with the IntelliJ Platform Editor, how to access and modify text it contains, and how to handle events sent to the editor.
 * [](working_with_text.md)
 * [](coordinates_system.md)
 * [](editor_events.md)

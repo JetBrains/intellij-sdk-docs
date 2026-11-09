@@ -1,10 +1,10 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Deploying a Theme
 
 <link-summary>Building and deploying a theme in IDE.</link-summary>
 
-Before your custom theme plugin can be [uploaded to JetBrains Marketplace](publishing_plugin.md#uploading-a-plugin-to-jetbrains-marketplace) and used by users, it should be packaged and verified in the actual IDE.
+Before a custom theme plugin can be [uploaded to JetBrains Marketplace](publishing_plugin.md#uploading-a-plugin-to-jetbrains-marketplace) and used by users, it should be packaged and verified in the actual IDE.
 
 The deployment process prepares the plugin artifact that can be installed in IDE.
 
@@ -18,6 +18,6 @@ The deployment process prepares the plugin artifact that can be installed in IDE
    In the case of developing a regular plugin, and it specifies additional dependencies, a&nbsp;ZIP archive is created, including all the plugin libraries.
 3. [Install](https://www.jetbrains.com/help/idea/managing-plugins.html#installing-plugins-from-disk) the newly created JAR or ZIP file from disk.
 4. Click the <control>Apply</control> button.
-5. Select your theme in <ui-path>Settings | Appearance & Behavior | Appearance</ui-path> and apply the changes.
+5. Select the theme in <ui-path>Settings | Appearance & Behavior | Appearance</ui-path> and apply the changes.
 
 </procedure>

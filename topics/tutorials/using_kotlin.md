@@ -34,7 +34,7 @@ if (logger.isDebugEnabled()) {
 }
 ```
 
-We can achieve the same result more succinctly in Kotlin by declaring the following extension method:
+Kotlin achieves the same result more succinctly with the following extension method:
 
 ```kotlin
 inline fun Logger.debug(lazyMessage: () -> String) {
@@ -44,7 +44,7 @@ inline fun Logger.debug(lazyMessage: () -> String) {
 }
 ```
 
-Now we can directly write:
+Now, write directly:
 
 ```kotlin
 logger.debug { "..." + expensiveComputation() }
@@ -52,7 +52,7 @@ logger.debug { "..." + expensiveComputation() }
 
 to receive all the benefits of lightweight logging while reducing the code verbosity.
 
-With practice, you will be able to recognize many idioms in the IntelliJ Platform that can be simplified with Kotlin.
+With practice, it becomes easier to recognize many idioms in the IntelliJ Platform that can be simplified with Kotlin.
 
 ### UI Forms in Kotlin
 
@@ -119,7 +119,7 @@ or the specific version must be [provided in plugin distribution](plugin_content
 
 See [Dependency on the standard library](https://kotlinlang.org/docs/gradle.html#dependency-on-the-standard-library) for more details.
 
-> If you need to add the Kotlin Standard Library to your **test project** dependencies, see the [](testing_faq.md#how-to-test-a-jvm-language) section.
+> To add the Kotlin Standard Library to the **test project** dependencies, see the [](testing_faq.md#how-to-test-a-jvm-language) section.
 >
 {title="Adding stdlib in tests"}
 
@@ -249,7 +249,7 @@ Problems are highlighted via these inspections (2023.2):
 
 {id="companion-object-extensions"}
 
-A Kotlin `companion object` is always created once you try to load its containing class, and [extension point implementations](plugin_extensions.md) are supposed to be cheap to create.
+A Kotlin `companion object` is always created once its containing class is loaded, and [extension point implementations](plugin_extensions.md) are supposed to be cheap to create.
 To avoid unnecessary classloading (and thus slowdown in IDE startup), `companion object` in extensions must only contain simple constants or [logger](ide_infrastructure.md#logging).
 Anything else must be a top-level declaration or stored in an `object`.
 

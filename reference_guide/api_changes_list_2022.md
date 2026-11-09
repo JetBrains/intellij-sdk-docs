@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
 
 # Incompatible Changes in IntelliJ Platform and Plugins API 2022.*
 
@@ -77,7 +77,7 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 : Must be implemented.
 
 `com.intellij.openapi.externalSystem.dependency.analyzer.DependencyAnalyzerExtension.createContributor(Project, Disposable)` method parameter `ProjectSystemId` removed
-: Adjust your code.
+: Adjust the code.
 
 `com.intellij.openapi.externalSystem.dependency.analyzer.DependencyAnalyzerExtension.createContributor(Project, Disposable)` method return type changed from `DependencyAnalyzerContributor?` to `DependencyAnalyzerContributor`
 : Implement `isApplicable()` instead.
@@ -309,10 +309,10 @@ Method `com.intellij.grazie.GrazieBundle.message(key, parameters)` marked static
 : `JavaFullClassNameIndex` now takes `CharSequence` instead of its `hashCode` to allow specific optimizations.
 
 `com.jcraft.jsch` package removed
-: [JSch library](https://mvnrepository.com/artifact/com.jcraft/jsch) was removed, bundle it with your plugin instead.
+: [JSch library](https://mvnrepository.com/artifact/com.jcraft/jsch) was removed, bundle it with the plugin instead.
 
 `com.intellij.diagnostic.DialogAppender.addFilter(Filter)` method removed
-: `DialogAppender` now implements `java.util.logging.Handler`, use `setFilter` method if you need to apply a filter.
+: `DialogAppender` now implements `java.util.logging.Handler`, use `setFilter` method to apply a filter.
 
 `com.intellij.psi.impl.cache.impl.BaseFilterLexerUtil.ScanContent` class removed
 : Todo index is removed from the indexing procedure, use specific `calcIdEntries` or `calcTodoEntries` method instead.
@@ -363,10 +363,10 @@ Method `com.intellij.grazie.GrazieBundle.message(key, parameters)` marked static
 : The signature of the method was changed in the interface `com.intellij.database.datagrid.DataConsumer` that is now a part of new API for async loading of table data. Change the parameter type of the overridden method and recompile plugin to maintain bytecode compatibility.
 
 `com.intellij.database.extractors.ObjectFormatter.getPlainValue(Object, DataConsumer.Column, Dbms)` method removed
-: Method was removed because we refactor table editor API. It will not depend on Dbms anymore. Please use `ObjectFormatter.objectToString` instead.
+: Method was removed because the table editor API was refactored. It will not depend on Dbms anymore. Please use `ObjectFormatter.objectToString` instead.
 
 `com.intellij.database.DatabaseDataKeys.DATA_SOURCE_KEY` field removed
 : `DatabaseDataKeys` no longer extends `DatabaseDataKeysCore` because `DatabaseDataKeys` was moved to a separate module for table editor. `DATA_SOURCE_KEY` now has to be accessed directly via `DatabaseDataKeysCore`.
 
 `com.intellij.database.extractors.ObjectFormatter` class now interface
-: Method was removed because we refactor table editor API. New API will allow to use table editor in other products and fully customize it.
+: Method was removed because the table editor API was refactored. New API will allow to use table editor in other products and fully customize it.

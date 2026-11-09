@@ -11,14 +11,14 @@
 Plugin tests run in a real, rather than mocked, IntelliJ Platform environment and use real implementations for most application and project [services](plugin_services.md).
 
 Loading and initializing all the project components and services for a project to run tests is a relatively expensive operation, and it is desired to avoid doing it for each test.
-Dependently on the loading and execution time, we make a difference between *light* tests and *heavy* tests available in the IntelliJ Platform test framework:
+Dependently on the loading and execution time, the IntelliJ Platform test framework distinguishes between *light* tests and *heavy* tests:
 
 * *Light* tests reuse a project from the previous test run when possible.
 * *Heavy* tests create a new project for each test.
 
 Light and heavy tests use different base classes or fixture classes, as described below.
 
-> Because of the performance difference, we recommend plugin developers to write *light* tests whenever possible.
+> Because of the performance difference, write *light* tests whenever possible.
 >
 {style="note"}
 
@@ -56,7 +56,7 @@ For tests that require the [Java PSI](idea.md#java-plugin) or related functional
 - [`JavaCtrlMouseTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/java/codeInsight/javadoc/JavaCtrlMouseTest.kt) (JUnit 4)
 - [`MissingJavadocHighlightingTest`](%gh-ic%/java/java-tests/testSrc/com/intellij/java/codeInsight/daemon/MissingJavadocHighlightingTest.java) (JUnit 5)
 
-> See [](testing_faq.md#how-to-test-a-jvm-language) on how to set up your test environment to obtain the required _Mock JDK_ automatically.
+> See [](testing_faq.md#how-to-test-a-jvm-language) on how to set up the test environment to obtain the required _Mock JDK_ automatically.
 
 </tab>
 </tabs>

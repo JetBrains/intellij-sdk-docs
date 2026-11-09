@@ -34,7 +34,7 @@ To begin using the IntelliJ Platform integration:
 
 <procedure>
 
-1. Create a new Kotlin Notebook file (`.ipynb`) in your project or as a scratch file using <shortcut>⌘⇧N</shortcut> on macOS or <shortcut>Ctrl+Shift+N</shortcut> on Windows/Linux.
+1. Create a new Kotlin Notebook file (`.ipynb`) in the project or as a scratch file using <shortcut>⌘⇧N</shortcut> on macOS or <shortcut>Ctrl+Shift+N</shortcut> on Windows/Linux.
 2. **Important**: Switch to **Run in IDE Process** mode in the notebook toolbar.
 3. In the first code cell, declare:
     ```kotlin
@@ -102,7 +102,7 @@ registerExtension(extensionPointName, instance)
 ## Global Variables
 {id="variables"}
 
-When the IntelliJ Platform integration is loaded, the following variables are automatically available in your Kotlin Notebook environment.
+When the IntelliJ Platform integration is loaded, the following variables are automatically available in the Kotlin Notebook environment.
 These variables provide access to essential IDE components, configuration information, and management interfaces.
 
 | Variable                   | Type                                                                                                                                                 | Description                                                                                                                          |

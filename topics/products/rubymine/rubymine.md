@@ -78,7 +78,7 @@ As described in the [Modules Specific to Functionality](plugin_compatibility.md#
 {style="note"}
 
 Use the [Exploring APIs as a Consumer](plugin_compatibility.md#exploring-apis-as-a-consumer) process to identify the library <path>ruby.jar</path>.
-Test your plugin with any version of RubyMine you intend to support.
+Test the plugin with every supported version of RubyMine.
 
 ### RubyMine Test Framework
 

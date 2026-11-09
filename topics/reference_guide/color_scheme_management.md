@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Color Scheme Management
 
@@ -27,7 +27,7 @@ The color scheme manager will search first for text attributes specified by the 
 If those are not defined explicitly or if all the attributes are empty (undefined), it will search them using the `DEFAULT_KEYWORD` key.
 If neither is defined, it will further fall back to a default scheme.
 
-Text attribute keys can be chained, for example, you can define another key as:
+Text attribute keys can be chained, for example, define another key as:
 
 ```java
 static final TextAttributesKey MY_PREDEFINED_SYMBOL =
@@ -40,7 +40,7 @@ The rule is the same: if text attributes can not be found by the `MY_PREDEFINED_
 >
 {style="note"}
 
-If you are unsure which base key to use, it's better to pick the most generic one, for example, `DefaultLanguageHighlighterColors.IDENTIFIER`.
+If it is unclear which base key to use, it's better to pick the most generic one, for example, `DefaultLanguageHighlighterColors.IDENTIFIER`.
 Remember that using fixed default attributes *will force* a scheme designer to explicitly set up a color for this element.
 Otherwise, its default colors may visually conflict with a color scheme.
 If the scheme designer doesn't have a language plugin, he will not be able to fix this at all.
@@ -61,7 +61,7 @@ This can be done in <path>[plugin.xml](plugin_configuration_file.md)</path> by a
 ```
 
 It tells the IDE that the file <path>MyLangDefault.xml</path> must be searched in resources under <path>colorSchemes</path>.
-Note that the path should *not* start with a backslash and its fully qualified name (in our case <path>colorSchemes/MyLangDefault.xml</path>) *MUST BE UNIQUE* to avoid naming collisions between different providers.
+Note that the path should *not* start with a backslash and its fully qualified name (in this example <path>colorSchemes/MyLangDefault.xml</path>) *MUST BE UNIQUE* to avoid naming collisions between different providers.
 Thus, adding a language prefix, for example, "MyLang", is highly recommended.
 
 The file itself is an extract from a color scheme with required attributes, for example:

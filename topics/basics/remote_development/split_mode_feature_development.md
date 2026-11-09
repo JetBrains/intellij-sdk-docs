@@ -87,9 +87,9 @@ There are serializable (in terms of `kotlinx.serialization` framework) DTO class
 4. Call the RPC where the backend data is required.
    - It is a crucial detail that RPC calls are always suspending.
      It may be impossible to use suspending code in a particular place in the frontend functionality, either because it is an old implementation written in Java and is not ready for suspend functions at all, or because the data must be available immediately, otherwise causing poor UX or even freezes.
-     Remember that a proper UX is one of the main reasons we initiated the entire splitting process for, see the [split-mode introduction](split_mode_and_remote_development.md).
+     Remember that a proper UX is one of the main reasons for initiating the entire splitting process, see the [split-mode introduction](split_mode_and_remote_development.md).
    - RPC can't be called on [EDT](threading_model.md).
-     Avoid wrapping it in `runBlockingCancellable` unless it is absolutely necessary, and you understand all the consequences of such a decision, namely blocking the caller thread and breaking the structured concurrency and suspending API concepts.
+     Avoid wrapping it in `runBlockingCancellable` unless it is absolutely necessary and the consequences of such a decision are clear, namely blocking the caller thread and breaking the structured concurrency and suspending API concepts.
    - Consider using the existing platform abstraction for shared state as a reference: [FlowWithHistory.kt](https://github.com/JetBrains/intellij-community/blob/1c3952828ff3af2d18f99a6721c48bb22f97bd57/platform/lang-impl/src/com/intellij/build/FlowWithHistory.kt).
 5. RPC is designed to be initiated by the frontend, which implies that users always interact with one of the IDE UI components that naturally belong to the frontend.
    In some cases, however, it is required to initiate some UI display from within the backend code.
@@ -117,10 +117,10 @@ Now that the general functionality works as expected, consider reviewing the lis
 Necessity of tuning the code depends on the specifics of the feature.
 
 1. Handle reconnection: wrap RPC calls in [`durable {}`](%gh-ic%/fleet/rpc/srcCommonMain/fleet/rpc/client/Durable.kt); this wrapper will restart the call if a network error occurs.
-   Be careful with any side effects your code inside the durable block produces – ideally, avoid them.
+   Be careful with any side effects the code inside the durable block produces – ideally, avoid them.
   Example: [RecentFileModelSynchronizer.kt](https://github.com/JetBrains/intellij-community/blob/1c3952828ff3af2d18f99a6721c48bb22f97bd57/platform/recentFiles/frontend/src/com/intellij/platform/recentFiles/frontend/model/RecentFileModelSynchronizer.kt)
 2. Register actions in proper plugin modules
-   1. We strongly encourage registering actions on the frontend side, if possible.
+   1. Register actions on the frontend side, if possible.
       The possibility is determined by the action's update method: if it requires backend entities, the action belongs on the backend.
       Otherwise – on the frontend.
    2. Frontend actions are rendered immediately and do not introduce delays when displaying context menus, popups, or toolbars.
@@ -129,7 +129,7 @@ Necessity of tuning the code depends on the specifics of the feature.
       Such cases must be addressed individually depending on a specific feature description.
       There are examples of shared, eventually synchronized state implementations in the IntelliJ Platform codebase, for example, in the [Recent Files implementation](%gh-ic%/platform/recentFiles).
       There, an eventually consistent mutable shared state is implemented to make it possible to access the data model on both the frontend and the backend with no RPC calls required for access.
-   4. Consider approaching us on the [JetBrains Platform Forum](https://platform.jetbrains.com) to discuss what could be done in your specific case.
+   4. Consider asking on the [JetBrains Platform Forum](https://platform.jetbrains.com) to discuss what could be done in a specific case.
 3. Display empty state: UI must render without waiting for backend; show placeholders and progressively fill in data.
 4. Load large state: avoid “send everything at once” RPC implementations; use paging/lazy loading, and request only what the UI needs now.
    Example: [BackendRecentFileEventsModel.kt](https://github.com/JetBrains/intellij-community/blob/1c3952828ff3af2d18f99a6721c48bb22f97bd57/platform/recentFiles/backend/src/com/intellij/platform/recentFiles/backend/BackendRecentFileEventsModel.kt#L164)
@@ -141,10 +141,10 @@ Known issues are mitigated, and the plugin quality is now good enough.
 
 ## 7. Add Tests
 
-Fix the split feature behavior and quality with unit and integration tests if you have not used the TDD approach earlier.
+Fix the split feature behavior and quality with unit and integration tests if the TDD approach was not used earlier.
 See the [](split_mode_and_remote_development.md#running-tests-in-split-mode) section.
 
-We suggest paying attention to:
+Pay attention to:
 
 - Data transformations: correct (de)serialization
 - Data consistency: correct data merging in case of complicated features with eventually consistent backend/frontend state
@@ -156,6 +156,6 @@ The feature implementation has tests covering its correct behavior in remote and
 ## Getting Help
 
 In case of any questions or uncertainties regarding the splitting process, please post a question on the [JetBrains Platform Forum](https://platform.jetbrains.com).
-We will try to provide as much help as possible there and reconsider and adjust for unexpected cases.
+JetBrains will try to provide as much help as possible there and reconsider and adjust for unexpected cases.
 
 <include from="snippets.topic" element-id="missingContent"/>

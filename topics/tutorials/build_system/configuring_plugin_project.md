@@ -94,7 +94,7 @@ The Gradle properties `project.version`, `project.group`, and `rootProject.name`
 However, the [](tools_gradle_intellij_plugin.md) does not combine and substitute those Gradle properties for the default [`<id>`](plugin_configuration_file.md#idea-plugin__id) and [`<name>`](plugin_configuration_file.md#idea-plugin__name) elements in the <path>plugin.xml</path> file.
 
 The best practice is to keep `project.version` current.
-By default, if you modify `project.version` in Gradle build script, the Gradle plugin will automatically update the [`<version>`](plugin_configuration_file.md#idea-plugin__version) value in the <path>plugin.xml</path> file.
+By default, the Gradle plugin will automatically update the [`<version>`](plugin_configuration_file.md#idea-plugin__version) value in the <path>plugin.xml</path> file to match `project.version` from the Gradle build script.
 This practice keeps all version declarations synchronized.
 
 ## Verifying Plugin
@@ -104,7 +104,7 @@ The Gradle plugin provides tasks that allow for running integrity and compatibil
 * [`verifyPlugin`](tools_gradle_intellij_plugin.md#tasks-verifyplugin) - validates completeness and contents of <path>plugin.xml</path> descriptors as well as plugin's archive structure,
 * [`runPluginVerifier`](tools_gradle_intellij_plugin.md#tasks-runpluginverifier) - runs the [IntelliJ Plugin Verifier](https://github.com/JetBrains/intellij-plugin-verifier) tool to check the binary compatibility with specified IntelliJ IDE builds.
 
-Plugin Verifier integration task allows for configuring the exact IDE versions that your plugin will be checked against.
+Plugin Verifier integration task allows for configuring the exact IDE versions that the plugin will be checked against.
 See [](verifying_plugin_compatibility.md#plugin-verifier) for more information.
 
 ## Publishing Plugin

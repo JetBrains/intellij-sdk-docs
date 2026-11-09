@@ -179,7 +179,7 @@ See [](code_samples.md) on how to set up and run the plugin.
 
 ### How does it work?
 
-The plugin inspects your code opened in the IntelliJ IDEA editor.
+The plugin inspects the code opened in the IntelliJ IDEA editor.
 The plugin highlights the code fragments where two `String` expressions are compared by `==` or `!=` and proposes to replace this code fragment with `.equals()`:
 
 ![Comparing String References inspection highlighting and quick fix](comparing_references.png)

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Implementing Parser and PSI
 
@@ -34,7 +34,7 @@ The base classes for the PSI implementation, including [`PsiFileBase`](%gh-ic%/p
 
 ### Parser Implementation
 
-While coding parser manually is quite possible, we highly recommend generating parser and corresponding PSI classes from BNF grammars using [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) plugin.
+While coding parser manually is quite possible, it is highly recommended to generate parser and corresponding PSI classes from BNF grammars using [Grammar-Kit](https://plugins.jetbrains.com/plugin/6606-grammar-kit) plugin.
 Besides code generation, it provides various features for editing grammar files: syntax highlighting, quick navigation, refactorings, etc. as well as integration with Gradle via [](tools_gradle_grammar_kit_plugin.md).
 The Grammar-Kit plugin is built using its own engine; its source code and documentation can be found on [GitHub](https://github.com/JetBrains/Grammar-Kit).
 
@@ -54,7 +54,7 @@ Also, it is possible to drop a start marker before its end marker has been set.
 The `drop()` method drops only a single start marker without affecting any markers added after it, and the `rollbackTo()` method drops the start marker and all markers added after it and reverts the lexer position to the start marker.
 These methods can be used to implement lookahead when parsing.
 
-The method `PsiBuilder.Marker.precede()` is useful for right-to-left parsing when you don't know how many markers you need at a specific position until you read more input.
+The method `PsiBuilder.Marker.precede()` is useful for right-to-left parsing when the number of markers needed at a specific position is unknown until more input is read.
 For example, a binary expression `a+b+c` needs to be parsed as `( (a+b) + c )`.
 Thus, two start markers are needed at the position of the token 'a', but that is not known until the token 'c' is read.
 When the parser reaches the '+' token following 'b', it can call `precede()` to duplicate the start marker at 'a' position, and then put its matching end marker after 'c'.
@@ -74,7 +74,7 @@ The types of tokens which are treated as whitespace or comments are defined by `
 Most languages will not need to override `getWhitespaceTokens()` which returns the language-agnostic [`TokenSet.WHITE_SPACE`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/TokenSet.java) by default.
 The token set returned from [`ParserDefinition.getCommentTokens()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) is also used to search for [TODO items](https://www.jetbrains.com/help/idea/using-todo.html).
 
-To better understand the process of building a PSI tree for a simple expression, you can refer to the following diagram:
+To better understand the process of building a PSI tree for a simple expression, refer to the following diagram:
 
 ![PsiBuilder](PsiBuilder.gif)
 

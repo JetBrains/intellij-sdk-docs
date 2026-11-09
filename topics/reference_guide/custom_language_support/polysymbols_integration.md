@@ -1,9 +1,9 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Poly Symbols Integration with Language Features
 <primary-label ref="2025.2"/>
 
-<link-summary>How to integrate your Poly Symbols with a particular language feature.</link-summary>
+<link-summary>How to integrate Poly Symbols with a particular language feature.</link-summary>
 
 IDEs provide built-in support for Poly Symbols integration with the main language features of HTML, CSS, JavaScript, and TypeScript.
 Contribution of static symbols can be achieved through Web Types or Custom Elements Manifest.
@@ -15,7 +15,7 @@ Later on,the list is displayed to the user.
 Query executor, on the other hand, uses a list of contributed [`PolySymbolScope`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolScope.kt)s at a given location to either list all available symbols, get code completions, or match a name against the list of available symbols.
 
 The implementations should register query scope providers by calling the `registrar` parameter methods.
-The registrar works as a builder, but each call creates a new instance, so you can reuse build stages, for example:
+The registrar works as a builder, but each call creates a new instance, so build stages can be reused, for example:
 
 ```kotlin
 registrar
@@ -50,13 +50,13 @@ Framework reorders conditions in the best way to efficiently match contributors 
 ### A Symbol Referencing Pattern
 
 A common pattern for contributing symbols is to use a reference pattern to map from one kind of symbols to the other.
-Let's say that we can produce a list of symbols representing message bundle file property keys.
+Suppose a plugin can produce a list of symbols representing message bundle file property keys.
 Such symbols could have a qualified kind named: `message-bundle/properties`.
-Let's say that these message bundle properties can be used as string literal parameters to some Java method calls.
+Suppose that these message bundle properties can be used as string literal parameters to some Java method calls.
 A scope contributor would provide a scope containing all the `properties` symbols and a symbol with a reference pattern, which would map from `message-bundle/properties` to the ` java/string-literals ` kind.
 A convenient way of defining such a symbol is to use the `ReferencingPolySymbol` class.
 
-As a result, we can say that in a particular place in the code, all provided message bundle properties should be treated as possible string literal values.
+As a result, in a particular place in the code, all provided message bundle properties should be treated as possible string literal values.
 Such an approach allows symbol contributors to abstract from the actual implementation details of registering completion providers or reference providers in a particular language and focus on building the symbol model.
 
 ## Supported Language Features

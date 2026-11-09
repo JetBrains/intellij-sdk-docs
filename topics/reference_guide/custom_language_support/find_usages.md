@@ -45,7 +45,7 @@ The steps of the _Find Usages_ action are the following:
 
 ### Grouping Results
 
-To have the title of the found element be correctly displayed in the title of the Find Usages tool window, you need to provide an implementation of the [`ElementDescriptionProvider`](%gh-ic%/platform/core-api/src/com/intellij/psi/ElementDescriptionProvider.java) interface.
+To have the title of the found element be correctly displayed in the title of the Find Usages tool window, provide an implementation of the [`ElementDescriptionProvider`](%gh-ic%/platform/core-api/src/com/intellij/psi/ElementDescriptionProvider.java) interface.
 The [`ElementDescriptionLocation`](%gh-ic%/platform/core-api/src/com/intellij/psi/ElementDescriptionLocation.java) passed to the provider in this case will be an instance of [`UsageViewLongNameLocation`](%gh-ic%/platform/usageView/src/com/intellij/usageView/UsageViewLongNameLocation.java).
 
 **Example:**

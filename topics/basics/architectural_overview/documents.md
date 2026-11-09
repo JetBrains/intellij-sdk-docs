@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Documents
 
@@ -19,7 +19,7 @@ The IntelliJ Platform handles encoding and line break conversions when loading a
 
 ## What can I do with a `Document`?
 
-You may perform any operations that access or modify the file contents on the "plain text" level (as a sequence of characters, not as a tree of [](psi.md) elements).
+It supports any operations that access or modify the file contents on the "plain text" level (as a sequence of characters, not as a tree of [](psi.md) elements).
 
 ## Where does a `Document` come from?
 
@@ -63,8 +63,8 @@ See also [Working with Text](working_with_text.md#safely-replacing-selected-text
 ## Are there any utilities available for working with documents?
 
 [`DocumentUtil`](%gh-ic%/platform/core-impl/src/com/intellij/util/DocumentUtil.java) contains utility methods for `Document` processing.
-This allows you to get information like the text offsets of particular lines.
-This is particularly useful when you need text location/offset information about a given `PsiElement`.
+They provide information like the text offsets of particular lines.
+This is particularly useful for obtaining text location/offset information about a given `PsiElement`.
 
 ## How can I mark a region as read-only?
 

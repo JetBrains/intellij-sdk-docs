@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Bundling Plugin API Sources
 
@@ -112,4 +112,4 @@ buildPlugin {
 
 The above configuration will create a source JAR containing Java and Kotlin source files from the `com.example.plugin.openapi` package and add it to the final plugin ZIP distribution in the required <path>example-plugin.zip!/example-plugin/lib/src</path> directory.
 
-If your plugin is a Gradle project and there is no clear open API package separation, it is recommended to restructure the plugin project to a Gradle multi-project variant and create a dedicated open API subproject that contains all API sources to be included in the final distribution created by the main plugin Gradle project.
+If the plugin is a Gradle project and there is no clear open API package separation, it is recommended to restructure the plugin project to a Gradle multi-project variant and create a dedicated open API subproject that contains all API sources to be included in the final distribution created by the main plugin Gradle project.

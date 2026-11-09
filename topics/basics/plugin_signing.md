@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin Signing
 
@@ -10,7 +10,7 @@ and all IntelliJ-based IDEs.
 The JetBrains Marketplace signing process is designed to ensure that plugins are not modified over the course of the publishing and delivery pipeline.
 If the author does not sign the plugin or has a revoked certificate, a warning dialog will appear in the IDE during installation.
 
-On our side, we will check if the public part of a key is present, and we will verify the signature.
+JetBrains Marketplace checks if the public part of a key is present and verifies the signature.
 This is similar to the [Google upload key](https://developer.android.com/studio/publish/app-signing#generate-key) mechanism.
 
 ## How Signing Works
@@ -27,14 +27,14 @@ To be sure a file has not been modified, the file will be signed twice – first
 - The JetBrains signing and verification process is as follows:
   - JetBrains CA is used as the source of truth.
   - Its public part will be added to the IDE's Java TrustStore, while the private part is used only once to generate an intermediate certificate.
-  - The private key of the JetBrains CA is supersecret; in fact, we've already said too much.
+  - The private key of the JetBrains CA is supersecret.
 
 </procedure>
 
 The intermediate certificate issues a certificate that will be used to sign plugins.
 This way, it will be possible to re-generate this certificate without access to JetBrains CA's supersecret private key.
 The private key of the intermediate certificate is issued and kept in the AWS Certificate Manager, and no application has access to it; people's access is also limited.
-So now we have an AWS-based Intermediate CA.
+This results in an AWS-based Intermediate CA.
 The public part of the intermediate certificate will be added to the plugin distribution file together with the signing certificate.
 
 The certificate used to sign plugins is stored securely, too.
@@ -50,7 +50,7 @@ Both methods require a private certificate key to be present.
 
 ### Generate Private Key
 
-> Never commit your credentials to the Version Control System!
+> Never commit credentials to the Version Control System!
 > Instead, use environment variables, like:
 > ```
 > token.set(providers.environmentVariable("PUBLISH_TOKEN"))
@@ -83,7 +83,7 @@ At this point, the generated <path>private.pem</path> content should be provided
 The provided password should be specified as the `signPlugin.password` property
 ([2.x](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-password), [1.x](tools_gradle_intellij_plugin.md#tasks-signplugin-password)).
 
-As a next step, we will generate a <path>chain.crt</path> certificate chain with:
+As a next step, generate a <path>chain.crt</path> certificate chain with:
 
 ```bash
 openssl req\
@@ -234,7 +234,7 @@ To avoid storing hard-coded values in the project configuration, the most suitab
 
 To specify secrets like `PUBLISH_TOKEN` and values required for the
 `signPlugin` Gradle task ([2.x](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin), [1.x](tools_gradle_intellij_plugin.md#tasks-signplugin)),
-modify your Gradle configuration as follows:
+modify the Gradle configuration as follows:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -294,7 +294,7 @@ provide <control>Environment Variables</control> using relevant environment vari
 
 </tldr>
 
-CLI tool is required if you don't rely on either Gradle plugin – i.e., when working with [Themes](developing_themes.md).
+CLI tool is required when not using either Gradle plugin – i.e., when working with [Themes](developing_themes.md).
 
 Get the latest Marketplace ZIP Signer CLI Tool version from the GitHub Releases page.
 After downloading the <path>marketplace-zip-signer-cli.jar</path>, execute it as below:
@@ -316,7 +316,7 @@ Instead, a trusted private CA or self-signed certificate can be used to sign and
 
 ### Verification
 
-Before looking at how we can sign a plugin, let's first review how verification works when a non-JetBrains certificate is used.
+This section describes how verification works when a non-JetBrains certificate is used.
 As of 2021.2, during verification, IntelliJ-based IDEs check if the plugin was signed with the JetBrains CA certificate or any public key provided by the user via <ui-path>Settings | Plugins | Manage Plugin Certificates</ui-path>.
 In 2021.2.1, a system property has been added: `intellij.plugins.truststore`, pointing to a trusted JKS TrustStore.
 During verification, the plugin's public key is extracted from the signature.
@@ -328,7 +328,7 @@ If an internal CA is available, it can be used to generate certificates for sign
 When choosing this route, the certificate chain includes the root CA public key at the end of the chain.
 
 With this approach, existing internal TrustStores may exist and could be used.
-Be sure when choosing a TrustStore that the CAs are limited to the internal CAs you trust.
+Be sure when choosing a TrustStore that the CAs are limited to trusted internal CAs.
 Using a TrustStore with public CAs can expose users to an attack vector.
 
 If adding a TrustStore to a user's environment is not possible, the user may also add the root CAs public key to <ui-path>Settings | Plugins | Manage Plugin Certificates</ui-path>.
@@ -338,7 +338,7 @@ If adding a TrustStore to a user's environment is not possible, the user may als
 Using a self-signed certificate is an option if no internal CAs exist.
 To generate the key and public key, see [](#generate-private-key).
 
-If providing users with a TrustStore, you can generate one with the public key using `keytool`:
+If providing users with a TrustStore, generate one with the public key using `keytool`:
 
 ```bash
 keytool -import -alias IdeaPlugin -file chain.crt -keystore pluginKeystore.jks -storepass changeit

@@ -401,7 +401,7 @@ Default value
 
 Notes:
 - The IntelliJ Platform Gradle Plugin wires this property automatically for tasks implementing ModuleAware during task preconfiguration.
-- You typically do not set this value yourself; consume it in your task to branch logic.
+- This value is typically not set manually; consume it in the task to branch logic.
 
 
 
@@ -837,7 +837,7 @@ Type
 
 </tldr>
 
-When you develop a plugin, you may want to check how it works in [split mode](split_mode_and_remote_development.md), when one machine is running the backend part and another is running a frontend part (JetBrains Client) which connects to the backend.
+During plugin development, it is often useful to check how the plugin works in [split mode](split_mode_and_remote_development.md), when one machine is running the backend part and another is running a frontend part (JetBrains Client) which connects to the backend.
 
 This property allows running the IDE with backend and frontend parts running in separate processes.
 Use `pluginInstallationTarget` to specify whether the developed plugin is installed in the frontend, backend, or both parts.

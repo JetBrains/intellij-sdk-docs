@@ -79,14 +79,14 @@ Hints displayed in the preview panel are defined with the dedicated markup:
 <tabs>
 <tab title="2023.2+">
 
-```
+```text
 /*<# Displayed Hint #>*/
 ```
 
 </tab>
 <tab title="Pre-2023.2">
 
-```
+```text
 <# Displayed Hint #>
 ```
 

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # External Builder API and Plugins
 <primary-label ref="IntelliJIDEA"/>
@@ -68,7 +68,7 @@ In a working copy of IDE, a "Remote" run configuration should be created and poi
 Suppose you often need to debug external builders and want to reuse the created "Remote" run configuration.
 In that case, you may fix the port number by adding the following VM option to the plugin run configuration:
 
-```
+```text
 -Dcompiler.process.debug.port=<port-number>
 ```
 
@@ -76,7 +76,7 @@ In that case, you may fix the port number by adding the following VM option to t
 
 Start IDE with your plugin with the following VM option:
 
-```
+```text
 -Dcompiler.process.debug.port=<port-number>
 ```
 
@@ -109,7 +109,7 @@ Please also provide details about the memory and other VM settings for the build
 
 The log file is located under the directory:
 
-```
+```text
 <ide-system-directory>/log/build-log
 ```
 

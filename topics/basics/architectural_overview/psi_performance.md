@@ -23,7 +23,7 @@ String.format("Hello, %s!", name);
 
 This is its (simplified) PSI:
 
-```
+```text
 PsiMethodCallExpression:String.format("Hello, %s!", name)
   PsiReferenceExpression:String.format
   PsiExpressionList

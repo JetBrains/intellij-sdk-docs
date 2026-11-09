@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Internationalization
 
@@ -184,7 +184,8 @@ It will cause the IDE to generate prefix and suffix automatically when the strin
 
 The `&` symbol in message bundles is used to specify [mnemonic](mnemonics.md) characters for buttons and labels.
 To use `&` in a value, escape it by a backslash (note that you also need to escape the backslash symbol):
-```
+
+```properties
 section.title=Drag \\\& Drop
 ```
 
@@ -192,7 +193,8 @@ section.title=Drag \\\& Drop
 
 To wrap a long value in a message bundle, put a backslash at the end of the line, and continue the value on the next line with an indent.
 Starting spaces on the next line are ignored, so if a space character is required before the word in the next line, add a space before the backslash:
-```
+
+```properties
 key=very, very long \
   description
 ```
@@ -262,9 +264,11 @@ Example:
 If an NLS string is not a simple literal but obtained as a concatenation of several values, always use [MessageFormat](https://docs.oracle.com/en/java/javase/24/docs/api/java.base/java/text/MessageFormat.html) pattern to extract it to a message bundle.
 
 For example, to internationalize `"Delete Class " + className` add the following property:
-```
+
+```properties
 title.delete.class=Delete Class {0}
 ```
+
 and access it with `message("title.delete.class", className)` in the client code.
 
 Patterns should be used even if the changing part of the string is the last or the first element in the concatenation, because this may change when the message is translated to a language with a different grammar.
@@ -294,7 +298,8 @@ However, in other cases, it is better to avoid composing NLS strings from smalle
 The following example won't be translated correctly into the languages which use word cases:
 
 English messages:
-```
+
+```properties
 dialog.title.add.0=Add {0}
 dialog.title.edit.0=Edit {0}
 dialog.title.name.0.1={0} ''{1}''
@@ -303,7 +308,8 @@ concept.dependency=Dependency
 ```
 
 Polish translations:
-```
+
+```properties
 dialog.title.add.0=Dodaj {0}
 dialog.title.add.0=Edytuj {0}
 concept.library=Bibilioteka
@@ -335,12 +341,15 @@ If several localized strings (non-user input) are used to concatenate the string
 
      The UI might still need a slight rework to be clear what will be previewed (consult the UX expert if possible).
    - In some cases, it might be correct to use the sentence concatenation:
-     ```
+
+     ```properties
      guidelines.browser.tab.name={0} | IntelliJ Platform UI Guidelines
      google.docs.browser.tab.name={0} - Google Docs
      ```
+
 3. Provide the whole string for each context and term pair:
-   ```
+
+   ```properties
    dialog.title.add.library=Add Library
    dialog.title.edit.library=Edit Library
    dialog.title.name.library.0=Library ''{0}''
@@ -348,6 +357,7 @@ If several localized strings (non-user input) are used to concatenate the string
    dialog.title.edit.dependency=Edit Dependency
    dialog.title.name.dependency.0=Dependency ''{0}''
    ```
+
    This approach is the least preferred:
    - Given X terms and Y contexts, it will result in X*Y strings.
      It is acceptable to have several strings for small X and Y.
@@ -363,9 +373,11 @@ It starts with an index of the argument which will be used for choosing a varian
 and the rest specifies pairs of numbers and corresponding values separated by `|`.
 
 For example, for pattern:
-```
+
+```properties
 title.selected.files=Selected {0,choice,1#File|2#Files}
 ```
+
 the expression `message("title.selected.files", count)` will evaluate to:
 - `"Selected File"` if `count` is `1` or less
 - `"Selected Files"` if `count` is `2` or greater
@@ -373,20 +385,24 @@ the expression `message("title.selected.files", count)` will evaluate to:
 The number before `#` characters does not specify the exact value but start of the range.
 The corresponding variant will be used if the argument is greater or equal to the number in this clause and less than the number in the next clause.
 For example, for pattern:
-```
+
+```properties
 label.selected.files={0,choice,0#No files are|1#One file is|2#A few files are|10#Many files are} selected
 ```
+
 the expression `message("label.selected.files", 6)` will evaluate to `"A few files are selected"`.
 
 If an argument is referred in one of the choice's variants, it becomes a message pattern itself, and this **adds additional layer of escaping of single quotes**, so to add `'` character in such a variant, add: `''''`.
 For example, below is the correct sentence:
-```
+
+```properties
 warning.message={0,choice,1#One person doesn''t|2#{0} people don''''t} like MessageFormat
 ```
 
 In some cases, the ordinal format can be useful.
 It adds an appropriate ending to numbers, so it turns into `1st`, `2nd`, `3rd`, `10th`, and so on:
-```
+
+```properties
 parameter.cast.fix=Cast {0,number,ordinal} parameter to {1}
 ```
 

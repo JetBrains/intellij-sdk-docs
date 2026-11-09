@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Gradle IntelliJ Plugin (1.x)
 <primary-label ref="Obsolete"/>
@@ -184,7 +184,7 @@ gradle buildPlugin --configuration-cache
 
 or by enabling it in the <path>gradle.properties</path> file:
 
-```
+```properties
 org.gradle.unsafe.configuration-cache = true
 ```
 

@@ -209,7 +209,7 @@ Kotlin `1.8.20` has a [new incremental compilation approach](https://kotlinlang.
 Unfortunately, it is not compatible with the IntelliJ Platform when reading large JAR files (like <path>app.jar</path> or <path>3rd-party-rt.jar</path>),
 leading to an `Out of Memory` exception:
 
-```
+```text
 Execution failed for task ':compileKotlin'.
 > Failed to transform app.jar to match attributes {artifactType=classpath-entry-snapshot, org.gradle.libraryelements=jar, org.gradle.usage=java-runtime}.
    > Execution failed for ClasspathEntrySnapshotTransform: .../lib/app.jar.
@@ -218,7 +218,7 @@ Execution failed for task ':compileKotlin'.
 
 To avoid this exception, add the following line to <path>gradle.properties</path>:
 
-```
+```properties
 kotlin.incremental.useClasspathSnapshot=false
 ```
 

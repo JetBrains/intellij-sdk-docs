@@ -190,7 +190,7 @@ Source code is represented by using code fences, which are three backticks.
 
 Syntax highlighting is applied by specifying the language after the first set of ticks:
 
-```
+```md
     ```xml
     <tagName attribute="value">XML Text</tagName>
     ```
@@ -314,7 +314,7 @@ For **PNG** images, provide an additional zoomed variant <path>image.zoomed.png<
 
 For **SVG** images, use this notation:
 
-```
+```md
     ![Alt text](image.svg){thumbnail-same-file="true"}
 ```
 

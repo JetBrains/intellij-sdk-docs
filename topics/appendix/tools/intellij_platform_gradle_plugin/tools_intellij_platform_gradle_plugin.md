@@ -346,7 +346,7 @@ See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) on how t
 
 As a fallback, `intellijPlatform` extension can be used to allow dynamic configuration of the target platform, for example, via <path>gradle.properties</path>:
 
-```
+```properties
 platformType = IC
 platformVersion = 2023.3
 ```

@@ -426,7 +426,7 @@ class NewMessageEventListener : ProjectRemoteTopicListener<NewMessageEvent> {
 
 If an error like this occurs:
 
-```
+```text
 java.lang.AbstractMethodError: Receiver class InterfaceApiClientStub
 does not define or inherit an implementation of the resolved method
 'abstract void foo()' of interface InterfaceApi.

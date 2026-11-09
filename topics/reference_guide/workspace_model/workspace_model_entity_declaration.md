@@ -149,7 +149,7 @@ to an entity as well as some additional methods in the file where the entity is 
 
 Comments surround all generated blocks:
 
-```
+```kotlin
 //region generated code
 //endregion
 ```

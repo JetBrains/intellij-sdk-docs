@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Coroutine Dumps
 <primary-label ref="2024.1"/>
@@ -14,7 +14,7 @@ Thread dumps include all application threads and coroutines existing at the mome
 
 A coroutine dump format is:
 
-```
+```text
 - parent coroutine header
 	at stackframe
 	at stackframe
@@ -39,12 +39,14 @@ Indentation represents parent-child relationships.
 A coroutine entry may not include a stacktrace (see `child coroutine 1 header`) because it has no executable body, or it did not start executing yet.
 
 An example coroutine header:
-```
+
+```text
 -[x5 of] "my task":StandaloneCoroutine{Active}, state: SUSPENDED [ComponentManager(ApplicationImpl@xxxxxxxx), Dispatchers.EDT]
 ```
 
 Its format is as follows:
-```
+
+```text
 -[xN of] "name":CoroutineClass{JobState}, state: STATE [context]
 ```
 

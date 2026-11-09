@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Dynamic Plugins
 <primary-label ref="2020.1"/>
@@ -119,7 +119,7 @@ If a plugin fails to reload, the log will contain a cause as to why.
 When steps 1 and 2 are completed, the log will contain more information about the memory leak.
 For example, the following shows a chain of field references that is keeping the class loader in memory:
 
-```
+```text
 2020-12-26 14:43:24,563 [ 251086]   INFO - lij.ide.plugins.DynamicPlugins - Snapshot analysis result: Root 1:
   ROOT: Global JNI
   sun.awt.X11.XInputMethod.clientComponentWindow

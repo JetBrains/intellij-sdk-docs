@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Gradle IntelliJ Plugin (1.x) – FAQ
 <primary-label ref="Obsolete"/>
@@ -168,7 +168,7 @@ To achieve that, the [`gradle-idea-ext-plugin`](https://github.com/JetBrains/gra
 
 Unfortunately, this entry remains even after disabling the `org.jetbrains.intellij` plugin in a project – the [`setupDependencies`](tools_gradle_intellij_plugin.md#tasks-setupdependencies) task won't be resolved appropriately, which produces the following exception:
 
-```
+```text
 Task 'setupDependencies' not found in root project 'projectName'.
 ```
 
@@ -213,7 +213,7 @@ runPluginVerifier {
 
 The Gradle IntelliJ Plugin, when targeting the IntelliJ SDK `2022.1+`, uses the `PathClassLoader` class loader by the following system property:
 
-```
+```text
 -Djava.system.class.loader=com.intellij.util.lang.PathClassLoader
 ```
 
@@ -273,7 +273,7 @@ jacocoTestCoverageVerification {
 
 When using Java `11.0.2` for building plugins, resolving dependencies (or making any other network requests) in Gradle IntelliJ Plugin fails due to the [JDK-8220723](https://bugs.openjdk.org/browse/JDK-8220723) issue with the following exception:
 
-```
+```text
 Exception in thread "main" javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated
 ```
 

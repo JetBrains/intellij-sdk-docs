@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ Platform Gradle Plugin – FAQ
 
@@ -50,7 +50,7 @@ Due to the [IJPL-157292](https://youtrack.jetbrains.com/issue/IJPL-157292/lib-te
 
 This results in the `NoClassDefFoundError` exception:
 
-```
+```text
 java.lang.NoClassDefFoundError: org/opentest4j/AssertionFailedError
 ```
 
@@ -86,7 +86,7 @@ Due to the [IJPL-159134](https://youtrack.jetbrains.com/issue/IJPL-159134/JUnit5
 
 This results in the `NoClassDefFoundError` exceptions:
 
-```
+```text
 Caused by: java.lang.NoClassDefFoundError: junit/framework/TestCase
 
 Caused by: java.lang.NoClassDefFoundError: org/junit/rules/TestRule
@@ -284,7 +284,7 @@ intellijPlatform {
 
 The Gradle IntelliJ Plugin, when targeting the IntelliJ SDK `2022.1+`, uses the `PathClassLoader` class loader by the following system property:
 
-```
+```text
 -Djava.system.class.loader=com.intellij.util.lang.PathClassLoader
 ```
 
@@ -412,7 +412,7 @@ The plugin fully honors Gradle's [`--offline`](https://docs.gradle.org/current/u
 When the build runs offline, the plugin reuses already-cached artifacts instead of reaching the network.
 If the required data isn't cached yet, it fails fast with a message naming the missing artifact instead of hanging or throwing an opaque network error:
 
-```
+```text
 No cached version of <artifact> available for offline mode. Run the build once without the `--offline` flag to populate the cache, then retry.
 ```
 
@@ -424,7 +424,7 @@ Run the build once without `--offline` to populate the caches, then subsequent o
 When running tests or IDE with your plugin loaded, it is necessary to use JetBrains Runtime (JBR).
 In the case, no JBR is found in the plugin configuration, there's the following warning logged by the [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration) task:
 
-```
+```text
 The currently selected Java Runtime is not JetBrains Runtime (JBR).
 This may lead to unexpected IDE behaviors.
 Please use IntelliJ Platform binary release with bundled JBR

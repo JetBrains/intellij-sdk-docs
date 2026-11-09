@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # JetBrains Runtime (JBR)
 
@@ -144,13 +144,17 @@ dependencies {
 Provided `version`, `variant`, and `architecture` parameters along with the `explicitVersion` are used to resolve the JetBrains Runtime archives published on [GitHub Releases](https://github.com/JetBrains/JetBrainsRuntime/releases/) page.
 
 To correctly understand the pattern, refer to the archive names in format:
-```
+
+```text
 jbr_[prefix]-[jdk]-[os]-[arch]-b[build].tar.gz
 ```
+
 e.g.:
-```
+
+```text
 jbr_jcef-21.0.3-osx-aarch64-b446.1.tar.gz
 ```
+
 which can be split into the following parts:
 
 - `prefix` = `jcef`

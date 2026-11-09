@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Testing Highlighting
 
@@ -31,7 +31,8 @@ To test syntax highlighting provided by [Lexer](implementing_lexer.md), use [`Ed
 
 This method takes the tested file and the answer file describing expected highlighting information for each token.
 The answer file format is as follows:
-```
+
+```text
 token_value
     EXPECTED_TEXT_ATTRIBUTE_KEY => FALLBACK_KEY
 string␣value

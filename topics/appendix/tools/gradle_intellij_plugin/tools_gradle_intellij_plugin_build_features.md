@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Gradle IntelliJ Plugin (1.x) – Build Features
 <primary-label ref="Obsolete"/>
@@ -12,13 +12,13 @@ Build Features are an implementation of the feature flags concept and let you co
 
 To enable or disable a particular feature, add a Project property to the <path>gradle.properties</path> file with the following pattern:
 
-```
+```properties
 org.jetbrains.intellij.buildFeature.<buildFeatureName>=<true|false>
 ```
 
 E.g., to disable the [`selfUpdateCheck`](#selfupdatecheck) feature, add this line:
 
-```
+```properties
 org.jetbrains.intellij.buildFeature.selfUpdateCheck=false
 ```
 
@@ -33,7 +33,7 @@ Default value
 
 Example
 :
-```
+```properties
 org.jetbrains.intellij.buildFeature.noSearchableOptionsWarning=false
 ```
 
@@ -50,7 +50,7 @@ Default value
 
 Example
 :
-```
+```properties
 org.jetbrains.intellij.buildFeature.paidPluginSearchableOptionsWarning=false
 ```
 
@@ -73,6 +73,6 @@ Default value
 
 Example
 :
-```
+```properties
 org.jetbrains.intellij.buildFeature.selfUpdateCheck=false
 ```

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Code Formatter
 
@@ -10,14 +10,18 @@
 
 </tldr>
 
-The IntelliJ Platform includes a powerful framework for implementing custom language formatters.
+The IntelliJ Platform includes a framework for implementing custom language formatters.
 At its core, the framework represents formatting rules by nested _blocks_ ([`Block`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/Block.java)) that cover the whole file.
 Each block specifies *constraints* on whitespaces, like indents, wraps, spacing, or alignments.
 This allows the formatting engine to calculate the smallest number of whitespace modifications necessary to properly format a file.
 
-## Introduction
+The formatter modifies only characters between blocks.
+Therefore, the bottom-level blocks must cover all non-whitespace characters, otherwise the formatter may delete the characters between blocks.
+Whitespace should not be covered by blocks unless it is intended to be left as it is.
 
-The easiest way to understand how formatting works in practice is to use a small code example in an existing language and
+## Inspecting Formatting Blocks
+
+To understand how formatting works in practice, open a small code sample in an existing language and
 use the [built-in PSI viewer](explore_api.md#internalMode) to inspect how formatting blocks are built.
 To invoke the builtin PSI viewer with the possibility of inspecting <control>Block Structure</control>,
 use <ui-path>Tools | View PSI Structure...</ui-path> or <ui-path>Tools | View PSI Structure of Current File...</ui-path>.
@@ -30,11 +34,8 @@ In other words, there is a root block that covers the entire file and its nested
 statements, identifiers, or braces.
 Comparing the PSI and block structure above reveals obvious similarities in the nesting.
 
-In general, however, PSI structure and formatting model are two different things serving different purposes.
-While the structure of formatting blocks and PSI are usually similar, they do not have to match one-to-one.
-Additionally, it is vital to understand that the formatter modifies only characters between blocks.
-Therefore, the tree of blocks must cover all non-whitespace characters the bottom-level, or otherwise, the formatter may delete the characters between blocks.
-On the other hand, spacing elements should never be covered by blocks unless the space is intended to be left as it is.
+While the structure of formatting blocks and PSI are usually similar, they do not have to match one-to-one:
+PSI and the formatting model serve different purposes.
 
 ## Implementation
 
@@ -162,7 +163,7 @@ To create an alignment instance, the class provides several static methods:
 Backward shift allows a former-aligned element to be shifted right to align with a later element.
 For example, in the code:
 
-```
+```java
 int start  = 1;
 int finish = 2;
 ```

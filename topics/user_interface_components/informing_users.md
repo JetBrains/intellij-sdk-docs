@@ -6,7 +6,7 @@
 
 <tldr>
 
-**UI Guidelines:** [](notification_types.md)
+**UI Guidelines**: [](notification_types.md)
 
 </tldr>
 
@@ -17,7 +17,7 @@ As a replacement, the IntelliJ Platform provides multiple non-modal notification
 
 <tldr>
 
-**UI Guidelines:** [](validation_errors.md)
+**UI Guidelines**: [](validation_errors.md)
 
 </tldr>
 
@@ -37,7 +37,7 @@ Other [`HintManager`](%gh-ic%/platform/platform-api/src/com/intellij/codeInsight
 
 <tldr>
 
-**UI Guidelines:** [](banner.md)
+**UI Guidelines**: [](banner.md)
 
 </tldr>
 
@@ -55,7 +55,7 @@ A commonly used UI implementation is [`EditorNotificationPanel`](%gh-ic%/platfor
 
 <tldr>
 
-**UI Guidelines:** [](got_it_tooltip.md)
+**UI Guidelines**: [](got_it_tooltip.md)
 
 </tldr>
 

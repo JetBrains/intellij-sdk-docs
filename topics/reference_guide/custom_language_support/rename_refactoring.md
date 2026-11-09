@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Product Help:** [Rename refactorings](https://www.jetbrains.com/help/idea/rename-refactorings.html)
+**Product Help**: [Rename refactorings](https://www.jetbrains.com/help/idea/rename-refactorings.html)
 
 </tldr>
 

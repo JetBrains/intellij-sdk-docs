@@ -4,7 +4,7 @@
 
 <tldr>
 
-**Product Help:** [Modules](https://www.jetbrains.com/help/idea/modules.html)
+**Product Help**: [Modules](https://www.jetbrains.com/help/idea/modules.html)
 
 </tldr>
 

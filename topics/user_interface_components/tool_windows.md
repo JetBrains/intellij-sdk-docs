@@ -6,9 +6,9 @@
 
 <tldr>
 
-**Product Help:** [Tool windows](https://www.jetbrains.com/help/idea/tool-windows.html)
+**Product Help**: [Tool windows](https://www.jetbrains.com/help/idea/tool-windows.html)
 
-**UI Guidelines:** [](tool_window.md)
+**UI Guidelines**: [](tool_window.md)
 
 </tldr>
 

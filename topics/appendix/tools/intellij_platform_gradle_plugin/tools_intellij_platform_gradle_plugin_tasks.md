@@ -33,7 +33,7 @@ Intermediate and internal tasks, such as [`prepareSandbox`](#prepareSandbox) or 
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Depends on**: [`jarSearchableOptions`](#jarSearchableOptions), [`prepareSandbox`](#prepareSandbox)
 
@@ -73,7 +73,7 @@ Type
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Depends on**: The six [`buildPluginVariants_<os>_<arch>`](#buildPluginVariants-variant-tasks) tasks when native variants are enabled
 
@@ -128,7 +128,7 @@ Type
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Depends on**: [`prepareSandbox`](#prepareSandbox)
 
@@ -183,7 +183,7 @@ Default value
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
 
 **Extends**: [`Delete`][gradle-delete-task]
 
@@ -202,7 +202,7 @@ Cleans the sandbox directory created by [`prepareSandbox`](#prepareSandbox) for 
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
 
 **Depends on**: [`jar`][gradle-jar-task], [`instrumentedJar`](#instrumentedJar)
 
@@ -236,7 +236,7 @@ Type
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`KotlinMetadataAware`](tools_intellij_platform_gradle_plugin_task_awares.md#KotlinMetadataAware)
 
@@ -328,7 +328,7 @@ Type
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit)
 
 **Extends**: [`JavaExec`][gradle-javaexec-task]
 
@@ -456,7 +456,7 @@ With the legacy [`targetOutputDir`](#generateLexer-targetOutputDir-deprecated), 
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit)
 
 **Extends**: [`JavaExec`][gradle-javaexec-task]
 
@@ -548,7 +548,7 @@ Type
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Extends**: [`DefaultTask`][gradle-default-task]
 
@@ -622,7 +622,7 @@ Default value
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module), [](tools_intellij_platform_gradle_plugin_plugins.md#base), [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module), [](tools_intellij_platform_gradle_plugin_plugins.md#base), [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit)
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware), [`ModuleAware`](tools_intellij_platform_gradle_plugin_task_awares.md#ModuleAware)
 
@@ -717,7 +717,7 @@ Type
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
 
 **Depends on**: [`jar`][gradle-jar-task]
 
@@ -815,7 +815,7 @@ Type
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
 
 **Depends on**: `jar`, [`instrumentCode`](#instrumentCode)
 
@@ -834,7 +834,7 @@ Creates a copy of the current module's `jar` task output with instrumented class
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Depends on**: [`buildSearchableOptions`](#buildSearchableOptions), [`prepareSandbox`](#prepareSandbox)
 
@@ -882,7 +882,7 @@ Default value
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
 
@@ -1157,7 +1157,7 @@ Default value
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Depends on**: [`buildSearchableOptions`](#buildSearchableOptions), [`prepareSandbox`](#prepareSandbox)
 
@@ -1230,7 +1230,7 @@ Type
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Depends on**: [`composedJar`](#composedJar)
 
@@ -1324,7 +1324,7 @@ Default value
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
 
 **Depends on**: `jar`, [`instrumentedJar`](#instrumentedJar)
 
@@ -1485,7 +1485,7 @@ Type
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
 
 **Depends on**: [`prepareTestSandbox`](#prepareTestSandbox)
 
@@ -1506,7 +1506,7 @@ Prepares an immutable [`test`](#test) task and provides all necessary dependenci
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
 
 **Depends on**: `jar`, [`instrumentedJar`](#instrumentedJar)
 
@@ -1527,7 +1527,7 @@ The [`prepareSandbox`](#prepareSandbox) task instance configured to work with th
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
 
 **Depends on**: `jar`, [`instrumentedJar`](#instrumentedJar)
 
@@ -1547,7 +1547,7 @@ The [`prepareSandbox`](#prepareSandbox) task instance configured to work with th
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module), [](tools_intellij_platform_gradle_plugin_plugins.md#base), [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module), [](tools_intellij_platform_gradle_plugin_plugins.md#base), [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit)
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
 
@@ -1586,7 +1586,7 @@ Type
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module), [](tools_intellij_platform_gradle_plugin_plugins.md#base), [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module), [](tools_intellij_platform_gradle_plugin_plugins.md#base), [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit)
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
 
@@ -1626,7 +1626,7 @@ Type
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module), [](tools_intellij_platform_gradle_plugin_plugins.md#base), [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module), [](tools_intellij_platform_gradle_plugin_plugins.md#base), [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit)
 
 **Extends**: [`DefaultTask`][gradle-default-task], [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesFilterParameters)
 
@@ -1666,7 +1666,7 @@ See also:
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Depends on**: [`buildPluginVariants`](#buildPluginVariants) when native variants are enabled; otherwise [`buildPlugin`](#buildPlugin) and [`signPlugin`](#signPlugin)
 
@@ -1780,7 +1780,7 @@ Default value
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Depends on**: [`patchPluginXml`](#patchPluginXml), [`prepareSandbox_runIde`](#prepareSandbox-runIde)
 
@@ -1867,7 +1867,7 @@ Command-line option
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Depends on**: [`patchPluginXml`](#patchPluginXml), [`prepareSandbox_runIdeBackend`](#prepareSandbox-runIde)
 
@@ -1891,7 +1891,7 @@ Use `argumentProviders` instead.
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Depends on**: [`patchPluginXml`](#patchPluginXml), [`prepareSandbox_runIdeFrontend`](#prepareSandbox-runIde)
 
@@ -1974,7 +1974,7 @@ intellijPlatformTesting.runIde {
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Depends on**: [`buildPlugin`](#buildPlugin)
 
@@ -2181,7 +2181,7 @@ Default value
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
 
 **Depends on**: [`prepareTest`](#prepareTest)
 
@@ -2208,7 +2208,7 @@ These properties configure both this task and custom [`testIde`](#testIde) tasks
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
 
 **Extends**: [`Test`][gradle-test-task], [`TestableAware`](tools_intellij_platform_gradle_plugin_task_awares.md#TestableAware), [`IntelliJPlatformVersionAware`](tools_intellij_platform_gradle_plugin_task_awares.md#IntelliJPlatformVersionAware)
 
@@ -2236,7 +2236,7 @@ Bundled plugins declared in <path>product-info.json</path> are added to its clas
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Depends on**: [`prepareTestIdePerformanceSandbox`](#prepareTestIdePerformanceSandbox)
 
@@ -2295,7 +2295,7 @@ Default value
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
 
 **Extends**: [`Test`][gradle-test-task], [`TestableAware`](tools_intellij_platform_gradle_plugin_task_awares.md#TestableAware)
 
@@ -2328,7 +2328,7 @@ Default value
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Depends on**: [`buildPlugin`](#buildPlugin)
 
@@ -2562,7 +2562,7 @@ Default value
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform), [](tools_intellij_platform_gradle_plugin_plugins.md#module)
 
 **Depends on**: [`patchPluginXml`](#patchPluginXml)
 
@@ -2768,7 +2768,7 @@ Default value
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Extends**: [`JavaExec`][gradle-javaexec-task], [`SigningAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SigningAware)
 
@@ -2834,7 +2834,7 @@ Default value
 
 <tldr>
 
-**Available in:** [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
+**Available in**: [](tools_intellij_platform_gradle_plugin_plugins.md#platform)
 
 **Depends on**: [`prepareSandbox`](#prepareSandbox)
 

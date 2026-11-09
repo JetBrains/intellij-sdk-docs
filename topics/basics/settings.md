@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Settings
 
@@ -10,7 +10,7 @@ Configure and persist preferences of IntelliJ Platform plugins with the settings
 
 <tldr>
 
-**Product Help:** [Settings](https://www.jetbrains.com/help/idea/settings-preferences-dialog.html), [Configuring the IDE](https://www.jetbrains.com/help/idea/configuring-project-and-ide-settings.html)
+**Product Help**: [Settings](https://www.jetbrains.com/help/idea/settings-preferences-dialog.html), [Configuring the IDE](https://www.jetbrains.com/help/idea/configuring-project-and-ide-settings.html)
 
 </tldr>
 

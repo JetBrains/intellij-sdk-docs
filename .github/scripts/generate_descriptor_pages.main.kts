@@ -233,7 +233,7 @@ fun StringBuilder.appendCallout(text: String, style: String, title: String? = nu
 fun StringBuilder.appendReferences(references: List<String>) {
   if (references.isEmpty()) return
   appendLine("<tldr>\n")
-  append("**Reference:** ${references.joinToString()}")
+  append("**Reference**: ${references.joinToString()}")
   appendLine("\n</tldr>\n")
 }
 

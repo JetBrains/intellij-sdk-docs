@@ -4,11 +4,11 @@
 
 <tldr>
 
-**UI Guidelines:** [](balloon.md)
+**UI Guidelines**: [](balloon.md)
 
-**Product Help:** [Notifications](https://www.jetbrains.com/help/idea/notifications.html)
+**Product Help**: [Notifications](https://www.jetbrains.com/help/idea/notifications.html)
 
-**Video Overview:** [Notification Baloons](https://www.youtube.com/watch?v=e0ietjbbTms)
+**Video Overview**: [Notification Baloons](https://www.youtube.com/watch?v=e0ietjbbTms)
 
 </tldr>
 

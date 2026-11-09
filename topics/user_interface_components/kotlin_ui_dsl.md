@@ -7,7 +7,7 @@
 
 <tldr>
 
-**UI Guidelines:** [](layout.md)
+**UI Guidelines**: [](layout.md)
 
 </tldr>
 

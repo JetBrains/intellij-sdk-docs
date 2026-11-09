@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Live Templates Configuration File
 
@@ -28,7 +28,7 @@ This page lists and describes all the elements and attributes used in live templ
 
 <tldr>
 
-**Reference:** [Live Templates](live_templates.md)
+**Reference**: [Live Templates](live_templates.md)
 , [Live Templates (IntelliJ IDEA Web Help)](https://www.jetbrains.com/help/idea/settings-live-templates.html)
 
 </tldr>
@@ -122,7 +122,7 @@ Children
 
 <tldr>
 
-**Reference:** [Template Variables](https://www.jetbrains.com/help/idea/edit-template-variables-dialog.html)
+**Reference**: [Template Variables](https://www.jetbrains.com/help/idea/edit-template-variables-dialog.html)
 
 </tldr>
 

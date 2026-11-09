@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Typography
 
@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Implementation:** [`JBFont`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/JBFont.java)
+**Implementation**: [`JBFont`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/JBFont.java)
 
 </tldr>
 

@@ -223,7 +223,7 @@ Attributes
 
 <tldr>
 
-**Reference:** [JetBrains Marketplace: Plugin Name](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name)
+**Reference**: [JetBrains Marketplace: Plugin Name](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name)
 
 </tldr>
 
@@ -245,7 +245,7 @@ Example
 
 <tldr>
 
-**Reference:** [JetBrains Marketplace: Semantic Versioning](https://plugins.jetbrains.com/docs/marketplace/semver.html)
+**Reference**: [JetBrains Marketplace: Semantic Versioning](https://plugins.jetbrains.com/docs/marketplace/semver.html)
 
 </tldr>
 
@@ -273,7 +273,7 @@ Example
 
 <tldr>
 
-**Reference:** [JetBrains Marketplace: How to add required parameters for paid plugins](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html)
+**Reference**: [JetBrains Marketplace: How to add required parameters for paid plugins](https://plugins.jetbrains.com/docs/marketplace/add-required-parameters.html)
 
 </tldr>
 
@@ -313,7 +313,7 @@ Attributes
 
 <tldr>
 
-**Reference:** [Build Number Ranges](build_number_ranges.md)
+**Reference**: [Build Number Ranges](build_number_ranges.md)
 
 </tldr>
 
@@ -369,7 +369,7 @@ Examples
 
 <tldr>
 
-**Reference:** [JetBrains Marketplace: Contacts and Resources](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#contacts-and-resources)
+**Reference**: [JetBrains Marketplace: Contacts and Resources](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#contacts-and-resources)
 
 </tldr>
 
@@ -412,7 +412,7 @@ Examples
 
 <tldr>
 
-**Reference:** [JetBrains Marketplace: Plugin Description](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description)
+**Reference**: [JetBrains Marketplace: Plugin Description](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description)
 
 </tldr>
 
@@ -451,7 +451,7 @@ Example
 
 <tldr>
 
-**Reference:** [JetBrains Marketplace: Change Notes](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#change-notes)
+**Reference**: [JetBrains Marketplace: Change Notes](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#change-notes)
 
 </tldr>
 
@@ -493,7 +493,7 @@ Example
 
 <tldr>
 
-**Reference:** [Plugin Dependencies](plugin_dependencies.md)
+**Reference**: [Plugin Dependencies](plugin_dependencies.md)
 , [Modules Specific to Functionality](plugin_compatibility.md#modules-specific-to-functionality)
 
 </tldr>
@@ -630,7 +630,7 @@ Example
 
 <tldr>
 
-**Reference:** [Declaring Incompatibility with Plugin](plugin_compatibility.md#declaring-incompatibility-with-module)
+**Reference**: [Declaring Incompatibility with Plugin](plugin_compatibility.md#declaring-incompatibility-with-module)
 
 </tldr>
 
@@ -768,7 +768,7 @@ Examples
 
 <tldr>
 
-**Reference:** [Extensions](plugin_extensions.md)
+**Reference**: [Extensions](plugin_extensions.md)
 
 </tldr>
 
@@ -870,7 +870,7 @@ Attributes
 
 <tldr>
 
-**Reference:** [Extension Points](plugin_extension_points.md)
+**Reference**: [Extension Points](plugin_extension_points.md)
 
 </tldr>
 
@@ -889,7 +889,7 @@ Children
 
 <tldr>
 
-**Reference:** [Declaring Extension Points](plugin_extension_points.md#declaring-extension-points)
+**Reference**: [Declaring Extension Points](plugin_extension_points.md#declaring-extension-points)
 
 </tldr>
 
@@ -1039,7 +1039,7 @@ Example
 
 <tldr>
 
-**Reference:** [Actions](action_system.md)
+**Reference**: [Actions](action_system.md)
 
 </tldr>
 
@@ -1081,7 +1081,7 @@ Example
 
 <tldr>
 
-**Reference:** [Registering Actions in plugin.xml](action_system.md#registering-actions-in-pluginxml)
+**Reference**: [Registering Actions in plugin.xml](action_system.md#registering-actions-in-pluginxml)
 
 </tldr>
 
@@ -1419,7 +1419,7 @@ Example
 
 <tldr>
 
-**Reference:** [Grouping Actions](action_system.md#grouping-actions)
+**Reference**: [Grouping Actions](action_system.md#grouping-actions)
 
 </tldr>
 
@@ -1628,7 +1628,7 @@ Examples
 
 <tldr>
 
-**Reference:** [Defining Application-Level Listeners](plugin_listeners.md#defining-application-level-listeners)
+**Reference**: [Defining Application-Level Listeners](plugin_listeners.md#defining-application-level-listeners)
 
 </tldr>
 
@@ -1649,7 +1649,7 @@ Children
 
 <tldr>
 
-**Reference:** [Listeners](plugin_listeners.md)
+**Reference**: [Listeners](plugin_listeners.md)
 
 </tldr>
 
@@ -1702,7 +1702,7 @@ Example
 
 <tldr>
 
-**Reference:** [Defining Project-Level Listeners](plugin_listeners.md#defining-project-level-listeners)
+**Reference**: [Defining Project-Level Listeners](plugin_listeners.md#defining-project-level-listeners)
 
 </tldr>
 

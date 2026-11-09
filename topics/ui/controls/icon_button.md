@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Icon Button
 
@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Implementation:** [`ActionButton`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/ActionButton.java)
+**Implementation**: [`ActionButton`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/ActionButton.java)
 
 </tldr>
 

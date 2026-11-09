@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # User Interface FAQ
 
@@ -33,7 +33,7 @@ A number of hardcoded colors is defined in `JBColor`, [`Gray`](%gh-ic%/platform/
 
 <tldr>
 
-**UI Guidelines:** [](data_formats.md)
+**UI Guidelines**: [](data_formats.md)
 
 </tldr>
 
@@ -65,7 +65,7 @@ To determine the current [Theme](themes_getting_started.md)'s style, use [`JBCol
 
 <tldr>
 
-**UI Guidelines:** [](layout.md)
+**UI Guidelines**: [](layout.md)
 
 </tldr>
 

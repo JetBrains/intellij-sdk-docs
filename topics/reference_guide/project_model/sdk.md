@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 <link-summary>Configuring and getting information about a project SDK.</link-summary>
 
@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Product Help:** [SDKs](https://www.jetbrains.com/help/idea/working-with-sdks.html)
+**Product Help**: [SDKs](https://www.jetbrains.com/help/idea/working-with-sdks.html)
 
 </tldr>
 

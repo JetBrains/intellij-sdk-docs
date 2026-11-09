@@ -6,7 +6,7 @@
 
 <tldr>
 
-**UI Guidelines:** [Overview](ui_guidelines_welcome.topic)
+**UI Guidelines**: [Overview](ui_guidelines_welcome.topic)
 
 </tldr>
 

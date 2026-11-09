@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # File and Code Templates
 
@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Product Help:** [File and Code Templates](https://www.jetbrains.com/help/idea/settings-file-and-code-templates.html), [File templates](https://www.jetbrains.com/help/idea/using-file-and-code-templates.html), [Templates with multiple files](https://www.jetbrains.com/help/idea/templates-with-multiple-files.html)
+**Product Help**: [File and Code Templates](https://www.jetbrains.com/help/idea/settings-file-and-code-templates.html), [File templates](https://www.jetbrains.com/help/idea/using-file-and-code-templates.html), [Templates with multiple files](https://www.jetbrains.com/help/idea/templates-with-multiple-files.html)
 
 </tldr>
 

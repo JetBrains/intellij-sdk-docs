@@ -6,7 +6,7 @@
 
 <tldr>
 
-**UI Guidelines:** [](icons_style.md), [](platform_theme_colors.md#ui-components)
+**UI Guidelines**: [](icons_style.md), [](platform_theme_colors.md#ui-components)
 
 </tldr>
 

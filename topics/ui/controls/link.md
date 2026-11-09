@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Link
 
@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Implementation:** [`ActionLink`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/ActionLink.kt), [`DropDownLink`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/DropDownLink.kt)
+**Implementation**: [`ActionLink`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/ActionLink.kt), [`DropDownLink`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/DropDownLink.kt)
 
 </tldr>
 

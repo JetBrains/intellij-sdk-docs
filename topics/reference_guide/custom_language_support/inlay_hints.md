@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Product Help:** [Inlay Hints](https://www.jetbrains.com/help/idea/inlay-hints.html)
+**Product Help**: [Inlay Hints](https://www.jetbrains.com/help/idea/inlay-hints.html)
 
 </tldr>
 

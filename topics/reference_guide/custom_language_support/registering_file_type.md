@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Registering a File Type
 
@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Product Help:** [File type associations](https://www.jetbrains.com/help/idea/creating-and-registering-file-types.html)
+**Product Help**: [File type associations](https://www.jetbrains.com/help/idea/creating-and-registering-file-types.html)
 
 </tldr>
 

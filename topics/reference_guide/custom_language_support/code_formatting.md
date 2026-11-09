@@ -6,7 +6,7 @@
 
 <tldr>
 
-**Product Help:** [Code style and formatting](https://www.jetbrains.com/help/idea/code-style.html)
+**Product Help**: [Code style and formatting](https://www.jetbrains.com/help/idea/code-style.html)
 
 </tldr>
 

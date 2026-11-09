@@ -10,9 +10,9 @@ Sharing the persistent state of application-level components between IDE install
 
 <tldr>
 
-**Product Help:** [Share IDE settings](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html)
+**Product Help**: [Share IDE settings](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html)
 
-**Reference:** [](persisting_state_of_components.md)
+**Reference**: [](persisting_state_of_components.md)
 
 </tldr>
 

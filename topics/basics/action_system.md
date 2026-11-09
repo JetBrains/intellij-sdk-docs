@@ -10,9 +10,9 @@ Adding custom actions to menus and toolbars. Implement and register actions, and
 
 <tldr>
 
-**Product Help:** [Menus and toolbars](https://www.jetbrains.com/help/idea/customize-actions-menus-and-toolbars.html)
+**Product Help**: [Menus and toolbars](https://www.jetbrains.com/help/idea/customize-actions-menus-and-toolbars.html)
 
-**UI Guidelines:** [](toolbar.md)
+**UI Guidelines**: [](toolbar.md)
 
 </tldr>
 

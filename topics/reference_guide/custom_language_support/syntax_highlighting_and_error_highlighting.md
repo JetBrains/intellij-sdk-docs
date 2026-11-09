@@ -6,9 +6,9 @@
 
 <tldr>
 
-**Product Help:** [Colors and fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html)
+**Product Help**: [Colors and fonts](https://www.jetbrains.com/help/idea/configuring-colors-and-fonts.html)
 
-**UI Guidelines:** [](inspections.md)
+**UI Guidelines**: [](inspections.md)
 
 </tldr>
 

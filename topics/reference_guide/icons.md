@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Working with Icons
 
@@ -8,7 +8,7 @@
 
 **Code**: [`AllIcons`](%gh-ic%/platform/util/ui/src/com/intellij/icons/AllIcons.java)
 
-**UI Guidelines:** [Icons list](https://intellij-icons.jetbrains.design), [](icons_style.md)
+**UI Guidelines**: [Icons list](https://intellij-icons.jetbrains.design), [](icons_style.md)
 
 **See also**: [User Interface FAQ - Icons](ui_faq.md#icons)
 
@@ -268,7 +268,7 @@ prescribed colors within their icons:
 
 <tldr>
 
-**UI Guidelines:** [](loader.md)
+**UI Guidelines**: [](loader.md)
 
 </tldr>
 

@@ -2,6 +2,8 @@
 
 # Coroutines on EDT and Locks
 
+<link-summary>Explains the "Access is allowed with explicit read lock" assertion message, which is safe to ignore since 2025.1.</link-summary>
+
 > This page is outdated and will be removed in the future.
 >
 > It contained information about planned changes in the threading model and adjustments required in plugins to work correctly.

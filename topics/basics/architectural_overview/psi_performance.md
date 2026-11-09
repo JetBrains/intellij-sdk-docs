@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # PSI Performance
 
@@ -8,7 +8,7 @@ See also [](threading_model.md#avoiding-ui-freezes) and [](indexing_and_psi_stub
 
 > [IDE Perf](https://plugins.jetbrains.com/plugin/15104-ide-perf) plugin provides on-the-fly performance diagnostic tools, including a dedicated view for [`CachedValue`](#cache-results-of-heavy-computations) metrics.
 
-## Overview
+## Avoid Repeated Calls of PSI Getters
 
 PSI has a lot of time-space compromises.
 There are tons of PSI elements in IDE memory, so the IntelliJ Platform and language plugins strive to keep them as compact as possible, storing very little data inside.

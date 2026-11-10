@@ -129,7 +129,7 @@ There are two common needs here:
 1. Plugin business logic can be tested by regular unit tests using the IntelliJ test framework (see [IntelliJ Platform Testing Extension](tools_intellij_platform_gradle_plugin_testing_extension.md#intellijPlatformTesting)).
 
    Tests that verify the functionality of a specific class can be placed in any content module.
-   However, testing the plugin as a whole requires placing test classes into the root plugin module
+   However, testing the plugin as a whole requires placing test classes into the root plugin module.
    This is necessary for the correct classpath assembly, which will include the <path>plugin.xml</path> file and properly register all plugin extensions from all content modules.
 
 2. Plugin UI in Split Mode can be tested by the integrated UI test framework (see [Integration Tests: UI Testing](integration_tests_ui.md#interaction-with-components)).

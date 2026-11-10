@@ -102,7 +102,7 @@ Migrate thread-safe listeners without UI dependencies from `VFS_CHANGES`/[`addAs
 New LSP API features
 :
 Language Server Protocol support gains Range Formatting (`textDocument/rangeFormatting`), Code Lens (`textDocument/codeLens`), and Optimize Imports (`textDocument/codeAction` with `source.organizeImports`).
-``Also includes a major rewrite of LSP highlighting for improved performance.
+Also includes a major rewrite of LSP highlighting for improved performance.
 See [](language_server_protocol.md).
 
 `OSProcessHandler.waitFor()` on EDT or under read lock logs error

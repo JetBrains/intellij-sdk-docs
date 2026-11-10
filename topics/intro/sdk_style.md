@@ -77,9 +77,11 @@ Consistent terminology helps the reader grasp new concepts more quickly:
 
 ### Text Format Conventions
 
-Start every sentence on a new line.
-For very long sentences, add additional line breaks after `,`, `:` or other sensible places.
-Very long [links](#links) should also be on a separate line.
+Start every sentence on a new line, which keeps diffs readable.
+For very long sentences, add additional line breaks at clause boundaries
+(after `,` or `:`, or before `and`/`which`), never at a fixed width.
+Very long [links](#links), typically links to IntelliJ Platform classes, should also be on a separate line.
+Indent continuation lines in list items, and start them with `>` in callouts.
 
 Consistent text styles are used to standardize references and keywords:
 

@@ -22,5 +22,5 @@ When writing tests, you can choose between a standard base class that performs t
 
 With the former approach, use classes such as [`BasePlatformTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/BasePlatformTestCase.java).
 
-With the latter approach, use the [`IdeaTestFixtureFactory`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaTestFixtureFactory.java) class to create instances of fixtures for the test environment.
+With the latter approach, use [`IdeaTestFixtureFactory`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaTestFixtureFactory.java) to create instances of fixtures for the test environment.
 Call the fixture creation and setup methods from the test setup method used by the test framework.

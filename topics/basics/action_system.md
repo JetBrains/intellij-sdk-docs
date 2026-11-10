@@ -29,12 +29,12 @@ The [](grouping_actions_tutorial.md) tutorial demonstrates three types of groups
 
 ## Action Implementation
 
-An action is a class derived from the abstract class [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) (see also [](#useful-action-base-classes) below).
+An action is a class derived from [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java) (see also [](#useful-action-base-classes) below).
 The IntelliJ Platform calls methods of actions when a user interacts with a menu item or toolbar button.
 
 > Classes based on `AnAction` must not have class fields of any kind.
-> This is because an instance of `AnAction` class exists for the entire lifetime of the application.
-> If the `AnAction` class uses a field to store data that has a shorter lifetime and doesn't clear this data promptly, the data leaks.
+> This is because an instance of `AnAction` exists for the entire lifetime of the application.
+> If an `AnAction` implementation uses a field to store data that has a shorter lifetime and doesn't clear this data promptly, the data leaks.
 > For example, any `AnAction` data that exists only within the context of a `Project` causes the `Project` to be kept in memory after the user has closed it.
 >
 {style="warning" title="No fields allowed"}
@@ -85,7 +85,7 @@ The `actionPerformed()` method also receives `AnActionEvent` as a parameter, whi
 See [Overriding the `AnAction.actionPerformed()` Method](#overriding-the-anactionactionperformed-method) for more information.
 
 #### Miscellaneous
-There are other methods to override in the `AnAction` class, such as changing the default `Presentation` object for the action.
+There are other methods to override in `AnAction`, such as changing the default `Presentation` object for the action.
 There is also a use case for overriding action constructors when registering them with dynamic action groups, demonstrated in the [Grouping Actions](grouping_actions_tutorial.md#adding-child-actions-to-the-dynamic-group) tutorial.
 
 ### Overriding the `AnAction.update()` Method

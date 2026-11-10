@@ -11,14 +11,14 @@
 </tldr>
 
 The Structure View implementation used for a specific file type can be customized on many levels.
-If a custom language plugin provides an implementation of the [`StructureView`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureView.java) interface, it can completely replace the standard structure view implementation with a custom user interface component.
+If a custom language plugin provides an implementation of [`StructureView`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureView.java), it can completely replace the standard structure view implementation with a custom user interface component.
 However, for most languages, this is not necessary, and the standard `StructureView` implementation provided by IntelliJ Platform can be reused.
 
 > To modify an existing Structure View (e.g., add/filter nodes of builtin language support), use [`StructureViewExtension`](%gh-ic%/platform/lang-impl/src/com/intellij/ide/structureView/StructureViewExtension.java) registered
 > in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.structureViewExtension"/></include>.
 >
 
-The starting point for the structure view is the [`PsiStructureViewFactory`](%gh-ic%/platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java) interface, which is registered
+The starting point for the structure view is [`PsiStructureViewFactory`](%gh-ic%/platform/editor-ui-api/src/com/intellij/lang/PsiStructureViewFactory.java), which is registered
 in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.psiStructureViewFactory"/></include>.
 
 **Examples:**
@@ -31,7 +31,7 @@ As the builder model, the plugin can specify a subclass of [`TextEditorBasedStru
 **Example:**
 [`StructureViewModel`](%gh-ic%/plugins/properties/properties-psi-impl/src/com/intellij/lang/properties/structureView/PropertiesFileStructureViewModel.java) for [Properties language plugin](%gh-ic%/plugins/properties)
 
-The main method to override is `getRoot()`, which returns the instance of a class implementing the [`StructureViewTreeElement`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewTreeElement.java) interface.
+The main method to override is `getRoot()`, which returns an instance of [`StructureViewTreeElement`](%gh-ic%/platform/editor-ui-api/src/com/intellij/ide/structureView/StructureViewTreeElement.java).
 There exists no standard implementation of this interface, so a plugin will need to implement it completely.
 
 The structure view tree is usually built as a partial mirror of the PSI tree.

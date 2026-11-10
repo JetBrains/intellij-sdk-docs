@@ -38,7 +38,7 @@ If the cursor is located at argument `a`, extending the selection would first se
 However, an intermediate step selecting the list of all arguments might be useful.
 This can be achieved by implementing this EP in the following way:
 
-1. Create a class that implements the `ExtendWordSelectionHandler` interface and register it in a <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.extendWordSelectionHandler"/></include> in the <path>plugin.xml</path>.
+1. Create a class that implements `ExtendWordSelectionHandler` and register it in a <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.extendWordSelectionHandler"/></include> in the <path>plugin.xml</path>.
 2. The `canSelect(PsiElement)` method should return `true` for the function call node.
    That indicates that `select(PsiElement, CharSequence, int, Editor)` will be called for the function-call node.
 3. When the `select()` method is called, use the function call PSI element or the editor text to extract the text range that spans the arguments `a` and `b` and return it as `List<TextRange>` with one element.

@@ -106,10 +106,10 @@ JCEF can be unsupported when:
 
 ### Browser
 
-JCEF browser is represented by the [`JBCefBrowser`](%gh-ic%/platform/ui.jcef/jcef/JBCefBrowser.java) class.
+JCEF browser is represented by [`JBCefBrowser`](%gh-ic%/platform/ui.jcef/jcef/JBCefBrowser.java).
 It is responsible for loading and rendering requested documents in the actual Chromium-based browser.
 
-JCEF browsers can be created either by using the `JBCefBrowser` class' constructors or via [`JBCefBrowserBuilder`](%gh-ic%/platform/ui.jcef/jcef/JBCefBrowserBuilder.java).
+JCEF browsers can be created either by using `JBCefBrowser` constructors or via [`JBCefBrowserBuilder`](%gh-ic%/platform/ui.jcef/jcef/JBCefBrowserBuilder.java).
 Use constructors in the cases when a browser with the default [client](#browser-client) and default options is enough.
 The builder approach allows using custom clients and configuring other options.
 
@@ -292,7 +292,7 @@ IntelliJ Platform provides [`JBCefScrollbarsHelper`](%gh-ic%/platform/ui.jcef/jc
    It should be used when transparent scrollbars or other advanced options are required.
 
 ### Disposing Resources
-`JBCefBrowser`, `JBCefClient`, and `JBCefJSQuery` classes implement [`JBCefDisposable`](%gh-ic%/platform/ui.jcef/jcef/JBCefDisposable.java), which extends [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java).
+`JBCefBrowser`, `JBCefClient`, and `JBCefJSQuery` implement [`JBCefDisposable`](%gh-ic%/platform/ui.jcef/jcef/JBCefDisposable.java), which extends [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java).
 It means that these classes should clean up their resources according to the rules described on the [](disposers.md) page.
 
 For example, a custom `JBCefClient` with registered handlers should remove them in the `dispose()` method implementation.

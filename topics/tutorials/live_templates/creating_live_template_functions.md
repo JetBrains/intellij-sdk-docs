@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Creating New Functions for Live Templates
 
@@ -18,7 +18,7 @@ A new custom function for Live Templates is implemented in `TitleCaseMacro`, whi
 Three `TitleCaseMacro` methods are of particular interest:
 * The `TitleCaseMacro()` constructor passes the name and description of the macro to the parent constructor.
 * The `isAcceptableInContext()` method tests whether the macro is available in the current context.
-  The test relies on the [`MarkdownContext`](providing_live_templates.md#implement-templatecontexttype) object previously defined in the `live_templates` plugin.
+  The test relies on [`MarkdownContext`](providing_live_templates.md#implement-templatecontexttype) previously defined in the `live_templates` plugin.
 * The `calculateResult()` method gets invoked when the titleCase function is used in a Live Template.
   The text to be capitalized is retrieved from the Live Template and converted to Title Case.
 

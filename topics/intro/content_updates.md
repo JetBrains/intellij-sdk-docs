@@ -18,7 +18,7 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 Minor Changes and Additions
 :
 - Document registering [color settings pages](syntax_highlighting_and_error_highlighting.md#registering-a-color-settings-page) with the declarative `com.intellij.colorSettings` extension point available since 2026.3.
-- Document the [`beta`](settings_guide.md#table-of-attributes) attribute of settings declarations, which replaces the deprecated `Configurable.Beta` interface.
+- Document the [`beta`](settings_guide.md#table-of-attributes) attribute of settings declarations, which replaces the deprecated `Configurable.Beta`.
 
 ### October
 {#october-26}

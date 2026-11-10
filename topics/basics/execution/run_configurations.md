@@ -42,7 +42,7 @@ RunConfiguration -l|> RunProfile
 @enduml
 ```
 
-Run Configuration API (except `SettingsEditor` class, which is a class shared by many IntelliJ Platform APIs) is a part of the [Execution API](execution.md).
+Run Configuration API (except `SettingsEditor`, which is shared by many IntelliJ Platform APIs) is a part of the [Execution API](execution.md).
 
 ### `ConfigurationType`
 
@@ -71,7 +71,7 @@ Editing its template is also not available.
 
 ### `ConfigurationFactory`
 
-[`ConfigurationFactory`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ConfigurationFactory.java) classes are responsible for creating [run configuration](#runconfiguration) instances.
+[`ConfigurationFactory`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ConfigurationFactory.java) implementations are responsible for creating [run configuration](#runconfiguration) instances.
 The only method required to be implemented is `createTemplateConfiguration()`, which is called once for each project to create the run configuration template.
 The actual run configurations are created in the `createConfiguration()` method by cloning the template.
 
@@ -115,9 +115,9 @@ If the settings editor is complex, see [](#simplifying-settings-editors) for sol
 
 Run configuration settings are persistent.
 They are stored in the file system and loaded back after the IDE restart.
-Persisting and loading settings are performed by `writeExternal()` and `readExternal()` methods of the `RunConfiguration` class correspondingly.
+Persisting and loading settings are performed by `writeExternal()` and `readExternal()` methods of `RunConfiguration` correspondingly.
 
-The actually stored configurations are represented by instances of the [`RunnerAndConfigurationSettings`](%gh-ic%/platform/execution/src/com/intellij/execution/RunnerAndConfigurationSettings.java) class, which combines a run configuration with runner-specific settings and stores general run configuration flags and properties.
+The actually stored configurations are represented by instances of [`RunnerAndConfigurationSettings`](%gh-ic%/platform/execution/src/com/intellij/execution/RunnerAndConfigurationSettings.java), which combines a run configuration with runner-specific settings and stores general run configuration flags and properties.
 
 ## Creating a Run Configuration Programmatically
 
@@ -215,7 +215,7 @@ Each editor added to the group is displayed in a separate tab.
 ## Refactoring Support
 
 Some run configurations contain references to classes, files, or directories in their settings, and these settings usually need to be updated when the corresponding element is renamed or moved.
-To support that, a run configuration needs to implement the [`RefactoringListenerProvider`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RefactoringListenerProvider.java) interface.
+To support that, a run configuration needs to implement [`RefactoringListenerProvider`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RefactoringListenerProvider.java).
 
 The `RefactoringListenerProvider.getRefactoringElementListener()`'s implementation should check whether the refactored element is referred from the run configuration.
 If it is, return a [`RefactoringElementListener`](%gh-ic%/platform/analysis-api/src/com/intellij/refactoring/listeners/RefactoringElementListener.java) that updates the run configuration according to the new name and location of the element.

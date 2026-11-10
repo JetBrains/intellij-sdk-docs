@@ -30,7 +30,7 @@ Highlighting from multiple `TextAttributesKey` items can be layered — for exam
 
 ## Color Settings
 
-The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by the [`EditorColorsScheme`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java) class.
+The mapping of the `TextAttributesKey` to specific attributes used in an editor is defined by [`EditorColorsScheme`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/colors/EditorColorsScheme.java).
 It can be configured by the user via <ui-path>Settings | Editor | Color Scheme</ui-path> by providing an implementation of [`ColorSettingsPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/ColorSettingsPage.java).
 
 To look up the external name for a setting in the IDE, use [UI Inspector](internal_ui_inspector.md#inspecting-settings).
@@ -123,7 +123,7 @@ Register the color settings page in <include from="snippets.topic" element-id="e
 
 ## Lexer
 
-The first syntax highlighting level is based on the lexer output and is provided through the [`SyntaxHighlighter`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighter.java) interface.
+The first syntax highlighting level is based on the lexer output and is provided through [`SyntaxHighlighter`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/fileTypes/SyntaxHighlighter.java).
 The syntax highlighter returns the `TextAttributesKey` instances for each token type, which needs special highlighting.
 For highlighting lexer errors use [`HighlighterColors.BAD_CHARACTER`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/HighlighterColors.java).
 
@@ -153,7 +153,7 @@ See [](syntax_errors.md) on how to programmatically suppress these errors in cer
 
 ## Annotator
 
-The third level of highlighting is performed through the [`Annotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java) interface.
+The third level of highlighting is performed through [`Annotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java).
 A plugin can register one or more annotators in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.annotator"/></include>, and these annotators are called during the background highlighting pass to process the elements in the custom language's PSI tree.
 Attribute `language` should be set to the Language ID where this annotator applies to.
 If highlighting data requires invoking external tools, use an [](#external-annotator) instead.
@@ -199,11 +199,11 @@ holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
 ## External Annotator
 
 If the custom language employs external tools for validating files in the language (for example, using the Xerces library for XML schema validation),
-it can provide an implementation of the [`ExternalAnnotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) interface and register
+it can provide an implementation of [`ExternalAnnotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) and register
 it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.externalAnnotator"/></include> (`language` attribute must be specified).
 
 The `ExternalAnnotator` highlighting has the lowest priority and is invoked only after all other background processing has completed.
-It uses the same [`AnnotationHolder`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java) interface for converting the output of the external tool into editor highlighting.
+It uses the same [`AnnotationHolder`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java) for converting the output of the external tool into editor highlighting.
 
 To skip running specific `ExternalAnnotator` for a given file, register an [`ExternalAnnotatorsFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/ExternalAnnotatorsFilter.java) extension
 in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.daemon.externalAnnotatorsFilter"/></include>.

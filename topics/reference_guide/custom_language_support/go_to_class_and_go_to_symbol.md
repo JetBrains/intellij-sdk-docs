@@ -12,7 +12,7 @@
 
 A custom language plugin can provide its items to be included in the lists shown when the user chooses the <ui-path>Navigate | Class</ui-path> or <ui-path>Navigate | Symbol</ui-path> action.
 
-Provide implementations of [`ChooseByNameContributorEx`](%gh-ic%/platform/lang-impl/src/com/intellij/navigation/ChooseByNameContributorEx.java) interface (separate implementations need to be provided for <control>Class</control> and <control>Symbol</control>, respectively), and register them
+Provide implementations of [`ChooseByNameContributorEx`](%gh-ic%/platform/lang-impl/src/com/intellij/navigation/ChooseByNameContributorEx.java) (separate implementations need to be provided for <control>Class</control> and <control>Symbol</control>, respectively), and register them
 in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.gotoClassContributor"/></include> or <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.gotoSymbolContributor"/></include>.
 
 Each `ChooseByNameContributorEx` implementation must provide the following methods:

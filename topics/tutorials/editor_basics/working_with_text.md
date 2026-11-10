@@ -72,7 +72,7 @@ There are other ways to access an `Editor` instance:
 ### Getting a Caret Model and Selection
 
 After making sure a project is open, and an instance of the `Editor` is obtained, check if any selection is available.
-The [`SelectionModel`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/SelectionModel.java) interface is accessed from the `Editor` object.
+[`SelectionModel`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/SelectionModel.java) is accessed from the `Editor` object.
 Determining whether some text is selected is achieved by calling the `SelectionModel.hasSelection()` method.
 Here's how the `EditorIllustrationAction.update(AnActionEvent event)` method should look:
 
@@ -106,13 +106,13 @@ The model classes are located in the [editor](%gh-ic%/platform/editor-ui-api/src
 ## Safely Replacing Selected Text in the Document
 
 Based on the evaluation of conditions by `EditorIllustrationAction.update()`, the `EditorIllustrationAction` action menu item is visible.
-To make the menu item do something, the `EditorIllustrationAction` class must override the `AnAction.actionPerformed()` method.
+To make the menu item do something, `EditorIllustrationAction` must override the `AnAction.actionPerformed()` method.
 As explained below, this will require the `EditorIllustrationAction.actionPerformed()` method to:
 * Gain access to the document.
 * Get the character locations defining the selection.
 * Safely replace the contents of the selection.
 
-Modifying the selected text requires an instance of the [`Document`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/Document.java) object, which is accessed from the `Editor` object.
+Modifying the selected text requires an instance of [`Document`](%gh-ic%/platform/core-api/src/com/intellij/openapi/editor/Document.java), which is accessed from the `Editor` object.
 The [Document](documents.md) represents the contents of a text file loaded into memory and opened in an IntelliJ Platform-based IDE editor.
 An instance of the `Document` will be used later when a text replacement is performed.
 

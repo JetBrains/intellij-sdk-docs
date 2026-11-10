@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Settings Tutorial
 
@@ -28,7 +28,7 @@ The structure of the implementation is the same for Project Settings, but there 
 
 ## The `AppSettings` Class
 
-The `AppSettings` class persistently stores the custom Settings.
+`AppSettings` persistently stores the custom Settings.
 It is based on the [IntelliJ Platform Persistence Model](persisting_state_of_components.md#using-persistentstatecomponent).
 
 ### Declaring `AppSettings`
@@ -115,7 +115,7 @@ An explanation of this declaration can be found in [Declaring Application Settin
 
 ### Creating the `AppSettingsConfigurable` Implementation
 
-The `AppSettingsConfigurable` class implements [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java).
+`AppSettingsConfigurable` implements [`Configurable`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/options/Configurable.java).
 The class has one field to hold a reference to the `AppSettingsComponent`.
 
 ```java
@@ -124,7 +124,7 @@ The class has one field to hold a reference to the `AppSettingsComponent`.
 
 #### `AppSettingsConfigurable` Methods
 
-All the methods in this class are overrides of the methods in the `Configurable` interface.
+All the methods in this class are overrides of the methods in `Configurable`.
 Readers are encouraged to review the Javadoc comments for the `Configurable` methods.
 Also, review notes about [IntelliJ Platform Interactions](settings_guide.md#intellij-platform-interactions-with-configurable) with `Configurable` methods.
 

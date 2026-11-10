@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # References and Resolve
 
@@ -21,9 +21,9 @@ The `PsiReference` can be implemented by the same class as `PsiElement`, or by a
 An element can also contain multiple references (for example, a string literal can contain multiple substrings which are valid fully qualified class names), in which case it can implement `PsiElement.getReferences()` and return the references as an array.
 To optimize `PsiElement.getReferences()` performance, consider implementing [`HintedReferenceHost`](%gh-ic%/platform/core-api/src/com/intellij/psi/HintedReferenceHost.java) to provide additional hints.
 
-The primary method of the [`PsiReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java) interface is `resolve()`.
+The primary method of [`PsiReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java) is `resolve()`.
 It returns the element to which the reference points, or `null` if it was not possible to resolve the reference to a valid element (for example, should it point to an undefined class).
-The resolved element should implement the [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
+The resolved element should implement [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java).
 To enable more advanced functionality, prefer implementing [`PsiNameIdentifierOwner`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNameIdentifierOwner.java) over [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) where possible.
 
 > While the referencing element and the referenced element both may have a name, only the element which **introduces** the name (e.g., the definition `int x = 42`) needs to implement `PsiNamedElement`.
@@ -42,7 +42,7 @@ Still, additional optimizations are possible (for example, performing the tree w
 
 ## Implementing Resolve Logic
 
-There is a set of interfaces that can be used as a base for implementing resolve support, namely the [`PsiScopeProcessor`](%gh-ic%/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) interface and the [`PsiElement.processDeclarations()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) method.
+There is a set of interfaces that can be used as a base for implementing resolve support, namely [`PsiScopeProcessor`](%gh-ic%/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) and the [`PsiElement.processDeclarations()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) method.
 These interfaces have several extra complexities that are unnecessary for most custom languages (like support for substituting Java generics types).
 Still, they are required if the custom language can have references to Java code.
 If Java interoperability is not required, the plugin can forgo the standard interfaces and provide its own, different implementation of resolve.
@@ -51,12 +51,12 @@ See also [](psi_performance.md#cache-results-of-heavy-computations).
 
 The implementation of resolve based on the standard helper classes contains the following components:
 
-* A class implements the [`PsiScopeProcessor`](%gh-ic%/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) interface, which gathers the possible declarations for the reference and stops the resolve process when it has successfully completed.
+* A class implements [`PsiScopeProcessor`](%gh-ic%/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java), which gathers the possible declarations for the reference and stops the resolve process when it has successfully completed.
   The primary method which needs to be implemented is `execute()`, which is called to process every declaration encountered during the resolve, and returns `true` if the resolve needs to be continued or `false` if the declaration has been found.
   The methods `getHint()` and `handleEvent()` are used for internal optimizations and can be left empty in the `PsiScopeProcessor` implementations for custom languages.
 * A function which walks the PSI tree up from the reference location until the resolve has successfully completed or until the end of the resolve scope has been reached.
-  If the target of the reference is located in a different file, the file can be located, for example, using [`FilenameIndex.getFilesByName()`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java) (if the file name is known) or by iterating through all custom language files in the project (`iterateContent()` in the
-  [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface obtained
+  If the target of the reference is located in a different file, the file can be located, for example, using [`FilenameIndex.getFilesByName()`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java) (if the file name is known) or by iterating through all custom language files in the project (`iterateContent()` in
+  [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) obtained
   from
   [`ProjectRootManager.getFileIndex()`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java)).
 * The individual PSI elements, on which the `processDeclarations()` method is called during the PSI tree walk.

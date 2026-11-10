@@ -33,7 +33,7 @@ Some known examples are:
 ### What about modifying PSI?
 
 UAST is a read-only API.
-There are experimental [`UastCodeGenerationPlugin`](%gh-ic%/uast/uast-common-ide/src/org/jetbrains/uast/generate/UastCodeGenerationPlugin.kt) and [`JvmElementActionsFactory`](%gh-ic%/java/java-analysis-api/src/com/intellij/lang/jvm/actions/JvmElementActionsFactory.kt) classes, but they are currently not recommended for external usage.
+[`UastCodeGenerationPlugin`](%gh-ic%/uast/uast-common-ide/src/org/jetbrains/uast/generate/UastCodeGenerationPlugin.kt) and [`JvmElementActionsFactory`](%gh-ic%/java/java-analysis-api/src/com/intellij/lang/jvm/actions/JvmElementActionsFactory.kt) are experimental and currently not recommended for external usage.
 
 ## Working with UAST
 
@@ -45,7 +45,7 @@ All these sub-interfaces provide methods to get the information about common syn
 
 ### PSI to UAST Conversion
 
-To obtain UAST for a given `PsiElement` of one of the supported languages, use [`UastFacade`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastContext.kt) class or [`UastContextKt.toUElement()`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastContext.kt):
+To obtain UAST for a given `PsiElement` of one of the supported languages, use [`UastFacade`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastContext.kt) or [`UastContextKt.toUElement()`](%gh-ic%/uast/uast-common/src/org/jetbrains/uast/UastContext.kt):
 
 <tabs group="languages">
 <tab title="Java" group-key="java">

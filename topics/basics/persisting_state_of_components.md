@@ -24,10 +24,10 @@ The API allows for persisting simple key-value entries and complex state classes
 
 ## Using `PersistentStateComponent`
 
-The [`PersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) interface allows for persisting state classes and gives the most flexibility for defining the values to be persisted, their format, and storage location.
+[`PersistentStateComponent`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/PersistentStateComponent.java) allows for persisting state classes and gives the most flexibility for defining the values to be persisted, their format, and storage location.
 
 To use it:
-- mark a [service](plugin_services.md) (project or application-level service for storing project or application data, respectively) as implementing the `PersistentStateComponent` interface
+- mark a [service](plugin_services.md) (project or application-level service for storing project or application data, respectively) as implementing `PersistentStateComponent`
 - define the state class
 - specify the [storage location](#defining-the-storage-location) using [`@State`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/components/State.java)
 
@@ -109,7 +109,7 @@ The state class can either be a separate class or the class implementing `Persis
 
 <chapter title="Persistent Component with Separate State Class">
 
-In this case, the state class instance is typically stored as a field in the `PersistentStateComponent` class.
+In this case, the state class instance is typically stored as a field in the `PersistentStateComponent` implementation.
 When the state is loaded from the storage, it is assigned to the state field (see `loadState()`):
 
 ```java
@@ -224,7 +224,7 @@ class State {
 
 ### Defining the Storage Location
 
-To specify where precisely the persisted values are stored, add the ` @State ` annotation to the `PersistentStateComponent` class.
+To specify where precisely the persisted values are stored, add the ` @State ` annotation to the `PersistentStateComponent` implementation.
 
 It has the following fields:
 - `name` (required) – specifies the name of the state (name of the root tag in XML).
@@ -628,10 +628,10 @@ Project-level values are stored in the project’s `.idea/workspace.xml` file, w
 
 ## Legacy API (`JDOMExternalizable`) {collapsible="true"}
 
-Older components use the [`JDOMExternalizable`](%gh-ic%/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java) interface for persisting state.
+Older components use [`JDOMExternalizable`](%gh-ic%/platform/util/src/com/intellij/openapi/util/JDOMExternalizable.java) for persisting state.
 It uses the `readExternal()` method for reading the state from a JDOM element, and `writeExternal()` to write the state.
 
-Implementations can manually store the state in attributes and sub-elements or use the [`DefaultJDOMExternalizer`](%gh-ic%/platform/util/src/com/intellij/openapi/util/DefaultJDOMExternalizer.java) class to store the values of all public fields automatically.
+Implementations can manually store the state in attributes and sub-elements or use [`DefaultJDOMExternalizer`](%gh-ic%/platform/util/src/com/intellij/openapi/util/DefaultJDOMExternalizer.java) to store the values of all public fields automatically.
 
 Components save their state in the following files:
 

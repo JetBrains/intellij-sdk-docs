@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 8. Find Usages Test
 
@@ -26,7 +26,7 @@ Create the test file <path>FindUsagesTestData.java</path>, which contains one em
 {src="simple_language_plugin/src/test/testData/FindUsagesTestData.java"}
 
 ## Define a Test Method
-Add the `testFindUsages()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
+Add the `testFindUsages()` method to `SimpleCodeInsightTest` [previously defined](completion_test.md#define-a-test).
 This test verifies the find usage functionality will identify the "key with spaces".
 
 ```java

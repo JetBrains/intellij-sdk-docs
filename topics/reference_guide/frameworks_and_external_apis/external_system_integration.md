@@ -64,7 +64,7 @@ DataNode -- child3
 @enduml
 ```
 
-The `DataNode` class is just a holder for the target data (a data type is defined by the `Key`).
+`DataNode` is just a holder for the target data (a data type is defined by the `Key`).
 Multiple `DataNode` objects might be organized in a directed graph where every edge identifies parent-child relation.
 
 For example, a simple one-module project might look as below:
@@ -140,7 +140,7 @@ It's possible to configure external system integration to automatically refresh 
 Describe the project's settings files to track by having external system [`ExternalSystemManager`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ExternalSystemManager.java) implement [`ExternalSystemAutoImportAware`](%gh-ic%/platform/external-system-api/src/com/intellij/openapi/externalSystem/ExternalSystemAutoImportAware.java).
 
 > The `ExternalSystemAutoImportAware.getAffectedExternalProjectPath()` method is called quite often, that's why it's expected to return control as soon as possible.
-> Helper `CachingExternalSystemAutoImportAware` class might be used for caching, i.e. `ExternalSystemManager` which implements `ExternalSystemAutoImportAware` can have a field like `new CachingExternalSystemAutoImportAware(new MyExternalSystemAutoImportAware())` and delegate `ExternalSystemAutoImportAware.getAffectedExternalProjectPath()` calls to it.
+> `CachingExternalSystemAutoImportAware` helper might be used for caching, i.e. `ExternalSystemManager` which implements `ExternalSystemAutoImportAware` can have a field like `new CachingExternalSystemAutoImportAware(new MyExternalSystemAutoImportAware())` and delegate `ExternalSystemAutoImportAware.getAffectedExternalProjectPath()` calls to it.
 >
 {style="note"}
 

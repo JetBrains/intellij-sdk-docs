@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Frameworks
 
@@ -13,7 +13,7 @@ The examples in this tutorial rely heavily on the [framework_basics](%gh-sdk-sam
 
 ## Creating a New Framework
 
-In order to make a custom framework available and configurable for a project, the [`FrameworkTypeEx`](%gh-ic%/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) class needs to be extended, in this example to make the [DemoFramework](%gh-sdk-samples-master%/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java) class.
+In order to make a custom framework available and configurable for a project, [`FrameworkTypeEx`](%gh-ic%/java/idea-ui/src/com/intellij/framework/FrameworkTypeEx.java) needs to be extended, in this example to make [`DemoFramework`](%gh-sdk-samples-master%/framework_basics/src/main/java/org/intellij/sdk/framework/DemoFramework.java).
 
 ```java
 final class DemoFramework extends FrameworkTypeEx {

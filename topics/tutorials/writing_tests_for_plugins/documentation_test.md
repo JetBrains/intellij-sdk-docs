@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 11. Documentation Test
 
@@ -13,7 +13,7 @@
 <include from="tests_prerequisites.md" element-id="custom_language_testing_tutorial_header"></include>
 
 ## Define a Test Method
-Add the `testDocumentation()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
+Add the `testDocumentation()` method to `SimpleCodeInsightTest` [previously defined](completion_test.md#define-a-test).
 This test uses the files <path>DocumentationTestData.java</path> and <path>DocumentationTestData.simple</path> from the <path>testData</path> directory
 to construct a test project and opens the first one in the editor with the virtual caret positioned at the usage of the Simple Language property.
 

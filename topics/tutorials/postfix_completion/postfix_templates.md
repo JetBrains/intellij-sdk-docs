@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Postfix Templates
 
@@ -40,7 +40,7 @@ class and implementing the key methods:
 
 All postfix templates must provide descriptions and examples showing the code before and after a template is expanded.
 The files describing the template must be placed in the plugin's <path>resources</path> in the <path>postfixTemplates/\$TEMPLATE_NAME\$</path> where the _\$TEMPLATE_NAME\$_ directory must match the simple name of the template class,
-e.g., for a template implemented in `com.example.IntroduceVariablePostfixTemplate` class, the directory name should be named as <path>IntroduceVariablePostfixTemplate</path>.
+e.g., for a template implemented in `com.example.IntroduceVariablePostfixTemplate`, the directory name should be named as <path>IntroduceVariablePostfixTemplate</path>.
 
 Providing the description explaining the template purpose and context details is achieved by creating the <path>description.html</path> file.
 

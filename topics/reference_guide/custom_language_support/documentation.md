@@ -113,8 +113,8 @@ as a reference.
 
 Custom language developers usually extend from
 [`AbstractDocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/AbstractDocumentationProvider.java)
-instead of implementing the
-[`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java) interface.
+instead of implementing
+[`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java).
 This implementation needs to be registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.documentationProvider"/></include>.
 
 The main work is done in `generateDoc()`, which has two PSI element arguments:

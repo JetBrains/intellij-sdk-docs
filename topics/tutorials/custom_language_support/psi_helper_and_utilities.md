@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 6. PSI Helpers and Utilities
 
@@ -54,7 +54,7 @@ public class SimplePsiImplUtil {
 }
 ```
 
-The parser generates the `SimpleProperty` interface referenced in the code above.
+The parser generates `SimpleProperty`, which is referenced in the code above.
 
 ## Update Grammar and Regenerate the Parser
 

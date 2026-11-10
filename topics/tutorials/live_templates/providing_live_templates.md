@@ -71,7 +71,7 @@ Copy this file into the [plugin's resources folder](%gh-sdk-samples-master%/live
 
 A [`TemplateContextType`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/template/TemplateContextType.java) tells the IntelliJ Platform where the Live Template is applicable: Markdown files.
 Every context must have a unique `TemplateContextType` defined for it, and the Platform defines many context types out of the box.
-The `MarkdownContext` class defines it for Markdown files.
+`MarkdownContext` defines it for Markdown files.
 Ultimately, a file's extension determines the applicable Markdown context.
 
 ```java

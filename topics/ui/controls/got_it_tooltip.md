@@ -313,7 +313,7 @@ Don't cover the information the user is currently working with.
 
 <chapter title="Implementation" collapsible="true">
 
-See four predefined point providers in the [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt) class.
+See four predefined point providers in [`GotItTooltip`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/GotItTooltip.kt).
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">

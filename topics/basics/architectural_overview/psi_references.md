@@ -23,7 +23,7 @@ Note that `String message` is not a reference and cannot be resolved.
 Instead, it's a _declaration_.
 It does not refer to any name defined elsewhere; instead, it defines a name by itself.
 
-A reference is an instance of a class implementing the [`PsiReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java) interface.
+A reference is an instance of [`PsiReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java).
 Note that references are distinct from PSI elements.
 References created by a PSI element are returned from `PsiElement.getReferences()`, the underlying PSI element of a reference can be obtained from `PsiReference.getElement()`.
 
@@ -79,7 +79,7 @@ The second case is *polyvariant references*.
 Consider the case of a JavaScript program.
 JavaScript is a dynamically typed language, so the IDE cannot always precisely determine which method is being called at a particular location.
 To handle this, it provides a reference that can be resolved to multiple possible elements.
-Such references implement the [`PsiPolyVariantReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiPolyVariantReference.java) interface.
+Such references implement [`PsiPolyVariantReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiPolyVariantReference.java).
 
 To resolve a `PsiPolyVariantReference`, call its `multiResolve()` method.
 The call returns an array of [`ResolveResult`](%gh-ic%/platform/core-api/src/com/intellij/psi/ResolveResult.java) objects.

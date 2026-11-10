@@ -61,17 +61,17 @@ If required, inspections can define all the attribute information (except `imple
 
 ### Inspection Implementation Java Class
 
-Inspection implementations for Java files, like [`ComparingStringReferencesInspection`](%gh-sdk-samples-master%/comparing_string_references_inspection/src/main/java/org/intellij/sdk/codeInspection/ComparingStringReferencesInspection.java), are often based on the Java class [`AbstractBaseJavaLocalInspectionTool`](%gh-ic%/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java).
-The [`AbstractBaseJavaLocalInspectionTool`](%gh-ic%/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java) base class offers methods to inspect Java classes, fields, and methods.
+Inspection implementations for Java files, like [`ComparingStringReferencesInspection`](%gh-sdk-samples-master%/comparing_string_references_inspection/src/main/java/org/intellij/sdk/codeInspection/ComparingStringReferencesInspection.java), are often based on [`AbstractBaseJavaLocalInspectionTool`](%gh-ic%/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java).
+[`AbstractBaseJavaLocalInspectionTool`](%gh-ic%/java/java-analysis-api/src/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.java) offers methods to inspect Java classes, fields, and methods.
 
-More generally, `localInspection` types are based on the class [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java).
+More generally, `localInspection` types are based on [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java).
 Examining the class hierarchy for `LocalInspectionTool` shows that the IntelliJ Platform provides many child inspection classes for a variety of languages and frameworks.
 One of these classes is a good basis for a new inspection implementation, but a bespoke implementation can also be based directly on `LocalInspectionTool`.
 
 The primary responsibilities of the inspection implementation class are to provide:
 
 * A `PsiElementVisitor` object to traverse the PSI tree of the file being inspected.
-* A `LocalQuickFix` class to fix an identified problem (optional).
+* A `LocalQuickFix` implementation to fix an identified problem (optional).
 * An options panel to be displayed in the <control>Inspections</control> settings dialog (optional). See [](inspection_options.md) for more details.
 
 The overridden `ComparingStringReferencesInspection` methods are discussed in the sections below.
@@ -88,7 +88,7 @@ The anonymous class overrides `visitBinaryExpression()`, which checks if a `PsiB
 The quick fix class acts much like an intention, allowing the user to invoke it on the `PsiElement` (or `TextRange`) highlighted by the inspection.
 
 The `ComparingStringReferencesInspection` implementation uses the nested class `ReplaceWithEqualsQuickFix` to implement a quick fix based on [`LocalQuickFix`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalQuickFix.java).
-The `ReplaceWithEqualsQuickFix` class allows the user to change the use of `a == b` and `a != b` expression to `a.equals(b)` and `!a.equals(b)` respectively.
+`ReplaceWithEqualsQuickFix` allows the user to change the use of `a == b` and `a != b` expression to `a.equals(b)` and `!a.equals(b)` respectively.
 
 The heavy lifting is done in `ReplaceWithEqualsQuickFix.applyFix()`, which manipulates the PSI tree to convert the expressions.
 The change to the PSI tree is accomplished by the usual approach to modification:
@@ -163,7 +163,7 @@ See <em>Includes</em> tab in <a href="settings://fileTemplates">Settings | Edito
 The `comparing_string_references_inspection` code sample provides a test for the inspection.
 See the [](testing_plugins.md) section for general information about plugin testing.
 
-The `comparing_string_references_inspection` test is based on the [`UsefulTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java) class, part of the JUnit framework APIs.
+The `comparing_string_references_inspection` test is based on [`UsefulTestCase`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/UsefulTestCase.java), part of the JUnit framework APIs.
 This class handles much of the underlying boilerplate for tests.
 
 By convention, the folder <path>test/testData/</path> contains the test files.

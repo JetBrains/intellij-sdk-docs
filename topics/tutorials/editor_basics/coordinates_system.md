@@ -24,7 +24,7 @@ For more information about creating action classes, see the [](action_system.md)
 
 ## Caret Positions from the `CaretModel` and `Caret` Objects
 
-The properties of a caret can be accessed by obtaining an instance of the [`CaretModel`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java) object.
+The properties of a caret can be accessed by obtaining an instance of [`CaretModel`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/CaretModel.java).
 As in the [Working with Text](working_with_text.md) tutorial, the `AnActionEvent` is used to get the `Editor` object.
 The `Editor` object provides access to the `CaretModel` object, as shown below:
 
@@ -84,7 +84,7 @@ This means that caret Logical Position is not changed by Code Folding:
 However, note that applying Code Folding _does change the reported Visual Position_ of the caret even if the Logical Position stays constant.
 More about [Visual Position](#caret-visual-position) is discussed below.
 However, it's clear combinations of Code Folding and Soft Wrap means that one Logical Position of a caret could map to multiple Visual Positions.
-The `Editor` interface provides methods to work with a caret Logical and Visual Position, such as the method `Editor.logicalToVisualPosition()`.
+`Editor` provides methods to work with a caret Logical and Visual Position, such as the method `Editor.logicalToVisualPosition()`.
 
 ### Caret Visual Position
 
@@ -134,10 +134,10 @@ The Column Position of a caret is the boundary between two characters.
 A caret can be associated with either a preceding or succeeding character.
 The association is important in bidirectional text, where mapping from Logical Column Position to Visual Column Position is not continuous.
 
-As defined in the [`LogicalPosition`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/LogicalPosition.java) class, if a caret position is associated with a succeeding character it _Leans Forward_.
+As defined in [`LogicalPosition`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/LogicalPosition.java), if a caret position is associated with a succeeding character it _Leans Forward_.
 Otherwise, it is associated with the preceding character.
 
-As defined in the [`VisualPosition`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java) class, if a caret position is associated with a succeeding character it _Leans Right_.
+As defined in [`VisualPosition`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/editor/VisualPosition.java), if a caret position is associated with a succeeding character it _Leans Right_.
 Otherwise, it is associated with the preceding character.
 
 #### Examples of Caret Lean

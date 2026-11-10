@@ -143,7 +143,7 @@ Add a toolbar to provide actions which help manipulate data in the table (add, r
 
 ![](too-long-line.png){width=370}
 
-Use the [`ToolbarDecorator`](%gh-ic%/platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java) class to implement such a toolbar. See more on toolbars [here](toolbar.md).
+Use [`ToolbarDecorator`](%gh-ic%/platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java) to implement such a toolbar. See more on toolbars [here](toolbar.md).
 
 ### Zebra striping and inner borders
 

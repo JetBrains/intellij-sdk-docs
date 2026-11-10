@@ -23,7 +23,7 @@ and can be used, for example, to implement keyword completion.
 ## Reference Completion
 
 To fill the completion list, the IDE calls [`PsiReference.getVariants()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java) either on the reference at the caret location or on a dummy reference that would be placed at the caret.
-This method needs to return an array of objects containing either strings, [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) instances or instances of the [`LookupElement`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElement.java) class (see [Lookup Items](#lookup-items) below).
+This method needs to return an array of objects containing either strings, [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) instances or instances of [`LookupElement`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElement.java) (see [Lookup Items](#lookup-items) below).
 If a `PsiElement` instance is returned in the array, the completion list shows the icon for the element.
 
 A common way to implement `getVariants()` is to use the same function for walking up the tree as in [`PsiReference.resolve()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java)
@@ -67,8 +67,8 @@ If completion items do not depend on indexes (e.g., keywords), it can be marked 
 
 ## Lookup Items
 
-Items shown in the completion list are represented by instances of the [`LookupElement`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElement.java) interface.
-These instances are typically created through the [`LookupElementBuilder`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElementBuilder.java) class.
+Items shown in the completion list are represented by instances of [`LookupElement`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElement.java).
+These instances are typically created through [`LookupElementBuilder`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElementBuilder.java).
 
 If there's only one lookup item to be shown, the behavior can be customized via [`AutoCompletionPolicy`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/lookup/AutoCompletionPolicy.java).
 

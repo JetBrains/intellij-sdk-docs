@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2022 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 4. Annotator Test
 
@@ -32,7 +32,7 @@ public class Test {
 > See how to [generate highlighting test data](testing_highlighting.md#generating-test-data).
 
 ## Define a Test Method
-Add the `testAnnotator()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
+Add the `testAnnotator()` method to `SimpleCodeInsightTest` [previously defined](completion_test.md#define-a-test).
 Again, this method configures the test fixture by using the test files.
 It then calls the `checkHighlighting()` method to verify weak warnings.
 

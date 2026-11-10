@@ -263,7 +263,7 @@ The following techniques allow finding code responsible for specific features by
 
 <procedure>
 
-1. Add breakpoints at the beginning of [`LightweightHint`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/LightweightHint.java) and [`ActionPopupMenuImpl`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/ActionPopupMenuImpl.java) classes' constructors.
+1. Add breakpoints at the beginning of the [`LightweightHint`](%gh-ic%/platform/platform-impl/src/com/intellij/ui/LightweightHint.java) and [`ActionPopupMenuImpl`](%gh-ic%/platform/platform-impl/src/com/intellij/openapi/actionSystem/impl/ActionPopupMenuImpl.java) constructors.
 2. In the sandbox IDE instance, invoke the popup.
 3. The execution suspends at the breakpoint.
 4. In the stacktrace, find the responsible class.

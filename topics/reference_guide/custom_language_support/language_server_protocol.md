@@ -131,7 +131,7 @@ The <path>plugin.xml</path> configuration file must specify the dependency on th
 
 Since 2024.2, LSP API sources are provided with the `IntelliJ IDEA sources` artifact.
 See [](tools_intellij_platform_gradle_plugin.md#attaching-sources-in-the-ide) on how to enable downloading sources.
-Then, use <ui-path>Navigate | Class...</ui-path> to open the `LspServerState` class.
+Then, use <ui-path>Navigate | Class...</ui-path> to open `LspServerState`.
 In the opened editor, invoke <control>Download IntelliJ Platform sources</control> to download and attach sources.
 
 #### Earlier IDE Versions
@@ -396,7 +396,7 @@ Review the servers and enable [`LspOnTypeFormattingCustomizer`](%gh-ic%/platform
 
 <tab title="Pre-2025.2">
 
-To fine-tune or disable the implementation of LSP-based features, plugins may override the corresponding properties of the `LspServerDescriptor` class (see their documentation for details).
+To fine-tune or disable the implementation of LSP-based features, plugins may override the corresponding properties of `LspServerDescriptor` (see their documentation for details).
 
 </tab>
 
@@ -406,9 +406,9 @@ To fine-tune or disable the implementation of LSP-based features, plugins may ov
 >
 {style="warning"}
 
-To handle custom (undocumented) requests and notifications from the LSP server, override the `LspClientDescriptor.createLsp4jClient()` (`LspServerDescriptor.createLsp4jClient()` before 2026.1.4) function and the `Lsp4jClient` class according to their documentation.
+To handle custom (undocumented) requests and notifications from the LSP server, override the `LspClientDescriptor.createLsp4jClient()` (`LspServerDescriptor.createLsp4jClient()` before 2026.1.4) function and `Lsp4jClient` according to their documentation.
 
-To send custom (undocumented) requests and notifications to the LSP server, override `LspClientDescriptor.lsp4jServerClass` (`LspServerDescriptor.lsp4jServerClass` before 2026.1.4) property and implement the `LspClientNotification` and/or `LspRequest` classes.
+To send custom (undocumented) requests and notifications to the LSP server, override `LspClientDescriptor.lsp4jServerClass` (`LspServerDescriptor.lsp4jServerClass` before 2026.1.4) property and implement `LspClientNotification` and/or `LspRequest`.
 The documentation in the source code includes implementation examples.
 
 ## Troubleshooting

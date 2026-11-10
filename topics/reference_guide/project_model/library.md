@@ -168,7 +168,7 @@ Use `ModuleRootModificationUtil.addDependency(Module, Library)` from under a [wr
 
 ### Checking Belonging to a Library
 
-The [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) interface implements a number of methods that can be used to check whether the specified file belongs to the project library classes or library sources.
+[`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) provides a number of methods that can be used to check whether the specified file belongs to the project library classes or library sources.
 
 * To check if a specified virtual file is a compiled class file use
   ```kotlin

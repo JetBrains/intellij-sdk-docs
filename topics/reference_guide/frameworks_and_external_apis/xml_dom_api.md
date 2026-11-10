@@ -84,7 +84,7 @@ interface Bar extends com.intellij.util.xml.DomElement {
 }
 ```
 
-Next, create a [`DomFileDescription`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/DomFileDescription.java) class, pass to its constructor the root tag name and root element interface.
+Next, create a [`DomFileDescription`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/DomFileDescription.java) implementation, pass to its constructor the root tag name and root element interface.
 Register it in <path>[plugin.xml](plugin_configuration_file.md)</path>
 using <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.dom.fileMetaData"/></include> and specify `rootTagName` and `domVersion`/`stubVersion` attributes.
 
@@ -150,7 +150,7 @@ In such cases, change the type in methods to the required one, and everything wi
 #### Custom Value Types
 
 For even more exotic types, tell DOM how to deal with them.
-First, annotate the accessor methods with the `@Convert` annotation, and specify a custom class that should extend the `Converter<T>` class in the annotation.
+First, annotate the accessor methods with the `@Convert` annotation, and specify a custom class that should extend `Converter<T>` in the annotation.
 Here `T` is the exotic type, while `Converter<T>` is a thing that knows how to convert values between `String` and `T`.
 If the value cannot be converted (for example, "foo" is not convertible into `Integer`), the converter may return `null`.
 Please also note that the implementation should have a no-argument constructor.
@@ -159,7 +159,7 @@ Consider an interesting case when `T` represents an enum value.
 Usually, the converter just searches for enum elements with the names specified in XML.
 But sometimes, enum element names need to match values that are not valid Java identifiers.
 For example, the CMP version in EJB may be "1.x" or "2.x", but Java enum constants can't have such names.
-For such cases, let the enum implement `NamedEnum` interface, and then use any names for the enum elements.
+For such cases, let the enum implement `NamedEnum`, and then use any names for the enum elements.
 Now, just provide the `getValue()` implementation that will return the right value to match with XML contents, and voilà!
 In the example, the code will look as follows:
 
@@ -234,7 +234,7 @@ For example:
 GenericAttributeValue<PsiClass> getSomeClass();
 ```
 
-The [`DomNameStrategy`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/DomNameStrategy.java) interface specifies how to convert accessor names to XML element names.
+[`DomNameStrategy`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/DomNameStrategy.java) specifies how to convert accessor names to XML element names.
 Or more precisely, not the full accessor names, but rather the names minus any "get", "set" or "is" prefixes.
 The strategy class is specified in the `@NameStrategy` annotation in any DOM element interface.
 Then any descendants and children of this interface will use this strategy.
@@ -391,10 +391,10 @@ As an example, JSF Managed Beans may be of three types.
 If a `<managed-bean>` tag contains a `<map-entries>` sub-tag, then the Managed Bean type is `MapEntriesBean`.
 If it contains a `<list-entries>` sub-tag, then the type is `ListEntriesBean`.
 Otherwise, it's a `PropertyBean` (all three interfaces extend `ManagedBean`).
-And `List<ManagedBean> getManagedBeans()` should return not only a list where all elements are instances of the `ManagedBean` interface, but a list where each element is of a certain type, i.e. `MapEntriesBean`, `ListEntriesBean`, or `PropertyBean`.
+And `List<ManagedBean> getManagedBeans()` should return not only a list where all elements are instances of `ManagedBean`, but a list where each element is of a certain type, i.e. `MapEntriesBean`, `ListEntriesBean`, or `PropertyBean`.
 
 In such cases, one should decide which interface the DOM element should actually implement (according to the given tag).
-This is achieved by extending the [`TypeChooser`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/TypeChooser.java) abstract class:
+This is achieved by extending [`TypeChooser`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/TypeChooser.java):
 
 ```java
 public abstract class TypeChooser {
@@ -450,7 +450,7 @@ Element validity is very important, since no methods can be invoked on invalid e
 
 DOM also has a kind of reflection, called "Generic Info".
 One would use it to be able to access children by tag names directly, instead of calling getter methods.
-See [`DomGenericInfo`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/reflect/DomGenericInfo.java) interface and `getGenericInfo()` methods in `DomElement` and `DomManager` for more information.
+See [`DomGenericInfo`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/reflect/DomGenericInfo.java) and `getGenericInfo()` methods in `DomElement` and `DomManager` for more information.
 There's also `DomElement.getXmlElementName()` method that returns the name of a corresponding tag or attribute.
 
 #### Presentation
@@ -474,7 +474,7 @@ DOM supports the following events: tag value changed, element defined/undefined/
 
 The DOM supports error checking and highlighting.
 It's based on annotations added to the DOM element in a special place (don't confuse these annotations with the ones of Java 5 - they are very different).
-Implement the [`DomElementsAnnotator`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/highlighting/DomElementsAnnotator.java) interface, override `DomFileDescription.createAnnotator()` method, and create this annotator there.
+Implement [`DomElementsAnnotator`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/highlighting/DomElementsAnnotator.java), override `DomFileDescription.createAnnotator()` method, and create this annotator there.
 In `DomElementsAnnotator.annotate(DomElement element, DomElementsProblemsHolder annotator)`, report all errors and warnings in the element's subtree to the annotator (`DomElementsProblemsHolder.createProblem()`).
 Return this annotator in the corresponding virtual method of the `DomFileDescription`.
 
@@ -500,7 +500,7 @@ Also, creating a new element that has required fixed-number or attribute childre
 
 ### Resolving
 
-Remember the interface `GenericDomValue<T>` and its sub-interface `GenericAttributeValue<T>`?
+Remember `GenericDomValue<T>` and its sub-interface `GenericAttributeValue<T>`?
 Remember, that ANY class may be passed as `T` - for example, `GenericDomValue<PsiClass>` can be interpreted as a reference to a class.
 Then it can always be considered as a reference to an object of class `T`!
 With strings or enums, this is not very useful, but the idea applies in another way.
@@ -556,7 +556,7 @@ As soon as that real element becomes invalid, the factory is called once more, a
 And so on...
 In the example with EJB, the factory would once again look for an Entity Bean named "SomeEntity".
 
-Stable DOM elements also implement the `StableElement` interface, which has the following methods:
+Stable DOM elements also implement `StableElement`, which has the following methods:
 
 * `DomElement getWrappedElement()` - just returns the current element to which all method calls are delegated;
 * `void invalidate()` - makes the wrapped element invalid. Any following method call will cause the factory to create a new delegate;
@@ -566,12 +566,12 @@ Stable DOM elements also implement the `StableElement` interface, which has the 
 
 Visitor is a very common design pattern.
 DOM model also has a visitor, and it's called `DomElementVisitor`.
-The `DomElement` interface has methods `accept()` and `acceptChildren()` that take this visitor as a parameter.
-The `DomElementVisitor` interface itself may look surprising, since it has only one method: `visitDomElement(DomElement)`.
+`DomElement` has methods `accept()` and `acceptChildren()` that take this visitor as a parameter.
+`DomElementVisitor` itself may look surprising, since it has only one method: `visitDomElement(DomElement)`.
 Where is the visitor pattern?
 Where are all those methods with names like `visitT(T)` that are usually found in it?
 There are no such methods, because the actual interfaces (T's) aren't known to anyone except the plugin developer.
-But when instantiating the `DomElementVisitor` interface, add these `visitT()` methods there, and they will be called!
+But when instantiating `DomElementVisitor`, add these `visitT()` methods there, and they will be called!
 They can even be named just `visit()` with the parameter type specified, and everything will be fine.
 For example, for two DOM element classes - `Foo` and `Bar` - the visitor may look like this:
 
@@ -644,7 +644,7 @@ Set and increase `stubVersion` of <include from="snippets.topic" element-id="epL
 All forms that deal with DOM are organized in a special way.
 They support two main things: getting data from XML into the UI, and saving UI data to XML.
 The former is called resetting, the latter - committing.
-There's [`Committable`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/ui/Committable.java) interface that has corresponding methods: `commit()` and `reset()`.
+[`Committable`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/ui/Committable.java) has corresponding methods: `commit()` and `reset()`.
 There's also a way of structuring forms into smaller parts, namely the Composite pattern: [`CompositeCommittable`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/ui/CompositeCommittable.java).
 Methods `commit()` and `reset()` are invoked automatically on editor tab switch or undo.
 So it is enough to organize the whole Swing structure in a tree of `CompositeCommittable`, and the IDE will do all the hard work.
@@ -668,7 +668,7 @@ This method will be invoked inside the same write action as the main `commit()`,
 
 Simple controls allow editing `GenericDomValue`: simple text, class names, enums and boolean values.
 These controls take a special object as a constructor parameter.
-This object should implement the `DomWrapper` interface that knows how to set/get values to/from a DOM model.
+This object should implement `DomWrapper`, which knows how to set/get values to/from a DOM model.
 
 There are three major DomWrapper's: [`DomFixedWrapper<T>`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/ui/DomFixedWrapper.java) redirecting calls to
 [`GenericDomValue<T>`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/GenericDomValue.java),
@@ -795,7 +795,7 @@ To change this behavior, override `DomTableView.allowMultipleRowsSelection()`.
 ### UI Organization
 
 The easiest way to create a DOM-based UI form is to extend the
-[`BasicDomElementComponent`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/ui/BasicDomElementComponent.java) class.
+[`BasicDomElementComponent`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/ui/BasicDomElementComponent.java).
 This requires passing some DOM element to the constructor.
 Then bind an IntelliJ IDEA GUI Designer form to the subclass and design the form there.
 When binding some controls to DOM UI, ensure that they have the right types.

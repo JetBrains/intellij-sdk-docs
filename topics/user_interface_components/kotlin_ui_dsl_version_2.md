@@ -165,7 +165,7 @@ Registers callbacks that will be called from `DialogPanel.apply()`/`reset()`/`is
 
 ## `Row`
 
-Every row is represented by the [`Row`](%gh-ic%/platform/platform-api/src/com/intellij/ui/dsl/builder/Row.kt) interface.
+Every row is represented by [`Row`](%gh-ic%/platform/platform-api/src/com/intellij/ui/dsl/builder/Row.kt).
 It contains all available factory methods for creating components (like `button()`, `label()`, `textField()`, etc.) and methods for row configuration.
 
 ### `Row.layout`
@@ -270,8 +270,8 @@ For example, it is possible to create several columns by creating a row with sev
 
 ## `Cell`
 
-Every component in the UI DSL builder is wrapped into [`Cell`](%gh-ic%/platform/platform-api/src/com/intellij/ui/dsl/builder/Cell.kt) class.
-Standard components should not be created directly but with factory methods from [`Row`](%gh-ic%/platform/platform-api/src/com/intellij/ui/dsl/builder/Row.kt) class like `checkBox()`, `button()` and others because of additional functionality, e.g., `textField()` is configured with the column's width, radio buttons are placed into radio buttons groups.
+Every component in the UI DSL builder is wrapped into [`Cell`](%gh-ic%/platform/platform-api/src/com/intellij/ui/dsl/builder/Cell.kt).
+Standard components should not be created directly but with factory methods from [`Row`](%gh-ic%/platform/platform-api/src/com/intellij/ui/dsl/builder/Row.kt) like `checkBox()`, `button()` and others because of additional functionality, e.g., `textField()` is configured with the column's width, radio buttons are placed into radio buttons groups.
 
 ### `Cell.component`
 

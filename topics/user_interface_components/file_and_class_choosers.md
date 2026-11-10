@@ -12,7 +12,7 @@ This method has multiple overloads.
 The best method to use is the one which returns void and takes a callback receiving the list of selected files as a parameter.
 This is the only overload which will display a native file open dialog on macOS.
 
-The [`FileChooserDescriptor`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileChooser/FileChooserDescriptor.java) class controls which files can be selected.
+[`FileChooserDescriptor`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileChooser/FileChooserDescriptor.java) controls which files can be selected.
 The constructor parameters specify whether files and/or directories can be selected, and whether multiple selection is allowed (see [`FileChooserDescriptorFactory`](%gh-ic%/platform/ide-core/src/com/intellij/openapi/fileChooser/FileChooserDescriptorFactory.java) for common variants).
 
 For more fine-grained control over the allowed selection, overload the `isFileSelectable()` method.
@@ -27,8 +27,8 @@ As an added bonus, this will enable filename completion when entering paths in t
 
 ### Via Tree
 
-An alternative UI for selecting files, which works best when the most common way of selecting a file is by typing its name, is available through the
-[`TreeFileChooserFactory`](%gh-ic%/platform/lang-api/src/com/intellij/ide/util/TreeFileChooserFactory.java) class.
+An alternative UI for selecting files, which works best when the most common way of selecting a file is by typing its name, is available through
+[`TreeFileChooserFactory`](%gh-ic%/platform/lang-api/src/com/intellij/ide/util/TreeFileChooserFactory.java).
 
 The dialog shown by this API has two tabs:
 
@@ -39,10 +39,10 @@ To show the dialog, call `showDialog()` on the chooser returned from `createFile
 
 ## Class and Package Choosers
 
-To offer the user a possibility to select a Java class, use the [`TreeClassChooserFactory`](%gh-ic%/java/openapi/src/com/intellij/ide/util/TreeClassChooserFactory.java) class.
+To offer the user a possibility to select a Java class, use [`TreeClassChooserFactory`](%gh-ic%/java/openapi/src/com/intellij/ide/util/TreeClassChooserFactory.java).
 Its different methods provide options to specify the scope from which the classes are taken, to restrict the choice to descendants of a specific class or implementations of an interface, and to include or exclude inner classes from the list.
 
-For choosing a Java package, use the [`PackageChooserDialog`](%gh-ic%/java/java-impl/src/com/intellij/ide/util/PackageChooserDialog.java) class.
+For choosing a Java package, use [`PackageChooserDialog`](%gh-ic%/java/java-impl/src/com/intellij/ide/util/PackageChooserDialog.java).
 
 > To use Java-specific components, an explicit dependency on the Java plugin is required.
 > See [](plugin_compatibility.md#java) for details.

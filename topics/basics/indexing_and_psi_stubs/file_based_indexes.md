@@ -62,7 +62,7 @@ Please see also [Improving indexing performance](indexing_and_psi_stubs.md#impro
 
 ## Accessing a File-Based Index
 
-Access to file-based indexes is performed through the [`FileBasedIndex`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java) class.
+Access to file-based indexes is performed through [`FileBasedIndex`](%gh-ic%/platform/indexing-api/src/com/intellij/util/indexing/FileBasedIndex.java).
 
 > Please note index access is restricted during [dumb mode](indexing_and_psi_stubs.md#dumb-mode).
 >
@@ -111,7 +111,7 @@ The IntelliJ Platform contains several standard file-based indexes.
 The most useful indexes for plugin developers are:
 
 ### Word Index
-Generally, the word index should be accessed indirectly by using helper methods of the [`PsiSearchHelper`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/PsiSearchHelper.java) class.
+Generally, the word index should be accessed indirectly by using helper methods of [`PsiSearchHelper`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/PsiSearchHelper.java).
 
 ### File Name Index
 [`FilenameIndex`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java) provides a quick way to find all files matching a specific file name.

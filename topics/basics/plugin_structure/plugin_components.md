@@ -25,7 +25,7 @@ To manage some state or logic that is only necessary when the user performs a sp
 
 ### Persisting State
 
-To store the state of a plugin at the application or project level, use a [Service](plugin_services.md) and implement the `PersistentStateComponent` interface.
+To store the state of a plugin at the application or project level, use a [Service](plugin_services.md) and implement `PersistentStateComponent`.
 See [Persisting State of Components](persisting_state_of_components.md) for details.
 
 ### Subscribing to Events
@@ -80,5 +80,5 @@ See also [](ide_infrastructure.md#running-tasks-once).
 
 ### Project and Application Close
 
-To execute code on project closing or application shutdown, implement the [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java) interface in a [Service](plugin_services.md) and place the code in the `dispose()` method.
+To execute code on project closing or application shutdown, implement [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java) in a [Service](plugin_services.md) and place the code in the `dispose()` method.
 Alternatively, use `Disposer.register()` passing a `Project` or `Application` service instance as the `parent` argument (see [Choosing a Disposable Parent](disposers.md#choosing-a-disposable-parent)).

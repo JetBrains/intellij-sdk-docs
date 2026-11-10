@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Execution
 
@@ -89,7 +89,7 @@ It is used by the `ProgramRunner.execute()` method.
 [`RunContentBuilder`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/runners/RunContentBuilder.java) is responsible for building the content of the <control>Run</control> or <control>Debug</control> tool window.
 The content is built by the `ProgramRunner` executing the process.
 
-[`ExecutionResult`](%gh-ic%/platform/execution/src/com/intellij/execution/ExecutionResult.java) is prepared by `RunProfileState` class before execution and contains `ExecutionConsole` and `ProcessHandler`.
+[`ExecutionResult`](%gh-ic%/platform/execution/src/com/intellij/execution/ExecutionResult.java) is prepared by `RunProfileState` before execution and contains `ExecutionConsole` and `ProcessHandler`.
 
 [`ExecutionConsole`](%gh-ic%/platform/consoleView/src/com/intellij/execution/ui/ExecutionConsole.java) is a component displaying the result of executing the process.
 It can be a console, a test results view, or another similar component.
@@ -130,9 +130,9 @@ A standard implementation of `ProgramRunner.execute()` goes through the followin
 
 The standard base class used as an implementation of `RunProfileState` is [`CommandLineState`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/CommandLineState.java).
 It contains the logic for putting together a running process and a console into an `ExecutionResult` but doesn't know anything about how the process is actually started.
-For starting the process, it's recommended to use the [`GeneralCommandLine`](%gh-ic%/platform/platform-util-io/src/com/intellij/execution/configurations/GeneralCommandLine.java) class, which takes care of setting up the command line parameters and executing the process.
+For starting the process, it's recommended to use [`GeneralCommandLine`](%gh-ic%/platform/platform-util-io/src/com/intellij/execution/configurations/GeneralCommandLine.java), which takes care of setting up the command line parameters and executing the process.
 
-Alternatively, if the process is a JVM-based one, use the [`JavaCommandLineState`](%gh-ic%/java/execution/impl/src/com/intellij/execution/configurations/JavaCommandLineState.java) base class.
+Alternatively, if the process is a JVM-based one, extend [`JavaCommandLineState`](%gh-ic%/java/execution/impl/src/com/intellij/execution/configurations/JavaCommandLineState.java).
 It handles the JVM command line parameters and can take care of details like calculating the classpath for the JVM.
 Note that using this class requires a [dependency](plugin_dependencies.md) on the [](idea.md#java-plugin).
 
@@ -151,7 +151,7 @@ Alternatively, it can be handled with the following steps:
 1. [`TextConsoleBuilderFactory.createBuilder(project).getConsole()`](%gh-ic%/platform/consoleView/src/com/intellij/execution/filters/TextConsoleBuilderFactory.java) creates a [`ConsoleView`](%gh-ic%/platform/consoleView/src/com/intellij/execution/ui/ConsoleView.java) instance.
 2. `ConsoleView.attachToProcess()` attaches it to the output of a process.
 
-If the running process uses [ANSI escape codes to color its output](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors), use the [`ColoredProcessHandler`](%gh-ic%/platform/platform-util-io/src/com/intellij/execution/process/ColoredProcessHandler.java) class to display the colors in the IDE console.
+If the running process uses [ANSI escape codes to color its output](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors), use [`ColoredProcessHandler`](%gh-ic%/platform/platform-util-io/src/com/intellij/execution/process/ColoredProcessHandler.java) to display the colors in the IDE console.
 
 #### Console Filters
 

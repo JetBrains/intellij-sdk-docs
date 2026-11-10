@@ -13,7 +13,7 @@
 The _Find Usages_ action is a multi-step process, and each step of the process requires involvement from the custom language plugin.
 
 The language plugin participates in the Find Usages process by registering an implementation of [`FindUsagesProvider`](%gh-ic%/platform/indexing-api/src/com/intellij/lang/findUsages/FindUsagesProvider.java) in
-the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.findUsagesProvider"/></include>, and through the PSI implementation using [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) and [`PsiReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java) interfaces.
+the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.findUsagesProvider"/></include>, and through the PSI implementation using [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) and [`PsiReference`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java).
 
 > In cases like function parameters and local variables, consider overriding  [`PsiElement.getUseScope()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) to return a narrower scope.
 > For instance, returning the scope of the nearest function definition can significantly reduce the number of files that need to be parsed and references that need to be resolved when renaming such elements.
@@ -45,7 +45,7 @@ The steps of the _Find Usages_ action are the following:
 
 ### Grouping Results
 
-To have the title of the found element be correctly displayed in the title of the Find Usages tool window, provide an implementation of the [`ElementDescriptionProvider`](%gh-ic%/platform/core-api/src/com/intellij/psi/ElementDescriptionProvider.java) interface.
+To have the title of the found element be correctly displayed in the title of the Find Usages tool window, provide an implementation of [`ElementDescriptionProvider`](%gh-ic%/platform/core-api/src/com/intellij/psi/ElementDescriptionProvider.java).
 The [`ElementDescriptionLocation`](%gh-ic%/platform/core-api/src/com/intellij/psi/ElementDescriptionLocation.java) passed to the provider in this case will be an instance of [`UsageViewLongNameLocation`](%gh-ic%/platform/usageView/src/com/intellij/usageView/UsageViewLongNameLocation.java).
 
 **Example:**

@@ -30,7 +30,7 @@ It provides the following features:
 
 ### Usage
 
-When using the [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) class for a dialog, follow these required steps:
+When using [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) for a dialog, follow these required steps:
 
 * Call the base class constructor and provide either a `Project` in the frame of which the dialog will be displayed, or a parent component for the dialog.
 * Call the `setTitle()` method to set the title for the dialog
@@ -46,7 +46,7 @@ Optionally:
 #### Dialog Content
 
 Use [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) to provide the dialog's contents (see [samples](#kotlin)).
-Alternatively or when using Java, the `DialogWrapper` class can be used together with [GUI Designer forms](https://www.jetbrains.com/help/idea/gui-designer-basics.html).
+Alternatively or when using Java, `DialogWrapper` can be used together with [GUI Designer forms](https://www.jetbrains.com/help/idea/gui-designer-basics.html).
 In this case, bind a GUI Designer form to the class extending `DialogWrapper`, bind the top-level panel of the form to a field, and return that field from the `createCenterPanel()` method.
 
 > See the [](layout.md) topic in UI Guidelines for recommendations on arranging UI controls in dialogs.

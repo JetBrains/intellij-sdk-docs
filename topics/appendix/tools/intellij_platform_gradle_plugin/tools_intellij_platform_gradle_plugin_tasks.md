@@ -2191,7 +2191,7 @@ Default value
 
 </tldr>
 
-The base Gradle `test` task is preconfigured using the [`TestCompanion`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/companion/TestCompanion.kt) class to run tests with IntelliJ Platform, sandbox, and all system properties set.
+The base Gradle `test` task is preconfigured using [`TestCompanion`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/tasks/companion/TestCompanion.kt) to run tests with IntelliJ Platform, sandbox, and all system properties set.
 
 The task itself isn't mutated and a dedicated [`prepareTest`](#prepareTest) task is involved to request for required IntelliJ Platform and sandbox configuration.
 

@@ -108,6 +108,6 @@ For more information about creating Settings implementations, see [](settings_gu
 
 ### Configurable Marker Interfaces
 
-The `Configurable.Composite` interface indicates a configurable component has child components.
+`Configurable.Composite` indicates a configurable component has child components.
 The preferred approach is to specify child components in the [EP declaration](#extension-points-for-parent-child-settings-relationships).
-Using the `Composite` interface incurs the penalty of loading child classes while building the tree of Settings Swing components.
+Using `Composite` incurs the penalty of loading child classes while building the tree of Settings Swing components.

@@ -13,7 +13,7 @@ Their two main applications inside the IntelliJ Platform are:
 1. Specifying where auto-completion should occur when implementing [a completion contributor](completion_contributor.md) for a custom language.
 2. Specifying PSI elements that provide further references via [a PSI reference contributor](psi_references.md#contributed-references).
 
-However, plugin authors rarely implement the [`ElementPattern`](%gh-ic%/platform/core-api/src/com/intellij/patterns/ElementPattern.java) interface directly.
+However, plugin authors rarely implement [`ElementPattern`](%gh-ic%/platform/core-api/src/com/intellij/patterns/ElementPattern.java) directly.
 Instead, use the high-level pattern classes provided by the IntelliJ Platform:
 
 | Class                                                                                               | Main Contents                                                                                                             | Notable Examples                                                                                                                                                                                                                                                                          |
@@ -95,7 +95,7 @@ Note that finding an identifiable part of a pattern can be achieved by setting a
 
 ### Debugging Example
 
-In the Markdown code example from above, the `MarkdownLinkDestinationImpl` class is used in the element pattern.
+In the Markdown code example from above, `MarkdownLinkDestinationImpl` is used in the element pattern.
 Now, set a breakpoint at:
 
 ```text

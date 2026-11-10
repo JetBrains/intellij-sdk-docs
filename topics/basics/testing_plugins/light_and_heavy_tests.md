@@ -64,7 +64,7 @@ For tests that require the [Java PSI](idea.md#java-plugin) or related functional
 ### LightProjectDescriptor
 
 When writing a light test, it is possible to specify the requirements of the project used in test, such as the module type, the configured [SDK](sdk.md), [facets](facet.md), [libraries](library.md), etc.
-It is done by extending the [`LightProjectDescriptor`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) class and returning the project descriptor (usually stored in `static final` field) from `getProjectDescriptor()`.
+It is done by extending [`LightProjectDescriptor`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/LightProjectDescriptor.java) and returning the project descriptor (usually stored in `static final` field) from `getProjectDescriptor()`.
 
 Before executing each test, the project instance will be reused if the test case returns the same project descriptor as the previous one or recreated if the descriptor is different (`equals() = false`).
 

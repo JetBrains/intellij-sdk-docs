@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Adding New Steps to Project Wizard
 
@@ -27,7 +27,7 @@ Register a new <include from="snippets.topic" element-id="ep"><var name="ep" val
 
 ## Create a Custom Module Builder
 
-Extend [`ModuleBuilder`](%gh-ic%/platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java) class to provide custom configuration.
+Extend [`ModuleBuilder`](%gh-ic%/platform/lang-core/src/com/intellij/ide/util/projectWizard/ModuleBuilder.java) to provide custom configuration.
 
 ```java
 public class DemoModuleWizardStep extends ModuleBuilder {

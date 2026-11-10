@@ -120,7 +120,7 @@ $a; // (1)
 
 In (1), the variable `$a` will be of type `int|string` because PhpStorm can't deduce exactly which branch the execution will take.
 
-PhpStorm stores this types as separate strings inside the [`PhpType`](#phptype) class.
+PhpStorm stores this types as separate strings inside [`PhpType`](#phptype).
 Each of the types can be either Complete or Incomplete.
 In the Incomplete type resolving process, PhpStorm will resolve each union type individually.
 
@@ -128,7 +128,7 @@ Since some providers may return types for the same PSI element, union types may 
 
 ## `PhpType`
 
-PhpStorm uses the `com.jetbrains.php.lang.psi.resolve.types.PhpType` class to work with types.
+PhpStorm uses `com.jetbrains.php.lang.psi.resolve.types.PhpType` to work with types.
 
 To add types to it, use `add()`, which can take either another `PhpType` or a `string`.
 
@@ -139,12 +139,12 @@ This method shouldn't be used during indexing, namely inside `PhpTypeProvider4.g
 
 ### How to get `PhpType` from PSI?
 
-In PhpStorm, PSI elements with types implement the `com.jetbrains.php.lang.psi.elements.PhpTypedElement` interface.
+In PhpStorm, PSI elements with types implement `com.jetbrains.php.lang.psi.elements.PhpTypedElement`.
 To get the type of element, use the `getType()`.
 
 ## `PhpTypeProvider4` Implementation
 
-`PhpTypeProvider4` interface:
+Definition of `PhpTypeProvider4`:
 
 ```java
 /**

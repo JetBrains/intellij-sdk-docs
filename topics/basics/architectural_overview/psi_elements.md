@@ -11,7 +11,7 @@ A PSI element, in its turn, can have child PSI elements.
 PSI elements and operations at the level of individual PSI elements are used to explore the source code's internal structure as it is interpreted by the IntelliJ Platform.
 For example, PSI elements can be used to perform code analysis, such as [code inspections](https://www.jetbrains.com/help/idea/code-inspection.html) or [intention actions](https://www.jetbrains.com/idea/help/intention-actions.html).
 
-The [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) class is the common base class for PSI elements.
+[`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) is the common base for PSI elements.
 
 > PSI classes for specific languages usually start with a language prefix, for example, [`JsonArray`](%gh-ic%/json/gen/com/intellij/json/psi/JsonArray.java).
 >

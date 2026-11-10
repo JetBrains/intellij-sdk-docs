@@ -252,7 +252,7 @@ Its factory methods are replaced with `Notification` constructor and subsequent 
 The `NotificationGroupManager`, its `getNotificationGroup` method are no longer necessary, as the reference to the notification group is resolved via the notification group identifier.
 - The `Notifications.Bus.notify` method can be replaced with the `notify` method on the `Notification` instance.
 - `NotificationsManager` is considered to be internal.
-Its methods should be replaced by the corresponding methods in the `Notification` class.
+Its methods should be replaced by the corresponding methods in `Notification`.
 
 # Summary
 
@@ -269,5 +269,5 @@ Suggestions are shown in a dedicated section in the *Notifications* tool window.
 - *Tool Window Notification* visually points to the specific tool windows.
 The primary action is shown as a hyperlink.
 It is automatically dismissed on click or keypress.
-- Use the `Notification` class to create instances, its builder methods to configure, and the `notify` method to show a notification.
+- Use `Notification` to create instances, its builder methods to configure, and the `notify` method to show a notification.
 

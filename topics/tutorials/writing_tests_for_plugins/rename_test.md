@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2023 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 6. Rename Test
 
@@ -36,7 +36,7 @@ Note the `website =` in <path>RenameTestData.simple</path> should be renamed to 
 {src="simple_language_plugin/src/test/testData/RenameTestDataAfter.simple"}
 
 ## Define a Test Method
-Add the `testRename()` method to the `SimpleCodeInsightTest` class [previously defined](completion_test.md#define-a-test).
+Add the `testRename()` method to `SimpleCodeInsightTest` [previously defined](completion_test.md#define-a-test).
 * Again, this method configures the test fixture by using the test files.
 * The fixture then renames the Simple Language element at the caret in <path>RenameTestData.java</path>.
 * It then compares the input and output files, ignoring whitespace.

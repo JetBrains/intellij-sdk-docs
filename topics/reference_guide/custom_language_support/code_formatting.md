@@ -76,7 +76,7 @@ However, in most cases, the `PsiBasedFormattingModel` should meet the requiremen
 
 ### Building the `Block` Tree
 
-Instead of implementing the `Block` interface, [`AbstractBlock`](%gh-ic%/platform/code-style-impl/src/com/intellij/psi/formatter/common/AbstractBlock.java)
+Instead of implementing `Block`, [`AbstractBlock`](%gh-ic%/platform/code-style-impl/src/com/intellij/psi/formatter/common/AbstractBlock.java)
 should be used as a base class which provides useful default implementations.
 Although the block implementation of a plugin is specific to the custom language, for the implementation of `AbstractBlock` some general remarks can be given.
 It is common to store an instance of the `SpacingBuilder` which can directly be used when implementing the `getSpacing()` method
@@ -152,7 +152,7 @@ Blocks that return the same `Alignment` object instance from the `getAlignment()
 If two blocks with the same alignment are on different lines and the second block is the first non-whitespace block on its line,
 the formatter inserts whitespaces before the second block to align it with the first block.
 
-The `Alignment` includes the `Anchor` enum with two values, `LEFT` and `RIGHT`, determining how the code blocks are aligned.
+`Alignment` includes `Anchor` with two values, `LEFT` and `RIGHT`, determining how the code blocks are aligned.
 The default alignment is created with the left anchor.
 To create an alignment instance, the class provides several static methods:
 

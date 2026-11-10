@@ -83,7 +83,7 @@ Refer to the [Addendum](#addendum) below, which explains how to improve on this 
 
 While `SimpleProperty` elements provide their key and value, there is no direct access to a possible comment that is preceding the key/value definition.
 To show this comment in the documentation as well, add a small helper function that extracts the text from the comment.
-This function will reside in the `SimpleUtil` class and will find, for instance, the comment preceding `apikey` in the following short example:
+This function will reside in `SimpleUtil` and will find, for instance, the comment preceding `apikey` in the following short example:
 
 ```properties
 # An application programming interface key (API key) is a unique

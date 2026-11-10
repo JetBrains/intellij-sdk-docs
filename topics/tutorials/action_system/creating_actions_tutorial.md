@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Creating Actions
 
@@ -12,7 +12,7 @@ Using the SDK code sample [`action_basics`](%gh-sdk-samples-master%/action_basic
 
 ## Creating a Custom Action
 
-Custom actions extend the abstract class [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
+Custom actions extend [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java).
 Classes that extend it should override `AnAction.update()` and must override `AnAction.actionPerformed()`.
 * The `update()` method implements the code that enables or disables an action.
 * The `actionPerformed()` method implements the code that executes when the user invokes an action.
@@ -40,7 +40,7 @@ public class PopupDialogAction extends AnAction {
 }
 ```
 
-> `AnAction` classes do not have class fields of any kind.
+> `AnAction` implementations do not have class fields of any kind.
 > This restriction prevents memory leaks.
 > For more information about why, see [](action_system.md#action-implementation).
 >

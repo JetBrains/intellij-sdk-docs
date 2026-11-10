@@ -89,7 +89,7 @@ Use the `ModuleManager.getModules()` method.
 _Order entries_ include SDK, libraries and other modules the module uses.
 In the IntelliJ IDEA UI, order entries for a module are shown on the <control>Dependencies</control> tab of the <control>Project Structure</control> dialog box.
 
-To explore the module dependencies, use the [`OrderEnumerator`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java) class.
+To explore the module dependencies, use [`OrderEnumerator`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/OrderEnumerator.java).
 
 The following code snippet illustrates how to get classpath (classes root of all dependencies) for a module:
 

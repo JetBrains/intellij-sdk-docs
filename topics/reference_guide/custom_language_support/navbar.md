@@ -47,7 +47,7 @@ In this case, also override `getLanguage()` in addition to the two methods descr
 The `adjustElement()` method modifies the navigation bar element.
 It can be used, for example, to show a class in the navigation bar when the caret is located in a comment that is attached to the class.
 
-Overriding other methods is usually not needed unless the plugin provides its own implementation of the entire `NavBarModelExtension` interface.
+Overriding other methods is usually not needed unless the plugin provides its own implementation of the entire `NavBarModelExtension`.
 
 Note that the `getSuitableClasses()` method on the structure view model class that implements `com.intellij.ide.structureView.TextEditorBasedStructureViewModel` (see [](structure_view.md))
 must return all the element types to display in the navigation bar.

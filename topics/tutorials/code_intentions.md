@@ -32,8 +32,8 @@ The [conditional_operator_intention](%gh-sdk-samples-master%/conditional_operato
 
 - How to analyze a [PSI tree](psi_files.md).
 - How to find a Java token of interest in the PSI tree.
-- How to invoke a quick-fix action for a token element under the cursor using the [`PsiElementBaseIntentionAction`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java) class.
-- How to create a JUnit test for this plugin using the [`IdeaTestFixtureFactory`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaTestFixtureFactory.java) class.
+- How to invoke a quick-fix action for a token element under the cursor using [`PsiElementBaseIntentionAction`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/intention/PsiElementBaseIntentionAction.java).
+- How to create a JUnit test for this plugin using [`IdeaTestFixtureFactory`](%gh-ic%/platform/testFramework/src/com/intellij/testFramework/fixtures/IdeaTestFixtureFactory.java).
 - How to add an intention description and before/after examples in the Settings dialog
 
 > In the case of providing multiple intention actions for a single element, their ordering is indeterministic due to performance reasons.

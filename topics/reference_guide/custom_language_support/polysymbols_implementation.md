@@ -87,14 +87,14 @@ use the `presentation` property.
 : Implement to provide usage search for the symbol.
 In most cases the implementation would simply call `PolySymbolSearchTarget.create`.
 
-: Symbol can also implement the `SearchTarget` interface directly and override its methods, in which case `PolySymbolSearchTarget` returned by `searchTarget` property is ignored.
+: Symbol can also implement `SearchTarget` directly and override its methods, in which case `PolySymbolSearchTarget` returned by `searchTarget` property is ignored.
 If the returned target is not a `PolySymbolSearchTarget`, a dedicated `UsageSearcher` needs to be implemented to handle it.
 
 `renameTarget`
 : Implement to provide rename refactoring for the symbol.
 In most cases the implementation would simply call `PolySymbolRenameTarget.create`.
 
-: Symbol can also implement the `RenameTarget` interface directly and override its methods, in which case `PolySymbolRenameTarget` returned by `renameTarget` property is ignored.
+: Symbol can also implement `RenameTarget` directly and override its methods, in which case `PolySymbolRenameTarget` returned by `renameTarget` property is ignored.
 If the returned target is not a `PolySymbolRenameTarget`, a dedicated `RenameUsageSearcher` needs to be implemented to handle it.
 
 ## Query Related Properties
@@ -103,7 +103,7 @@ The following properties are related to name matching and code completion querie
 
 `queryScope`
 : When a pattern is being evaluated, matched symbols can provide additional scope for further resolution in the pattern.
-By default, the `queryScope` returns the symbol itself if it implements the ` PolySymbolScope ` interface.
+By default, the `queryScope` returns the symbol itself if it implements `PolySymbolScope`.
 
 `extension`
 : Specifies whether the symbol is an extension.
@@ -115,7 +115,7 @@ When matched along with a non-extension symbol, it can provide or override some 
 {style="full"}
 `get(property: PolySymbolProperty<T>)`
 : Accessor for various symbol properties. All properties supported by the PolySymbol framework are defined through `*Property`
-objects within the `PolySymbol` interface. Check their documentation for further reference. Overall, avoid
+objects within `PolySymbol`. Check their documentation for further reference. Overall, avoid
 overriding this method to provide property values and instead define property getters by annotating properties,
 fields, or methods with `PolySymbol.Property` annotation.
 
@@ -246,7 +246,7 @@ On extension of this class, it's only necessary to override `initialize()` and p
 ## Model Queries
 
 Poly Symbols can contain patterns, which allow composing them from other Poly Symbols.
-Such symbols should implement the [`PolySymbolWithPattern`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolWithPattern.kt) interface.
+Such symbols should implement [`PolySymbolWithPattern`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolWithPattern.kt).
 
 To find which symbols match available patterns, make a match query.
 One can also run a code completion query, which will produce a list of valid completions in the provided context,

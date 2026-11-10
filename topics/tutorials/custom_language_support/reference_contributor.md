@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 10. Reference Contributor
 
@@ -23,7 +23,7 @@
 The references functionality is one of the most important parts in the implementation of custom language support.
 Resolving references means the ability to go from the usage of an element to its declaration, completion, rename refactoring, find usages, etc.
 
-> Every PSI element that can be renamed or referenced needs to implement [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java) interface.
+> Every PSI element that can be renamed or referenced needs to implement [`PsiNamedElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNamedElement.java).
 >
 {style="note"}
 
@@ -31,13 +31,13 @@ Resolving references means the ability to go from the usage of an element to its
 
 The classes below show how the Simple Language fulfills the need to implement `PsiNamedElement`.
 
-The [`SimpleNamedElement`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleNamedElement.java) interface is subclassed from [`PsiNameIdentifierOwner`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNameIdentifierOwner.java).
+[`SimpleNamedElement`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleNamedElement.java) is subclassed from [`PsiNameIdentifierOwner`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiNameIdentifierOwner.java).
 
 ```java
 ```
 {src="simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleNamedElement.java" include-symbol="SimpleNamedElement"}
 
-The [`SimpleNamedElementImpl`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimpleNamedElementImpl.java) class implements the `SimpleNamedElement` interface and extends [`ASTWrapperPsiElement`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/ASTWrapperPsiElement.java).
+[`SimpleNamedElementImpl`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/impl/SimpleNamedElementImpl.java) implements `SimpleNamedElement` and extends [`ASTWrapperPsiElement`](%gh-ic%/platform/core-impl/src/com/intellij/extapi/psi/ASTWrapperPsiElement.java).
 
 ```java
 ```

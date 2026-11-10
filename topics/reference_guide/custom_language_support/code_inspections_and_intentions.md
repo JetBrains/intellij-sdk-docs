@@ -20,7 +20,7 @@ Inspections are run on a full PSI tree and report found problems, while intentio
 
 ## Inspections
 
-The code inspections for custom languages use the same API as all other code inspections, based on the [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) class.
+The code inspections for custom languages use the same API as all other code inspections, based on [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java).
 
 The functionality of [`LocalInspectionTool`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInspection/LocalInspectionTool.java) partially duplicates that of [Annotator](syntax_highlighting_and_error_highlighting.md#annotator).
 
@@ -46,7 +46,7 @@ for its language in <include from="snippets.topic" element-id="ep"><var name="ep
 ## Intentions
 
 The code intentions for custom languages also use the standard API for intentions.
-The intention classes need to implement the [`IntentionAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java) interface
+The intention classes need to implement [`IntentionAction`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/intention/IntentionAction.java)
 and are registered using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.intentionAction"/></include>.
 
 **Examples:**

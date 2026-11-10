@@ -9,7 +9,7 @@ Making use of these controls in a plugin ensures a consistent user experience be
 
 Popups can optionally display a title, are optionally movable and resizable (and support remembering their size), and can be nested (show another popup when an item is selected).
 
-The [`JBPopupFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java) interface creates popups that display different kinds of components, depending on specific needs.
+[`JBPopupFactory`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/popup/JBPopupFactory.java) creates popups that display different kinds of components, depending on specific needs.
 The most commonly used methods are:
 
 | Method                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |

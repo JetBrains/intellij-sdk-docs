@@ -17,7 +17,7 @@ The following changes were introduced:
 
 * `PhpThrow` PSI layout has changed: it is now a `Statement` with a single child `PhpThrowExpression`. The `PhpThrow#getArgument` delegates to `PhpThrowExpression#getArgument` for now.
 
-* In PhpStorm 2020.2, the `PhpThrow` class will be removed and replaced with `StatementImpl`.
+* In PhpStorm 2020.2, `PhpThrow` will be removed and replaced with `StatementImpl`.
 
 See the [YouTrack issue](https://youtrack.jetbrains.com/issue/WI-54357) for details.
 

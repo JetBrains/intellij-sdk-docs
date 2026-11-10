@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Modifying the PSI
 
@@ -22,7 +22,7 @@ In most cases, the flow is:
 
 Most languages provide factory methods to create specific code constructs more easily, for example:
 
-* [`PsiJavaParserFacade`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PsiJavaParserFacade.java) class contains methods such as `createMethodFromText()`, which creates a Java method from the given text
+* [`PsiJavaParserFacade`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PsiJavaParserFacade.java) contains methods such as `createMethodFromText()`, which creates a Java method from the given text
 * [`SimpleElementFactory.createProperty()`](%gh-sdk-samples-master%/simple_language_plugin/src/main/java/org/intellij/sdk/language/psi/SimpleElementFactory.java) creating a Simple language property
 
 When implementing refactorings, [intentions](code_intentions.md), or inspection [quickfixes](code_inspections_and_intentions.md) that work with existing code, the text passed to the various `createFromText()` methods will combine hard-coded fragments and fragments of code taken from the existing file.

@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Implementing Lexer
 
@@ -7,7 +7,7 @@
 The lexer, or [lexical analyzer](https://en.wikipedia.org/wiki/Lexical_analysis), defines how a file's contents are broken into tokens.
 The lexer serves as a foundation for nearly all features of custom language plugins, from basic syntax highlighting to advanced code analysis features.
 
-The API for the lexer is defined by the [`Lexer`](%gh-ic%/platform/core-api/src/com/intellij/lexer/Lexer.java) interface.
+The API for the lexer is defined by [`Lexer`](%gh-ic%/platform/core-api/src/com/intellij/lexer/Lexer.java).
 
 The IDE invokes the lexer in three main contexts, and the plugin can provide different lexer implementations if needed:
 
@@ -60,7 +60,7 @@ It provides syntax highlighting and other useful features for editing JFlex file
 ### Token Types
 
 Types of tokens for lexers are defined by instances of [`IElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/IElementType.java).
-Many token types common for all languages are defined in the [`TokenType`](%gh-ic%/platform/core-api/src/com/intellij/psi/TokenType.java) interface.
+Many token types common for all languages are defined in [`TokenType`](%gh-ic%/platform/core-api/src/com/intellij/psi/TokenType.java).
 Custom language plugins should reuse these token types wherever applicable.
 For all other token types, the plugin needs to create new [`IElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/IElementType.java) instances and associate with the language in which the token type is used.
 The same [`IElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/IElementType.java) instance should be returned every time a particular token type is encountered by the lexer.
@@ -78,6 +78,6 @@ All `TokenSet` for a language should be grouped in a dedicated `$Language$TokenS
 
 An important feature that can be implemented at the lexer level is mixing languages within a file, such as embedding fragments of Java code in some template language.
 Suppose a language supports embedding its fragments in another language.
-In that case, it needs to define the chameleon token types for different types of fragments that can be embedded, and these token types need to implement the [`ILazyParseableElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/ILazyParseableElementType.java) interface.
+In that case, it needs to define the chameleon token types for different types of fragments that can be embedded, and these token types need to implement [`ILazyParseableElementType`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/ILazyParseableElementType.java).
 The enclosing language's lexer needs to return the entire fragment of the embedded language as a single chameleon token, of the type defined by the embedded language.
 To parse the contents of the chameleon token, the IDE will call the parser of the embedded language through a call to [`ILazyParseableElementType.parseContents()`](%gh-ic%/platform/core-api/src/com/intellij/psi/tree/ILazyParseableElementType.java).

@@ -334,6 +334,12 @@ Prefer the imperative over "you can" or "you should", but keep "you" if the alte
    - **Avoid:** "You can add a dependency in your plugin descriptor."
    - **Prefer:** "Add a dependency in the plugin descriptor."
 
+Use "we", "our", or "us" only when it means JetBrains as an organization, for example, in recommendations, plans, or support information.
+Never use it for the IntelliJ Platform code, the author, or the author and reader together.
+   - **Avoid:** "We cache the model." or "Let's create a class."
+   - **Prefer:** "The IntelliJ Platform caches the model." or "Create a class."
+   - **Acceptable:** "We recommend migrating to the new API." or "Let us know via the issue tracker."
+
 ## Table of Contents
 
 The table of contents for the site is displayed in the tree view on the left side of the site, and it is generated from the <path>ijs.tree</path> file.

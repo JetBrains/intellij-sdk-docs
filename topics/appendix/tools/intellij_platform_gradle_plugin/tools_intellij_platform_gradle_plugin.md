@@ -30,7 +30,7 @@ Learn more about it in the [Release Announcement](https://blog.jetbrains.com/pla
 
 ## Requirements
 
-IntelliJ Platform Gradle Plugin 2.x requires the following *minimal* versions:
+The current IntelliJ Platform Gradle Plugin 2.x release requires the following *minimal* versions:
 
 - IntelliJ Platform: **2023.3**
 - Gradle: **9.0.0**
@@ -39,6 +39,12 @@ IntelliJ Platform Gradle Plugin 2.x requires the following *minimal* versions:
 - Java Runtime: **17**
 
   See <control>Gradle JVM</control> in <ui-path>Settings | Build, Execution, Deployment | Build Tools | Gradle</ui-path>.
+
+These are the requirements for running the Gradle plugin.
+The target IDE can require a newer Java runtime; the plugin configures the Java toolchain language version from the target IntelliJ Platform by default.
+See [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) and [Platform Versions](build_number_ranges.md#platformVersions).
+
+When upgrading an older 2.x build, see [](tools_intellij_platform_gradle_plugin_migration.md#upgrading-2-x).
 
 ## Setup
 
@@ -185,8 +191,12 @@ repositories {
   mavenCentral()
 
   intellijPlatform {
+    localPlatformArtifacts()
+    jetbrainsIdeInstallers()
+    jetbrainsRuntime()
     releases()
     marketplace()
+    intellijDependencies()
   }
 }
 ```
@@ -199,8 +209,12 @@ repositories {
   mavenCentral()
 
   intellijPlatform {
+    localPlatformArtifacts()
+    jetbrainsIdeInstallers()
+    jetbrainsRuntime()
     releases()
     marketplace()
+    intellijDependencies()
   }
 }
 ```
@@ -249,8 +263,6 @@ dependencyResolutionManagement {
 <path>settings.gradle</path>
 
 ```groovy
-import org.jetbrains.intellij.platform.gradle.extensions.intellijPlatform
-
 plugins {
   id 'org.jetbrains.intellij.platform.settings' version '%intellij-platform-gradle-plugin-version%'
 }
@@ -283,7 +295,7 @@ To switch off the default usage of JetBrains Cache Redirector, see the [](tools_
 
 Dependencies and [repositories](#configuration.repositories) are handled using explicit entries within `dependencies {}` and `repositories {}` blocks in the Gradle build file.
 
-A minimum configuration for targeting IntelliJ IDEA 2024.3:
+A minimum configuration for targeting IntelliJ IDEA %ijPlatform%:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -299,7 +311,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdea("2024.3")
+    intellijIdea("%ijPlatform%")
   }
 }
 ```
@@ -318,7 +330,7 @@ repositories {
 
 dependencies {
   intellijPlatform {
-    intellijIdea('2024.3.6')
+    intellijIdea('%ijPlatform%')
   }
 }
 ```
@@ -330,11 +342,12 @@ The `intellijIdea` in the previous sample is one of the extension functions avai
 See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) on how to target other IDEs.
 
 > When declaring a dependency on IntelliJ Platform, the IDE installer is resolved by default.
-> IDE installers are OS-specific and contain [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) bundled, but have no EAP releases available.
+> IDE installers are OS-specific and contain [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md) bundled.
+> Available release channels depend on the product's published distributions.
 >
-> To resolve EAP releases instead, opt out from installer releases in the dependency helper configuration with `useInstaller = false`.
+> For Maven-only snapshots or multi-OS archives, opt out from installer releases in the dependency helper configuration with `useInstaller = false`.
 >
-> **Important:** non-installer archives have no JetBrains Runtime (JBR) provided.
+> **Important:** non-installer archives have no JetBrains Runtime (JBR) bundled; the plugin attempts to resolve a separate runtime from the IDE's metadata.
 >
 > Read more about [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions).
 >
@@ -344,11 +357,11 @@ See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) on how t
 
 {#dependenciesParametrizePlatform}
 
-As a fallback, `intellijPlatform` extension can be used to allow dynamic configuration of the target platform, for example, via <path>gradle.properties</path>:
+The dependency helpers accept Gradle providers, allowing the target platform to be configured through <path>gradle.properties</path>:
 
 ```properties
-platformType = IC
-platformVersion = 2023.3
+platformType = IU
+platformVersion = %ijPlatform%
 ```
 
 The above Gradle properties can be referenced in the Gradle build file with:
@@ -385,7 +398,7 @@ dependencies {
 </tabs>
 
 
-The `intellijPlatform` helper accepts also the [`IntelliJPlatformType`](tools_intellij_platform_gradle_plugin_types.md#IntelliJPlatformType) type:
+The `create()` helper also accepts the [`IntelliJPlatformType`](tools_intellij_platform_gradle_plugin_types.md#IntelliJPlatformType) type:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -397,7 +410,7 @@ dependencies {
   intellijPlatform {
     val version = providers.gradleProperty("platformVersion")
 
-    create(IntelliJPlatformType.IntellijIdeaUltimate, version)
+    create(IntelliJPlatformType.IntellijIdea, version)
   }
 }
 ```
@@ -412,7 +425,7 @@ dependencies {
   intellijPlatform {
     def version = providers.gradleProperty('platformVersion')
 
-    create(IntelliJPlatformType.IntellijIdeaUltimate, version)
+    create(IntelliJPlatformType.IntellijIdea, version)
   }
 }
 ```
@@ -487,7 +500,7 @@ dependencies {
     intellijIdea("%ijPlatform%")
 
     bundledPlugin("com.intellij.java")
-    plugin("org.intellij.scala", "2024.1.4")
+    compatiblePlugin("org.intellij.scala")
   }
 }
 ```
@@ -507,7 +520,7 @@ dependencies {
     intellijIdea '%ijPlatform%'
 
     bundledPlugin 'com.intellij.java'
-    plugin 'org.intellij.scala', '2024.1.4'
+    compatiblePlugin 'org.intellij.scala'
   }
 }
 ```
@@ -548,7 +561,7 @@ plugins {
 </tabs>
 
 
-Any other included submodule must use the [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin instead:
+Submodules containing IntelliJ Platform-dependent plugin code should use the [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin instead:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">

@@ -6,7 +6,8 @@
 
 ## Run a custom task with a customized sandbox location
 
-To create a custom task with the sandbox directory specified outside the default <path>build/idea-sandbox/[TYPE]-[VERSION]/</path> location, pass the new location to its `prepareSandboxTask` sandbox producer configuration:
+To run a custom task with a different sandbox directory, configure its [`prepareSandboxTask`](tools_intellij_platform_gradle_plugin_testing_extension.md#preparesandboxtask) sandbox producer.
+To relocate all sandboxes instead, set [`intellijPlatform.sandboxContainer`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-sandboxContainer).
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -118,9 +119,12 @@ tasks {
 <tab title="Groovy" group-key="groovy">
 
 ```groovy
-tasks.named('prepareSandbox', PrepareSandboxTask) {
-  from layout.projectDirectory.dir('extraFiles')
-  into it.pluginName.map { "$it/extra" }
+import org.jetbrains.intellij.platform.gradle.tasks.PrepareSandboxTask
+
+tasks.named('prepareSandbox', PrepareSandboxTask) { task ->
+  from(layout.projectDirectory.dir('extraFiles')) {
+    into(task.pluginName.map { "$it/extra" })
+  }
 }
 ```
 
@@ -171,8 +175,10 @@ It is possible to apply that to all [`PrepareSandboxTask`](tools_intellij_platfo
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
+import org.jetbrains.intellij.platform.gradle.tasks.PrepareSandboxTask
+
 tasks {
-  withType<PrepareSandboxTask> {
+  withType<PrepareSandboxTask>().configureEach {
     from(...) {
       into(...)
     }
@@ -184,9 +190,10 @@ tasks {
 <tab title="Groovy" group-key="groovy">
 
 ```groovy
-tasks {
-  withType(PrepareSandboxTask) {
-    from(...)
+import org.jetbrains.intellij.platform.gradle.tasks.PrepareSandboxTask
+
+tasks.withType(PrepareSandboxTask).configureEach {
+  from(...) {
     into(...)
   }
 }
@@ -200,15 +207,19 @@ tasks {
 
 When starting the IDE locally with [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task or running tests, the IDE creates and updates configuration files within the sandbox directory.
 Those files may be related to trusted paths, macros, recent projects, custom plugins, color schemes, etc.
-However, when running the `clean` task, all configuration files are wiped and do not persist between sessions.
+By default, sandboxes are stored under <path>.intellijPlatform/sandbox/</path>, outside the build directory, and survive the `clean` task.
+Use [`cleanSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#cleanSandbox) to remove them.
 
-Sometimes, it may be worth recreating such configuration, yet with the [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) task for those configurations to persist.
+To recreate configuration files after cleaning a sandbox, customize the [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) task.
 The following example marks the project located in the <path>\$USER_HOME$/IdeaProjects/GradleProject</path> directory as trusted, like when the user clicks on the _Trust Project_ dialog when opening it for the first time.
 
 ```kotlin
-tasks.withType<PrepareSandboxTask> {
+import org.jetbrains.intellij.platform.gradle.tasks.PrepareSandboxTask
+
+tasks.withType<PrepareSandboxTask>().configureEach {
   doLast {
     val trustedPathsFile = sandboxConfigDirectory.file("options/trusted-paths.xml").get().asFile
+    trustedPathsFile.parentFile.mkdirs()
 
     trustedPathsFile.writeText(
       """
@@ -256,7 +267,7 @@ tasks {
   val proguardJar = layout.buildDirectory.file("libs/$name-$version-proguard.jar")
 
   val proguard by registering(ProGuardTask::class) {
-    injars(composedJar.map { it.archiveFile })
+    injars(composedJar.flatMap { it.archiveFile })
     outjars(proguardJar)
 
     // ...
@@ -376,44 +387,37 @@ intellijPlatformTesting.runIde {
 
 ## Resolve plugin from JetBrains Marketplace in the latest compatible version
 
-When setting a dependency on an external plugin from JetBrains Marketplace, it is necessary to provide its ID and version in `pluginId:version` notation.
-However, it is possible to request JetBrains Marketplace API for the compatible plugin updates with the given IntelliJ Platform build version.
+Use the built-in [`compatiblePlugin()` or `compatiblePlugins()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) helpers to select a JetBrains Marketplace plugin version compatible with the target IntelliJ Platform.
 
-The following snippet requests the API using the current IntelliJ Platform type and build version, and picks the first available version, which is later passed to the common [`plugin()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) dependency helper.
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
-import org.jetbrains.intellij.platform.gradle.extensions.IntelliJPlatformDependenciesExtension
-import org.jetbrains.intellij.pluginRepository.PluginRepositoryFactory
-
-val IntelliJPlatformDependenciesExtension.pluginRepository by lazy {
-    PluginRepositoryFactory.create("https://plugins.jetbrains.com")
-}
-
-fun IntelliJPlatformDependenciesExtension.pluginsInLatestCompatibleVersion(vararg pluginIds: String) =
-    plugins(provider {
-        pluginIds.map { pluginId ->
-            val platformType = intellijPlatform.productInfo.productCode
-            val platformVersion = intellijPlatform.productInfo.buildNumber
-
-            val plugin = pluginRepository.pluginManager.searchCompatibleUpdates(
-                build = "$platformType-$platformVersion",
-                xmlIds = listOf(pluginId),
-            ).firstOrNull()
-                ?: throw GradleException("No plugin update with id='$pluginId' compatible with '$platformType-$platformVersion' found in JetBrains Marketplace")
-
-            "${plugin.pluginXmlId}:${plugin.version}"
-        }
-    })
-
 dependencies {
-    // ...
-
-    intellijPlatform {
-        // ...
-        pluginsInLatestCompatibleVersion("org.coffeescript", ...)
-    }
+  intellijPlatform {
+    intellijIdea("%ijPlatform%")
+    compatiblePlugin("org.intellij.scala")
+  }
 }
 ```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+  intellijPlatform {
+    intellijIdea('%ijPlatform%')
+    compatiblePlugin('org.intellij.scala')
+  }
+}
+```
+
+</tab>
+</tabs>
+
+The selected version can change as compatible updates are published.
+For reproducible builds, resolve a compatible version and then pin it explicitly with `plugin(id, version)`.
 
 
 ## Generate a lexer and parser with Grammar-Kit

@@ -6,7 +6,35 @@
 
 <include from="tools_intellij_platform_gradle_plugin.md" element-id="faq"/>
 
-This page lists various types used to configure [](tools_intellij_platform_gradle_plugin_tasks.md).
+This page lists types used to configure dependencies, extensions, and [](tools_intellij_platform_gradle_plugin_tasks.md).
+
+## `Coordinates`
+{#Coordinates}
+
+[`Coordinates`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/models/Coordinates.kt)
+
+Represents Maven coordinates without a version.
+Used by [`platformDependency()` and `testPlatformDependency()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#tools).
+
+| Property     | Type     | Description                         |
+|--------------|----------|-------------------------------------|
+| `groupId`    | `String` | Maven group ID.                    |
+| `artifactId` | `String` | Maven artifact ID.                 |
+
+Construct a value with `Coordinates(groupId, artifactId)`.
+Its `toString()` representation is `groupId:artifactId`.
+
+## `CustomPluginRepositoryType`
+{#CustomPluginRepositoryType}
+
+[`CustomPluginRepositoryType`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/CustomPluginRepositoryType.kt)
+
+A Kotlin type alias for `com.jetbrains.plugin.structure.intellij.repository.CustomPluginRepositoryListingType`,
+used to select the listing format for a [custom plugin repository](tools_intellij_platform_gradle_plugin_repositories_extension.md#plugin-repositories).
+Listing types include `SIMPLE` and `PLUGIN_REPOSITORY`.
+
+The alias does not define a separate Java class.
+In Groovy, import and use `com.jetbrains.plugin.structure.intellij.repository.CustomPluginRepositoryListingType` directly instead of the Kotlin alias.
 
 ## `FailureLevel`
 {#FailureLevel}
@@ -40,6 +68,16 @@ See also:
 - [Overview of API Status](verifying_plugin_compatibility.md#ide-support)
 
 
+## `IntelliJPlatformDependencyConfiguration`
+{#IntelliJPlatformDependencyConfiguration}
+
+[`IntelliJPlatformDependencyConfiguration`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/extensions/IntelliJPlatformDependencyConfiguration.kt)
+
+Configures a target IntelliJ Platform dependency.
+It is accepted by `create(configuration)` and passed to the target-platform helpers' configuration callbacks.
+Its `type`, `version`, `productMode`, `useInstaller`, and `useCache` properties support direct-value and provider assignments.
+See [Dependency Configuration Parameters](tools_intellij_platform_gradle_plugin_dependencies_extension.md#dependency-configuration-parameters) for their types and defaults.
+
 ## `IntelliJPlatformType`
 {#IntelliJPlatformType}
 
@@ -47,12 +85,14 @@ See also:
 
 Describes all IntelliJ Platform types available to be used for plugin development, dependency resolution, and plugin verification.
 
-Each entry is composed of a product code and coordinates used for dependency and binary release resolution.
+Each entry exposes `code: String`, `maven: Coordinates?`, and `installer: Coordinates?`.
+A missing coordinate means that distribution format is not available for the product.
+The installer column below indicates whether installer coordinates are declared, not whether every version is available.
 
-| Name                    | Code   | Artifact Coordinates                               | Binary release |
+| Name                    | Code   | Maven Coordinates                                  | Installer coordinates |
 |-------------------------|--------|----------------------------------------------------|:--------------:|
 | `AndroidStudio`         | `AI`   | -                                                  |    &check;     |
-| `Aqua`                  | `QA`   | -                                                  |                |
+| `Aqua`                  | `QA`   | -                                                  |    &check;     |
 | `CLion`                 | `CL`   | `com.jetbrains.intellij.clion:clion`               |    &check;     |
 | `DataGrip`              | `DB`   | -                                                  |    &check;     |
 | `DataSpell`             | `DS`   | -                                                  |    &check;     |
@@ -72,25 +112,44 @@ Each entry is composed of a product code and coordinates used for dependency and
 | `RubyMine`              | `RM`   | `com.jetbrains.intellij.rubymine:rubymine`         |    &check;     |
 | `RustRover`             | `RR`   | `com.jetbrains.intellij.rustrover:RustRover`       |    &check;     |
 | `WebStorm`              | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |    &check;     |
-| `Writerside`            | `WRS`  | `com.jetbrains.intellij.idea:writerside`           |                |
+| `Writerside`            | `WRS`  | `com.jetbrains.intellij.idea:writerside`           |    &check;     |
 
 Notes:
 - `Aqua` (`QA`) and `Writerside` (`WRS`) are deprecated and no longer available as target IntelliJ Platform products.
 - `IntellijIdeaCommunity` (`IC`) and `PyCharmCommunity` (`PC`) are available only for versions earlier than 2025.3 (build 253). For 2025.3+ use `IntellijIdea` (`IU`) and `PyCharm` (`PY`).
 - `IntellijIdeaUltimate` (`IU`) and `PyCharmProfessional` (`PY`) are legacy types for versions earlier than 2025.3 (build 253). For 2025.3+ use `IntellijIdea` (`IU`) and `PyCharm` (`PY`).
 
+### Product Code Conversion
+{#IntelliJPlatformType-conversion}
+
+`IntelliJPlatformType.fromCode(code)` converts a product code to an enum entry and throws `IllegalArgumentException` for an unknown code.
+For the shared codes `IU` and `PY`, it returns `IntellijIdea` and `PyCharm`, respectively.
+
+`IntelliJPlatformType.fromCode(code, version)` also considers the marketing version or build number.
+For versions before 2025.3 (build 253), it maps `IU` to `IntellijIdeaUltimate` and `PY` to `PyCharmProfessional`.
+For newer versions, it returns the unified product types.
+The target-platform dependency helpers use this version-aware conversion for both string codes and enum arguments, except when the version is `"latest"`.
+
+The public `toIntelliJPlatformType(version)` extension accepts a `String` or `IntelliJPlatformType` value.
+`IntelliJPlatformType.validateVersion(version)` rejects Community product versions at or above the unified-product boundary.
+`IntelliJPlatformType.toString()` returns the product code, not the enum entry name.
+
 ## `ProductMode`
 {#ProductMode}
 
 [`ProductMode`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/ProductMode.kt)
 
-Describes a mode in which a product may be started. This can be configured on the target platform dependency to influence how the IDE is started for development and testing.
+Describes the requested product mode, configured on the target platform dependency.
 
 | Name       | Description                                                                                                                                                                                                                          |
 |------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `MONOLITH` | Indicates that this process performs all necessary tasks to provide smart features itself. This is the default mode for all IDEs.                                                                                                    |
 | `FRONTEND` | Indicates that this process doesn't perform heavy tasks like code analysis, and takes necessary information from another process. Currently used by JetBrains Client connected to a remote development host or Code With Me session. |
-| `BACKEND`  | Indicates that this process doesn't perform heavy tasks like code analysis and takes necessary information from another process. Currently used by an IDE running as a remote development host.                                      |
+| `BACKEND`  | An IDE running as a remote development host.                                                                                                                                                                                        |
+
+`FRONTEND` resolves a JetBrains Client installer instead of the requested product's IDE distribution.
+`BACKEND` retains the requested product's distribution.
+Both non-`MONOLITH` modes require a managed local IDE path, even when the dependency's `useCache` property is `false`.
 
 See also:
 - [Dependencies Extension: Dependency Configuration Parameters](tools_intellij_platform_gradle_plugin_dependencies_extension.md#dependency-configuration-parameters)
@@ -125,6 +184,7 @@ See also the corresponding [`product-info.schema.json`](%gh-ic%/platform/buildDa
 | `productCode`       | The product code, like "IU".                                             |
 | `envVarBaseName`    | Base name used for product-specific environment variables.               |
 | `dataDirectoryName` | The directory name of the product data.                                  |
+| `minRequiredJavaVersion` | The minimum Java version required by the product, when specified.  |
 | `svgIconPath`       | The path to the SVG icon of the product.                                 |
 | `productVendor`     | The vendor of the product.                                               |
 | `launch`            | The list of OS- and arch-specific launch configurations for the product. |
@@ -133,6 +193,12 @@ See also the corresponding [`product-info.schema.json`](%gh-ic%/platform/buildDa
 | `fileExtensions`    | The list of file extensions associated with the product.                 |
 | `modules`           | The list of modules of the product.                                      |
 | `layout`            | The modules and plugins dependencies mapping.                            |
+
+Public Kotlin extension properties also expose `fullVersion` (`productCode-buildNumber`), the version-aware `type` (`IntelliJPlatformType`),
+and `frontendSplitRootModule` (the product-specific frontend split module ID).
+
+Launch entries use `ProductInfo.Launch.OS` values `Linux`, `Windows`, and `macOS`.
+Layout entries use `ProductInfo.LayoutItemKind` values `plugin`, `pluginAlias`, `productModuleV2`, and `moduleV2`.
 
 ### `validateSupportedVersion()`
 {#ProductInfo-validateSupportedVersion}
@@ -154,16 +220,18 @@ Throws
 List of available channels used by [JetBrains IDEs](intellij_platform.md#ides-based-on-the-intellij-platform)
 and [Android Studio](android_studio.md) for describing binary releases.
 
-| Name        | JetBrains IDEs | Android Studio  |
-|-------------|:--------------:|:---------------:|
-| `RELEASE`   |    &check;     |     &check;     |
-| `EAP`       |    &check;     |                 |
-| `MILESTONE` |                |     &check;     |
-| `BETA`      |                |     &check;     |
-| `CANARY`    |                |     &check;     |
-| `PATCH`     |                |     &check;     |
-| `RC`        |                |     &check;     |
-| `PREVIEW`   |                |     &check;     |
+| Name        | Description                |
+|-------------|----------------------------|
+| `RELEASE`   | Stable release.            |
+| `EAP`       | Early Access Program.      |
+| `MILESTONE` | Milestone release.         |
+| `BETA`      | Beta release.              |
+| `CANARY`    | Canary release.            |
+| `PATCH`     | Patch release.             |
+| `RC`        | Release candidate.         |
+| `PREVIEW`   | Preview release.           |
+
+Channel availability depends on the product's release metadata.
 
 See also:
 - [Extension: `intellijPlatform.pluginVerification.ides`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-ides)
@@ -173,7 +241,7 @@ See also:
 ## `ProductReleasesFilterParameters`
 {#ProductReleasesFilterParameters}
 
-[`ProductReleasesValueSource`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/providers/ProductReleasesFilterParameters.kt)
+[`ProductReleasesFilterParameters`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/providers/ProductReleasesFilterParameters.kt)
 
 Interface that provides a clear way to filter binary product releases for IntelliJ Plugin Verifier.
 
@@ -206,6 +274,7 @@ Used internally by the Gradle plugin to propagate platform settings across confi
 | `useInstaller` | Whether the installer distribution of the platform should be used.                |
 | `useCache`     | Whether a custom cache directory should be used when resolving the platform.      |
 | `productMode`  | Desired product mode. See [`ProductMode`](#ProductMode).                          |
+| `isNightly`    | Whether the request is for a nightly platform build. Used in [dependency version selection](tools_intellij_platform_gradle_plugin_dependencies_extension.md#dependency-version-selection). |
 
 ## `SplitModeAware.PluginInstallationTarget` (formerly `SplitModeTarget`)
 {#SplitModeAware-PluginInstallationTarget}
@@ -246,6 +315,10 @@ See also:
 Allows for adding `test-framework` testing library variants.
 See [Dependencies Extension: Testing](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing).
 
+`TestFrameworkType` is a sealed class whose variants are Kotlin singleton objects, not enum entries.
+Each variant exposes its artifact `coordinates`.
+In Groovy, access a variant through its `INSTANCE` field, for example, `TestFrameworkType.JUnit5CodeInsight.INSTANCE`.
+
 ### Platform Test Frameworks
 {#TestFrameworkType-Platform}
 
@@ -255,10 +328,22 @@ Generic test frameworks for the IntelliJ Platform.
 |------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `Platform` | <p>`com.jetbrains.intellij.platform:test-framework`</p><p>**See "Known Issues" below**</p>                                                                                                                                                                                                                                  |
 | `JUnit5`   | <p>`com.jetbrains.intellij.platform:test-framework-junit5`</p><p>**See "Known Issues" below**</p>                                                                                                                                                                                                                           |
-| `JUnit5CodeInsight` | `com.jetbrains.intellij.platform:test-framework-junit5-code-insight`                                                                                                                                                                                                                                                        |
+| `JUnit5CodeInsight` | `com.jetbrains.intellij.platform:test-framework-junit5-code-insight`                                                                                                                                                                                                                                       |
+| `JUnit5Eel` | `com.jetbrains.intellij.platform:test-framework-junit5-eel`                                                                                                                                                                                                                                                        |
+| `JUnit5Highlighting` | `com.jetbrains.intellij.platform:test-framework-junit5-highlighting`                                                                                                                                                                                                                                       |
+| `JUnit5ProjectStructure` | `com.jetbrains.intellij.platform:test-framework-junit5-project-structure`                                                                                                                                                                                                                                 |
 | `Bundled`  | <p>Adds <path>[platformPath]/lib/testFramework.jar</path> file</p><p>**See "Using Bundled" below**</p>                                                                                                                                                                                                                      |
 | `Metrics`  | `com.jetbrains.intellij.tools:ide-metrics-benchmark`<br/> `com.jetbrains.intellij.tools:ide-metrics-collector` <br/> `com.jetbrains.intellij.tools:ide-util-common`                                                                                                                                                         |
 | `Starter`  | `com.jetbrains.intellij.tools:ide-starter-squashed` <br/> `com.jetbrains.intellij.tools:ide-starter-junit5` <br/> `com.jetbrains.intellij.tools:ide-starter-driver` <br/> `com.jetbrains.intellij.driver:driver-client` <br/> `com.jetbrains.intellij.driver:driver-sdk` <br/> `com.jetbrains.intellij.driver:driver-model` |
+
+When used through `testFramework()`, `Starter` also adds product-specific artifacts for target IDE builds starting at `262` (2026.2).
+These use the group `com.jetbrains.intellij.tools` and artifact IDs with the `ide-starter-product-` prefix and the following suffixes:
+
+- `idea-ultimate`, `idea-community`, `pycharm`, `pycharm-community`
+- `goland`, `rider`, `webstorm`, `phpstorm`, `rubymine`
+- `clion`, `datagrip`, `rustrover`, `android-studio`, `gateway`
+
+For earlier builds, these product-specific artifacts are omitted; the six artifacts listed in the table are retained.
 
 > Known issues related to `Platform` and `JUnit5` Test Frameworks:
 > - [](tools_intellij_platform_gradle_plugin_faq.md#missing-opentest4j-dependency-in-test-framework)
@@ -292,6 +377,7 @@ Some plugins offer dedicated test frameworks, for example, `Plugin.Java` when us
 | `Plugin.CLion`          | `com.jetbrains.intellij.clion:clion-merged-test-framework`                | [](clion.md)    |
 | `Plugin.CSS`            | `com.jetbrains.intellij.css:css-test-framework`                           | [](webstorm.md) |
 | `Plugin.Debugger`       | `com.jetbrains.intellij.platform:debugger-test-framework`                 |                 |
+| `Plugin.Execution`      | `com.jetbrains.intellij.platform:execution-test-framework`                |                 |
 | `Plugin.ExternalSystem` | `com.jetbrains.intellij.platform:external-system-test-framework`          |                 |
 | `Plugin.Go`             | `com.jetbrains.intellij.go:go-test-framework`                             | [](goland.md)   |
 | `Plugin.IJent`          | `com.jetbrains.intellij.platform:ijent-test-framework`                    |                 |
@@ -318,6 +404,24 @@ Some plugins offer dedicated test frameworks, for example, `Plugin.Java` when us
 | `Plugin.VCS`            | `com.jetbrains.intellij.platform:vcs-test-framework`                      |                 |
 | `Plugin.XML`            | `com.jetbrains.intellij.xml:xml-test-framework`                           |                 |
 | `Plugin.WebSymbols`     | `com.jetbrains.intellij.platform:web-symbols-test-framework`              |                 |
+
+## `Variant`
+{#Variant}
+
+[`Variant`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/Variant.kt)
+
+A data class describing a native target with `os: String` and `arch: String` properties.
+It is not an enum.
+The public `org.jetbrains.intellij.platform.gradle.variants` list contains these six combinations:
+
+| `os`      | `arch`              |
+|-----------|---------------------|
+| `linux`   | `x86_64`, `arm64` |
+| `mac`     | `x86_64`, `arm64` |
+| `windows` | `x86_64`, `arm64` |
+
+Native target identifiers use `mac`, not `macOS`, and `arm64`, not `aarch64`.
+See [`intellijPlatform.nativeVariants`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-nativeVariants) for configuring target-specific files.
 
 ## `VerificationReportsFormats`
 {#VerificationReportsFormats}

@@ -29,7 +29,7 @@ See also [](testing_faq.md#how-to-replace-a-componentservice-in-tests) and [](te
 
 <video src="https://www.youtube.com/watch?v=UJexzfG01Qo"/>
 
-Check out [](integration_tests_intro.md) tutorial that guides through setup process and writing the first test.
+Check out the [](integration_tests_intro.md) tutorial that guides through setup process and writing the first test.
 
 ## Topics
 

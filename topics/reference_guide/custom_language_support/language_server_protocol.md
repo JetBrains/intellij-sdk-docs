@@ -37,7 +37,7 @@ Since 2025.1, it is also supported in unified [PyCharm without Pro subscription]
 
 ## LSP Plugin Setup
 
-The plugin must target [](idea.md) version `2023.2` or later.
+The plugin must target [IntelliJ IDEA](idea.md) version `2023.2` or later.
 
 ### Gradle Build Script
 

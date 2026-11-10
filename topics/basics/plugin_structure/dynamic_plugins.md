@@ -84,7 +84,7 @@ This can be used to, for example:
 
 ### Resource Cleanup
 
-Use [](plugin_services.md) implementing [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java) and perform cleanup in `Disposable.dispose()`.
+Use [services](plugin_services.md) implementing [`Disposable`](%gh-ic%/platform/util/src/com/intellij/openapi/Disposable.java) and perform cleanup in `Disposable.dispose()`.
 
 ## Troubleshooting
 

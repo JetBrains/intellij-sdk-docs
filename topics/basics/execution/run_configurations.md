@@ -88,7 +88,7 @@ To enable editing them in Dumb Mode, return `true` from `isEditableInDumbMode()`
 When implementing a run configuration class, consider using one of the standard base classes:
 * [`RunConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RunConfigurationBase.java) - a general-purpose base class that contains the most basic implementation of a run configuration.
 * [`LocatableConfigurationBase`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/LocatableConfigurationBase.java) - a base class for [configurations that can be created from context](#creating-a-run-configuration-from-context).
-* [`ModuleBasedConfiguration`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ModuleBasedConfiguration.java) - a base class for a configuration that is associated with a specific [](module.md) (e.g., Java run configurations use the selected module to determine the run classpath).
+* [`ModuleBasedConfiguration`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/ModuleBasedConfiguration.java) - a base class for a configuration that is associated with a specific [module](module.md) (e.g., Java run configurations use the selected module to determine the run classpath).
 
 ### `SettingsEditor`
 

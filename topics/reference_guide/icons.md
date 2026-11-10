@@ -15,9 +15,9 @@
 </tldr>
 
 Icons are used widely by IntelliJ Platform plugins.
-Plugins need icons mostly for [actions](action_system.md), custom component renderers, [](tool_windows.md), etc.
+Plugins need icons mostly for [actions](action_system.md), custom component renderers, [tool windows](tool_windows.md), etc.
 
-> A [](plugin_icon_file.md), which represents the plugin itself, has different requirements than icons used within plugins.
+> A [plugin logo](plugin_icon_file.md), which represents the plugin itself, has different requirements than icons used within plugins.
 
 ## Platform vs. Custom Icons
 

@@ -12,7 +12,7 @@
 
 </tldr>
 
-The syntax and error highlighting are performed on multiple levels: [](#lexer), [](#parser), and [](#annotator)/[](#external-annotator).
+The syntax and error highlighting are performed on multiple levels: [lexer](#lexer), [parser](#parser), and [annotator](#annotator)/[external annotator](#external-annotator).
 
 ## Text Attributes Key
 
@@ -142,7 +142,7 @@ For highlighting lexer errors use [`HighlighterColors.BAD_CHARACTER`](%gh-ic%/pl
 
 Register [`RainbowVisitor`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/RainbowVisitor.java)
 in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.highlightVisitor"/></include>.
-[](#color-settings) must implement [`RainbowColorSettingsPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/RainbowColorSettingsPage.java) in addition.
+The [color settings page](#color-settings) must implement [`RainbowColorSettingsPage`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/options/colors/RainbowColorSettingsPage.java) in addition.
 
 ## Parser
 
@@ -156,7 +156,7 @@ See [](syntax_errors.md) on how to programmatically suppress these errors in cer
 The third level of highlighting is performed through [`Annotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/Annotator.java).
 A plugin can register one or more annotators in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.annotator"/></include>, and these annotators are called during the background highlighting pass to process the elements in the custom language's PSI tree.
 Attribute `language` should be set to the Language ID where this annotator applies to.
-If highlighting data requires invoking external tools, use an [](#external-annotator) instead.
+If highlighting data requires invoking external tools, use an [external annotator](#external-annotator) instead.
 
 Annotators can analyze not only the syntax, but also the semantics using PSI, and thus can provide much more complex syntax and error highlighting logic.
 The annotator can also provide quick fixes to problems it detects.

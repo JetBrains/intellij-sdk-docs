@@ -15,7 +15,7 @@ The AST nodes have a direct mapping to text ranges in the underlying document.
 The bottom-most nodes of the AST match individual tokens returned by the [lexer](implementing_lexer.md), and higher-level nodes match multiple-token fragments.
 Operations performed on nodes of the AST tree, such as inserting, removing, reordering nodes, and so on, are immediately reflected as changes to the underlying document's text.
 
-Second, a [](psi.md) tree is built on top of the AST, adding semantics and methods for manipulating specific language constructs.
+Second, a [PSI](psi.md) tree is built on top of the AST, adding semantics and methods for manipulating specific language constructs.
 Nodes of the PSI tree are represented by classes implementing [`PsiElement`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiElement.java) and are created by the language plugin in the [`ParserDefinition.createElement()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) method.
 The top-level node of the PSI tree for a file needs to implement [`PsiFile`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFile.java) and is created in the [`ParserDefinition.createFile()`](%gh-ic%/platform/core-api/src/com/intellij/lang/ParserDefinition.java) method.
 

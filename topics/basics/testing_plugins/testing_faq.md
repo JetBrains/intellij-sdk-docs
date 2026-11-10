@@ -94,7 +94,7 @@ When targeting 2024.2 or later, see also [](#how-to-handle-projectactivity).
 
 ### How to avoid test failure when using resources?
 
-In some situations, added or changed files (e.g. XML DTDs provided by a plugin) are not refreshed in [](virtual_file_system.md).
+In some situations, added or changed files (e.g. XML DTDs provided by a plugin) are not refreshed in the [Virtual File System](virtual_file_system.md).
 In such cases, delete the <path>test-system/caches</path> folder in the [sandbox directory](ide_development_instance.md#the-development-instance-sandbox-directory) and try again.
 
 ### How to enable DEBUG/TRACE logging?

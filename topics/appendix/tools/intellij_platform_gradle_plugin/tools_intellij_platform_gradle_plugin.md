@@ -116,7 +116,7 @@ pluginManagement {
 The IntelliJ Platform Gradle Plugin consists of [plugins](tools_intellij_platform_gradle_plugin_plugins.md) which can be applied depending on the purpose.
 By default, the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin (`org.jetbrains.intellij.platform`) should be applied to the main plugin project module.
 
-When working in a [](#multi-module-project-structure) it is required to use [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin (`org.jetbrains.intellij.platform.module`) instead of creating tasks and configurations specific to the main module only.
+When working in a [multi-module project](#multi-module-project-structure), it is required to use the [Module plugin](tools_intellij_platform_gradle_plugin_plugins.md#module) (`org.jetbrains.intellij.platform.module`) instead of creating tasks and configurations specific to the main module only.
 
 The [](tools_intellij_platform_gradle_plugin_plugins.md#settings) plugin (`org.jetbrains.intellij.platform.settings`) allows for adding plugin development related repositories right in the <path>settings.gradle.kts</path> file if project configuration involves [](#configuration.dependencyResolutionManagement).
 

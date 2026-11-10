@@ -62,7 +62,7 @@ For example, a plugin can contribute references to Java code, even though the Ja
 Implement [`PsiReferenceContributor`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceContributor.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.psi.referenceContributor"/></include>.
 
 Attribute `language` should be set to the Language ID where this contributor applies to.
-The exact places to contribute references to are then specified using [](element_patterns.md) in calls to `PsiReferenceRegistrar.registerReferenceProvider()`.
+The exact places to contribute references to are then specified using [element patterns](element_patterns.md) in calls to `PsiReferenceRegistrar.registerReferenceProvider()`.
 
 See also [Reference Contributor tutorial](reference_contributor.md).
 

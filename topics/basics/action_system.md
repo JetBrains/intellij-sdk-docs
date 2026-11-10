@@ -147,7 +147,7 @@ This method contains the code executed to perform the action, and it is here tha
 
 > Reusable logic must *not* be exposed in the `AnAction` implementation via `static` methods (Java) or `companion object` (Kotlin).
 >
-> Instead, introduce dedicated methods in utility classes or [](plugin_services.md).
+> Instead, introduce dedicated methods in utility classes or [services](plugin_services.md).
 >
 {title="Reusable Logic" style="warning"}
 

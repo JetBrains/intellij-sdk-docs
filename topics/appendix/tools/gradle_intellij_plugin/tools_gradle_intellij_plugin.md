@@ -508,7 +508,7 @@ Acceptable values
 - `marketplace()` - use Maven repository with plugins listed in [JetBrains Marketplace](https://plugins.jetbrains.com)
 - `maven(repositoryUrl)` - use custom Maven repository with plugins
 - `maven { repositoryUrl }` - use custom Maven repository with plugins and configurable additional parameters (credentials, authentication, etc.)
-- `custom(pluginsXmlUrl)` - use [](custom_plugin_repository.md)
+- `custom(pluginsXmlUrl)` - use a [custom plugin repository](custom_plugin_repository.md)
 
 
 #### `jreRepository`
@@ -624,7 +624,7 @@ Default value
 {#tasks-buildsearchableoptions}
 
 Builds an index of UI components (searchable options) for the plugin.
-This task runs a headless IDE instance to collect all the available options provided by the plugin's [](settings.md).
+This task runs a headless IDE instance to collect all the available options provided by the plugin's [settings](settings.md).
 
 Note, this is a [`runIde`](#tasks-runide)-based task with predefined arguments and all properties of the [`runIde`](#tasks-runide) task are also applied to [`buildSearchableOptions`](#tasks-buildsearchableoptions) tasks.
 
@@ -912,7 +912,7 @@ Default value
 {#tasks-listbundledplugins}
 
 Lists all IDs of plugins bundled within the currently targeted IDE.
-This can be used to determine Plugin ID for setting up [](plugin_dependencies.md).
+This can be used to determine Plugin ID for setting up [plugin dependencies](plugin_dependencies.md).
 
 See also [](#tasks-printBundledPlugins).
 

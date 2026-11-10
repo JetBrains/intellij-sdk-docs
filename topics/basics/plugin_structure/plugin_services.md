@@ -36,7 +36,7 @@ To improve startup performance, avoid any heavy initializations in the construct
 
 Project/Module-level service constructors can have a [`Project`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/Project.java)/[`Module`](%gh-ic%/platform/core-api/src/com/intellij/openapi/module/Module.java) argument.
 
-> Using constructor injection of dependency services is deprecated (and not supported in [](#light-services)) for performance reasons.
+> Using constructor injection of dependency services is deprecated (and not supported in [light services](#light-services)) for performance reasons.
 >
 > Other service dependencies must be [acquired only when needed](#retrieving-a-service) in all corresponding methods, e.g., if a service is needed to get some data or execute a task, retrieve the service before calling its methods.
 > Do not retrieve services in constructors to store them in class fields.

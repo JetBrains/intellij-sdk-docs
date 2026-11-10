@@ -22,7 +22,7 @@ Use inspection <ui-path>Plugin DevKit | Code | Undesirable class usage</ui-path>
 
 </snippet>
 
-> UI forms like [](dialog_wrapper.md) or [](settings.md) should use [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) (IntelliJ Platform 2021.3+).
+> UI forms like [dialogs](dialog_wrapper.md) or [settings](settings.md) should use [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) (IntelliJ Platform 2021.3+).
 >
 > Using _UI Designer_ plugin with Kotlin is [not supported](https://youtrack.jetbrains.com/issue/KTIJ-791).
 >

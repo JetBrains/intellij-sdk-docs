@@ -73,7 +73,7 @@ For the initial upload, manual distribution, or local installation, invoke the `
 If the project is configured to rely on [](plugin_signing.md), use the `signPlugin` task instead
 (Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin), [1.x](tools_gradle_intellij_plugin.md#tasks-signplugin)).
 
-The resulting ZIP file is located in <path>build/distributions</path> and can then be installed in the IDE via [<ui-path>Install Plugin from Disk...</ui-path>](https://www.jetbrains.com/help/idea/managing-plugins.html#install_plugin_from_disk) action or uploaded to a [](custom_plugin_repository.md).
+The resulting ZIP file is located in <path>build/distributions</path> and can then be installed in the IDE via [<ui-path>Install Plugin from Disk...</ui-path>](https://www.jetbrains.com/help/idea/managing-plugins.html#install_plugin_from_disk) action or uploaded to a [custom plugin repository](custom_plugin_repository.md).
 
 ### Providing the Personal Access Token to Gradle
 

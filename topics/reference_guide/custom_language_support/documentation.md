@@ -69,7 +69,7 @@ and register it as <include from="snippets.topic" element-id="ep"><var name="ep"
 `SymbolDocumentationTargetProvider`
 : Implement
 [`SymbolDocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/SymbolDocumentationTargetProvider.java)
-and register it as <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.backend.documentation.symbolTargetProvider"/></include> to build documentation for [](symbols.md) by overriding `documentationTarget()`.
+and register it as <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.backend.documentation.symbolTargetProvider"/></include> to build documentation for [symbols](symbols.md) by overriding `documentationTarget()`.
 
 ### `DocumentationTarget`
 

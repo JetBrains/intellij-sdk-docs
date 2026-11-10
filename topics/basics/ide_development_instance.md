@@ -146,7 +146,7 @@ This information is stored in a different location than for the [installed IDE i
 
 ### IntelliJ Platform Gradle Plugin (2.x) {id="sandboxGradle2"}
 
-The default Sandbox Home location in a [](tools_intellij_platform_gradle_plugin.md) plugin project is:
+The default Sandbox Home location in a plugin project using the [](tools_intellij_platform_gradle_plugin.md) is:
 
 * Windows: <path>\$PROJECT_DIRECTORY\$\\build\\\$TARGET_IDE\$\\idea-sandbox</path>
 * Linux/macOS: <path>\$PROJECT_DIRECTORY\$/build/\$TARGET_IDE\$/idea-sandbox</path>
@@ -161,7 +161,7 @@ The Sandbox Home location can be configured with the [`intellijPlatform.sandboxC
 
 <include from="tools_gradle_intellij_plugin.md" element-id="gradlePluginObsolete"/>
 
-The default Sandbox Home location in a [](tools_gradle_intellij_plugin.md) plugin project is:
+The default Sandbox Home location in a plugin project using the [](tools_gradle_intellij_plugin.md) is:
 
 * Windows: <path>\$PROJECT_DIRECTORY\$\\build\\idea-sandbox</path>
 * Linux/macOS: <path>\$PROJECT_DIRECTORY\$/build/idea-sandbox</path>

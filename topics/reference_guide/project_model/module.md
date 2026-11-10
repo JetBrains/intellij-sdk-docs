@@ -51,7 +51,7 @@ A dependency can be a reference to an [SDK](sdk.md), a [library](library.md), or
 
 ### Facets
 
-The list of framework-specific configuration entries represented in a dedicated [](facet.md).
+The list of framework-specific configuration entries represented in a dedicated [facet](facet.md).
 
 ### Other
 

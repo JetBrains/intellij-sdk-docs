@@ -139,7 +139,7 @@ Type
 </tldr>
 
 Builds the index of UI components (searchable options) for the plugin.
-This task runs a headless IDE instance to collect all the available options provided by the plugin's [](settings.md).
+This task runs a headless IDE instance to collect all the available options provided by the plugin's [settings](settings.md).
 
 The task is skipped automatically when the main plugin descriptor and plugin module descriptors don't declare `Configurable` extension points.
 Use the [`forceBuildSearchableOptions`](tools_intellij_platform_gradle_plugin_gradle_properties.md#forceBuildSearchableOptions) Gradle property to force execution even when descriptor analysis would skip it.
@@ -702,7 +702,7 @@ Type
 ### `module`
 {#initializeIntelliJPlatformPlugin-module}
 
-Defines that the current project has only the [](tools_intellij_platform_gradle_plugin_plugins.md#module) applied but no [](tools_intellij_platform_gradle_plugin_plugins.md#platform).
+Defines that the current project has only the [Module plugin](tools_intellij_platform_gradle_plugin_plugins.md#module) applied but no [Platform plugin](tools_intellij_platform_gradle_plugin_plugins.md#platform).
 
 {type="narrow"}
 Type

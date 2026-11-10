@@ -86,7 +86,7 @@ Threading Kotlin Notebooks
 
 Minor Changes and Additions
 :
-- Add [](rider.md#using-custom-icons-from-the-dotnet-rider-plugin-part) Using Custom Icons from the Dotnet Rider Plugin Part.
+- Add [](rider.md#using-custom-icons-from-the-dotnet-rider-plugin-part) section.
 - Update [LSP supported features](language_server_protocol.md#supported-features).
 
 ### October
@@ -330,7 +330,7 @@ Poly Symbols
   which is a framework that simplifies web technology development by utilizing the [](symbols.md) API and supporting custom syntaxes.
 
 Open Source Plugins Extension Points
-: Added [](oss_plugins_extension_point_list.md) for plugins bundled with [](idea.md) and other IDEs.
+: Added [](oss_plugins_extension_point_list.md) for plugins bundled with [IntelliJ IDEA](idea.md) and other IDEs.
 
 
 

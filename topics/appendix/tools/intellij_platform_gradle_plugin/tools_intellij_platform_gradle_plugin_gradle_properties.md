@@ -118,7 +118,7 @@ org.jetbrains.intellij.platform.localPlatformArtifacts=/path/to/localPlatformArt
 ## `noSearchableOptionsWarning`
 {#noSearchableOptionsWarning}
 
-When the [](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) doesn't produce any results, for example, when the plugin doesn't implement any [Settings](settings.md), a warning is shown to suggest disabling it for better performance with [](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions).
+When the [`buildSearchableOptions` task](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) doesn't produce any results, for example, when the plugin doesn't implement any [settings](settings.md), a warning is shown to suggest disabling it for better performance with the [`buildSearchableOptions` property](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions).
 
 {type="narrow"}
 Default value

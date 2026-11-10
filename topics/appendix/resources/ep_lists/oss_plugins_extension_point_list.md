@@ -12,7 +12,7 @@
 
 </tldr>
 
-Overview of Extension Points and Listeners for open source plugins available in [](idea.md) and other IDEs.
+Overview of Extension Points and Listeners for open source plugins available in [IntelliJ IDEA](idea.md) and other IDEs.
 
 > See [](intellij_platform_extension_point_list.md) for IntelliJ Platform.
 

@@ -19,12 +19,12 @@ The IntelliJ Platform handles encoding and line break conversions when loading a
 
 ## What can I do with a `Document`?
 
-It supports any operations that access or modify the file contents on the "plain text" level (as a sequence of characters, not as a tree of [](psi.md) elements).
+It supports any operations that access or modify the file contents on the "plain text" level (as a sequence of characters, not as a tree of [PSI](psi.md) elements).
 
 ## Where does a `Document` come from?
 
 `Document` instances are created when some operation needs to access the text contents of a file (in particular, this is necessary to build the PSI for a file).
-Also, document instances not linked to any [](virtual_file.md) can be created temporarily, for example, representing the contents of a text editor field in a dialog.
+Also, document instances not linked to any [virtual file](virtual_file.md) can be created temporarily, for example, representing the contents of a text editor field in a dialog.
 
 ## How long does a `Document` persist?
 

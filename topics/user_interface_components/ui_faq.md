@@ -83,7 +83,7 @@ Plugins may need to override icons for existing elements, for example, for XML/J
 
 Use [`FileIconProvider`](%gh-ic%/platform/core-api/src/com/intellij/ide/FileIconProvider.java)
 registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileIconProvider"/></include>
-to provide custom icons for [](virtual_file.md).
+to provide custom icons for [virtual files](virtual_file.md).
 
 For [PSI elements](psi.md), implement [`IconProvider`](%gh-ic%/platform/core-api/src/com/intellij/ide/IconProvider.java)
 and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.iconProvider"/></include>.

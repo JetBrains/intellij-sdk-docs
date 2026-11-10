@@ -151,7 +151,7 @@ To refer to its plugins, use the [`plugin(id, version)`](tools_intellij_platform
 It is also possible to resolve plugins from regular Maven repositories other than JetBrains Marketplace.
 In such a case, refer to them using [`plugin(id, version, group)`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins), which will build `group:id:version` plugin coordinates.
 
-The third possibility is to use the [](custom_plugin_repository.md) with optional authorization credentials provided by defining the URL to the XML listing file, like:
+The third possibility is to use a [custom plugin repository](custom_plugin_repository.md) with optional authorization credentials provided by defining the URL to the XML listing file, like:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">

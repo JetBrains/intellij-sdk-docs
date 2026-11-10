@@ -174,7 +174,8 @@ public String find(String username) {
 
 > `PasswordSafe` does not provide an API to retrieve all stored credentials,
 > nor does it allow retrieving all stored usernames or similar identites.
-> If the current user identity must be persisted, for example, authenticated user, store it separately using [](persisting_state_of_components.md).
+> If the current user identity must be persisted, for example, authenticated user, store it separately in a [persistent state component](persisting_state_of_components.md).
+>
 {style="note"}
 
 ## API Key Management

@@ -116,7 +116,7 @@ as an example implementation.
 
 Create an XML file with the injection configuration.
 Export existing injections from the IntelliLang settings to create a template and then edit it.
-[](element_patterns.md) are used to specify the context where injections will take place.
+[Element patterns](element_patterns.md) are used to specify the context where injections will take place.
 Custom language authors can use the specific patterns returned from their implementation of
 [`JavaLanguageInjectionSupport.getPatternClasses`](%gh-ic%/java/langInjection/src/org/intellij/plugins/intelliLang/inject/java/JavaLanguageInjectionSupport.java).
 

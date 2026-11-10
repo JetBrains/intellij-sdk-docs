@@ -277,7 +277,8 @@ To merge submodule content into the main plugin JAR file, use `pluginComposedMod
 
 If project repositories are defined within the <path>settings.gradle.kts</path> using the `dependencyResolutionManagement`, make sure to include the Settings plugin in <path>settings.gradle.kts</path>.
 
-This approach allows for omitting the `repositories {}` definition in the <path>build.gradle.kts</path> files. See [](tools_intellij_platform_gradle_plugin.md#configuration.dependencyResolutionManagement) for more details.
+This approach allows for omitting the `repositories {}` definition in the <path>build.gradle.kts</path> files.
+See [](tools_intellij_platform_gradle_plugin.md#configuration.dependencyResolutionManagement) for more details.
 
 The Settings plugin also defaults the `kotlin.stdlib.default.dependency` property to `false` for every project before project plugins are applied.
 This prevents the Kotlin Gradle plugin from adding the Kotlin Standard Library dependency automatically, which could conflict with the version bundled in the IntelliJ Platform.

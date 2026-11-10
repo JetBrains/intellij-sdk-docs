@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Validation Errors
 
@@ -17,12 +17,15 @@ Or **inline**, above the confirmation buttons:
 ## Principles
 
 <p>
-Always try not to let the user enter invalid data. To achieve this:
+Always try not to let the user enter invalid data.
+To achieve this:
 </p>
 
-Use controls that are constrained to valid values. For example, use a combo box or a slider instead of the input field.
+Use controls that are constrained to valid values.
+For example, use a combo box or a slider instead of the input field.
 
-Limit the characters users can enter. For example, if only numbers are supported in a field, and this is obvious to the user, ignore input of letters instead of showing an error:
+Limit the characters users can enter.
+For example, if only numbers are supported in a field, and this is obvious to the user, ignore input of letters instead of showing an error:
 
 ![](port_correct.png){width=188}
 
@@ -30,7 +33,8 @@ If it’s not obvious that only numbers can be entered, allow entering any sign 
 
 ![](font_error.png){width=301}
 
-Provide a default value if possible. Even if the user decides to change the default value, it gives a clue on the expected input format.
+Provide a default value if possible.
+Even if the user decides to change the default value, it gives a clue on the expected input format.
 
 Write instructions and examples on how to fill a form using [context help](context_help.md).
 
@@ -174,13 +178,15 @@ See also: [](disposers.md#choosing-a-disposable-parent).
 
 ### 2. Non-allowed values in dialogs
 
-A non-allowed value is a value that can be checked only when fully entered. For example, an existing file name, value that does not match the pattern or a value that’s too small/short.
+A non-allowed value is a value that can be checked only when fully entered.
+For example, an existing file name, value that does not match the pattern or a value that’s too small/short.
 
 If a non-allowed value is entered, validate it on focus loss or on sending the form, depending on what happens faster.
 
 Do **not** validate non-allowed values on input, it will interrupt the user.
 
-Do **not** validate empty fields on focus loss. Users should be able to fill the form in a random order, so do not interrupt them.
+Do **not** validate empty fields on focus loss.
+Users should be able to fill the form in a random order, so do not interrupt them.
 
 #### How it works {id="how-it-works_2"}
 
@@ -188,7 +194,8 @@ On sending the form, the field is highlighted in red and the error tooltip appea
 
 ![](exesting_name.png){width=257}
 
-If validated on focus loss, highlight the field in light-red. Do not return focus to the field with the error automatically.
+If validated on focus loss, highlight the field in light-red.
+Do not return focus to the field with the error automatically.
 
 ![](focus_loss.png){width=169}
 
@@ -198,7 +205,8 @@ When the user changes the value, the tooltip disappears and error highlighting i
 
 ![](fix_error.png){width=480}
 
-When the focus is returned to the field with an error, use validation on input. Otherwise, it can be unclear for the user how to initiate validation.
+When the focus is returned to the field with an error, use validation on input.
+Otherwise, it can be unclear for the user how to initiate validation.
 
 #### Implementation {id="implementation_2"}
 
@@ -233,20 +241,23 @@ new ComponentValidator(parentDisposable)
 
 #### Simple form
 
-If a form is simple, move the focus to the first required field and disable the confirmation button until all required fields have been filled. It is clear from the form behavior that input is required, showing validation messages is redundant.
+If a form is simple, move the focus to the first required field and disable the confirmation button until all required fields have been filled.
+It is clear from the form behavior that input is required, showing validation messages is redundant.
 
 ![](simple_dialog.png){width=373}
 
 #### Complex form
 
-If a form is complex, always enable the confirmation button. Otherwise, it can be hard to understand what should be done to complete the form.
+If a form is complex, always enable the confirmation button.
+Otherwise, it can be hard to understand what should be done to complete the form.
 
 Complex forms are:
 
 * Forms with more than 3 input fields or combo boxes.
 * Forms with at least one control (checkbox, table, and so on) apart from an input field and a combo box.
 
-**Never** validate empty required fields on input or focus loss. Users should be able to fill the form in a random order, so do not interrupt them.
+**Never** validate empty required fields on input or focus loss.
+Users should be able to fill the form in a random order, so do not interrupt them.
 
 #### How to use
 
@@ -262,8 +273,9 @@ Show the error tooltip for the next field when it gets the focus, hover, or the 
 
 #### Implementation {id="implementation_3"}
 
-By default, [`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java) disables <control>OK</control> button until
-all fields that participate in validation become valid.
+By default,
+[`DialogWrapper`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/DialogWrapper.java)
+disables <control>OK</control> button until all fields that participate in validation become valid.
 
 Explicitly enable <control>OK</control> button for each input field:
 <tabs group="languages">
@@ -295,7 +307,8 @@ On Enter, the field is highlighted with red and the error tooltip appears.
 
 ![](main_window.png){width=379}
 
-If validated on focus loss, the field is highlighted with light-red. The focus is not returned to the field automatically.
+If validated on focus loss, the field is highlighted with light-red.
+The focus is not returned to the field automatically.
 
 Hide the field highlighting and the tooltip when the user fixes the invalid value.
 
@@ -307,9 +320,12 @@ If it’s not possible to detect the fields with errors, show the error message 
 
 ![](example_inline.png){width=358}
 
-An inline error only appears on clicking the confirmation button. The dialog is resized to fit the error message. Do **not** leave an empty space for the error in advance.
+An inline error only appears on clicking the confirmation button.
+The dialog is resized to fit the error message.
+Do **not** leave an empty space for the error in advance.
 
-Hide the error messages once any field related to the error is edited. Set the dialog to its original size when the error disappears.
+Hide the error messages once any field related to the error is edited.
+Set the dialog to its original size when the error disappears.
 
 #### Implementation {id="implementation_4"}
 
@@ -399,7 +415,8 @@ Provide specific names, locations, and values of the objects involved:
 
 For a period at the end of an error message, see [Punctuation](punctuation.md#period).
 
-Make the error message short and descriptive. See [Writing short and clear](writing_short.md).
+Make the error message short and descriptive.
+See [Writing short and clear](writing_short.md).
 
 Examples of common errors and corresponding error messages:
 
@@ -465,13 +482,15 @@ Use encouraging tone:
 
 A warning informs the user that something is configured incorrectly, but does not prevent them from applying the changes.
 
-A warning can appear on input, focus loss, or on reopening a filled form. For example, make the empty field <control>Target name</control> show a warning on reopening:
+A warning can appear on input, focus loss, or on reopening a filled form.
+For example, make the empty field <control>Target name</control> show a warning on reopening:
 
 ![](warning_dialog.png){width=580}
 
 The warning can be shown:
 
-In a tooltip for a specific field. Follow the rules for [the error tooltip](tooltip.md).
+In a tooltip for a specific field.
+Follow the rules for [the error tooltip](tooltip.md).
 <tabs group="languages">
 <tab title="Kotlin UI DSL" group-key="kotlin">
 
@@ -491,18 +510,21 @@ new ValidationInfo("Target name is not specified", myNameField)
 </tabs>
 
 
-On the form under the controls. Show the message with the yellow warning icon.
+On the form under the controls.
+Show the message with the yellow warning icon.
 
 ![](warning_inline.png){width=303}
 
-On the "Problems" page in complex multipage dialogs. Show warnings and fix options:
+On the "Problems" page in complex multipage dialogs.
+Show warnings and fix options:
 
 ![](problems.png){width=418 style=block}
 *Problems page in the Project Structure dialog.*
 
 Mark all navigation elements for areas that contain warnings with yellow icons.
 
-Update the problem counter when a problem is detected. When all problems have been fixed, do not show the "Problems" tab.
+Update the problem counter when a problem is detected.
+When all problems have been fixed, do not show the "Problems" tab.
 
 On a particular page, highlight the element that contains a warning in yellow or add a warning icon next to it.
 
@@ -524,7 +546,8 @@ Add a red light bulb on the right side of the input field if an action to fix th
 
 ![](table_error.png){width=429}
 
-When the field in a table loses focus, show an error icon. An error tooltip appears on mouse hover or when the line gets focus:
+When the field in a table loses focus, show an error icon.
+An error tooltip appears on mouse hover or when the line gets focus:
 
 ![](validation_table_hover.png){width=429}
 
@@ -607,27 +630,34 @@ If validation in a multipage form can be performed only by clicking the confirma
 
 ## Avoid mistakes
 
-Do not show an error in a message box. Users are pulled out of the context, they need to close the dialog and locate the invalid field.
+Do not show an error in a message box.
+Users are pulled out of the context, they need to close the dialog and locate the invalid field.
 
 ![](message_box.png){width=472}
 
-Do not allow to click "OK" button if a form contains empty required fields. For this, the Cancel button should be used, and the OK button should be disabled. Otherwise, if users accidentally leave the field empty, they can expect that the value was entered correctly.
+Do not allow to click "OK" button if a form contains empty required fields.
+For this, the Cancel button should be used, and the OK button should be disabled.
+Otherwise, if users accidentally leave the field empty, they can expect that the value was entered correctly.
 
 ![](wildcard.png){width=521}
 
-Do not show an error message inside the empty required field. It looks like a prefilled field, not like an error message.
+Do not show an error message inside the empty required field.
+It looks like a prefilled field, not like an error message.
 
 ![](goto_line.png){width=438}
 
-Do not underline the field label. It looks like a spell error and poorly visible.
+Do not underline the field label.
+It looks like a spell error and poorly visible.
 
 ![](underline.png){width=278}
 
-Do not shake a form and show an error with a delay. A shaking form is distracting and time-consuming.
+Do not shake a form and show an error with a delay.
+A shaking form is distracting and time-consuming.
 
 ![](new_class.png){width=445}
 
-Do not show an error immediately after opening a form. It distracts the user from filling the form.
+Do not show an error immediately after opening a form.
+It distracts the user from filling the form.
 
 ![](add_tfs.png){width=350}
 

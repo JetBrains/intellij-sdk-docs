@@ -111,12 +111,12 @@ Code vision hints can be displayed over the element, or on the right, at the end
 It is configurable by users in <ui-path>Settings | Editor | Inlay Hints | Code vision</ui-path> by choosing a value in <control>Default position for metrics</control> combo box, or by selecting <control>Position</control> in specific provider entries.
 
 There are three extension points for implementing a code vision provider:
-- [`DaemonBoundCodeVisionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hints/codeVision/DaemonBoundCodeVisionProvider.kt) registered
-  in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.daemonBoundCodeVisionProvider"/></include>
-- [`CodeVisionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/CodeVisionProvider.kt) registered
-  in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.codeVisionProvider"/></include>
-- [`CodeVisionGroupSettingProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/settings/CodeVisionGroupSettingProvider.kt) registered
-  in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.config.codeVisionGroupSettingProvider"/></include>
+- [`DaemonBoundCodeVisionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/hints/codeVision/DaemonBoundCodeVisionProvider.kt)
+  registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.daemonBoundCodeVisionProvider"/></include>
+- [`CodeVisionProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/CodeVisionProvider.kt)
+  registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.codeVisionProvider"/></include>
+- [`CodeVisionGroupSettingProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/codeVision/settings/CodeVisionGroupSettingProvider.kt)
+  registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.config.codeVisionGroupSettingProvider"/></include>
 
 `DaemonBoundCodeVisionProvider` API should be used in cases when code vision entries are related to PSI, so that calculated values are invalidated and recalculated on PSI changes.
 
@@ -136,8 +136,11 @@ To provide a preview example for a custom code vision provider:
 2. Register an `com.intellij.codeInsight.codeVisionSettingsPreviewLanguage`, which specifies the preview `language` and `modelId`.
 
 **Examples:**
-- [`KotlinScriptDefinitionCodeVisionProvider`](%gh-ic%/plugins/kotlin/base/scripting/scripting/src/org/jetbrains/kotlin/idea/core/script/definitions/KotlinScriptDefinitionCodeVisionProvider.kt) - shows the script definition hint. Clicking the inlay opens the script definition settings. This provider is `DaemonBoundCodeVisionProvider`.
-- [`VcsCodeVisionProvider`](%gh-ic%/platform/vcs-impl/lang/src/com/intellij/codeInsight/hints/VcsCodeVisionProvider.kt) - shows the author of a given element, e.g., class or method, based on VCS information. This provider is `CodeVisionProvider`.
+- [`KotlinScriptDefinitionCodeVisionProvider`](%gh-ic%/plugins/kotlin/base/scripting/scripting/src/org/jetbrains/kotlin/idea/core/script/definitions/KotlinScriptDefinitionCodeVisionProvider.kt) - shows the script definition hint.
+  Clicking the inlay opens the script definition settings.
+  This provider is `DaemonBoundCodeVisionProvider`.
+- [`VcsCodeVisionProvider`](%gh-ic%/platform/vcs-impl/lang/src/com/intellij/codeInsight/hints/VcsCodeVisionProvider.kt) - shows the author of a given element, e.g., class or method, based on VCS information.
+  This provider is `CodeVisionProvider`.
 
 ### Inlay Hints Provider
 
@@ -161,8 +164,7 @@ See the API documentation for the details.
 
 ### Further Tips
 
-1. Go to
-   <ui-path>Settings | Editor | Inlay Hints</ui-path> ([Product Help](https://www.jetbrains.com/help/idea/inlay-hints.html)) and check out inlays that have already been implemented.
+1. Go to <ui-path>Settings | Editor | Inlay Hints</ui-path> ([Product Help](https://www.jetbrains.com/help/idea/inlay-hints.html)) and check out inlays that have already been implemented.
 2. To support multiple languages with a single type of inlay hints, see declarative
    [`InlayHintsProviderFactory`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hints/declarative/InlayHintsProviderFactory.kt) (2023.1+)
    or

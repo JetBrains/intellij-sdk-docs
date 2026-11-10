@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Custom Plugin Repository
 
@@ -10,8 +10,7 @@
 
 </tldr>
 
-> [IDE Provisioner](https://www.jetbrains.com/ide-services/ide-provisioner/) comes with a local built-in repository of IntelliJ Platform plugins
-> that allows choosing specific plugins to be approved within an organization.
+> [IDE Provisioner](https://www.jetbrains.com/ide-services/ide-provisioner/) comes with a local built-in repository of IntelliJ Platform plugins that allows choosing specific plugins to be approved within an organization.
 > It also allows uploading and distributing private plugins inside an organization, as well as any publicly available plugin from the internet.
 >
 {title="JetBrains IDE Services: IDE Provisioner"}
@@ -176,8 +175,10 @@ The additional candidate elements:
             </code-block>
         </td>
         <td>
-            <p>Adding a plugin dependency in the <code>&lt;depends></code> element will cause asking a user about enabling the dependency plugin, if it is installed and disabled in the IDE. A plugin can specify multiple <code>&lt;depends></code> elements.</p>
-            <p>A plugin entry should include only the dependencies on other plugins that are defined by the <a href="plugin_configuration_file.md#idea-plugin__depends"><code>&lt;depends></code></a> elements in the plugin's <path>plugin.xml</path> file. The <code>optional</code> and <code>config-file</code> attributes are ignored and shouldn't be specified.</p>
+            <p>Adding a plugin dependency in the <code>&lt;depends></code> element will cause asking a user about enabling the dependency plugin, if it is installed and disabled in the IDE.
+            A plugin can specify multiple <code>&lt;depends></code> elements.</p>
+            <p>A plugin entry should include only the dependencies on other plugins that are defined by the <a href="plugin_configuration_file.md#idea-plugin__depends"><code>&lt;depends></code></a> elements in the plugin's <path>plugin.xml</path> file.
+            The <code>optional</code> and <code>config-file</code> attributes are ignored and shouldn't be specified.</p>
         </td>
     </tr>
 </table>

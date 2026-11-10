@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Layout
 
@@ -35,11 +35,13 @@ Do **not** align input boxes on the left side if one label is twice as long as t
 
 ![](1_02_input_different_labels_correct.png){width=391}
 
-If several related input controls have labels of up to 10 characters and their input boxes are short, organize them in two columns. Do **not** use more than two columns.
+If several related input controls have labels of up to 10 characters and their input boxes are short, organize them in two columns.
+Do **not** use more than two columns.
 
 ![](1_03_short_inputs.png){width=391}
 
-If an input box is long, and the horizontal space is limited, place the label above the box. Otherwise, always put the label and the box on the same line.
+If an input box is long, and the horizontal space is limited, place the label above the box.
+Otherwise, always put the label and the box on the same line.
 
 ![](1_04_input_top_label.png){width=412}
 
@@ -49,7 +51,8 @@ If there are two input controls with labels of similar length that are separated
 
 ![](1_05_separated_by_one.png){width=452}
 
-Align only the input boxes of the neighboring input controls. If there are several input controls on a page, and they are separated from each other by two or more other UI elements, do **not** align their input boxes.
+Align only the input boxes of the neighboring input controls.
+If there are several input controls on a page, and they are separated from each other by two or more other UI elements, do **not** align their input boxes.
 
 ![](1_06_separated_by_two.png){width=452}
 
@@ -67,7 +70,9 @@ Always left-align labels.
 
 ![](1_08_label_alignment.png){width=464}
 
-Align the right borders of input boxes that have a similar length. For alignment, use [built-in icons](built_in_button.md). Do **not** use buttons.
+Align the right borders of input boxes that have a similar length.
+For alignment, use [built-in icons](built_in_button.md).
+Do **not** use buttons.
 
 ![](1_09_built_in_button.png){width=302}
 
@@ -104,7 +109,8 @@ If a checkbox group does not have a label, align it with other independent contr
 
 ![](2_05_checkbox_3_columns.png){width=417}
 
-Do **not** arrange radio buttons from one group in several columns. Splitting a group of radio buttons into two or more columns makes it unclear that all these radio buttons belong to the same setting.
+Do **not** arrange radio buttons from one group in several columns.
+Splitting a group of radio buttons into two or more columns makes it unclear that all these radio buttons belong to the same setting.
 
 ![](2_06_radio_columns_incorrect.png){width=417}
 
@@ -120,13 +126,15 @@ If there are 2–3 buttons or links with labels of up to 30 characters each, pla
 
 ![](3_02_button_line.png){width=361}
 
-Do **not** arrange buttons or links in several columns. Such a layout takes more time to parse visually.
+Do **not** arrange buttons or links in several columns.
+Such a layout takes more time to parse visually.
 
 ![](3_03_button_columns.png){width=361}
 
 ### Lists, trees and tables
 
-Choose a control width such that most of the common values are visible. Take the whole width of the dialog if necessary.
+Choose a control width such that most of the common values are visible.
+Take the whole width of the dialog if necessary.
 
 ![](4_01_table_full_width.png){width=638}
 
@@ -145,7 +153,8 @@ If there are several lists, trees, or tables in a dialog, make them of the same 
 
 <p>Align controls according to the rules below to show that they are related.</p>
 
-Place 2–3 related UI controls on the same line if each control takes up to 30 characters. This way the user needs to read just one line, and it is quicker to see that the controls depend on each other.
+Place 2–3 related UI controls on the same line if each control takes up to 30 characters.
+This way the user needs to read just one line, and it is quicker to see that the controls depend on each other.
 
 ![](5_01_dependent_one_line.png){width=497}
 
@@ -163,7 +172,8 @@ Main control: **labeled input control**.
 
 ![](5_04_dependent_on_field_long_label.png){width=489}
 
-Main control: **checkbox** or **radio button**. Align dependent controls by the label.
+Main control: **checkbox** or **radio button**.
+Align dependent controls by the label.
 
 ![](5_02_dependent_on_checkbox.png){width=342}
 
@@ -183,14 +193,16 @@ When the main control takes the whole width of a panel, and there is one small d
 
 See the [Inline help text](inline_help_text.md#placement) and [Tooltip](tooltip.md#question-mark-icon-for-help-tooltips) articles for details on how to arrange help information in dialogs.
 
-If controls do **not** depend on each other, left-align them all. Otherwise, the user might think that controls are linked.
+If controls do **not** depend on each other, left-align them all.
+Otherwise, the user might think that controls are linked.
 
 ![](5_09_incorrect_alignment.png){width=517 style=block}
 *The spinners do not depend on the top checkbox.*
 
 ## Organize with insets
 
-Use vertical insets to break a list of controls into easily readable groups. Compare:
+Use vertical insets to break a list of controls into easily readable groups.
+Compare:
 
 <format color="Red" style="bold">Incorrect</format>
 
@@ -202,12 +214,15 @@ Use vertical insets to break a list of controls into easily readable groups. Com
 ![](6_02_group_insets_correct.png){width=396 style=block}
 *Scanning a list of controls becomes easier when vertical insets are added between the groups of controls.*
 
-Treat insets with extra care and make sure that elements within a group are actually related. An unnecessary inset may create a false impression that the controls are grouped. This complicates the UI and might cause confusion.
+Treat insets with extra care and make sure that elements within a group are actually related.
+An unnecessary inset may create a false impression that the controls are grouped.
+This complicates the UI and might cause confusion.
 
 <format color="Red" style="bold">Incorrect</format>
 
 ![](6_04_inset_incorrect.png){width=396 style=block}
-*The first checkbox depends on the combo box which is shown with the horizontal inset. However, the checkboxes appear grouped because they are closer.*
+*The first checkbox depends on the combo box which is shown with the horizontal inset.
+However, the checkboxes appear grouped because they are closer.*
 
 <format color="Green" style="bold">Correct</format>
 
@@ -224,7 +239,8 @@ Horizontal insets also matter for grouping controls.
 <format color="DarkOrange" style="bold">Better</format>
 
 ![](6_05_hor_inset_better.png){width=396 style=block}
-*With smaller horizontal and bigger vertical insets, the checkboxes and the "Length" fields look related. However, it could be made better if the repeating word "Separator" appears only once.*
+*With smaller horizontal and bigger vertical insets, the checkboxes and the "Length" fields look related.
+However, it could be made better if the repeating word "Separator" appears only once.*
 
 <format color="Green" style="bold">Correct</format>
 

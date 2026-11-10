@@ -15,16 +15,14 @@ A split button is a combination of a regular [button](button.topic) and a drop-d
 ![](split_button.png){width=706}
 
 ## Anatomy
-A split button consists of the main action on the left and a drop-down button that shows a dropdown
-with less common actions on the right:
+A split button consists of the main action on the left and a drop-down button that shows a dropdown with less common actions on the right:
 
 ![Split button action anatomy](split_button_anatomy.png){width=706}
 
 ## When to use
 
 ### More than two related actions
-When there are more than two actions related to the main action, and there is not enough space for separate buttons, put these actions into
-the dropdown menu:
+When there are more than two actions related to the main action, and there is not enough space for separate buttons, put these actions into the dropdown menu:
 
 ![Related actions in a split button](split_button_related_actions.png){width=706}
 ### The second action is dangerous and uncommon
@@ -34,8 +32,10 @@ To avoid accidental clicks on a dangerous action, hide it in the dropdown menu i
 ![Dangerous action in a split button](split_button_dangerous_action.png){width=706}
 
 An uncommon dangerous action can be the only action in the menu.
-<note>Uncommon actions are the actions called in rare cases for specific purposes. For example, the <control>Force Push</control> action, unlike the <control>Commit and Push...</control> action, is available under certain circumstances
-and covers rare user scenarios. Thus, it can be considered as uncommon and hidden in the dropdown menu.</note>
+<note>Uncommon actions are the actions called in rare cases for specific purposes.
+For example, the <control>Force Push</control> action, unlike the <control>Commit and Push...</control> action, is available under certain circumstances
+and covers rare user scenarios.
+Thus, it can be considered as uncommon and hidden in the dropdown menu.</note>
 
 ## When not to use
 
@@ -86,7 +86,8 @@ Show a tooltip:
 
 ### Dropdown menu
 
-Place related actions into the dropdown menu. Do not duplicate the main action in the dropdown menu, otherwise it is confusing how to trigger the main action — with the button or from the menu.
+Place related actions into the dropdown menu.
+Do not duplicate the main action in the dropdown menu, otherwise it is confusing how to trigger the main action — with the button or from the menu.
 
 <format color="E55765" style="bold">Incorrect</format>
 

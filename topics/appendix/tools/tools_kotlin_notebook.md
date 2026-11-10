@@ -24,7 +24,8 @@
 
 </snippet>
 
-The Kotlin Notebook IntelliJ Platform integration enables interactive development and experimentation with IntelliJ Platform APIs directly within a notebook environment. This integration allows developers to run IntelliJ Platform code within the active IDE runtime, removing traditional barriers associated with plugin project setup, compilation, and deployment.
+The Kotlin Notebook IntelliJ Platform integration enables interactive development and experimentation with IntelliJ Platform APIs directly within a notebook environment.
+This integration allows developers to run IntelliJ Platform code within the active IDE runtime, removing traditional barriers associated with plugin project setup, compilation, and deployment.
 
 Like Jupyter Notebooks, Kotlin Notebook provides an interactive platform for prototyping, testing, and exploring IntelliJ Platform functionality through executable code cells.
 
@@ -48,7 +49,8 @@ Once executed, the necessary IntelliJ Platform libraries are loaded into the Kot
 
 ### UI Rendering
 
-The integration enables direct rendering of UI components within notebook cells. When working with [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) or standard Swing components, returning them as a response causes immediate rendering with full interactivity.
+The integration enables direct rendering of UI components within notebook cells.
+When working with [Kotlin UI DSL](kotlin_ui_dsl_version_2.md) or standard Swing components, returning them as a response causes immediate rendering with full interactivity.
 
 ```kotlin
 import com.intellij.ui.dsl.builder.panel
@@ -73,7 +75,8 @@ runInEdt {
 
 ### Resource Management
 
-The integration provides automatic resource management through the IntelliJ Platform's [Disposer](disposers.md) mechanism. A dedicated `notebookDisposable` variable allows registration of elements that need cleanup:
+The integration provides automatic resource management through the IntelliJ Platform's [Disposer](disposers.md) mechanism.
+A dedicated `notebookDisposable` variable allows registration of elements that need cleanup:
 
 ```kotlin
 Disposer.register(notebookDisposable, myDisposable)
@@ -85,7 +88,8 @@ Disposer.register(notebookDisposable) {
 
 ### Plugin Loading
 
-By default, only the core IntelliJ Platform is loaded into the classpath. To use other plugins (bundled or installed), explicitly load them using:
+By default, only the core IntelliJ Platform is loaded into the classpath.
+To use other plugins (bundled or installed), explicitly load them using:
 
 ```kotlin
 loadPlugins("Git4Idea", "com.intellij.java")

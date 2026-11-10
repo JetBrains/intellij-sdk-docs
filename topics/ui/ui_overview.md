@@ -93,11 +93,13 @@ See implementation details in [Editor basics](editor_basics.md).
 
 ### Editor tabs
 
-Tabs display the file name and extension. They can be [pinned](https://www.jetbrains.com/help/idea/using-code-editor.html#pin-or-unpin-a-tab), [opened in separate windows](https://www.jetbrains.com/help/idea/using-code-editor.html#detach_tab) or in a [split view](https://www.jetbrains.com/help/idea/using-code-editor.html#split_screen).
+Tabs display the file name and extension.
+They can be [pinned](https://www.jetbrains.com/help/idea/using-code-editor.html#pin-or-unpin-a-tab), [opened in separate windows](https://www.jetbrains.com/help/idea/using-code-editor.html#detach_tab) or in a [split view](https://www.jetbrains.com/help/idea/using-code-editor.html#split_screen).
 
 <img src="ui_overview_tabs.png" alt="Editor tabs" width="706"/>
 
-See more details on working with tabs in the editor in [Editor tabs](https://www.jetbrains.com/help/idea/using-code-editor.html#manage_tabs). For UI component reference, go to [Tabs](tabs.md).
+See more details on working with tabs in the editor in [Editor tabs](https://www.jetbrains.com/help/idea/using-code-editor.html#manage_tabs).
+For UI component reference, go to [Tabs](tabs.md).
 
 ### Inspection widget
 A small control in the top-right corner of the editor shows the number of errors, warnings, and typos and allows navigating to the detailed view in the Project tool window.
@@ -107,7 +109,8 @@ A small control in the top-right corner of the editor shows the number of errors
 See more in [File and project analysis](https://www.jetbrains.com/help/idea/file-and-project-analysis.html#analysis-current-file).
 
 ### Gutter
-A vertical area along the left side of the editor that provides important information and action icons within easy reach. It shows line numbers and buttons for folding, navigating, and running and debugging code along with VCS stripes and other controls.
+A vertical area along the left side of the editor that provides important information and action icons within easy reach.
+It shows line numbers and buttons for folding, navigating, and running and debugging code along with VCS stripes and other controls.
 
 <img src="ui_overview_gutter.png" alt="Editor gutter" width="706"/>
 
@@ -122,7 +125,8 @@ Hints that show additional information like parameter types or variable values a
 See more in [implementation details](inlay_hints.md) and [user guidelines](https://www.jetbrains.com/help/idea/inlay-hints.html).
 
 ### Floating toolbar
-A small toolbar that appears when the user selects a code fragment in the editor. It contains buttons and controls for the most popular actions relevant in the current context,
+A small toolbar that appears when the user selects a code fragment in the editor.
+It contains buttons and controls for the most popular actions relevant in the current context,
 such as quick fixes, AI-actions, basic refactorings, and code-formatting options:
 
 <img src="ui_overview_floating_toolbar.png" alt="Floating toolbar" width="706"/>
@@ -171,8 +175,8 @@ New project wizard:
 
 ## Popups
 
-A popup is a lightweight window that appears above the application screen. Unlike the dialogs, popups do not have the standard OS
-title bar and are usually dismissed by clicking outside.
+A popup is a lightweight window that appears above the application screen.
+Unlike the dialogs, popups do not have the standard OS title bar and are usually dismissed by clicking outside.
 
 ### Popup examples
 
@@ -202,7 +206,8 @@ Alerts are modal windows that draw the user's attention to crucial information o
 <img src="ui_overview_alert.png" alt="Alert" width="706"/>
 
 ### Banners
-[Banners](banner.md) appear on top of the editor or in tool windows. They inform the user about the state of a specific context and suggest context-related actions and quick fixes.
+[Banners](banner.md) appear on top of the editor or in tool windows.
+They inform the user about the state of a specific context and suggest context-related actions and quick fixes.
 
 <img src="ui_overview_banner.png" alt="Banner" width="706"/>
 

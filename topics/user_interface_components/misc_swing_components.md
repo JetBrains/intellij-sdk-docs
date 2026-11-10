@@ -6,8 +6,8 @@
 
 ### `Messages`
 
-[`Messages`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/Messages.java) provides a way to show simple
-message boxes, input dialogs (modal dialogs with a text field), and chooser dialogs (modal dialogs with a combo box).
+[`Messages`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/ui/Messages.java)
+provides a way to show simple message boxes, input dialogs (modal dialogs with a text field), and chooser dialogs (modal dialogs with a combo box).
 On macOS, the message boxes use the native UI.
 
 The `showCheckboxMessageDialog()` function provides an easy way to implement a <control>Do not show this again</control> checkbox on messages.

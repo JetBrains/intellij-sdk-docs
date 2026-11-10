@@ -6,12 +6,12 @@
 
 A number of commonly used minor features are listed in the following format:
 
-_EP: `fully.qualified.extensionPointName`_ — Extension Point Name (must be specified in <path>[plugin.xml](plugin_configuration_file.md)</path>). Click to browse usages in existing implementations of open-source plugins.
+_EP: `fully.qualified.extensionPointName`_ — Extension Point Name (must be specified in <path>[plugin.xml](plugin_configuration_file.md)</path>).
+Click to browse usages in existing implementations of open-source plugins.
 
 _`com.extensionPoint.class`_ _description text_ — Extension Point class/interface to provide functionality
 
-> See also [](intellij_platform_extension_point_list.md) to discover more Language-related Extension Points
-> as well as the general guide [](explore_api.md).
+> See also [](intellij_platform_extension_point_list.md) to discover more Language-related Extension Points as well as the general guide [](explore_api.md).
 >
 {title="Locating more Language EPs"}
 
@@ -89,8 +89,7 @@ EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com
 
 [`StatementUpDownMover`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/editorActions/moveUpDown/StatementUpDownMover.java)
 allows for customizing the behavior of moving statements up and down.
-This can be used to keep code syntactically correct when moving code in the editor, e.g., when moving
-a variable declaration.
+This can be used to keep code syntactically correct when moving code in the editor, e.g., when moving a variable declaration.
 
 ### Splitting and Joining List Constructs
 
@@ -98,9 +97,7 @@ EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com
 
 [`ListSplitJoinContext`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/editor/actions/lists/ListSplitJoinContext.kt)
 needs to be implemented to define the exact behavior of splitting and joining list-like constructs in a language.
-The UI will show implementations of this EP as an
-[intention action](https://www.jetbrains.com/help/idea/intention-actions.html)
-at appropriate locations.
+The UI will show implementations of this EP as an [intention action](https://www.jetbrains.com/help/idea/intention-actions.html) at appropriate locations.
 Developers can use the abstract classes in
 [`DefaultListSplitJoinContext`](%gh-ic%/platform/lang-impl/src/com/intellij/openapi/editor/actions/lists/DefaultListSplitJoinContext.kt)
 for their implementation.
@@ -128,13 +125,11 @@ EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com
 
 EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.problemHighlightFilter"/></include>, <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.problemFileHighlightFilter"/></include>
 
-[`ProblemHighlightFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/ProblemHighlightFilter.java) and
-the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.problemFileHighlightFilter"/></include> (which implements
-[`Condition<VirtualFile>`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Condition.java))
-are used to filter out files that should not be error-highlighted because they are, e.g., outside
-the current project scope.
-Note that these filters should be permissive and only prevent highlighting for files that are absolutely
-known to be outside the scope.
+[`ProblemHighlightFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/daemon/ProblemHighlightFilter.java)
+and the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.problemFileHighlightFilter"/></include>
+(which implements [`Condition<VirtualFile>`](%gh-ic%/platform/util/src/com/intellij/openapi/util/Condition.java))
+are used to filter out files that should not be error-highlighted because they are, e.g., outside the current project scope.
+Note that these filters should be permissive and only prevent highlighting for files that are absolutely known to be outside the scope.
 
 ### Semantic Highlight Usages
 
@@ -183,8 +178,7 @@ Including/included files can then be obtained via [`FileIncludeManager`](%gh-ic%
 EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.completion.plainTextSymbol"/></include>
 
 [`PlainTextSymbolCompletionContributor`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/completion/PlainTextSymbolCompletionContributor.java)
-provides a simple way to extract lookup elements from a file so that users have completion available
-in, e.g., plain text editors like VCS commit messages.
+provides a simple way to extract lookup elements from a file so that users have completion available in, e.g., plain text editors like VCS commit messages.
 
 ### Reader Mode
 
@@ -192,9 +186,7 @@ EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com
 
 [`ReaderModeMatcher`](%gh-ic%/platform/editor-ui-api/src/com/intellij/codeInsight/actions/ReaderModeMatcher.kt)
 provides a way to decide if files are shown in the correct mode: reader mode vs. normal editor mode.
-Please see
-[the documentation](https://www.jetbrains.com/help/idea/reader-mode.html)
-to get familiar with reader mode.
+Please see [the documentation](https://www.jetbrains.com/help/idea/reader-mode.html) to get familiar with reader mode.
 
 ### Provide Fully Qualified Names (FQN) for Elements
 
@@ -218,11 +210,9 @@ Register the action with the popup menu group `<add-to-group group-id="CopyRefer
 EP: <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.testSourcesFilter"/></include>
 
 [`TestSourcesFilter`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/TestSourcesFilter.java)
-allows for telling the IDE that a file is a test file; even it's not located in a directory marked as
-test root.
+allows for telling the IDE that a file is a test file; even it's not located in a directory marked as test root.
 This can be used in situations where test files are located next to source files.
-If these files can be distinguished either by filename or content from source files, implementing this
-EP will mark them as test files for the IDE.
+If these files can be distinguished either by filename or content from source files, implementing this EP will mark them as test files for the IDE.
 
 ## Refactoring
 

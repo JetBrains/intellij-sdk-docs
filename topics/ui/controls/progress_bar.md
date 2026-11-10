@@ -22,7 +22,8 @@ Use a progress bar to indicate long-running operations that don’t block the us
 ![](14 in_status_bar.png){width=706}
 
 ### Background content update
-When it is important to show that content is being updated, use an inline progress bar for background updates. The user can continue working with the content while a background process is performed.
+When it is important to show that content is being updated, use an inline progress bar for background updates.
+The user can continue working with the content while a background process is performed.
 Do not show a process name for an inline progress.
 
 ![](09 inline_processes.png){width=706}
@@ -35,7 +36,8 @@ Display a progress bar near the button while the action is being performed.
 ## How to use
 
 ### Types
-Use a determinate progress bar if the process duration is known. Otherwise, use **indeterminate** progress bar:
+Use a determinate progress bar if the process duration is known.
+Otherwise, use **indeterminate** progress bar:
 
 ![](02 determinate_and_ indeterminate.png){width=706}
 
@@ -49,7 +51,8 @@ A progress bar can have a process name and process details.
 
 #### Process name
 Show the name of an operation being performed above the progress bar.
-Use the continuous form of the verb that describes the operation. Add an ellipsis at the end to indicate that the process is ongoing.
+Use the continuous form of the verb that describes the operation.
+Add an ellipsis at the end to indicate that the process is ongoing.
 
 ![](05_process name.png){width=706}
 
@@ -61,7 +64,8 @@ If the vertical space is limited, place the process name with a colon on the lef
 Show information about the current stage of an operation to make long-running tasks more predictable and manageable.
 
 
-Show details below the progress bar on a single line. The length of details is limited by the width of the progress bar.
+Show details below the progress bar on a single line.
+The length of details is limited by the width of the progress bar.
 
 ![](05_process details.png){width=706}
 
@@ -69,18 +73,22 @@ Details example:
 * The current step: “Uploading file 3 of 10”
 * The name of a file, module, or library: “Fetching guava-31.1.jar”
 * Remaining time or percentage completed.
-* Round the remaining time to one of the following values: 1, 2, 3, 5, 10, 15, 20, or 30 seconds (or minutes). For example, if 7 minutes and 50 seconds remain, show “About 10 minutes left.” If less than 5 seconds remain, show “About 5 seconds left.”
+* Round the remaining time to one of the following values: 1, 2, 3, 5, 10, 15, 20, or 30 seconds (or minutes).
+  For example, if 7 minutes and 50 seconds remain, show “About 10 minutes left.”
+  If less than 5 seconds remain, show “About 5 seconds left.”
 * If the user can control the process (for example, stop it after a certain time), update the timer dynamically every second.
 
 
 ### Process controls
 
-Place process controls on the right next to the progress bar. On hover over the icon, show the name of the control under the progress bar instead of process details.
+Place process controls on the right next to the progress bar.
+On hover over the icon, show the name of the control under the progress bar instead of process details.
 
 ![](17 stop_button.png){width=706}
 
 #### Cancel or Stop button
-Add a Cancel button if the process can be safely interrupted. If interrupting the process does not restore the system to its previous state, name the button Stop.
+Add a Cancel button if the process can be safely interrupted.
+If interrupting the process does not restore the system to its previous state, name the button Stop.
 
 ![](17 cancel_button.png){width=706}
 
@@ -106,7 +114,8 @@ If the process takes a long time and can prevent the user from performing tasks,
          <img src="19 resume_button.png" alt="Process on pause"/>
         </td>
         <td>
-        <p>If a user pauses the process, show "Paused" under the progress bar. Replace the Pause icon with Resume.</p>
+        <p>If a user pauses the process, show "Paused" under the progress bar.
+        Replace the Pause icon with Resume.</p>
      </td>
   </tr>
   <tr>
@@ -131,7 +140,9 @@ For example, show the status of the running tests:
 >
 {style="note"}
 
-Use a process name as a dialog or popup header, capitalize the title and remove the ellipsis. Process details appear above the progress bar. For a single progress bar, use a button to cancel or pause the process instead of an icon:
+Use a process name as a dialog or popup header, capitalize the title and remove the ellipsis.
+Process details appear above the progress bar.
+For a single progress bar, use a button to cancel or pause the process instead of an icon:
 
 ![](13 in_dialog.png){width=706}
 

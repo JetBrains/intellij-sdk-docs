@@ -17,7 +17,8 @@ See [the Documents article](documents.md#what-are-the-rules-of-working-with-docu
 The PSI elements to add to the tree or replace existing PSI elements are usually *created from text*.
 In most cases, the flow is:
 
-1. Use [`PsiFileFactory.createFileFromText()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFileFactory.java) to create a new file that contains the code construct that needs to be added to the tree or used as a replacement for an existing element. See also [](psi_files.md#how-do-i-create-a-psi-file).
+1. Use [`PsiFileFactory.createFileFromText()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiFileFactory.java) to create a new file that contains the code construct that needs to be added to the tree or used as a replacement for an existing element.
+   See also [](psi_files.md#how-do-i-create-a-psi-file).
 2. Traverse the resulting tree to locate the required element and then pass it to `add()` or `replace()`.
 
 Most languages provide factory methods to create specific code constructs more easily, for example:

@@ -159,8 +159,9 @@ Console [`Filter`](%gh-ic%/platform/consoleView/src/com/intellij/execution/filte
 To attach a filter to the console, use `CommandLineState.addConsoleFilters()` or [`TextConsoleBuilder.addFilter()`](%gh-ic%/platform/consoleView/src/com/intellij/execution/filters/TextConsoleBuilder.java) if the console is created manually.
 Two standard filter implementations are [`RegexpFilter`](%gh-ic%/platform/consoleView/src/com/intellij/execution/filters/RegexpFilter.java) and [`UrlFilter`](%gh-ic%/platform/execution-impl/src/com/intellij/execution/filters/UrlFilter.java).
 
-Console filters can be also provided by implementing [`ConsoleFilterProvider`](%gh-ic%/platform/consoleView/src/com/intellij/execution/filters/ConsoleFilterProvider.java) and registering
-it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.consoleFilterProvider"/></include>.
+Console filters can be also provided by implementing
+[`ConsoleFilterProvider`](%gh-ic%/platform/consoleView/src/com/intellij/execution/filters/ConsoleFilterProvider.java)
+and registering it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.consoleFilterProvider"/></include>.
 
 ## Listening for Execution Events
 

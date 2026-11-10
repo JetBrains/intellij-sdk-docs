@@ -10,7 +10,8 @@ Using Language Server Protocol (LSP) in IntelliJ-based IDEs to enhance developme
 
 <link-summary>Language Server Protocol (LSP) support in IntelliJ-based IDEs</link-summary>
 
-The [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) (LSP) is an open-standard protocol developed by Microsoft. It enables communication between development tools and Language Servers.
+The [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) (LSP) is an open-standard protocol developed by Microsoft.
+It enables communication between development tools and Language Servers.
 Language Servers can provide language-specific features such as code completion, documentation, and formatting, which is far easier than implementing language support from scratch.
 It also reduces the need for constant maintenance and tracking of changes in relevant languages and tools, making it easier to bring consistent language support to various development environments.
 
@@ -27,8 +28,7 @@ Chris Simon shares the challenges faced and offers practical tips for aspiring L
 ## Supported IDEs
 
 The integration with the Language Server Protocol is created as an extension to the commercial IntelliJ-based IDEs.
-Therefore, plugins using Language Server integration are not available in
-[IntelliJ IDEA](idea.md) open source builds and [Android Studio](android_studio.md) from Google.
+Therefore, plugins using Language Server integration are not available in [IntelliJ IDEA](idea.md) open source builds and [Android Studio](android_studio.md) from Google.
 
 The LSP API is publicly available as part of the IntelliJ Platform in the following IDEs:
 IntelliJ IDEA, WebStorm, PhpStorm, PyCharm, DataSpell, RubyMine, CLion, DataGrip, GoLand, Rider, and RustRover.
@@ -355,8 +355,8 @@ override fun createLspServerWidgetItem(
 
 </tabs>
 
-If there are configuration problems preventing from starting an LSP server, the plugin can provide a widget item
-with an error and give the user a hint how to fix the problem.
+If there are configuration problems preventing from starting an LSP server,
+the plugin can provide a widget item with an error and give the user a hint how to fix the problem.
 
 ## Language Server Integration
 

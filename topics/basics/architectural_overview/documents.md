@@ -70,5 +70,4 @@ This is particularly useful for obtaining text location/offset information about
 
 Use `Document.createGuardedBlock()`.
 
-[`EditorActionManager.setReadonlyFragmentModificationHandler()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionManager.java) can
-be used to customize the behavior when the user attempts to modify a read-only region.
+[`EditorActionManager.setReadonlyFragmentModificationHandler()`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/editor/actionSystem/EditorActionManager.java) can be used to customize the behavior when the user attempts to modify a read-only region.

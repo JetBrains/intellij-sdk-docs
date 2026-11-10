@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Navigation
 
@@ -29,8 +29,8 @@ If there are several target symbols or several navigation targets defined for a 
 then the IDE shows the navigation popup to ask the user to choose where to go.
 
 The [`NavigationTarget`](%gh-ic%/platform/core-api/src/com/intellij/platform/backend/navigation/NavigationTarget.java)
-is essentially a pair of a `Navigatable` and
-a [`TargetPresentation`](%gh-ic%/platform/core-api/src/com/intellij/platform/backend/presentation/TargetPresentation.kt)
+is essentially a pair of a `Navigatable`
+and a [`TargetPresentation`](%gh-ic%/platform/core-api/src/com/intellij/platform/backend/presentation/TargetPresentation.kt)
 instances (where to go and what to show in the popup).
 
 To provide navigation targets by a `Symbol`, either:
@@ -43,9 +43,8 @@ To provide navigation targets by a `Symbol`, either:
 
 ## Showing Usages
 
-If there are no navigation targets available, then the IntelliJ Platform starts finding usages of the target symbol
-obtained by resolving a [reference](declarations_and_references.md#references)
-or from a [declaration](declarations_and_references.md#declarations).
+If there are no navigation targets available,
+then the IntelliJ Platform starts finding usages of the target symbol obtained by resolving a [reference](declarations_and_references.md#references) or from a [declaration](declarations_and_references.md#declarations).
 
 > Existing implementations of the mentioned extension points can be found on the [IntelliJ Platform Explorer](explore_api.md#search-the-intellij-platform-explorer).
 >

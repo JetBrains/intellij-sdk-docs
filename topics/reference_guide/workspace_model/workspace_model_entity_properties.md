@@ -153,13 +153,12 @@ To specify a `SymbolicEntityId` for an entity, the entity interface must extend
 [`WorkspaceEntityWithSymbolicId`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/SymbolicEntityId.kt)
 and provide an implementation of its `symbolicId` property which returns an instance of the corresponding class.
 Type parameter `<E>` of the returned instance must be equal to the entity interface.
-A specific implementation of `SymbolicEntityId` may be used in properties of an entity
-to create a symbolic link to an entity of the corresponding type.
+A specific implementation of `SymbolicEntityId` may be used in properties of an entity to create a symbolic link to an entity of the corresponding type.
 
 Note that unlike [parent-child](#parent-child-relationship) "hard" links, symbolic links aren't guaranteed to be resolvable.
 When a linked entity is removed, the entity referring to it doesn't change, and the ID will resolve to `null`.
-However, if after modification of an entity, its `symbolicId` changes, properties of all other entities containing a value equal to the previous ID
-are automatically replaced with the new ID.
+However, if after modification of an entity, its `symbolicId` changes,
+properties of all other entities containing a value equal to the previous ID are automatically replaced with the new ID.
 
 The storage maintains an index, which can be used to quickly find all entities referring to a given entity via symbolic links, see
 [`EntityStorage.referrers()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/EntityStorage.kt)
@@ -203,8 +202,8 @@ The property referring to child entity may have a type:
 * `List<ChildEntity>` indicating that there are zero, one, or more child entities of the given type
 
 If the parent is optional, it is possible to create a child entity without the parent entity and set the reference to the parent entity to `null` for an existing child entity.
-Also, if the reference to a child entity is removed from the corresponding property in the parent entity, it causes automatic removal of the child entity
-if it specifies that the parent is mandatory and sets the parent reference to `null` if the parent is optional.
+Also, if the reference to a child entity is removed from the corresponding property in the parent entity,
+it causes automatic removal of the child entity if it specifies that the parent is mandatory and sets the parent reference to `null` if the parent is optional.
 
 See the "Parent-child relationship between entities" section in
 [`WorkspaceEntity`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/WorkspaceEntity.kt)
@@ -231,5 +230,4 @@ which is stored inside
 [`ModuleEntity.dependencies`](%gh-ic%/platform/workspace/jps/src/com/intellij/platform/workspace/jps/entities/module.kt)
 property.
 
-The value of a property containing an implementation of `SymbolicEntityId` is automatically updated if the `symbolicId` property
-of the referenced entity changes after modification.
+The value of a property containing an implementation of `SymbolicEntityId` is automatically updated if the `symbolicId` property of the referenced entity changes after modification.

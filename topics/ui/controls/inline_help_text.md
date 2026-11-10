@@ -71,7 +71,8 @@ Place the link at the end of the text where possible so that it does not disrupt
 <chapter title="Text style formatting" id="text_style_formatting">
 
 <chapter title="Avoid highlighting" id="avoid_highlighting">
-Avoid text highlighting. Usually, the help text is short, and no highlighting in bold or italics is needed:
+Avoid text highlighting.
+Usually, the help text is short, and no highlighting in bold or italics is needed:
 <table style="none" border="false" column-width="fixed">
   <tr>
     <td width="378">

@@ -74,7 +74,9 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ### IntelliJ Platform 2024.3
 
 `com.intellij.psi.stubs.StubElement.getChildrenStubs()` method return type changed from `List<StubElement>` to `List<StubElement<?>>`
-: Raw-type changed to a properly parameterized type. This is binary compatible change but may cause compilation errors. In most of the cases, it's enough to add `<?>` at the use site to fix the issue.
+: Raw-type changed to a properly parameterized type.
+  This is binary compatible change but may cause compilation errors.
+  In most of the cases, it's enough to add `<?>` at the use site to fix the issue.
 
 Unbundled JUnit library
 : Add an explicit dependency in the plugin project.
@@ -261,7 +263,8 @@ Constructor of `com.intellij.ui.tabs.TabInfo` requires not-null `JComponent` arg
 ### Dependency Analysis Plugin 2024.2
 
 `com.jetbrains.dependencyAnalysis` package removed
-: The package `com.jetbrains.dependencyAnalysis` has been removed. Please update the code to use the new package `com.jetbrains.dependencyAnalysis.core` instead.
+: The package `com.jetbrains.dependencyAnalysis` has been removed.
+  Please update the code to use the new package `com.jetbrains.dependencyAnalysis.core` instead.
 
 ## 2024.1
 
@@ -295,16 +298,19 @@ Constructor of `com.intellij.ui.tabs.TabInfo` requires not-null `JComponent` arg
 : Use `com.intellij.ide.bookmark.providers.LineBookmarkProvider.Util` instead.
 
 `com.intellij.execution.process.mediator.util` package removed
-: The sole extension method `Deferred<T>.blockingGet()` contained in this package is an anti-pattern, and was not supposed to be exposed in the first place. The process mediator and the elevation service are now product modules, and no longer part of the platform.
+: The sole extension method `Deferred<T>.blockingGet()` contained in this package is an anti-pattern, and was not supposed to be exposed in the first place.
+  The process mediator and the elevation service are now product modules, and no longer part of the platform.
 
 `com.intellij.vcs.log.VcsLogFileHistoryHandler.getSupportedVcs()` abstract method added
 : Must be implemented.
 
 `com.intellij.vcs.log.VcsLogFileHistoryHandler.getHistoryFast(root: VirtualFile, filePath: FilePath, hash: Hash?, filters: VcsLogFilterCollection, commitCount: Int)` abstract method added
-: Parameter `filters: VcsLogFilterCollection` was added to provide filtering capabilities to file history. Implement `com.intellij.vcs.log.VcsLogFileHistoryHandler.getSupportedFilters` to specify which filters are supported by this extension (currently, branch filter, revision filter and range filter are available).
+: Parameter `filters: VcsLogFilterCollection` was added to provide filtering capabilities to file history.
+  Implement `com.intellij.vcs.log.VcsLogFileHistoryHandler.getSupportedFilters` to specify which filters are supported by this extension (currently, branch filter, revision filter and range filter are available).
 
 `com.intellij.vcs.log.VcsLogFileHistoryHandler.collectHistory(root: VirtualFile, filePath: FilePath, hash: Hash?, filters: VcsLogFilterCollection, consumer)` abstract method added
-: Parameter `filters: VcsLogFilterCollection` was added to provide filtering capabilities to file history. Implement `com.intellij.vcs.log.VcsLogFileHistoryHandler.getSupportedFilters` to specify which filters are supported by this extension (currently, branch filter, revision filter and range filter are available).
+: Parameter `filters: VcsLogFilterCollection` was added to provide filtering capabilities to file history.
+  Implement `com.intellij.vcs.log.VcsLogFileHistoryHandler.getSupportedFilters` to specify which filters are supported by this extension (currently, branch filter, revision filter and range filter are available).
 
 `org.apache.tools` package removed
 : Please provide all necessary libraries in the plugin distribution.
@@ -424,7 +430,8 @@ Method `org.jetbrains.kotlin.backend.common.lower.LocalDeclarationsLoweringKt.ge
 : Use `org.jetbrains.kotlin.daemon.common.CompileService.NO_SESSION` const instead.
 
 Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
-: Create a new `IrDeclarationOrigin` by delegation. See https://github.com/JetBrains/kotlin/blob/a3b55cf758f3a7ceb596f65507c2f61ada5266af/compiler/ir/ir.tree/src/org/jetbrains/kotlin/ir/declarations/IrDeclarationOrigin.kt#L20.
+: Create a new `IrDeclarationOrigin` by delegation.
+  See https://github.com/JetBrains/kotlin/blob/a3b55cf758f3a7ceb596f65507c2f61ada5266af/compiler/ir/ir.tree/src/org/jetbrains/kotlin/ir/declarations/IrDeclarationOrigin.kt#L20.
 
 `org.jetbrains.kotlin.idea.refactoring.introduce.extractFunction.ExtractKotlinFunctionHandlerKt` class removed
 : Use `com.intellij.lang.refactoring.RefactoringSupportProvider.getExtractMethodHandler` instead to invoke Kotlin extract function refactoring
@@ -432,19 +439,24 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 ### Maven Plugin 2024.1
 
 `org.jetbrains.idea.maven.indices.MavenIndex.getUpdateTimestamp()` method removed
-: Use `org.jetbrains.idea.maven.indices.MavenIndexImpl.getUpdateTimestamp()` instead. `MavenIndex` is an obsolete interface now with `MavenIndexImpl` as the only implementation, consider using `MavenGAVIndex` to get information about available Maven GAV coordinates, or `MavenSearchIndex` to search Maven artifacts by content.
+: Use `org.jetbrains.idea.maven.indices.MavenIndexImpl.getUpdateTimestamp()` instead.
+  `MavenIndex` is an obsolete interface now with `MavenIndexImpl` as the only implementation, consider using `MavenGAVIndex` to get information about available Maven GAV coordinates, or `MavenSearchIndex` to search Maven artifacts by content.
 
 `org.jetbrains.idea.maven.indices.MavenIndex.getFailureMessage()` method removed
-: Use `org.jetbrains.idea.maven.indices.MavenIndexImpl.getFailureMessage()` instead. `MavenIndex` is an obsolete interface now with `MavenIndexImpl` as the only implementation, consider using `MavenGAVIndex` to get information about available Maven GAV coordinates, or `MavenSearchIndex` to search Maven artifacts by content.
+: Use `org.jetbrains.idea.maven.indices.MavenIndexImpl.getFailureMessage()` instead.
+  `MavenIndex` is an obsolete interface now with `MavenIndexImpl` as the only implementation, consider using `MavenGAVIndex` to get information about available Maven GAV coordinates, or `MavenSearchIndex` to search Maven artifacts by content.
 
 `org.jetbrains.idea.maven.indices.MavenIndex.getRepositoryPathOrUrl()` method removed
-: Use `org.jetbrains.idea.maven.indices.MavenRepositoryIndex.getRepository().getUrl()` instead. Also, `MavenRepositoryInfo.getKind()` could be used to distinguish between local and remote repo.
+: Use `org.jetbrains.idea.maven.indices.MavenRepositoryIndex.getRepository().getUrl()` instead.
+  Also, `MavenRepositoryInfo.getKind()` could be used to distinguish between local and remote repo.
 
 `org.jetbrains.idea.maven.indices.MavenIndicesManager.scheduleUpdateContent(List<MavenIndex>, boolean)` method removed
-: Use `org.jetbrains.idea.maven.indices.searcher.MavenLuceneIndexer.update(List<MavenRepositoryInfo>, Boolean)` to update content for lucene indices. GAV indices do not need to be updated explicitly.
+: Use `org.jetbrains.idea.maven.indices.searcher.MavenLuceneIndexer.update(List<MavenRepositoryInfo>, Boolean)` to update content for lucene indices.
+  GAV indices do not need to be updated explicitly.
 
 `org.jetbrains.idea.maven.indices.MavenIndicesManager.scheduleUpdateIndicesList(Consumer<MavenIndex>)` method removed
-: Use `org.jetbrains.idea.maven.indices.searcher.MavenIndicesManager.scheduleUpdateIndicesList()` to update an indices list for a specific project. To get all search indices for specific project use `MavenSystemIndicesManager.getClassIndexForRepository()`, and get a list of all repositories with `MavenIndexUtils.getAllRepositories(Project)`.
+: Use `org.jetbrains.idea.maven.indices.searcher.MavenIndicesManager.scheduleUpdateIndicesList()` to update an indices list for a specific project.
+  To get all search indices for specific project use `MavenSystemIndicesManager.getClassIndexForRepository()`, and get a list of all repositories with `MavenIndexUtils.getAllRepositories(Project)`.
 
 ### Database Plugin 2024.1
 
@@ -507,19 +519,24 @@ Class `org.jetbrains.kotlin.ir.declarations.IrDeclarationOriginImpl` made final
 ### Rd Framework 2024.1
 
 `com.jetbrains.rd.framework.IMarshaller.DefaultImpls.getId(IMarshaller)` method removed
-: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Use the method that returns long in Java and recompile the Kotlin code.
+: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations.
+  Use the method that returns long in Java and recompile the Kotlin code.
 
 `com.jetbrains.rd.framework.RdId.write(AbstractBuffer)` method removed
-: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Use `AbstractBuffer.writeLong(long)` method in Java and recompile the Kotlin code.
+: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations.
+  Use `AbstractBuffer.writeLong(long)` method in Java and recompile the Kotlin code.
 
 `org.digma.intellij.plugin.rider.protocol.LensPerObjectId.getRdid()` method removed
-: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Use the method that returns `long` in Java and recompile the Kotlin code.
+: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations.
+  Use the method that returns `long` in Java and recompile the Kotlin code.
 
 `com.jetbrains.rd.framework.RdId.Companion.read(AbstractBuffer)` method removed
-: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Use `AbstractBuffer.readLong()` method in Java and recompile the Kotlin code.
+: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations.
+  Use `AbstractBuffer.readLong()` method in Java and recompile the Kotlin code.
 
 `com.jetbrains.rd.framework.base.RdBindableBaseKt.withId(RdBindableBase, RdId)` method removed
-: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations. Use `withId(RdBindableBase, long)` method in Java and recompile the Kotlin code.
+: Due to `RdId` becoming a value class, the `getId` method is removed at runtime, causing unresolved method invocations.
+  Use `withId(RdBindableBase, long)` method in Java and recompile the Kotlin code.
 
 ### Properties Plugin 2024.1
 

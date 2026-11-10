@@ -97,10 +97,13 @@ JsonPath library unbundled
 : Update code usages.
 
 `org.jetbrains.plugins.gradle.service.project.GradleProjectResolverUtil.buildDependencies(ProjectResolverContext, Map, Map, DataNode, Collection, DataNode)` method parameter type changed from `Map<String, String>` to `ArtifactMappingService`
-: Update usages of this method. Change parameter `artifactsMap` value to an `ArtifactMappingService` instance. It can be obtained from `ProjectResolverContext`, or created in-place using the `MapBasedArtifactMappingService`.
+: Update usages of this method.
+  Change parameter `artifactsMap` value to an `ArtifactMappingService` instance.
+  It can be obtained from `ProjectResolverContext`, or created in-place using the `MapBasedArtifactMappingService`.
 
 `org.jetbrains.plugins.gradle.service.project.GradleProjectResolver.CONFIGURATION_ARTIFACTS` field removed
-: Related mapping information is no longer accessible using this key. Artifacts mapping data is now stored in the instance of the `ArtifactMappingService` and can be obtained via `org.jetbrains.plugins.gradle.service.project.ProjectResolverContext#getArtifactsMap()`.
+: Related mapping information is no longer accessible using this key.
+  Artifacts mapping data is now stored in the instance of the `ArtifactMappingService` and can be obtained via `org.jetbrains.plugins.gradle.service.project.ProjectResolverContext#getArtifactsMap()`.
 
 `com.intellij.ide.plugins.enums.PluginsGroupType.FEATURED` enum renamed to `com.intellij.ide.plugins.enums.PluginsGroupType.STAFF_PICKS`
 : Use `com.intellij.ide.plugins.enums.PluginsGroupType.STAFF_PICKS` instead.
@@ -224,10 +227,12 @@ Fragment builder functions from `ExternalSystemRunConfigurationUtil` file moved 
 : In order to not load additional code eagerly on action instantiation.
 
 `org.jetbrains.kotlin.idea.compiler.configuration.KotlinIdePluginVersion.Companion` class removed
-: Now, the Kotlin plugin version does not include a compiler version, so the class is unnecessary. Use `com.intellij.openapi.application.ApplicationInfo` to get the IntelliJ version.
+: Now, the Kotlin plugin version does not include a compiler version, so the class is unnecessary.
+  Use `com.intellij.openapi.application.ApplicationInfo` to get the IntelliJ version.
 
 `org.jetbrains.kotlin.idea.compiler.configuration.KotlinIdePluginVersion` class removed
-: Now, the Kotlin plugin version does not include a compiler version, so the class is unnecessary. Use `com.intellij.openapi.application.ApplicationInfo` to get the IntelliJ version.
+: Now, the Kotlin plugin version does not include a compiler version, so the class is unnecessary.
+  Use `com.intellij.openapi.application.ApplicationInfo` to get the IntelliJ version.
 
 
 ### Markdown Plugin 2023.3
@@ -335,7 +340,9 @@ Specify `displayName`/`key` for `Configurable`
 : `Core` class removed from hierarchy.
 
 `com.intellij.database.datagrid.CoreGrid.showCell(ModelIndex<Row>, ModelIndex<Column>)` method parameter type changed from `ModelIndex<Row>` to `int`
-: `ModelIndex` class is used to reference data in the table model. Row indexes in the table model start with 0, even when the table is scrolled to page _N>1_. Parameter type was changed to `int` to indicate that it is an absolute index in the DB table.
+: `ModelIndex` class is used to reference data in the table model.
+  Row indexes in the table model start with 0, even when the table is scrolled to page _N>1_.
+  Parameter type was changed to `int` to indicate that it is an absolute index in the DB table.
 
 `com.intellij.database.datagrid.DataGrid.getName(ModelIndex<GridColumn>)` abstract method added
 : Only recompilation is needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
@@ -356,7 +363,8 @@ Specify `displayName`/`key` for `Configurable`
 ### JSON Path Plugin 2023.2
 
 Moved package `com.intellij.jsonpath`
-: It is now part of separate _JSONPath_ plugin. [Add dependency](plugin_dependencies.md) on `com.intellij.jsonpath` to use its API.
+: It is now part of separate _JSONPath_ plugin.
+  [Add dependency](plugin_dependencies.md) on `com.intellij.jsonpath` to use its API.
 
 ## 2023.1
 
@@ -387,7 +395,8 @@ Apache Batik library unbundled
 : Local port is the part of the tunnel configuration, not SSH settings.
 
 `com.intellij.openapi.fileEditor.impl.HTMLEditorProvider.Companion.getAFFINITY_KEY()` method removed
-: It was an accidentally exposed internal API. Please use `HTMLEditorProvider.openEditor()` methods, or implement a custom file editor provider.
+: It was an accidentally exposed internal API.
+  Please use `HTMLEditorProvider.openEditor()` methods, or implement a custom file editor provider.
 
 `com.intellij.execution.RunnerAndConfigurationSettings.setFocusToolWindowBeforeRun(boolean)` abstract method added
 : The interface is not intended to be implemented in external plugins.
@@ -401,7 +410,8 @@ Apache Batik library unbundled
 : The inner interface was moved to upper level.
 
 `com.intellij.database.dataSource.url.TypesRegistry.BaseTypeDescriptor` class moved to package `com.intellij.database.dataSource.url.ui`
-: UI extracted from `TypesRegistry` to `TypesRegistryUi`. Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.database.urlParamEditorProvider"/></include> to register parameter descriptor, use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.database.urlParamEditorUiProvider"/></include> to register parameter editor descriptor.
+: UI extracted from `TypesRegistry` to `TypesRegistryUi`.
+  Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.database.urlParamEditorProvider"/></include> to register parameter descriptor, use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.database.urlParamEditorUiProvider"/></include> to register parameter editor descriptor.
 
 `com.intellij.database.datagrid.DataGrid.setAnonymousColumnName(String)` method removed
 : Only recompilation needed for classes that implement `DataGrid` and delegate calls to an actual `DataGrid` implementation.
@@ -455,9 +465,12 @@ Apache Batik library unbundled
 ### JetBrains Gateway Plugin 2023.1
 
 `com.jetbrains.gateway.ssh.HighLevelHostAccessor.isPathPresentOnRemote(String, FileSystemItem)` method parameter type changed from `String` to `com.jetbrains.gateway.ssh.deploy.RemotePath`
-: Using strings instead of paths breaks a lot of things when doing cross-platform development, and is generally not a good idea. Use `com.jetbrains.gateway.ssh.HighLevelHostAccessor.makeRemotePath` to prepare a path to pass into any of the methods requiring it.
+: Using strings instead of paths breaks a lot of things when doing cross-platform development, and is generally not a good idea.
+  Use `com.jetbrains.gateway.ssh.HighLevelHostAccessor.makeRemotePath` to prepare a path to pass into any of the methods requiring it.
 
 ### PHP Plugin 2023.1
 
 `com.jetbrains.php.config.library.PhpIncludePathManager.getRoots()` method removed
-: This class no longer handles all paths configured in non-runtime `com.jetbrains.php.config.library.PhpLibraryRootProvider`. Paths configured in <control>Include Path Settings</control> are available with `PhpIncludePathManager.getIncludePaths()`. All additional paths to use as roots for resolving via `PhpIncludePathManager.getAllIncludedRoots()`.
+: This class no longer handles all paths configured in non-runtime `com.jetbrains.php.config.library.PhpLibraryRootProvider`.
+  Paths configured in <control>Include Path Settings</control> are available with `PhpIncludePathManager.getIncludePaths()`.
+  All additional paths to use as roots for resolving via `PhpIncludePathManager.getAllIncludedRoots()`.

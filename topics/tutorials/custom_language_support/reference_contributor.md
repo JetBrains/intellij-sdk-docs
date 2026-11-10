@@ -141,8 +141,7 @@ Contribute a reference to each usage of a property:
 
 ## Register the Reference Contributor
 
-The `SimpleReferenceContributor` implementation is registered using
-the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.psi.referenceContributor"/></include> and specifying `language="JAVA"`.
+The `SimpleReferenceContributor` implementation is registered using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.psi.referenceContributor"/></include> and specifying `language="JAVA"`.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -176,8 +175,7 @@ As long as an element is a `SimpleProperty` it is allowed to be refactored:
 
 ## Register the Refactoring Support Provider
 
-The `SimpleRefactoringSupportProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file
-using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.refactoringSupport"/></include>.
+The `SimpleRefactoringSupportProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.refactoringSupport"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

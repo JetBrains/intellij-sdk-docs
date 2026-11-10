@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Built-In Button
 
@@ -10,8 +10,8 @@ A built-in button is an icon placed inside an input control.
 
 <chapter level="3" title="Implementation" id="implenementation_expand" collapsible="true" default-state="collapsed">
 
-To place a button inside a text field, use [`ExtendableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExtendableTextField.java) and
-its `addExtension()` method.
+To place a button inside a text field, use [`ExtendableTextField`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/fields/ExtendableTextField.java)
+and its `addExtension()` method.
 </chapter>
 
 ## When to use
@@ -105,7 +105,8 @@ Use the **List** icon to select a value from the list of objects such as classes
 ![List of values](built_in_button_list.png){width=706}
 
 ### Add value
-Use the **Add** button to select multiple values, such as files, variables, folder paths. The selected values will be added to the existing list.
+Use the **Add** button to select multiple values, such as files, variables, folder paths.
+The selected values will be added to the existing list.
 
 ![Add a value to the field](built_in_button_add.png){width=706}
 
@@ -113,7 +114,8 @@ Use the **Add** button to select multiple values, such as files, variables, fold
 ## When not to use
 
 ### Cut, Copy, Paste
-Do not use the **Copy**, **Paste** or **Cut** button. Instead, make sure these actions are available on pressing <shortcut>Cmd/Ctrl+X</shortuct>, <shortcut>Cmd/Ctrl+C</shortuct>, and <shortcut>Cmd/Ctrl+V</shortuct> shortcuts or  from the context menu.
+Do not use the **Copy**, **Paste** or **Cut** button.
+Instead, make sure these actions are available on pressing <shortcut>Cmd/Ctrl+X</shortuct>, <shortcut>Cmd/Ctrl+C</shortuct>, and <shortcut>Cmd/Ctrl+V</shortuct> shortcuts or  from the context menu.
 <table style="none" border="false">
 <tr>
 <td>
@@ -128,7 +130,8 @@ Do not use the **Copy**, **Paste** or **Cut** button. Instead, make sure these a
 </table>
 
 ### Help, Info
-Do not use the **Help** or **Info** buttons to open an external link or a hint. Use the [context help](context_help.md) instead.
+Do not use the **Help** or **Info** buttons to open an external link or a hint.
+Use the [context help](context_help.md) instead.
 
 <table style="none" border="false">
 <tr>

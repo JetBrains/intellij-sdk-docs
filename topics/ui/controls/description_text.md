@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Description Text
 
@@ -26,7 +26,8 @@ Use description text to:
 
 Follow general rules in [Writing short and clear](writing_short.md) and [Punctuation](punctuation.md).
 
-Use the default text style for plain text. Increase line height by 3px from the default value.
+Use the default text style for plain text.
+Increase line height by 3px from the default value.
 
 Use [H4 bold](typography.md) (Default bold) for headings or to highlight important words:
 
@@ -56,13 +57,15 @@ If the text does not fit, add a scrollbar:
 
 ### Appearance
 
-Do not add borders around the description text. Use the panel color for the background.
+Do not add borders around the description text.
+Use the panel color for the background.
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|
 | ![](09_frame_incorrect.png){width="302"}            | ![](09_frame_correct.png){width="302"}              |
 
-For [links](link.md), use the default link color: `Link.activeForeground`. Underline links on hover:
+For [links](link.md), use the default link color: `Link.activeForeground`.
+Underline links on hover:
 
 ![](10_link.png){width=283}
 

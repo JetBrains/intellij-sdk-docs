@@ -16,7 +16,8 @@
 
 ### Navigation inside a window
 
-Use a regular link for navigation between pages of the same window. In the example below <control>Manage scopes…</control> opens another page in Settings for editing the values.
+Use a regular link for navigation between pages of the same window.
+In the example below <control>Manage scopes…</control> opens another page in Settings for editing the values.
 
 <table style="none" border="false">
   <tr>
@@ -33,7 +34,8 @@ Use a regular link for navigation between pages of the same window. In the examp
 
 ### Web resources
 
-Use an external link for navigation to web resources. See below for the [external link icon](#external-link-icon).
+Use an external link for navigation to web resources.
+See below for the [external link icon](#external-link-icon).
 
 ![Text 'Learn more about what is logged' with 'what is logged' as an external link with an arrow icon.](link_when_to_2.png){width=706}
 
@@ -64,7 +66,8 @@ Use a link as a secondary action for some items of a tree or table.
 
 ### Primary actions
 
-Use a [button](button.topic) or a [drop down list](drop_down.md) for primary actions. These controls can be selected from the keyboard and are bigger and easier to click.
+Use a [button](button.topic) or a [drop down list](drop_down.md) for primary actions.
+These controls can be selected from the keyboard and are bigger and easier to click.
 
 <table style="none" border="false">
   <tr>
@@ -158,7 +161,8 @@ Follow the [sentence capitalization](capitalization.md#sentence) guideline.
 
 #### Ellipsis
 
-Add an ellipsis to a link if it opens another UI area where input is possible. See examples for the [Button](button.topic).
+Add an ellipsis to a link if it opens another UI area where input is possible.
+See examples for the [Button](button.topic).
 
 <table style="none" border="false">
   <tr>
@@ -243,7 +247,8 @@ Make a link the minimum phrase that is enough to understand what will happen wit
 
 ### External link icon
 
-Add the arrow icon for an external link. The icon shows that the user will switch to a browser and lose the current context.
+Add the arrow icon for an external link.
+The icon shows that the user will switch to a browser and lose the current context.
 
 ![Text 'Learn more about what is logged' where 'what is logged' is an external link with the external link icon.](link_how_to_8.png){width=706}
 
@@ -276,7 +281,8 @@ Add the arrow icon for an external link. The icon shows that the user will switc
 
 ### Help icon
 
-Use the help icon in links in [empty states](empty_state.md) to indicate that this is an external help resource. The arrow icon in this case is unnecessary.
+Use the help icon in links in [empty states](empty_state.md) to indicate that this is an external help resource.
+The arrow icon in this case is unnecessary.
 
 <table style="none" border="false">
   <tr>
@@ -293,7 +299,8 @@ Use the help icon in links in [empty states](empty_state.md) to indicate that th
 
 ### Drop-down link
 
-Drop-down links show a context menu or a popup. To implement, use [`DropDownLink`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/DropDownLink.kt).
+Drop-down links show a context menu or a popup.
+To implement, use [`DropDownLink`](%gh-ic%/platform/platform-api/src/com/intellij/ui/components/DropDownLink.kt).
 
 ![Control 'Changes from 2 commits' where '2 commits' is a drop-down link opening a list of all commits](link_dropdown.png){width=706}
 

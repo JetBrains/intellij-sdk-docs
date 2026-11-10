@@ -240,7 +240,8 @@ browser.getCefBrowser().executeJavaScript( // 6
 );
 ```
 
-1. Create a ` JBCefQuery ` instance. Make sure that the passed browser instance is of the type `JBCefBrowserBase` (casting may be necessary).
+1. Create a ` JBCefQuery ` instance.
+   Make sure that the passed browser instance is of the type `JBCefBrowserBase` (casting may be necessary).
 2. Add a handler implementing a plugin code to be executed.
    The example implementation opens a link in the editor or an external browser depending on whether the link is local or external.
 3. Handlers can optionally return a `JBCefJSQuery.Response` object, which holds information about success or error occurred on the plugin code side.

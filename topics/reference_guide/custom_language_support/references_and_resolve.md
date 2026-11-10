@@ -10,8 +10,9 @@ Resolving references allows users to navigate from a PSI element usage (accessin
 This feature is required to support the <ui-path>Navigate | Declaration or Usages</ui-path> action invoked by <shortcut>Ctrl/Cmd+B</shortcut> or clicking the mouse button while holding <shortcut>Ctrl/Cmd</shortcut> key, and it is a prerequisite for implementing [finding usages](find_usages.md), [rename refactoring](rename_refactoring.md), and [code completion](code_completion.md).
 
 The <ui-path>View | Quick Definition</ui-path> action is based on the same mechanism, so it becomes automatically available for all references that can be resolved by the language plugin.
-To customize the exact document range to show in the popup (e.g., include "surrounding" code or comments), provide [`ImplementationTextSelectioner`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hint/ImplementationTextSelectioner.java) registered
-in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.implementationTextSelectioner"/></include>.
+To customize the exact document range to show in the popup (e.g., include "surrounding" code or comments), provide
+[`ImplementationTextSelectioner`](%gh-ic%/platform/lang-api/src/com/intellij/codeInsight/hint/ImplementationTextSelectioner.java)
+registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.implementationTextSelectioner"/></include>.
 
 ## PSI References
 
@@ -55,9 +56,11 @@ The implementation of resolve based on the standard helper classes contains the 
   The primary method which needs to be implemented is `execute()`, which is called to process every declaration encountered during the resolve, and returns `true` if the resolve needs to be continued or `false` if the declaration has been found.
   The methods `getHint()` and `handleEvent()` are used for internal optimizations and can be left empty in the `PsiScopeProcessor` implementations for custom languages.
 * A function which walks the PSI tree up from the reference location until the resolve has successfully completed or until the end of the resolve scope has been reached.
-  If the target of the reference is located in a different file, the file can be located, for example, using [`FilenameIndex.getFilesByName()`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java) (if the file name is known) or by iterating through all custom language files in the project (`iterateContent()` in
-  [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java) obtained
-  from
+  If the target of the reference is located in a different file, the file can be located, for example, using
+  [`FilenameIndex.getFilesByName()`](%gh-ic%/platform/indexing-api/src/com/intellij/psi/search/FilenameIndex.java)
+  (if the file name is known) or by iterating through all custom language files in the project (`iterateContent()` in
+  [`ProjectFileIndex`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectFileIndex.java)
+  obtained from
   [`ProjectRootManager.getFileIndex()`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/ProjectRootManager.java)).
 * The individual PSI elements, on which the `processDeclarations()` method is called during the PSI tree walk.
   If a PSI element is a declaration, it passes itself to the `execute()` method of the `PsiScopeProcessor` passed to it.

@@ -104,8 +104,7 @@ The content of the <path>chain.crt</path> file will be used for the `signPlugin.
 #### IntelliJ Platform Gradle Plugin (2.x)
 
 The [](tools_intellij_platform_gradle_plugin.md) provides the [`signPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin) task,
-which will be executed automatically right before the [`publishPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin) task
-when [`signPlugin.certificateChain`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-certificateChain) and [`signPlugin.privateKey`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-privateKey) properties are specified.
+which will be executed automatically right before the [`publishPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin) task when [`signPlugin.certificateChain`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-certificateChain) and [`signPlugin.privateKey`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-privateKey) properties are specified.
 Otherwise, it'll be skipped.
 
 See [`intellijPlatform.signing`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-signing) for configuration reference.
@@ -122,8 +121,8 @@ Use [`signPlugin.certificateChainFile`](tools_intellij_platform_gradle_plugin_ta
 
 <primary-label ref="Obsolete"/>
 
-The [](tools_gradle_intellij_plugin.md) provides the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task, which will be executed automatically right before the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) task
-when [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechain) and [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekey) properties are specified.
+The [](tools_gradle_intellij_plugin.md) provides the [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task,
+which will be executed automatically right before the [`publishPlugin`](tools_gradle_intellij_plugin.md#tasks-publishplugin) task when [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechain) and [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekey) properties are specified.
 Otherwise, it'll be skipped.
 
 An example [`signPlugin`](tools_gradle_intellij_plugin.md#tasks-signplugin) task configuration may look like this:
@@ -191,8 +190,8 @@ publishPlugin {
 
 ##### Using Files
 
-Instead of using the [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekey) and [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechain) properties which expect the key and certificate chain
-content to be provided directly, it's also possible to specify the paths to the files containing the key and certificate chain content.
+Instead of using the [`signPlugin.privateKey`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekey) and [`signPlugin.certificateChain`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechain) properties which expect the key and certificate chain content to be provided directly,
+it's also possible to specify the paths to the files containing the key and certificate chain content.
 To do that, use the [`signPlugin.privateKeyFile`](tools_gradle_intellij_plugin.md#tasks-signplugin-privatekeyfile) and [`signPlugin.certificateChainFile`](tools_gradle_intellij_plugin.md#tasks-signplugin-certificatechainfile) properties instead.
 
 <tabs group="languages">

@@ -142,8 +142,8 @@ Required icon sizes depend on the usage as listed in the following table:
 | Editor gutter                                                               | 12&times;12                                                     |
 | Editor gutter for [New UI](https://www.jetbrains.com/help/idea/new-ui.html) | 14&times;14                                                     |
 
-As SVG icons can be scaled arbitrarily, they provide good results in HiDPI environments or when used in combination with
-bigger screen fonts (e.g., in [Presentation Mode](https://www.jetbrains.com/help/idea/ide-viewing-modes.html)).
+As SVG icons can be scaled arbitrarily,
+they provide good results in HiDPI environments or when used in combination with bigger screen fonts (e.g., in [Presentation Mode](https://www.jetbrains.com/help/idea/ide-viewing-modes.html)).
 
 A base size denoting the size (in the user space) of the rendered image in 1x scale should be provided.
 The size is set via the `width` and `height` attributes omitting the size units.
@@ -249,8 +249,7 @@ To work as expected, the New UI requires specific colors for icon content.
 This is necessary for situations where tool window buttons are active, during which the background is highlighted.
 To enhance contrast, the IntelliJ Platform dynamically alters the icon's content color to white.
 
-Hence, for the creation of light and dark mode variants, plugin authors must use the following
-prescribed colors within their icons:
+Hence, for the creation of light and dark mode variants, plugin authors must use the following prescribed colors within their icons:
 
 | Theme | Color Code                                  |
 |-------|---------------------------------------------|

@@ -5,18 +5,23 @@
 <link-summary>Tips on writing short and clear UI texts.</link-summary>
 
 <p>
-Texts in user interfaces should be short and clear. Short texts save reading time. Clear texts lead to fewer mistakes. Editing methods described below can help with that.
+Texts in user interfaces should be short and clear.
+Short texts save reading time.
+Clear texts lead to fewer mistakes.
+Editing methods described below can help with that.
 </p>
 
 ## Use simple constructions
 
-Use simple verb forms. Prefer present tense.
+Use simple verb forms.
+Prefer present tense.
 
 Use simple sentences: one idea per sentence.
 
 Avoid passive voice.
 
-This way, the same meaning can be expressed with fewer words. Compare:
+This way, the same meaning can be expressed with fewer words.
+Compare:
 
 <i>Those resources that are available locally</i> → <i>Local resources</i>
 
@@ -33,7 +38,10 @@ Words like *general*, *advanced*, and *options* do not add useful information an
 ![](generic-options.png){width=540 style=block}
 *No meaning is lost after removing group headers "General" and "Options".*
 
-Some generic words cannot be removed. They can appear in actionable elements like buttons, checkboxes, or links. Or removing a group header could break a dialog layout. In such cases, use a more informative label instead:
+Some generic words cannot be removed.
+They can appear in actionable elements like buttons, checkboxes, or links.
+Or removing a group header could break a dialog layout.
+In such cases, use a more informative label instead:
 
 ![](generic-renamed-link.png){width=576 style=block}
 *The link "Learn more" does not explain what useful information could be there for the user to click it.*
@@ -43,7 +51,8 @@ Some generic words cannot be removed. They can appear in actionable elements lik
 Remove verbs that explain the function of a UI control:
 
 ![](obvious-specify.png){width=403 style=block}
-*Text boxes are made for input — an explicit instruction "specify" duplicates the meaning expressed by the text field. Additional information can be given under the field — see [Context help](context_help.md).*
+*Text boxes are made for input — an explicit instruction "specify" duplicates the meaning expressed by the text field.
+Additional information can be given under the field — see [Context help](context_help.md).*
 
 <table style="none">
   <tr>
@@ -64,7 +73,8 @@ Remove words with a meaning that is already expressed in the label:
 
 ## Do not address the user
 
-A user interface is for a person who uses it. Addressing this person is unnecessary because they by default perceive the text they see as for them:
+A user interface is for a person who uses it.
+Addressing this person is unnecessary because they by default perceive the text they see as for them:
 
 ![](addressing1.png){width=674}
 
@@ -73,7 +83,8 @@ A user interface is for a person who uses it. Addressing this person is unnecess
 
 ## Remove duplicates
 
-If the repeating word appears in element labels, move it to the beginning. Finding a setting becomes faster as the user scans only meaningful words:
+If the repeating word appears in element labels, move it to the beginning.
+Finding a setting becomes faster as the user scans only meaningful words:
 
 ![](writing_short_duplicates.png){width=438}
 
@@ -130,15 +141,18 @@ Feature authors know how it works from the inside and tend to describe it from t
 
 ![](indent-options-before.png){width=560}
 
-A person not familiar with implementation details won’t know what the Automatic indent options detector is, why file’s indent options have been overwritten and what indent size=2 means. Translated to the "human" language, the message reads:
+A person not familiar with implementation details won’t know what the Automatic indent options detector is, why file’s indent options have been overwritten and what indent size=2 means.
+Translated to the "human" language, the message reads:
 
 ![](indent-options-after.png){width=560}
 
-Always write UI text from a user’s perspective. Avoid technical terms, jargon and descriptions of inner logic that a user might not know.
+Always write UI text from a user’s perspective.
+Avoid technical terms, jargon and descriptions of inner logic that a user might not know.
 
 ## Write for first-time users
 
-After writing a UI text, imagine seeing it for the first time and try to understand what might be unclear or confusing. Then correct if necessary.
+After writing a UI text, imagine seeing it for the first time and try to understand what might be unclear or confusing.
+Then correct if necessary.
 
 ![](first-time-file-colors-before.png){width=474 style=block}
 *For a first-time user, Enable File Colors enables or disables the other two options (but it does not).*
@@ -149,10 +163,13 @@ After writing a UI text, imagine seeing it for the first time and try to underst
 More examples:
 
 ![](first-time-auto-insert.png){width=318 style=block}
-*Before: The title can be read as "Auto-insert when only one checkbox is on" raising the question of how it works when both checkboxes are on. After: Replacing choice with completion option makes the title unambiguous.*
+*Before: The title can be read as "Auto-insert when only one checkbox is on" raising the question of how it works when both checkboxes are on.
+After: Replacing choice with completion option makes the title unambiguous.*
 
 ![](first-time-smart-keys.png){width=318 style=block}
-*Before: What do smart Home and End keys do? What do they do if they are not smart? After: The added text explains what the options do so that the reader can make an informed choice.*
+*Before: What do smart Home and End keys do?
+What do they do if they are not smart?
+After: The added text explains what the options do so that the reader can make an informed choice.*
 
 ## Examples
 

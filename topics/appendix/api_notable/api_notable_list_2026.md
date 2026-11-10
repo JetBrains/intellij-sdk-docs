@@ -60,7 +60,8 @@ The Old Search Everywhere API is deprecated
 
   The [`com.intellij.ide.actions.searcheverywhere.remote`](%gh-ic%/platform/lang-api/src/com/intellij/ide/actions/searcheverywhere/remote) classes are obsolete without replacement, because the new API supports remote development by design.
   The new API is marked as `@ApiStatus.Experimental`.
-  In 2027.1, the deprecated API will be disabled by default via a registry key. In 2027.2, it will be removed.
+  In 2027.1, the deprecated API will be disabled by default via a registry key.
+  In 2027.2, it will be removed.
   <br>
   Report missing functionality on the [JetBrains Platform Forum](https://platform.jetbrains.com).
 
@@ -100,7 +101,9 @@ Migrate thread-safe listeners without UI dependencies from `VFS_CHANGES`/[`addAs
 
 New LSP API features
 :
-Language Server Protocol support gains Range Formatting (`textDocument/rangeFormatting`), Code Lens (`textDocument/codeLens`), and Optimize Imports (`textDocument/codeAction` with `source.organizeImports`). ``Also includes a major rewrite of LSP highlighting for improved performance. See [](language_server_protocol.md).
+Language Server Protocol support gains Range Formatting (`textDocument/rangeFormatting`), Code Lens (`textDocument/codeLens`), and Optimize Imports (`textDocument/codeAction` with `source.organizeImports`).
+``Also includes a major rewrite of LSP highlighting for improved performance.
+See [](language_server_protocol.md).
 
 `OSProcessHandler.waitFor()` on EDT or under read lock logs error
 :

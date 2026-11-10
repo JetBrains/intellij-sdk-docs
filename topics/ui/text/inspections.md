@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Inspections
 
@@ -36,15 +36,18 @@ Do not repeat the group titles in the inspection name:
 
 ![](inspections_group.png){width=557}
 
-Do not use the word "problems" or other words that describe how inspections function in general (i.e. "check", "inspection", or "issue"). An inspection is supposed to check code for problems, so mentioning it in its name is not needed.
+Do not use the word "problems" or other words that describe how inspections function in general (i.e. "check", "inspection", or "issue").
+An inspection is supposed to check code for problems, so mentioning it in its name is not needed.
 
 ![](problem.png){width=613}
 
-Do not use the words "warning" and "error" in inspection names. Such a name will become incorrect and misleading if the inspection severity level changes.
+Do not use the words "warning" and "error" in inspection names.
+Such a name will become incorrect and misleading if the inspection severity level changes.
 
 ![](inspections_warning.png){width=613}
 
-Do not use parentheses in inspection names. All supporting information can be moved to inspection descriptions.
+Do not use parentheses in inspection names.
+All supporting information can be moved to inspection descriptions.
 
 ![](parens.png){width=513}
 
@@ -54,7 +57,9 @@ If an inspection is powered by a third-party code quality tool, use the name of 
 
 ### Descriptions
 
-Start descriptions with a verb, e.g. "Reports". Use "Run" for external tools. Do not begin a description with "This inspection".
+Start descriptions with a verb, e.g. "Reports".
+Use "Run" for external tools.
+Do not begin a description with "This inspection".
 
 ![](start.png){width=520}
 
@@ -68,7 +73,8 @@ Provide details, such as:
 
 ![](inpsections_link.png){width=520}
 
-* Two code samples: the code with a problem and the code that bypasses this problem. By comparing the good code and the bad code, users can work out what causes the problem and how to avoid it.
+* Two code samples: the code with a problem and the code that bypasses this problem.
+  By comparing the good code and the bad code, users can work out what causes the problem and how to avoid it.
   For example, for <ui-path>Java | Probable bugs | 'equals()' called on array</ui-path> adding such an example helps to understand the inspection quicker:
 
 ![](inspections_example.png){width=520}
@@ -87,7 +93,8 @@ Remove unnecessary words:
 
 * Do not duplicate an inspection’s name in its description.
 
-* Inspections highlight code problems, it's their primary functionality. Don't explain it in descriptions:
+* Inspections highlight code problems, it's their primary functionality.
+  Don't explain it in descriptions:
 
   ![](purpuse.png){width=520}
 
@@ -108,7 +115,8 @@ If a quick-fix is not available, describe in more detail a way to resolve the pr
 
 ### Quick-fixes
 
-Describe the action that fixes the problem. For wording, follow the rules for [buttons](button.topic).
+Describe the action that fixes the problem.
+For wording, follow the rules for [buttons](button.topic).
 
 [//]: # (TODO: and [menu actions]&#40;menu.md&#41;.)
 

@@ -11,8 +11,7 @@ Strategies and tools for exploring the IntelliJ Platform API, navigate extension
 Sometimes it can be challenging to implement plugin features for the IntelliJ Platform.
 This usually happens in two situations:
 
-- Implementing a feature similar to one already existing in the IDE requires finding the appropriate extension point or
-  class to hook into the relevant mechanisms.
+- Implementing a feature similar to one already existing in the IDE requires finding the appropriate extension point or class to hook into the relevant mechanisms.
 - A feature is already in progress, but it is unclear how the different parts of the IntelliJ Platform interact with each other.
   In such situations, it is helpful to be able to navigate the IntelliJ Platform code confidently and to find relevant examples in other plugins.
 
@@ -60,8 +59,8 @@ or
 finds all files containing extension points.
 Use <path>*ExtensionPoints.xml</path> as the search pattern and select the <control>All Places</control> scope.
 
-However, if a bundled or third-party plugin exposes EPs for others to implement, these EPs are defined in the <path>plugin.xml</path> files
-of the plugins and not in the <path>*ExtensionPoints.xml</path> files of the IntelliJ Platform.
+However, if a bundled or third-party plugin exposes EPs for others to implement,
+these EPs are defined in the <path>plugin.xml</path> files of the plugins and not in the <path>*ExtensionPoints.xml</path> files of the IntelliJ Platform.
 One such example is the EPs exposed by the Markdown plugin that adds support for custom languages inside fenced code blocks of Markdown files.
 
 ### Use Advanced Search
@@ -80,8 +79,7 @@ to find all the files that meet the following criteria:
 
 The search results will contain many plugin XML files.
 To find specific implementations of EPs in third-party plugins, use the IntelliJ Platform Explorer ([](explore_api.md#search-the-intellij-platform-explorer)).
-Inspecting the <path>plugin.xml</path> files of other plugins not only helps to discover new features but also shows how things like menu entries or
-notification groups can be defined in the XML file.
+Inspecting the <path>plugin.xml</path> files of other plugins not only helps to discover new features but also shows how things like menu entries or notification groups can be defined in the XML file.
 
 ## Navigating the IntelliJ Platform Source Code
 
@@ -135,7 +133,8 @@ To find all occurrences of symbols, change the search scope to <control>All Plac
 To find the implementation of an existing IDE feature without knowing the name of its extension point or implementation class, search for the texts displayed in the UI.
 
 * Use the displayed text or its part as the [target for a search](https://www.jetbrains.com/help/idea/finding-and-replacing-text-in-project.html) within the IntelliJ Platform project.
-  * If the text is localized, this will identify a bundle file there the text is defined. Copy the key from the bundle file identified by the search.
+  * If the text is localized, this will identify a bundle file there the text is defined.
+    Copy the key from the bundle file identified by the search.
   * Use the key text as the target for a search within the IntelliJ Platform project.
     This search locates the implementation or related class, or [plugin configuration file](plugin_configuration_file.md) that uses the text key in an [extension](plugin_extensions.md) declaration.
   * If the key is found in the extension declaration in the <path>plugin.xml</path> file, find the implementing class attribute value (in most cases it is `implementationClass`) and

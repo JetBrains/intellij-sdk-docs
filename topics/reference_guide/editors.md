@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Editors
 
@@ -37,14 +37,14 @@ to be notified about all file open/closed/selection changed events.
 
 ### How can I set a custom editor tab name and tooltip?
 
-[`EditorTabTitleProvider`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/EditorTabTitleProvider.kt) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.editorTabTitleProvider"/></include> allows
-for specifying custom names and tooltips displayed in the title of editor tabs.
+[`EditorTabTitleProvider`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/EditorTabTitleProvider.kt)
+registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.editorTabTitleProvider"/></include> allows for specifying custom names and tooltips displayed in the title of editor tabs.
 If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 
 ### How can I set a custom editor tab background color?
 
-[`EditorTabColorProvider`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/EditorTabColorProvider.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.editorTabColorProvider"/></include> allows
-for the modification of the background color for specific files.
+[`EditorTabColorProvider`](%gh-ic%/platform/ide-core-impl/src/com/intellij/openapi/fileEditor/impl/EditorTabColorProvider.java)
+registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.editorTabColorProvider"/></include> allows for the modification of the background color for specific files.
 If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
 
 ### How do I open a text editor for a "fake" file?

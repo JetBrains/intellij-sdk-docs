@@ -58,7 +58,8 @@ Consider using a [drop-down list](drop_down.md) if:
 * The options have long labels.
 * The screen space is limited.
 * The option might be used less often than other options on the screen.
-* There are other drop-down lists in the same group of UI components. A radio button group is more noticeable than a drop-down list, so it will look like a more important setting.
+* There are other drop-down lists in the same group of UI components.
+  A radio button group is more noticeable than a drop-down list, so it will look like a more important setting.
 * The setting combines several UI components into one control:
 
 ![](05_When_to_use_Segmented_button.png){width=706}

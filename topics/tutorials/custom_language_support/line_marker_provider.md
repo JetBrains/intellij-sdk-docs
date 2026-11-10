@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 8. Line Marker Provider
 
@@ -84,8 +84,7 @@ final class MyCorrectLineMarkerProvider implements LineMarkerProvider {
 
 ## Register the Line Marker Provider
 
-The `SimpleLineMarkerProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using
-the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.lineMarkerProvider"/></include>.
+The `SimpleLineMarkerProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeInsight.lineMarkerProvider"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

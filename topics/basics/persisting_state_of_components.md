@@ -272,8 +272,8 @@ In that case, use the `getState()` method to build an XML element with an arbitr
 In the `loadState()` method, deserialize the JDOM element tree using any custom logic.
 This is not recommended and should be avoided whenever possible.
 
-To disable the expansion of path macros ([`PathMacro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/PathMacro.java))
-in stored values, implement [`PathMacroFilter`](%gh-ic%/jps/model-serialization/src/com/intellij/openapi/application/PathMacroFilter.java)
+To disable the expansion of path macros ([`PathMacro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/PathMacro.java)) in stored values,
+implement [`PathMacroFilter`](%gh-ic%/jps/model-serialization/src/com/intellij/openapi/application/PathMacroFilter.java)
 and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.pathMacroFilter"/></include>.
 
 ### Migrating Persisted Values
@@ -294,8 +294,8 @@ Otherwise, the returned state is serialized in XML and stored.
 
 ## Using `PropertiesComponent` for Simple Non-Roamable Persistence
 
-Use the [`PropertiesComponent`](%gh-ic%/platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service
-to persist a small number of simple values, such as toggle states, counters, or strings.
+Use the [`PropertiesComponent`](%gh-ic%/platform/core-api/src/com/intellij/ide/util/PropertiesComponent.java) service to persist a small number of simple values,
+such as toggle states, counters, or strings.
 
 This map-like API supports primitive types (`boolean`, `int`, `long`, and `float`),
 `String` values, and collections of `String` values.

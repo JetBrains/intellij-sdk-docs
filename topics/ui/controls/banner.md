@@ -12,7 +12,8 @@
 
 </tldr>
 
-A banner notification informs the user about the state of a specific context in the project. For example, when there is a missing or broken configuration for some file.
+A banner notification informs the user about the state of a specific context in the project.
+For example, when there is a missing or broken configuration for some file.
 
 ![](banner_error.png){width=796}
 
@@ -26,7 +27,8 @@ Use a banner if user actions should attract attention in a file tab, tool window
 ![](dialog-example.png){width=500 style=block}
 *The component needs to be installed to run the available virtual devices.*
 
-Do **not** use a banner if there is no particular UI component it can be tied to. Use a [balloon notification](balloon.md) in the main window instead.
+Do **not** use a banner if there is no particular UI component it can be tied to.
+Use a [balloon notification](balloon.md) in the main window instead.
 
 For all other cases, choose another notification type.
 

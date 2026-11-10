@@ -61,7 +61,8 @@
 
 ## Date and time
 
-By default, the date and time formats are taken from the system settings. The format can be changed on the <ui-path>Settings | Appearance & Behavior | System Settings | Date Formats</ui-path> page.
+By default, the date and time formats are taken from the system settings.
+The format can be changed on the <ui-path>Settings | Appearance & Behavior | System Settings | Date Formats</ui-path> page.
 
 See the table below to understand in which cases to show date and time.
 
@@ -101,7 +102,8 @@ See the table below to understand in which cases to show date and time.
     <td>Date and day of week</td>
     <td>Tuesday, 30 August</td>
     <td>
-        <p>Use as headers in timelines, e.g., Event Log. The day of the week helps to quickly understand how long ago was the event.</p>
+        <p>Use as headers in timelines, e.g., Event Log.
+        The day of the week helps to quickly understand how long ago was the event.</p>
         <p>Use <i>Today</i> and <i>Yesterday</i> for the last two days, use exact date for all other days.</p>
     </td>
 </tr>
@@ -156,7 +158,10 @@ See the table below to understand in which cases to show date and time.
         <p>1 m 30 s</p>
         <p>05 Jan 2019, 14:04</p>
     </td>
-    <td><p>Use for changing duration. Select units depending on the process type. E.g., Unit tests usually run less than a minute, so show only seconds and milliseconds. Build tasks usually run more than a minute, so show minutes and seconds.</p>
+    <td><p>Use for changing duration.
+        Select units depending on the process type.
+        E.g., Unit tests usually run less than a minute, so show only seconds and milliseconds.
+        Build tasks usually run more than a minute, so show minutes and seconds.</p>
         <p>Omit hours and seconds that do not provide additional data.</p>
 </td>
 </tr>
@@ -245,7 +250,8 @@ Right-align numeric values.
 
 ![](data_formats_table.png){width=299}
 
-Include the unit in the column header if all values share the same unit. Convert each number to use the same unit.
+Include the unit in the column header if all values share the same unit.
+Convert each number to use the same unit.
 If it’s not possible, e.g., the scatter of numbers is too large, include the unit with each value.
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |

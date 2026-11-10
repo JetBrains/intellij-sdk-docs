@@ -6,7 +6,10 @@
 
 ## Title
 
-> The current Windows guidelines use sentence capitalization for actions. Some Microsoft products still title-capitalize actions according to the previous guidelines. macOS also title-capitalizes actions. Since IntelliJ IDEs are cross-platform, they use title capitalization as well.
+> The current Windows guidelines use sentence capitalization for actions.
+> Some Microsoft products still title-capitalize actions according to the previous guidelines.
+> macOS also title-capitalizes actions.
+> Since IntelliJ IDEs are cross-platform, they use title capitalization as well.
 >
 {style="note"}
 

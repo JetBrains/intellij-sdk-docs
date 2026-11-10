@@ -18,9 +18,10 @@ Lists private APIs and their replacements in IntelliJ Platform and plugins.
 This page lists commonly used API annotated with [`@ApiStatus.Internal`](%gh-java-annotations%/common/src/main/java/org/jetbrains/annotations/ApiStatus.java),
 which indicates it is _private API_ and must not be used outside of IntelliJ Platform itself:
 
-> Indicates that the annotated element (class, method, field, etc.) **must not be considered as a public API**. It's made visible to allow
-> usages in other packages of the declaring library, but it **must not be used outside of that library**. Such elements
-> may be renamed, changed, or removed in future versions.
+> Indicates that the annotated element (class, method, field, etc.) **must not be considered as a public API**.
+> It's made visible to allow usages in other packages of the declaring library,
+> but it **must not be used outside of that library**.
+> Such elements may be renamed, changed, or removed in future versions.
 >
 {title="ApiStatus.Internal Javadoc"}
 

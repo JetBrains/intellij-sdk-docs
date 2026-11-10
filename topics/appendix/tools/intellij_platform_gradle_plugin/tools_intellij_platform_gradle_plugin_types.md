@@ -76,15 +76,18 @@ Each entry is composed of a product code and coordinates used for dependency and
 
 Notes:
 - `Aqua` (`QA`) and `Writerside` (`WRS`) are deprecated and no longer available as target IntelliJ Platform products.
-- `IntellijIdeaCommunity` (`IC`) and `PyCharmCommunity` (`PC`) are available only for versions earlier than 2025.3 (build 253). For 2025.3+ use `IntellijIdea` (`IU`) and `PyCharm` (`PY`).
-- `IntellijIdeaUltimate` (`IU`) and `PyCharmProfessional` (`PY`) are legacy types for versions earlier than 2025.3 (build 253). For 2025.3+ use `IntellijIdea` (`IU`) and `PyCharm` (`PY`).
+- `IntellijIdeaCommunity` (`IC`) and `PyCharmCommunity` (`PC`) are available only for versions earlier than 2025.3 (build 253).
+  For 2025.3+ use `IntellijIdea` (`IU`) and `PyCharm` (`PY`).
+- `IntellijIdeaUltimate` (`IU`) and `PyCharmProfessional` (`PY`) are legacy types for versions earlier than 2025.3 (build 253).
+  For 2025.3+ use `IntellijIdea` (`IU`) and `PyCharm` (`PY`).
 
 ## `ProductMode`
 {#ProductMode}
 
 [`ProductMode`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/ProductMode.kt)
 
-Describes a mode in which a product may be started. This can be configured on the target platform dependency to influence how the IDE is started for development and testing.
+Describes a mode in which a product may be started.
+This can be configured on the target platform dependency to influence how the IDE is started for development and testing.
 
 | Name       | Description                                                                                                                                                                                                                          |
 |------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

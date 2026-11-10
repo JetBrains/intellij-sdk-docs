@@ -310,8 +310,8 @@ Now, inside the editor the injected portion will work as expected where foo is t
 ## Formatting
 <primary-label ref="2022.3"/>
 
-To control delegation of formatting to containing file, implement [`InjectedFormattingOptionsProvider`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/InjectedFormattingOptionsProvider.java) and
-register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.formatting.injectedOptions"/></include>.
+To control delegation of formatting to containing file, implement [`InjectedFormattingOptionsProvider`](%gh-ic%/platform/code-style-api/src/com/intellij/formatting/InjectedFormattingOptionsProvider.java)
+and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.formatting.injectedOptions"/></include>.
 
 ## Injection Highlighting
 

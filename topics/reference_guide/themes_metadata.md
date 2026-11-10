@@ -41,11 +41,13 @@ The following minimal sample demonstrates all details required when exposing UI 
 ### Attributes
 
 * `name` - Human-readable name, e.g., plugin name
-* `fixed` - Specifies whether metadata describes external elements, e.g., an UI library. Default:&nbsp;`false`.
+* `fixed` - Specifies whether metadata describes external elements, e.g., an UI library.
+  Default:&nbsp;`false`.
 * `ui` - Root element listing all customization keys:
   * `key` - Customization key name (see [Key Naming Scheme](#key-naming-scheme))
   * `description` - Description to be shown to Theme authors editing <path>*.theme.json</path> files
-  * `deprecated` - `true` when the key is deprecated. It is highly recommended to provide explanation and/or replacement in `description` if available.
+  * `deprecated` - `true` when the key is deprecated.
+    It is highly recommended to provide explanation and/or replacement in `description` if available.
   * `source` - Fully qualified name of the underlying UI component implementation, e.g.,&nbsp;`javax.swing.JPasswordField`
   * `since` - The release number when this UI customization key was exposed, e.g.,&nbsp;`2021.1`
 
@@ -119,22 +121,27 @@ Notable examples of common parts:
 #### SubObject
 
 Use a subobject when creating keys for one of the following:
-* An implementation variation. Usually has a similar set of UI property keys as the parent object. Examples:
+* An implementation variation.
+  Usually has a similar set of UI property keys as the parent object.
+  Examples:
   * Default button: `Button.Default.background`
   * Tool window notification: `Notification.ToolWindow.errorBackground`
-* An internal smaller component of a complex component with its own UI and behavior. Examples:
+* An internal smaller component of a complex component with its own UI and behavior.
+  Examples:
   * Tool window tab: `ToolWindow.HeaderTab.inactiveBackground`
   * The hint text at the bottom of a popup: `Popup.Advertiser.background`
 
 #### Gradient Color
 
-If a component has a gradient color, add the words "start" and "end" for the beginning and ending of a gradient. Examples:
+If a component has a gradient color, add the words "start" and "end" for the beginning and ending of a gradient.
+Examples:
 * `Button.startBorderColor` / `Button.endBorderColor`
 * `SearchMatch.startBackground` / `SearchMatch.endBackground`
 
 #### Capitalization
 
-Capitalize Object and SubObject. Use lowerCamelCase for property.
+Capitalize Object and SubObject.
+Use lowerCamelCase for property.
 
 #### Do Not Use
 

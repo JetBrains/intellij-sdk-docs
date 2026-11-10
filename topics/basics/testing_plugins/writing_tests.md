@@ -20,6 +20,7 @@ However, for many common cases, the framework provides helper methods that can m
 
 To compare the results of executing the action with the expected results, use the `checkResultByFile()` method.
 The file with the expected results can also contain [markup](test_project_and_testdata_directories.md#special-markup) to specify the expected caret position or selected text range.
-Suppose the tested action modifies multiple files (a project-wide refactoring, for example). In that case, compare an entire directory under the test project with the expected output using `PlatformTestUtil.assertDirectoriesEqual()`.
+Suppose the tested action modifies multiple files (a project-wide refactoring, for example).
+In that case, compare an entire directory under the test project with the expected output using `PlatformTestUtil.assertDirectoriesEqual()`.
 
 See [Useful Classes](testing_faq.md#useful-classes) for other common testing functionality.

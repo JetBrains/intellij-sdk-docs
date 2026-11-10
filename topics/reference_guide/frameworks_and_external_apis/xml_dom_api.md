@@ -559,7 +559,8 @@ In the example with EJB, the factory would once again look for an Entity Bean na
 Stable DOM elements also implement `StableElement`, which has the following methods:
 
 * `DomElement getWrappedElement()` - just returns the current element to which all method calls are delegated;
-* `void invalidate()` - makes the wrapped element invalid. Any following method call will cause the factory to create a new delegate;
+* `void invalidate()` - makes the wrapped element invalid.
+  Any following method call will cause the factory to create a new delegate;
 * `void revalidate()` - calls the factory, and if it returns something new (i.e. not the same as the current wrapped element) invalidates the old value and adopts the new one.
 
 ### Visitor

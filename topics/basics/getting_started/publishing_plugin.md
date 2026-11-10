@@ -73,8 +73,7 @@ For the initial upload, manual distribution, or local installation, invoke the `
 If the project is configured to rely on [](plugin_signing.md), use the `signPlugin` task instead
 (Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin), [1.x](tools_gradle_intellij_plugin.md#tasks-signplugin)).
 
-The resulting ZIP file is located in <path>build/distributions</path> and can then be installed in the IDE via [<ui-path>Install Plugin from Disk...</ui-path>](https://www.jetbrains.com/help/idea/managing-plugins.html#install_plugin_from_disk) action
-or uploaded to a [](custom_plugin_repository.md).
+The resulting ZIP file is located in <path>build/distributions</path> and can then be installed in the IDE via [<ui-path>Install Plugin from Disk...</ui-path>](https://www.jetbrains.com/help/idea/managing-plugins.html#install_plugin_from_disk) action or uploaded to a [](custom_plugin_repository.md).
 
 ### Providing the Personal Access Token to Gradle
 
@@ -108,8 +107,7 @@ export ORG_GRADLE_PROJECT_intellijPlatformPublishingToken='YOUR_TOKEN'
 
 Now provide the environment variable in the run configuration for running the `publishPlugin` task locally
 (Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin), [1.x](tools_gradle_intellij_plugin.md#tasks-publishplugin)).
-To do so, create a Gradle run configuration (if not already done), select the Gradle project, specify the
-`publishPlugin` task, and then add the environment variable.
+To do so, create a Gradle run configuration (if not already done), select the Gradle project, specify the `publishPlugin` task, and then add the environment variable.
 
 <tabs group="gradlePluginVersion">
 
@@ -138,7 +136,8 @@ tasks {
 </tab>
 </tabs>
 
-Note that it's still required to put some default values (can be empty) in the Gradle properties. Otherwise, there can be a compilation error.
+Note that it's still required to put some default values (can be empty) in the Gradle properties.
+Otherwise, there can be a compilation error.
 
 #### Using Parameters for the Gradle Task
 
@@ -159,8 +158,7 @@ Verify this by [installing the plugin from disk](https://www.jetbrains.com/help/
 #### Signing a Plugin
 
 The Marketplace signing is designed to ensure that plugins are not modified over the course of the publishing and delivery pipeline.
-The `signPlugin` Gradle task
-(Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin), [1.x](tools_gradle_intellij_plugin.md#tasks-signplugin)),
+The `signPlugin` Gradle task (Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin), [1.x](tools_gradle_intellij_plugin.md#tasks-signplugin)),
 will be executed automatically right before the `publishPlugin` task
 (Reference: [2.x](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin), [1.x](tools_gradle_intellij_plugin.md#tasks-publishplugin)).
 

@@ -107,7 +107,8 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 ### Java Plugin 2020.3
 
 The PSI structure of multi-dimensional arrays in Java source files changed (see `com.intellij.psi.PsiTypeElement`)
-: Now the children are flattened: brackets for all the dimensions are direct children of the `PsiTypeElement` that represent the multi-dimensional array. This change doesn't break source or binary compatibility but may produce behavioral changes in the code that traverses the tree of Java source files.
+: Now the children are flattened: brackets for all the dimensions are direct children of the `PsiTypeElement` that represent the multi-dimensional array.
+  This change doesn't break source or binary compatibility but may produce behavioral changes in the code that traverses the tree of Java source files.
 
 The `com.intellij.psi.PsiAnnotation.getOwner` method now returns `PsiType` instead of `PsiTypeElement` for type annotations in Java source files
 : This change supports identifying whether a type annotation is attached to an inner class or a particular dimension of a multi-dimensional array.
@@ -157,19 +158,27 @@ Required changes in project setup
 ### IntelliJ Platform 2020.2
 
 Support for JavaFX deprecated
-: Plugins should migrate to [JCEF](embedded_browser_jcef.md). Alternatively, add an explicit dependency on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins).
+: Plugins should migrate to [JCEF](embedded_browser_jcef.md).
+  Alternatively, add an explicit dependency on [JavaFX Runtime for Plugins](https://plugins.jetbrains.com/plugin/14250-javafx-runtime-for-plugins).
 
 `com.intellij.psi.util.PsiTreeUtil.processElements(element, processor)` method parameter type changed from `PsiElementProcessor` to `PsiElementProcessor<PsiElement>`
-: This may break source-compatibility with clients that pass a more specific processor. Passing a more specific processor was illegal before because the `processElements` passes every descendant `PsiElement` to the processor regardless of its type. However, this worked with some poorly written clients, e.g. `PsiElementProcessor.CollectFilteredElements` and `PsiElementProcessor.FindFilteredElement` (both deprecated now). To simplify the migration, a new three-arg `processElements(element, elementClass, processor)` is introduced that filters by element class. In most cases, the simplest migration would be to add a wanted element class as a second argument. However, it's advised to use `SyntaxTraverser` API instead, which is more rich and flexible.
+: This may break source-compatibility with clients that pass a more specific processor.
+  Passing a more specific processor was illegal before because the `processElements` passes every descendant `PsiElement` to the processor regardless of its type.
+  However, this worked with some poorly written clients, e.g. `PsiElementProcessor.CollectFilteredElements` and `PsiElementProcessor.FindFilteredElement` (both deprecated now).
+  To simplify the migration, a new three-arg `processElements(element, elementClass, processor)` is introduced that filters by element class.
+  In most cases, the simplest migration would be to add a wanted element class as a second argument.
+  However, it's advised to use `SyntaxTraverser` API instead, which is more rich and flexible.
 
 `com.maddyhome.idea.copyright.util.FileTypeUtil.getFileTypeByName(String)` method removed
-: This was an internal utility method not intended for use in plugins. Use `FileTypeManager.getInstance().findFileTypeByName()` instead.
+: This was an internal utility method not intended for use in plugins.
+  Use `FileTypeManager.getInstance().findFileTypeByName()` instead.
 
 `javassist` package removed
 : [Javassist](https://github.com/jboss-javassist/javassist) library was removed, bundle it with the plugin instead.
 
 `com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter.INSTANCES` field removed
-: This field leaked instances of plugin's extensions on plugin unloading. Use `com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter#EP_NAME.getExtensionList()` directly instead.
+: This field leaked instances of plugin's extensions on plugin unloading.
+  Use `com.intellij.compiler.backwardRefs.LanguageCompilerRefAdapter#EP_NAME.getExtensionList()` directly instead.
 
 `groovy.util.AntBuilder` class removed
 : Add `org.codehaus.groovy:groovy-ant` dependency.
@@ -234,10 +243,12 @@ IntelliJ IDEA supports preview features of the latest Java release and one upcom
 ### GitHub Plugin 2020.2
 
 `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue(ProgressManager)` constructor removed
-: Required for more tight control of task scheduling. Use `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.Companion#create(ProgressManager, (ProgressIndicator) -> T)` instead of subclassing.
+: Required for more tight control of task scheduling.
+  Use `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.Companion#create(ProgressManager, (ProgressIndicator) -> T)` instead of subclassing.
 
 `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.compute(ProgressIndicator)` method return type changed from `T` to `CompletableFuture<T>`
-: Required for more tight control of task scheduling. Use `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.Companion#create(ProgressManager, (ProgressIndicator) -> T)` instead of subclassing.
+: Required for more tight control of task scheduling.
+  Use `org.jetbrains.plugins.github.util.LazyCancellableBackgroundProcessValue.Companion#create(ProgressManager, (ProgressIndicator) -> T)` instead of subclassing.
 
 `org.jetbrains.plugins.github.pullrequest.ui.GHCompletableFutureLoadingModel()` constructor removed
 : Model was made disposable and it is now required to pass parent disposable in constructor.
@@ -263,7 +274,8 @@ Java EE plugins split
 ### JavaScript Plugin 2020.2
 
 `com.intellij.lang.javascript.linter.jslint` package removed
-: JSLint functionality has been unbundled and moved to a separate plugin. [Issue](https://youtrack.jetbrains.com/issue/WEB-44511)
+: JSLint functionality has been unbundled and moved to a separate plugin.
+  [Issue](https://youtrack.jetbrains.com/issue/WEB-44511)
 
 ### PhpStorm and PHP Plugin 2020.2
 
@@ -273,7 +285,8 @@ Added Union Types Support
 ### Kotlin Plugin 1.4
 
 `org.jetbrains.kotlin.idea.core.formatter.KotlinCodeStyleSettings.PACKAGES_TO_USE_STAR_IMPORTS` field type changed from `PackageEntryTable` to `KotlinPackageEntryTable`
-: This change was required to implement import layout order for Kotlin. `KotlinPackageEntryTable` can be used in the same manner as `PackageEntryTable`.
+: This change was required to implement import layout order for Kotlin.
+  `KotlinPackageEntryTable` can be used in the same manner as `PackageEntryTable`.
 
 ### Python Plugin 2020.2
 
@@ -288,7 +301,8 @@ Added Union Types Support
 ### IntelliJ Platform 2020.1
 
 `com.intellij.compiler.ant` package removed
-: 'Generate Ant build' functionality is removed from the IDE. Delete the code extending this or replace it with a dependency on the `generate-ant` plugin.
+: 'Generate Ant build' functionality is removed from the IDE.
+  Delete the code extending this or replace it with a dependency on the `generate-ant` plugin.
 
 `org.jetbrains.jps.incremental.ModuleLevelBuilder.getCompilableFileExtensions` marked abstract
 : Implement it in `ModuleLevelBuilder`'s implementation.

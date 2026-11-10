@@ -14,7 +14,8 @@
     <tr>
         <td><img src="toolbar_icon_button.png" alt="Using links instead of buttons" width="378"/></td>
         <td>
-            A toolbar icon button contains only an icon. There are three types of icon buttons:
+            A toolbar icon button contains only an icon.
+            There are three types of icon buttons:
             <list>
                 <li> An <b>action</b> triggers immediately.</li>
                 <li> A <b>toggle</b> switches between on and off states.</li>
@@ -52,9 +53,11 @@ Use an [existing icon](https://intellij-icons.jetbrains.design) or create a new 
 ### Filter badge
 <img src="toolbar_icon_button_badge.png" alt="Using links instead of buttons" width="706"/>
 
-For filter actions, show a badge over an icon when a non-default option is selected. The badge helps to see if the content is in its default state or filtered.
+For filter actions, show a badge over an icon when a non-default option is selected.
+The badge helps to see if the content is in its default state or filtered.
 
 ### Search option icon
 <img src="toolbar_icon_button_search_option.png" alt="Using links instead of buttons" width="706"/>
 
-Search option icons have a more noticeable pressed state to allow quickly seeing what affects the search results. See [Search options](search_field.md#search-options) for details.
+Search option icons have a more noticeable pressed state to allow quickly seeing what affects the search results.
+See [Search options](search_field.md#search-options) for details.

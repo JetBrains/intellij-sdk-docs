@@ -1,14 +1,16 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Punctuation
 
 <link-summary>Punctuation rules for labels and description texts.</link-summary>
 
-Use the following rules for labels and description texts in IntelliJ user interfaces. For punctuation in numbers and times, see [Data formats](data_formats.md).
+Use the following rules for labels and description texts in IntelliJ user interfaces.
+For punctuation in numbers and times, see [Data formats](data_formats.md).
 
 ## Ellipsis
 
-End an action name with an ellipsis if it opens a dialog where input is required or possible. An ellipsis helps users understand if an action is immediate, or additional interaction is to follow.
+End an action name with an ellipsis if it opens a dialog where input is required or possible.
+An ellipsis helps users understand if an action is immediate, or additional interaction is to follow.
 
 <p>This rule applies to actions in the following controls: <a href="button.topic">button</a>, <a href="link.md">link</a>, menu item.</p>
 
@@ -51,14 +53,16 @@ End an action name with an ellipsis if it opens a dialog where input is required
 </tr>
 </table>
 
-Use an ellipsis at the end of a truncated text if there is no scrollbar and this is not a table column, see [truncation in table columns](table.md#sizes-and-placement). Provide a way to show the full text, for example, expand the control or show a tooltip on hover.
+Use an ellipsis at the end of a truncated text if there is no scrollbar and this is not a table column, see [truncation in table columns](table.md#sizes-and-placement).
+Provide a way to show the full text, for example, expand the control or show a tooltip on hover.
 
 ![](2_01_truncated_text.png){width=399 style=block}
 *A notification can be expanded to show the full text.*
 
 Use an ellipsis with verbs describing an ongoing process, for example, Searching… See more examples in [Progress text](progress_text.md).
 
-Use the ellipsis character … (`U+2026` in Unicode). Do not use three separate "dot" characters.
+Use the ellipsis character … (`U+2026` in Unicode).
+Do not use three separate "dot" characters.
 
 ## Period
 
@@ -118,9 +122,11 @@ Use contractions only if the action name has 4 and more words, and the contracte
 
 *Don’t* or *Do not*:
 
-* Always contract in the phrase *Don’t [some verb] again*. The phrase is common, and the meaning is easily recognized.
+* Always contract in the phrase *Don’t [some verb] again*.
+  The phrase is common, and the meaning is easily recognized.
   ![](3_01_dont_ask_again.png){width=399}
-* In other cases, do not contract. The full form reduces chances that the relevant meaning might be missed.
+* In other cases, do not contract.
+  The full form reduces chances that the relevant meaning might be missed.
 
 *<format color="#C3481B">Don’t</format> send → Do not send*
 
@@ -130,7 +136,8 @@ Use contractions only if the action name has 4 and more words, and the contracte
 
 Use single quotation marks by default.
 
-> Use a straight single quotation mark ' (`U+0027`). Do not use opening and closing quotation marks ‘ ’ (`U+2018`/`U+2019`).
+> Use a straight single quotation mark ' (`U+0027`).
+> Do not use opening and closing quotation marks ‘ ’ (`U+2018`/`U+2019`).
 >
 {style="note"}
 
@@ -158,4 +165,5 @@ Avoid in other cases.
 
 ## Exclamation points
 
-Do not use. Exclamation points can cause the sentence tone to be interpreted as aggressive, condescending, or overly informal.
+Do not use.
+Exclamation points can cause the sentence tone to be interpreted as aggressive, condescending, or overly informal.

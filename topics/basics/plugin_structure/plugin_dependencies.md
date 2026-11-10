@@ -5,7 +5,8 @@
 <!-- https://jb.gg/ij-plugin-dependencies -->
 
 <web-summary>
-Declaring dependencies on other IntelliJ Platform-based plugins. Locating plugin IDs required to set up dependencies.
+Declaring dependencies on other IntelliJ Platform-based plugins.
+Locating plugin IDs required to set up dependencies.
 </web-summary>
 
 <link-summary>Declaring dependencies on other IntelliJ Platform-based plugins.</link-summary>
@@ -29,8 +30,8 @@ To express a dependency on classes from other plugins or modules, perform the fo
 
 > If `java.lang.NoClassDefFoundError` occurs at runtime, most likely Step 3 was omitted.
 >
-> Otherwise, loading the plugin dependency may have failed, check log files from
-> the [Development Instance](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins).
+> Otherwise, loading the plugin dependency may have failed,
+> check log files from the [Development Instance](ide_development_instance.md#development-instance-settings-caches-logs-and-plugins).
 >
 {title="Getting java.lang.NoClassDefFoundError"}
 
@@ -40,7 +41,8 @@ To express a dependency on classes from other plugins or modules, perform the fo
 {#locating-plugin-id-and-preparing-sandbox}
 
 A compatible version must be chosen carefully according to the plugin's [compatibility](build_number_ranges.md).
-For non-bundled plugins, it is not possible to specify the minimum/maximum version for the dependent plugin. ([Issue](https://youtrack.jetbrains.com/issue/IDEABKL-7906))
+For non-bundled plugins, it is not possible to specify the minimum/maximum version for the dependent plugin.
+([Issue](https://youtrack.jetbrains.com/issue/IDEABKL-7906))
 
 ### JetBrains Marketplace
 
@@ -130,7 +132,8 @@ dependencies {
 }
 ```
 
-For bundled plugins, use `bundledPlugin()`. Use `plugin()` for non-bundled plugins (for example, from [JetBrains Marketplace](https://plugins.jetbrains.com)).
+For bundled plugins, use `bundledPlugin()`.
+Use `plugin()` for non-bundled plugins (for example, from [JetBrains Marketplace](https://plugins.jetbrains.com)).
 
 See [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) for full reference and additional options.
 

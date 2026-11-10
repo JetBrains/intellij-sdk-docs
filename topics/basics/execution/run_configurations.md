@@ -128,8 +128,8 @@ If a plugin requires creating run configurations programmatically, .e.g, from a 
 ## Creating a Run Configuration from Context
 
 Run configurations can be created and run from context, e.g., by right-clicking an application main method, a test class/method, etc., directly in the editor or the project view.
-This is achieved by implementing [`LazyRunConfigurationProducer`](%gh-ic%/platform/execution/src/com/intellij/execution/actions/LazyRunConfigurationProducer.kt) and registering
-it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.runConfigurationProducer"/></include>.
+This is achieved by implementing [`LazyRunConfigurationProducer`](%gh-ic%/platform/execution/src/com/intellij/execution/actions/LazyRunConfigurationProducer.kt)
+and registering it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.runConfigurationProducer"/></include>.
 
 The extension requires implementing the following methods:
 * `getConfigurationFactory()` - returns the factory creating run configurations of the type specified in the extension class implementation.
@@ -171,7 +171,8 @@ In case the run configuration settings are incomplete, the method should throw o
 - [`RuntimeConfigurationException`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RuntimeConfigurationException.java) - in case of non-fatal error, which allows executing the configuration
 - [`RuntimeConfigurationError`](%gh-ic%/platform/execution/src/com/intellij/execution/configurations/RuntimeConfigurationError.java) - in case of a fatal error that makes it impossible to execute the run configuration
 
-If the configuration contains any warnings or errors, its icon will be patched with the error indicator and the message will be displayed on the configuration settings page. In case of `RuntimeConfigurationError`, if a user tries to execute the configuration, the run configuration settings dialog will be presented so that the user can fix the issues before the execution.
+If the configuration contains any warnings or errors, its icon will be patched with the error indicator and the message will be displayed on the configuration settings page.
+In case of `RuntimeConfigurationError`, if a user tries to execute the configuration, the run configuration settings dialog will be presented so that the user can fix the issues before the execution.
 
 All the mentioned exceptions allow providing a quick fix for the reported issue.
 If the quick fix implementation is provided, the quick fix button will be displayed next to the error message.
@@ -242,8 +243,8 @@ To substitute variable references with the actual references, it is required to 
 Sometimes, it is necessary to perform specific tasks before a configuration is actually run, e.g., build the project, run a build tool preparation task, launch a web browser, etc.
 Plugins can provide custom tasks that can be added by users to a created run configuration.
 
-To provide a custom task, implement [`BeforeRunTaskProvider`](%gh-ic%/platform/execution/src/com/intellij/execution/BeforeRunTaskProvider.java) and register it
-in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.stepsBeforeRunProvider"/></include>.
+To provide a custom task, implement [`BeforeRunTaskProvider`](%gh-ic%/platform/execution/src/com/intellij/execution/BeforeRunTaskProvider.java)
+and register it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.stepsBeforeRunProvider"/></include>.
 The provider implementation is responsible for creating a task instance for a given run configuration and executing the task.
 
 If access to indexes is not required, it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI).
@@ -274,5 +275,5 @@ See their Javadocs for the details.
 
 ### Providing Custom Macros
 
-If the predefined list of macros is not enough, a plugin can provide custom macros by extending [`Macro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/Macro.java) and
-registering it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.macro"/></include>.
+If the predefined list of macros is not enough, a plugin can provide custom macros by extending [`Macro`](%gh-ic%/platform/macro/src/com/intellij/ide/macro/Macro.java)
+and registering it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.macro"/></include>.

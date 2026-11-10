@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Window Sizes
 
@@ -6,13 +6,15 @@
 
 Follow these guidelines to select the correct size when creating a dialog or a popup for IntelliJ-based products.
 
-For simple cases use the [default sizes](Window-sizes.md#default-sizes). When they don't work well, set [minimum sizes for components](Window-sizes.md#minimum-sizes-for-components).
+For simple cases use the [default sizes](Window-sizes.md#default-sizes).
+When they don't work well, set [minimum sizes for components](Window-sizes.md#minimum-sizes-for-components).
 
 ## Default sizes
 
 ### Dialog
 
-There are four recommended window sizes for dialogs: **small**, **medium**, **large**, and **extra large**. Select the size depending on the amount of content required to keep the important information visible.
+There are four recommended window sizes for dialogs: **small**, **medium**, **large**, and **extra large**.
+Select the size depending on the amount of content required to keep the important information visible.
 
 ![A preview of recommended window sizes for dialogs: extra small, small, medium, and large](dialog_popup_sizes.png){width="706"}
 
@@ -48,7 +50,8 @@ Best for:
 * Master-detail layout.
 * Two-column layout with a code snippet or an input field with long text in any of the columns.
 * Two code snippets or input fields with long texts in a row.
-* Two-column layout with an image or a video in any of the columns. In this case, the image or the video takes the most space.
+* Two-column layout with an image or a video in any of the columns.
+  In this case, the image or the video takes the most space.
 
 For example, the <control>Run/Debug Configuration</control> dialog has a master-detail layout with a tree in the first column and a list of controls with long texts in the second column:
 
@@ -84,9 +87,11 @@ The default width and height are adaptable to the content inside if it exceeds t
 
 #### Content-rich popups
 
-If a popup has multiple sections and long texts, set the default width to **medium** (500 px) or **large** (750 px). When the default width doesn't work, set the [minimum sizes for components](Window-sizes.md#minimum-sizes-for-components).
+If a popup has multiple sections and long texts, set the default width to **medium** (500 px) or **large** (750 px).
+When the default width doesn't work, set the [minimum sizes for components](Window-sizes.md#minimum-sizes-for-components).
 
-Height is adaptable based on the content. If a popup has a scrollable content, set the default height respectively: **medium** (350 px) or **large** (525 px), and use a [scrollbar](scrollbar.md).
+Height is adaptable based on the content.
+If a popup has a scrollable content, set the default height respectively: **medium** (350 px) or **large** (525 px), and use a [scrollbar](scrollbar.md).
 
 <table style="none" border="false">
    <tr>
@@ -105,7 +110,8 @@ Height is adaptable based on the content. If a popup has a scrollable content, s
 
 #### Maximum width and height
 
-Set the maximum width and height to 80% of the screen size. Use a [scrollbar](scrollbar.md) if the popup's content exceeds the set dimensions.
+Set the maximum width and height to 80% of the screen size.
+Use a [scrollbar](scrollbar.md) if the popup's content exceeds the set dimensions.
 
 ### Tool windows
 
@@ -127,7 +133,8 @@ For example, the vertical <control>Project</control> tool window and the horizon
 
 ## Minimum sizes for components
 
-When the default sizes are either too big or too small for a window, or the window has a complex layout, add minimum sizes to content inside the window. This will make the content displayed correctly and reduce any potential issues caused by resizing the window.
+When the default sizes are either too big or too small for a window, or the window has a complex layout, add minimum sizes to content inside the window.
+This will make the content displayed correctly and reduce any potential issues caused by resizing the window.
 
 ### How to set the size correctly
 
@@ -236,7 +243,9 @@ When the default sizes are either too big or too small for a window, or the wind
 
 #### Example 1
 
-The <control>Rename Inheritors</control> dialog has a table with FQNs. Add 350&nbsp;px as the minimum width for a table column. This will make the dialog wider than the default <control>Medium</control> size (500&nbsp;px) but will show more of FQNs.
+The <control>Rename Inheritors</control> dialog has a table with FQNs.
+Add 350&nbsp;px as the minimum width for a table column.
+This will make the dialog wider than the default <control>Medium</control> size (500&nbsp;px) but will show more of FQNs.
 
 <table style="none" border="false">
     <tr>
@@ -255,7 +264,9 @@ The <control>Rename Inheritors</control> dialog has a table with FQNs. Add 350&n
 
 #### Example 2
 
-The <control>Settings</control> dialog has the default <control>extra large</control> size 1000&nbsp;px. In <control>Code Style | Java</control> set 400&nbsp;px as the minimum width of the code editor. This will make the dialog wider but will show more code.
+The <control>Settings</control> dialog has the default <control>extra large</control> size 1000&nbsp;px.
+In <control>Code Style | Java</control> set 400&nbsp;px as the minimum width of the code editor.
+This will make the dialog wider but will show more code.
 
 <table style="none" border="false">
     <tr>
@@ -274,7 +285,8 @@ The <control>Settings</control> dialog has the default <control>extra large</con
 
 #### Example 3
 
-Instead of setting a default size for the <control>Diagram</control> popup, add 100&nbsp;px horizontal and vertical insets inside it and make the width and height adaptive to its content. This will help small diagrams be more noticeable and make the Diagram popup of any size easier to read.
+Instead of setting a default size for the <control>Diagram</control> popup, add 100&nbsp;px horizontal and vertical insets inside it and make the width and height adaptive to its content.
+This will help small diagrams be more noticeable and make the Diagram popup of any size easier to read.
 
 <table style="none" border="false">
     <tr>
@@ -293,7 +305,8 @@ Instead of setting a default size for the <control>Diagram</control> popup, add 
 
 ## Empty state
 
-Some components, for example, <control>tables</control>, can have an [empty state](empty_state.md) when there is no content. In this case, the minimum size of a component in both empty and filled states is defined by its filled state.
+Some components, for example, <control>tables</control>, can have an [empty state](empty_state.md) when there is no content.
+In this case, the minimum size of a component in both empty and filled states is defined by its filled state.
 
 For example, the size of the <control>Custom Plugin Repository</control> dialog is defined by the minimum size of the table that contains URLs (minimum 350&nbsp;px wide), and not by the size of the smaller empty state:
 

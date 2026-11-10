@@ -84,7 +84,8 @@ Users with a poor internet connection may cancel the download when they realize 
 
 Consider the following techniques for optimizing the plugin distribution size:
 
-* Decrease the number of dependencies. Check if the target platform includes utilities (like those mentioned in [](ui_faq.md)) or [libraries](api_changes_list.md#bundled-library-updates) the plugin needs and reuse them.
+* Decrease the number of dependencies.
+  Check if the target platform includes utilities (like those mentioned in [](ui_faq.md)) or [libraries](api_changes_list.md#bundled-library-updates) the plugin needs and reuse them.
 * Make sure no unneeded or multiple versions of the same dependencies are packaged in the plugin distribution.
 * Optimize assets like icons, images, videos, etc.
 * If large resources (e.g., SDKs, reference documentation) are needed only in specific setups, consider downloading them by the plugin on-demand instead of bundling them in the plugin distribution.
@@ -114,7 +115,8 @@ It is recommended to proofread the texts or use one of the [spellcheck plugins](
 
 ## Plugin Description and Presentation
 
-The description on the plugin page is the place where users have the first contact with the plugin, and its content helps them to decide if it is what they are looking for. The description should be clear, polished, and follow the rules described in the JetBrains Marketplace [documentation](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description).
+The description on the plugin page is the place where users have the first contact with the plugin, and its content helps them to decide if it is what they are looking for.
+The description should be clear, polished, and follow the rules described in the JetBrains Marketplace [documentation](https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description).
 See also this webinar about [5 tips for optimizing the JetBrains Marketplace plugin page](https://youtu.be/oB1GA9JeeiY?t=52).
 
 ## Providing Translations

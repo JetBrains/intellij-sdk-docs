@@ -67,11 +67,9 @@ Invoking <control>SDK: Convert ternary operator to if statement</control> intent
 
 The intention description is available in the UI in two places:
 - under <ui-path>Settings | Editor | Intentions | SDK Intentions | SDK: Convert ternary operator to if statement</ui-path>.
-- near the selected intention action in the [Context Actions](https://www.jetbrains.com/help/idea/intention-actions.html#apply-intention-actions) popup
-in the editor when [Preview](code_intentions_preview.md) cannot be shown.
+- near the selected intention action in the [Context Actions](https://www.jetbrains.com/help/idea/intention-actions.html#apply-intention-actions) popup in the editor when [Preview](code_intentions_preview.md) cannot be shown.
 
-The before/after examples are available in the UI
-under <ui-path>Settings | Editor | Intentions | SDK Intentions | SDK: Convert ternary operator to if statement</ui-path>.
+The before/after examples are available in the UI under <ui-path>Settings | Editor | Intentions | SDK Intentions | SDK: Convert ternary operator to if statement</ui-path>.
 
 The plugin provides description and before/after examples files in the <path>resources/intentionDescriptions/ConditionalOperatorConverter</path> directory:
 - <path>description.html</path> - provides the general information about the intention

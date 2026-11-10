@@ -964,7 +964,8 @@ See also [](#tasks-printproductsreleases).
 #### `productsReleasesUpdateFiles`
 {#tasks-listproductsreleases-productsreleasesupdatefiles}
 
-Path to the products releases update files. By default, one is downloaded from `IntelliJPluginConstants.IDEA_PRODUCTS_RELEASES_URL`.
+Path to the products releases update files.
+By default, one is downloaded from `IntelliJPluginConstants.IDEA_PRODUCTS_RELEASES_URL`.
 
 {type="narrow"}
 Type
@@ -1778,7 +1779,8 @@ Default value
 #### `runtimeDir`
 {#tasks-runpluginverifier-runtimedir}
 
-The path to the directory containing the JVM runtime. Overrides [`runPluginVerifier.jbrVersion`](#tasks-runpluginverifier-jbrversion).
+The path to the directory containing the JVM runtime.
+Overrides [`runPluginVerifier.jbrVersion`](#tasks-runpluginverifier-jbrversion).
 
 {type="narrow"}
 Type
@@ -2199,7 +2201,8 @@ Validates the plugin project configuration:
 
 > Read more about controlling this behavior on [](using_kotlin.md#kotlin-standard-library).
 
-- An old default [`runPluginVerifier.downloadDir`](#tasks-runpluginverifier-downloaddir) path contains downloaded IDEs, but another default is in use. Links to the [FAQ section](tools_gradle_intellij_plugin_faq.md#the-plugin-verifier-download-directory-is-set-to-but-downloaded-ides-were-also-found-in)
+- An old default [`runPluginVerifier.downloadDir`](#tasks-runpluginverifier-downloaddir) path contains downloaded IDEs, but another default is in use.
+  Links to the [FAQ section](tools_gradle_intellij_plugin_faq.md#the-plugin-verifier-download-directory-is-set-to-but-downloaded-ides-were-also-found-in)
 
 
 ### `verifyPluginSignature`

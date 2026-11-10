@@ -22,7 +22,8 @@ Follow the rules for [progress indicators](progress_indicators.md).
 
 ## How to use
 
-The loader form and sizes are the same in all themes. Use the default 16&times;16 loader in all cases.
+The loader form and sizes are the same in all themes.
+Use the default 16&times;16 loader in all cases.
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
 
@@ -50,7 +51,8 @@ new JLabel(
 
 
 
-A loader may have a label if the process is long and the loader is shown in an empty area. In this case, use a [progress text](progress_text.md) as the label:
+A loader may have a label if the process is long and the loader is shown in an empty area.
+In this case, use a [progress text](progress_text.md) as the label:
 
 ![](loader_with_progress_text.png){width=597}
 

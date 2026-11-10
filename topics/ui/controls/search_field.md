@@ -27,7 +27,8 @@ Use a search field when specific objects are difficult to find at a glance:
 
 ### Label
 
-Don't add a label <control>Search</control> to the search field. The magnifying glass icon is self-explanatory.
+Don't add a label <control>Search</control> to the search field.
+The magnifying glass icon is self-explanatory.
 
 <table style="none" border="false">
     <tr>
@@ -60,7 +61,8 @@ Icon buttons should change background color when enabled so that it is clear whi
 
 ### Tab navigation
 
-Make icon buttons easily accessible with <control>Tab</control>. Focused button should have a colored border.
+Make icon buttons easily accessible with <control>Tab</control>.
+Focused button should have a colored border.
 
 ![](search_field_tab_focus.png){width=706}
 
@@ -78,7 +80,8 @@ This way, option buttons won't jump when the clear button appears.
 
 ### Multiline search strings
 
-If multiline search is needed, use the New Line <icon src="../../../images/ui/search_field/search_field_new_line_icon.png" width="16"/> action button. It should be placed on the left of the rest of the search options.
+If multiline search is needed, use the New Line <icon src="../../../images/ui/search_field/search_field_new_line_icon.png" width="16"/> action button.
+It should be placed on the left of the rest of the search options.
 
 ![](search_field_multiline.png){width=706}
 
@@ -86,7 +89,8 @@ The default shortcut for the New Line action: <shortcut>⇧⌘⏎</shortcut> for
 
 ### Filters
 
-Provide filters for complex searches. Don't use filter attributes in the search query.
+Provide filters for complex searches.
+Don't use filter attributes in the search query.
 
 <table style="none" border="false">
     <tr>
@@ -97,7 +101,8 @@ Provide filters for complex searches. Don't use filter attributes in the search 
 
 ### Search history
 
-Use the magnifying glass icon with an arrow when search history is available. Show search history in a popup when clicking on the magnifying glass icon.
+Use the magnifying glass icon with an arrow when search history is available.
+Show search history in a popup when clicking on the magnifying glass icon.
 
 ![](search_field_history.png){width=706}
 
@@ -119,7 +124,8 @@ For example, the search field in <control>Settings</control> dialog is aligned w
 
 <!-- #### Inline search
 
-Fit the search field to a popup window or to a toolbar if it has top borders. This way the overall form looks less complex.
+Fit the search field to a popup window or to a toolbar if it has top borders.
+This way the overall form looks less complex.
 
 <table style="none" border="false">
     <tr>
@@ -130,7 +136,8 @@ Fit the search field to a popup window or to a toolbar if it has top borders. Th
 
 #### Speed Search
 
-Show the search field on demand when search is supplementary to other functionality or if space is limited. The search field should be accessible with <shortcut>⌘+F</shortcut> on macOS and <shortcut>Ctrl + F</shortcut> on Windows/Linux.
+Show the search field on demand when search is supplementary to other functionality or if space is limited.
+The search field should be accessible with <shortcut>⌘+F</shortcut> on macOS and <shortcut>Ctrl + F</shortcut> on Windows/Linux.
 For example, space in the Project view is limited and too loaded to always show the Search bar:
 
 ![](search_field_project.png){width=706}

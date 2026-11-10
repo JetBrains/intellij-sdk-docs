@@ -11,8 +11,8 @@ All modifications of
 are executed through a special mutable version of the store, represented by the
 [`MutableEntityStorage`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/MutableEntityStorage.kt)
 interface.
-It can be used to build a storage from scratch or modify an existing storage in a way which requires reading its state after
-modifications. **Instances of this interface aren't thread-safe.**
+It can be used to build a storage from scratch or modify an existing storage in a way which requires reading its state after modifications.
+**Instances of this interface aren't thread-safe.**
 
 All modifications inside the IDE process are executed via
 [`WorkspaceModel.update()`](%gh-ic%/platform/backend/workspace/src/WorkspaceModel.kt).
@@ -23,8 +23,8 @@ Two main modification scenarios exist: small lightweight and batch operations (f
 
 ### Adding Entities
 
-To add a new entity to the storage, create it by calling the `companion` object of its interface and then
-pass it to the
+To add a new entity to the storage, create it by calling the `companion` object of its interface
+and then pass it to the
 [`MutableEntityStorage.addEntity()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/MutableEntityStorage.kt)
 function:
 
@@ -41,8 +41,8 @@ WorkspaceModel.getInstance(project).update("Add module") { builder ->
 }
 ```
 
-An entire tree of entities can be prepared first, then add the root to the storage, and
-`MutableEntityStorage.addEntity()` will automatically add all the children.
+An entire tree of entities can be prepared first, then add the root to the storage,
+and `MutableEntityStorage.addEntity()` will automatically add all the children.
 
 ### Modifying and Removing Entities
 
@@ -51,11 +51,11 @@ To modify or remove an entity, find its instance in the
 instance.
 This can be done by:
 - resolving its
-[`SymbolicEntityId`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/SymbolicEntityId.kt)
-via [`SymbolicEntityId.resolve()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/SymbolicEntityId.kt)
+  [`SymbolicEntityId`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/SymbolicEntityId.kt)
+  via [`SymbolicEntityId.resolve()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/SymbolicEntityId.kt)
 - resolving an
-[`EntityPointer`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/EntityPointer.kt)
-via [`EntityPointer.resolve()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/EntityPointer.kt)
+  [`EntityPointer`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/EntityPointer.kt)
+  via [`EntityPointer.resolve()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/EntityPointer.kt)
 - iterating by children of another entity
 
 ```kotlin
@@ -99,8 +99,7 @@ builder.modifyContentRootEntity(module) {
 To remove a child entity, it is enough to call
 [`MutableEntityStorage.removeEntity()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/MutableEntityStorage.kt)
 for it, the reference in its parent will be updated automatically.
-Also, if the reference to the parent is declared as non-null in the child interface, it is enough to modify the reference to the children
-in the parent entity:
+Also, if the reference to the parent is declared as non-null in the child interface, it is enough to modify the reference to the children in the parent entity:
 
 ```kotlin
 builder.modifyModuleEntity(module) {
@@ -108,8 +107,7 @@ builder.modifyModuleEntity(module) {
 }
 ```
 
-When performing this for a child with nullable reference to the parent, the child will be detached from the parent but won't be removed from
-the storage.
+When performing this for a child with nullable reference to the parent, the child will be detached from the parent but won't be removed from the storage.
 
 ## Batch Operations
 
@@ -187,15 +185,16 @@ Some exemplary use cases are listed below.
 
 ##### Parallel Filling of the Storage
 
-When the configuration of a project is read from <path>\*.iml</path> files, the IDE creates a separate empty
-`MutableEntityStorage` for each file and runs tasks which parse an <path>\*.iml</path> file and load entities from it to the corresponding storage concurrently.
+When the configuration of a project is read from <path>\*.iml</path> files,
+the IDE creates a separate empty `MutableEntityStorage` for each file
+and runs tasks which parse an <path>\*.iml</path> file and load entities from it to the corresponding storage concurrently.
 When the tasks finish, their results are merged into the single storage via `applyChangesFrom()`.
 
 ##### Accumulating Changes
 
 The user performs modifications in the <control>Project Structure</control> dialog.
-Changes shouldn't be applied immediately, so they're accumulated in a builder and then added to the main storage using the
-`applyChangesFrom()` when the user presses the <control>Apply</control> button.
+Changes shouldn't be applied immediately,
+so they're accumulated in a builder and then added to the main storage using the `applyChangesFrom()` when the user presses the <control>Apply</control> button.
 
 ### Replace By Source
 
@@ -214,8 +213,8 @@ The diagram below shows a schematic example of the
 operation.
 The color represents the type of entity source.
 In this example it is called with the predicate `{ entitySource is YellowEntitySource }`.
-The resulting storage shows that the function automatically calculates the changes for entities with `YellowEntitySource` and
-doesn't touch entities not matching the predicate.
+The resulting storage shows that the function automatically calculates the changes for entities with `YellowEntitySource`
+and doesn't touch entities not matching the predicate.
 
 ```mermaid
 flowchart
@@ -312,7 +311,7 @@ This will affect only changed entities created from Maven.
 For entities loaded from configuration files from the <path>.idea</path> directory,
 [`WorkspaceEntity.entitySource`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/WorkspaceEntity.kt)
 points to the corresponding XML file.
-When the IDE detects changes in some configuration files, it loads new entities from the created
-and modified files to a separate `MutableEntityStorage` instance.
-Then it calls `replaceBySource()` passing a filter which accepts entity sources corresponding to the all
-created, modified, and deleted files and the prepared `MutableEntityStorage` instance.
+When the IDE detects changes in some configuration files,
+it loads new entities from the created and modified files to a separate `MutableEntityStorage` instance.
+Then it calls `replaceBySource()` passing a filter which accepts entity sources corresponding to the all created, modified, and deleted files
+and the prepared `MutableEntityStorage` instance.

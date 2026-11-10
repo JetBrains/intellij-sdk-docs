@@ -28,7 +28,8 @@ The library classes are visible within the project, and the library information 
 
 ### Global Library
 
-The library information is recorded in the <path>applicationLibraries.xml</path> file in <path>\$USER_HOME\$/.IntelliJIdea/config/options</path> directory. Global libraries are similar to project libraries but are visible for different projects.
+The library information is recorded in the <path>applicationLibraries.xml</path> file in <path>\$USER_HOME\$/.IntelliJIdea/config/options</path> directory.
+Global libraries are similar to project libraries but are visible for different projects.
 
 ## Working with Libraries
 
@@ -141,7 +142,8 @@ An example of using these APIs can be found in the [project_model](%gh-sdk-sampl
 <procedure title="Library Creation Steps">
 
 1. Get a [write action](threading_model.md#write-actions).
-2. Get the library table add the library to. Use one of the following, depending on the library level:
+2. Get the library table add the library to.
+   Use one of the following, depending on the library level:
     * `LibraryTablesRegistrar.getInstance().getLibraryTable()`
     * `LibraryTablesRegistrar.getInstance().getLibraryTable(Project)`
     * `ModuleRootManager.getInstance(module).getModifiableModel().getModuleLibraryTable()`
@@ -189,6 +191,7 @@ More details on libraries can be found in the [plugin_model](%gh-sdk-samples-mas
 
 ## Predefined Libraries
 
-[`AdditionalLibraryRootsProvider`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/AdditionalLibraryRootsProvider.java) registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.additionalLibraryRootsProvider"/></include> allows
-providing synthetic/predefined libraries ([`SyntheticLibrary`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/SyntheticLibrary.java)) in a project without exposing them in the model.
+[`AdditionalLibraryRootsProvider`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/AdditionalLibraryRootsProvider.java)
+registered in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.additionalLibraryRootsProvider"/></include> allows providing synthetic/predefined libraries
+([`SyntheticLibrary`](%gh-ic%/platform/projectModel-api/src/com/intellij/openapi/roots/SyntheticLibrary.java)) in a project without exposing them in the model.
 By default, they're also hidden from the UI.

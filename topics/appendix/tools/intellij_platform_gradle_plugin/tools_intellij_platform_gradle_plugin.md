@@ -14,8 +14,7 @@
 
 </tldr>
 
-The _IntelliJ Platform Gradle Plugin 2.x_ is a [Gradle](https://docs.gradle.org/current/userguide/userguide.html)
-plugin for building, testing, verifying, configuring environments, and publishing plugins for IntelliJ-based IDEs.
+The _IntelliJ Platform Gradle Plugin 2.x_ is a [Gradle](https://docs.gradle.org/current/userguide/userguide.html) plugin for building, testing, verifying, configuring environments, and publishing plugins for IntelliJ-based IDEs.
 It is the successor of _[](tools_gradle_intellij_plugin.md)_ which is no longer under active development.
 
 Learn more about it in the [Release Announcement](https://blog.jetbrains.com/platform/2024/07/intellij-platform-gradle-plugin-2-0/).
@@ -46,8 +45,7 @@ IntelliJ Platform Gradle Plugin 2.x requires the following *minimal* versions:
 >
 {style="note"}
 
-To apply the IntelliJ Platform Gradle Plugin to a project, add the following entry to the `plugins`
-block in the Gradle build file:
+To apply the IntelliJ Platform Gradle Plugin to a project, add the following entry to the `plugins` block in the Gradle build file:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">

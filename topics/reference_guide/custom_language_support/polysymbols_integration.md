@@ -124,7 +124,8 @@ Dedicated support for `PolySymbol` `get` properties:
 
 **Kind**: `properties`
 
-Poly Symbols representing available CSS properties. [Custom CSS properties (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) names should be prefixed with `--`.
+Poly Symbols representing available CSS properties.
+[Custom CSS properties (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) names should be prefixed with `--`.
 CSS properties can be contributed statically or dynamically (through [`PolySymbolQueryScopeContributor`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolQueryScopeContributor.kt)).
 The statically contributed symbols are available globally, depending on the context setting of the contributing Web Types file.
 
@@ -132,8 +133,7 @@ Within a CSS file, the additional scope for matching properties is built from Po
 
 Within an HTML element `style` attribute value, an additional scope is built from Poly Symbols matching the enclosing HTML element.
 
-Scope for custom properties (variables) references (arguments for [`var()`](https://developer.mozilla.org/en-US/docs/Web/CSS/var) function) is built the same way
-as for properties.
+Scope for custom properties (variables) references (arguments for [`var()`](https://developer.mozilla.org/en-US/docs/Web/CSS/var) function) is built the same way as for properties.
 Only properties with names starting with `--` are taken into account.
 
 For dynamic contributions, the contributors should be registered with the following `PsiElement` classes:

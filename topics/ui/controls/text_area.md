@@ -16,14 +16,19 @@ A text area allows users to enter or edit multi-line text.
 
 ## When to use
 
-Use a text area if input is unconstrained and long, or if the newline character is a valid value. Example: commit message or code snippets.
+Use a text area if input is unconstrained and long, or if the newline character is a valid value.
+Example: commit message or code snippets.
 
 Do **not** use a text area if:
 
-* Input consists of several words. Use an [input field](input_field.md) instead.
-* There is not enough space for a text area, or if input is normally short but can occasionally be long or multi-line. Use an [expandable input field](input_field.md#when-not-to-use) instead.
-* Values are added one by one. Use a [table](table.md) instead.
-* Text is read-only. Use a [description text](description_text.md) instead.
+* Input consists of several words.
+  Use an [input field](input_field.md) instead.
+* There is not enough space for a text area, or if input is normally short but can occasionally be long or multi-line.
+  Use an [expandable input field](input_field.md#when-not-to-use) instead.
+* Values are added one by one.
+  Use a [table](table.md) instead.
+* Text is read-only.
+  Use a [description text](description_text.md) instead.
 
 ## How to use
 
@@ -41,8 +46,9 @@ For example, the following text area is used to preview file and code templates:
 
 Do **not** put units on the right of the text area.
 
-Do **not** use a [group header](group_header.md) instead of the text area label. The horizontal
-line is redundant here. Use [context help](context_help.md) to explain the field behavior.
+Do **not** use a [group header](group_header.md) instead of the text area label.
+The horizontal line is redundant here.
+Use [context help](context_help.md) to explain the field behavior.
 
 <format color="Red" style="bold">Incorrect</format>
 
@@ -68,7 +74,8 @@ Save the current value, so that the user can return to it while navigating throu
 
 ### Validation
 
-If the user types an invalid value, highlight the text area with red and show an error message in a tooltip. For more details, see [Validation errors](validation_errors.md).
+If the user types an invalid value, highlight the text area with red and show an error message in a tooltip.
+For more details, see [Validation errors](validation_errors.md).
 
 ![](text_area_error.png){width=306}
 
@@ -80,9 +87,14 @@ Recommended sizes:
 
 This is the default size, it can be changed if the dialog is resized.
 <br/>
-**Height**. The minimum text area height is 3 lines ~55px, so the user understands that it’s multi-line. The maximum height is not limited and should be appropriate for the most common values.
+**Height**.
+The minimum text area height is 3 lines ~55px, so the user understands that it’s multi-line.
+The maximum height is not limited and should be appropriate for the most common values.
 <br/>
-**Width**. The minimum text area width is 270px. It’s inconvenient to use a narrower field due to frequent line breaks. The maximum width is 80 symbols ~600px, otherwise, it’s hard to read the text.
+**Width**.
+The minimum text area width is 270px.
+It’s inconvenient to use a narrower field due to frequent line breaks.
+The maximum width is 80 symbols ~600px, otherwise, it’s hard to read the text.
 
 Size the text area to display an integral number of lines of text:
 
@@ -90,7 +102,8 @@ Size the text area to display an integral number of lines of text:
 |-----------------------------------------------------|-----------------------------------------------------|
 | ![](text_area_size_2.png)                           | ![](text_area_size_3.png)                           |
 
-Do **not** resize a text area on input. It will change the position of other controls and they can become hardly discoverable.
+Do **not** resize a text area on input.
+It will change the position of other controls and they can become hardly discoverable.
 
 If the text is long and does not fit the text area, add [scrollbar](scrollbar.md).
 

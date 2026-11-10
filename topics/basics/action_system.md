@@ -3,7 +3,8 @@
 # Action System
 
 <web-summary>
-Adding custom actions to menus and toolbars. Implement and register actions, and handle user interactions efficiently.
+Adding custom actions to menus and toolbars.
+Implement and register actions, and handle user interactions efficiently.
 </web-summary>
 
 <link-summary>Adding custom actions to IntelliJ Platform-based IDEs menus and toolbar.</link-summary>
@@ -70,12 +71,11 @@ Actions that run the update session on the BGT should not access the Swing compo
 Conversely, actions that specify to run their update on EDT must not access PSI, VFS, or project data but have access to Swing components and other UI models.
 
 All accessible data is provided by the `DataContext` as explained in [](#determining-the-action-context).
-When switching from BGT to EDT is necessary, actions can use `AnActionEvent.getUpdateSession()` to
-access the [`UpdateSession`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/UpdateSession.java) and
-then call `UpdateSession.compute()` to run a function on EDT.
+When switching from BGT to EDT is necessary, actions can use `AnActionEvent.getUpdateSession()` to access the
+[`UpdateSession`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/UpdateSession.java)
+and then call `UpdateSession.compute()` to run a function on EDT.
 
-Inspection <ui-path>Plugin DevKit | Code | ActionUpdateThread is missing</ui-path> highlights missing implementation of
-`AnAction.getActionUpdateThread()`.
+Inspection <ui-path>Plugin DevKit | Code | ActionUpdateThread is missing</ui-path> highlights missing implementation of `AnAction.getActionUpdateThread()`.
 
 #### `AnAction.actionPerformed()`
 

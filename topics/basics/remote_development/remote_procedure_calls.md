@@ -123,7 +123,8 @@ RPC interface must follow the rules:
 3. All parameters and return types must be `@Serializable`.
    They are essentially data transfer objects (DTOs) widely used in client-server application development.
    * Primitives, `String`, `Flow`, `Deferred` are serializable by default.
-   * Enums are not serializable by default. Mark them as `@Serializable` explicitly.
+   * Enums are not serializable by default.
+     Mark them as `@Serializable` explicitly.
    * Classes must be annotated with `@Serializable` and must contain only other serializable fields
 
 For convenience, introduce `suspend getInstanceAsync()` so the frontend can easily acquire the instance.

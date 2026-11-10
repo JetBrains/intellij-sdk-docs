@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IntelliJ Platform Artifacts Repositories
 
@@ -83,15 +83,19 @@ The table below shows some example module names and their corresponding groupId 
 | intellij.xml.impl               | com.jetbrains.intellij.xml      | xml-impl                |
 
 The artifact _version_ can be specified in one of several ways because each artifact [at the Repository URLs](#specify-the-repository-url) has multiple versions available:
-* Specify release build versions as _MAJOR\[.MINOR]\[.FIX]_. For example `14`, or `14.1`, or `14.1.1`
+* Specify release build versions as _MAJOR\[.MINOR]\[.FIX]_.
+  For example `14`, or `14.1`, or `14.1.1`
 * Snapshot versions are specified as:
-  * The snapshot of the most recent branch build is specified as _BRANCH-EAP-SNAPSHOT_. For example, `193-EAP-SNAPSHOT`.
+  * The snapshot of the most recent branch build is specified as _BRANCH-EAP-SNAPSHOT_.
+    For example, `193-EAP-SNAPSHOT`.
     There is only one of this type of build for each branch of each product.
-  * The snapshot of the branch from which the next EAP/release build might be produced is specified as _BRANCH.BUILD-EAP-CANDIDATE-SNAPSHOT_. For example `193.4386-EAP-CANDIDATE-SNAPSHOT`.
+  * The snapshot of the branch from which the next EAP/release build might be produced is specified as _BRANCH.BUILD-EAP-CANDIDATE-SNAPSHOT_.
+    For example `193.4386-EAP-CANDIDATE-SNAPSHOT`.
     There are multiple builds of this type, one for each build in each branch of every product.
   * The latest snapshot of a product is always specified as _LATEST-EAP-SNAPSHOT_.
     There is only one build of this type per product, and it is always the same as the _BRANCH-EAP-SNAPSHOT_ for the newest branch of the product.
-  * A snapshot of a branch is specified as _BRANCH.BUILD.FIX-EAP-SNAPSHOT_. For example, `193.4386.10-EAP-SNAPSHOT`.
+  * A snapshot of a branch is specified as _BRANCH.BUILD.FIX-EAP-SNAPSHOT_.
+    For example, `193.4386.10-EAP-SNAPSHOT`.
     There are many builds of this type for each branch of each product.
 
 ### Example Artifact Specification

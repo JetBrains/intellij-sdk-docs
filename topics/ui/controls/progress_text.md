@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Progress Text
 
@@ -72,7 +72,8 @@ Show another progress indicator, e.g., a loader as in the example below, if load
 
 ### Trees
 
-Do not show details or a link to cancel the operation for progress in trees and lists. Only show the process name since space is limited here.
+Do not show details or a link to cancel the operation for progress in trees and lists.
+Only show the process name since space is limited here.
 
 ## Sizes and placement
 

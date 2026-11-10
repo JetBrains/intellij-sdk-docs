@@ -199,14 +199,16 @@ holder.newSilentAnnotation(HighlightSeverity.INFORMATION)
 ## External Annotator
 
 If the custom language employs external tools for validating files in the language (for example, using the Xerces library for XML schema validation),
-it can provide an implementation of [`ExternalAnnotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java) and register
-it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.externalAnnotator"/></include> (`language` attribute must be specified).
+it can provide an implementation of
+[`ExternalAnnotator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/ExternalAnnotator.java)
+and register it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.externalAnnotator"/></include> (`language` attribute must be specified).
 
 The `ExternalAnnotator` highlighting has the lowest priority and is invoked only after all other background processing has completed.
 It uses the same [`AnnotationHolder`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/annotation/AnnotationHolder.java) for converting the output of the external tool into editor highlighting.
 
-To skip running specific `ExternalAnnotator` for a given file, register an [`ExternalAnnotatorsFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/ExternalAnnotatorsFilter.java) extension
-in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.daemon.externalAnnotatorsFilter"/></include>.
+To skip running specific `ExternalAnnotator` for a given file, register an
+[`ExternalAnnotatorsFilter`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/ExternalAnnotatorsFilter.java)
+extension in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.daemon.externalAnnotatorsFilter"/></include>.
 
 To enable running `ExternalAnnotator` during indexing in [dumb mode](indexing_and_psi_stubs.md#dumb-mode), it can be marked [dumb aware](indexing_and_psi_stubs.md#DumbAwareAPI) (2023.3).
 

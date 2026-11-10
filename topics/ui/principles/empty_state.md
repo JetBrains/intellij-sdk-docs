@@ -22,7 +22,8 @@ Fill in the empty states with the following:
 
 ### Explain the current state
 
-The default pattern is `No [entity] added.` If `added`, `created`, `configured`, or other words act as synonyms in a particular case, use `added` for consistency.
+The default pattern is `No [entity] added.`
+If `added`, `created`, `configured`, or other words act as synonyms in a particular case, use `added` for consistency.
 
 <table style="none" border="false" column-width="fixed">
   <tr>
@@ -40,8 +41,7 @@ The default pattern is `No [entity] added.` If `added`, `created`, `configured`,
 ### Be precise
 
 <p>Do not introduce new entities that are not used in the current context.
-Instead, use the terms from the current UI so that the user understands
-what exactly is missing:</p>
+Instead, use the terms from the current UI so that the user understands what exactly is missing:</p>
 
 <table style="none" border="false" column-width="fixed">
   <tr>
@@ -57,8 +57,7 @@ what exactly is missing:</p>
 
 ## Actions to fill the area
 
-An action makes it easier to understand what to start with
-instead of searching for the appropriate icon on the toolbar.
+An action makes it easier to understand what to start with instead of searching for the appropriate icon on the toolbar.
 It can also educate about the shortcut.
 
 ### Use one or two actions
@@ -85,9 +84,8 @@ If there is enough space (for example, in horizontal tool windows), you can use 
 
 ### Open menus from the toolbar
 
-If an action opens a toolbar menu, open it at the same position where it
-would be opened with the corresponding toolbar button. This would explain
-which toolbar icon opens the menu.
+If an action opens a toolbar menu, open it at the same position where it would be opened with the corresponding toolbar button.
+This would explain which toolbar icon opens the menu.
 
 <table style="none" border="false" column-width="fixed">
   <tr>
@@ -111,9 +109,8 @@ add a text describing all the required steps:
 
 ### Hide the toolbar
 
-Hide the area's toolbar if it does not have the same action as
-in the empty state. Usually, all other toolbar actions are not
-relevant in this case.
+Hide the area's toolbar if it does not have the same action as in the empty state.
+Usually, all other toolbar actions are not relevant in this case.
 
 <format color="369650" style="bold">Correct</format>
 
@@ -154,7 +151,8 @@ Master-detail layouts include a list or a tree on the left (in the master part)
 and the details area on the right.
 
 - If the master area is empty, display the explanation, action, and link to the help article.
-- If the details area is empty, no explanations are needed. In this case, show the actions to fill in the area.
+- If the details area is empty, no explanations are needed.
+  In this case, show the actions to fill in the area.
 
 <img src="empty_state_master_detail_layout.png" alt="Empty master-detail layout" width="706"/>
 
@@ -199,7 +197,8 @@ Use sentence capitalization in the empty state texts and links.
 
 - In actions, avoid words that describe physical actions like `press` or `click` — they are obvious from how the link works.
 
-- Avoid saying `add new`. Just use `add` because all that is added is new in the context of an empty UI area.
+- Avoid saying `add new`.
+  Just use `add` because all that is added is new in the context of an empty UI area.
 
 <table style="none" border="false" column-width="fixed">
   <tr>

@@ -4,12 +4,14 @@
 
 <link-summary>Choosing a proper component for context help.</link-summary>
 
-Use context help to briefly explain how a functionality works if it is not clear from the UI or the application behavior. A full description of the functionality should be provided in [product web help](https://www.jetbrains.com/help/idea/).
+Use context help to briefly explain how a functionality works if it is not clear from the UI or the application behavior.
+A full description of the functionality should be provided in [product web help](https://www.jetbrains.com/help/idea/).
 
 Context help can be shown as an [inline help text](inline_help_text.md), in a [help tooltip](tooltip.md), and in an [empty state](empty_state.md).
 
 ## Inline help text
-Use an [inline help text](inline_help_text.md) in settings dialogs that are not constrained by space and are not frequently used. Since settings are rarely changed, users may forget their purpose, so displaying the information immediately makes sense.
+Use an [inline help text](inline_help_text.md) in settings dialogs that are not constrained by space and are not frequently used.
+Since settings are rarely changed, users may forget their purpose, so displaying the information immediately makes sense.
 
 <img src="context_help_inline_text.png" alt="Context help in an inline text" width="706"/>
 
@@ -17,7 +19,8 @@ Use an [inline help text](inline_help_text.md) in settings dialogs that are not 
 
 Use a [tooltip](tooltip.md):
 - If the space is not enough for showing the inline help text.
-- In frequently used dialogs, tool windows, or popups. The more often a person uses an interface, the more likely they are to remember what each option does.
+- In frequently used dialogs, tool windows, or popups.
+  The more often a person uses an interface, the more likely they are to remember what each option does.
 - For icons or other controls that do not have a label.
 
 <img src="context_help_tooltip.png" alt="Context help in a tooltip" width="706"/>
@@ -98,7 +101,8 @@ Below are rules for [tooltips](tooltip.md) and [inline texts](inline_help_text.m
 ## When not to use
 
 ### Do not explain UI
-Do not use context help to explain how the user interface works. If it needs explaining, consider redesigning the UI.
+Do not use context help to explain how the user interface works.
+If it needs explaining, consider redesigning the UI.
 
 <table style="none" border="false" column-width="fixed">
   <tr>
@@ -114,7 +118,8 @@ Do not use context help to explain how the user interface works. If it needs exp
 </table>
 
 ### Do not explain common actions
-Do not explain common actions and entities. Show a regular tooltip with an action name and shortcut in this case.
+Do not explain common actions and entities.
+Show a regular tooltip with an action name and shortcut in this case.
 <table style="none" border="false" column-width="fixed">
   <tr>
     <td width="378">
@@ -129,7 +134,8 @@ Do not explain common actions and entities. Show a regular tooltip with an actio
 </table>
 
 ### Do not clutter UI with context help
-Do not explain each option. Too many help icons or too much inline text make a dialog cluttered and harder to navigate visually.
+Do not explain each option.
+Too many help icons or too much inline text make a dialog cluttered and harder to navigate visually.
 If all options need to be explained, consider rewriting the labels to make them clearer.
 
 <table style="none" border="false" column-width="fixed">

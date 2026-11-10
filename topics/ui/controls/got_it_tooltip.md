@@ -22,7 +22,8 @@ A Got It tooltip informs users about a new or changed behavior and provides a sh
 
 ### Body text
 
-Always add the body text.  Shortly describe what the tooltip is showing.
+Always add the body text.
+Shortly describe what the tooltip is showing.
 
 Don't use body text as a title.
 
@@ -39,7 +40,8 @@ Don't use body text as a title.
 
 ### Title
 
-Add a header if the body text is 2 lines and more. A header should be short and quickly explain what a tooltip is about.
+Add a header if the body text is 2 lines and more.
+A header should be short and quickly explain what a tooltip is about.
 
 <table style="none" border="false">
   <tr>
@@ -185,7 +187,8 @@ Point to small and essential controls that can be overlooked in a dense interfac
 
 ### New feature
 
-Introduce users to a feature improvement contextually when they start using it. Explain how it works and highlight its benefits.
+Introduce users to a feature improvement contextually when they start using it.
+Explain how it works and highlight its benefits.
 
 <table style="none" border="false">
   <tr>
@@ -208,7 +211,8 @@ Suggest a new pattern to a user's task that improves their workflow.
 
 Explain behavior that is not clear from the UI.
 
-For example, when extracting a method, users can change only the method name in the blue box. The tooltip explains where to change the order of parameters in the parentheses and other properties of a method:
+For example, when extracting a method, users can change only the method name in the blue box.
+The tooltip explains where to change the order of parameters in the parentheses and other properties of a method:
 
 ![](got_it_ambiguous.png){width=706}
 
@@ -216,7 +220,9 @@ For example, when extracting a method, users can change only the method name in 
 
 ### Presenting a new tool
 
-Don't use the Got It tooltip as a marketing tool. It distracts users, especially during startup. Use marketing channels for this purpose.
+Don't use the Got It tooltip as a marketing tool.
+It distracts users, especially during startup.
+Use marketing channels for this purpose.
 
 ### Nothing to point to
 
@@ -235,7 +241,8 @@ When there is nothing to point to in a dialog or a tool window, use a [banner](b
 
 ### Feedback from the interface
 
-Don't use Got It tooltips to give users feedback from the interface. Use [notifications](balloon.md) instead.
+Don't use Got It tooltips to give users feedback from the interface.
+Use [notifications](balloon.md) instead.
 
 <table style="none" border="false">
   <tr>
@@ -267,11 +274,13 @@ For updates to frequently used menus, use a badge instead of a Got It tooltip to
 
 ### Single use
 
-Show a Got It tooltip only once. Never show it again after the user closes it
+Show a Got It tooltip only once.
+Never show it again after the user closes it
 
 ### Showing a group of tooltips
 
-Show a sequence of tooltips only when users initiate it. Users can start a tooltip tour, for example, by pressing a respective button in the interface.
+Show a sequence of tooltips only when users initiate it.
+Users can start a tooltip tour, for example, by pressing a respective button in the interface.
 
 For example, <control>Start Quick Tour</control> initiates a tour of the new functionality:
 
@@ -279,11 +288,14 @@ For example, <control>Start Quick Tour</control> initiates a tour of the new fun
 
 ### Text length and formatting
 
-* Show no more than 5 lines of body text. If the text does not fit, leave only the essential information and add a link to a help article. Make the help text [short and descriptive](writing_short.md).
+* Show no more than 5 lines of body text.
+  If the text does not fit, leave only the essential information and add a link to a help article.
+  Make the help text [short and descriptive](writing_short.md).
 
 * Use sentence case both for the header and body text, and follow the [punctuation rules](punctuation.md).
 
-* Don't use style formatting. It makes the tooltip harder to read.
+* Don't use style formatting.
+  It makes the tooltip harder to read.
 
 <table style="none" border="false">
   <tr>
@@ -350,7 +362,8 @@ For example, the Got It tooltip has a timeout because the text is short, the use
 
 <chapter title="Implementation" collapsible="true">
 
-Default timeout duration is 5 seconds. A custom duration can be set:
+Default timeout duration is 5 seconds.
+A custom duration can be set:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -377,7 +390,8 @@ new GotItTooltip(TOOLTIP_ID, GOT_IT_TEXT, parentDisposable)
 
 <!--If a tooltip appears automatically after the IDE starts, tie it to the IDE version. Due to the technical limitations, tooltip counters might be reset when the IDE version is updated, and the users might see the same tooltips again.-->
 
-If a tooltip is triggered by an action or plugin installation, do not tie them to the current IDE version. In this case, users might miss a tooltip if they are using this functionality or plugin for the first time in the next IDE version.
+If a tooltip is triggered by an action or plugin installation, do not tie them to the current IDE version.
+In this case, users might miss a tooltip if they are using this functionality or plugin for the first time in the next IDE version.
 
 ## Built-in behavior
 
@@ -399,4 +413,5 @@ If several tooltips appear at the same time, they are shown one by one.
 
 ### Text width
 
- The tooltip width adjusts automatically to make the right margin 16 px. Text width is 280 px by default.
+ The tooltip width adjusts automatically to make the right margin 16 px.
+Text width is 280 px by default.

@@ -24,8 +24,8 @@ Thus, surprisingly, the easiest way to get the replacement node is to create a d
 
 If a renamed reference extends [`PsiReferenceBase`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReferenceBase.java), renaming is performed by invoking the [`ElementManipulator.handleContentChange()`](%gh-ic%/platform/core-api/src/com/intellij/psi/ElementManipulator.java), responsible for handling the content change and calculating the text range of reference inside the element.
 
-To disable renaming for specific elements, implement `com.intellij.openapi.util.Condition<T>` for PsiElement of type `T` and register it
-in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.vetoRenameCondition"/></include>.
+To disable renaming for specific elements, implement `com.intellij.openapi.util.Condition<T>` for PsiElement of type `T`
+and register it in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.vetoRenameCondition"/></include>.
 
 ### Name Validation
 [`NamesValidator`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/refactoring/NamesValidator.java) allows a plugin to check if the name entered by the user in the `Rename` dialog is a valid identifier (and not a keyword) according to the custom language rules.

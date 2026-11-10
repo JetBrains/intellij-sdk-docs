@@ -38,8 +38,7 @@ __*__ _see the **Attributes** section for [`<extensionPoint>`](plugin_configurat
 
 The plugin that contributes to the extension point will read the specified properties from the <path>plugin.xml</path> file.
 
-If extension implementations are filtered according to [dumb mode](indexing_and_psi_stubs.md#dumb-mode), the base class should be
-marked with [`PossiblyDumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/PossiblyDumbAware.java) to highlight this.
+If extension implementations are filtered according to [dumb mode](indexing_and_psi_stubs.md#dumb-mode), the base class should be marked with [`PossiblyDumbAware`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/PossiblyDumbAware.java) to highlight this.
 Use [`DumbService.getDumbAwareExtensions()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/project/DumbService.kt) to retrieve dumb-aware implementations.
 
 Base classes for extensions requiring a key:
@@ -157,8 +156,7 @@ Code insight is available for the extension point name String literal (2022.3).
 ### Error Handling
 
 When processing extension implementations or registrations, there might be errors, compatibility and configuration issues.
-Use [`PluginException`](%gh-ic%/platform/core-api/src/com/intellij/diagnostic/PluginException.java) to log and correctly attribute the causing plugin for
-[builtin error reporting](ide_infrastructure.md#error-reporting).
+Use [`PluginException`](%gh-ic%/platform/core-api/src/com/intellij/diagnostic/PluginException.java) to log and correctly attribute the causing plugin for [builtin error reporting](ide_infrastructure.md#error-reporting).
 
 To report use of a deprecated API, use `PluginException.reportDeprecatedUsage()` methods.
 

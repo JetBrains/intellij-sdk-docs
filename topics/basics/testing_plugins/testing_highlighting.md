@@ -81,7 +81,8 @@ The following severities are supported:
 The tag can also have the following optional attributes.
 
 **Message**
-* `descr` expected message associated with the highlighter (if not specified, any text will match). If the message contains a quotation mark, it can be escaped by putting two backslash characters before it.
+* `descr` expected message associated with the highlighter (if not specified, any text will match).
+  If the message contains a quotation mark, it can be escaped by putting two backslash characters before it.
 * `tooltip` expected tooltip message
 
 **Visual**

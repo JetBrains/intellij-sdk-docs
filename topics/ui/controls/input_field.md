@@ -16,7 +16,8 @@ An input field allows users to enter or edit a text line using the keyboard.
 
 ## When to use
 
-Use an input field if it’s not possible to enumerate the most likely values. Otherwise, use a [combo box](combo_box.md) or a [drop-down list](drop_down.md).
+Use an input field if it’s not possible to enumerate the most likely values.
+Otherwise, use a [combo box](combo_box.md) or a [drop-down list](drop_down.md).
 
 <table border="false" style="none">
     <tr>
@@ -52,13 +53,15 @@ For more details, see [Expand button](built_in_button.md#expand-a-field).
 
 ### Many predefined values
 
-If there are many predefined values (for example, code snippets, commit author), add completion to the input field [`TextFieldWithCompletion`](%gh-ic%/platform/platform-impl/src/com/intellij/util/textCompletion/TextFieldWithCompletion.java). Show the completion popup when the user starts typing.
+If there are many predefined values (for example, code snippets, commit author), add completion to the input field [`TextFieldWithCompletion`](%gh-ic%/platform/platform-impl/src/com/intellij/util/textCompletion/TextFieldWithCompletion.java).
+Show the completion popup when the user starts typing.
 
 ![](input_completion.png){width=706}
 
 ### Built-in buttons
 
-Use [built-in buttons](built_in_button.md) to help the user enter data. For example, to browse the disk.
+Use [built-in buttons](built_in_button.md) to help the user enter data.
+For example, to browse the disk.
 
 ### Search
 
@@ -135,13 +138,15 @@ If an input field is disabled, disable the label too.
 
 #### Selectable label
 
-Make the label text selectable. The user may want to search for this option on the Internet or to send a question to support.
+Make the label text selectable.
+The user may want to search for this option on the Internet or to send a question to support.
 
 ![](input_label_selected.png){width=706}
 
 #### Positioning a label
 
-Place the label on the left or above the input field. For more details, see the [Layout](layout.md) topic.
+Place the label on the left or above the input field.
+For more details, see the [Layout](layout.md) topic.
 
 <table style="none" border="false">
     <tr>
@@ -152,7 +157,8 @@ Place the label on the left or above the input field. For more details, see the 
 
 ### Placeholder
 
-Placeholder is gray text placed inside an input field. To show placeholder text, use `JBTextField.getEmptyText().setText(...)`.
+Placeholder is gray text placed inside an input field.
+To show placeholder text, use `JBTextField.getEmptyText().setText(...)`.
 
 #### General rules {id="placeholder-general-rules"}
 * Use sentence-style capitalization.
@@ -177,7 +183,8 @@ If the user overwrites the value, it can be restored by removing the new value f
 
 #### Showing examples
 
-Don't use the placeholder to show examples because the user can get the impression that the field is already filled. Provide examples or explanation under the input field (see [Context help](context_help.md)):
+Don't use the placeholder to show examples because the user can get the impression that the field is already filled.
+Provide examples or explanation under the input field (see [Context help](context_help.md)):
 
 <table style="none" border="false">
     <tr>
@@ -188,7 +195,8 @@ Don't use the placeholder to show examples because the user can get the impressi
 
 #### Don't use placeholders as labels
 
-Don't use the placeholder as the field label. After the field has been filled, it is difficult to understand its purpose.
+Don't use the placeholder as the field label.
+After the field has been filled, it is difficult to understand its purpose.
 
 <table style="none" border="false">
     <tr>
@@ -199,13 +207,15 @@ Don't use the placeholder as the field label. After the field has been filled, i
 
 ### Prefilled value
 
-Pre-fill the field if it has the default or a frequently used value. Use the default text color for pre-filled values:
+Pre-fill the field if it has the default or a frequently used value.
+Use the default text color for pre-filled values:
 
 ![](input_prefilled.png){width=706}
 
 <note>When naming a default entity like <code>scope</code> or <code>notebook</code> which can have multiple entities in a group, pre-fill it using the entity name with a sequential number: <code>scope-1</code>, <code>scope-2</code>, etc.</note>
 
-Don't use <control>Unnamed</control> as a prefilled value. It takes time to read it and does not help the user to fill the form.
+Don't use <control>Unnamed</control> as a prefilled value.
+It takes time to read it and does not help the user to fill the form.
 
 <table style="none" border="false">
     <tr>
@@ -226,7 +236,8 @@ If users are more likely to re-enter the entire value, select the whole text whe
 
 ### Validation
 
-If the user enters an invalid value, highlight the field with red and show an error message in a tooltip. For more details, see [Validation errors](validation_errors.md).
+If the user enters an invalid value, highlight the field with red and show an error message in a tooltip.
+For more details, see [Validation errors](validation_errors.md).
 
 ![](input_validation.png){width=706}
 
@@ -234,7 +245,8 @@ If the user enters an invalid value, highlight the field with red and show an er
 
 ### Width
 
-Choose the width appropriate for the most common values, but not less than 65px. The field width helps the user understand what value is expected and to make sure that they fill the field correctly.
+Choose the width appropriate for the most common values, but not less than 65px.
+The field width helps the user understand what value is expected and to make sure that they fill the field correctly.
 
 <table style="none" border="false">
     <tr>

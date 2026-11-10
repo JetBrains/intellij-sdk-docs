@@ -150,8 +150,7 @@ See `com.intellij.spring.spi.SpringSpiManager`.
 ### IDE Features
 
 #### Add Inspections to Spring Validator
-Add additional inspections (e.g., for custom namespace) to Spring Validator (*Settings|Compiler|Validation*) via `com.intellij.spring.SpringInspectionsRegistry$Contributor`
-in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.spring.inspectionsRegistryContributor"/></include>.
+Add additional inspections (e.g., for custom namespace) to Spring Validator (*Settings|Compiler|Validation*) via `com.intellij.spring.SpringInspectionsRegistry$Contributor` in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.spring.inspectionsRegistryContributor"/></include>.
 
 #### Add Additional Files to Spring Validator
 _Version 14.1_

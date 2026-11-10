@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 17. Code Style Settings
 
@@ -42,8 +42,7 @@ for Simple Language by subclassing [`CodeStyleSettingsProvider`](%gh-ic%/platfor
 
 ## Register the Code Style Settings Provider
 
-The `SimpleCodeStyleSettingsProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file
-using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeStyleSettingsProvider"/></include>.
+The `SimpleCodeStyleSettingsProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.codeStyleSettingsProvider"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -62,8 +61,7 @@ Define [`SimpleLanguageCodeStyleSettingsProvider`](%gh-sdk-samples-master%/simpl
 
 ## Register the Language Code Style Settings Provider
 
-The ``SimpleLanguageCodeStyleSettingsProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file
-using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.langCodeStyleSettingsProvider"/></include>.
+The ``SimpleLanguageCodeStyleSettingsProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.langCodeStyleSettingsProvider"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

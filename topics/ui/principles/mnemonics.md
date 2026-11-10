@@ -8,7 +8,8 @@ A mnemonic is an alphanumeric character, which indicates the key to press to act
 
 There are *regular* and *numeric* mnemonics.
 
-* Regular mnemonics are used inside the text. The mnemonic is underlined in this case to be distinguishable.
+* Regular mnemonics are used inside the text.
+  The mnemonic is underlined in this case to be distinguishable.
 
   In a control:
 
@@ -31,7 +32,9 @@ There are *regular* and *numeric* mnemonics.
 
 ## When to use
 
-Specify mnemonics wherever possible in menus and controls. Mnemonics make the functionality more usable for power users who interact through the keyboard. Moreover, mnemonics make the functionality accessible for users with disabilities.
+Specify mnemonics wherever possible in menus and controls.
+Mnemonics make the functionality more usable for power users who interact through the keyboard.
+Moreover, mnemonics make the functionality accessible for users with disabilities.
 
 If there are many actions and/or controls, and it is not possible to assign mnemonics for all of them:
 
@@ -39,7 +42,8 @@ If there are many actions and/or controls, and it is not possible to assign mnem
 
 * Provide mnemonics for [group headers](group_header.md) for quick navigation to the first element of the group.
 
-Note: The rules for using numeric mnemonics in popups are under discussion. [Contact us](https://youtrack.jetbrains.com/issues/IJSDK) with any questions.
+Note: The rules for using numeric mnemonics in popups are under discussion.
+[Contact us](https://youtrack.jetbrains.com/issues/IJSDK) with any questions.
 
 ## How to use
 
@@ -51,7 +55,8 @@ Make mnemonics in the label discoverable, they must be easy to find:
 
 * Use letters with wide widths, such as w, m, and capital letters.
 
-* Avoid using letters that are difficult to see when they are assigned to underlined keys. These letters include:
+* Avoid using letters that are difficult to see when they are assigned to underlined keys.
+  These letters include:
 
     * Letters with descenders, such as g, j, p, q, or y.
 
@@ -61,12 +66,17 @@ Make mnemonics in the label discoverable, they must be easy to find:
 
 Make it easy to remember for the most frequently used actions:
 
-* Use standard Windows mnemonic if any. For example, Properties, Rename, Delete, Cut, Copy, Paste, Exit, etc.
+* Use standard Windows mnemonic if any.
+  For example, Properties, Rename, Delete, Cut, Copy, Paste, Exit, etc.
   Note that Windows users are more likely to form habits for mnemonics as mnemonics are not that common on macOS or Linux.
 
-* Do **not** use silent letters. For example, Design, Column, etc.
+* Do **not** use silent letters.
+  For example, Design, Column, etc.
 
-Do **not** assign mnemonics to the default or Cancel buttons. The default button is typically assigned to the ENTER key, and Cancel is assigned to the ESC key.
+Do **not** assign mnemonics to the default or Cancel buttons.
+The default button is typically assigned to the ENTER key, and Cancel is assigned to the ESC key.
 
-Do **not** use the same mnemonic letter twice in the same window; duplicated mnemonics confuse users. Before assigning a new mnemonic in an existing context, check that it's not already taken. If it is, prioritize the mnemonic for the more frequently used action.
+Do **not** use the same mnemonic letter twice in the same window; duplicated mnemonics confuse users.
+Before assigning a new mnemonic in an existing context, check that it's not already taken.
+If it is, prioritize the mnemonic for the more frequently used action.
 

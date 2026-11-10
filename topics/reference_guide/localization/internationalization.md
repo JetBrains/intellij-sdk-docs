@@ -162,7 +162,8 @@ It is possible to move multiple hardcoded strings to a message bundle in batch m
 4. In the <control>Problems</control> tool window, select the items to internationalize.
 5. Invoke the <control>I18nize hardcoded string literal</control> quick fix.
 6. Provide the message bundle file and resource bundle expression.
-7. Review the internationalized messages. It is possible to delete items and adjust their keys.
+7. Review the internationalized messages.
+   It is possible to delete items and adjust their keys.
 8. Click the <control>OK</control> button.
 
 </procedure>

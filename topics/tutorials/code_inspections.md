@@ -72,7 +72,8 @@ The primary responsibilities of the inspection implementation class are to provi
 
 * A `PsiElementVisitor` object to traverse the PSI tree of the file being inspected.
 * A `LocalQuickFix` implementation to fix an identified problem (optional).
-* An options panel to be displayed in the <control>Inspections</control> settings dialog (optional). See [](inspection_options.md) for more details.
+* An options panel to be displayed in the <control>Inspections</control> settings dialog (optional).
+  See [](inspection_options.md) for more details.
 
 The overridden `ComparingStringReferencesInspection` methods are discussed in the sections below.
 

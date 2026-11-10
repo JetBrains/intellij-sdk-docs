@@ -1,16 +1,19 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Tool Window
 
 <link-summary>UI guidelines on using tool windows.</link-summary>
 
-A tool window is a pane inside the main IDE window. For information about tool windows, see [IntelliJ IDEA Web Help](https://www.jetbrains.com/help/idea/tool-windows.html). For information about implementing tool windows, see [](tool_windows.md).
+A tool window is a pane inside the main IDE window.
+For information about tool windows, see [IntelliJ IDEA Web Help](https://www.jetbrains.com/help/idea/tool-windows.html).
+For information about implementing tool windows, see [](tool_windows.md).
 
 ![](toolwindow.png){width=706}
 
 ## When to use
 
-Tool windows provide access to information, tools, and services that support coding. They let users manage the project, run and debug applications, view git changes, and work with external systems — all without leaving the main workspace.
+Tool windows provide access to information, tools, and services that support coding.
+They let users manage the project, run and debug applications, view git changes, and work with external systems — all without leaving the main workspace.
 
 <!-- Use the tool window to show a large amount of information that the user needs while working side-by-side with the editor or other tool windows. For example, viewing the project structure, running and debugging an application, and viewing git log.
 
@@ -35,7 +38,8 @@ If the user does not need the information from the main window to complete an op
 
 * The name should be [short and descriptive](writing_short.md), preferably not longer than two words.
 * Use title-case capitalization.
-* Provide an abbreviation if a common one exists when tool window names are shown in the stripes. For example, <code>Pull Requests</code> becomes <code>PR</code>.
+* Provide an abbreviation if a common one exists when tool window names are shown in the stripes.
+  For example, <code>Pull Requests</code> becomes <code>PR</code>.
 
 <table border="false" style="none">
     <tr>
@@ -48,7 +52,9 @@ If the user does not need the information from the main window to complete an op
 
 ### Icon
 
-Add an icon for the tool window button. The icon should be created in two sizes: 20×20px and 16×16px, grey, and monochromatic. See how to create icons in the [icons guidelines](icons_style.md).
+Add an icon for the tool window button.
+The icon should be created in two sizes: 20×20px and 16×16px, grey, and monochromatic.
+See how to create icons in the [icons guidelines](icons_style.md).
 
 <!--### Icon
 
@@ -68,13 +74,15 @@ Do not change the icon for the tool window button when the content changes.
 
 ### Tabs
 
-Add [tabs](tabs.md) to group related content or create similar instances, like run sessions, history for files, find results. The tabs for similar entities should be closable.
+Add [tabs](tabs.md) to group related content or create similar instances, like run sessions, history for files, find results.
+The tabs for similar entities should be closable.
 
 ![](toolwindow_tabs.png){width=706}
 
 ### Toolbar
 
-Add a toolbar for [frequently used actions and filters](toolbar.md#what-items-to-add-on-toolbar). For more details, see the [toolbar guidelines](toolbar.md).
+Add a toolbar for [frequently used actions and filters](toolbar.md#what-items-to-add-on-toolbar).
+For more details, see the [toolbar guidelines](toolbar.md).
 
 <!--Put tool window viewing mode settings under the gear icon in the header. If there is no toolbar, put other options under the gear icon as well. For example, see the gear icon in the Project tool window.-->
 
@@ -82,7 +90,9 @@ Add a toolbar for [frequently used actions and filters](toolbar.md#what-items-to
 
 ### Visibility
 
-If a tool window has no content yet, show its button by default only if the window contains basic functionality that is likely to be used for all projects, for example, <control>Version Control</control> or <control>Problems</control>. Otherwise, hide the tool window button by default. Hidden tool windows are still available under <control>More tool windows</control> menu.
+If a tool window has no content yet, show its button by default only if the window contains basic functionality that is likely to be used for all projects, for example, <control>Version Control</control> or <control>Problems</control>.
+Otherwise, hide the tool window button by default.
+Hidden tool windows are still available under <control>More tool windows</control> menu.
 
 <table border="false" style="none">
     <tr>
@@ -91,7 +101,8 @@ If a tool window has no content yet, show its button by default only if the wind
     </tr>
 </table>
 
-Don't show the tool window button if the tool window is not relevant to the current project configuration. For example, don't show the <control>Maven</control> tool window for a project without Maven configuration files.
+Don't show the tool window button if the tool window is not relevant to the current project configuration.
+For example, don't show the <control>Maven</control> tool window for a project without Maven configuration files.
 
 ### Orientation
 

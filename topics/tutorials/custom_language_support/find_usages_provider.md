@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 11. Find Usages Provider
 
@@ -31,8 +31,7 @@ See the comments in `FindUsagesProvider` for more information.
 
 ## Register the Find Usages Provider
 
-The `SimpleFindUsagesProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using
-the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.findUsagesProvider"/></include>.
+The `SimpleFindUsagesProvider` implementation is registered with the IntelliJ Platform in the plugin configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.findUsagesProvider"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

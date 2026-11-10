@@ -282,7 +282,8 @@ Advanced accessibility features are provided through specialized interfaces, suc
 These are typically needed when implementing custom components from scratch.
 Refer to the [list](https://docs.oracle.com/en/java/javase/21/docs/api/java.desktop/javax/accessibility/package-summary.html) of available interfaces to determine whether any need to be implemented.
 
-> Look at similar Swing components to see which interfaces they implement. For example, when working on a new slider-like component, check the interfaces implemented by [`JSlider.AccessibleJSlider`](https://docs.oracle.com/en/java/javase/21/docs/api/java.desktop/javax/swing/JSlider.AccessibleJSlider.html).
+> Look at similar Swing components to see which interfaces they implement.
+> For example, when working on a new slider-like component, check the interfaces implemented by [`JSlider.AccessibleJSlider`](https://docs.oracle.com/en/java/javase/21/docs/api/java.desktop/javax/swing/JSlider.AccessibleJSlider.html).
 >
 {style="note"}
 
@@ -292,7 +293,8 @@ Screen readers announce accessible property changes of the currently focused com
 For example, when a user checks a checkbox, the screen reader announces the new state.
 This happens through property change events fired by the component.
 
-However, in some cases, users need to be notified of changes outside the focused component. Or the event to notify about doesn't fit into existing property change support.
+However, in some cases, users need to be notified of changes outside the focused component.
+Or the event to notify about doesn't fit into existing property change support.
 
 For these scenarios, use [`AccessibleAnnouncerUtil.announce()`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/accessibility/AccessibleAnnouncerUtil.java) to make screen readers announce a specific string.
 

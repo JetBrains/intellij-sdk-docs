@@ -6,7 +6,8 @@
 
 JetBrains provides an official plugin repository [JetBrains Marketplace](https://plugins.jetbrains.com) for all IntelliJ Platform-based IDEs, as well as other products.
 
-> These pages have moved to [JetBrains Marketplace Documentation](https://plugins.jetbrains.com/docs/marketplace). Please update bookmarks.
+> These pages have moved to [JetBrains Marketplace Documentation](https://plugins.jetbrains.com/docs/marketplace).
+> Please update bookmarks.
 >
 {style="warning"}
 

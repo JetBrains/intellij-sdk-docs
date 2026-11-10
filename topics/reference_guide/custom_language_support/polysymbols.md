@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Poly Symbols
 <primary-label ref="2025.2"/>
@@ -78,8 +78,7 @@ Currently, IDEs provide built-in integration for the following language features
 - CSS: properties, custom properties, functions, classes, pseudo-elements, pseudo-classes, and parts
 - JavaScript: string-literals, object properties, object literals, and symbols (in JavaScript and TypeScript)
 
-The following sections provide information on how to implement Poly Symbols for plugins and how to
-define them statically through JSON schemas:
+The following sections provide information on how to implement Poly Symbols for plugins and how to define them statically through JSON schemas:
 - [](polysymbols_implementation.md)
 - [](polysymbols_web_types.md)
 

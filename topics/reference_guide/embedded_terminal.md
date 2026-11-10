@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Embedded Terminal
 
@@ -47,8 +47,7 @@ stored in [`TerminalOutputModelsSet`](%gh-ic%/plugins/terminal/src/org/jetbrains
 and can be accessed via `TerminalView.outputModels`.
 
 `TerminalOutputModel` is a read-only view of the terminal screen and the output history.
-It can be thought of as a string that contains the currently displayed text and some previous history
-that is removed ("trimmed") from time to time to avoid consuming too much memory.
+It can be thought of as a string that contains the currently displayed text and some previous history that is removed ("trimmed") from time to time to avoid consuming too much memory.
 
 Because of trimming, this model uses absolute offsets to navigate in it.
 They are represented by [`TerminalOffset`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/TerminalOutputModel.kt) and [`TerminalLineIndex`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/TerminalOutputModel.kt).
@@ -75,8 +74,7 @@ To provide some custom handling for a shortcut in the terminal,
 But key events handling in the terminal are different compared to other places of the IDE,
 so just registering an action in the [<path>plugin.xml</path>](plugin_configuration_file.md) won't be enough.
 
-Terminal has an option [*Override IDE shortcuts*](https://www.jetbrains.com/help/idea/settings-tools-terminal.html#application-settings) that limits the list of actions that can be executed
-by shortcuts in the terminal to avoid conflicts of the IDE actions with the shell key bindings.
+Terminal has an option [*Override IDE shortcuts*](https://www.jetbrains.com/help/idea/settings-tools-terminal.html#application-settings) that limits the list of actions that can be executed by shortcuts in the terminal to avoid conflicts of the IDE actions with the shell key bindings.
 For example, it allows handling the <shortcut>Ctrl+R</shortcut> shortcut by the shell (and invoke search in commands history) instead of starting a [Run Configuration](run_configurations.md) in the IDE.
 
 To make an action available by shortcut in the terminal,
@@ -120,8 +118,7 @@ class MyTerminalAllowedActionsProvider : TerminalAllowedActionsProvider {
 
 ## Shell Integration
 
-When the shell process is started, the Terminal plugin injects shell scripts into its startup
-to get information about the environment and subscribe to events.
+When the shell process is started, the Terminal plugin injects shell scripts into its startup to get information about the environment and subscribe to events.
 For example, this allows tracking the positions of the prompt, command, and command output in the shell output.
 
 All APIs that rely on the shell integration are available in [`TerminalShellIntegration`](%gh-ic%/plugins/terminal/src/org/jetbrains/plugins/terminal/view/shellIntegration/TerminalShellIntegration.kt).

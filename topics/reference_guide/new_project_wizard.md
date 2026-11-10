@@ -77,7 +77,8 @@ All the steps are displayed on a single screen in the project wizard dialog, whi
 A project wizard step implements
 [`NewProjectWizardStep`](%gh-ic%/platform/platform-impl/src/com/intellij/ide/wizard/NewProjectWizardStep.kt).
 The most important methods are:
-- `setupUI()` — defines the UI components for the step. Step UI is built with [](kotlin_ui_dsl_version_2.md)
+- `setupUI()` — defines the UI components for the step.
+  Step UI is built with [](kotlin_ui_dsl_version_2.md)
 - `setupProject()` — applies the parameters provided in UI to the generated project
 
 See the example implementations in the [`intellij-community`](%gh-ic%/README.md) repository.

@@ -61,8 +61,8 @@ The export produces a file called <path>Markdown.xml</path> with the following c
 </templateSet>
 ```
 
-> To [localize](providing_translations.md) the description, instead of the `description` attribute, use `key` and `resource-bundle` attributes pointing to a key
-> in a [message bundle](internationalization.md#message-bundles).
+> To [localize](providing_translations.md) the description, instead of the `description` attribute,
+> use `key` and `resource-bundle` attributes pointing to a key in a [message bundle](internationalization.md#message-bundles).
 > A quick fix to extract the localized key is available since 2024.2.
 
 Copy this file into the [plugin's resources folder](%gh-sdk-samples-master%/live_templates/src/main/resources/liveTemplates).

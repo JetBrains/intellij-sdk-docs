@@ -70,8 +70,7 @@ To determine the current [Theme](themes_getting_started.md)'s style, use [`JBCol
 </tldr>
 
 Always create borders and insets via factory methods from [`JBUI.Borders`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/JBUI.java) and [`JBUI.Insets`](%gh-ic%/platform/util/ui/src/com/intellij/util/ui/JBUI.java), which create DPI-aware instances.
-Using standard DPI-agnostic instances (reported by inspection <ui-path>Plugin DevKit | Code | Use DPI-aware borders</ui-path> and <ui-path>Plugin DevKit | Code | Use DPI-aware insets</ui-path>)
-can result in UI layout problems.
+Using standard DPI-agnostic instances (reported by inspection <ui-path>Plugin DevKit | Code | Use DPI-aware borders</ui-path> and <ui-path>Plugin DevKit | Code | Use DPI-aware insets</ui-path>) can result in UI layout problems.
 
 If DPI-aware insets are used in an empty border (`JBUI.Borders.empty()`), then the insets will be updated automatically, for example, if scaling is changed because the <ui-path>IDE Zoom</ui-path> action was performed or for any other reason.
 If the insets are used elsewhere, manually call `JBInsets.update()` in the component's `updateUI()` method to update the insets accordingly.

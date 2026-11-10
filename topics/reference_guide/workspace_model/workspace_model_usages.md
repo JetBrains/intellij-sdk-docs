@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Usage Examples
 
@@ -322,8 +322,8 @@ To eliminate these shortcomings, use
 It represents a pointer to an entity which can be stored anywhere.
 The pointer can be obtained via
 [`WorkspaceEntity.createPointer()`](%gh-ic%/platform/workspace/storage/src/com/intellij/platform/workspace/storage/WorkspaceEntity.kt).
-An instance of this class stores an internal ID of the entity and doesn't contain the pointer to the original storage, so it's ok to
-store them in long-living data structures as it won't create a memory leak.
+An instance of this class stores an internal ID of the entity and doesn't contain the pointer to the original storage,
+so it's ok to store them in long-living data structures as it won't create a memory leak.
 
 The pointer will resolve to the same entity for the same storage and will survive modifications.
 If the entity is removed or replaced by a different one via

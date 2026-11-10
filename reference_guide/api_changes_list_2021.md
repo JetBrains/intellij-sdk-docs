@@ -313,7 +313,8 @@ Add implementation for `com.intellij.openapi.fileEditor.FileEditor.getFile()`
 : Use `com.intellij.database.actions.DbDeleteProvider.getDeleteProvider()` instead.
 
 `com.intellij.database.model.RawConnectionConfig.getEffectiveUrl(Project)` method removed
-: Use `com.intellij.database.model.RawConnectionConfig.getUrl()` instead. Or use `com.intellij.database.dataSource.DatabaseConnectionEstablisher.processInterceptors()`.
+: Use `com.intellij.database.model.RawConnectionConfig.getUrl()` instead.
+  Or use `com.intellij.database.dataSource.DatabaseConnectionEstablisher.processInterceptors()`.
 
 ### GitHub Plugin 2021.2
 
@@ -343,7 +344,8 @@ Add implementation for `com.intellij.openapi.fileEditor.FileEditor.getFile()`
 ### Python Plugin 2021.2.1
 
 `com.jetbrains.python.psi.types.PyTypedDictType.Companion.match(PyTypedDictType, PyDictLiteralExpression, TypeEvalContext)` method removed
-: As the result of the refactoring aimed at fixing [PY-48799](https://youtrack.jetbrains.com/issue/PY-48799), for dict literals containing only string keys the Python plugin infers `PyTypedDictType` now, so there's no need to match dict literals with `TypedDict`s. There's a new method for comparing the inferred `TypedDict`s with the given ones: `com.jetbrains.python.psi.types.PyTypedDictType.Companion.match(PyType, PyTypedDictType, TypeEvalContext)`.
+: As the result of the refactoring aimed at fixing [PY-48799](https://youtrack.jetbrains.com/issue/PY-48799), for dict literals containing only string keys the Python plugin infers `PyTypedDictType` now, so there's no need to match dict literals with `TypedDict`s.
+  There's a new method for comparing the inferred `TypedDict`s with the given ones: `com.jetbrains.python.psi.types.PyTypedDictType.Companion.match(PyType, PyTypedDictType, TypeEvalContext)`.
 
 ## 2021.1
 
@@ -359,7 +361,8 @@ Add implementation for `com.intellij.openapi.fileEditor.FileEditor.getFile()`
 : Add a dependency on the `com.intellij.jsp` plugin and replace the reference with `com.intellij.lang.jsp.NewJspLanguage.getInstance()`.
 
 `com.intellij.ide.actions.searcheverywhere.SEResultsEqualityProvider.compareItems(alreadyFoundItem)` method parameter type changed from `SearchEverywhereFoundElementInfo` to `List<SearchEverywhereFoundElementInfo>`
-: New API is more abstract which allows to review all already found items before making "deduplication" decision. Also consider implementing `com.intellij.ide.actions.searcheverywhere.AbstractEqualityProvider` instead of `com.intellij.ide.actions.searcheverywhere.SEResultsEqualityProvider`.
+: New API is more abstract which allows to review all already found items before making "deduplication" decision.
+  Also consider implementing `com.intellij.ide.actions.searcheverywhere.AbstractEqualityProvider` instead of `com.intellij.ide.actions.searcheverywhere.SEResultsEqualityProvider`.
 
 `com.intellij.ide.actions.searcheverywhere.SEResultsEqualityProvider.SEEqualElementsActionType.SKIP` field removed
 : Enum class `SEEqualElementsActionType` was converted to sealed class with the same name.

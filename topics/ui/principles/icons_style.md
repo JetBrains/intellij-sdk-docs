@@ -16,7 +16,8 @@ Follow these guidelines to create a new icon or redesign an existing one for Int
 
 A common style unites several icons into a set and makes them recognizable.
 
-Use a flat geometric icon style with straight corners and edges. Flat icons remain legible even in small sizes.
+Use a flat geometric icon style with straight corners and edges.
+Flat icons remain legible even in small sizes.
 
 Use flat shapes instead of complex 3D forms:
 
@@ -24,13 +25,15 @@ Use flat shapes instead of complex 3D forms:
 |-----------------------------------------------------|-----------------------------------------------------|
 | ![](style_pin_3d.png){width="190"}                  | ![](style_pin_flat.png){width="190"}                |
 
-Use straight corners and lines instead of curves. It’s recommended to use 45° and 90° angles, or 30° and 60° where possible:
+Use straight corners and lines instead of curves.
+It’s recommended to use 45° and 90° angles, or 30° and 60° where possible:
 
 | <format color="Red" style="bold">Incorrect</format> | <format color="Green" style="bold">Correct</format> |
 |-----------------------------------------------------|-----------------------------------------------------|
 | ![](style_folder_round.png){width="144"}            | ![](style_folder_straigt.png){width="144"}          |
 
-Icons should be as simple as possible without losing their meaning. Clean and simple icons ensure readability and reduce visual clutter.
+Icons should be as simple as possible without losing their meaning.
+Clean and simple icons ensure readability and reduce visual clutter.
 
 <table>
 <tr>
@@ -48,7 +51,9 @@ Icons should be as simple as possible without losing their meaning. Clean and si
 
 ## Grid and size
 
-Basically, icons fit into a square artboard. Leave a transparent padding around the perimeter. For default 16px icons, the transparent border is 1px, so the icon’s visible part should be inside the 14px x 14px area.
+Basically, icons fit into a square artboard.
+Leave a transparent padding around the perimeter.
+For default 16px icons, the transparent border is 1px, so the icon’s visible part should be inside the 14px x 14px area.
 
 ![](grid.png){width=251 style=block}
 *14px x 14px is the area where the visible part of the icon should fit for a 16px icon.*
@@ -98,7 +103,8 @@ Sizes for other icon sizes can be found in the table below:
 
 ## Basic shapes
 
-Use basic shapes to build icons, such as squares, circles and rectangles. Using a grid and basic shapes ensures consistent visual proportions and placement.
+Use basic shapes to build icons, such as squares, circles and rectangles.
+Using a grid and basic shapes ensures consistent visual proportions and placement.
 
 <table style="none">
     <tr>
@@ -111,7 +117,9 @@ Use basic shapes to build icons, such as squares, circles and rectangles. Using 
     </tr>
 </table>
 
-Make sure that icons have the same visual weight. The more filled an icon is, the less space it needs. Following this rule, circles, rhombuses, triangles and other non-square shapes should have larger height and width to be optically balanced with square figures.
+Make sure that icons have the same visual weight.
+The more filled an icon is, the less space it needs.
+Following this rule, circles, rhombuses, triangles and other non-square shapes should have larger height and width to be optically balanced with square figures.
 
 ![](shapes_weight_1.png){width=542 style=block}
 *Make the circle diameter 2px bigger than square icons’ height to compensate for the visual weight.*
@@ -121,11 +129,13 @@ Icons with more details should occupy more space.
 ![](shapes_weight_2.png){width=542 style=block}
 *The eye icon is less detailed and occupies less space than a more complex scissors icon.*
 
-Icon weight can often take priority over the basic shape sizing. For more examples on visual weight compensation, see [Optical Effects in User Interfaces](https://medium.muz.li/optical-effects-9fca82b4cd9a).
+Icon weight can often take priority over the basic shape sizing.
+For more examples on visual weight compensation, see [Optical Effects in User Interfaces](https://medium.muz.li/optical-effects-9fca82b4cd9a).
 
 ## Stroke
 
-Use a 2px stroke as the main drawing line. Consistent line weight makes icons cohesive.
+Use a 2px stroke as the main drawing line.
+Consistent line weight makes icons cohesive.
 
 <table style="none">
 <tr>
@@ -138,7 +148,8 @@ Use a 2px stroke as the main drawing line. Consistent line weight makes icons co
 </tr>
 </table>
 
-Align pixels on the X and Y axis and round to the nearest whole pixel, or 0.5px if it’s not possible to align to integer pixels. Aligning icons off the pixel grid will make the icon blurry when it’s rasterized.
+Align pixels on the X and Y axis and round to the nearest whole pixel, or 0.5px if it’s not possible to align to integer pixels.
+Aligning icons off the pixel grid will make the icon blurry when it’s rasterized.
 
 > To check what an icon will look like when rasterized use the <ui-path>View | Canvas | Show Pixels on Zoom</ui-path> option <shortcut>Ctrl+P</shortcut> in Sketch,
 > <ui-path>View | Pixel Preview</ui-path> <shortcut>Alt+Ctrl+Y</shortcut> in Illustrator.
@@ -160,7 +171,8 @@ Align pixels on the X and Y axis and round to the nearest whole pixel, or 0.5px 
 
 Use the 30°, 45° and 60° angles for diagonal lines as they look sharper than diagonals with other angles.
 
-Round shapes, small details and some letters cannot be aligned to the pixel grid. Make sure that the significant pixels have sufficient saturation.
+Round shapes, small details and some letters cannot be aligned to the pixel grid.
+Make sure that the significant pixels have sufficient saturation.
 
 Reduce the number of anchors as they increase the size of the image and takes longer to process it.
 
@@ -181,7 +193,8 @@ Reduce the number of anchors as they increase the size of the image and takes lo
 
 A modifier is a small shape added over the base icon.
 
-The default modifier position is the bottom right corner. If the base shape is badly recognizable with a modifier in the bottom right corner, or if several modifiers are needed, the modifier can be placed in other corners.
+The default modifier position is the bottom right corner.
+If the base shape is badly recognizable with a modifier in the bottom right corner, or if several modifiers are needed, the modifier can be placed in other corners.
 
   <table style="none">
   <tr>
@@ -200,7 +213,8 @@ Leave a 1-2px spacing between the modifier and the main shape, to make the modif
 
 ## Arrows
 
-General rules for arrows: arrowhead is a filled triangle with a 90° pointing angle, a 2px body ends in a square stroke. An arrow’s orientation is horizontal, vertical, 45° or round.
+General rules for arrows: arrowhead is a filled triangle with a 90° pointing angle, a 2px body ends in a square stroke.
+An arrow’s orientation is horizontal, vertical, 45° or round.
 
 ![](arrows_basic.png){width=515 style=block}
 *Basic arrow icons*
@@ -226,13 +240,15 @@ Do **not** use other arrow styles, for example, unfilled arrows or arrows with t
 
 ## Color
 
-Do not use color as the only differentiator between icons (except for the [Noun icon](#noun-icons)) because some people do not distinguish colors. Make sure that icons are easily distinguishable by their shape.
+Do not use color as the only differentiator between icons (except for the [Noun icon](#noun-icons)) because some people do not distinguish colors.
+Make sure that icons are easily distinguishable by their shape.
 
 Do not use gradients or shadows.
 
 ### Action icons
 
-An action icon is an icon that triggers an action. It usually appears on toolbars and in dialogs.
+An action icon is an icon that triggers an action.
+It usually appears on toolbars and in dialogs.
 There are 5 colors in the action icons palette.
 The dark version is for Darcula theme.
 
@@ -321,29 +337,35 @@ Use these colors according to the following rules:
         </tr>
     </table>
 
-3. Preserve colors in icon combinations. If an icon is colored in its full size, it should have the same color when reduced.
+3. Preserve colors in icon combinations.
+   If an icon is colored in its full size, it should have the same color when reduced.
 
    ![](colors_actions_modifier.png){width=248}
 
-4. Use green and red colors for paired icons. Color helps distinguish between similar icons faster.
+4. Use green and red colors for paired icons.
+   Color helps distinguish between similar icons faster.
 
    ![](colors_actions_pair.png){width=233}
 
-5. Use grey color for tool window icons. Icons are placed on the perimeter of the IDE, so they should not attract too much attention and distract users.
+5. Use grey color for tool window icons.
+   Icons are placed on the perimeter of the IDE, so they should not attract too much attention and distract users.
 
    ![](colors_toolbuttons.png){width=750}
 
 ### Status icons
 
-Color is a great way to provide status information. Use status icons that are already present in the IDE repository:
+Color is a great way to provide status information.
+Use status icons that are already present in the IDE repository:
 
 ![](colors_status.png){width=308}
 
-If a new icon is needed, color it according to its semantics. Make sure that the status icons are easily distinguishable by their form, as many colorblind people find it difficult to distinguish between red and green.
+If a new icon is needed, color it according to its semantics.
+Make sure that the status icons are easily distinguishable by their form, as many colorblind people find it difficult to distinguish between red and green.
 
 ### Noun icons
 
-A noun icon is an icon that appears in the tree view to mark different file types. It helps to locate items in the list faster and does not trigger an action.
+A noun icon is an icon that appears in the tree view to mark different file types.
+It helps to locate items in the list faster and does not trigger an action.
 
 The palette for noun icons is wider, because there are lots of icons in one set:
 
@@ -520,7 +542,8 @@ Use colors without opacity for small elements, like modifiers.
 
 ## Font
 
-To make a new icon with a letter, reuse letters from existing icons. If there's no suitable letter in existing icons, use a common sans-serif font like Arial or Open Sans.
+To make a new icon with a letter, reuse letters from existing icons.
+If there's no suitable letter in existing icons, use a common sans-serif font like Arial or Open Sans.
 
 ## Export Icons
 
@@ -528,7 +551,8 @@ To make a new icon with a letter, reuse letters from existing icons. If there's 
 >
 {style="note"}
 
-Use the SVG format for icons files. Use camelCase capitalization for icon names:
+Use the SVG format for icons files.
+Use camelCase capitalization for icon names:
 
 <path>iconName.svg</path>
 

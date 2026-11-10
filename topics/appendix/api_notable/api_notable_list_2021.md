@@ -24,27 +24,32 @@ Highlighting API exposes priority range
 ### IntelliJ Platform 2021.2
 
 Unit test mode: non-production `IconManager`
-: Now `com.intellij.ui.IconManager.createDeferredIcon()` doesn't use `iconProducer` which might result in "wrong" composite icons and failed assertions. Override `UsefulTestCase.isIconRequired()` returning `true` to restore production icons. Alternatively, invoke `Registry.get("psi.deferIconLoading").setValue(false)` in `setUp()` and `Registry.get("psi.deferIconLoading").resetToDefault()` in `tearDown()`.
+: Now `com.intellij.ui.IconManager.createDeferredIcon()` doesn't use `iconProducer` which might result in "wrong" composite icons and failed assertions.
+  Override `UsefulTestCase.isIconRequired()` returning `true` to restore production icons.
+  Alternatively, invoke `Registry.get("psi.deferIconLoading").setValue(false)` in `setUp()` and `Registry.get("psi.deferIconLoading").resetToDefault()` in `tearDown()`.
 
 Constructor Injection disabled for Extensions
 : Please obtain necessary components only when needed (logged as ERROR now).
 
 Language Injection
 : Use [`LanguageInjectionContributor`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionContributor.java) (<include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageInjectionContributor"/></include>)
-and [`LanguageInjectionPerformer`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java) (<include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageInjectionPerformer"/></include>)
-to customize [language injection](language_injection.md#languageinjectioncontributor-and-languageinjectionperformer).
+  and [`LanguageInjectionPerformer`](%gh-ic%/platform/core-api/src/com/intellij/lang/injection/general/LanguageInjectionPerformer.java) (<include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageInjectionPerformer"/></include>)
+  to customize [language injection](language_injection.md#languageinjectioncontributor-and-languageinjectionperformer).
 
 ### IntelliJ IDEA 2021.2
 
 Unbundled plugins
-: Several plugins (Arquillian, AspectJ, CoffeeScript, Debugger Support for JSP (JSR45), Drools, Guice, Helidon, Java EE: Enterprise Java Beans (EJB), Spring OSGi, Spring Web Flow) have been unbundled. The IDE will suggest installation if the project contains related framework dependency. If a plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
+: Several plugins (Arquillian, AspectJ, CoffeeScript, Debugger Support for JSP (JSR45), Drools, Guice, Helidon, Java EE: Enterprise Java Beans (EJB), Spring OSGi, Spring Web Flow) have been unbundled.
+  The IDE will suggest installation if the project contains related framework dependency.
+  If a plugin depends on them, users will need to install them from the [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 ## 2021.1
 
 ### IntelliJ Platform 2021.1
 
 _Add unambiguous imports on the fly_ for custom languages
-: Override [`ReferenceImporter#isAddUnambiguousImportsOnTheFlyEnabled()`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/ReferenceImporter.java) and provide corresponding user setting. Implement `HintAction` with `fixSilently()` and hook it up to highlighting as a quick fix for unresolved reference.
+: Override [`ReferenceImporter#isAddUnambiguousImportsOnTheFlyEnabled()`](%gh-ic%/platform/analysis-impl/src/com/intellij/codeInsight/daemon/ReferenceImporter.java) and provide corresponding user setting.
+  Implement `HintAction` with `fixSilently()` and hook it up to highlighting as a quick fix for unresolved reference.
 
 Ability to override encoding per `VirtualFile`
 : Implement [`FileEncodingProvider`](%gh-ic%/platform/core-api/src/com/intellij/openapi/vfs/encoding/FileEncodingProvider.java) and register in <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.fileEncodingProvider"/></include>.

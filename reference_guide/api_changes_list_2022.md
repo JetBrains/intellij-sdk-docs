@@ -109,10 +109,12 @@ NOTE: Entries not starting with code quotes (`name`) can be added to document no
 : That method was an internal method.
 
 `com.intellij.database.util.TreePatternNode.Group(ObjectKind, TreePatternNode[], TreePatternNode)` constructor removed
-: Do not manipulate TreePatternNodes. Use `TreePatternUtils` to manipulate `TreePatterns`.
+: Do not manipulate TreePatternNodes.
+  Use `TreePatternUtils` to manipulate `TreePatterns`.
 
 `com.intellij.database.util.TreePatternNode.NegativeNaming(ObjectName[])` constructor removed
-: Do not manipulate TreePatternNodes. Use `TreePatternUtils` to manipulate `TreePatterns`.
+: Do not manipulate TreePatternNodes.
+  Use `TreePatternUtils` to manipulate `TreePatterns`.
 
 `com.intellij.database.dataSource.DataSourceConfigurable.getDataSource()` method return type changed from `DasDataSource` to `RawDataSource`
 : Stricter generic bound.
@@ -351,22 +353,31 @@ Method `com.intellij.grazie.GrazieBundle.message(key, parameters)` marked static
 ### Database Tools and SQL Plugin 2022.1
 
 `com.intellij.database.datagrid.DataProducer.processRequest(DataRequest)` method parameter type changed from `DataRequest` to `GridDataRequest`
-: `GridDataRequest` is a part of new API for async loading of table data. It's not possible to keep old method with default implementation because `DataProducer` will no longer have dependency on `DataRequest`. Plugins need to be recompiled to maintain bytecode compatibility.
+: `GridDataRequest` is a part of new API for async loading of table data.
+  It's not possible to keep old method with default implementation because `DataProducer` will no longer have dependency on `DataRequest`.
+  Plugins need to be recompiled to maintain bytecode compatibility.
 
 `com.intellij.database.datagrid.DataRequest.RawQueryRequest.afterLastRowAdded(DataRequest.Context, int)` method parameter type changed from `DataRequest.Context` to `GridDataRequest.Context`
-: The signature of the method was changed in the interface `com.intellij.database.datagrid.DataConsumer` that is now a part of new API for async loading of table data. Change the parameter type of the overridden method and recompile plugin to maintain bytecode compatibility.
+: The signature of the method was changed in the interface `com.intellij.database.datagrid.DataConsumer` that is now a part of new API for async loading of table data.
+  Change the parameter type of the overridden method and recompile plugin to maintain bytecode compatibility.
 
 `com.intellij.database.datagrid.DataConsumer.addRows(DataRequest.Context, List<DataConsumer.Row>)` method parameter type changed from `DataRequest.Context` to `GridDataRequest.Context`
-: The signature of the method was changed in the interface `com.intellij.database.datagrid.DataConsumer` that is now a part of new API for async loading of table data. Change the parameter type of the overridden method and recompile plugin to maintain bytecode compatibility.
+: The signature of the method was changed in the interface `com.intellij.database.datagrid.DataConsumer` that is now a part of new API for async loading of table data.
+  Change the parameter type of the overridden method and recompile plugin to maintain bytecode compatibility.
 
 `com.intellij.database.datagrid.DataConsumer.addRows(DataRequest.Context, List<DataConsumer.Row>)` method parameter type changed from `List<DataConsumer.Row>` to `List<? extends GridRow>`
-: The signature of the method was changed in the interface `com.intellij.database.datagrid.DataConsumer` that is now a part of new API for async loading of table data. Change the parameter type of the overridden method and recompile plugin to maintain bytecode compatibility.
+: The signature of the method was changed in the interface `com.intellij.database.datagrid.DataConsumer` that is now a part of new API for async loading of table data.
+  Change the parameter type of the overridden method and recompile plugin to maintain bytecode compatibility.
 
 `com.intellij.database.extractors.ObjectFormatter.getPlainValue(Object, DataConsumer.Column, Dbms)` method removed
-: Method was removed because the table editor API was refactored. It will not depend on Dbms anymore. Please use `ObjectFormatter.objectToString` instead.
+: Method was removed because the table editor API was refactored.
+  It will not depend on Dbms anymore.
+  Please use `ObjectFormatter.objectToString` instead.
 
 `com.intellij.database.DatabaseDataKeys.DATA_SOURCE_KEY` field removed
-: `DatabaseDataKeys` no longer extends `DatabaseDataKeysCore` because `DatabaseDataKeys` was moved to a separate module for table editor. `DATA_SOURCE_KEY` now has to be accessed directly via `DatabaseDataKeysCore`.
+: `DatabaseDataKeys` no longer extends `DatabaseDataKeysCore` because `DatabaseDataKeys` was moved to a separate module for table editor.
+  `DATA_SOURCE_KEY` now has to be accessed directly via `DatabaseDataKeysCore`.
 
 `com.intellij.database.extractors.ObjectFormatter` class now interface
-: Method was removed because the table editor API was refactored. New API will allow to use table editor in other products and fully customize it.
+: Method was removed because the table editor API was refactored.
+  New API will allow to use table editor in other products and fully customize it.

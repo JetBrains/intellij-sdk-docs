@@ -267,8 +267,7 @@ Complex callouts can also specify the `title` attribute:
 
 > This is a note.
 > We have a lot of text.
-> Don't make everyone read it fully by
-> adding a good title.
+> Don't make everyone read it fully by adding a good title.
 >
 {title="A useful title"}
 

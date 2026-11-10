@@ -17,16 +17,16 @@ The source of the documentation content can vary.
 While it is often extracted from comments in the source code (e.g., Javadoc comments),
 external resources, such as web pages, can also be accessed.
 
-From IntelliJ Platform version 2023.1 onwards, plugin developers can choose to implement
-one of three extension points (EPs) from the new Documentation Target API based on the specific use-case.
+From IntelliJ Platform version 2023.1 onwards,
+plugin developers can choose to implement one of three extension points (EPs) from the new Documentation Target API based on the specific use-case.
 These EPs enable building documentation from
 [offsets in the current editor](coordinates_system.md#editor-coordinate-systems),
 [PSI elements](psi_elements.md), or [Symbols](symbols.md).
 Detailed information on implementing these EPs can be found in the [](#documentation-target-api) section.
 
 > Plugins targeting versions earlier than 2023.1 must use the [Documentation Provider API](#documentation-provider-api).
-> Note that as long as the transition to the new API is
-> not complete, the [custom language tutorial](documentation_provider.md) will continue using `DocumentationProvider`.
+> Note that as long as the transition to the new API is not complete,
+> the [custom language tutorial](documentation_provider.md) will continue using `DocumentationProvider`.
 >
 {title="Targeting IDEs before 2023.1" style="note"}
 
@@ -39,8 +39,9 @@ outlining the primary components and their interactions.
 
 <procedure title="Overall Approach">
 
-1. Implement one of the EPs below which should extract the necessary entity (e.g. a PSI element) for
-   which the documentation is requested. It returns instances of
+1. Implement one of the EPs below
+   which should extract the necessary entity (e.g. a PSI element) for which the documentation is requested.
+   It returns instances of
    [`DocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt),
    which will be explained in a later section.
 2. The implementation of `DocumentationTarget` provides the functionality to compute the rendered documentation,
@@ -58,41 +59,37 @@ outlining the primary components and their interactions.
 `DocumentationTargetProvider`
 : Implement
 [`DocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTargetProvider.java)
-and register it as <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.backend.documentation.targetProvider"/></include> to build documentation
-for a certain offset in a `PsiFile` by overriding `documentationTargets()`.
+and register it as <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.backend.documentation.targetProvider"/></include> to build documentation for a certain offset in a `PsiFile` by overriding `documentationTargets()`.
 
 `PsiDocumentationTargetProvider`
 : Implement
 [`PsiDocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/PsiDocumentationTargetProvider.java)
-and register it as <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.backend.documentation.psiTargetProvider"/></include> to build documentation
-for PSI elements by overriding `documentationTarget()`.
+and register it as <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.backend.documentation.psiTargetProvider"/></include> to build documentation for PSI elements by overriding `documentationTarget()`.
 
 `SymbolDocumentationTargetProvider`
 : Implement
 [`SymbolDocumentationTargetProvider`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/SymbolDocumentationTargetProvider.java)
-and register it as <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.backend.documentation.symbolTargetProvider"/></include> to build documentation
-for [](symbols.md) by overriding `documentationTarget()`.
+and register it as <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.backend.documentation.symbolTargetProvider"/></include> to build documentation for [](symbols.md) by overriding `documentationTarget()`.
 
 ### `DocumentationTarget`
 
 Each of the implementations above returns instances of
 [`DocumentationTarget`](%gh-ic%/platform/lang-impl/src/com/intellij/platform/backend/documentation/DocumentationTarget.kt).
-The main work is done in `computeDocumentation()` where the documentation is built from the available
-information.
+The main work is done in `computeDocumentation()` where the documentation is built from the available information.
 If a plugin implemented the now deprecated
 [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java)
-before, then `computeDocumentation()` should do the work that was formerly done in
-`DocumentationProvider.generateDoc()`.
+before,
+then `computeDocumentation()` should do the work that was formerly done in `DocumentationProvider.generateDoc()`.
 
-In addition to showing the documentation, the `computeDocumentationHint()` method returns the text to be displayed
-when the user hovers over an element with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed or when
-<ui-path>Settings | Editor | Code Editing | Show quick documentation on hover</ui-path> is enabled.
+In addition to showing the documentation,
+the `computeDocumentationHint()` method returns the text to be displayed when the user hovers over an element with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed
+or when <ui-path>Settings | Editor | Code Editing | Show quick documentation on hover</ui-path> is enabled.
 In the old API, this method was called `DocumentationProvider.getQuickNavigateInfo()`.
 
 The `createPointer()` method manages instance restoration and ensures access to the entity across different read actions.
 When implementing the `createPointer()` method, it is essential to handle invalidated PSI elements.
-Unlike PSI elements, the `DocumentationTarget` API does not include an `isValid()` method and the returned pointer is expected
-to be `null` if the instance (and all contained objects) cannot be restored.
+Unlike PSI elements, the `DocumentationTarget` API does not include an `isValid()` method
+and the returned pointer is expected to be `null` if the instance (and all contained objects) cannot be restored.
 See
 [`KotlinDocumentationTarget.createPointer()`](%gh-ic%/plugins/kotlin/code-insight/kotlin.code-insight.k2/src/org/jetbrains/kotlin/idea/k2/codeinsight/quickDoc/KotlinDocumentationTarget.kt)
 as a reference.
@@ -106,8 +103,8 @@ as a reference.
 
 ## Documentation Provider API
 
-> As of IntelliJ Platform version 2023.1, the Documentation Provider API is deprecated and plugin
-> authors should use the [](#documentation-target-api) instead.
+> As of IntelliJ Platform version 2023.1, the Documentation Provider API is deprecated
+> and plugin authors should use the [](#documentation-target-api) instead.
 >
 {title="Deprecation Notice" style="note"}
 
@@ -126,8 +123,7 @@ Once these steps are completed, the following additional features can be impleme
 
 * Implement `getQuickNavigateInfo()` to provide the text that should be displayed when an element is hovered over with <shortcut>Ctrl</shortcut>/<shortcut>Cmd</shortcut> pressed.
 * Implement `generateHoverDoc()` to show different contents on mouse hover.
-* Implement `getDocumentationElementForLookupItem()` to return a suitable PSI element for the given lookup element when
-  <ui-path>View | Quick Documentation</ui-path> is called on an element of the autocompletion popup.
+* Implement `getDocumentationElementForLookupItem()` to return a suitable PSI element for the given lookup element when <ui-path>View | Quick Documentation</ui-path> is called on an element of the autocompletion popup.
 * Implement `getUrlFor()` and [`ExternalDocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/ExternalDocumentationProvider.java) to fetch documentation for elements from online resources.
 
 ### Examples

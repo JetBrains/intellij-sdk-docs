@@ -3,7 +3,8 @@
 # Testing FAQ
 
 <web-summary>
-Common FAQ, techniques, and issues for testing plugins. Writing automated tests, avoid flaky tests, debug, and handle common scenarios.
+Common FAQ, techniques, and issues for testing plugins.
+Writing automated tests, avoid flaky tests, debug, and handle common scenarios.
 </web-summary>
 
 <link-summary>Common questions and issues for testing plugins.</link-summary>
@@ -174,7 +175,8 @@ Use [`ExtensionTestUtil`](%gh-ic%/platform/testFramework/src/com/intellij/testFr
 
 ### How to wait for a specified amount of time?
 
-If possible, use the [](#how-to-wait-for-condition-with-timeout) approach. Otherwise, call `com.intellij.util.TimeoutUtil.sleep()`.
+If possible, use the [](#how-to-wait-for-condition-with-timeout) approach.
+Otherwise, call `com.intellij.util.TimeoutUtil.sleep()`.
 
 ### How to wait for condition with timeout?
 

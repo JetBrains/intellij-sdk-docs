@@ -79,8 +79,8 @@ Use `action.putValue(DialogWrapper.DEFAULT_ACTION, true)` to set the default but
 
 See also [](validation_errors.md) topic in UI Guidelines.
 
-To validate the data entered into the dialog, call `initValidation()` in the dialog's constructor and
-override the `doValidate()` method to perform the actual validation.
+To validate the data entered into the dialog, call `initValidation()` in the dialog's constructor
+and override the `doValidate()` method to perform the actual validation.
 The method will be called automatically via a timer.
 
 If the currently entered data is valid, return `null`.

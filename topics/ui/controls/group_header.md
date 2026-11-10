@@ -18,12 +18,14 @@ A group header clearly labels a group of UI controls.
 
 Follow the rules in [Groups of controls](groups_of_controls.md).
 
-Do **not** use group headers when each group contains 3 controls and less. Separate with [vertical insets](layout.md#organize-with-insets) instead.
+Do **not** use group headers when each group contains 3 controls and less.
+Separate with [vertical insets](layout.md#organize-with-insets) instead.
 
 <format color="Red" style="bold">Incorrect</format>
 
 ![](6_03_group_incorrect.png){width=569 style=block}
-*Each group has less than 3 controls. Group headers only add noise in this case because control labels are enough to understand their purpose.*
+*Each group has less than 3 controls.
+Group headers only add noise in this case because control labels are enough to understand their purpose.*
 
 <format color="Green" style="bold">Correct</format>
 
@@ -33,7 +35,9 @@ Do **not** use group headers when each group contains 3 controls and less. Separ
 
 Use title capitalization for the label.
 
-Make the label short, preferably no more than 4 words. Avoid generic words, such as "General" or "Options". See [Writing short and clear](writing_short.md).
+Make the label short, preferably no more than 4 words.
+Avoid generic words, such as "General" or "Options".
+See [Writing short and clear](writing_short.md).
 
 If a group contains rarely used or advanced settings, use a **collapsible group header** and collapse it by default.
 

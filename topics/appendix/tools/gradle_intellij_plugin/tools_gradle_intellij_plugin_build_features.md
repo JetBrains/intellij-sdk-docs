@@ -58,14 +58,15 @@ org.jetbrains.intellij.buildFeature.paidPluginSearchableOptionsWarning=false
 ## `selfUpdateCheck`
 
 Checks whether the currently used Gradle IntelliJ Plugin is outdated and if a new release is available.
-The plugin performs an update check on every run asking the GitHub Releases page for the redirection URL
-to the latest version with `HEAD` HTTP request: `https://github.com/JetBrains/intellij-platform-gradle-plugin/releases/latest`.
+The plugin performs an update check on every run asking the GitHub Releases page for the redirection URL to the latest version with `HEAD` HTTP request:
+`https://github.com/JetBrains/intellij-platform-gradle-plugin/releases/latest`.
 
 If the current version is outdated, the plugin will emit a warning with its current and the latest version.
 
 Feature respects the Gradle [`--offline`](https://docs.gradle.org/current/userguide/command_line_interface.html#sec:command_line_execution_options) mode.
 
-> It is strongly suggested to always use the latest available version. Older plugin versions may also not fully support the latest IDE releases.
+> It is strongly suggested to always use the latest available version.
+> Older plugin versions may also not fully support the latest IDE releases.
 
 {type="narrow"}
 Default value

@@ -26,7 +26,8 @@ Then, a notification instance itself.
 
 Declare a notification group as an extension in the plugin descriptor.
 It is registered using the [`com.intellij.notificationGroup`](https://jb.gg/ipe?extensions=com.intellij.notificationGroup) extension point.
-Set the display type to `BALLOON` constant. Then, provide a human-readable identifier.
+Set the display type to `BALLOON` constant.
+Then, provide a human-readable identifier.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">
@@ -34,7 +35,8 @@ Set the display type to `BALLOON` constant. Then, provide a human-readable ident
 </extensions>
 ```
 
-> A good ID completes this phrase: "Notifications in this group tell the user about…". See the [UI Guidelines for further tips on naming conventions](balloon.md#naming-a-notification-group).
+> A good ID completes this phrase: "Notifications in this group tell the user about…".
+> See the [UI Guidelines for further tips on naming conventions](balloon.md#naming-a-notification-group).
 >
 {style="tip"}
 
@@ -58,7 +60,8 @@ Notification("Bagel", "Bagel was eaten", NotificationType.INFORMATION)
 >
 {style="tip"}
 
-By default, a notification is *timed*, as it will automatically disappear after 10 seconds. However, it will remain in the <control>Notifications</control> tool window, until cleared, in the *Timeline* section.
+By default, a notification is *timed*, as it will automatically disappear after 10 seconds.
+However, it will remain in the <control>Notifications</control> tool window, until cleared, in the *Timeline* section.
 
 ## Configuring Notifications
 

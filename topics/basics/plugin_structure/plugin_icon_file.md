@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Plugin Logo
 
@@ -7,10 +7,9 @@
 The IntelliJ Platform supports representing a plugin with a logo.
 A _Plugin Logo_ is intended to be a unique representation of a plugin's functionality, technology, or company.
 
-When opening <path>plugin.xml</path> in editor, inspection
-<control>Plugin DevKit | Plugin descriptor | Plugin Logo check</control> (2024.3+,
-for earlier versions <control>Plugin DevKit | Plugin descriptor | Plugin.xml validity</control>)
-will highlight a missing plugin icon.
+When opening <path>plugin.xml</path> in editor,
+inspection <control>Plugin DevKit | Plugin descriptor | Plugin Logo check</control> (2024.3+,
+for earlier versions <control>Plugin DevKit | Plugin descriptor | Plugin.xml validity</control>) will highlight a missing plugin icon.
 
 **Note:** icons and images used within a plugin have different requirements.
 See [](icons.md) for more information.

@@ -3,7 +3,8 @@
 # Internal Actions – UI Inspector
 
 <web-summary>
-Explore the UI Inspector tool to check properties of any IDE UI component. Learn how to use it to inspect, find code locations, and get details on specific component properties.
+Explore the UI Inspector tool to check properties of any IDE UI component.
+Learn how to use it to inspect, find code locations, and get details on specific component properties.
 </web-summary>
 
 <link-summary>UI Inspector allows checking properties of any UI component in the running IDE instance.</link-summary>
@@ -65,9 +66,7 @@ Custom Swing components can also provide additional properties via [`UiInspector
 
 ## Inspecting Settings
 
-Enable <ui-path>Internal Actions | UI | Debugging Info in UI</ui-path> (2024.2+)
-(<ui-path>View | Appearance | Details in Tree View</ui-path> in earlier versions)
-in [Internal Mode](enabling_internal.md) to show Settings page `id` in the tree.
+Enable <ui-path>Internal Actions | UI | Debugging Info in UI</ui-path> (2024.2+) (<ui-path>View | Appearance | Details in Tree View</ui-path> in earlier versions) in [Internal Mode](enabling_internal.md) to show Settings page `id` in the tree.
 
 Some additional properties are available when inspecting the <control>Settings</control> dialog (2023.1+).
 

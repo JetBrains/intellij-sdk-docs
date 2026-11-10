@@ -28,8 +28,8 @@ A Poly Symbol can originate from source code analysis, or it can be a symbol sta
 
 Consumers of symbols should avoid casting the `PolySymbol` to some other specialized interface,
 as it prevents third party symbol providers from customizing symbols or providing additional symbols.
-Instead, symbols should use the `PolySymbol.Property` annotation to define property value getters and
-`PolySymbol.get` operator to retrieve values.
+Instead, symbols should use the `PolySymbol.Property` annotation to define property value getters
+and `PolySymbol.get` operator to retrieve values.
 
 ## General Properties
 
@@ -37,11 +37,11 @@ Instead, symbols should use the `PolySymbol.Property` annotation to define prope
 
 {style="full"}
 `kind`
-: Describes which group of symbols (kindName) within the particular language
-or concept (namespace) the symbol belongs to.
+: Describes which group of symbols (kindName) within the particular language or concept (namespace) the symbol belongs to.
 
 `name`
-: The name of the symbol. If the symbol does not have a pattern, the name will be used as-is for matching.
+: The name of the symbol.
+If the symbol does not have a pattern, the name will be used as-is for matching.
 
 `icon`
 : An optional icon associated with the symbol, which is going to be used across the IDE.
@@ -52,7 +52,8 @@ If none is specified, a default icon of the `origin` will be used, and if thatâ€
 Symbols with higher priority will also show higher on the completion list.
 
 `apiStatus`
-: Documents API status of the symbol. It is one of the sub-interfaces of [`PolySymbolApiStatus`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/PolySymbolApiStatus.kt):
+: Documents API status of the symbol.
+It is one of the sub-interfaces of [`PolySymbolApiStatus`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/PolySymbolApiStatus.kt):
 `Stable`, `Experimental` or `Deprecated`.
 Deprecated symbols are appropriately highlighted in the code editor, code completion, and quick documentation.
 
@@ -61,8 +62,7 @@ Deprecated symbols are appropriately highlighted in the code editor, code comple
 The framework contains constants for many modifiers known from various programming languages.
 However, implementations are free to define other modifiers using `PolySymbolModifier.get`.
 
-: When a match is performed over a sequence of symbols, use `PolySymbolMatchCustomizer` to customize
-how modifiers from different symbols in the sequence are merged for the resulting `PolySymbolMatch` modifiers.
+: When a match is performed over a sequence of symbols, use `PolySymbolMatchCustomizer` to customize how modifiers from different symbols in the sequence are merged for the resulting `PolySymbolMatch` modifiers.
 
 `psiContext`
 : A `PsiElement`, which is a file or an element, which can be used to roughly locate the source of the symbol within a project to provide a context for loading additional information, like types.
@@ -114,10 +114,11 @@ When matched along with a non-extension symbol, it can provide or override some 
 
 {style="full"}
 `get(property: PolySymbolProperty<T>)`
-: Accessor for various symbol properties. All properties supported by the PolySymbol framework are defined through `*Property`
-objects within `PolySymbol`. Check their documentation for further reference. Overall, avoid
-overriding this method to provide property values and instead define property getters by annotating properties,
-fields, or methods with `PolySymbol.Property` annotation.
+: Accessor for various symbol properties.
+All properties supported by the PolySymbol framework are defined through `*Property` objects within `PolySymbol`.
+Check their documentation for further reference.
+Overall, avoid overriding this method to provide property values
+and instead define property getters by annotating properties, fields, or methods with `PolySymbol.Property` annotation.
 
 E.g., to provide custom presentation for a symbol, implement getter for `PolySymbol.TextAttributesKeyProperty`:
 ```kotlin
@@ -314,7 +315,8 @@ There are seven types of patterns:
    A resolve will be made by the symbol provider from an enclosing complex pattern.
    If none of the symbols match the segment, the segment will have a [`MatchProblem.UNKNOWN_SYMBOL`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/PolySymbolNameSegment.kt) problem reported.
    The matched symbol might be a [`PolySymbolMatch`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolMatch.kt) itself, which allows for nesting patterns.
-4. Pattern sequence: a sequence of patterns. If some patterns are not matched, an empty segment with `MatchProblem.MISSING_REQUIRED_PART` will be created.
+4. Pattern sequence: a sequence of patterns.
+   If some patterns are not matched, an empty segment with `MatchProblem.MISSING_REQUIRED_PART` will be created.
 5. Complex pattern: this pattern is called complex because it makes several things:
     - The provided patterns are treated as alternatives.
     - It can have symbols resolver, which is used by nested symbol reference placeholder patterns.

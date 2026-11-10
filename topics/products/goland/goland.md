@@ -114,9 +114,11 @@ Select a [version](https://plugins.jetbrains.com/plugin/9568-go/versions) of the
 
 Depending on plugin's requirements, the following [`<depends>`](plugin_configuration_file.md#idea-plugin__depends) entries are needed in the <path>plugin.xml</path> file:
 
-* `com.intellij.modules.platform` - Always required. See [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml) for details.
+* `com.intellij.modules.platform` - Always required.
+  See [Configuring the plugin.xml File](dev_alternate_products.md#configuring-pluginxml) for details.
 * `org.jetbrains.plugins.go` - Required if the Go plugin APIs are used in the plugin.
-* `com.intellij.modules.goland` (2020.2+) or `com.intellij.modules.go` (pre-2020.2) - Required if the plugin targets GoLand IDE only. The plugin will not be loaded in other IDEs, even if the Go plugin is present.
+* `com.intellij.modules.goland` (2020.2+) or `com.intellij.modules.go` (pre-2020.2) - Required if the plugin targets GoLand IDE only.
+  The plugin will not be loaded in other IDEs, even if the Go plugin is present.
 
 ### Targeting IDEs Other Than GoLand
 

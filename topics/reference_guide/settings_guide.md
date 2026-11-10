@@ -109,7 +109,8 @@ The attributes supported by <include from="snippets.topic" element-id="ep"><var 
 
 (2) Either `displayName` or `key` and `bundle` must be specified depending on whether the displayed Settings name is localized.
 
-(3) If both `groupId` and `parentId` are specified, a warning is logged. Also, see _default_ entry in [](#values-for-parent-id-attribute).
+(3) If both `groupId` and `parentId` are specified, a warning is logged.
+Also, see _default_ entry in [](#values-for-parent-id-attribute).
 
 #### Values for Parent ID Attribute
 
@@ -172,16 +173,19 @@ To open the Settings dialog or show a specific `Configurable`, see [`ShowSetting
 Implementations based on `Configurable` can implement marker interfaces, which provide additional flexibility in the implementation.
 
 `Configurable.NoScroll`
-: Do not add scroll bars to the form. By default, a plugin's Settings component is put into a scrollable pane.
+: Do not add scroll bars to the form.
+  By default, a plugin's Settings component is put into a scrollable pane.
   However, a Settings panel can have a `JTree`, which requires its own `JScrollPane`.
   So `NoScroll` should be used to remove the outer `JScrollPane`.
 
 `Configurable.NoMargin`
-: Do not add an empty border to the form. By default, an empty border is added for a plugin's Settings component.
+: Do not add an empty border to the form.
+  By default, an empty border is added for a plugin's Settings component.
 
 `Configurable.Beta`
 : _(2022.3)_ Adds <control>Beta</control> label next to settings page title in <control>Settings</control> tree.
-  **_Deprecated since 2026.3 and scheduled for removal_**: The <control>Settings</control> tree no longer reads this interface. Use the [`beta="true"`](#table-of-attributes) attribute instead.
+  **_Deprecated since 2026.3 and scheduled for removal_**: The <control>Settings</control> tree no longer reads this interface.
+  Use the [`beta="true"`](#table-of-attributes) attribute instead.
 
 #### Additional Interfaces Based on `Configurable`
 

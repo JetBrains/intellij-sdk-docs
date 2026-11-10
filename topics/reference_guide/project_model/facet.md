@@ -24,8 +24,7 @@ To create, search, and access the list of facets for a module, use [`FacetManage
 
 ### Facet-Based Tool Window
 
-A [tool window](tool_windows.md) dependent on the existence of given facet(s) can be registered
-via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.facet.toolWindow"/></include>.
+A [tool window](tool_windows.md) dependent on the existence of given facet(s) can be registered via <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.facet.toolWindow"/></include>.
 
 ## Facet Basics Sample
 

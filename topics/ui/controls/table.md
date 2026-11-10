@@ -14,7 +14,8 @@
 
 ## When to use
 
-Use tables so that users can review, enter or edit uniform sets of data or options. For example:
+Use tables so that users can review, enter or edit uniform sets of data or options.
+For example:
 
 * <ui-path>Git | Show Git Log</ui-path>
 * <ui-path>Settings | Appearance & Behavior | Path Variables</ui-path>
@@ -32,11 +33,14 @@ Use tables:
 
 Do **not** use tables:
 
-* For hierarchical structures. Use Tree View instead.
+* For hierarchical structures.
+  Use Tree View instead.
 
-* When there are more than 4 options per entry. Use the Master-Detail layout instead.
+* When there are more than 4 options per entry.
+  Use the Master-Detail layout instead.
 
-* When at least one of the options requires a multi-line control, for example, the Text Area in <ui-path>Settings | Editor | Copyright | Copyright Profiles</ui-path>. Use Master-Detail layout instead:
+* When at least one of the options requires a multi-line control, for example, the Text Area in <ui-path>Settings | Editor | Copyright | Copyright Profiles</ui-path>.
+  Use Master-Detail layout instead:
 
   ![](master-detail.png){width=709}
 
@@ -46,11 +50,13 @@ Do **not** use tables:
 
 A label is optional for tables.
 
-Add a label if the table content is not obvious from the dialog title or the table header. For example, in the table that lets the user configure filters for import and completion per-scope:
+Add a label if the table content is not obvious from the dialog title or the table header.
+For example, in the table that lets the user configure filters for import and completion per-scope:
 
 ![](table_label.png){width=448}
 
-Avoid a label if it duplicates the dialog title or the table header. For example, there is no need for a label in the <ui-path>JavaScript | Libraries</ui-path> table since the Settings page title and the table context make it clear what is in the table:
+Avoid a label if it duplicates the dialog title or the table header.
+For example, there is no need for a label in the <ui-path>JavaScript | Libraries</ui-path> table since the Settings page title and the table context make it clear what is in the table:
 
 ![](label-header.png){width=424}
 
@@ -58,7 +64,8 @@ Add a label if the control above can be mistaken for a table header:
 
 ![](bytecode-version.png){width=350}
 
-Do **not** add a label to explain the table behavior. Use context help instead:
+Do **not** add a label to explain the table behavior.
+Use context help instead:
 
 <format color="Red" style="bold">Incorrect</format>
 
@@ -78,7 +85,8 @@ Follow the rules for the [Input field](input_field.md):
 
 Always put the label on top of the table.
 
-Do **not** use a Group separator instead of a Table label. A horizontal line is redundant here:
+Do **not** use a Group separator instead of a Table label.
+A horizontal line is redundant here:
 
 <format color="Red" style="bold">Incorrect</format>
 
@@ -90,7 +98,8 @@ Do **not** use a Group separator instead of a Table label. A horizontal line is 
 
 ### Header
 
-A table header is the row at the top of the table that helps identify the columns below each of the headers. Follow these rules:
+A table header is the row at the top of the table that helps identify the columns below each of the headers.
+Follow these rules:
 
 Add a header to a table if table data is non-descriptive or ambiguous.
 For example, in the Environment Variables table a header is required, since that content of each column is not clear:
@@ -103,7 +112,8 @@ For example, in the Environment Variables table a header is required, since that
 
 ![](header-needed-incorrect.png){width=350}
 
-Do **not** use a header if all columns in a table have self-descriptive content, for example, names, dates, color previews, etc. For example, a header in File History is redundant:
+Do **not** use a header if all columns in a table have self-descriptive content, for example, names, dates, color previews, etc.
+For example, a header in File History is redundant:
 
 <format color="Green" style="bold">Correct</format>
 
@@ -113,13 +123,16 @@ Do **not** use a header if all columns in a table have self-descriptive content,
 
 ![](history-header-redundant.png){width=488}
 
-Labels in a header should be short and descriptive. Try to avoid headers which are too long for the content in the rows below. [How to write texts](writing_short.md).
+Labels in a header should be short and descriptive.
+Try to avoid headers which are too long for the content in the rows below.
+[How to write texts](writing_short.md).
 
 Use nouns and noun phrases.
 
 Use title-case capitalization.
 
-Freeze a headers when scrolling the table. A header provides useful context and should not be hidden.
+Freeze a headers when scrolling the table.
+A header provides useful context and should not be hidden.
 
 Align header with the content in the column below:
 
@@ -127,7 +140,8 @@ Align header with the content in the column below:
 
 ### Placeholder
 
-A table placeholder is shown when there is no data yet. Always put meaningful text here, do **not** write "Nothing to show".
+A table placeholder is shown when there is no data yet.
+Always put meaningful text here, do **not** write "Nothing to show".
 
 ![](empty-incorrect.png){width=226}
 
@@ -143,17 +157,20 @@ Add a toolbar to provide actions which help manipulate data in the table (add, r
 
 ![](too-long-line.png){width=370}
 
-Use [`ToolbarDecorator`](%gh-ic%/platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java) to implement such a toolbar. See more on toolbars [here](toolbar.md).
+Use [`ToolbarDecorator`](%gh-ic%/platform/platform-api/src/com/intellij/ui/ToolbarDecorator.java) to implement such a toolbar.
+See more on toolbars [here](toolbar.md).
 
 ### Zebra striping and inner borders
 
 Zebra striping is alternate highlighting of lines or rows in data tables or forms.
 
-Use stripes to help users distinguish between different data sets. For example, the current branch is highlighted differently from other branches:
+Use stripes to help users distinguish between different data sets.
+For example, the current branch is highlighted differently from other branches:
 
 ![](history-zebra.png){width=488}
 
-Do **not** use stripes In a simple data set as guides to track content between columns. Alternating backgrounds create two distinct layers of focus while the type of data in different rows is the same.
+Do **not** use stripes In a simple data set as guides to track content between columns.
+Alternating backgrounds create two distinct layers of focus while the type of data in different rows is the same.
 
 <format color="Red" style="bold">Incorrect</format>
 
@@ -166,7 +183,8 @@ For example, look at the same table without stripes, with bigger line height and
 
 ![](table_table.png){width=448}
 
-Bigger distance between groups of related information can also help in tracking content. Line height between groups should be increased by 4px for each group level.
+Bigger distance between groups of related information can also help in tracking content.
+Line height between groups should be increased by 4px for each group level.
 
 For example, look at the File History table grouped by commit, author, and date:
 
@@ -238,7 +256,8 @@ In disabled table greyed-out text, disable controls and any interaction:
 
 If data in a cell is editable or configurable:
 
-Allow in-place editing of content for text data. It should be possible to activate editing on mouse click:
+Allow in-place editing of content for text data.
+It should be possible to activate editing on mouse click:
 
 ![](inline-edit.png){width=448}
 
@@ -258,11 +277,13 @@ If it’s possible to enumerate less than 15 most likely or valid variants, show
 
 ![](combo.png){width=115}
 
-Show the combo icon only on hover or when the corresponding line is selected. A lot of arrows in one column form their own information layers and attract too much attention.
+Show the combo icon only on hover or when the corresponding line is selected.
+A lot of arrows in one column form their own information layers and attract too much attention.
 
 If there are more than 15 variants, show a completion popup.
 
-Do **not** use a full-size combobox inside tables. It looks inconsistent and has too many details for a table; a simple dropdown icon with the variants popup is enough.
+Do **not** use a full-size combobox inside tables.
+It looks inconsistent and has too many details for a table; a simple dropdown icon with the variants popup is enough.
 
 <format color="Red" style="bold">Incorrect</format>
 
@@ -272,7 +293,8 @@ Do **not** use a full-size combobox inside tables. It looks inconsistent and has
 
 ### Sizes
 
-Choose a column width appropriate for the most common values, but no less than **65px**. Too wide columns make it hard to read data.
+Choose a column width appropriate for the most common values, but no less than **65px**.
+Too wide columns make it hard to read data.
 
 <format color="Green" style="bold">Correct</format>
 
@@ -282,7 +304,8 @@ Choose a column width appropriate for the most common values, but no less than *
 
 ![](fileColorsTooWide.png){width=592}
 
-The minimum table width is **350px**. If a table is too narrow after adjusting column widths, add space to the rightmost column.
+The minimum table width is **350px**.
+If a table is too narrow after adjusting column widths, add space to the rightmost column.
 
 Add space to the rightmost column if it needs to be aligned with other tables in the same window.
 
@@ -309,7 +332,8 @@ Place them closer to the sides instead:
 
 ![](table_history.png){width=488}
 
-Right-align numbers when it is useful to compare them by their length. Left-align all the other content.
+Right-align numbers when it is useful to compare them by their length.
+Left-align all the other content.
 
 ![](rightAlignNumbers.png){width=350}
 

@@ -344,7 +344,8 @@ Pass the IntelliJ IDEA `-e` or `--edit` argument to [`runIde`](tools_intellij_pl
 ./gradlew runIde --args='-e /absolute/path/to/file'
 ```
 
-Omit the file path to open an empty LightEdit window. To keep this setup as a separate reusable task, register a custom `runIde` task:
+Omit the file path to open an empty LightEdit window.
+To keep this setup as a separate reusable task, register a custom `runIde` task:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">

@@ -13,7 +13,8 @@ The easiest way to do so is to clone the repository, track the work in Git, and 
 
 ## General Architectural Principles
 
-Follow common Java architectural principles as closely as possible. "Effective Java" by Joshua Bloch is the right place to start.
+Follow common Java architectural principles as closely as possible.
+"Effective Java" by Joshua Bloch is the right place to start.
 
 ## Tests
 
@@ -54,7 +55,8 @@ To avoid unnecessary work when reviewing the changes, follow these guidelines:
   No one likes to leave poor code, but remember that having these changes mixed complicates the process of review.
 - Please don't fix multiple problems within a single patch or pull request.
 - Please don't commit changes to configuration files (<path>runConfigurations/IDEA.xml</path>, <path>codeStyleSettings.xml</path>, <path>misc.xml</path>, etc.) unless it is essential for the fix itself.
-- Please avoid moving or renaming code unless it is necessary for the fix. Keeping backwards compatibility is critical for the platform.
+- Please avoid moving or renaming code unless it is necessary for the fix.
+  Keeping backwards compatibility is critical for the platform.
 
 The ideal pull request would contain one commit with everything needed to fix the bug or implement a feature, but nothing else.
 "Commit early, commit often" perfectly applies only to local commits, but such "public commits" are hard to review (the reviewer needs either to go commit by commit spending more time to review work-in-progress, or to review all changes at once thus losing valuable information stored in commit messages).

@@ -36,8 +36,10 @@ Even if the compiler doesn't support incremental build, it still needs to report
 * [`SourceToOutputMapping`](%gh-ic%/jps/jps-builders/src/org/jetbrains/jps/builders/storage/SourceToOutputMapping.java) is a many-to-many relationship between source files and output files ("which source files were used to produce the specified output file").
   It's filled by calls to `BuildOutputConsumer.registerOutputFile()` and `ModuleLevelBuilder.OutputConsumer.registerOutputFile()`.
 
-The IDE monitors the project content changes and uses the information from those caches to generate the set of dirty and deleted files for every compilation. (Dirty files need to be recompiled, and deleted files need to have their output deleted).
-A builder can also report additional files as dirty (e.g., if a method is deleted, the builder can report the classes using this method as dirty.) A module-level builder can add some files to the dirty scope; if this happens, and if the builder returns `ADDITIONAL_PASS_REQUIRED` from its `build()` method, another round of builder execution for the same module chunk will be started with the new dirty scope.
+The IDE monitors the project content changes and uses the information from those caches to generate the set of dirty and deleted files for every compilation.
+(Dirty files need to be recompiled, and deleted files need to have their output deleted).
+A builder can also report additional files as dirty (e.g., if a method is deleted, the builder can report the classes using this method as dirty.)
+A module-level builder can add some files to the dirty scope; if this happens, and if the builder returns `ADDITIONAL_PASS_REQUIRED` from its `build()` method, another round of builder execution for the same module chunk will be started with the new dirty scope.
 
 A builder may also want to have its custom caches to store additional information to support the partial recompilation of a target (e.g., the dependencies between Java files in a module).
 To store this data, either store arbitrary files in the directory returned from `BuildDataManager.getDataPaths().getTargetDataRoot()` or use a higher-level API: `BuildDataManager.getStorage()`
@@ -56,7 +58,8 @@ These files don't have extensions, so map corresponding patterns to text files i
 
 Sources of a plugin for External Builder should be put in a separate module.
 By convention, such a module has a name '...-jps-plugin', and its sources are placed under the <path>jps-plugin</path> directory in the main plugin directory.
-Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.compileServer.plugin"/></include> to add the plugin to the classpath of the external build process, the plugin JAR should be named <path>\$JPS_module_name\$.jar</path>. <ui-path>Build | Prepare Plugin Module for Deployment</ui-path> action will automatically pack the 'jps-plugin' part to a separate JAR accordingly.
+Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.compileServer.plugin"/></include> to add the plugin to the classpath of the external build process, the plugin JAR should be named <path>\$JPS_module_name\$.jar</path>.
+<ui-path>Build | Prepare Plugin Module for Deployment</ui-path> action will automatically pack the 'jps-plugin' part to a separate JAR accordingly.
 
 ### Debugging a Plugin for External Builder
 
@@ -80,7 +83,8 @@ Start the IDE with the plugin with the following VM option:
 -Dcompiler.process.debug.port=<port-number>
 ```
 
-After that, every time compilation is run in the test IDE, the build process will wait for debugger connection on this port and then proceed.  In a working copy of IDE, a "Remote" run configuration should be created and pointed to this port.
+After that, every time compilation is run in the test IDE, the build process will wait for debugger connection on this port and then proceed.
+In a working copy of IDE, a "Remote" run configuration should be created and pointed to this port.
 Specifying port "-1" will disable debugging mode.
 
 ### Profiling External Build Process

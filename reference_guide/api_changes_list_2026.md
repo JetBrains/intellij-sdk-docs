@@ -199,7 +199,9 @@ The migration should be done according to the [Kotlin UI DSL Version 2 migration
 ### Java Plugin 2026.3
 
 `com.intellij.openapi.module.StdModuleTypes` class removed
-: Use `com.intellij.openapi.module.JavaModuleType.getModuleType()` instead. Avoid a check of the module type if possible. See `com.intellij.openapi.module.ModuleType` for details.
+: Use `com.intellij.openapi.module.JavaModuleType.getModuleType()` instead.
+  Avoid a check of the module type if possible.
+  See `com.intellij.openapi.module.ModuleType` for details.
 
 ## 2026.2
 
@@ -470,10 +472,12 @@ Plugins depending on these APIs must declare a dependency on the Marketplace plu
 See [C/C++ Language Engine: Nova and Classic](clion.md#language-engine) for setup details and CLion Nova API replacements.
 
 `com.jetbrains.cidr.lang.OCFileType` class removed
-: The Classic C/C++ engine is no longer bundled. Depend on the [C/C++ Language Support via Classic Engine](https://plugins.jetbrains.com/plugin/32355-c-c--language-support-via-classic-engine) plugin to keep using it, or migrate to `com.jetbrains.rider.cpp.fileType.CppFileType` (CLion Nova).
+: The Classic C/C++ engine is no longer bundled.
+  Depend on the [C/C++ Language Support via Classic Engine](https://plugins.jetbrains.com/plugin/32355-c-c--language-support-via-classic-engine) plugin to keep using it, or migrate to `com.jetbrains.rider.cpp.fileType.CppFileType` (CLion Nova).
 
 `com.jetbrains.cidr.lang.OCLanguage` class removed
-: The Classic C/C++ engine is no longer bundled. Depend on the [C/C++ Language Support via Classic Engine](https://plugins.jetbrains.com/plugin/32355-c-c--language-support-via-classic-engine) plugin to keep using it, or migrate to `com.jetbrains.rider.cpp.fileType.CppLanguage` (CLion Nova).
+: The Classic C/C++ engine is no longer bundled.
+  Depend on the [C/C++ Language Support via Classic Engine](https://plugins.jetbrains.com/plugin/32355-c-c--language-support-via-classic-engine) plugin to keep using it, or migrate to `com.jetbrains.rider.cpp.fileType.CppLanguage` (CLion Nova).
 
 `com.jetbrains.cidr.lang.psi.OCFile` class removed
 : Depend on the [C/C++ Language Support via Classic Engine](https://plugins.jetbrains.com/plugin/32355-c-c--language-support-via-classic-engine) plugin to keep using it, or use `com.jetbrains.rider.cpp.fileType.psi.CppFile` (CLion Nova) for file-level access only.
@@ -499,16 +503,14 @@ Use `LspClientManager.getInstance(project)` instead, or `LspServerManager.getIns
 #### PolySymbols 2026.1
 
 `com.intellij.polySymbols.PolySymbol.getOrigin()` method removed
-: The property was confusing and in many cases was not used. Its functionality is replaced by:
-: - `framework` property - provide `com.intellij.polySymbols.html.HtmlFrameworkSymbolsSupport.HtmlFrameworkIdProperty`
-value through `PolySymbol.Property` mechanism
+: The property was confusing and in many cases was not used.
+  Its functionality is replaced by:
+: - `framework` property - provide `com.intellij.polySymbols.html.HtmlFrameworkSymbolsSupport.HtmlFrameworkIdProperty` value through `PolySymbol.Property` mechanism
 : - `defaultIcon` property - implement `icon` property and return `true` for `PolySymbol.DocHideIconProperty` through `PolySymbol.Property` mechanism
-: - `typeSupport` property - provide `com.intellij.polySymbols.utils.PolySymbolTypeSupport.TypeSupportProperty`
-value through `PolySymbol.Property` mechanism
+: - `typeSupport` property - provide `com.intellij.polySymbols.utils.PolySymbolTypeSupport.TypeSupportProperty` value through `PolySymbol.Property` mechanism
 
 `com.intellij.polySymbols.PolySymbolQualifiedKind` class renamed to `com.intellij.polySymbols.PolySymbolKind`
-: additionally `name` property was renamed to `kindName` and `qualifiedKind` properties and parameters across the package
-were renamed to `kind`
+: additionally `name` property was renamed to `kindName` and `qualifiedKind` properties and parameters across the package were renamed to `kind`
 
 The following classes no longer implement [`PsiModificationTracker`](%gh-ic%/platform/core-api/src/com/intellij/psi/util/PsiModificationTracker.java) (this requirement was confusing):
 - [`PolySymbolScope`](%gh-ic%/platform/polySymbols/src/com/intellij/polySymbols/query/PolySymbolScope.kt)

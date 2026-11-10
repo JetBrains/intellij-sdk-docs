@@ -16,8 +16,7 @@ Two types of code completion can be provided by custom language plugins: referen
 
 Reference completion is easier to implement but supports only the basic completion action.
 
-Contributor-based completion provides more features, supports all completion types
-(<ui-path>Code | Code Completion | Basic</ui-path> and <ui-path>Type Matching</ui-path>),
+Contributor-based completion provides more features, supports all completion types (<ui-path>Code | Code Completion | Basic</ui-path> and <ui-path>Type Matching</ui-path>),
 and can be used, for example, to implement keyword completion.
 
 ## Reference Completion
@@ -27,8 +26,8 @@ This method needs to return an array of objects containing either strings, [`Psi
 If a `PsiElement` instance is returned in the array, the completion list shows the icon for the element.
 
 A common way to implement `getVariants()` is to use the same function for walking up the tree as in [`PsiReference.resolve()`](%gh-ic%/platform/core-api/src/com/intellij/psi/PsiReference.java)
-using a [`PsiScopeProcessor`](%gh-ic%/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java) which collects all declarations passed to its `execute()` method and returns
-them as an array for filling the completion list.
+using a [`PsiScopeProcessor`](%gh-ic%/platform/core-api/src/com/intellij/psi/scope/PsiScopeProcessor.java)
+which collects all declarations passed to its `execute()` method and returns them as an array for filling the completion list.
 
 ### Symbol Reference Completion
 
@@ -51,8 +50,8 @@ Register in <include from="snippets.topic" element-id="ep"><var name="ep" value=
 >
 {style="note"}
 
-The core scenario of using [`CompletionContributor`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) consists of calling the `extend()` method and passing in the [Element Pattern](element_patterns.md)
-specifying the context in which this completion variant is applicable.
+The core scenario of using [`CompletionContributor`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionContributor.java) consists of calling the `extend()` method
+and passing in the [Element Pattern](element_patterns.md) specifying the context in which this completion variant is applicable.
 The [`CompletionProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/CompletionProvider.java) then adds the items to show in the completion list.
 
 Keep in mind that the pattern is checked against the leaf PSI element.
@@ -102,13 +101,12 @@ Example: add parentheses for a method call ([`ParenthesesInsertHandler`](%gh-ic%
 
 The item presentation can also be performed via (re-usable) [`LookupElementRenderer`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/lookup/LookupElementRenderer.java).
 
-For expensive calculations (for example, the presentation of an item to be shown depends on other items), use `LookupElementBuilder.withExpensiveRenderer()` to invoke the renderer in the background
-while the completion list is already populating.
+For expensive calculations (for example, the presentation of an item to be shown depends on other items),
+use `LookupElementBuilder.withExpensiveRenderer()` to invoke the renderer in the background while the completion list is already populating.
 
 ### Sorting
 
-Use [`PrioritizedLookupElement`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/PrioritizedLookupElement.java) to control item sorting
-if _all_ lookup items are guaranteed to be provided by this `CompletionContributor`.
+Use [`PrioritizedLookupElement`](%gh-ic%/platform/analysis-api/src/com/intellij/codeInsight/completion/PrioritizedLookupElement.java) to control item sorting if _all_ lookup items are guaranteed to be provided by this `CompletionContributor`.
 
 ## Code Completion FAQ
 

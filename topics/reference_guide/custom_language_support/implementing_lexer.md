@@ -22,7 +22,8 @@ The IDE invokes the lexer in three main contexts, and the plugin can provide dif
 *  Building the index of the words contained in the file:
    if the lexer-based words scanner implementation is used, the lexer is passed to the
    [`DefaultWordsScanner`](%gh-ic%/platform/indexing-impl/src/com/intellij/lang/cacheBuilder/DefaultWordsScanner.java)
-   constructor. See also [](find_usages.md).
+   constructor.
+   See also [](find_usages.md).
 
 The lexer used for syntax highlighting can be invoked incrementally to process only the file's changed part.
 In contrast, lexers used in other contexts are always called to process an entire file or a complete language construction embedded in a different language file.

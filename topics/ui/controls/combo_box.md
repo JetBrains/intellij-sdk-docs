@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Combo Box
 
@@ -59,8 +59,7 @@ If the list is big, and the user knows what value they need and won’t review t
 
 ### Label and default value
 
-For the [label](drop_down.md#label) and the [default value](drop_down.md#default-value) apply the same rules as for the
-[dropdown list](drop_down.md).
+For the [label](drop_down.md#label) and the [default value](drop_down.md#default-value) apply the same rules as for the [dropdown list](drop_down.md).
 
 ### Initial state
 
@@ -95,7 +94,8 @@ Replace the input field with a combo box after a value has been entered and conf
 
 #### Predefined options
 
-Show the predefined or most likely options in the list. Follow the rules for [dropdown menu items](drop_down.md#menu-items).
+Show the predefined or most likely options in the list.
+Follow the rules for [dropdown menu items](drop_down.md#menu-items).
 
 #### Previous inputs
 
@@ -111,8 +111,8 @@ Use [built-in buttons](built_in_button.md) to add values or expand the combo box
 
 ## Validation
 
-If the user enters an invalid value, highlight the combo box with red and show an error message in a tooltip. For
-more details, see [validation errors](validation_errors.md).
+If the user enters an invalid value, highlight the combo box with red and show an error message in a tooltip.
+For more details, see [validation errors](validation_errors.md).
 
 ![A combo box with an error message](combobox_validation.png){width=706}
 
@@ -125,15 +125,18 @@ Follow the [labeled input controls](layout.md#labeled-input-controls).
 ### Opening the menu
 
 The combo box menu opens by clicking on the arrow button on the right or pressing the <shortcut>Down</shortcut> arrow key when the combo box is focused.
-   The menu opens down by default. If there is not enough space, the menu opens up.
+   The menu opens down by default.
+   If there is not enough space, the menu opens up.
 
 ### Selected value
 
-The value that was shown in the closed combo box is selected in the open menu. A value in the list is not selected if a custom value was entered.
+The value that was shown in the closed combo box is selected in the open menu.
+A value in the list is not selected if a custom value was entered.
 
 ### Moving the selection
 
-The selection is moved and the value in the combo box is updated by pressing the <control>Up</control> and <control>Down</control> arrow keys. When using a mouse, the selection is changed on mouse hover, the value is updated by clicking the mouse button or pressing <shortcut>Enter</shortcut>.
+The selection is moved and the value in the combo box is updated by pressing the <control>Up</control> and <control>Down</control> arrow keys.
+When using a mouse, the selection is changed on mouse hover, the value is updated by clicking the mouse button or pressing <shortcut>Enter</shortcut>.
 
 ### Closing the menu
 

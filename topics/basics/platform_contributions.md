@@ -68,7 +68,8 @@ To improve the code in the IntelliJ Platform or the core functionality of Intell
 When preparing the change, please make sure to follow the [](intellij_coding_guidelines.md).
 A developer will review the contribution and, if it meets the quality criteria and fits well with the rest of the code, notify the contributor about the acceptance of the patch.
 
-Looking for issues to work on? Issues marked with the [#patch_welcome](https://youtrack.jetbrains.com/issues/IDEA?q=%23patch_welcome%20%23unresolved) tag are looking for external contributors.
+Looking for issues to work on?
+Issues marked with the [#patch_welcome](https://youtrack.jetbrains.com/issues/IDEA?q=%23patch_welcome%20%23unresolved) tag are looking for external contributors.
 
 Alternatively, attach a patch to the ticket in the [YouTrack bug database](https://youtrack.jetbrains.com/issues/IJPL).
 Either file a new issue with the patch attached or attach a patch to an issue submitted by another user.

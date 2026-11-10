@@ -114,7 +114,9 @@ The keys are applied to all tabs, not only the editor tabs.
             Selected inactive:<br/>
             <code>EditorTabs.inactiveUnderlinedTabBorderColor</code>
         </td>
-        <td>An existing color key. Previously, it was used for the bright tab underline. Leave the color value as is, or adjust if it appears too bright.</td>
+        <td>An existing color key.
+            Previously, it was used for the bright tab underline.
+            Leave the color value as is, or adjust if it appears too bright.</td>
     </tr>
     <tr>
         <td>Background</td>
@@ -123,7 +125,8 @@ The keys are applied to all tabs, not only the editor tabs.
             Selected inactive:<br/>
             <code>EditorTabs.inactiveUnderlinedTabBackground</code>
         </td>
-        <td>A new color key for the background under the tab label. Provide a color that has enough contrast with the label.</td>
+        <td>A new color key for the background under the tab label.
+            Provide a color that has enough contrast with the label.</td>
     </tr>
 </table>
 
@@ -157,7 +160,8 @@ The only exception is `Island.borderColor` which should be set manually.
         <td>20<br/>
             16
         </td>
-        <td>Border radius of the islands. The value is 2x, the actual radius in the UI is 10 px.</td>
+        <td>Border radius of the islands.
+            The value is 2x, the actual radius in the UI is 10 px.</td>
     </tr>
     <tr>
         <td><code>Island.borderWidth</code><br/>
@@ -166,12 +170,14 @@ The only exception is `Island.borderColor` which should be set manually.
         <td>5<br/>
             4
         </td>
-        <td>The distance between islands. The actual distance appearing in the UI is 1 px less.</td>
+        <td>The distance between islands.
+            The actual distance appearing in the UI is 1 px less.</td>
     </tr>
     <tr>
         <td><code>Island.borderColor</code></td>
         <td>Theme color</td>
-        <td>Supply the chosen value. It is recommended to use the same color as for <code>ToolWindows.background</code>.</td>
+        <td>Supply the chosen value.
+            It is recommended to use the same color as for <code>ToolWindows.background</code>.</td>
     </tr>
     <tr>
         <td><code>Island.inactiveAlpha</code></td>

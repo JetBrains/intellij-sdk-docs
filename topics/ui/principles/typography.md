@@ -12,7 +12,8 @@
 
 ## UI font
 
-[Inter](https://github.com/rsms/inter) is used for the IDE user interface by default. The default font size is the same for all supported OS: 13.
+[Inter](https://github.com/rsms/inter) is used for the IDE user interface by default.
+The default font size is the same for all supported OS: 13.
 
 <!--<table style="header-column">
   <tr>
@@ -32,7 +33,8 @@
   </tr>
 </table>-->
 
-Users can change the default font in <control>Settings | Appearance</control>. If the default font size is changed, other font sizes used in the UI are scaled respectively.
+Users can change the default font in <control>Settings | Appearance</control>.
+If the default font size is changed, other font sizes used in the UI are scaled respectively.
 
 Use the built-in text styles from the table below whenever possible.
 
@@ -51,7 +53,8 @@ Use the built-in text styles from the table below whenever possible.
     <td> H1 <p><code>JBFont.h1().asBold()</code></p></td>
     <td> Default +5 </td>
     <td>
-        Main page header. Example: Plugin name
+        Main page header.
+        Example: Plugin name
     </td>
   </tr>
 
@@ -59,7 +62,8 @@ Use the built-in text styles from the table below whenever possible.
     <td> H2 <p><code>JBFont.h2().asBold()</code></p></td>
     <td> Default +3 </td>
     <td>
-        Small page header. Example: Headers in a plugin description
+        Small page header.
+        Example: Headers in a plugin description
     </td>
   </tr>
 
@@ -67,7 +71,8 @@ Use the built-in text styles from the table below whenever possible.
     <td> Default <p><code>JBFont.regular()</code></p></td>
     <td> Default </td>
     <td>
-        Main UI font. Examples: Labels, inputs, links, trees, tables, and other controls
+        Main UI font.
+        Examples: Labels, inputs, links, trees, tables, and other controls
     </td>
   </tr>
 
@@ -107,7 +112,8 @@ Use the built-in text styles from the table below whenever possible.
   </tr>
 </table>
 
-If none of the built-in sizes work and a custom one is needed, define it as the default size +/- constant value. Do **not** hardcode font sizes.
+If none of the built-in sizes work and a custom one is needed, define it as the default size +/- constant value.
+Do **not** hardcode font sizes.
 
 ### Examples in UI
 
@@ -139,7 +145,8 @@ Plugin page:
   </tr>
 </table>
 
-Users can change the editor font in <control>Editor | Color scheme | Color Scheme Font</control>. If the default font size is changed, other font sizes used in the editor are scaled respectively.
+Users can change the editor font in <control>Editor | Color scheme | Color Scheme Font</control>.
+If the default font size is changed, other font sizes used in the editor are scaled respectively.
 
 ### Examples in editor
 

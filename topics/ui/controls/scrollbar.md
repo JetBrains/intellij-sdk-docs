@@ -36,7 +36,8 @@ The track can contain optional markers for quicker navigation between the import
 
 * Changed parts of a file.
 
-A marker can fit the track width or be placed to the left of the track. Use the latter when the marked region is expected to be tall.
+A marker can fit the track width or be placed to the left of the track.
+Use the latter when the marked region is expected to be tall.
 
 Hovering over the track can also show a lens with a preview of the content at the corresponding position in the document.
 This can be useful in large documents when it is not desirable to change the viewpoint:
@@ -45,7 +46,8 @@ This can be useful in large documents when it is not desirable to change the vie
 
 ### Thumb
 
-A thumb represents the visible portion of the content. For example, a small thumb indicates that there’s lots of content available for scrolling.
+A thumb represents the visible portion of the content.
+For example, a small thumb indicates that there’s lots of content available for scrolling.
 
 ### Status icon (optional)
 
@@ -61,7 +63,8 @@ For example, on macOS the scrollbar can be hidden until the user scrolls the con
 Always show the scrollbar when it is important to understand which part of the content is currently shown.
 For example, the scrollbar in the Editor helps users understand the location of the current code fragment and the overall size of the currently opened file.
 
-Show the track on hover to make the clickable area clearer. Consider not showing the track on hover if it might have more than 5–10 stripes at a time.
+Show the track on hover to make the clickable area clearer.
+Consider not showing the track on hover if it might have more than 5–10 stripes at a time.
 
 Increase the thumb contrast against the background on hover and when scrolling to make it more prominent.
 
@@ -71,7 +74,8 @@ Track markers serve as a mini-map of the document.
 If they are present, clicking them takes the user to the position that this marker is pointing to without having to scroll down the page.
 Change the cursor to "Hand" when hovering such scrollbars.
 
-When showing a text, wrap it instead of showing the horizontal scrollbar when possible. With both scrollbars, it is harder to manipulate the content.
+When showing a text, wrap it instead of showing the horizontal scrollbar when possible.
+With both scrollbars, it is harder to manipulate the content.
 
 <format color="Red" style="bold">Incorrect</format>
 
@@ -81,7 +85,8 @@ When showing a text, wrap it instead of showing the horizontal scrollbar when po
 
 ![](soft-wrap-correct.png){width=500}
 
-A horizontal scroll bar can be added for code snippets or for formatted input. Use the context menu to enable soft-wrapping.
+A horizontal scroll bar can be added for code snippets or for formatted input.
+Use the context menu to enable soft-wrapping.
 
 <format color="Green" style="bold">Correct</format>
 

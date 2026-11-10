@@ -300,8 +300,7 @@ Updates horizontal and/or vertical alignment of the component inside the cell.
 Default alignment is `AlignX.LEFT` and `AlignY.CENTER`.
 
 To stretch the content on whole cell, use `AlignX.FILL`/`AlignY.FILL`/`Align.FILL`.
-For setting both horizontal and vertical alignment, use `Align` constants or overloaded plug operator
-like `align(AlignX.LEFT + AlignY.TOP)`.
+For setting both horizontal and vertical alignment, use `Align` constants or overloaded plug operator like `align(AlignX.LEFT + AlignY.TOP)`.
 
 ```kotlin
 row("Row:") {

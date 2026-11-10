@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Glossary
 
@@ -58,10 +58,12 @@ Document Object Model _(DOM)_ {id=document-object-model}
 ## E
 
 Event Dispatch Thread _(EDT)_ {id=event-dispatch-thread}
-: The [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) handles all Swing events. See also [](threading_model.md) and [](coroutine_dispatchers.md#edt-dispatcher).
+: The [Event Dispatch Thread](https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html) handles all Swing events.
+See also [](threading_model.md) and [](coroutine_dispatchers.md#edt-dispatcher).
 
 Extension Point _(EP)_ {id=extension-point}
-: Most functionality is provided by [Using Extension Points](plugin_extensions.md) provided by the platform or plugins. Plugins can also [define their own](plugin_extension_points.md) to allow extensibility.
+: Most functionality is provided by [Using Extension Points](plugin_extensions.md) provided by the platform or plugins.
+Plugins can also [define their own](plugin_extension_points.md) to allow extensibility.
 
 External System _(ES)_ {id=external-system}
 : [](external_system_integration.md) allows integrating external project management systems.
@@ -110,7 +112,8 @@ JetBrains Runtime _(JBR)_ {id=jetbrains-runtime}
 ## N
 
 Non-Blocking Read Action _(NBRA)_ {id=non-blocking-read-action}
-: A &rarr;&nbsp;[_Read Action_](#read-action) that is canceled by a &rarr;&nbsp;[_Write Action_](#write-action). See also [](threading_model.md#non-blocking-read-actions).
+: A &rarr;&nbsp;[_Read Action_](#read-action) that is canceled by a &rarr;&nbsp;[_Write Action_](#write-action).
+See also [](threading_model.md#non-blocking-read-actions).
 
 ## P
 
@@ -126,7 +129,8 @@ Program Structure Interface _(PSI)_ {id=program-structure-interface}
 ## R
 
 Read Action _(RA)_ {id=read-action}
-: Allows accessing code-related data structures for reading purposes. See also [](threading_model.md).
+: Allows accessing code-related data structures for reading purposes.
+See also [](threading_model.md).
 <br/>&rarr;&nbsp;[_Non-Blocking Read Action_](#non-blocking-read-action)
 <br/>&rarr;&nbsp;[_Write Action_](#write-action)
 
@@ -169,7 +173,8 @@ Virtual File System _(VFS)_ {id=virtual-file-system}
 ## W
 
 Write Action _(WA)_ {id=write-action}
-: Allows accessing code-related data structures for writing purposes. See also [](threading_model.md).
+: Allows accessing code-related data structures for writing purposes.
+See also [](threading_model.md).
 <br/>&rarr;&nbsp;[_Read Action_](#read-action)
 
 Write Allowing Read Action _(WARA)_ {id=write-allowing-read-action}

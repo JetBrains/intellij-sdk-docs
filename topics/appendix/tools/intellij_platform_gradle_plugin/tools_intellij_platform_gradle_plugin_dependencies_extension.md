@@ -334,8 +334,7 @@ See also:
 
 - [](plugin_dependencies.md)
 
-> Use the correct function depending on whether the
-> targeted plugin is _bundled_ with the Target Platform or not.
+> Use the correct function depending on whether the targeted plugin is _bundled_ with the Target Platform or not.
 >
 {title="Bundled vs. Non-Bundled Plugins"}
 

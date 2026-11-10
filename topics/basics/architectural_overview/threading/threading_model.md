@@ -445,7 +445,8 @@ To better understand what problem `ModalityState` solves, consider the following
 3. The action from 1. now shows a dialog asking a <control>Yes</control>/<control>No</control> question.
 4. While the dialog is shown, the operation from 2. is now processed and does changes to the data model, which invalidates PSI.
 5. The user clicks <control>Yes</control> or <control>No</control> in the dialog, and it executes some code based on the answer.
-6. Now, the code to be executed as the result of the user's answer has to deal with the changed data model it was not prepared for. For example, it was supposed to execute changes in the PSI that might be already invalid.
+6. Now, the code to be executed as the result of the user's answer has to deal with the changed data model it was not prepared for.
+   For example, it was supposed to execute changes in the PSI that might be already invalid.
 
 ```mermaid
 ---
@@ -585,7 +586,8 @@ Read the [](background_processes.md) section for more details.
 
 To run a non-blocking read action, use one of the available APIs:
 
-- [`ReadAction.nonBlocking()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) which returns [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) (NBRA). NBRA handles restarting the action out-of-the-box.
+- [`ReadAction.nonBlocking()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) which returns [`NonBlockingReadAction`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/NonBlockingReadAction.java) (NBRA).
+  NBRA handles restarting the action out-of-the-box.
 - [`ReadAction.computeCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/application/ReadAction.java) which computes the result immediately in the current thread or throws an exception if there is a running or requested write action.
 
 In both cases, when a read action is started and a write action occurs in the meantime, the read action is marked as canceled.
@@ -610,8 +612,8 @@ Meanwhile, try to speed up as much as possible in the plugin as it will be gener
 
 #### Action Update
 
-For implementations of [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java), plugin authors should specifically
-review the documentation of `AnAction.getActionUpdateThread()` in the [](action_system.md) section as it describes how threading works for actions.
+For implementations of [`AnAction`](%gh-ic%/platform/editor-ui-api/src/com/intellij/openapi/actionSystem/AnAction.java),
+plugin authors should specifically review the documentation of `AnAction.getActionUpdateThread()` in the [](action_system.md) section as it describes how threading works for actions.
 
 #### Minimize Write Actions Scope
 

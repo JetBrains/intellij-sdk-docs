@@ -19,8 +19,10 @@ Notification balloons inform users of the events or system states related to a p
 ## Suggestion and timeline notifications
 
 There are two types of notification balloons:
-* **Suggestion** notifications show the recommended action as a noticeable button. Use to suggest an automatic configuration for a project or an IDE, or to ask for user input.
-* **Timeline** notifications show useful actions as links. Use for showing results of long processes, automatic configuration, or actions without context.
+* **Suggestion** notifications show the recommended action as a noticeable button.
+  Use to suggest an automatic configuration for a project or an IDE, or to ask for user input.
+* **Timeline** notifications show useful actions as links.
+  Use for showing results of long processes, automatic configuration, or actions without context.
 
 These types appear in different sections of the Notifications tool window:
 
@@ -63,9 +65,11 @@ Use a suggestion notification to ask the user for an additional input or action 
 
 ### Sticky or timed
 
-**Sticky** notifications stay on screen until the user clicks any of its actions or closes it. By default, use this behavior for [suggestion notifications](#suggestion-and-timeline-notifications).
+**Sticky** notifications stay on screen until the user clicks any of its actions or closes it.
+By default, use this behavior for [suggestion notifications](#suggestion-and-timeline-notifications).
 
-**Timed** notifications stay on screen for 10 seconds and then hide. By default, use this behavior for [timeline notifications](#suggestion-and-timeline-notifications).
+**Timed** notifications stay on screen for 10 seconds and then hide.
+By default, use this behavior for [timeline notifications](#suggestion-and-timeline-notifications).
 
 Change the default behavior if it makes sense in a particular use case.
 
@@ -92,7 +96,8 @@ Use in all other cases.
 
 <br/>
 
-When possible, use a plugin or functionality icon instead of the <control>Info</control> icon. This helps identifing the source of the notification quicker.
+When possible, use a plugin or functionality icon instead of the <control>Info</control> icon.
+This helps identifing the source of the notification quicker.
 
 ![Two notifications with dedicated icons instead of the generic info icon: database connection found with the database icon and suggested plugins found with the generic plugin icon](notification_balloon_plugin_icon.png){width=706}
 
@@ -108,10 +113,12 @@ Use sentence case for both the title and the body.
 Follow the [punctuation rules](punctuation.md).
 
 #### Title
-Describe the event and the context in which it occurred. The context could be the name of a plugin, library, or functionality.
+Describe the event and the context in which it occurred.
+The context could be the name of a plugin, library, or functionality.
 
 #### Body
-Provide the details on the event or system state to help users decide what to do next. Consider answering these questions:
+Provide the details on the event or system state to help users decide what to do next.
+Consider answering these questions:
 * What was the cause of this state?
 * What are the consequences?
 * What is affected: files, libraries, versions, plugins, etc.?
@@ -134,7 +141,8 @@ Use only the body text when it fits in two lines and the title would duplicate i
 
 #### Long messages are collapsed
 
-Only the first two lines of the body text are visible by default, the rest is shown when expanded. Place the most important information in the beginning of the body text so it is visible by default.
+Only the first two lines of the body text are visible by default, the rest is shown when expanded.
+Place the most important information in the beginning of the body text so it is visible by default.
 
 ![A notification about Windows Defender slowing down the IDE in the collapsed and expanded states. The notification body is long and takes 9 lines](notification_balloon_body_two_lines.png){width=706}
 
@@ -146,7 +154,8 @@ Add actions to help users take the next steps: fix a problem, view relevant info
 
 #### Number of actions
 
-The preferable number of actions is two, as it is easier for the user to choose. If more than two actions are useful, place the most likely to be used first, and hide the others under the <control>More</control> dropdown:
+The preferable number of actions is two, as it is easier for the user to choose.
+If more than two actions are useful, place the most likely to be used first, and hide the others under the <control>More</control> dropdown:
 
 ![The Windows Defender notification with the primary action "Exclude folders" on the left and 3 more actions under the "More" dropdown link](notification_balloon_more_actions.png){width=706}
 
@@ -182,12 +191,17 @@ Use sentence capitalization for all actions in notification balloons.
 
 ## Naming a notification group
 
-Each notification balloon belongs to a group. Groups can be seen in <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>.
+Each notification balloon belongs to a group.
+Groups can be seen in <ui-path>Settings | Appearance & Behavior | Notifications</ui-path>.
 
 To name a notification group, follow these rules:
 
-* Name the group with an ending to the phrase "Notifications in this group notify the user about…". Examples: _Automatic indent detection_, _Content root duplicates_.
-* If a name about a particular process or event cannot be given, use the name of a subsystem or plugin. Examples: _HTTP Client_, _Power Save Mode_.
-* When a group contains notifications about errors or problems, do not use a verb. Example: _Debugger errors_, not _Debugger errors ~~found~~_.
-* Do not use words "notification" or "group". They are implied from the settings context.
+* Name the group with an ending to the phrase "Notifications in this group notify the user about…".
+  Examples: _Automatic indent detection_, _Content root duplicates_.
+* If a name about a particular process or event cannot be given, use the name of a subsystem or plugin.
+  Examples: _HTTP Client_, _Power Save Mode_.
+* When a group contains notifications about errors or problems, do not use a verb.
+  Example: _Debugger errors_, not _Debugger errors ~~found~~_.
+* Do not use words "notification" or "group".
+  They are implied from the settings context.
 

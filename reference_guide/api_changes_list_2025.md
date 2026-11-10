@@ -93,7 +93,8 @@ The `org.intellij.intelliLang` plugin requires Gradle dependency on bundled modu
 : Change `bundledPlugin("org.intellij.intelliLang")` to `bundledModule("intellij.platform.langInjection")` in Gradle build script.
 
 Write-Intent lock acquisition was removed during processing of input events in Swing and AWT
-: Consider using explicit calls to `com.intellij.openapi.application.WriteIntentReadAction#run` in input event listeners. See [IJPL-219144](https://youtrack.jetbrains.com/issue/IJPL-219144) for details.
+: Consider using explicit calls to `com.intellij.openapi.application.WriteIntentReadAction#run` in input event listeners.
+  See [IJPL-219144](https://youtrack.jetbrains.com/issue/IJPL-219144) for details.
 
 com.intellij.openapi.application.Application.acquireReadActionLock() method removed
 : Consider using higher-order functions like `com.intellij.openapi.application.Application#runReadAction`.
@@ -165,24 +166,24 @@ This shouldn't affect binary compatibility, but an explicit dependency should be
 : Use `kotlin.jvm.functions.Function1` as a parameter.
 
 The `com.intellij.webSymbols` package together with all the classes and extension points has been renamed to `com.intellij.polySymbols`.
-: The classes were renamed using pattern `WebSymbol[s]?(.*)` -> `PolySymbol$1`. Some classes have also been moved
-to more specific packages.
+: The classes were renamed using pattern `WebSymbol[s]?(.*)` -> `PolySymbol$1`.
+  Some classes have also been moved to more specific packages.
 : From other notable changes:
 1. `PolySymbol` interface no longer extends `PolySymbolScope`
 2. `PolySymbol` interface no longer contains documentation-specific properties (`description`, `docUrl`, `sections` and `defaultValue`),
-   instead `getDocumentationTarget` method should be overridden and the new `PolySymbolDocumentationTarget.create` method
-   used to lazily build documentation for the symbol
-3. `PolySymbol` no longer has `abstract`, `required` and `virtual` properties. They've been replaced by a more
-   generic `modifiers` property
-4. `PolySymbol` no longer has `properties` property, which returned a map of properties. It's been replaced by
-   `get` method, which should return value for the requested property.
-5. `PolySymbol` no longer has `attributeValue` property, instead `get` method should be overridden to return
-   the value for `com.intellij.polySymbols.html.PROP_HTML_ATTRIBUTE_VALUE` property
+   instead `getDocumentationTarget` method should be overridden
+   and the new `PolySymbolDocumentationTarget.create` method used to lazily build documentation for the symbol
+3. `PolySymbol` no longer has `abstract`, `required` and `virtual` properties.
+   They've been replaced by a more generic `modifiers` property
+4. `PolySymbol` no longer has `properties` property, which returned a map of properties.
+   It's been replaced by `get` method, which should return value for the requested property.
+5. `PolySymbol` no longer has `attributeValue` property,
+   instead `get` method should be overridden to return the value for `com.intellij.polySymbols.html.PROP_HTML_ATTRIBUTE_VALUE` property
 6. The `WebSymbolsQueryConfigurator$getScope` has been removed and replaced with a pattern-based `PolySymbolQueryScopeContributor` API
 7. The `PolySymbolDelegate` and `PsiSourcePolySymbolDelegate` are interfaces now
 8. All APIs have been refactored to use `PolySymbolQualifiedKind` instead of separate parameters `namespace` and `kind`
-9. Builder patterns have been introduced in various classes, like `PolySymbolQueryExecutor`, `PolySymbolQueryParams`, or `PolySymbolDocumentation`
-   instead of now removed Kotlin methods with default parameters.
+9. Builder patterns have been introduced in various classes,
+   like `PolySymbolQueryExecutor`, `PolySymbolQueryParams`, or `PolySymbolDocumentation` instead of now removed Kotlin methods with default parameters.
 : Please note that the module is under active development and further major API changes are to be expected in the upcoming releases.
 
 ### Package Checker 2025.2
@@ -287,22 +288,28 @@ Kotlin UI DSL Version 1 must not be used from 2025.1
 ### Database Plugin 2025.1
 
 `com.intellij.database.view.models` package removed
-: Old table modification dialog was finally removed. Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
+: Old table modification dialog was finally removed.
+  Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
 
 `com.intellij.database.schemaEditor.model.DeObject` class removed
-: Old table modification dialog was finally removed. Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
+: Old table modification dialog was finally removed.
+  Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
 
 `com.intellij.database.view.editors.DatabaseEditorContext` class removed
-: Old table modification dialog was finally removed. Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
+: Old table modification dialog was finally removed.
+  Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
 
 `com.intellij.database.view.editors.DatabaseTableEditor` class removed
-: Old table modification dialog was finally removed. Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
+: Old table modification dialog was finally removed.
+  Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
 
 `com.intellij.database.view.ui.DbRefactoringDialogHelper` class removed
-: Old table modification dialog was finally removed. Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
+: Old table modification dialog was finally removed.
+  Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
 
 `com.intellij.database.view.ui.DbTableDialog` class removed
-: Old table modification dialog was finally removed. Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
+: Old table modification dialog was finally removed.
+  Use `com.intellij.database.actions.ddl.ModifyObjectAction.showDialog()` for new dialog invocation.
 
 ### External System 2025.1
 

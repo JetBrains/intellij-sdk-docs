@@ -14,8 +14,8 @@
 
 ## Define a Test Method
 Add the `testDocumentation()` method to `SimpleCodeInsightTest` [previously defined](completion_test.md#define-a-test).
-This test uses the files <path>DocumentationTestData.java</path> and <path>DocumentationTestData.simple</path> from the <path>testData</path> directory
-to construct a test project and opens the first one in the editor with the virtual caret positioned at the usage of the Simple Language property.
+This test uses the files <path>DocumentationTestData.java</path> and <path>DocumentationTestData.simple</path> from the <path>testData</path> directory to construct a test project
+and opens the first one in the editor with the virtual caret positioned at the usage of the Simple Language property.
 
 Using the `DocumentationManager`, it checks if a target element for documentation is found, retrieves the documentation provider for the
 Simple Language and creates the documentation string for the target element.

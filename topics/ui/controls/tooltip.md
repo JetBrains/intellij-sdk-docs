@@ -47,8 +47,10 @@ There are three types of tooltips:
     </td>
     <td>
         <strong>Help</strong>
-        <p>Shows help text for all other controls. It is shown on hovering the <a anchor="question-mark-icon-for-help-tooltips">question mark icon</a>.</p>
-        <p>Required: help text. Action name or label is not required because it is shown in the UI.</p>
+        <p>Shows help text for all other controls.
+            It is shown on hovering the <a anchor="question-mark-icon-for-help-tooltips">question mark icon</a>.</p>
+        <p>Required: help text.
+            Action name or label is not required because it is shown in the UI.</p>
         <p>Optional: shortcut, link.</p>
     </td>
   </tr>
@@ -177,7 +179,8 @@ Use **Action help** and **Help** tooltips according to the [Context help](contex
 
 ### Link
 
-* Provide a link to a source that can further explain the action or the setting. A link can navigate to a place in the IDE or to an external help article:
+* Provide a link to a source that can further explain the action or the setting.
+  A link can navigate to a place in the IDE or to an external help article:
 
 <table style="none" border="false" column-width="fixed">
     <tr>
@@ -192,7 +195,8 @@ Use **Action help** and **Help** tooltips according to the [Context help](contex
     </tr>
 </table>
 
-* Do not show just an action name and a link to a help article. Provide help text so that the user does not need to switch to a web browser:
+* Do not show just an action name and a link to a help article.
+  Provide help text so that the user does not need to switch to a web browser:
 
 <table style="none" border="false" column-width="fixed">
     <tr>
@@ -208,9 +212,11 @@ Use **Action help** and **Help** tooltips according to the [Context help](contex
 
 ### Text length
 
-The text width in an action tooltip is not limited. The text width in a help tooltip is limited by 250px.
+The text width in an action tooltip is not limited.
+The text width in a help tooltip is limited by 250px.
 
-Show no more than 10 lines of help text. If the text does not fit, leave only the essential information and add a link to a help article.
+Show no more than 10 lines of help text.
+If the text does not fit, leave only the essential information and add a link to a help article.
 
 <table style="none" border="false" column-width="fixed">
     <tr>
@@ -225,7 +231,9 @@ Show no more than 10 lines of help text. If the text does not fit, leave only th
 </table>
 
 
-If the help text is longer than 5 lines, separate the text into paragraphs with the `<p>` tag. The `<p>` tag adds vertical space between paragraphs to visually separate them. Do not use the `<br/>` tag as it does not add space.
+If the help text is longer than 5 lines, separate the text into paragraphs with the `<p>` tag.
+The `<p>` tag adds vertical space between paragraphs to visually separate them.
+Do not use the `<br/>` tag as it does not add space.
 <chapter collapsible="true" expanded="false" title="Implementation">
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -257,7 +265,8 @@ new HelpTooltip().setDescription(LONG_TEXT).installOn(component);
 
 ### Text style formatting
 
-Avoid using style formatting in the help text. Usually, the text is short and no bold or italics are needed.
+Avoid using style formatting in the help text.
+Usually, the text is short and no bold or italics are needed.
 <table style="none" border="false" column-width="fixed">
     <tr>
         <td>
@@ -301,7 +310,8 @@ Avoid using style formatting in the help text. Usually, the text is short and no
 
 ### Question mark icon for help tooltips
 
-Always use the help tooltip with the question mark icon. Without the icon, it is unclear which component has help information.
+Always use the help tooltip with the question mark icon.
+Without the icon, it is unclear which component has help information.
 
 Always place the question mark icon to the right of the corresponding UI component.
 
@@ -412,7 +422,8 @@ If the mouse cursor stays in the tooltip trigger area, tooltips are also hidden 
 </table>
 
 
-If a tooltip has a link, it is possible to move the mouse cursor over the tooltip. The tooltip does not close automatically when the cursor is over it.
+If a tooltip has a link, it is possible to move the mouse cursor over the tooltip.
+The tooltip does not close automatically when the cursor is over it.
 
 Tooltips are positioned automatically depending on the mouse cursor location.
 

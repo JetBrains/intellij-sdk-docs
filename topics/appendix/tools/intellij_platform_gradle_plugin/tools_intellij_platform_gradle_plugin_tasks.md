@@ -731,7 +731,9 @@ Executes the code instrumentation using the Ant tasks provided by the used Intel
 The code instrumentation scans the compiled Java and Kotlin classes for JetBrains Annotations usages to replace them with their relevant functionalities.
 
 The task is controlled with the [`intellijPlatform.instrumentCode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode) extension property, enabled by default.
-To properly run the instrumentation, a Java Compiler dependency must be available. This is applied by default by the plugin; the former `instrumentationTools()` helper was removed and calling it is no longer necessary. You can still add and configure the dependency manually via [`javaCompiler()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#code-instrumentation) if needed.
+To properly run the instrumentation, a Java Compiler dependency must be available.
+This is applied by default by the plugin; the former `instrumentationTools()` helper was removed and calling it is no longer necessary.
+You can still add and configure the dependency manually via [`javaCompiler()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#code-instrumentation) if needed.
 This dependency is resolved via the [`intellijDependencies()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) repository, which can be added separately or using the [`defaultRepositories()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#default-repositories) helper.
 
 See also:
@@ -2580,7 +2582,8 @@ Validates the plugin project configuration:
 - The used IntelliJ Platform version should be `2023.3` (`233`) or higher.
 - The dependency on the [](using_kotlin.md#kotlin-standard-library) should be excluded.
 - The Kotlin Coroutines library should not be added explicitly to the project as it is already provided with the IntelliJ Platform.
-- The IntelliJ Platform cache directory should be excluded from the version control system. Add the `.intellijPlatform` entry to the <path>.gitignore</path> file.
+- The IntelliJ Platform cache directory should be excluded from the version control system.
+  Add the `.intellijPlatform` entry to the <path>.gitignore</path> file.
 - The currently selected Java Runtime is not JetBrains Runtime (JBR).
 
 For more details regarding the Java version used in the specific IntelliJ SDK, see [](build_number_ranges.md).

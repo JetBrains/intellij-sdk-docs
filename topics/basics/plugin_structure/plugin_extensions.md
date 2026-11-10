@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Extensions
 
@@ -65,9 +65,7 @@ See [](explore_api.md) for more information and strategies.
 
 </procedure>
 
-To clarify this procedure, consider the following sample section of the <path>plugin.xml</path> file that defines two extensions designed
-to access the <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.appStarter"/></include> and <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectTemplatesFactory"/></include>
-extension points in the IntelliJ Platform,
+To clarify this procedure, consider the following sample section of the <path>plugin.xml</path> file that defines two extensions designed to access the <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.appStarter"/></include> and <include from="snippets.topic" element-id="epLink"><var name="ep" value="com.intellij.projectTemplatesFactory"/></include> extension points in the IntelliJ Platform,
 and one extension to access the `another.plugin.myExtensionPoint` extension point in another plugin `another.plugin`:
 
 ```xml
@@ -98,17 +96,22 @@ and one extension to access the `another.plugin.myExtensionPoint` extension poin
 
 Please note the following important points:
 
-- Extension implementation must be stateless. Use explicit [services](plugin_services.md) for managing (runtime) data.
+- Extension implementation must be stateless.
+  Use explicit [services](plugin_services.md) for managing (runtime) data.
 - Avoid any initialization in the constructor, see also notes for [services](plugin_services.md#ctor).
-- Do not perform any static initialization. Use inspection <control>Plugin DevKit | Code | Static initialization in extension point implementations</control> (2023.3).
-- An extension implementation must not be registered as a [service](plugin_services.md) additionally. Use inspection <control>Plugin DevKit | Code | Extension registered as service/component</control> (2023.3).
+- Do not perform any static initialization.
+  Use inspection <control>Plugin DevKit | Code | Static initialization in extension point implementations</control> (2023.3).
+- An extension implementation must not be registered as a [service](plugin_services.md) additionally.
+  Use inspection <control>Plugin DevKit | Code | Extension registered as service/component</control> (2023.3).
 - If an extension instance needs to "opt out" in certain scenarios, it can throw [`ExtensionNotApplicableException`](%gh-ic%/platform/extensions/src/com/intellij/openapi/extensions/ExtensionNotApplicableException.java) in its constructor.
 
 When using [Kotlin](using_kotlin.md):
 
-- Do not use `object` but `class` for implementation. [More details](using_kotlin.md#object-vs-class)
+- Do not use `object` but `class` for implementation.
+  [More details](using_kotlin.md#object-vs-class)
 - Do not use `companion object` to avoid excessive classloading/initialization when the extension class is loaded.
-  Use top-level declarations or objects instead. [More details](using_kotlin.md#companion-object-extensions)
+  Use top-level declarations or objects instead.
+  [More details](using_kotlin.md#companion-object-extensions)
 
 </procedure>
 
@@ -153,7 +156,8 @@ Properties marked as `@Deprecated` or annotated with any of [`ApiStatus`](%gh-ja
 
 #### Enum properties
 
-`Enum` attributes support code insight with _lowerCamelCased_ notation. Note: The `Enum` implementation must not override `toString()`.
+`Enum` attributes support code insight with _lowerCamelCased_ notation.
+Note: The `Enum` implementation must not override `toString()`.
 
 #### I18n
 

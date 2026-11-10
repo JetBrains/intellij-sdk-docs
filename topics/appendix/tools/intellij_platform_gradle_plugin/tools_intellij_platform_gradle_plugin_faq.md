@@ -122,8 +122,7 @@ dependencies {
 
 {id="migrateToPluginId"}
 
-Using [](tools_gradle_intellij_plugin.md), specifying the _directory name_ of the plugin was possible when adding a dependency on a bundled plugin
-for compatibility reasons.
+Using [](tools_gradle_intellij_plugin.md), specifying the _directory name_ of the plugin was possible when adding a dependency on a bundled plugin for compatibility reasons.
 Now, using the actual plugin ID is required.
 For example, provide plugin ID `com.intellij.java` instead of its directory name `java`.
 A migration hint is provided for this and some other commonly used cases.
@@ -341,7 +340,8 @@ jacocoTestCoverageVerification {
 
 ### Kotlin compiler throws `Out of memory. Java heap space` error
 
-Please upgrade to Kotlin 1.9.0. See the [](using_kotlin.md#incremental-compilation) section if using Kotlin 1.8.20.
+Please upgrade to Kotlin 1.9.0.
+See the [](using_kotlin.md#incremental-compilation) section if using Kotlin 1.8.20.
 
 ### How to check the latest available EAP release?
 

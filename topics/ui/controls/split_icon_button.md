@@ -19,19 +19,22 @@ A split icon button appears on a horizontal [toolbar](toolbar.md) and consists o
 Use the split icon button to reduce the number of actions on a horizontal toolbar if all the following conditions are met:
 * There are already many controls on the toolbar.
 * There is a group of similar actions.
-* The user invokes one action more often than others. Or the user invokes one action several times, then switches to another action and invokes it several times but does not switch between actions too often.
+* The user invokes one action more often than others.
+  Or the user invokes one action several times, then switches to another action and invokes it several times but does not switch between actions too often.
 
 <note>To decide whether to add actions to the toolbar, follow the <a href="toolbar.md#what-items-to-add-on-toolbar">Toolbar</a> guidelines.</note>
 
 ## How to use
 
 ### Add icons to all menu actions
-Make sure that all actions in the drop-down menu have icons. When an action is selected, its icon will be shown on the toolbar.
+Make sure that all actions in the drop-down menu have icons.
+When an action is selected, its icon will be shown on the toolbar.
 
 ![](split_icon_button_main_action_icon.png){width=706}
 
 ### Disable unavailable actions
-Do not hide the unavailable actions but show them as disabled to help users locate them in the future. The action menu should always open even if all the items in it are disabled.
+Do not hide the unavailable actions but show them as disabled to help users locate them in the future.
+The action menu should always open even if all the items in it are disabled.
 
 ![](split_icon_button_disabled_item.png){width=706}
 

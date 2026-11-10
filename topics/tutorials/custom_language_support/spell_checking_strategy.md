@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # 21. Spell Checking
 
@@ -27,8 +27,7 @@ The [`SimpleSpellcheckingStrategy`](%gh-sdk-samples-master%/simple_language_plug
 
 ## Register the SimpleSpellcheckingStrategy
 
-The implementation is registered with the IntelliJ Platform in the plugin
-configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.spellchecker.support"/></include>.
+The implementation is registered with the IntelliJ Platform in the plugin configuration file using the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.spellchecker.support"/></include>.
 
 ```xml
 <extensions defaultExtensionNs="com.intellij">

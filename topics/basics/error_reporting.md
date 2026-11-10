@@ -119,8 +119,8 @@ If submission cannot even start, `submit()` must return `false`.
 
 `ErrorReportSubmitter.submit()` should return quickly and avoid expensive blocking work as it runs on the EDT.
 Therefore, the general threading rules from [](threading_model.md) apply here as well.
-That means, operations on EDT must be as fast as possible to avoid UI freezes, while
-network, file, and other expensive operations belong on background threads.
+That means, operations on EDT must be as fast as possible to avoid UI freezes,
+while network, file, and other expensive operations belong on background threads.
 
 For plugins targeting 2024.1+, [Kotlin coroutines](kotlin_coroutines.md) are the recommended approach for asynchronous work.
 
@@ -152,8 +152,8 @@ This pattern keeps the reporting UI responsive while still integrating cleanly w
 
 Also, do not perform long-running non-cancellable read actions while collecting data for a report.
 Long-running read actions on background threads can block write actions and cause UI freezes.
-If additional project or PSI data is needed for a report, keep access short and use the modern threading
-and coroutine APIs described in [](threading_model.md#accessing-data) and [](launching_coroutines.md).
+If additional project or PSI data is needed for a report,
+keep access short and use the modern threading and coroutine APIs described in [](threading_model.md#accessing-data) and [](launching_coroutines.md).
 
 ## Automatic Reporting with `ErrorReportSink`
 
@@ -190,10 +190,10 @@ class MyErrorReportSink : ErrorReportSink {
 - `UnhandledExceptionReport` contains the exception class and stack trace
 - `UnhandledFreezeReport` contains a message, the freeze duration, attachments, and thread dumps
 
-`ErrorReportSink` is intended for plugin observability, not guaranteed report delivery and at most 10,000 exception
-reports per plugin per IDE session are forwarded.
-Note, that the platform does not deduplicate or debounce repeated exceptions, and exception reports contain less information
-than user-submitted reports.
+`ErrorReportSink` is intended for plugin observability, not guaranteed report delivery
+and at most 10,000 exception reports per plugin per IDE session are forwarded.
+Note, that the platform does not deduplicate or debounce repeated exceptions,
+and exception reports contain less information than user-submitted reports.
 
 The current platform implementation delivers sink reports asynchronously on a background dispatcher.
 Plugins should still keep sink processing short, deduplicate repeated failures, and rate-limit any backend traffic on their side.

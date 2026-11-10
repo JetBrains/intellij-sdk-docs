@@ -326,8 +326,8 @@ Documentation
 {#march-23}
 
 Poly Symbols
-: Add [](polysymbols.md) documentation, which is a framework that simplifies web technology development
-by utilizing the [](symbols.md) API and supporting custom syntaxes.
+: Add [](polysymbols.md) documentation,
+  which is a framework that simplifies web technology development by utilizing the [](symbols.md) API and supporting custom syntaxes.
 
 Open Source Plugins Extension Points
 : Added [](oss_plugins_extension_point_list.md) for plugins bundled with [](idea.md) and other IDEs.
@@ -521,7 +521,9 @@ IDE Infrastructure
 : [](ide_infrastructure.md) handles Logging, Error Reporting, Runtime Information, and how to provide Context Help.
 
 Extension Point Lists: Listeners, Deprecation status
-: [](intellij_platform_extension_point_list.md) now contains sections listing all provided [Listener](plugin_listeners.md) Topics. See also corresponding Extension Point Lists under _Product Specific_. Also, all deprecated API now has a dedicated tag.
+: [](intellij_platform_extension_point_list.md) now contains sections listing all provided [Listener](plugin_listeners.md) Topics.
+  See also corresponding Extension Point Lists under _Product Specific_.
+  Also, all deprecated API now has a dedicated tag.
 
 ### July
 {#july-21}
@@ -580,7 +582,8 @@ Extension Point List
 {#august-20}
 
 README added to Code Samples
-: All code samples used in this guide now come with <path>README</path>, making it easier to browse them. They can be conveniently accessed via a [separate GitHub repository](%gh-sdk-samples-master%/).
+: All code samples used in this guide now come with <path>README</path>, making it easier to browse them.
+  They can be conveniently accessed via a [separate GitHub repository](%gh-sdk-samples-master%/).
 
 ### June
 {#june-20}

@@ -62,8 +62,8 @@ See the [project_model](%gh-sdk-samples-master%/project_model/src/main/java/org/
 
 ### Working with a Custom SDK
 
-To create a custom SDK, provide a class extending [`SdkType`](%gh-ic%/platform/lang-core/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData()` blank, and register it
-in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.sdkType"/></include>.
+To create a custom SDK, provide a class extending [`SdkType`](%gh-ic%/platform/lang-core/src/com/intellij/openapi/projectRoots/SdkType.java), leave `saveAdditionalData()` blank,
+and register it in the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.sdkType"/></include>.
 
 To make SDK settings persistent, override `setupSdkPaths()` and save settings by `modificator.commitChanges()`:
 
@@ -87,8 +87,8 @@ The recommended way of managing "SDK" settings is to create a [`CustomStepProjec
 ## Assisting in Setting Up an SDK
 
 Prompting the user with a notification to set up an SDK can help them get up-and-running with a plugin faster.
-Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectSdkSetupValidator"/></include> to register
-an implementation of [`ProjectSdkSetupValidator`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java)
+Use <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.projectSdkSetupValidator"/></include> to register an implementation of
+[`ProjectSdkSetupValidator`](%gh-ic%/platform/lang-impl/src/com/intellij/codeInsight/daemon/ProjectSdkSetupValidator.java)
 to notify the user if they are missing an SDK.
 
 The following is a simplified example that checks whether an instance of "DemoSdk" has been configured in the project when the user opens a "DemoFileType":

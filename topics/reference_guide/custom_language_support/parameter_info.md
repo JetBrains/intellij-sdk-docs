@@ -21,8 +21,7 @@ Parameter info is dynamic and can update the displayed information when the care
 This allows for highlighting entries or marking the current parameter at the caret position.
 Therefore, the interface of the
 [`ParameterInfoHandler`](%gh-ic%/platform/lang-api/src/com/intellij/lang/parameterInfo/ParameterInfoHandler.java)
-EP consists of methods for initially collecting the required information
-to display parameter information at the caret position as well as methods to update what should be displayed during edits.
+EP consists of methods for initially collecting the required information to display parameter information at the caret position as well as methods to update what should be displayed during edits.
 
 ## Implementation
 
@@ -70,7 +69,8 @@ Therefore, when the user moves the caret or types something, the following happe
    If `null` is returned, the `dispose()` method is called.
 3. The `processFoundElementForUpdatingParameterInfo()` method is called which allows for additional adjustments of the `UpdateParameterInfoContext`.
    By default, this method does nothing and it's usually not necessary to implement it.
-4. The `updateParameterInfo()` is called. Many implementations only invoke `setParameterOwner()` of the `UpdateParameterInfoContext` here.
+4. The `updateParameterInfo()` is called.
+   Many implementations only invoke `setParameterOwner()` of the `UpdateParameterInfoContext` here.
 5. The `updateUI()` method is called for each item in the `getItemsToShow()` array of the context which was collected in the initial phase.
 
 ## Further Tips
@@ -81,8 +81,7 @@ to extend the parameter info functionality with the ability to jump between para
 For recurring tasks like finding the index of the current parameter in a function call,
 [`ParameterInfoUtils`](%gh-ic%/platform/lang-api/src/com/intellij/lang/parameterInfo/ParameterInfoUtils.java) provides a collection of useful functions.
 
-It is further helpful to inspect all the context-interfaces that extend from `ParameterInfoContext` and can be found in the `com.intellij.lang.parameterInfo` package
-as they provide insight into what data of the parameter info can be accessed and changed in the different stages.
+It is further helpful to inspect all the context-interfaces that extend from `ParameterInfoContext` and can be found in the `com.intellij.lang.parameterInfo` package as they provide insight into what data of the parameter info can be accessed and changed in the different stages.
 
 Methods of the `ParameterInfoHandler` that have a default implementation can usually be ignored.
 `syncUpdateOnCaretMove()` and `supportsOverloadSwitching()` are used internally by the IntelliJ Platform and are not required to be implemented by plugins.

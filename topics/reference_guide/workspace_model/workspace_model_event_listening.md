@@ -52,8 +52,8 @@ Move child `B` from `A` to `C`: [**Replaced(A)**, **Replaced(B)**, **Replaced(C)
 
 ## Subscription via Kotlin Flow
 
-Using [](kotlin_coroutines.md), it is possible to subscribe to the
-events via [Kotlin Flows](https://kotlinlang.org/docs/flow.html) exposed via the
+Using [](kotlin_coroutines.md),
+it is possible to subscribe to the events via [Kotlin Flows](https://kotlinlang.org/docs/flow.html) exposed via the
 [`WorkspaceModel.eventLog`](%gh-ic%/platform/backend/workspace/src/WorkspaceModel.kt)
 property.
 
@@ -61,8 +61,8 @@ Flows allow performing incremental computation:
 calculate information based on the initial storage and modify it according to the updates.
 This can be useful for incremental updates of Workspace Model-related caches.
 
-If the subscription should be set up after a project is opened, use
-[`ProjectActivity`](plugin_components.md#project-open).
+If the subscription should be set up after a project is opened,
+use [`ProjectActivity`](plugin_components.md#project-open).
 Keep in mind that it might miss the few first updates of the model, which is expected because the initial version of the storage will be provided.
 
 Since this listener is asynchronous, there is no guarantee that indexes built on top of

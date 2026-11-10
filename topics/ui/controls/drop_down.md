@@ -48,9 +48,11 @@ The screen space is limited, so there is not enough room for [radio buttons](rad
 
 ### Default value is the most used
 
-The default value is recommended for most users. A drop-down is a good way to hide unpopular alternatives.
+The default value is recommended for most users.
+A drop-down is a good way to hide unpopular alternatives.
 
-In the example below a drop-down is used because <control>Subpixels</control> is the most popular choice. Using [radio-buttons](radio_button.md)  puts all options on the same level of importance or popularity.
+In the example below a drop-down is used because <control>Subpixels</control> is the most popular choice.
+Using [radio-buttons](radio_button.md)  puts all options on the same level of importance or popularity.
 
 ![Antialiasing drop-down with options: Subpixels (selected), Greyscale, Not antialiasing](dropdown_when_to_5.png){width=706}
 
@@ -161,11 +163,13 @@ Follow the rules for the [input field](input_field.md#label).
 
 ### Default value
 
-Select the most likely or the safest value by default. In the example below the safest value is <control>Ask</control>, the behavior will not be unexpected to users:
+Select the most likely or the safest value by default.
+In the example below the safest value is <control>Ask</control>, the behavior will not be unexpected to users:
 
 ![Drop-down menu labeled 'Insert imports on paste' with options 'All', 'Ask', and 'None'. The selected option set to 'Ask'.](dropdown_how_to_2.png){width=706}
 
-Do not use an empty value as the default value. If no values are added to a drop-down yet, replace it with a button to add values.
+Do not use an empty value as the default value.
+If no values are added to a drop-down yet, replace it with a button to add values.
 
 <table style="none" border="false">
   <tr>
@@ -201,7 +205,8 @@ Use [sentence-style capitalization](capitalization.md#sentence) for each menu it
 
 #### No repeated words in items
 
-Avoid repeating words in drop-down list items. Move repeating words to the label or after the drop-down.
+Avoid repeating words in drop-down list items.
+Move repeating words to the label or after the drop-down.
 
 <table style="none" border="false">
   <tr>
@@ -242,7 +247,8 @@ Sort items in one of the following orders:
       <img src="dropdown_how_to_6_3.png" alt="Drop-down menu labeled 'Global encoding' with multiple options grouped in two groups and divided: popular options and the rest"/>
     </td>
     <td>
-      <p>Place the most common options first. If there are more than 10 options, separate the most popular options with a line.</p>
+      <p>Place the most common options first.
+      If there are more than 10 options, separate the most popular options with a line.</p>
       <p>Sort the remaining items in alphabetical or numeric order.</p>
     </td>
   </tr>
@@ -250,7 +256,8 @@ Sort items in one of the following orders:
 
 #### Grouping
 
-Group related items using separators. Add group headers if possible.
+Group related items using separators.
+Add group headers if possible.
 
 <table style="none" border="false">
     <tr>
@@ -276,11 +283,13 @@ If there are actions related to the drop-down, put them under the gear icon on t
 
 <note>Meta-option is a special choice that controls how selections behave rather than being a specific value.</note>
 
-Enclose meta-options in pointy brackets and place them at the beginning of the list when they're important or popular options. In other cases, place them at the end of the list.
+Enclose meta-options in pointy brackets and place them at the beginning of the list when they're important or popular options.
+In other cases, place them at the end of the list.
 
 ![Drop-down menu labeled 'Run tests with' with options 'Platform test runner', 'Gradle test runner', and '<Choose per test>'. The selected option set to '<Choose per test>'](dropdown_how_to_9.png){width=706}
 
-Do not assign special meanings to numeric or string values, use meta-options instead. It can be unclear that either 0 or an empty string are used to disable an option.
+Do not assign special meanings to numeric or string values, use meta-options instead.
+It can be unclear that either 0 or an empty string are used to disable an option.
 
 <table style="none" border="false">
     <tr>
@@ -328,7 +337,8 @@ Replace the <control>&lt;None&gt;</control> option with a checkbox if it doesn't
       <img src="dropdown_how_to_12_2.png" alt="Drop-down 'Font' with multiple options that are showed in different fonts"/>
     </td>
     <td>
-      <p>Use font formatting for a list of fonts. It will help users make a choice.</p>
+      <p>Use font formatting for a list of fonts.
+      It will help users make a choice.</p>
     </td>
   </tr>
 </table>
@@ -351,7 +361,8 @@ Replace the <control>&lt;None&gt;</control> option with a checkbox if it doesn't
 
 #### Submenus are not supported
 
-Submenus are not supported for the drop-down list. Use a tree view instead
+Submenus are not supported for the drop-down list.
+Use a tree view instead
 
 ![Drop-down 'Keymap' with multiple options in a tree view showing dependencies in options](dropdown_how_to_14.png){width=706}
 
@@ -359,10 +370,10 @@ Submenus are not supported for the drop-down list. Use a tree view instead
 
 #### Opening the menu
 
-A drop-down menu opens on clicking the drop-down button anywhere or pressing the <shortcut>Down</shortcut> key when the drop-down is
-focused.
+A drop-down menu opens on clicking the drop-down button anywhere or pressing the <shortcut>Down</shortcut> key when the drop-down is focused.
 
-The menu opens down by default. If there is not enough space, the menu opens up.
+The menu opens down by default.
+If there is not enough space, the menu opens up.
 
 #### Selected value
 
@@ -370,7 +381,8 @@ When the menu opens, the default option (displayed when the menu is closed) is s
 
 #### Moving the selection
 
-Selection in the menu is moved by pressing <shortcut>Up</shortcut> and <shortcut>Down</shortcut> keys when an item is hovered. Selection is moved as well when hovering the cursor over an item but it doesn't update the value.
+Selection in the menu is moved by pressing <shortcut>Up</shortcut> and <shortcut>Down</shortcut> keys when an item is hovered.
+Selection is moved as well when hovering the cursor over an item but it doesn't update the value.
 
 #### Closing the menu
 

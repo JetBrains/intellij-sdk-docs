@@ -19,8 +19,8 @@ For more advanced options and topics, see:
 
 ## Keep Up To Date
 
-IntelliJ Platform Gradle Plugin (2.x) and [Gradle](https://gradle.org/install/) build system are constantly developed, and every new release
-brings important bug fixes, new features, and improvements that make the development more efficient.
+IntelliJ Platform Gradle Plugin (2.x) and [Gradle](https://gradle.org/install/) build system are constantly developed,
+and every new release brings important bug fixes, new features, and improvements that make the development more efficient.
 
 It is strongly recommended to keep updating both Gradle and IntelliJ Platform Gradle Plugin to the latest versions.
 Newer IDE releases might not be supported fully in older releases of the IntelliJ Platform Gradle Plugin.
@@ -69,13 +69,11 @@ see [](tools_intellij_platform_gradle_plugin.md#setting-up-intellij-platform) fo
 IntelliJ Platform plugin projects may depend on either bundled or third-party plugins defined in the `dependencies {}` block,
 see [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugins) for details.
 
-The runtime dependency must be added in the [Plugin Configuration](plugin_configuration_file.md) (<path>plugin.xml</path>) file as described in
-[Plugin Dependencies](plugin_dependencies.md#dependency-declaration-in-pluginxml).
+The runtime dependency must be added in the [Plugin Configuration](plugin_configuration_file.md) (<path>plugin.xml</path>) file as described in [Plugin Dependencies](plugin_dependencies.md#dependency-declaration-in-pluginxml).
 
 ## Run IDE Task
 
-By default, the [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task will use the same version of the IntelliJ Platform
-for the IDE Development instance as was used for building the plugin.
+By default, the [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task will use the same version of the IntelliJ Platform for the IDE Development instance as was used for building the plugin.
 
 ## Verifying Plugin
 

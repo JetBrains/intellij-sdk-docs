@@ -14,7 +14,8 @@
 
 The [Gradle Grammar-Kit Plugin](https://github.com/JetBrains/gradle-grammar-kit-plugin) automates generating lexers and parsers to support building [custom language](custom_language_support.md) plugins for IntelliJ-based IDEs when using [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit).
 
-> The plugin does not support two-pass generation. Therefore, it does not support method mixins.
+> The plugin does not support two-pass generation.
+> Therefore, it does not support method mixins.
 >
 {style="note" title="Known Limitations"}
 

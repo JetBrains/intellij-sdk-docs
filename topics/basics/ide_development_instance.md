@@ -1,12 +1,11 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # IDE Development Instance
 
 <link-summary>Overview of the IDE instance used for running and debugging a plugin during development.</link-summary>
 
 A plugin project can be run or debugged from within the development instance of IntelliJ IDEA.
-Selecting the `runIde` task for a Gradle-based project (or [Run](running_and_debugging_a_theme.md) menu for a _Plugin DevKit_-based project)
-will launch a _Development Instance_ of the target IDE with the current development version of the plugin enabled.
+Selecting the `runIde` task for a Gradle-based project (or [Run](running_and_debugging_a_theme.md) menu for a _Plugin DevKit_-based project) will launch a _Development Instance_ of the target IDE with the current development version of the plugin enabled.
 
 This page describes how to control some settings for the Development Instance.
 
@@ -105,12 +104,10 @@ Auto-Reload is enabled by default.
 Set property [`intellijPlatform.autoReload`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-autoReload) to `false` to disable it explicitly,
 see [](tools_intellij_platform_gradle_plugin_faq.md#how-to-disable-the-automatic-reload-of-dynamic-plugins)
 
-After starting the sandbox IDE instance, run the [`buildPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#buildPlugin) task after modifications
-in the plugin project and switch back focus to the sandbox instance to trigger reload.
+After starting the sandbox IDE instance, run the [`buildPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#buildPlugin) task after modifications in the plugin project
+and switch back focus to the sandbox instance to trigger reload.
 
-> [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) task must currently be
-> [disabled explicitly](tools_intellij_platform_gradle_plugin_faq.md#how-to-disable-building-the-searchable-options) to work around
-> _Only one instance of IDEA can be run at a time_ problem.
+> [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) task must currently be [disabled explicitly](tools_intellij_platform_gradle_plugin_faq.md#how-to-disable-building-the-searchable-options) to work around _Only one instance of IDEA can be run at a time_ problem.
 >
 {style="warning"}
 
@@ -130,9 +127,7 @@ see [](tools_gradle_intellij_plugin_faq.md#how-to-disable-automatic-reload-of-dy
 After starting the sandbox IDE instance, run the [`buildPlugin`](tools_gradle_intellij_plugin.md#tasks-buildplugin) task after modifications in the plugin project
 and switch focus back to the sandbox instance to trigger reload.
 
-> [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#tasks-buildsearchableoptions) task must currently be
-> [disabled explicitly](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) to work around
-> _Only one instance of IDEA can be run at a time_ problem.
+> [`buildSearchableOptions`](tools_gradle_intellij_plugin.md#tasks-buildsearchableoptions) task must currently be [disabled explicitly](tools_gradle_intellij_plugin_faq.md#how-to-disable-building-searchable-options) to work around _Only one instance of IDEA can be run at a time_ problem.
 >
 {style="warning"}
 

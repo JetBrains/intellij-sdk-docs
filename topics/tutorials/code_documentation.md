@@ -15,17 +15,15 @@ Plugin authors implement
 [`DocumentationProvider`](%gh-ic%/platform/analysis-api/src/com/intellij/lang/documentation/DocumentationProvider.java)
 to show documentation for particular [PSI elements](psi_elements.md).
 
-Implementations of `DocumentationProvider` can be registered either at the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.documentationProvider"/></include> or
-the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.documentationProvider"/></include>.
-It is recommended to use the latter one when creating documentation that targets a specific language because providers registered
-as `com.intellij.lang.documentationProvider` will only be called for elements from that language.
+Implementations of `DocumentationProvider` can be registered either at the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.documentationProvider"/></include>
+or the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.lang.documentationProvider"/></include>.
+It is recommended to use the latter one when creating documentation that targets a specific language because providers registered as `com.intellij.lang.documentationProvider` will only be called for elements from that language.
 This is the reason they require the `language` attribute when registering the EP in the <path>[plugin.xml](plugin_configuration_file.md)</path>.
 The bigger picture here is that documentation providers co-exist and if there is more than one provider for the same element,
 the first one that returns a value different from `null` wins.
 
 Although discouraged, the ordering of documentation providers can be influenced by using the `order` attribute when registering the extension.
-For instance, PythonCore [`plugin.xml`](%gh-ic%/python/pluginCore/resources/META-INF/plugin.xml) uses the following to call the external documentation
-provider before the default one (registered with `id="pythonDocumentationProvider"`):
+For instance, PythonCore [`plugin.xml`](%gh-ic%/python/pluginCore/resources/META-INF/plugin.xml) uses the following to call the external documentation provider before the default one (registered with `id="pythonDocumentationProvider"`):
 
 ```xml
 <lang.documentationProvider

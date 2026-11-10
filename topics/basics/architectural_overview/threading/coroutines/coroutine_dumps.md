@@ -69,7 +69,8 @@ Notable names:
 ### `CoroutineClass{JobState}`
 
 A coroutine's `toString()`:
-- `CoroutineClass` - a coroutine class. Notable values:
+- `CoroutineClass` - a coroutine class.
+  Notable values:
     - `StandaloneCoroutine` and `LazyStandaloneCoroutine` are created by [`launch`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/launch.html).
     - `DeferredCoroutine` and `LazyDeferredCoroutine` are created by [`async`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html).
     - `BlockingCoroutine` is created by [`runBlockingCancellable()`](%gh-ic%/platform/core-api/src/com/intellij/openapi/progress/coroutines.kt).

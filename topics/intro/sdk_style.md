@@ -136,8 +136,10 @@ General Markdown links have the default Markdown link style:
         * `[Link to a section on the current page](#another-section)`{disable-links} links to a heading on the current page.
         * `[Link to the section on another page](other_page.md#another-section)`{disable-links} links to a heading on another page.
 
-  If the desired link label is the same as an SDK doc page or section title, leave the label part empty, e.g., `[](test-page.md)`{disable-links} or `[](test-page.md#section-1)`{disable-links}.
+  If the text refers to an SDK doc page or section by its title, leave the label part empty, e.g., `[](test-page.md)`{disable-links} or `[](test-page.md#section-1)`{disable-links}.
   The empty link label will be automatically filled with the actual page or section title.
+  Do not use an empty label when the link marks a concept in running text, as the rendered title often does not fit the sentence grammatically.
+  For example, write `See [](plugin_services.md) for details.`{disable-links}, but `introduce methods in [services](plugin_services.md)`{disable-links} instead of `introduce methods in [](plugin_services.md)`{disable-links}, which renders "introduce methods in Services".
 
 #### Links to IntelliJ Platform Source
 

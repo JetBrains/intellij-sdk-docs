@@ -160,8 +160,9 @@ In-paragraph code fragments and IntelliJ Platform APIs are formatted according t
 
 #### Code
 
-* Avoid using qualifiers like "`Foo` interface" or "`Foo` abstract class".
-  Instead, refer to `Foo`.
+* Omit qualifiers like "`Foo` interface" or "`Foo` class" by default and refer to `Foo`.
+  Keep a qualifier only when the kind matters to the reader (for example, an abstract class that must be extended, or an enum whose values follow)
+  or when the bare name would read as an ordinary word (for example, "the `Test` class").
 * The FQN is used for the first reference to an interface, class, or package on a page.
   Rather than `AnAction`, introduce it as `com.intellij.openapi.actionSystem.AnAction`.
   Later references on the page can be `AnAction`.

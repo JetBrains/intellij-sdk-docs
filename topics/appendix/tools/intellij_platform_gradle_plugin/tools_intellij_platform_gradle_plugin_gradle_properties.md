@@ -173,6 +173,7 @@ org.jetbrains.intellij.platform.paidPluginSearchableOptionsWarning=false
 
 Specifies the URL from which the list of all Android Studio releases is fetched.
 The JSON listing is used to resolve Android Studio distributions and select IDEs for the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
+Since `2.18.0`, custom mirrors must provide JSON rather than XML.
 
 {type="narrow"}
 Default value
@@ -188,7 +189,7 @@ org.jetbrains.intellij.platform.productsReleasesAndroidStudioUrl=https://...
 ## `productsReleasesJetBrainsIdesUrl`
 {#productsReleasesJetBrainsIdesUrl}
 
-This property is no longer used.
+Removed in `2.18.0`.
 JetBrains IDE release listings are configured with [`productsReleasesCdnBuildsUrl`](#productsReleasesCdnBuildsUrl) instead.
 
 

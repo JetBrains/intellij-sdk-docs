@@ -41,12 +41,13 @@ tasks {
 
 ### Task `runIdeForUiTests` not found
 
-The [`runIdeForUiTests`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeForUiTests) is no longer registered by default.
-Follow the task documentation for more details.
+The legacy [`runIdeForUiTests`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeForUiTests) task was removed.
+For UI tests using Robot Server, register a custom [`runIde`](tools_intellij_platform_gradle_plugin_testing_extension.md#intellijPlatformTesting) configuration and add `robotServerPlugin()` to its plugin dependencies.
+Starter-based UI tests use a separate testing workflow; see [](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi).
 
 ### Missing `opentest4j` dependency in Test Framework
 
-Due to the [IJPL-157292](https://youtrack.jetbrains.com/issue/IJPL-157292/lib-testFramework.jar-is-missing-library-opentest4j) issue, the `opentest4j` dependency is not resolved when using `TestFrameworkType.Platform` or `TestFrameworkType.JUnit5`.
+On IntelliJ Platform versions affected by [IJPL-157292](https://youtrack.jetbrains.com/issue/IJPL-157292/lib-testFramework.jar-is-missing-library-opentest4j), the `opentest4j` dependency is not resolved when using `TestFrameworkType.Platform` or `TestFrameworkType.JUnit5`.
 
 This results in the `NoClassDefFoundError` exception:
 
@@ -82,7 +83,7 @@ dependencies {
 
 ### JUnit5 Test Framework refers to JUnit4
 
-Due to the [IJPL-159134](https://youtrack.jetbrains.com/issue/IJPL-159134/JUnit5-Test-Framework-refers-to-JUnit4-java.lang.NoClassDefFoundError-junit-framework-TestCase) issue, the JUnit5 Test Framework refers to JUnit4 classes when running test.
+On IntelliJ Platform versions affected by [IJPL-159134](https://youtrack.jetbrains.com/issue/IJPL-159134/JUnit5-Test-Framework-refers-to-JUnit4-java.lang.NoClassDefFoundError-junit-framework-TestCase), the JUnit5 Test Framework refers to JUnit4 classes when running tests.
 
 This results in the `NoClassDefFoundError` exceptions:
 
@@ -562,7 +563,9 @@ org.gradle.api.InvalidUserCodeException: Starting an external process '/usr/sbin
 
 This is caused by the `undertow` library used for custom repository creation, which tries to determine the CPU cache level on macOS by executing an external process.
 
-To resolve this issue:
+Upgrade the IntelliJ Platform Gradle Plugin before overriding its transitive dependencies.
+For an older plugin version that still resolves an affected `smallrye-common-cpu` release, use the following workaround.
+Do not force version `2.10.0` if a newer version is already resolved.
 
 1. Set the `smallrye.cpu.determine-cache-level` system property to `false` in the <path>gradle.properties</path> file:
 

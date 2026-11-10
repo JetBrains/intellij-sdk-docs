@@ -14,6 +14,7 @@ The plugin is published to the Gradle Plugin Portal with a new name as a new ent
 ## Minimum Gradle and Java Versions
 
 The minimum required Gradle version is now **9.0.0** running on Java **17** or later.
+The target IntelliJ Platform must be **2023.3** or later and may require a newer Java runtime than the JVM running Gradle.
 See [](tools_intellij_platform_gradle_plugin.md#requirements).
 
 ## Plugin ID Change
@@ -139,29 +140,39 @@ See: [](tools_intellij_platform_gradle_plugin_dependencies_extension.md#custom-t
 
 The since/until properties in the <path>plugin.xml</path> file are now managed by the [`intellijPlatform`](tools_intellij_platform_gradle_plugin_extension.md) extension.
 
-### `intellij.intellijRepository`,` intellij.pluginsRepositories`, `intellij.jreRepository`
+### `intellij.intellijRepository`, `intellij.pluginsRepositories`, `intellij.jreRepository`
+
+Use the `repositories {}` block to manage repositories instead.
+
+See: [](tools_intellij_platform_gradle_plugin_repositories_extension.md)
 
 ### `intellij.sandboxDir`
 
 Use the [`intellijPlatform.sandboxContainer`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-sandboxContainer).
 
-Use the `repositories {}` block to manage repositories instead.
-
-See: [](tools_intellij_platform_gradle_plugin_repositories_extension.md)
-
 ### `intellij.downloadSources`
 
-Downloading sources is managed by the _Plugin DevKit_ plugin in version 2024.1+.
+Downloading and attaching sources is managed by the _Plugin DevKit_ plugin.
+See [](tools_intellij_platform_gradle_plugin.md#attaching-sources-in-the-ide) and the [`downloadSources`](tools_intellij_platform_gradle_plugin_gradle_properties.md#downloadSources) Gradle property.
 
 ### `intellij.ideaDependency`
 
-Access the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) object using the [`intellijPlatform.productInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) property.
+Access the [`ProductInfo`](tools_intellij_platform_gradle_plugin_types.md#ProductInfo) object using the [`intellijPlatform.productInfo`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-productInfo) property.
 
 ## Tasks
 
+The verification task names changed meaning between 1.x and 2.x:
+
+| Gradle IntelliJ Plugin 1.x task | IntelliJ Platform Gradle Plugin 2.x task |
+|--------------------------------|-----------------------------------------|
+| `runPluginVerifier` | [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin), which runs the IntelliJ Plugin Verifier |
+| `verifyPlugin` | [`verifyPluginStructure`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginStructure), which validates the archive and descriptors |
+| `verifyPluginConfiguration` | [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration), which checks the build configuration |
+
 ### Running Tests
 
-An [explicit dependency](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing) on a test framework is now required.
+For JVM plugin tests, declare the required [test framework dependencies](tools_intellij_platform_gradle_plugin_dependencies_extension.md#testing).
+The Starter-based [`testUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi) task supplies its framework dependencies automatically.
 
 ### `downloadRobotServerPlugin`
 
@@ -286,3 +297,105 @@ plugins {
 
 </tab>
 </tabs>
+
+## Upgrading Within 2.x
+{#upgrading-2-x}
+
+The current reference describes the latest released 2.x APIs.
+When upgrading an older 2.x build, check the following compatibility and configuration changes as well as the [release notes](https://github.com/JetBrains/intellij-platform-gradle-plugin/releases).
+
+### Minimum Versions
+
+The minimum supported versions changed at these releases:
+
+| Gradle plugin version | Minimum Gradle | Minimum target IntelliJ Platform |
+|-----------------------|----------------|----------------------------------|
+| `2.0.0` | `8.2` | `2022.3` |
+| `2.2.0` | `8.5` | `2022.3` |
+| `2.7.1` | `8.6` | `2022.3` |
+| `2.10.0` | `8.13` | `2022.3` |
+| `2.12.0` | `9.0.0` | `2022.3` |
+| `2.14.0` | `9.0.0` | `2023.3` |
+
+The JVM running Gradle and the target IDE's required Java version are separate requirements.
+See [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md).
+
+### Dependency and Cache Configuration
+
+- Since `2.7.0`, `pluginModule(project(...))` packages a separate JAR under <path>lib/modules/</path> in the plugin distribution.
+  To merge a module into the main plugin JAR, use `pluginComposedModule(project(...))` instead.
+- Since `2.8.0`, [`intellijPlatform.caching.path`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-caching-path) is read-only.
+  Configure the project cache root through [`org.jetbrains.intellij.platform.intellijPlatformCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformCache), not by assigning to `caching.path`.
+- In `2.12.0`, deprecated positional `useInstaller` and `productMode` arguments were removed from dependency helpers.
+  Set them in the configuration block instead:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+dependencies {
+  intellijPlatform {
+    intellijIdea("%ijPlatform%") {
+      useInstaller = false
+    }
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+  intellijPlatform {
+    intellijIdea('%ijPlatform%') {
+      useInstaller = false
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
+Other deprecated APIs removed in `2.12.0` include:
+
+| Removed API | Replacement |
+|-------------|-------------|
+| `intellijPlatform.cachePath` | Read-only `intellijPlatform.caching.path`; configure the root with the Gradle property above |
+| Dependency configuration `useCustomCache` | `useCache` |
+| `instrumentationTools()` | Automatic compiler dependency; use `javaCompiler(version)` to override it |
+| `intellijPlatform.verifyPlugin` | `intellijPlatform.pluginVerification` |
+| `pluginVerification.ides.ide()` / `ides()` | `create()` or `select()` |
+| `aqua()` / `writerside()` | Discontinued target products; the dependency helpers are no longer available |
+
+The `org.jetbrains.intellij.platform.migration` plugin and its legacy stub task classes, including `RunPluginVerifierTask`, were also removed in `2.12.0`.
+
+### Changed Defaults
+
+- Since `2.6.0`, `ideaVersion.untilBuild` has no default.
+  Since `2.14.0`, `sinceBuild` defaults to the target IDE's major build number, such as `243`, rather than a major/minor pair.
+  Explicitly configured values are still written to <path>plugin.xml</path>.
+- Since `2.12.0`, the default sandbox container is <path>.intellijPlatform/sandbox/</path>, outside the build directory.
+  Since `2.13.0`, sandbox paths also contain the project name.
+  Use [`cleanSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#cleanSandbox), not `clean`, to remove these persistent sandboxes.
+- Since `2.14.0`, the Java toolchain language version follows the target platform unless overridden, and recommended verifier IDEs are selected when no explicit targets are configured.
+  Signing and publishing credentials default to `CERTIFICATE_CHAIN`, `PRIVATE_KEY`, `PRIVATE_KEY_PASSWORD`, and `PUBLISH_TOKEN` environment variables.
+- Since `2.15.0`, the default verifier failure levels also include internal and override-only API usages.
+- Since `2.18.0`, product release metadata uses JSON; custom Android Studio release mirrors must no longer serve XML.
+  The `productsReleasesJetBrainsIdesUrl` property was removed in favor of [`productsReleasesCdnBuildsUrl`](tools_intellij_platform_gradle_plugin_gradle_properties.md#productsReleasesCdnBuildsUrl).
+- Since `2.19.0`, Kotlin Standard Library and coroutines dependencies are excluded from sandbox runtime classpaths by default.
+  The Settings plugin also defaults `kotlin.stdlib.default.dependency` to `false` unless explicitly configured.
+
+### Task Configuration Changes
+
+- In `2.19.0`, `PublishPluginTask.archiveFile` was replaced with [`archiveFiles`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-archiveFiles) to support multiple native distributions.
+  Native variant archives are not signed automatically before publishing.
+- The no-op `setupDependencies` task was removed in `2.19.0`; remove old IDE task-activation references as described [above](#setupdependencies).
+- Since `2.19.0`, Plugin Verifier uses each IDE's bundled runtime by default.
+  Set [`pluginVerification.useBundledRuntime`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-useBundledRuntime) to `false` to use the build runtime instead.
+- Since `2.20.0`, the preconfigured Starter UI task is named [`testUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi) and uses <path>src/testUi</path>.
+  The custom-task container remains `intellijPlatformTesting.testIdeUi`.
+- In `2.20.0`, `testIdeBundledPluginsClasspathEnabled` was removed; bundled plugins are always considered for test classpaths.
+  Use [`testIdeBundledPluginsClasspathExcludes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathExcludes) for optional exclusions.
+  Required and explicitly declared plugin dependencies are retained.

@@ -23,9 +23,11 @@ To use this approach, no extra steps are required but declare the IntelliJ Platf
 ## Obtained with IntelliJ Platform from Maven
 
 If the IntelliJ Platform is resolved with the IntelliJ Maven Repository, it has no JetBrains Runtime (JBR) bundled.
-In such a case, it is necessary to provide it in the suitable version with the version read from the <path>[intellijPlatform]/dependencies.txt</path> file.
+The plugin attempts to resolve a separate runtime automatically from the IDE's metadata.
+If the metadata doesn't specify a runtime, configure an explicit runtime or a toolchain.
 
-This can be easily achieved by using the `jetbrainsRuntime()` repository helper pointing to [JetBrains Runtime GitHub Releases](https://github.com/JetBrains/JetBrainsRuntime/releases/) and dependency helper with no arguments provided:
+The explicit [`jetbrainsRuntime()`](tools_intellij_platform_gradle_plugin_dependencies_extension.md#java-runtime) declaration below illustrates this default.
+It uses the IntelliJ Platform's <path>dependencies.txt</path> file and the runtime repository included by `defaultRepositories()`.
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">

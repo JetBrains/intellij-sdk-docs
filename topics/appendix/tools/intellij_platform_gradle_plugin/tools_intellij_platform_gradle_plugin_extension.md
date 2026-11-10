@@ -25,7 +25,7 @@ intellijPlatform {
   buildSearchableOptions = true
   instrumentCode = true
   projectName = project.name
-  sandboxContainer = "..."
+  sandboxContainer = layout.buildDirectory.dir("idea-sandbox")
   subscriptionKey = layout.projectDirectory.file("idea.key")
 
   pluginConfiguration {
@@ -51,7 +51,7 @@ intellijPlatform {
   buildSearchableOptions = true
   instrumentCode = true
   projectName = project.name
-  sandboxContainer = '...'
+  sandboxContainer = layout.buildDirectory.dir('idea-sandbox')
   subscriptionKey = layout.projectDirectory.file('idea.key')
 
   pluginConfiguration {
@@ -181,7 +181,7 @@ Type
 : `DirectoryProperty`
 
 Default value
-: <path>[rootProject]/.intellijPlatform/sandbox</path>
+: <path>[intellijPlatform.caching.path](#intellijPlatform-caching-path)/sandbox</path>
 
 See also:
 - [Tasks: `prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox)
@@ -196,6 +196,7 @@ See also:
 Specifies the IntelliJ IDEA subscription key file used by sandbox-producing tasks.
 The key file is copied to <path>config/idea.key</path>, and `com.intellij.modules.ultimate` is removed from <path>config/disabled_plugins.txt</path> in each prepared sandbox.
 An individual [`PrepareSandboxTask`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox-subscriptionKey) can override this project-level value.
+Relative paths supplied through the Gradle property are resolved against the current project directory.
 
 {type="narrow"}
 Type
@@ -237,6 +238,7 @@ See also:
 
 Specifies in which part of the product the developed plugin should be installed.
 The default is backend-only, but [split plugins](split_mode_and_remote_development.md) often use `BOTH`.
+Module projects can also configure this property to control which side receives their plugin dependencies.
 
 {type="narrow"}
 Type
@@ -247,6 +249,20 @@ Default value
 
 See also:
 - [Task Awares: `SplitModeAware`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware)
+
+
+### `splitModeTarget`
+{#intellijPlatform-splitModeTarget}
+
+Deprecated compatibility alias for [](#intellijPlatform-pluginInstallationTarget).
+Use `pluginInstallationTarget` for new configurations.
+
+{type="narrow"}
+Type
+: `Property<SplitModeTarget>`
+
+Default value
+: `SplitModeTarget.BACKEND` (effective default)
 
 
 ## Native Variants
@@ -545,7 +561,8 @@ See also:
 - [Tasks: `patchPluginXml.changeNotes`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-changeNotes)
 
 If the Gradle Changelog Plugin (`org.jetbrains.changelog`) is applied, this value defaults to the rendered changelog entry for the current plugin version, or to the unreleased entry when no matching version exists.
-The IntelliJ Platform Gradle Plugin also configures the Changelog Plugin defaults for empty groups, repository URL from `pluginRepositoryUrl`, and an empty version prefix.
+The entry is rendered as HTML without a header or empty sections.
+The IntelliJ Platform Gradle Plugin also configures the Changelog Plugin defaults for empty groups and the repository URL from `pluginRepositoryUrl`.
 
 
 ## Product Descriptor
@@ -666,7 +683,7 @@ Type
 : `Property<Boolean>`
 
 Default value
-: `false`
+: Unset
 
 See also:
 - [Tasks: `patchPluginXml.productDescriptorOptional`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-productDescriptorOptional)
@@ -685,10 +702,10 @@ Type
 : `Property<Boolean>`
 
 Default value
-: `false`
+: Unset
 
 See also:
-- [Tasks: `patchPluginXml.productDescriptorOptional`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-productDescriptorOptional)
+- [Tasks: `patchPluginXml.productDescriptorEap`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-productDescriptorEap)
 - [Plugin Configuration File: `product-descriptor`](plugin_configuration_file.md#idea-plugin__product-descriptor)
 
 
@@ -774,7 +791,8 @@ including potential future builds that may cause compatibility issues.
 
 The provided value is used for the `<idea-version until-build=""/>` element attribute.
 
-The default value is set to the `MAJOR.*` version based on the currently selected IntelliJ Platform, such as `233.*`.
+The extension does not assign a default value.
+To configure an upper compatibility bound, set a value such as `233.*` explicitly.
 
 The `until-build` attribute can be unset by providing `provider { null }` as a value:
 
@@ -813,7 +831,7 @@ Type
 : `Property<String>`
 
 Default value
-: `MAJOR.*`
+: Unset
 
 See also:
 - [Tasks: `patchPluginXml.untilBuild`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml-untilBuild)
@@ -933,14 +951,11 @@ intellijPlatform {
   // ...
 
   caching {
-    // Root cache used by the plugin for project-specific files
-    // path = layout.projectDirectory.dir(".intellijPlatform") // custom example
-
     ides {
       enabled.set(true)
       // path = layout.buildDirectory.dir("ides-cache")
       // Customize directory name for a resolved IDE
-      name.set { requested -> "${'$'}{requested.type.code}-${'$'}{requested.version}" }
+      name.set { requested -> "${requested.type}-${requested.version}-${requested.productMode}" }
     }
   }
 }
@@ -954,14 +969,13 @@ intellijPlatform {
   // ...
 
   caching {
-    // Root cache used by the plugin for project-specific files
-    // path = layout.projectDirectory.dir('.intellijPlatform') // custom example
-
     ides {
       enabled = true
       // path = layout.buildDirectory.dir('ides-cache')
       // Customize directory name for a resolved IDE
-      name = { requested -> "${'$'}{requested.type.code}-${'$'}{requested.version}" }
+      name = { requested ->
+        "${requested.type}-${requested.version}-${requested.productMode}".toString()
+      } as kotlin.jvm.functions.Function1
     }
   }
 }
@@ -975,7 +989,7 @@ intellijPlatform {
 ### `path`
 {#intellijPlatform-caching-path}
 
-Specifies the IntelliJ Platform project cache location.
+Provides read-only access to the IntelliJ Platform project cache location.
 
 The IntelliJ Platform cache is used for storing IntelliJ Platform Gradle Plugin-specific files, such as:
 - XML files generated for the [`localPlatformArtifacts()`](tools_intellij_platform_gradle_plugin_repositories_extension.md#additional-repositories) local Ivy repository
@@ -983,9 +997,13 @@ The IntelliJ Platform cache is used for storing IntelliJ Platform Gradle Plugin-
 - extracted IntelliJ Platform archives instead of using Gradle cache
 - serialized IDE layout indices used for bundled plugin and module dependency resolution
 
-This path can be changed with the [`org.jetbrains.intellij.platform.intellijPlatformCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformCache) Gradle property
+This path is finalized when the extension is registered.
+Configure it with the [`org.jetbrains.intellij.platform.intellijPlatformCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformCache) Gradle property rather than assigning it in the extension.
 
 {type="narrow"}
+Access
+: Read-only
+
 Type
 : `DirectoryProperty`
 
@@ -1007,7 +1025,7 @@ Example:
 intellijPlatform.caching.ides {
   enabled = false
   path = layout.projectDirectory.dir(".intellijPlatform/ides")
-  name = { requested -> "${'$'}{requested.type}-${'$'}{requested.version}" }
+  name = { requested -> "${requested.type}-${requested.version}-${requested.productMode}" }
 }
 ```
 
@@ -1018,7 +1036,9 @@ intellijPlatform.caching.ides {
 intellijPlatform.caching.ides {
   enabled = false
   path = layout.projectDirectory.dir('.intellijPlatform/ides')
-  name = { requested -> "${'$'}{requested.type}-${'$'}{requested.version}" }
+  name = { requested ->
+    "${requested.type}-${requested.version}-${requested.productMode}".toString()
+  } as kotlin.jvm.functions.Function1
 }
 ```
 
@@ -1030,13 +1050,14 @@ intellijPlatform.caching.ides {
 {#intellijPlatform-caching-ides-enabled}
 
 Indicates whether caching for IntelliJ Platform IDEs is enabled globally.
+Individual dependency declarations can override this value with `useCache`.
 
 {type="narrow"}
 Type
 : `Property<Boolean>`
 
 Default value
-: `false`
+: [`intellijPlatformIdesCacheEnabled`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformIdesCacheEnabled) Gradle property (`false` by default)
 
 
 #### `path`
@@ -1049,7 +1070,7 @@ Type
 : `DirectoryProperty`
 
 Default value
-: <path>[rootProject]/.intellijPlatform/ides/</path>
+: <path>[intellijPlatform.caching.path](#intellijPlatform-caching-path)/ides/</path>
 
 See also:
 - [Gradle Property: `intellijPlatformIdesCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformIdesCache)
@@ -1059,13 +1080,15 @@ See also:
 {#intellijPlatform-caching-ides-name}
 
 Function that returns a cache directory name for a given requested IntelliJ Platform artifact.
+The default appends the lowercase product mode for backend and frontend requests to keep their writable IDE homes separate.
+Custom naming functions should also distinguish product modes.
 
 {type="narrow"}
 Type
 : `Property<(RequestedIntelliJPlatform) -> String>`
 
 Default value
-: `$type-$version`
+: `$type-$version` for `MONOLITH`; `$type-$version-backend` or `$type-$version-frontend` otherwise
 
 See also:
 - [Types: `RequestedIntelliJPlatform`](tools_intellij_platform_gradle_plugin_types.md#RequestedIntelliJPlatform)
@@ -1076,6 +1099,7 @@ See also:
 
 Configures the publishing process of the plugin.
 All values are passed to the [](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin) task.
+When the Gradle Changelog Plugin is applied, `publishPlugin` also depends on `patchChangelog`.
 
 Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugin to be applied.
 
@@ -1089,8 +1113,8 @@ intellijPlatform {
   // ...
 
   publishing {
-    host = ""
-    token = "7hR4nD0mT0k3n_8f2eG"
+    host = "https://plugins.jetbrains.com"
+    token = providers.environmentVariable("PUBLISH_TOKEN")
     channels = listOf("default")
     ideServices = false
     hidden = false
@@ -1106,8 +1130,8 @@ intellijPlatform {
   // ...
 
   publishing {
-    host = ''
-    token = '7hR4nD0mT0k3n_8f2eG'
+    host = 'https://plugins.jetbrains.com'
+    token = providers.environmentVariable('PUBLISH_TOKEN')
     channels = ['default']
     ideServices = false
     hidden = false
@@ -1292,7 +1316,7 @@ Refers to `ks` CLI option.
 
 {type="narrow"}
 Type
-: `Property<String>`
+: `RegularFileProperty`
 
 See also:
 - [Tasks: `signPlugin.keyStore`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin-keyStore)
@@ -1455,6 +1479,8 @@ Requires the [](tools_intellij_platform_gradle_plugin_plugins.md#platform) plugi
 <tab title="Kotlin" group-key="kotlin">
 
 ```kotlin
+import org.jetbrains.intellij.platform.gradle.tasks.VerifyPluginTask
+
 intellijPlatform {
   // ...
 
@@ -1462,11 +1488,12 @@ intellijPlatform {
     cliPath = file("/path/to/plugin-verifier-cli.jar")
     freeArgs = listOf("foo", "bar")
     failureLevel = VerifyPluginTask.FailureLevel.ALL
-    verificationReportsDirectory = "build/reports/pluginVerifier"
+    verificationReportsDirectory = layout.buildDirectory.dir("reports/pluginVerifier")
     verificationReportsFormats = VerifyPluginTask.VerificationReportsFormats.ALL
-    externalPrefixes = "com.example"
+    externalPrefixes = listOf("com.example")
     teamCityOutputFormat = false
     subsystemsToCheck = VerifyPluginTask.Subsystems.ALL
+    useBundledRuntime = true
     ignoredProblemsFile = file("/path/to/ignoredProblems.txt")
 
     ides {
@@ -1489,11 +1516,12 @@ intellijPlatform {
     cliPath = file('/path/to/plugin-verifier-cli.jar')
     freeArgs = ['foo', 'bar']
     failureLevel = VerifyPluginTask.FailureLevel.ALL
-    verificationReportsDirectory = 'build/reports/pluginVerifier'
+    verificationReportsDirectory = layout.buildDirectory.dir('reports/pluginVerifier')
     verificationReportsFormats = VerifyPluginTask.VerificationReportsFormats.ALL
-    externalPrefixes = 'com.example'
+    externalPrefixes = ['com.example']
     teamCityOutputFormat = false
     subsystemsToCheck = VerifyPluginTask.Subsystems.ALL
+    useBundledRuntime = true
     ignoredProblemsFile = file('/path/to/ignoredProblems.txt')
 
     ides {
@@ -1593,7 +1621,7 @@ Which subsystems of the IDE should be checked.
 
 {type="narrow"}
 Type
-: `Subsystems`
+: `Property<Subsystems>`
 
 Default value
 : [`Subsystems.ALL`](tools_intellij_platform_gradle_plugin_types.md#Subsystems)
@@ -1619,6 +1647,26 @@ See also:
 - [Tasks: `verifyPlugin.teamCityOutputFormat`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-teamCityOutputFormat)
 
 
+### `useBundledRuntime`
+{#intellijPlatform-pluginVerification-useBundledRuntime}
+
+Controls whether the IntelliJ Plugin Verifier resolves plugin classes against the JetBrains Runtime bundled with each verified IDE.
+When enabled, no `-runtime-dir` option is passed to the verifier.
+The runtime associated with the build's IntelliJ Platform is exposed through `JAVA_HOME` as a fallback for IDEs without a bundled runtime.
+
+When disabled, that build runtime is passed with `-runtime-dir` and used for every verified IDE.
+
+{type="narrow"}
+Type
+: `Property<Boolean>`
+
+Default value
+: `true`
+
+See also:
+- [Tasks: `verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
+
+
 ### `verificationReportsDirectory`
 {#intellijPlatform-pluginVerification-verificationReportsDirectory}
 
@@ -1639,6 +1687,7 @@ See also:
 {#intellijPlatform-pluginVerification-verificationReportsFormats}
 
 The output formats of the verification reports.
+When `failureLevel` includes `FailureLevel.NOT_DYNAMIC`, a Markdown report is requested additionally because it records dynamic plugin eligibility.
 
 {type="narrow"}
 Type
@@ -1682,6 +1731,8 @@ The extension to define the IDEs to be used along with the IntelliJ Plugin Verif
 It provides a set of helpers which add relevant entries to the configuration, which later is used to resolve IntelliJ-based IDE binary releases.
 When no IDEs are configured explicitly, `recommended()` is applied by default.
 Disable this fallback with the [`verifyPluginDefaultRecommendedIdes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#verifyPluginDefaultRecommendedIdes) Gradle property.
+Explicit calls to `create()`, `local()`, `current()`, `latest()`, `recommended()`, or `select()` replace this automatic fallback.
+An explicit `recommended()` call still works when the fallback is disabled.
 
 **Example:**
 
@@ -1751,18 +1802,60 @@ See also:
 - [Tasks: `verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
 - [Types: `IntelliJPlatformType`](tools_intellij_platform_gradle_plugin_types.md#IntelliJPlatformType)
 - [Types: `ProductRelease.Channel`](tools_intellij_platform_gradle_plugin_types.md#ProductRelease-Channel)
-- [Types: `ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesFilterParameters)
+- [Types: `ProductReleasesFilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesFilterParameters)
 
 | Function            | Description                                                                                                                                                                                         |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `create(...)`       | Adds a dependency to a binary IDE release to be used for testing with the IntelliJ Plugin Verifier.                                                                                                 |
-| `local(localPath)`  | Adds the local IDE to be used for testing with the IntelliJ Plugin Verifier.                                                                                                                        |
+| `create(configure)` | Adds an IDE using a dependency configuration block.                                                                                                                                               |
+| `create(type, version, configure)` | Adds an IDE by product type or code and version, with an optional dependency configuration block. The version can also be a `Provider<String>`; provider-based types require a provider-based version. |
+| `create(provider, configure)` | Adds IDEs from a `Provider<List<String>>` of `TYPE-VERSION` notations, optionally mapping each item in a configuration block. A `Provider<String>` requires a mapping block.                    |
+| `local(localPath)`  | Adds a local IDE. Accepts a `String`, `File`, `Directory`, or a provider of one of these types.                                                                                                       |
 | `current()`         | Adds the currently targeted IntelliJ Platform to the verification IDE list.                                                                                                                         |
 | `latest(configure)` | Resolves the latest available IDE release for each selected type.                                                                                                                                   |
 | `recommended()`     | Retrieves matching IDEs using the default configuration based on the currently used IntelliJ Platform and applies them for IntelliJ Plugin Verifier.                                                |
-| `select(configure)` | Retrieves matching IDEs using custom [`ProductReleasesValueSource.FilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesFilterParameters) filter parameters. |
+| `select(configure)` | Retrieves matching IDEs using custom [`ProductReleasesFilterParameters`](tools_intellij_platform_gradle_plugin_types.md#ProductReleasesFilterParameters). |
 
-Provider-based IDE lists can use `orRecommended()` to fall back to the default recommended IDE list when the provider has no value.
+`latest()`, `recommended()`, and `select()` request installer distributions.
+The `create()` configuration blocks support the [dependency configuration parameters](tools_intellij_platform_gradle_plugin_dependencies_extension.md#dependency-configuration-parameters), including `useInstaller` and `useCache`.
+Groovy calls using provider lists must supply a mapping closure explicitly.
+
+The Kotlin DSL provides `orRecommended()` for `Provider<String>` and `Provider<List<String>>` values to fall back to the recommended IDE list when the provider has no value.
+A present but empty list does not trigger this fallback.
+In Groovy, call `orRecommended(provider)` for a list provider.
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+intellijPlatform.pluginVerification.ides {
+  create(
+    providers.gradleProperty("verificationIdes")
+      .map { it.split(',') }
+      .orRecommended()
+  )
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+import static org.jetbrains.intellij.platform.gradle.extensions.ExtensionsKt.parseIdeNotation
+
+intellijPlatform.pluginVerification.ides {
+  create(orRecommended(
+    providers.gradleProperty('verificationIdes')
+      .map { it.split(',').toList() }
+  )) { ide, notation ->
+    def target = parseIdeNotation(notation)
+    ide.type = target.first
+    ide.version = target.second
+  }
+}
+```
+
+</tab>
+</tabs>
 
 
 <include from="snippets.topic" element-id="missingContent"/>

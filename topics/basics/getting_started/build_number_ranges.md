@@ -63,7 +63,7 @@ This gives more flexibility for third-party plugins and IDE developers.
 Plugins may specify compatibility versions more precisely (for example, requiring a specific bugfix release); IDE vendors may have build numbers based on a specific IntelliJ Platform version and specify an additional internal version (for example, `256.42` in `XX-162.94.11.256.42`) to allow plugin developers for their IDE to specify compatibility.
 
 Multipart build numbers can also be used in the `since-build` and `until-build` attributes of `idea-version`.
-Usually, omit the product ID and use only the branch number and build number, for example:
+These values usually omit the product ID and contain only the branch number and build number, for example:
 
 <compare type="top-bottom" first-title="Any 213 branch version" second-title="Specific build number">
 

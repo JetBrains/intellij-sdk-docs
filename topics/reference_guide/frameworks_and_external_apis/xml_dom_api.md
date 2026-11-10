@@ -166,36 +166,27 @@ enum CmpVersion implements NamedEnum {
 
 Besides a value, an XML tag can have attributes and sub-tags.
 However, many tags (according to DTD or Schema) contain only a value.
-DOM represents such tags with [`GenericDomValue<T>`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/GenericDomValue.java):
+DOM represents such tags with [`GenericDomValue<T>`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/GenericDomValue.java),
+which provides the following methods:
 
-```java
-interface GenericDomValue<T> {
-  T getValue();
-  void setValue(T t);
-
-  @TagValue
-  String getStringValue();
-
-  @TagValue
-  void setStringValue(String s);
-}
-```
+* `getValue()` and `setValue()` - get and set the tag value converted to `T`.
+* `getStringValue()` and `setStringValue()` - get and set the tag value as a `String`, without conversion to `T`.
+* `getRawText()` - returns the tag value text exactly as specified in XML, without any conversions or substitutions.
+* `getConverter()` - returns the `Converter` used to convert values between `String` and `T`.
 
 Specify a particular `T` when using this interface.
 The `String` accessors are useful, for example, when `T` is [`PsiClass`](%gh-ic%/java/java-psi-api/src/com/intellij/psi/PsiClass.java),
 and the UI needs to highlight invalid values:
-`getStringValue()` returns the raw string from the XML file, and the converter provides the error message via `getErrorMessage()`.
+`getStringValue()` returns the string from the XML file even if it can't be resolved to a class, and the converter provides the error message via `getErrorMessage()`.
 
 ### Attributes
 
 Attribute values can be read and set, and they can have different types.
-DOM represents attributes with [`GenericAttributeValue<T>`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/GenericAttributeValue.java), which extends `GenericDomValue<T>`:
+DOM represents attributes with [`GenericAttributeValue<T>`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/GenericAttributeValue.java), which extends `GenericDomValue<T>`
+and additionally provides access to the underlying XML PSI:
 
-```java
-interface GenericAttributeValue<T> extends GenericDomValue<T> {
-  XmlAttribute getXmlAttribute();
-}
-```
+* `getXmlAttribute()` - returns the underlying `XmlAttribute`.
+* `getXmlAttributeValue()` - returns the underlying `XmlAttributeValue`.
 
 For example, an attribute named `some-class` with a value of type `PsiClass` is declared as follows:
 
@@ -364,16 +355,7 @@ For example, JSF managed beans can be of three types, all extending `ManagedBean
 Each element of the list returned by `List<ManagedBean> getManagedBeans()` should implement the specific interface:
 `MapEntriesBean`, `ListEntriesBean`, or `PropertyBean`.
 
-To choose the interface that a DOM element implements depending on its tag, extend [`TypeChooser`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/TypeChooser.java):
-
-```java
-public abstract class TypeChooser {
-  public abstract Type chooseType(XmlTag tag);
-  public abstract void distinguishTag(XmlTag tag, Type aClass)
-      throws IncorrectOperationException;
-  public abstract Type[] getChooserTypes();
-}
-```
+To choose the interface that a DOM element implements depending on its tag, extend [`TypeChooser`](%gh-ic%/xml/dom-openapi/src/com/intellij/util/xml/TypeChooser.java) and implement its methods:
 
 * `chooseType()` chooses the type (most often a class) for the given tag.
 * `distinguishTag()` does the reverse: it modifies the tag so that the DOM element created from it later

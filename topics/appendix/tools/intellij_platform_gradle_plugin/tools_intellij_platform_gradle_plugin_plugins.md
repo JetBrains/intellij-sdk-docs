@@ -84,6 +84,8 @@ plugins {
 ### Available tasks
 {#platform-available-tasks}
 
+Also includes the diagnostic and dump tasks inherited from [](#base-available-tasks).
+
 [`buildPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#buildPlugin),
 [`buildPluginVariants`](tools_intellij_platform_gradle_plugin_tasks.md#buildPluginVariants),
 [`buildPluginVariants_<os>_<arch>`](tools_intellij_platform_gradle_plugin_tasks.md#buildPluginVariants-variant-tasks),
@@ -97,6 +99,7 @@ plugins {
 [`instrumentedJar`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentedJar),
 [`jarSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#jarSearchableOptions),
 [`patchPluginXml`](tools_intellij_platform_gradle_plugin_tasks.md#patchPluginXml),
+[`prepareJarSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#prepareJarSearchableOptions),
 [`preparePluginVariant_<os>_<arch>`](tools_intellij_platform_gradle_plugin_tasks.md#preparePluginVariant),
 [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox),
 [`prepareSandbox_runIde`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox-runIde),
@@ -112,15 +115,18 @@ plugins {
 [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde),
 [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend),
 [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend),
+[`runIdeSplitMode`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeSplitMode),
 [`signPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#signPlugin),
 [`test`](tools_intellij_platform_gradle_plugin_tasks.md#test),
 [`testIdePerformance`](tools_intellij_platform_gradle_plugin_tasks.md#testIdePerformance),
-[`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde),
-[`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi),
+[`testUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi),
 [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration),
 [`verifyPluginSignature`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginSignature),
 [`verifyPluginStructure`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginStructure),
 [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
+
+The [`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde) task type is preconfigured, but no task with that name is registered by default.
+Register named test tasks through [](tools_intellij_platform_gradle_plugin_testing_extension.md#intellijPlatformTesting).
 
 
 ## Module
@@ -132,7 +138,8 @@ plugins {
 
 This plugin applies a smaller set of functionalities for compiling and testing submodules when working in a multi-module architecture.
 
-Compared to the main plugin, it omits publishing, signing, searchable-options generation, and plugin verification tasks.
+Compared to the main plugin, it omits IDE-running, UI testing, performance testing, publishing, signing, searchable-options generation, and binary plugin verification tasks.
+The [](tools_intellij_platform_gradle_plugin_testing_extension.md) can register custom `testIde` tasks in module projects, but not `runIde`, `testIdeUi`, or `testIdePerformance` tasks.
 
 
 <tabs group="languages">
@@ -241,13 +248,15 @@ dependencies {
 </tabs>
 
 
-Module projects inherit the root project's IntelliJ Platform dependency when the module doesn't configure its own target platform.
+Module projects inherit the root project's IntelliJ Platform dependency when the root applies the [](#platform) plugin and declares a target platform, and the module doesn't configure its own target platform.
 Project dependencies on IntelliJ Platform module projects added to the root project's `api`, `implementation`, or `runtimeOnly` configuration are packaged automatically into the `lib/modules/` directory in the final plugin distribution.
 
 To merge submodule content into the main plugin JAR file, use `pluginComposedModule(project(":submodule"))` instead.
 
 ### Available tasks
 {#module-available-tasks}
+
+Also includes the diagnostic and dump tasks inherited from [](#base-available-tasks).
 
 [`cleanSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#cleanSandbox),
 [`composedJar`](tools_intellij_platform_gradle_plugin_tasks.md#composedJar),
@@ -257,14 +266,11 @@ To merge submodule content into the main plugin JAR file, use `pluginComposedMod
 [`instrumentedJar`](tools_intellij_platform_gradle_plugin_tasks.md#instrumentedJar),
 [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox),
 [`prepareTest`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTest),
-[`prepareTestIdePerformanceSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestIdePerformanceSandbox),
 [`prepareTestSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestSandbox),
 [`printBundledModules`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledModules),
 [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins),
 [`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases),
 [`test`](tools_intellij_platform_gradle_plugin_tasks.md#test),
-[`testIde`](tools_intellij_platform_gradle_plugin_tasks.md#testIde),
-[`testIdeUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi),
 [`verifyPluginProjectConfiguration`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPluginProjectConfiguration)
 
 
@@ -349,8 +355,6 @@ plugins {
 <path>settings.gradle</path>
 
 ```groovy
-import org.jetbrains.intellij.platform.gradle.extensions.intellijPlatform
-
 plugins {
   id 'org.jetbrains.intellij.platform.settings' version '%intellij-platform-gradle-plugin-version%'
 }
@@ -443,12 +447,14 @@ plugins {
 ### Available tasks
 {#grammarkit-available-tasks}
 
+Also includes the diagnostic and dump tasks inherited from [](#base-available-tasks).
+
 [`generateLexer`](tools_intellij_platform_gradle_plugin_tasks.md#generateLexer),
 [`generateParser`](tools_intellij_platform_gradle_plugin_tasks.md#generateParser),
 [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin),
 [`printBundledModules`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledModules),
 [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins),
-[`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases),
+[`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases)
 
 
 ## Base
@@ -459,6 +465,11 @@ plugins {
 **Plugin ID: `org.jetbrains.intellij.platform.base`**
 
 Prepares all the custom configurations, transformers, and base tasks needed to manage the IntelliJ Platform dependency, JetBrains Runtime, CLI tools, and others.
+
+Applies Gradle's `java-library` and `idea` plugins.
+The Java toolchain language version defaults to the Java version required by the target IntelliJ Platform.
+When the Kotlin JVM plugin is present, its JVM target defaults to the configured Java toolchain language version.
+These conventions can be overridden in the build script.
 
 It also introduces the [](tools_intellij_platform_gradle_plugin_extension.md) to the <path>build.gradle.kts</path> file along with [](tools_intellij_platform_gradle_plugin_dependencies_extension.md) and [](tools_intellij_platform_gradle_plugin_repositories_extension.md) to help preconfigure project dependencies:
 
@@ -519,4 +530,16 @@ See [](tools_intellij_platform_gradle_plugin_recipes.md) for more details.
 [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin),
 [`printBundledModules`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledModules),
 [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins),
-[`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases),
+[`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases)
+
+The Base plugin also registers the following diagnostic and dump tasks, which are inherited by the Platform, Module, and GrammarKit plugins:
+
+The JSON reporting tasks and bundled-plugin/module dump tasks are available since `2.20.0`.
+
+| Area | Tasks |
+|------|-------|
+| Environment and configuration | [`intellijPlatformInfo`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformInfo), [`intellijPlatformDoctor`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformDoctor) |
+| Tooling discovery | [`intellijPlatformDiscover`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformDiscover), [`intellijPlatformSdk`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformSdk) |
+| Project and dependency structure | [`intellijPlatformProjectGraph`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformProjectGraph), [`intellijPlatformDistribution`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformDistribution), [`intellijPlatformDependencyGraph`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformDependencyGraph) |
+| Testing and compatibility | [`intellijPlatformTestMatrix`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformTestMatrix), [`intellijPlatformCompatibilityMatrix`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformCompatibilityMatrix) |
+| Product and bundled component dumps | [`dumpProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#dumpProductsReleases), [`dumpBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#dumpBundledPlugins), [`dumpBundledModules`](tools_intellij_platform_gradle_plugin_tasks.md#dumpBundledModules) |

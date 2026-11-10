@@ -17,8 +17,9 @@ For each of the custom tasks, a dedicated sandbox is created to isolate them fro
 
 After the IntelliJ Platform Gradle Plugin is [applied](tools_intellij_platform_gradle_plugin.md#setup), the `intellijPlatformTesting` extension can be used for registering new tasks to fulfil specific requirements of the project.
 
-The extension exposes four `NamedDomainObjectContainers` which allow for creating new objects of given types.
-Registering of a custom task which allows for adjusting the IntelliJ Platform type and version can be done by using one of the below containers, depending on the task purpose.
+The extension exposes four `NamedDomainObjectContainer` instances for registering task configurations.
+Registering an entry creates an execution task with the entry's name and a sandbox preparation task named `prepareSandbox_<name>`.
+The container names describe task types, not additional tasks created merely by accessing the containers.
 
 **Example:**
 
@@ -51,9 +52,12 @@ intellijPlatformTesting {
 
 
 By default, created tasks depend on the IntelliJ Platform defined with [](tools_intellij_platform_gradle_plugin_dependencies_extension.md).
-However, it is possible to adjust it to any requirements with passing custom values directly to the created object, `task`, or `sandboxTask` task instances.
+Configure the entry directly to select another IDE, and use `task {}` or `prepareSandboxTask {}` to customize its execution or sandbox preparation.
 
-Each registered entry extends the IntelliJ Platform dependency configuration model, so properties like `type`, `version`, `productMode`, `useInstaller`, `useCache`, and `localPath` can be configured directly on the created object.
+Each registered entry extends the [IntelliJ Platform dependency configuration model](tools_intellij_platform_gradle_plugin_dependencies_extension.md#dependency-configuration-parameters), so properties like `type`, `version`, `productMode`, `useInstaller`, and `useCache` can be configured directly on the entry.
+The additional `localPath` property selects a local IDE installation and takes precedence over a remote request.
+Without `localPath`, explicitly setting `type`, `version`, or `useInstaller` selects a custom remote IDE even if the project's base IDE is local.
+Otherwise, the base local IDE is reused when one is configured.
 The `version` accepts `"latest"` (or `Constraints.LATEST_VERSION`) to resolve the [newest available installer release](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions-latest) for the configured `type`.
 
 In projects using the [](tools_intellij_platform_gradle_plugin_plugins.md#module) plugin, this extension can register custom `testIde` tasks only.
@@ -124,6 +128,21 @@ intellijPlatformTesting.runIde {
 </tab>
 </tabs>
 
+### Common Properties
+{#intellijPlatformTesting-properties}
+
+| Property | Type | Default or behavior |
+|----------|------|---------------------|
+| `name` | `String` (read-only) | The registered entry's name, also used for the execution task. |
+| `localPath` | `DirectoryProperty` | Unset. Selects a local IDE instead of downloading one. |
+| `sandboxDirectory` | `DirectoryProperty` | Inherits the base `prepareSandbox` task's sandbox directory. |
+| `splitMode` | `Property<Boolean>` | Inherits the base `prepareSandbox` task's split-mode setting. |
+| `pluginInstallationTarget` | `Property<PluginInstallationTarget>` | Inherits the base `prepareSandbox` task's installation target; the effective default is `BACKEND`. |
+| `splitModeTarget` | `Property<SplitModeTarget>` | Deprecated compatibility alias for `pluginInstallationTarget`. |
+
+Each entry implements `Buildable` and can be passed directly to `dependsOn()` to schedule its execution task.
+The `task` and `prepareSandboxTask` properties provide read-only access to the corresponding `TaskProvider` instances.
+
 ### `task {}`
 
 Depending on the type of registered object, a different `task` class is available for configuration:
@@ -139,12 +158,16 @@ Depending on the type of registered object, a different `task` class is availabl
 
 The `prepareSandboxTask` refers to a dedicated [`PrepareSandboxTask`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) task instance, connected only with a newly created task.
 The name of this task is based on the name of created task, like `prepareSandbox_[TASK_NAME]`.
+The execution task uses this task's sandbox automatically.
+For `runIde` entries, the sandbox also includes the current host's [native variant](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-nativeVariants) when native variants are enabled.
+Custom `testIde`, `testIdeUi`, and `testIdePerformance` entries do not select a native variant automatically.
 
 ### `testFramework(...)`
 
 Adds a dependency on a `test-framework` library variant for the created testing entry.
 The version can be provided as a string or as a `Provider<String>`.
 When omitted, the closest version matching the configured IntelliJ Platform build is used.
+This is the entry's target platform build, which can differ from the project's base IntelliJ Platform.
 
 See also:
 - [Types: `TestFrameworkType`](tools_intellij_platform_gradle_plugin_types.md#TestFrameworkType)
@@ -208,9 +231,11 @@ See also:
 
 ### `plugins {}`
 
-An extension to provide custom plugins to be added when running the task runtime, or disabling bundled ones.
+Configures plugins for the registered entry's IDE and test classpaths and sandbox.
 
-It provides several methods for adding remote and local plugins, or for disabling already loaded or bundled plugin.
+Remote and local plugin dependencies from the project's test plugin configurations are inherited.
+Bundled plugin and module helpers resolve against the entry's target IDE.
+Plugins can also be disabled in the entry's sandbox.
 
 **Example:**
 
@@ -221,8 +246,11 @@ It provides several methods for adding remote and local plugins, or for disablin
 val runIdeWithPlugins by intellijPlatformTesting.runIde.registering {
   // ...
   plugins {
-    plugin("pluginId", "1.0.0")
-    disablePlugin("pluginId")
+    plugin("pluginId", "1.0.0") {
+      excludeBundledLibrary("jena-*.jar")
+      excludeBundledLibraries("legacy-*.jar", "unused-*.jar")
+    }
+    disablePlugin("bundledPluginId")
   }
 }
 ```
@@ -235,8 +263,11 @@ intellijPlatformTesting.runIde {
   runIdeWithPlugins {
     // ...
     plugins {
-      plugin("pluginId", "1.0.0")
-      disablePlugin("pluginId")
+      plugin('pluginId', '1.0.0', '') {
+        excludeBundledLibrary('jena-*.jar')
+        excludeBundledLibraries('legacy-*.jar', 'unused-*.jar')
+      }
+      disablePlugin('bundledPluginId')
     }
   }
 }
@@ -247,8 +278,8 @@ intellijPlatformTesting.runIde {
 
 | Function                       | Description                                                                                                                                  |
 |--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| `plugin(id, version, channel)` | Adds a dependency on a plugin for a custom IntelliJ Platform.                                                                                |
-| `plugin(notation)`             | Adds a dependency on a plugin for a custom IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p> |
+| `plugin(id, version, channel, configure)` | Adds a plugin dependency. The channel and configuration block are optional. Supply the ID, version, and channel consistently as strings or providers of strings. |
+| `plugin(notation, configure)`  | Adds a plugin dependency using `pluginId:version` or `pluginId:version@channel`, as a string or provider. The configuration block is optional. |
 | `plugins(notations)`           | Adds dependencies on plugins for a custom IntelliJ Platform using a string notation:<p>`pluginId:version` or `pluginId:version@channel`</p>  |
 | `compatiblePlugin(id)`         | Adds a dependency on a plugin in a version compatible with the custom IntelliJ Platform.                                                     |
 | `compatiblePlugins(ids)`       | Adds dependencies on plugins in versions compatible with the custom IntelliJ Platform.                                                       |
@@ -259,6 +290,26 @@ intellijPlatformTesting.runIde {
 | `disablePlugin(id)`            | Disables the specific plugin with its ID.                                                                                                    |
 | `disablePlugins(ids)`          | Disables specific plugins with the list of their IDs.                                                                                        |
 | `localPlugin(path)`            | Adds a dependency on a local IntelliJ Platform plugin. Accepts path or a dependency on another module.                                       |
-| `robotServerPlugin(version)`   | Adds a dependency on a Robot Server Plugin.                                                                                                  |
+| `robotServerPlugin(version)`   | Adds a Robot Server Plugin dependency. Accepts a string or provider; defaults to the latest version.                                          |
+
+`plugins()`, `compatiblePlugins()`, `bundledPlugins()`, `bundledModules()`, and `disablePlugins()` accept vararg strings, a `List<String>`, or a `Provider<List<String>>`.
+The singular `compatiblePlugin()`, `bundledPlugin()`, `bundledModule()`, and `disablePlugin()` methods also accept `Provider<String>` arguments.
+`localPlugin()` accepts a `String`, `File`, `Directory`, a provider of a local path, or a `ProjectDependency`.
+
+#### Bundled Library Exclusions
+{#intellijPlatformTesting-plugins-exclusions}
+
+The optional `plugin()` configuration block exposes [`IntelliJPlatformPluginConfiguration`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/extensions/IntelliJPlatformPluginConfiguration.kt):
+
+| Function | Description |
+|----------|-------------|
+| `excludeBundledLibrary(pattern)` | Excludes files matching one Gradle Ant-style pattern. |
+| `excludeBundledLibraries(patterns)` | Excludes files matching any of the supplied vararg patterns. |
+
+Patterns are relative to the dependency plugin's <path>lib/</path> and <path>lib/modules/</path> directories.
+Matching files are excluded from project classpaths and sandbox installations.
+Patterns declared for the same plugin ID are combined build-wide, rather than being isolated to this testing entry.
+To configure exclusions for several plugins, use separate `plugin()` calls; the plural `plugins()` helper does not accept a configuration block.
+With Groovy, the ID/version overload requires an explicit channel argument when supplying a configuration closure; use `''` for the default channel.
 
 <include from="snippets.topic" element-id="missingContent"/>

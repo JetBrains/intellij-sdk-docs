@@ -203,7 +203,7 @@ The migration should be done according to the [Kotlin UI DSL Version 2 migration
 
 ### GitHub plugin 2026.3
 
-The ability to directly access the account credentials (API access tokens) was removed to improve security:  `org.jetbrains.plugins.github.authentication.accounts.GHAccountManager` and `org.jetbrains.plugins.github.util.GHCompatibilityUtil` were marked as internal APIs.
+The ability to directly access account credentials (API access tokens) was removed to improve security:  `org.jetbrains.plugins.github.authentication.accounts.GHAccountManager` and `org.jetbrains.plugins.github.util.GHCompatibilityUtil` were marked as internal APIs.
 
 Going forward, `org.jetbrains.plugins.github.authentication.GHAccountsUtil` should be used to handle the accounts, and `org.jetbrains.plugins.github.api.GithubApiRequestExecutor.Factory#create(GithubAccount)` - to execute the API calls.
 

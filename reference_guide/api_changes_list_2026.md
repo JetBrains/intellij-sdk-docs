@@ -201,6 +201,12 @@ The migration should be done according to the [Kotlin UI DSL Version 2 migration
 `com.intellij.openapi.module.StdModuleTypes` class removed
 : Use `com.intellij.openapi.module.JavaModuleType.getModuleType()` instead. Avoid a check of the module type if possible. See `com.intellij.openapi.module.ModuleType` for details.
 
+### GitHub plugin 2026.3
+
+The ability to directly access account credentials (API access tokens) was removed to improve security:  `org.jetbrains.plugins.github.authentication.accounts.GHAccountManager` and `org.jetbrains.plugins.github.util.GHCompatibilityUtil` were marked as internal APIs.
+
+Going forward, `org.jetbrains.plugins.github.authentication.GHAccountsUtil` should be used to handle the accounts, and `org.jetbrains.plugins.github.api.GithubApiRequestExecutor.Factory#create(GithubAccount)` - to execute the API calls.
+
 ## 2026.2
 
 ### IntelliJ Platform 2026.2

@@ -208,7 +208,7 @@ The IDE determines this name in the following order.
 
 #### 1. Explicit `presentableName`
 
-Set the `presentableName` attribute of `@State` to a class that extends `State.NameGetter`.
+Set the `presentableName` attribute of `@State` to a class that extends [`State.NameGetter`](%gh-ic-master%/platform/projectModel-api/src/com/intellij/openapi/components/State.java#L104).
 See the example in [](#requirements-for-roamable-components).
 
 #### 2. Resource Bundle Key

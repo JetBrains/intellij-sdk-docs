@@ -80,8 +80,7 @@ class MyPluginSettings :
 
   class MyPluginSettingsName :
       com.intellij.openapi.components.State.NameGetter() {
-    override fun get(): String =
-      MyBundle.message("settings.presentable.name")
+    override fun get() = "My Plugin"
   }
 }
 ```
@@ -119,7 +118,7 @@ final class MyPluginSettings
       extends com.intellij.openapi.components.State.NameGetter {
     @Override
     public String get() {
-      return MyBundle.message("settings.presentable.name");
+      return "My Plugin";
     }
   }
 }

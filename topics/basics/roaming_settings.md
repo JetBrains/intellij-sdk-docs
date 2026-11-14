@@ -95,10 +95,10 @@ class MyPluginSettings :
     presentableName = MyPluginSettings.MyPluginSettingsName.class,
     category = SettingsCategory.TOOLS
 )
-final class MyPluginSettings
+public class MyPluginSettings
     implements PersistentStateComponent<MyPluginSettings.State> {
 
-  static final class State {
+  public static class State {
     public String value = "default value";
   }
 
@@ -114,7 +114,7 @@ final class MyPluginSettings
     myState = state;
   }
 
-  static final class MyPluginSettingsName
+  public static class MyPluginSettingsName
       extends com.intellij.openapi.components.State.NameGetter {
     @Override
     public String get() {

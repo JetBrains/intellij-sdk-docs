@@ -2905,7 +2905,7 @@ Default value
 
 <include from="snippets.topic" element-id="missingContent"/>
 
-[gradle-default-task]: https://docs.gradle.org/current/dsl/org.gradle.api.DefaultTask.html
+[gradle-default-task]: https://docs.gradle.org/current/javadoc/org/gradle/api/DefaultTask.html
 [gradle-delete-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Delete.html
 [gradle-jar-task]: https://docs.gradle.org/current/dsl/org.gradle.jvm.tasks.Jar.html
 [gradle-javaexec-task]: https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html

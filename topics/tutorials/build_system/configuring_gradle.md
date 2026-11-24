@@ -31,6 +31,8 @@ Newer IDE releases might not be supported fully in older releases of the Intelli
 
 ## Setup
 
+The current 2.x release requires Gradle 9.0.0 or later and a target IDE based on IntelliJ Platform 2023.3 or later; see [](tools_intellij_platform_gradle_plugin.md#requirements).
+
 See [](tools_intellij_platform_gradle_plugin.md#configuration) for the necessary declaration of repositories.
 
 ## Target Platform and Dependencies

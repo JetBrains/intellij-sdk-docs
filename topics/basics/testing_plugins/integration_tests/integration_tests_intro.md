@@ -17,7 +17,14 @@ Integration testing framework consists of two main components:
 
 The Starter framework exclusively supports JUnit 5, as it leverages JUnit 5's extensions and specialized listeners that aren't available in JUnit 4.
 
-To create a new task - `integrationTest`, define new test source roots - `integrationTest`, and add required dependencies, update the `build.gradle.kts` file:
+The example uses the current IntelliJ Platform Gradle Plugin; check its [requirements](tools_intellij_platform_gradle_plugin.md#requirements) for supported Gradle and target IDE versions.
+Keep the [automatic target-based toolchain language version](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md#foojay-toolchains-plugin); the JVM used to run Gradle is configured separately.
+
+Since `2.20.0`, the main plugin provides a `testUi` task and source set for Starter tests without this custom registration.
+See [](tools_intellij_platform_gradle_plugin_recipes.md#run-ui-tests-in-ci) for that setup.
+The example below retains a separate `integrationTest` task and source set for projects that need a custom workflow.
+
+To create the `integrationTest` task and source roots and add the dependencies, update <path>build.gradle.kts</path>:
 
 ```kotlin
 import org.jetbrains.intellij.platform.gradle.*
@@ -72,7 +79,7 @@ The following dependencies are required:
 * `testFramework(TestFrameworkType.Starter)` will add all required dependencies for writing integration tests - Starter and Driver frameworks.
 * `org.kodein.di:kodein-di-jvm` is a dependency injection framework used by Starter for configuration.
 * `org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm` is required for Starter framework which is implemented using Kotlin coroutines.
-* `intellijIdeaUltimate(...)` the IDE version for which the plugin is compiled
+* `intellijIdea(...)` selects the IDE version for which the plugin is compiled.
 
 This configuration does the following:
 

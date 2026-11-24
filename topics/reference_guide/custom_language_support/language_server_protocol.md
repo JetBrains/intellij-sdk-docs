@@ -44,6 +44,8 @@ The plugin must target [](idea.md) version `2023.2` or later.
 <tabs>
 <tab title="IntelliJ Platform Gradle Plugin (2.x)">
 
+The current 2.x Gradle plugin requires an IntelliJ Platform target of 2023.3 or later; see [](tools_intellij_platform_gradle_plugin.md#requirements).
+
 Relevant <path>build.gradle.kts</path> configuration:
 
 ```kotlin

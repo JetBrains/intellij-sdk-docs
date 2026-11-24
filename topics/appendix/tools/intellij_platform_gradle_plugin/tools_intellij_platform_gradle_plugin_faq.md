@@ -4,6 +4,11 @@
 
 <link-summary>FAQ for using IntelliJ Platform Gradle Plugin (2.x)</link-summary>
 
+### How to diagnose Gradle configuration problems?
+
+Start with [Diagnose Gradle Configuration](tools_intellij_platform_gradle_plugin_recipes.md#diagnose-gradle-configuration).
+Run `intellijPlatformInfo` first to inspect the declared setup without resolving an IDE; use `intellijPlatformDoctor` when deeper checks are needed.
+
 ### How to modify system properties of the `runIde` task?
 
 Using the [very same task documentation](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.JavaExec.html), configure [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde) task:
@@ -44,6 +49,7 @@ tasks {
 The legacy [`runIdeForUiTests`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeForUiTests) task was removed.
 For UI tests using Robot Server, register a custom [`runIde`](tools_intellij_platform_gradle_plugin_testing_extension.md#intellijPlatformTesting) configuration and add `robotServerPlugin()` to its plugin dependencies.
 Starter-based UI tests use a separate testing workflow; see [](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi).
+For a UI-test CI workflow, see [Run UI Tests in CI](tools_intellij_platform_gradle_plugin_recipes.md#run-ui-tests-in-ci).
 
 ### Missing `opentest4j` dependency in Test Framework
 
@@ -189,7 +195,7 @@ tasks {
 
 ### How to disable building the searchable options?
 
-Building the searchable options can be disabled using [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-instrumentCode):
+Building the searchable options can be disabled using [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions):
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -514,7 +520,7 @@ To correctly run the tests or a specific IDE:
     dependencies {
       intellijPlatform {
         intellijIdea '%ijPlatform%'
-        jetbrainsRuntime '...'
+        jetbrainsRuntime('...', null, null)
       }
     }
     ```
@@ -522,14 +528,14 @@ To correctly run the tests or a specific IDE:
   </tab>
   </tabs>
 
-- specify the vendor when configuring the JVM Toolchain along with [Foojay Toolchains Plugin](https://github.com/gradle/foojay-toolchains):
+- specify the vendor when configuring the JVM Toolchain along with [Foojay Toolchains Plugin](https://github.com/gradle/foojay-toolchains).
+  Keep the automatic target-based language version; see [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md#foojay-toolchains-plugin).
   <tabs group="languages">
   <tab title="Kotlin" group-key="kotlin">
 
   ```kotlin
   kotlin {
     jvmToolchain {
-      languageVersion = JavaLanguageVersion.of(17)
       vendor = JvmVendorSpec.JETBRAINS
     }
   }
@@ -541,7 +547,6 @@ To correctly run the tests or a specific IDE:
   ```groovy
     java {
       toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
         vendor = JvmVendorSpec.JETBRAINS
       }
     }

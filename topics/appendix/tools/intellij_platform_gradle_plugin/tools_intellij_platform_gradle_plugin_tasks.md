@@ -360,6 +360,9 @@ Default value
 
 Generates the <path>MANIFEST.MF</path> file with all relevant information about the project configuration.
 
+The manifest contains `Created-By`, `Version`, `Build-JVM`, `Build-OS`, `Build-Plugin`, `Build-Plugin-Version`,
+`Platform-Type`, `Platform-Version`, `Platform-Build`, `Kotlin-Available`, `Kotlin-Stdlib-Bundled`, and `Kotlin-Version` entries.
+
 To apply the produced manifest file to an additional [`Jar`][gradle-jar-task] task, call `JarCompanion.applyPluginManifest()`.
 
 This file is bundled into the output JAR files produced by [`composedJar`](#composedJar), [`instrumentedJar`](#instrumentedJar), and [`Jar`][gradle-jar-task] tasks.
@@ -472,6 +475,7 @@ Default value
 </tldr>
 
 Generates a lexer from a `.flex` definition file using JFlex.
+Available since `2.12.0`.
 
 
 ### `sourceFile`
@@ -600,6 +604,7 @@ With the legacy [`targetOutputDir`](#generateLexer-targetOutputDir-deprecated), 
 </tldr>
 
 Generates parser and PSI files from a `.bnf` definition file using GrammarKit.
+Available since `2.12.0`.
 
 
 ### `sourceFile`
@@ -692,6 +697,7 @@ Type
 </tldr>
 
 Generates shared IntelliJ IDEA run configurations for split-mode frontend and backend runs, plus a compound run configuration that starts both.
+Available since `2.14.0`.
 The generated Gradle run configurations invoke [`runIdeBackend`](#runIdeBackend) and [`runIdeFrontend`](#runIdeFrontend) with `--purge-old-log-directories`.
 The compound configuration starts those two tasks, not the [`runIdeSplitMode`](#runIdeSplitMode) aggregate task.
 Execution rewrites the three configured output files.
@@ -998,8 +1004,8 @@ Available since `2.20.0`.
 
 The following non-interactive tasks write project and SDK observations for people, CI, and command-line agents.
 
-> In `2.20.0`, collecting UI-test dependency declarations for configuration reports can still trigger IDE resolution.
-> In builds with UI-test entries, declaration-only reporting is not a guarantee that no IDE is resolved.
+> In `2.20.0`, collecting UI-test dependency declarations for configuration reports can trigger IDE resolution even in declaration-only modes.
+> This specific declaration-resolution issue is fixed in `2.20.1`.
 >
 {style="note"}
 
@@ -1050,6 +1056,9 @@ Configured targets and existing report directories are never evidence that verif
 
 Handled operational failures can write a report before failing Gradle; always check the Gradle result as well as the JSON.
 A report is not guaranteed after invalid options, build-script or plugin-application failures, uncaught failures, or an unwritable destination.
+For automation, use an invocation-specific `--output=<path>` that does not already exist, and consume it only after confirming that the invocation wrote it.
+An existing file at a reused output path can be left over from an earlier invocation, even when the current build fails.
+See [](tools_intellij_platform_gradle_plugin_recipes.md#diagnose-gradle-configuration) for a diagnosis workflow.
 Reports exclude arbitrary environment variables, credentials, publishing tokens, and signing configuration, but paths can identify the local machine and should be reviewed before sharing.
 See [CLI Reports](%gh-ijpgp%/CLI_REPORTS.md) for the full data contract.
 
@@ -1066,8 +1075,10 @@ All nine tasks extend `AgentReportTask`.
 The Info, Project Graph, Distribution, Dependency Graph, Test Matrix, and Compatibility Matrix types also expose a `snapshot: Property<String>` containing plugin-supplied serialized configuration metadata.
 Snapshots and other infrastructure properties below are populated by the plugin and should not be edited as report inputs.
 
+Replace `<invocation-id>` with a unique value for each invocation:
+
 ```bash
-./gradlew :plugin:intellijPlatformInfo --output="build/reports/project context.json"
+./gradlew :plugin:intellijPlatformInfo --output="build/reports/<invocation-id>/project context.json"
 ```
 
 
@@ -1395,6 +1406,7 @@ Default value
 {#jarSearchableOptions-noSearchableOptionsWarning}
 
 Specifies if a warning is emitted when no searchable options are found.
+The check recognizes both <path>*.searchableOptions.xml</path> and <path>*-searchableOptions.json</path> files in the JAR inputs.
 Can be disabled with [`noSearchableOptionsWarning`](tools_intellij_platform_gradle_plugin_gradle_properties.md#noSearchableOptionsWarning) Gradle property.
 
 {type="narrow"}
@@ -1423,6 +1435,8 @@ Default value
 
 Patches <path>plugin.xml</path> file with values provided with the [`intelliJPlatform.pluginConfiguration`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginConfiguration) extension.
 Only configured values replace descriptor content, except an absent `untilBuild`, which removes the `until-build` attribute.
+Missing elements are created when a configured value needs them.
+Replacing a different, non-empty element or attribute value emits a warning.
 Blank or `unspecified` project versions do not overwrite the descriptor's version.
 The patched descriptor is included by `processResources` under <path>META-INF</path>.
 
@@ -1432,6 +1446,7 @@ The patched descriptor is included by `processResources` under <path>META-INF</p
 
 Specifies the input <path>plugin.xml</path> file.
 The convention selects the first existing <path>META-INF/plugin.xml</path> in the main source set's resource directories, which can differ from the standard location below.
+If no input file is configured or found by the convention, the task is skipped.
 
 {type="narrow"}
 Type
@@ -1786,6 +1801,7 @@ Type
 </tldr>
 
 The six `preparePluginVariant_<os>_<arch>` tasks create the plugin JARs consumed by the corresponding [`buildPluginVariants_<os>_<arch>`](#buildPluginVariants-variant-tasks) tasks.
+Available since `2.19.0`.
 They are registered for the same Linux, macOS, and Windows `x86_64`/`arm64` matrix and run only when [`intellijPlatform.nativeVariants.enabled`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-nativeVariants-enabled) is `true`.
 
 Before creating a variant JAR, each task validates the effective [`patchPluginXml.sinceBuild`](#patchPluginXml-sinceBuild) value.
@@ -1981,6 +1997,7 @@ Type
 <secondary-label ref="incubating"/>
 
 Specifies the IntelliJ IDEA subscription key file used in this sandbox.
+Available since `2.19.0`.
 The key file is copied to <path>config/idea.key</path>, and `com.intellij.modules.ultimate` is removed from <path>config/disabled_plugins.txt</path>.
 
 {type="narrow"}
@@ -2018,7 +2035,7 @@ Type
 {#prepareSandbox-runtimeClasspath}
 
 Dependencies copied into the sandbox plugin's <path>lib</path> directory.
-Regular sandboxes use `intellijPlatformSandboxRuntimeClasspath`, while test sandboxes use `intellijPlatformTestSandboxRuntimeClasspath`.
+Since `2.19.0`, regular sandboxes use `intellijPlatformSandboxRuntimeClasspath`, while test sandboxes use `intellijPlatformTestSandboxRuntimeClasspath`.
 These dedicated configurations allow [sandbox-only dependency exclusions](tools_intellij_platform_gradle_plugin_dependencies_extension.md#sandbox-runtime-classpaths) without changing the project's compile or test classpaths.
 Plugin modules and composed modules are subtracted from this collection because they are packaged separately.
 
@@ -2107,6 +2124,7 @@ The [`prepareSandbox`](#prepareSandbox) task instance configured to work with th
 </tldr>
 
 Prints the list of bundled modules available within the currently targeted IntelliJ Platform.
+The output starts with `Bundled modules for <name> <version> (<build>):`, followed by sorted, unique module IDs, one per line.
 The task uses the same cached IDE layout index as bundled module dependency resolution, so module IDs and aliases are resolved consistently.
 
 
@@ -2369,7 +2387,6 @@ When [`splitMode`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitMod
 Use [`runIdeSplitMode`](#runIdeSplitMode) to manage both processes in one Gradle invocation, or [`runIdeBackend`](#runIdeBackend) and [`runIdeFrontend`](#runIdeFrontend) to launch them separately.
 Shared IDE run configurations can be generated with [`generateSplitModeRunConfigurations`](#generateSplitModeRunConfigurations).
 Direct `args` are not supported when Split Mode is enabled; use `argumentProviders` instead.
-At startup, the task logs the expected sandbox <path>idea.log</path> location.
 
 On launch, the task logs the path to the sandbox log file (<path>idea.log</path> in the sandbox log directory) at the lifecycle level, prefixed with `IDE logs:`.
 In Split Mode, the backend and frontend processes report their paths separately, prefixed with `IDE logs (backend):` and `IDE logs (frontend):`.
@@ -2395,7 +2412,7 @@ Values
 {#runIde-splitModeServerPort}
 
 The backend server port used by split-mode backend and frontend tasks.
-Set it to `0` to choose and log a random free port in `5990..6989`, with an OS-assigned ephemeral port as a fallback.
+Since `2.17.0`, setting it to `0` chooses and logs a random free port in `5990..6989`, with an OS-assigned ephemeral port as a fallback.
 The resolved value remains stable for that execution.
 
 {type="narrow"}
@@ -2428,6 +2445,7 @@ Type
 {#runIde-purgeOldLogDirectories}
 
 Removes stale sandbox log directories before launching the IDE.
+Available since `2.15.0`.
 This is useful for split-mode run configurations where frontend and backend logs are attached to the IDE run configuration.
 
 {type="narrow"}
@@ -2470,6 +2488,7 @@ Type
 </tldr>
 
 Runs the IDE backend process in Split Mode.
+Available since `2.14.0`.
 The task writes the frontend join link to [`splitModeFrontendJoinLinkFile`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware-splitModeFrontendJoinLinkFile), which is then consumed by [`runIdeFrontend`](#runIdeFrontend).
 It launches `serverMode -p <port>` and defaults to installing the plugin in the backend sandbox.
 The backend PID is recorded on a best-effort basis and removed when the process exits.
@@ -2499,6 +2518,7 @@ Use `argumentProviders` instead.
 </tldr>
 
 Runs the JetBrains Client frontend process in Split Mode.
+Available since `2.14.0`.
 The task waits for the join link written by [`runIdeBackend`](#runIdeBackend), or uses [`splitModeFrontendJoinLink`](#runIde-splitModeFrontendJoinLink) when it is configured explicitly.
 Without an explicit link, it waits up to 30 seconds for an available backend and then fails.
 It launches `thinClient` from the full IDE distribution and defaults to installing the plugin in the frontend sandbox.
@@ -2527,6 +2547,7 @@ Use `argumentProviders` instead.
 </tldr>
 
 Starts the backend, waits up to 30 seconds for its join link, then starts the frontend using the separate frontend sandbox.
+Available since `2.17.0`.
 It uses the [`runIde`](#runIde) properties and enables Split Mode by default.
 The backend launch is captured before frontend reconfiguration so backend restarts preserve its original settings.
 After the frontend finishes successfully, the task waits for the backend to exit.
@@ -2828,11 +2849,11 @@ The base Gradle `test` task is preconfigured using [`TestCompanion`](%gh-ijpgp%/
 
 The task retains Gradle's `Test` type and uses [`prepareTest`](#prepareTest) for IntelliJ Platform and sandbox capabilities.
 
-Bundled plugins declared in the target IDE's <path>product-info.json</path> are added to the test classpath automatically, subject to [`testIdeBundledPluginsClasspathExcludes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathExcludes), class-clash detection, and transitive exclusions.
+Since `2.20.0`, bundled plugins declared in the target IDE's <path>product-info.json</path> are added to the test classpath automatically, subject to [`testIdeBundledPluginsClasspathExcludes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathExcludes), class-clash detection, and transitive exclusions.
 Explicitly declared plugins and modules, mandatory dependencies of the tested plugin and its plugin dependencies, and their dependencies are retained despite exclusions.
 Required content-module descriptors are considered, including descriptors in split JARs under <path>lib/modules</path>.
 Use `testBundledPlugin()` to declare a plugin explicitly when necessary, and `--info` to inspect exclusion reasons.
-The former `testIdeBundledPluginsClasspathEnabled` opt-in is no longer used.
+The former `testIdeBundledPluginsClasspathEnabled` switch is no longer used.
 
 The classpath starts with instrumented tests and the tested plugin's libraries before other plugin libraries and the platform classpath.
 Only JARs from plugin library directories are included.
@@ -3015,9 +3036,6 @@ Due to caching, the latest Plugin Verifier release version (%plugin-verifier-ver
 In such cases, [refresh dependencies](https://docs.gradle.org/current/userguide/dependency_caching.html#sec:refreshing-dependencies)
 manually.
 
-The task derives its pass/fail verdict from the Plugin Verifier report files rather than the console output, so the outcome no longer depends on [`teamCityOutputFormat`](#verifyPlugin-teamCityOutputFormat).
-If the Plugin Verifier finishes without writing a verdict for any of the target IDEs, the task fails instead of reporting a false-positive success.
-
 See also:
 - [Extension: `intellijPlatform.pluginVerification`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification)
 - [Types: `FailureLevel`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
@@ -3042,7 +3060,8 @@ Type
 {#verifyPlugin-archiveFile}
 
 Specifies the input ZIP archive file of the plugin to verify.
-The task validates that the archive exists before invoking the CLI.
+An unset input is treated as no source (`@SkipWhenEmpty`), not as successful verification.
+A configured archive must exist; the task checks this before invoking the CLI.
 
 {type="narrow"}
 Type
@@ -3206,6 +3225,7 @@ Command-line option
 {#verifyPlugin-useBundledRuntime}
 
 Uses each verified IDE's bundled JetBrains Runtime for resolving plugin classes.
+Available since `2.19.0`.
 When enabled, the CLI receives no `-runtime-dir`; the task's resolved runtime is supplied through `JAVA_HOME` only as a fallback for IDEs without a bundled runtime.
 Set this to `false` to force the task's `runtimeDirectory` for every target IDE via `-runtime-dir`.
 This controls verification class resolution, not the JVM running Gradle.
@@ -3215,7 +3235,7 @@ Type
 : `Property<Boolean>`
 
 Default value
-: `intellijPlatform.pluginVerification.useBundledRuntime` (`true`)
+: [`intellijPlatform.pluginVerification.useBundledRuntime`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-useBundledRuntime) (`true`)
 
 
 ### `problemsReportFile`
@@ -3229,24 +3249,6 @@ Type
 
 Default value
 : <path>[buildDirectory]/reports/problems/problems-report.html</path>
-
-
-### `useBundledRuntime`
-{#verifyPlugin-useBundledRuntime}
-
-Determines whether the IntelliJ Plugin Verifier resolves plugin classes against the JetBrains Runtime (JBR) bundled with each verified IDE, instead of a single runtime shared across all verified IDEs.
-
-When enabled (default), the `-runtime-dir` option is not passed to the Plugin Verifier, so it resolves classes against the JBR bundled within each target IDE.
-The resolved runtime (the JetBrains Runtime associated with the IntelliJ Platform used to build the plugin) is still exposed through the `JAVA_HOME` environment variable and used only as a fallback for IDEs that don't ship a bundled JBR.
-
-When disabled, that resolved runtime is forced for all verified IDEs via the `-runtime-dir` option — the behavior from before this option was introduced.
-
-{type="narrow"}
-Type
-: `Property<Boolean>`
-
-Default value
-: [`intellijPlatform.pluginVerification.useBundledRuntime`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-useBundledRuntime)
 
 
 ## `verifyPluginProjectConfiguration`
@@ -3276,7 +3278,7 @@ Validates the plugin project configuration:
 - The used IntelliJ Platform version should be `2023.3` (`233`) or higher.
 - The dependency on the [](using_kotlin.md#kotlin-standard-library) should be excluded.
 - The Kotlin Coroutines library should not be added explicitly to the project as it is already provided with the IntelliJ Platform.
-- The IntelliJ Platform cache directory should be excluded from the version control system. Add the `.intellijPlatform` entry to the <path>.gitignore</path> file.
+- For non-module projects, the default <path>[rootProject]/.intellijPlatform</path> cache directory is checked for a `.intellijPlatform` entry in <path>.gitignore</path> only when both exist. Custom cache locations are not checked.
 - The selected Java Runtime should be JetBrains Runtime (JBR).
 
 These diagnostics are warnings, not verification failures.
@@ -3327,7 +3329,7 @@ Type
 : `RegularFileProperty`
 
 Default value
-: <path>[rootProject]/.gitignore</path>
+: <path>[rootProject]/.gitignore</path> if it exists; otherwise unset
 
 
 ### `sourceCompatibility`

@@ -99,6 +99,7 @@ Default value
 </tldr>
 
 Provides the path to the Java Agent file for the Compose Hot Reload agent required to enable hot reloading of Compose UIs.
+Available since `2.11.0`.
 
 
 ### `composeHotReload`
@@ -510,15 +511,19 @@ println("Plugin Name: $name")
 
 </tldr>
 
-Provides the property that selects where the developed plugin is installed when running in Split Mode.
-The values are `BACKEND`, `FRONTEND`, and `BOTH`.
-`BOTH` uses a shared plugin directory for the two processes rather than making two copies.
-The side-specific sandbox producers for `runIdeBackend` and `runIdeFrontend` default to their respective sides.
+Provides the plugin installation-target property used by sandbox producers and split-mode launch tasks.
+Available since `2.14.0`.
 
 ### `pluginInstallationTarget`
 {#PluginInstallationTargetAware-pluginInstallationTarget}
 
-Specifies in which part of the product the developed plugin should be installed.
+Specifies in which part of the product the developed plugin should be installed when running in Split Mode.
+The values are `BACKEND`, `FRONTEND`, and `BOTH`.
+`BOTH` uses a shared plugin directory for the two processes rather than making two copies.
+
+Sandbox producers normally obtain the convention from [`intellijPlatform.pluginInstallationTarget`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginInstallationTarget).
+The producers for [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend) and [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend) instead default to `BACKEND` and `FRONTEND`, respectively.
+[`SandboxAware`](#SandboxAware) consumers inherit the convention from their producer through [`applySandboxFrom()`](#SandboxAware-applySandboxFrom).
 
 {type="narrow"}
 Type
@@ -566,7 +571,8 @@ Type
 
 </tldr>
 
-Provides access to Gradle's Problems API for structured issue reporting.
+Provides access to Gradle's public `org.gradle.api.problems.Problems` API for structured issue reporting.
+This Gradle API is incubating.
 
 ### `problems`
 {#ProblemsAware-problems}
@@ -857,9 +863,9 @@ Values are finalized on read, so configure the producer before the consumer read
 ### `applyFrontendSandboxFrom(TaskProvider)`
 {#SandboxAware-applyFrontendSandboxFrom}
 
-The helper method used for applying frontend sandbox directories from a [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) producer to a sandbox consumer.
+Calls [`applySandboxFrom()`](#SandboxAware-applySandboxFrom), then replaces the config, plugins, system, and log directory conventions with the producer's frontend directories.
+For the plugins directory, it uses the shared backend directory when the effective installation target is `BOTH`.
 This is used by split-mode frontend consumers such as [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend).
-It also adds the producer dependency and uses the shared backend plugin directory when the effective installation target is `BOTH`.
 
 
 
@@ -900,7 +906,7 @@ Type
 </tldr>
 
 Supports checking a plugin in [Split Mode](split_mode_and_remote_development.md), with the IDE backend and JetBrains Client frontend in separate processes.
-Use `pluginInstallationTarget` to specify whether the developed plugin is installed in the frontend, backend, or both parts.
+Use [`PluginInstallationTargetAware.pluginInstallationTarget`](#PluginInstallationTargetAware-pluginInstallationTarget) to select where the developed plugin is installed.
 
 [Split Mode](split_mode_and_remote_development.md) requires the IntelliJ Platform in the version `241.14473` or later.
 
@@ -909,28 +915,22 @@ Use `pluginInstallationTarget` to specify whether the developed plugin is instal
 {#SplitModeAware-splitMode}
 
 Enables Split Mode when running the IDE.
+[`SandboxAware`](#SandboxAware) consumers inherit this convention from their producer.
+The sandbox producers for [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend) and [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend) enable Split Mode by default.
 
 {type="narrow"}
 Type
 : `Property<Boolean>`
 
 Default value
-: [`intellijPlatform.splitMode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-splitMode)
+: Task-specific; normally [`intellijPlatform.splitMode`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-splitMode) for sandbox producers
 
 
 ### `pluginInstallationTarget`
 {#SplitModeAware-pluginInstallationTarget}
 
-Split-mode tasks that also implement [`PluginInstallationTargetAware`](#PluginInstallationTargetAware) use this property to specify in which part of the product the developed plugin should be installed.
-The property is declared by `PluginInstallationTargetAware`, not `SplitModeAware` itself.
-Sandbox producers obtain its convention from [`intellijPlatform.pluginInstallationTarget`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginInstallationTarget), except the side-specific run sandboxes.
-
-{type="narrow"}
-Type
-: [`Property<PluginInstallationTarget>`](tools_intellij_platform_gradle_plugin_types.md#SplitModeAware-PluginInstallationTarget)
-
-Default value
-: [`intellijPlatform.pluginInstallationTarget`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginInstallationTarget)
+Declared by [`PluginInstallationTargetAware`](#PluginInstallationTargetAware), not `SplitModeAware` itself.
+See [`pluginInstallationTarget`](#PluginInstallationTargetAware-pluginInstallationTarget) for its values and task-specific conventions.
 
 ### `splitModeTarget`
 {#SplitModeAware-splitModeTarget}

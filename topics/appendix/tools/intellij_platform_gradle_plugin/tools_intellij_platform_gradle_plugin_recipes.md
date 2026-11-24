@@ -4,6 +4,83 @@
 
 <link-summary>Recipes for solving particular tasks with IntelliJ Platform Gradle Plugin</link-summary>
 
+## Diagnose Gradle configuration
+{#diagnose-gradle-configuration}
+
+Since `2.20.0`, the [JSON reporting tasks](tools_intellij_platform_gradle_plugin_tasks.md#json-reports) provide project metadata and diagnostics without compiling or launching an IDE.
+Start with [`intellijPlatformInfo`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformInfo), which reports the declared setup and available commands without resolving an IDE by default.
+
+For automation, use a fresh output directory for each invocation.
+The following examples use a POSIX shell and `jq` to read the JSON files:
+
+```bash
+mkdir -p build/reports/intellij-platform || exit 1
+report_dir=$(mktemp -d "$PWD/build/reports/intellij-platform/info.XXXXXX") || exit 1
+./gradlew intellijPlatformInfo --output="$report_dir/info.json" &&
+  jq '.data' "$report_dir/info.json"
+```
+
+In a multi-project build, qualify the task, for example `:plugin:intellijPlatformInfo`.
+An absolute `--output` path avoids ambiguity because relative output paths are resolved against the task's project.
+
+If the declared settings do not explain the problem, run [`intellijPlatformDoctor`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformDoctor).
+Doctor resolves the target IDE and patches the plugin descriptor, so it can download the IDE and dependencies.
+It reports suggested fixes but does not apply them.
+
+```bash
+mkdir -p build/reports/intellij-platform || exit 1
+report_dir=$(mktemp -d "$PWD/build/reports/intellij-platform/doctor.XXXXXX") || exit 1
+gradle_status=0
+./gradlew intellijPlatformDoctor --fail-on=error \
+  --output="$report_dir/doctor.json" || gradle_status=$?
+if test -f "$report_dir/doctor.json"; then
+  jq '{status, issues: [.issues[] | select(.suppressed == false)], unavailable}' \
+    "$report_dir/doctor.json" || exit 1
+fi
+exit "$gradle_status"
+```
+
+Doctor writes the report before failing on findings selected by `--fail-on`.
+Configuration errors, invalid options, or an unwritable destination can prevent a report from being written.
+Keep the Gradle exit status, check whether the new file exists, and inspect its `status`, `issues`, and `unavailable` fields; the presence of a report alone does not mean the command succeeded.
+Do not read a previous run's default report after a failed invocation or parse Gradle's console output as JSON.
+
+For further investigation:
+
+- Use [`intellijPlatformDiscover`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformDiscover) to find bundled plugin or module IDs, or query candidate IDE releases.
+- Use [`intellijPlatformSdk`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformSdk) to locate resolved SDK archives, sources, and classpath owners.
+- Use [`intellijPlatformCompatibilityMatrix`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformCompatibilityMatrix) to inspect declared compatibility and configured verification targets, not proof of successful verification.
+
+Review reports before sharing them: SDK and project paths can identify the local machine.
+
+## Run UI tests in CI
+{#run-ui-tests-in-ci}
+
+Since `2.20.0`, the main plugin provides the Starter-based [`testUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi) task and a separate `testUi` source set.
+Place UI tests in <path>src/testUi/java</path> or, with the Kotlin JVM plugin, <path>src/testUi/kotlin</path>, and resources in <path>src/testUi/resources</path>.
+The task uses JUnit Platform and adds the Starter test-framework dependencies automatically.
+See [](integration_tests_intro.md) for writing Starter tests.
+
+Keep UI execution in a separate CI job with the display and operating-system dependencies required by the tests.
+The task is not part of `check`, so invoke it explicitly:
+
+```bash
+./gradlew testUi
+```
+
+To run a smaller suite, use Gradle's test filter:
+
+```bash
+./gradlew testUi --tests 'com.example.ui.SmokeTest'
+```
+
+Collect <path>build/reports/tests/testUi/</path> and <path>build/test-results/testUi/</path> as CI artifacts, including when tests fail.
+Keep the usual `check` and `verifyPlugin` jobs separate from this IDE-based execution.
+The verifier's [automatic IDE selection](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-ides) remains useful for tracking recommended targets, but the selected matrix can change as the release catalog changes.
+
+For additional IDE targets, register named entries in [`intellijPlatformTesting.testIdeUi`](tools_intellij_platform_gradle_plugin_testing_extension.md#intellijPlatformTesting).
+The container name remains `testIdeUi`; it is not the name of the built-in execution task.
+
 ## Run a custom task with a customized sandbox location
 
 To run a custom task with a different sandbox directory, configure its [`prepareSandboxTask`](tools_intellij_platform_gradle_plugin_testing_extension.md#preparesandboxtask) sandbox producer.
@@ -419,8 +496,220 @@ dependencies {
 The selected version can change as compatible updates are published.
 For reproducible builds, resolve a compatible version and then pin it explicitly with `plugin(id, version)`.
 
+## Exclude conflicting libraries
+{#exclude-conflicting-libraries}
+
+Since `2.19.0`, a plugin dependency's configuration block can exclude libraries bundled by that plugin.
+Use this when a dependency ships a library that conflicts with the version required by the project:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+dependencies {
+  intellijPlatform {
+    plugin("com.example.dependency", "1.0.0") {
+      excludeBundledLibrary("legacy-*.jar")
+    }
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+  intellijPlatform {
+    plugin('com.example.dependency', '1.0.0', '') {
+      excludeBundledLibrary('legacy-*.jar')
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
+Replace the example plugin ID, version, and pattern with the dependency being configured.
+Patterns are relative to its <path>lib/</path> and <path>lib/modules/</path> directories.
+They affect both classpaths and sandbox installations, and exclusions for the same plugin ID are combined across the build.
+The Groovy ID/version overload needs the explicit empty channel argument before the closure.
+See [Bundled Library Exclusions](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugin-library-exclusions) for the full behavior.
+
+This differs from excluding a Maven dependency from the project's own sandbox runtime classpath.
+For that case, configure `intellijPlatformSandboxRuntimeClasspath` (also available since `2.19.0`):
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+configurations.named("intellijPlatformSandboxRuntimeClasspath") {
+  exclude(group = "com.example", module = "library-provided-by-ide")
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+configurations.named('intellijPlatformSandboxRuntimeClasspath') {
+  exclude group: 'com.example', module: 'library-provided-by-ide'
+}
+```
+
+</tab>
+</tabs>
+
+The test sandbox runtime configuration inherits these exclusions.
+See [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) for sandbox runtime configuration details.
+Only exclude a library when the target IDE or another dependency supplies the required API; exclusions do not check binary compatibility.
+
+## Provide a subscription key to sandbox IDEs
+{#provide-a-subscription-key}
+
+Since `2.19.0`, [`intellijPlatform.subscriptionKey`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-subscriptionKey) supplies a key file to sandbox preparation tasks:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+intellijPlatform {
+  subscriptionKey = layout.projectDirectory.file("local/subscription.key")
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform {
+  subscriptionKey = layout.projectDirectory.file('local/subscription.key')
+}
+```
+
+</tab>
+</tabs>
+
+Keep the key file out of version control.
+For CI, mount it as a secret file and supply its path through the [`subscriptionKey` Gradle property](tools_intellij_platform_gradle_plugin_gradle_properties.md#subscriptionKey), rather than hard-coding it in the build script:
+
+```bash
+./gradlew prepareTestSandbox \
+  -Porg.jetbrains.intellij.platform.subscriptionKey=/run/secrets/subscription.key
+```
+
+The property provides the default when no extension or task override is set; omit the explicit file assignment above when using it.
+Sandbox preparation copies the key to <path>idea.key</path> in the corresponding sandbox configuration directory.
+Treat prepared sandboxes as sensitive too, and do not upload the key with CI artifacts or include it in the plugin distribution.
+
+## Build and run native variants
+{#build-and-run-native-variants}
+
+Since `2.19.0`, [`nativeVariants`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-nativeVariants) can overlay OS- and architecture-specific files onto a shared plugin.
+This feature requires IntelliJ Platform `2026.1` or later and `since-build` of at least `261`.
+Keep common files in the normal plugin layout and configure each target's additional files separately:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+intellijPlatform {
+  pluginConfiguration.ideaVersion.sinceBuild = "261"
+  nativeVariants {
+    enabled = true
+    linux.x86_64.from(file("native/linux-x86_64"))
+    linux.arm64.from(file("native/linux-arm64"))
+    mac.x86_64.from(file("native/mac-x86_64"))
+    mac.arm64.from(file("native/mac-arm64"))
+    windows.x86_64.from(file("native/windows-x86_64"))
+    windows.arm64.from(file("native/windows-arm64"))
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+intellijPlatform {
+  pluginConfiguration.ideaVersion.sinceBuild = '261'
+  nativeVariants {
+    enabled = true
+    linux.x86_64.from(file('native/linux-x86_64'))
+    linux.arm64.from(file('native/linux-arm64'))
+    mac.x86_64.from(file('native/mac-x86_64'))
+    mac.arm64.from(file('native/mac-arm64'))
+    windows.x86_64.from(file('native/windows-x86_64'))
+    windows.arm64.from(file('native/windows-arm64'))
+  }
+}
+```
+
+</tab>
+</tabs>
+
+Paths inside each source directory are relative to the plugin root.
+For example, <path>native/linux-arm64/bin/helper</path> becomes <path>bin/helper</path> in that variant.
+Supply the binaries for every target being distributed; the plugin packages them but does not cross-compile native code.
+
+For local development, `runIde` and custom `intellijPlatformTesting.runIde` entries select the current host's overlay automatically.
+The shared base sandbox and `buildPlugin` archive remain platform-independent.
+Custom test entries do not select a native overlay automatically.
+
+Build the six platform archives explicitly with:
+
+```bash
+./gradlew buildPluginVariants
+```
+
+The [`buildPluginVariants`](tools_intellij_platform_gradle_plugin_tasks.md#buildPluginVariants) task writes classified ZIP files to <path>build/distributions/</path>.
+Each variant has a rewritten descriptor with an OS/architecture-specific version and dependencies.
+Inspect the matching archive when checking a release; the base `buildPlugin` archive does not contain these overlays.
+
+## Try the latest IDE installer
+{#try-the-latest-ide-installer}
+
+Since `2.19.0`, the `"latest"` selector resolves the newest available installer for the selected product:
+
+<tabs group="languages">
+<tab title="Kotlin" group-key="kotlin">
+
+```kotlin
+dependencies {
+  intellijPlatform {
+    intellijIdea("latest") {
+      useInstaller = true
+    }
+  }
+}
+```
+
+</tab>
+<tab title="Groovy" group-key="groovy">
+
+```groovy
+dependencies {
+  intellijPlatform {
+    intellijIdea('latest') {
+      useInstaller = true
+    }
+  }
+}
+```
+
+</tab>
+</tabs>
+
+This is useful for a separate forward-compatibility check, not a reproducible baseline.
+Selection spans release channels, so the newest build can be an EAP.
+Maven distributions do not support `"latest"`.
+Pin a concrete version for the normal development target, and see [Target Versions](tools_intellij_platform_gradle_plugin_dependencies_extension.md#target-versions-latest) for offline behavior.
+
 
 ## Generate a lexer and parser with Grammar-Kit
+
+Since `2.12.0`.
 
 The [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit) sub-plugin adds the [`generateLexer`](tools_intellij_platform_gradle_plugin_tasks.md#generateLexer) and [`generateParser`](tools_intellij_platform_gradle_plugin_tasks.md#generateParser) tasks for generating a [custom language](custom_language_support.md) lexer and parser from [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) sources.
 It is not applied by the main plugin, so apply it explicitly next to `org.jetbrains.intellij.platform`:

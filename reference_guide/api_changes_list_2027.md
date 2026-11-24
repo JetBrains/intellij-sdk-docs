@@ -77,3 +77,30 @@ Several modules were extracted from the core plugin to separate modules with the
 This shouldn't affect binary compatibility, but an explicit dependency should be added in `build.gradle.kts` using `bundledModule(<moduleName>)` if a plugin uses API from these modules:
 * `intellij.platform.execution`
 * `intellij.platform.execution.impl`
+
+#### Project Roots Notifications
+
+`com.intellij.openapi.roots.ModuleRootListener.beforeRootsChange()` and `rootsChanged()` may now run in a background write action, including during dynamic plugin loading.
+Implementations must support both EDT and background invocation.
+
+Dispatch UI updates asynchronously to the event dispatch thread (EDT), for example with `Application.invokeLater()`.
+Keep cache invalidation synchronous when subsequent reads depend on it.
+Protect mutable state shared with EDT code that runs without a lock.
+Do not wait synchronously for EDT while holding the write lock, as this can cause a deadlock.
+
+For example:
+
+```kotlin
+override fun rootsChanged(event: ModuleRootEvent) {
+  invalidateCaches() // can run out of EDT
+
+  ApplicationManager.getApplication().invokeLater {
+    if (!project.isDisposed) {
+      refreshUi() // runs in EDT
+    }
+  }
+}
+```
+
+In this example, `invalidateCaches()` completes before the listener returns.
+The `refreshUi()` call runs later on EDT, after the disposal check.

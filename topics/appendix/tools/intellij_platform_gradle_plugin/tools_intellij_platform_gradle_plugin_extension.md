@@ -132,6 +132,9 @@ See also:
 Builds an index of UI components (searchable options) for the plugin.
 Controls the execution of the [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) task.
 
+**Changed in `2.15.0`:** The task is skipped automatically when descriptor analysis finds no `Configurable` extension points.
+The [`forceBuildSearchableOptions`](tools_intellij_platform_gradle_plugin_gradle_properties.md#forceBuildSearchableOptions) Gradle property overrides both this optimization and an explicit `buildSearchableOptions = false` setting.
+
 {type="narrow"}
 Type
 : `Property<Boolean>`
@@ -176,6 +179,11 @@ Default value
 
 The path to the sandbox container where tests and IDE instances read and write data.
 
+**Changed in `2.12.0`:** The default moved from <path>build/idea-sandbox/</path> to <path>.intellijPlatform/sandbox/</path>, outside the build directory.
+The default sandboxes survive `clean`; use [`cleanSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#cleanSandbox) to remove them.
+
+**Changed in `2.13.0`:** Sandbox paths beneath this container also include the project name.
+
 {type="narrow"}
 Type
 : `DirectoryProperty`
@@ -192,6 +200,8 @@ See also:
 {#intellijPlatform-subscriptionKey}
 
 <secondary-label ref="incubating"/>
+
+**Since:** `2.19.0`.
 
 Specifies the IntelliJ IDEA subscription key file used by sandbox-producing tasks.
 The key file is copied to <path>config/idea.key</path>, and `com.intellij.modules.ultimate` is removed from <path>config/disabled_plugins.txt</path> in each prepared sandbox.
@@ -218,6 +228,8 @@ Allows for checking how a plugin works in remote development mode, when one mach
 This property allows running the IDE with backend and frontend parts running in separate processes.
 Use [`pluginInstallationTarget`](#intellijPlatform-pluginInstallationTarget) to specify whether the developed plugin is installed in the frontend, backend, or both parts.
 
+**Since `2.14.0`:** The dedicated [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend) and [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend) tasks can launch the two processes separately.
+
 {type="narrow"}
 Type
 : `Property<Boolean>`
@@ -231,6 +243,8 @@ See also:
 
 ### `pluginInstallationTarget` (formerly `splitModeTarget`)
 {#intellijPlatform-pluginInstallationTarget}
+
+**Since:** `2.14.0`.
 
 > [Split Mode](split_mode_and_remote_development.md) requires the IntelliJ Platform in version `241.14473` or later.
 >
@@ -254,7 +268,7 @@ See also:
 ### `splitModeTarget`
 {#intellijPlatform-splitModeTarget}
 
-Deprecated compatibility alias for [](#intellijPlatform-pluginInstallationTarget).
+**Changed in `2.14.0`:** Deprecated in favor of [](#intellijPlatform-pluginInstallationTarget) and retained as a compatibility alias.
 Use `pluginInstallationTarget` for new configurations.
 
 {type="narrow"}
@@ -267,6 +281,8 @@ Default value
 
 ## Native Variants
 {#intellijPlatform-nativeVariants}
+
+**Since:** `2.19.0`.
 
 The `nativeVariants` extension configures OS- and architecture-specific files that are added to plugin distributions.
 It is useful when a plugin ships native executables or libraries that differ between target platforms.
@@ -769,7 +785,7 @@ The provided value is used for the `<idea-version since-build=""/>` element attr
 
 When [`nativeVariants`](#intellijPlatform-nativeVariants) are enabled, the effective value must resolve to `261` (IntelliJ Platform 2026.1) or later.
 
-The default value is set to the `MAJOR` build number based on the currently selected IntelliJ Platform, like `233`.
+**Changed in `2.14.0`:** The default is the `MAJOR` build number of the currently selected IntelliJ Platform, like `233`, rather than `MAJOR.MINOR`.
 
 {type="narrow"}
 Type
@@ -791,7 +807,7 @@ including potential future builds that may cause compatibility issues.
 
 The provided value is used for the `<idea-version until-build=""/>` element attribute.
 
-The extension does not assign a default value.
+**Changed in `2.6.0`:** The extension no longer assigns a default value (previously `MAJOR.*`).
 To configure an upper compatibility bound, set a value such as `233.*` explicitly.
 
 The `until-build` attribute can be unset by providing `provider { null }` as a value:
@@ -935,6 +951,8 @@ See also:
 ## Caching
 {#intellijPlatform-caching}
 
+**Since:** `2.8.0`.
+
 Configures caching related to resolving IntelliJ Platform dependencies and storing plugin-generated artifacts.
 
 The caching extension provides:
@@ -997,7 +1015,7 @@ The IntelliJ Platform cache is used for storing IntelliJ Platform Gradle Plugin-
 - extracted IntelliJ Platform archives instead of using Gradle cache
 - serialized IDE layout indices used for bundled plugin and module dependency resolution
 
-This path is finalized when the extension is registered.
+**Since `2.8.0`:** This path is read-only and finalized when the extension is registered.
 Configure it with the [`org.jetbrains.intellij.platform.intellijPlatformCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformCache) Gradle property rather than assigning it in the extension.
 
 {type="narrow"}
@@ -1013,6 +1031,8 @@ Default value
 
 ## Caching IDEs
 {#intellijPlatform-caching-ides}
+
+**Since:** `2.8.0`.
 
 Controls caching of IntelliJ Platform IDE distributions downloaded by the plugin.
 
@@ -1052,6 +1072,9 @@ intellijPlatform.caching.ides {
 Indicates whether caching for IntelliJ Platform IDEs is enabled globally.
 Individual dependency declarations can override this value with `useCache`.
 
+**Changed in `2.10.5`:** The default comes from the [`intellijPlatformIdesCacheEnabled`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformIdesCacheEnabled) Gradle property.
+Caching remains disabled by default.
+
 {type="narrow"}
 Type
 : `Property<Boolean>`
@@ -1080,7 +1103,7 @@ See also:
 {#intellijPlatform-caching-ides-name}
 
 Function that returns a cache directory name for a given requested IntelliJ Platform artifact.
-The default appends the lowercase product mode for backend and frontend requests to keep their writable IDE homes separate.
+**Changed in `2.14.0`:** The default appends the lowercase product mode for backend and frontend requests to keep their writable IDE homes separate.
 Custom naming functions should also distinguish product modes.
 
 {type="narrow"}
@@ -1561,6 +1584,9 @@ See also:
 
 Defines the verification level at which the task should fail if any reported issue matches.
 
+**Changed in `2.15.0`:** The defaults also include `INTERNAL_API_USAGES` and `OVERRIDE_ONLY_API_USAGES`, in addition to `COMPATIBILITY_PROBLEMS`.
+An upgrade can therefore fail verification for issues that did not fail the build with earlier defaults.
+
 {type="narrow"}
 Type
 : [`ListProperty<FailureLevel>`](tools_intellij_platform_gradle_plugin_types.md#FailureLevel)
@@ -1650,11 +1676,16 @@ See also:
 ### `useBundledRuntime`
 {#intellijPlatform-pluginVerification-useBundledRuntime}
 
+**Since:** `2.19.0`.
+
 Controls whether the IntelliJ Plugin Verifier resolves plugin classes against the JetBrains Runtime bundled with each verified IDE.
 When enabled, no `-runtime-dir` option is passed to the verifier.
-The runtime associated with the build's IntelliJ Platform is exposed through `JAVA_HOME` as a fallback for IDEs without a bundled runtime.
+The task's resolved runtime, normally associated with the build's IntelliJ Platform, is exposed through `JAVA_HOME` as a fallback for IDEs without a bundled runtime.
 
-When disabled, that build runtime is passed with `-runtime-dir` and used for every verified IDE.
+When disabled, that runtime is passed with `-runtime-dir` and used for every verified IDE, restoring the behavior before `2.19.0`.
+
+This extension property supplies the convention for the plugin-provided [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
+An explicit assignment to the task's [`useBundledRuntime`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-useBundledRuntime) property takes precedence.
 
 {type="narrow"}
 Type
@@ -1664,7 +1695,7 @@ Default value
 : `true`
 
 See also:
-- [Tasks: `verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin)
+- [Tasks: `verifyPlugin.useBundledRuntime`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-useBundledRuntime)
 
 
 ### `verificationReportsDirectory`
@@ -1700,39 +1731,24 @@ See also:
 - [Tasks: `verifyPlugin.verificationReportsFormats`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-verificationReportsFormats)
 
 
-### `useBundledRuntime`
-{#intellijPlatform-pluginVerification-useBundledRuntime}
-
-Determines whether the IntelliJ Plugin Verifier resolves plugin classes against the JetBrains Runtime (JBR) bundled with each verified IDE, instead of a single runtime shared across all verified IDEs.
-
-When enabled (default), the `-runtime-dir` option is not passed to the Plugin Verifier, so it resolves classes against the JBR bundled within each target IDE.
-The runtime associated with the IntelliJ Platform used to build the plugin is still exposed through the `JAVA_HOME` environment variable and used only as a fallback for IDEs that don't ship a bundled JBR.
-
-When disabled, the runtime associated with the IntelliJ Platform used to build the plugin is forced for all verified IDEs via the `-runtime-dir` option — the behavior from before this option was introduced.
-
-This property sets the convention for all [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) tasks, while a task-level [`verifyPlugin.useBundledRuntime`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-useBundledRuntime) override remains available.
-
-{type="narrow"}
-Type
-: `Property<Boolean>`
-
-Default value
-: `true`
-
-See also:
-- [Tasks: `verifyPlugin.useBundledRuntime`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-useBundledRuntime)
-
-
 ## Verify Plugin IDEs
 {#intellijPlatform-pluginVerification-ides}
 
 The extension to define the IDEs to be used along with the IntelliJ Plugin Verifier CLI tool for the binary plugin verification.
 
 It provides a set of helpers which add relevant entries to the configuration, which later is used to resolve IntelliJ-based IDE binary releases.
-When no IDEs are configured explicitly, `recommended()` is applied by default.
+
+**Changed in `2.14.0`:** When no IDEs are configured explicitly, `recommended()` is applied by default.
 Disable this fallback with the [`verifyPluginDefaultRecommendedIdes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#verifyPluginDefaultRecommendedIdes) Gradle property.
 Explicit calls to `create()`, `local()`, `current()`, `latest()`, `recommended()`, or `select()` replace this automatic fallback.
 An explicit `recommended()` call still works when the fallback is disabled.
+Keep the recommended defaults for normal compatibility checks.
+
+> `recommended()`, `latest()`, and `select()` resolve against current product release catalogs.
+> Their target IDE set can change as catalog entries are added or removed, even without changes to the build configuration or Gradle plugin version.
+> Review the resolved IDE list when investigating changes in verification coverage or results.
+>
+{title="Verifier IDE catalog drift" style="warning"}
 
 **Example:**
 

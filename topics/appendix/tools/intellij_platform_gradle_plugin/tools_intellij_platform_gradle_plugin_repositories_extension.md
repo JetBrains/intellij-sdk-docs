@@ -105,8 +105,9 @@ Installer repositories (Ivy):
 - JetBrains IDE installers: `https://download.jetbrains.com`
 - Android Studio installers: `https://redirector.gvt1.com/edgedl/android/studio`
 
-Repository helpers accept a configuration action to override the URL, credentials, or content filters of the created repository.
+Most repository helpers accept a configuration action to override the URL, credentials, or content filters of the created repository.
 For example, `releases { url = uri("https://example.com/intellij-releases") }` replaces the release repository URL without changing the other repositories.
+The `customPluginRepository()` helper is an exception; see [Plugin Repositories](#plugin-repositories) for its local shim and authentication constraints.
 
 Repository mirrors do not redirect separate metadata requests, such as IDE release listings or the plugin update check.
 For these requests, see the [`productsReleasesCdnBuildsUrl`](tools_intellij_platform_gradle_plugin_gradle_properties.md#productsReleasesCdnBuildsUrl),
@@ -207,6 +208,12 @@ repositories {
 </tab>
 </tabs>
 
+`customPluginRepository()` exposes the XML listing and plugin downloads to Gradle through a local HTTP shim server.
+Pass the upstream listing URL as the `url` argument; the configuration action cannot change it.
+The action configures the local Ivy repository after its shim URL is assigned; changing `url` replaces that endpoint, not the upstream URL.
+The helper does not reset the URL afterward, so overriding it can break plugin resolution.
+Only `PasswordCredentials` and `HttpHeaderCredentials` configured by the action are forwarded upstream, not arbitrary Gradle authentication settings.
+For the shim server's port configuration, see [`shimServerPort`](tools_intellij_platform_gradle_plugin_gradle_properties.md#shimServerPort).
 
 The final plugin archive is eventually resolved using the same credentials used for resolving the listing.
 

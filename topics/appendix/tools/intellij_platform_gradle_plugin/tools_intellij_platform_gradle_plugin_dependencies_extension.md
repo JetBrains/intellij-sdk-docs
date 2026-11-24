@@ -114,6 +114,8 @@ See [](#custom-target-platforms) for non-default targets.
 | `rustRover(version, configure = {})`     | [RustRover](https://www.jetbrains.com/rust/)                     |
 | `webstorm(version, configure = {})`      | [WebStorm](webstorm.md)                                          |
 
+The unified product helpers `intellijIdea()` and `pycharm()` are available since `2.9.0` and `2.10.0`, respectively.
+
 Notes:
 - Writerside (`WRS`) is deprecated and no longer available as a target IntelliJ Platform.
 - Aqua (`QA`) is deprecated and no longer available as a target IntelliJ Platform.
@@ -192,7 +194,7 @@ Use `useInstaller = false` for Fleet Backend.
 Use `"latest"` as the platform version, for example, `intellijIdea("latest")`, to select the newest listed installer for the requested product type.
 Selection compares build numbers across all release channels, so the result may be an EAP release rather than a stable release.
 This selector requires `useInstaller = true`; it cannot be used with multi-OS archives.
-The resolved concrete version is passed to the managed IDE cache instead of `"latest"`.
+When the managed IDE cache is used, it receives the resolved concrete version instead of `"latest"`.
 
 ### Installers
 
@@ -430,8 +432,14 @@ If defined explicitly, can be used along with any custom plugin repository, like
 #### Plugin Library Exclusions
 {#plugin-library-exclusions}
 
+Available since `2.19.0`.
+
+<p id="excluding-plugin-bundled-libraries">
+A non-bundled plugin may ship libraries in its <path>lib/</path> and <path>lib/modules/</path> directories that conflict with libraries provided by the target IntelliJ Platform or the developed plugin.
+</p>
+
 The optional `configure` callback on `plugin()` and `testPlugin()` accepts an `Action<IntelliJPlatformPluginConfiguration>`.
-It can exclude libraries packaged inside the declared plugin using file-name patterns such as `jena-*.jar`:
+Use it to exclude packaged libraries with Gradle's Ant-style patterns, relative to the plugin's <path>lib/</path> and <path>lib/modules/</path> directories, such as `jena-*.jar`:
 
 | Function                                  | Description                                               |
 |-------------------------------------------|-----------------------------------------------------------|
@@ -469,54 +477,14 @@ dependencies {
 
 Exclusions apply to the plugin's classpath and its sandbox copy, including matching libraries under <path>lib/modules/</path>.
 Rules are associated with the plugin ID and do not exclude libraries from other plugins.
+Patterns declared for the same plugin ID are combined build-wide.
 The filtered plugin must retain a valid plugin descriptor; excluding the JAR containing it causes a failure.
 
 In Groovy, the separate-argument form with a callback requires an explicit `group` argument, for example,
 `plugin('org.example.plugin', '1.0', 'com.jetbrains.plugins') { ... }`.
 The notation form shown above does not require that extra argument.
 
-The `plugin(id, version, group)` and `plugin(notation)` functions accept an optional trailing configuration block for [excluding bundled libraries](#excluding-plugin-bundled-libraries) shipped with the plugin.
-
-#### Excluding Plugin Bundled Libraries
-{#excluding-plugin-bundled-libraries}
-
-A non-bundled plugin may ship libraries in its <path>lib/</path> and <path>lib/modules/</path> directories that conflict with the ones already provided by the target IntelliJ Platform or by the developed plugin.
-To exclude such files, pass a configuration block to `plugin(...)` and declare patterns with `excludeBundledLibrary(pattern)` or `excludeBundledLibraries(vararg patterns)`:
-
-<tabs group="languages">
-<tab title="Kotlin" group-key="kotlin">
-
-```kotlin
-dependencies {
-  intellijPlatform {
-    plugin("pluginId", "1.0.0") {
-      excludeBundledLibrary("jena-*.jar")
-    }
-  }
-}
-```
-
-</tab>
-<tab title="Groovy" group-key="groovy">
-
-```groovy
-dependencies {
-  intellijPlatform {
-    plugin('pluginId', '1.0.0') {
-      excludeBundledLibrary 'jena-*.jar'
-    }
-  }
-}
-```
-
-</tab>
-</tabs>
-
-The patterns use Gradle's Ant-style matching, relative to the plugin's <path>lib/</path> and <path>lib/modules/</path> directories, for example `jena-*.jar`.
-Exclusions apply consistently to both the project classpaths and the sandbox installations.
-Patterns declared for the same plugin ID are combined build-wide.
-
-The same configuration block is available for the test-scope [`testPlugin(...)`](#test-scope-plugin-and-module-helpers) helpers.
+The same configuration block is available for the test-scope [`testPlugin()`](#test-scope-plugin-and-module-helpers) helpers.
 
 ### Compatible Plugins
 
@@ -639,7 +607,7 @@ The default `configurationName` is `intellijPlatformTestDependencies`.
 In Groovy, the provider-based version overload requires all three arguments, including the configuration name.
 Published framework dependencies exclude transitive modules already supplied by the target IDE.
 
-Use either plural overload to add multiple Test Framework variants at once:
+Since `2.19.0`, use either `testFrameworks()` overload to add multiple Test Framework variants at once:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">

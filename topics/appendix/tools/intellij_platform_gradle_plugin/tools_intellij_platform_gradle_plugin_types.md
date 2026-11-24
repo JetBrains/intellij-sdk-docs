@@ -114,6 +114,8 @@ The installer column below indicates whether installer coordinates are declared,
 | `WebStorm`              | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |    &check;     |
 | `Writerside`            | `WRS`  | `com.jetbrains.intellij.idea:writerside`           |    &check;     |
 
+The unified `IntellijIdea` and `PyCharm` types are available since `2.9.0` and `2.10.0`, respectively.
+
 Notes:
 - `Aqua` (`QA`) and `Writerside` (`WRS`) are deprecated and no longer available as target IntelliJ Platform products.
 - `IntellijIdeaCommunity` (`IC`) and `PyCharmCommunity` (`PC`) are available only for versions earlier than 2025.3 (build 253). For 2025.3+ use `IntellijIdea` (`IU`) and `PyCharm` (`PY`).
@@ -336,7 +338,10 @@ Generic test frameworks for the IntelliJ Platform.
 | `Metrics`  | `com.jetbrains.intellij.tools:ide-metrics-benchmark`<br/> `com.jetbrains.intellij.tools:ide-metrics-collector` <br/> `com.jetbrains.intellij.tools:ide-util-common`                                                                                                                                                         |
 | `Starter`  | `com.jetbrains.intellij.tools:ide-starter-squashed` <br/> `com.jetbrains.intellij.tools:ide-starter-junit5` <br/> `com.jetbrains.intellij.tools:ide-starter-driver` <br/> `com.jetbrains.intellij.driver:driver-client` <br/> `com.jetbrains.intellij.driver:driver-sdk` <br/> `com.jetbrains.intellij.driver:driver-model` |
 
-When used through `testFramework()`, `Starter` also adds product-specific artifacts for target IDE builds starting at `262` (2026.2).
+`JUnit5CodeInsight` is available since `2.19.0`.
+`JUnit5Eel`, `JUnit5Highlighting`, and `JUnit5ProjectStructure` are available since `2.20.0`.
+
+Since `2.18.0`, `Starter` also adds product-specific artifacts for target IDE builds starting at `262` (2026.2) when used through `testFramework()`.
 These use the group `com.jetbrains.intellij.tools` and artifact IDs with the `ide-starter-product-` prefix and the following suffixes:
 
 - `idea-ultimate`, `idea-community`, `pycharm`, `pycharm-community`
@@ -359,6 +364,8 @@ For earlier builds, these product-specific artifacts are omitted; the six artifa
 ### UI Utility Test Frameworks
 {#TestFrameworkType-UiUtil}
 
+Available since `2.17.0`.
+
 Utility modules for tests that use the UI Driver framework.
 These APIs may be unstable and can change without notice.
 
@@ -371,6 +378,7 @@ These APIs may be unstable and can change without notice.
 {#TestFrameworkType-Plugin}
 
 Some plugins offer dedicated test frameworks, for example, `Plugin.Java` when using Java/JVM-related functionality.
+`Plugin.Kotlin` is available since `2.17.0`.
 
 | Name                    | Coordinates                                                               | Reference       |
 |-------------------------|---------------------------------------------------------------------------|-----------------|

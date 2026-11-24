@@ -389,13 +389,25 @@ The `org.jetbrains.intellij.platform.migration` plugin and its legacy stub task 
 
 ### Task Configuration Changes
 
+- Since `2.14.0`, [`pluginInstallationTarget`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginInstallationTarget) replaces `splitModeTarget`, which remains as a deprecated compatibility alias.
+  The dedicated [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend) and [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend) tasks can launch the two processes separately.
 - In `2.19.0`, `PublishPluginTask.archiveFile` was replaced with [`archiveFiles`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-archiveFiles) to support multiple native distributions.
   Native variant archives are not signed automatically before publishing.
 - The no-op `setupDependencies` task was removed in `2.19.0`; remove old IDE task-activation references as described [above](#setupdependencies).
 - Since `2.19.0`, Plugin Verifier uses each IDE's bundled runtime by default.
   Set [`pluginVerification.useBundledRuntime`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-useBundledRuntime) to `false` to use the build runtime instead.
+  An explicit assignment to the [`verifyPlugin.useBundledRuntime`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-useBundledRuntime) task property takes precedence over the extension value.
 - Since `2.20.0`, the preconfigured Starter UI task is named [`testUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi) and uses <path>src/testUi</path>.
   The custom-task container remains `intellijPlatformTesting.testIdeUi`.
 - In `2.20.0`, `testIdeBundledPluginsClasspathEnabled` was removed; bundled plugins are always considered for test classpaths.
   Use [`testIdeBundledPluginsClasspathExcludes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathExcludes) for optional exclusions.
   Required and explicitly declared plugin dependencies are retained.
+
+### Compiled Integrations
+
+**Changed in `2.20.1`:** `org.jetbrains.intellij.platform.gradle.extensions.IntelliJPlatformTestingExtension.CommonParameters.getBuildDependencies()` now returns the public Gradle `org.gradle.api.tasks.TaskDependency`.
+It previously returned the internal `org.gradle.api.internal.tasks.DefaultTaskDependency`.
+The former concrete-return JVM method signature was removed.
+Recompile convention plugins and other compiled integrations linked to that signature to avoid `NoSuchMethodError`.
+Migrate source code that uses `DefaultTaskDependency`-specific methods to public Gradle APIs.
+Ordinary build scripts that only use the testing DSL are not generally affected.

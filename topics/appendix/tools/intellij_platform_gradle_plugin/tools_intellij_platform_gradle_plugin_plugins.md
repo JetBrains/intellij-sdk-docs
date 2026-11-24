@@ -248,10 +248,10 @@ dependencies {
 </tabs>
 
 
-Module projects inherit the root project's IntelliJ Platform dependency when the root applies the [](#platform) plugin and declares a target platform, and the module doesn't configure its own target platform.
+Since `2.14.0`, module projects inherit the root project's IntelliJ Platform dependency when the root applies the [](#platform) plugin and declares a target platform, and the module doesn't configure its own target platform.
 Project dependencies on IntelliJ Platform module projects added to the root project's `api`, `implementation`, or `runtimeOnly` configuration are packaged automatically into the `lib/modules/` directory in the final plugin distribution.
 
-To merge submodule content into the main plugin JAR file, use `pluginComposedModule(project(":submodule"))` instead.
+To merge submodule content into the main plugin JAR file, use `pluginComposedModule(project(":submodule"))` instead (since `2.7.0`).
 
 ### Available tasks
 {#module-available-tasks}
@@ -289,6 +289,9 @@ The Settings plugin also defaults the `kotlin.stdlib.default.dependency` propert
 This prevents the Kotlin Gradle plugin from adding the Kotlin Standard Library dependency automatically, which could conflict with the version bundled in the IntelliJ Platform.
 An explicitly configured Gradle property or an existing project extra property with the same name takes precedence and is left unchanged.
 See [](using_kotlin.md#kotlin-standard-library) for more information about the Kotlin Standard Library dependency.
+
+Since `2.20.0`, the Settings plugin also registers the `composed-jar` compatibility rule in every project.
+This lets projects that do not apply the IntelliJ Platform Gradle Plugin accept plain JAR variants when consuming a module's dependencies.
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -417,6 +420,8 @@ plugins {
 
 **Plugin ID: `org.jetbrains.intellij.platform.grammarkit`**
 
+Since `2.12.0`.
+
 This plugin applies the [](#base) plugin and adds task support for generating lexers with JFlex and parsers with GrammarKit.
 
 See [](tools_intellij_platform_gradle_plugin_recipes.md#generate-a-lexer-and-parser-with-grammar-kit) for a complete setup that registers the generator tasks and wires their output into the source set.
@@ -467,7 +472,7 @@ Also includes the diagnostic and dump tasks inherited from [](#base-available-ta
 Prepares all the custom configurations, transformers, and base tasks needed to manage the IntelliJ Platform dependency, JetBrains Runtime, CLI tools, and others.
 
 Applies Gradle's `java-library` and `idea` plugins.
-The Java toolchain language version defaults to the Java version required by the target IntelliJ Platform.
+Since `2.14.0`, the Java toolchain language version defaults to the Java version required by the target IntelliJ Platform.
 When the Kotlin JVM plugin is present, its JVM target defaults to the configured Java toolchain language version.
 These conventions can be overridden in the build script.
 

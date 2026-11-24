@@ -21,6 +21,9 @@ The extension exposes four `NamedDomainObjectContainer` instances for registerin
 Registering an entry creates an execution task with the entry's name and a sandbox preparation task named `prepareSandbox_<name>`.
 The container names describe task types, not additional tasks created merely by accessing the containers.
 
+For a separate Starter-based UI-test workflow, see [](tools_intellij_platform_gradle_plugin_recipes.md#run-ui-tests-in-ci).
+The built-in task is named `testUi`; the custom-task container remains `testIdeUi`.
+
 **Example:**
 
 <tabs group="languages">
@@ -175,6 +178,8 @@ See also:
 
 ### `testFrameworks(...)`
 
+Since `2.19.0`.
+
 Adds dependencies on multiple `test-framework` library variants for the created testing entry.
 It accepts either vararg `TestFrameworkType` arguments or a `List<TestFrameworkType>`.
 The closest version matching the configured IntelliJ Platform build is selected for every variant.
@@ -298,6 +303,8 @@ The singular `compatiblePlugin()`, `bundledPlugin()`, `bundledModule()`, and `di
 
 #### Bundled Library Exclusions
 {#intellijPlatformTesting-plugins-exclusions}
+
+Since `2.19.0`.
 
 The optional `plugin()` configuration block exposes [`IntelliJPlatformPluginConfiguration`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/extensions/IntelliJPlatformPluginConfiguration.kt):
 

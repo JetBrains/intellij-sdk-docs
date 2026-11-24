@@ -178,7 +178,7 @@ See also:
 
 ### `testFrameworks(...)`
 
-Since `2.19.0`.
+<primary-label ref="gradle-plugin-2.19.0"/>
 
 Adds dependencies on multiple `test-framework` library variants for the created testing entry.
 It accepts either vararg `TestFrameworkType` arguments or a `List<TestFrameworkType>`.
@@ -304,7 +304,7 @@ The singular `compatiblePlugin()`, `bundledPlugin()`, `bundledModule()`, and `di
 #### Bundled Library Exclusions
 {#intellijPlatformTesting-plugins-exclusions}
 
-Since `2.19.0`.
+<primary-label ref="gradle-plugin-2.19.0"/>
 
 The optional `plugin()` configuration block exposes [`IntelliJPlatformPluginConfiguration`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/extensions/IntelliJPlatformPluginConfiguration.kt):
 

@@ -83,6 +83,37 @@
     Available in IDE version 2026.3 or later
   </primary-label>
 
+  <primary-label id="gradle-plugin-2.7.0" short-name="2.7.0+" name="2.7.0+">
+    Available in IntelliJ Platform Gradle Plugin version 2.7.0 or later
+  </primary-label>
+  <primary-label id="gradle-plugin-2.8.0" short-name="2.8.0+" name="2.8.0+">
+    Available in IntelliJ Platform Gradle Plugin version 2.8.0 or later
+  </primary-label>
+  <primary-label id="gradle-plugin-2.10.5" short-name="2.10.5+" name="2.10.5+">
+    Available in IntelliJ Platform Gradle Plugin version 2.10.5 or later
+  </primary-label>
+  <primary-label id="gradle-plugin-2.11.0" short-name="2.11.0+" name="2.11.0+">
+    Available in IntelliJ Platform Gradle Plugin version 2.11.0 or later
+  </primary-label>
+  <primary-label id="gradle-plugin-2.12.0" short-name="2.12.0+" name="2.12.0+">
+    Available in IntelliJ Platform Gradle Plugin version 2.12.0 or later
+  </primary-label>
+  <primary-label id="gradle-plugin-2.14.0" short-name="2.14.0+" name="2.14.0+">
+    Available in IntelliJ Platform Gradle Plugin version 2.14.0 or later
+  </primary-label>
+  <primary-label id="gradle-plugin-2.15.0" short-name="2.15.0+" name="2.15.0+">
+    Available in IntelliJ Platform Gradle Plugin version 2.15.0 or later
+  </primary-label>
+  <primary-label id="gradle-plugin-2.17.0" short-name="2.17.0+" name="2.17.0+">
+    Available in IntelliJ Platform Gradle Plugin version 2.17.0 or later
+  </primary-label>
+  <primary-label id="gradle-plugin-2.19.0" short-name="2.19.0+" name="2.19.0+">
+    Available in IntelliJ Platform Gradle Plugin version 2.19.0 or later
+  </primary-label>
+  <primary-label id="gradle-plugin-2.20.0" short-name="2.20.0+" name="2.20.0+">
+    Available in IntelliJ Platform Gradle Plugin version 2.20.0 or later
+  </primary-label>
+
   <secondary-label id="deprecated" name="Deprecated" color="red">
     This item is marked as deprecated.
   </secondary-label>
@@ -91,5 +122,67 @@
   </secondary-label>
   <secondary-label id="unavailable" name="Unavailable">
     This item is marked as unavailable.
+  </secondary-label>
+
+  <secondary-label id="gradle-plugin-changed-2.6.0" name="Changed in 2.6.0">
+    Behavior changed in IntelliJ Platform Gradle Plugin version 2.6.0; the API may exist in earlier versions
+  </secondary-label>
+  <secondary-label id="gradle-plugin-changed-2.7.0" name="Changed in 2.7.0">
+    Behavior changed in IntelliJ Platform Gradle Plugin version 2.7.0; the API may exist in earlier versions
+  </secondary-label>
+  <secondary-label id="gradle-plugin-changed-2.8.0" name="Changed in 2.8.0">
+    Behavior changed in IntelliJ Platform Gradle Plugin version 2.8.0; the API may exist in earlier versions
+  </secondary-label>
+  <secondary-label id="gradle-plugin-changed-2.10.5" name="Changed in 2.10.5">
+    Behavior changed in IntelliJ Platform Gradle Plugin version 2.10.5; the API may exist in earlier versions
+  </secondary-label>
+  <secondary-label id="gradle-plugin-changed-2.12.0" name="Changed in 2.12.0">
+    Behavior changed in IntelliJ Platform Gradle Plugin version 2.12.0; the API may exist in earlier versions
+  </secondary-label>
+  <secondary-label id="gradle-plugin-changed-2.13.0" name="Changed in 2.13.0">
+    Behavior changed in IntelliJ Platform Gradle Plugin version 2.13.0; the API may exist in earlier versions
+  </secondary-label>
+  <secondary-label id="gradle-plugin-changed-2.14.0" name="Changed in 2.14.0">
+    Behavior changed in IntelliJ Platform Gradle Plugin version 2.14.0; the API may exist in earlier versions
+  </secondary-label>
+  <secondary-label id="gradle-plugin-changed-2.15.0" name="Changed in 2.15.0">
+    Behavior changed in IntelliJ Platform Gradle Plugin version 2.15.0; the API may exist in earlier versions
+  </secondary-label>
+  <secondary-label id="gradle-plugin-changed-2.17.0" name="Changed in 2.17.0">
+    Behavior changed in IntelliJ Platform Gradle Plugin version 2.17.0; the API may exist in earlier versions
+  </secondary-label>
+  <secondary-label id="gradle-plugin-changed-2.18.0" name="Changed in 2.18.0">
+    Behavior changed in IntelliJ Platform Gradle Plugin version 2.18.0; the API may exist in earlier versions
+  </secondary-label>
+  <secondary-label id="gradle-plugin-changed-2.19.0" name="Changed in 2.19.0">
+    Behavior changed in IntelliJ Platform Gradle Plugin version 2.19.0; the API may exist in earlier versions
+  </secondary-label>
+  <secondary-label id="gradle-plugin-changed-2.20.0" name="Changed in 2.20.0">
+    Behavior changed in IntelliJ Platform Gradle Plugin version 2.20.0; the API may exist in earlier versions
+  </secondary-label>
+  <secondary-label id="gradle-plugin-changed-2.20.1" name="Changed in 2.20.1">
+    Behavior changed in IntelliJ Platform Gradle Plugin version 2.20.1; the API may exist in earlier versions
+  </secondary-label>
+
+  <secondary-label id="gradle-plugin-composed-module-2.7.0" name="pluginComposedModule: 2.7.0+">
+    The pluginComposedModule() helper is available in IntelliJ Platform Gradle Plugin version 2.7.0 or later
+  </secondary-label>
+  <secondary-label id="gradle-plugin-intellij-idea-2.9.0" name="IntelliJ IDEA: 2.9.0+">
+    The unified intellijIdea() helper and IntellijIdea type are available in IntelliJ Platform Gradle Plugin version 2.9.0 or later
+  </secondary-label>
+  <secondary-label id="gradle-plugin-pycharm-2.10.0" name="PyCharm: 2.10.0+">
+    The unified pycharm() helper and PyCharm type are available in IntelliJ Platform Gradle Plugin version 2.10.0 or later
+  </secondary-label>
+  <secondary-label id="gradle-plugin-kotlin-test-framework-2.17.0" name="Plugin.Kotlin: 2.17.0+">
+    The Plugin.Kotlin test framework is available in IntelliJ Platform Gradle Plugin version 2.17.0 or later
+  </secondary-label>
+  <secondary-label id="gradle-plugin-starter-products-2.18.0" name="Starter product artifacts: 2.18.0+">
+    Starter adds product-specific artifacts through testFramework() in IntelliJ Platform Gradle Plugin version 2.18.0 or later, for target IDE builds starting at 262
+  </secondary-label>
+  <secondary-label id="gradle-plugin-junit5-code-insight-2.19.0" name="JUnit5CodeInsight: 2.19.0+">
+    The JUnit5CodeInsight test framework is available in IntelliJ Platform Gradle Plugin version 2.19.0 or later
+  </secondary-label>
+  <secondary-label id="gradle-plugin-junit5-variants-2.20.0" name="Additional JUnit 5 variants: 2.20.0+">
+    The JUnit5Eel, JUnit5Highlighting, and JUnit5ProjectStructure test frameworks are available in IntelliJ Platform Gradle Plugin version 2.20.0 or later
   </secondary-label>
 </labels>

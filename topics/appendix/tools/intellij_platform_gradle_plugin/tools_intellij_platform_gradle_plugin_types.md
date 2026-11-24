@@ -81,6 +81,9 @@ See [Dependency Configuration Parameters](tools_intellij_platform_gradle_plugin_
 ## `IntelliJPlatformType`
 {#IntelliJPlatformType}
 
+<secondary-label ref="gradle-plugin-intellij-idea-2.9.0"/>
+<secondary-label ref="gradle-plugin-pycharm-2.10.0"/>
+
 [`IntelliJPlatformType`](%gh-ijpgp%/src/main/kotlin/org/jetbrains/intellij/platform/gradle/IntelliJPlatformType.kt)
 
 Describes all IntelliJ Platform types available to be used for plugin development, dependency resolution, and plugin verification.
@@ -113,8 +116,6 @@ The installer column below indicates whether installer coordinates are declared,
 | `RustRover`             | `RR`   | `com.jetbrains.intellij.rustrover:RustRover`       |    &check;     |
 | `WebStorm`              | `WS`   | `com.jetbrains.intellij.webstorm:webstorm`         |    &check;     |
 | `Writerside`            | `WRS`  | `com.jetbrains.intellij.idea:writerside`           |    &check;     |
-
-The unified `IntellijIdea` and `PyCharm` types are available since `2.9.0` and `2.10.0`, respectively.
 
 Notes:
 - `Aqua` (`QA`) and `Writerside` (`WRS`) are deprecated and no longer available as target IntelliJ Platform products.
@@ -324,6 +325,10 @@ In Groovy, access a variant through its `INSTANCE` field, for example, `TestFram
 ### Platform Test Frameworks
 {#TestFrameworkType-Platform}
 
+<secondary-label ref="gradle-plugin-junit5-code-insight-2.19.0"/>
+<secondary-label ref="gradle-plugin-junit5-variants-2.20.0"/>
+<secondary-label ref="gradle-plugin-starter-products-2.18.0"/>
+
 Generic test frameworks for the IntelliJ Platform.
 
 | Name       | Coordinates                                                                                                                                                                                                                                                                                                                 |
@@ -338,10 +343,7 @@ Generic test frameworks for the IntelliJ Platform.
 | `Metrics`  | `com.jetbrains.intellij.tools:ide-metrics-benchmark`<br/> `com.jetbrains.intellij.tools:ide-metrics-collector` <br/> `com.jetbrains.intellij.tools:ide-util-common`                                                                                                                                                         |
 | `Starter`  | `com.jetbrains.intellij.tools:ide-starter-squashed` <br/> `com.jetbrains.intellij.tools:ide-starter-junit5` <br/> `com.jetbrains.intellij.tools:ide-starter-driver` <br/> `com.jetbrains.intellij.driver:driver-client` <br/> `com.jetbrains.intellij.driver:driver-sdk` <br/> `com.jetbrains.intellij.driver:driver-model` |
 
-`JUnit5CodeInsight` is available since `2.19.0`.
-`JUnit5Eel`, `JUnit5Highlighting`, and `JUnit5ProjectStructure` are available since `2.20.0`.
-
-Since `2.18.0`, `Starter` also adds product-specific artifacts for target IDE builds starting at `262` (2026.2) when used through `testFramework()`.
+`Starter` also adds product-specific artifacts for target IDE builds starting at `262` (2026.2) when used through `testFramework()`.
 These use the group `com.jetbrains.intellij.tools` and artifact IDs with the `ide-starter-product-` prefix and the following suffixes:
 
 - `idea-ultimate`, `idea-community`, `pycharm`, `pycharm-community`
@@ -364,7 +366,7 @@ For earlier builds, these product-specific artifacts are omitted; the six artifa
 ### UI Utility Test Frameworks
 {#TestFrameworkType-UiUtil}
 
-Available since `2.17.0`.
+<primary-label ref="gradle-plugin-2.17.0"/>
 
 Utility modules for tests that use the UI Driver framework.
 These APIs may be unstable and can change without notice.
@@ -377,8 +379,9 @@ These APIs may be unstable and can change without notice.
 ### Plugin Test Frameworks
 {#TestFrameworkType-Plugin}
 
+<secondary-label ref="gradle-plugin-kotlin-test-framework-2.17.0"/>
+
 Some plugins offer dedicated test frameworks, for example, `Plugin.Java` when using Java/JVM-related functionality.
-`Plugin.Kotlin` is available since `2.17.0`.
 
 | Name                    | Coordinates                                                               | Reference       |
 |-------------------------|---------------------------------------------------------------------------|-----------------|

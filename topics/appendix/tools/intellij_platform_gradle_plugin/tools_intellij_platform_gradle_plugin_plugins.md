@@ -132,6 +132,9 @@ Register named test tasks through [](tools_intellij_platform_gradle_plugin_testi
 ## Module
 {#module}
 
+<secondary-label ref="gradle-plugin-changed-2.14.0"/>
+<secondary-label ref="gradle-plugin-composed-module-2.7.0"/>
+
 <link-summary>Applies a smaller set of functionalities for compiling and testing submodules when working in a multi-module architecture.</link-summary>
 
 **Plugin ID: `org.jetbrains.intellij.platform.module`**
@@ -248,10 +251,10 @@ dependencies {
 </tabs>
 
 
-Since `2.14.0`, module projects inherit the root project's IntelliJ Platform dependency when the root applies the [](#platform) plugin and declares a target platform, and the module doesn't configure its own target platform.
+Module projects inherit the root project's IntelliJ Platform dependency when the root applies the [](#platform) plugin and declares a target platform, and the module doesn't configure its own target platform.
 Project dependencies on IntelliJ Platform module projects added to the root project's `api`, `implementation`, or `runtimeOnly` configuration are packaged automatically into the `lib/modules/` directory in the final plugin distribution.
 
-To merge submodule content into the main plugin JAR file, use `pluginComposedModule(project(":submodule"))` instead (since `2.7.0`).
+To merge submodule content into the main plugin JAR file, use `pluginComposedModule(project(":submodule"))` instead.
 
 ### Available tasks
 {#module-available-tasks}
@@ -277,6 +280,8 @@ Also includes the diagnostic and dump tasks inherited from [](#base-available-ta
 ## Settings
 {#settings}
 
+<secondary-label ref="gradle-plugin-changed-2.20.0"/>
+
 <link-summary>Plugin available for use in Gradle settings file.</link-summary>
 
 **Plugin ID: `org.jetbrains.intellij.platform.settings`**
@@ -290,7 +295,7 @@ This prevents the Kotlin Gradle plugin from adding the Kotlin Standard Library d
 An explicitly configured Gradle property or an existing project extra property with the same name takes precedence and is left unchanged.
 See [](using_kotlin.md#kotlin-standard-library) for more information about the Kotlin Standard Library dependency.
 
-Since `2.20.0`, the Settings plugin also registers the `composed-jar` compatibility rule in every project.
+The Settings plugin also registers the `composed-jar` compatibility rule in every project.
 This lets projects that do not apply the IntelliJ Platform Gradle Plugin accept plain JAR variants when consuming a module's dependencies.
 
 <tabs group="languages">
@@ -416,11 +421,11 @@ plugins {
 ## GrammarKit
 {#grammarkit}
 
+<primary-label ref="gradle-plugin-2.12.0"/>
+
 <link-summary>Adds GrammarKit and JFlex tasks for generating parsers and lexers.</link-summary>
 
 **Plugin ID: `org.jetbrains.intellij.platform.grammarkit`**
-
-Since `2.12.0`.
 
 This plugin applies the [](#base) plugin and adds task support for generating lexers with JFlex and parsers with GrammarKit.
 
@@ -465,6 +470,8 @@ Also includes the diagnostic and dump tasks inherited from [](#base-available-ta
 ## Base
 {#base}
 
+<secondary-label ref="gradle-plugin-changed-2.14.0"/>
+
 <link-summary>Prepares all the custom configurations, transformers, and base tasks needed to manage the IntelliJ Platform dependency, JetBrains Runtime, CLI tools, and others.</link-summary>
 
 **Plugin ID: `org.jetbrains.intellij.platform.base`**
@@ -472,7 +479,7 @@ Also includes the diagnostic and dump tasks inherited from [](#base-available-ta
 Prepares all the custom configurations, transformers, and base tasks needed to manage the IntelliJ Platform dependency, JetBrains Runtime, CLI tools, and others.
 
 Applies Gradle's `java-library` and `idea` plugins.
-Since `2.14.0`, the Java toolchain language version defaults to the Java version required by the target IntelliJ Platform.
+The Java toolchain language version defaults to the Java version required by the target IntelliJ Platform.
 When the Kotlin JVM plugin is present, its JVM target defaults to the configured Java toolchain language version.
 These conventions can be overridden in the build script.
 
@@ -537,9 +544,11 @@ See [](tools_intellij_platform_gradle_plugin_recipes.md) for more details.
 [`printBundledPlugins`](tools_intellij_platform_gradle_plugin_tasks.md#printBundledPlugins),
 [`printProductsReleases`](tools_intellij_platform_gradle_plugin_tasks.md#printProductsReleases)
 
-The Base plugin also registers the following diagnostic and dump tasks, which are inherited by the Platform, Module, and GrammarKit plugins:
+#### Diagnostic and dump tasks
 
-The JSON reporting tasks and bundled-plugin/module dump tasks are available since `2.20.0`.
+<primary-label ref="gradle-plugin-2.20.0"/>
+
+The Base plugin also registers the following diagnostic and dump tasks, which are inherited by the Platform, Module, and GrammarKit plugins:
 
 | Area | Tasks |
 |------|-------|

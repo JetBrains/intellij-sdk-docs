@@ -322,12 +322,26 @@ See [](tools_intellij_platform_gradle_plugin_jetbrains_runtime.md).
 
 ### Dependency and Cache Configuration
 
-- Since `2.7.0`, `pluginModule(project(...))` packages a separate JAR under <path>lib/modules/</path> in the plugin distribution.
-  To merge a module into the main plugin JAR, use `pluginComposedModule(project(...))` instead.
-- Since `2.8.0`, [`intellijPlatform.caching.path`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-caching-path) is read-only.
-  Configure the project cache root through [`org.jetbrains.intellij.platform.intellijPlatformCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformCache), not by assigning to `caching.path`.
-- In `2.12.0`, deprecated positional `useInstaller` and `productMode` arguments were removed from dependency helpers.
-  Set them in the configuration block instead:
+#### Module Packaging
+
+<secondary-label ref="gradle-plugin-changed-2.7.0"/>
+
+`pluginModule(project(...))` packages a separate JAR under <path>lib/modules/</path> in the plugin distribution.
+To merge a module into the main plugin JAR, use `pluginComposedModule(project(...))` instead.
+
+#### Project Cache Root
+
+<secondary-label ref="gradle-plugin-changed-2.8.0"/>
+
+[`intellijPlatform.caching.path`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-caching-path) is read-only.
+Configure the project cache root through [`org.jetbrains.intellij.platform.intellijPlatformCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformCache), not by assigning to `caching.path`.
+
+#### Removed Dependency APIs
+
+<secondary-label ref="gradle-plugin-changed-2.12.0"/>
+
+Deprecated positional `useInstaller` and `productMode` arguments were removed from dependency helpers.
+Set them in the configuration block instead:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -373,31 +387,90 @@ The `org.jetbrains.intellij.platform.migration` plugin and its legacy stub task 
 
 ### Changed Defaults
 
-- Since `2.6.0`, `ideaVersion.untilBuild` has no default.
-  Since `2.14.0`, `sinceBuild` defaults to the target IDE's major build number, such as `243`, rather than a major/minor pair.
-  Explicitly configured values are still written to <path>plugin.xml</path>.
-- Since `2.12.0`, the default sandbox container is <path>.intellijPlatform/sandbox/</path>, outside the build directory.
-  Since `2.13.0`, sandbox paths also contain the project name.
-  Use [`cleanSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#cleanSandbox), not `clean`, to remove these persistent sandboxes.
-- Since `2.14.0`, the Java toolchain language version follows the target platform unless overridden, and recommended verifier IDEs are selected when no explicit targets are configured.
+#### Upper Compatibility Bound
+
+<secondary-label ref="gradle-plugin-changed-2.6.0"/>
+
+`ideaVersion.untilBuild` has no default.
+Explicitly configured values are still written to <path>plugin.xml</path>.
+
+#### Minimum Compatible Build
+
+<secondary-label ref="gradle-plugin-changed-2.14.0"/>
+
+`sinceBuild` defaults to the target IDE's major build number, such as `243`, rather than a major/minor pair.
+Explicitly configured values are still written to <path>plugin.xml</path>.
+
+#### Sandbox Container
+
+<secondary-label ref="gradle-plugin-changed-2.12.0"/>
+
+The default sandbox container is <path>.intellijPlatform/sandbox/</path>, outside the build directory.
+Use [`cleanSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#cleanSandbox), not `clean`, to remove these persistent sandboxes.
+
+#### Per-Project Sandbox Paths
+
+<secondary-label ref="gradle-plugin-changed-2.13.0"/>
+
+Sandbox paths also contain the project name.
+
+#### Toolchain and Verification
+
+<secondary-label ref="gradle-plugin-changed-2.14.0"/>
+
+- The Java toolchain language version follows the target platform unless overridden, and recommended verifier IDEs are selected when no explicit targets are configured.
   Signing and publishing credentials default to `CERTIFICATE_CHAIN`, `PRIVATE_KEY`, `PRIVATE_KEY_PASSWORD`, and `PUBLISH_TOKEN` environment variables.
-- Since `2.15.0`, the default verifier failure levels also include internal and override-only API usages.
-- Since `2.18.0`, product release metadata uses JSON; custom Android Studio release mirrors must no longer serve XML.
-  The `productsReleasesJetBrainsIdesUrl` property was removed in favor of [`productsReleasesCdnBuildsUrl`](tools_intellij_platform_gradle_plugin_gradle_properties.md#productsReleasesCdnBuildsUrl).
-- Since `2.19.0`, Kotlin Standard Library and coroutines dependencies are excluded from sandbox runtime classpaths by default.
-  The Settings plugin also defaults `kotlin.stdlib.default.dependency` to `false` unless explicitly configured.
+
+#### Verifier Failure Levels
+
+<secondary-label ref="gradle-plugin-changed-2.15.0"/>
+
+The default verifier failure levels also include internal and override-only API usages.
+
+#### Product Release Metadata
+
+<secondary-label ref="gradle-plugin-changed-2.18.0"/>
+
+Product release metadata uses JSON; custom Android Studio release mirrors must no longer serve XML.
+The `productsReleasesJetBrainsIdesUrl` property was removed in favor of [`productsReleasesCdnBuildsUrl`](tools_intellij_platform_gradle_plugin_gradle_properties.md#productsReleasesCdnBuildsUrl).
+
+#### Sandbox Runtime Dependencies
+
+<secondary-label ref="gradle-plugin-changed-2.19.0"/>
+
+Kotlin Standard Library and coroutines dependencies are excluded from sandbox runtime classpaths by default.
+The Settings plugin also defaults `kotlin.stdlib.default.dependency` to `false` unless explicitly configured.
 
 ### Task Configuration Changes
 
-- Since `2.14.0`, [`pluginInstallationTarget`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginInstallationTarget) replaces `splitModeTarget`, which remains as a deprecated compatibility alias.
-  The dedicated [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend) and [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend) tasks can launch the two processes separately.
+#### Split Mode
+
+<secondary-label ref="gradle-plugin-changed-2.14.0"/>
+
+[`pluginInstallationTarget`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginInstallationTarget) replaces `splitModeTarget`, which remains as a deprecated compatibility alias.
+The dedicated [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend) and [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend) tasks can launch the two processes separately.
+
+#### Distribution Archives and Setup
+
+<secondary-label ref="gradle-plugin-changed-2.19.0"/>
+
 - In `2.19.0`, `PublishPluginTask.archiveFile` was replaced with [`archiveFiles`](tools_intellij_platform_gradle_plugin_tasks.md#publishPlugin-archiveFiles) to support multiple native distributions.
   Native variant archives are not signed automatically before publishing.
 - The no-op `setupDependencies` task was removed in `2.19.0`; remove old IDE task-activation references as described [above](#setupdependencies).
-- Since `2.19.0`, Plugin Verifier uses each IDE's bundled runtime by default.
-  Set [`pluginVerification.useBundledRuntime`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-useBundledRuntime) to `false` to use the build runtime instead.
-  An explicit assignment to the [`verifyPlugin.useBundledRuntime`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-useBundledRuntime) task property takes precedence over the extension value.
-- Since `2.20.0`, the preconfigured Starter UI task is named [`testUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi) and uses <path>src/testUi</path>.
+
+#### Plugin Verifier Runtime
+
+<secondary-label ref="gradle-plugin-changed-2.19.0"/>
+
+Plugin Verifier uses each IDE's bundled runtime by default.
+Set [`pluginVerification.useBundledRuntime`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-useBundledRuntime) to `false` to use the build runtime instead.
+An explicit assignment to the [`verifyPlugin.useBundledRuntime`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin-useBundledRuntime) task property takes precedence over the extension value.
+
+#### UI Tests and Bundled-Plugin Classpaths
+
+<secondary-label ref="gradle-plugin-changed-2.20.0"/>
+
+- The preconfigured Starter UI task is named [`testUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi) and uses <path>src/testUi</path>.
   The custom-task container remains `intellijPlatformTesting.testIdeUi`.
 - In `2.20.0`, `testIdeBundledPluginsClasspathEnabled` was removed; bundled plugins are always considered for test classpaths.
   Use [`testIdeBundledPluginsClasspathExcludes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathExcludes) for optional exclusions.
@@ -405,7 +478,9 @@ The `org.jetbrains.intellij.platform.migration` plugin and its legacy stub task 
 
 ### Compiled Integrations
 
-**Changed in `2.20.1`:** `org.jetbrains.intellij.platform.gradle.extensions.IntelliJPlatformTestingExtension.CommonParameters.getBuildDependencies()` now returns the public Gradle `org.gradle.api.tasks.TaskDependency`.
+<secondary-label ref="gradle-plugin-changed-2.20.1"/>
+
+`org.jetbrains.intellij.platform.gradle.extensions.IntelliJPlatformTestingExtension.CommonParameters.getBuildDependencies()` now returns the public Gradle `org.gradle.api.tasks.TaskDependency`.
 It previously returned the internal `org.gradle.api.internal.tasks.DefaultTaskDependency`.
 The former concrete-return JVM method signature was removed.
 Recompile convention plugins and other compiled integrations linked to that signature to avoid `NoSuchMethodError`.

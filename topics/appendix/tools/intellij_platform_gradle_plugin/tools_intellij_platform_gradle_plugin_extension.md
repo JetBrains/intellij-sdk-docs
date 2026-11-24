@@ -129,10 +129,12 @@ See also:
 ### `buildSearchableOptions`
 {#intellijPlatform-buildSearchableOptions}
 
+<secondary-label ref="gradle-plugin-changed-2.15.0"/>
+
 Builds an index of UI components (searchable options) for the plugin.
 Controls the execution of the [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) task.
 
-**Changed in `2.15.0`:** The task is skipped automatically when descriptor analysis finds no `Configurable` extension points.
+The task is skipped automatically when descriptor analysis finds no `Configurable` extension points.
 The [`forceBuildSearchableOptions`](tools_intellij_platform_gradle_plugin_gradle_properties.md#forceBuildSearchableOptions) Gradle property overrides both this optimization and an explicit `buildSearchableOptions = false` setting.
 
 {type="narrow"}
@@ -177,12 +179,15 @@ Default value
 ### `sandboxContainer`
 {#intellijPlatform-sandboxContainer}
 
+<secondary-label ref="gradle-plugin-changed-2.12.0"/>
+<secondary-label ref="gradle-plugin-changed-2.13.0"/>
+
 The path to the sandbox container where tests and IDE instances read and write data.
 
-**Changed in `2.12.0`:** The default moved from <path>build/idea-sandbox/</path> to <path>.intellijPlatform/sandbox/</path>, outside the build directory.
+The default moved from <path>build/idea-sandbox/</path> to <path>.intellijPlatform/sandbox/</path>, outside the build directory.
 The default sandboxes survive `clean`; use [`cleanSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#cleanSandbox) to remove them.
 
-**Changed in `2.13.0`:** Sandbox paths beneath this container also include the project name.
+Sandbox paths beneath this container also include the project name.
 
 {type="narrow"}
 Type
@@ -199,9 +204,8 @@ See also:
 ### `subscriptionKey`
 {#intellijPlatform-subscriptionKey}
 
+<primary-label ref="gradle-plugin-2.19.0"/>
 <secondary-label ref="incubating"/>
-
-**Since:** `2.19.0`.
 
 Specifies the IntelliJ IDEA subscription key file used by sandbox-producing tasks.
 The key file is copied to <path>config/idea.key</path>, and `com.intellij.modules.ultimate` is removed from <path>config/disabled_plugins.txt</path> in each prepared sandbox.
@@ -219,6 +223,8 @@ Default value
 ### `splitMode`
 {#intellijPlatform-splitMode}
 
+<secondary-label ref="gradle-plugin-changed-2.14.0"/>
+
 > [Split Mode](split_mode_and_remote_development.md) requires the IntelliJ Platform in version `241.14473` or later.
 >
 {style="warning"}
@@ -228,7 +234,7 @@ Allows for checking how a plugin works in remote development mode, when one mach
 This property allows running the IDE with backend and frontend parts running in separate processes.
 Use [`pluginInstallationTarget`](#intellijPlatform-pluginInstallationTarget) to specify whether the developed plugin is installed in the frontend, backend, or both parts.
 
-**Since `2.14.0`:** The dedicated [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend) and [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend) tasks can launch the two processes separately.
+The dedicated [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend) and [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend) tasks can launch the two processes separately.
 
 {type="narrow"}
 Type
@@ -244,7 +250,7 @@ See also:
 ### `pluginInstallationTarget` (formerly `splitModeTarget`)
 {#intellijPlatform-pluginInstallationTarget}
 
-**Since:** `2.14.0`.
+<primary-label ref="gradle-plugin-2.14.0"/>
 
 > [Split Mode](split_mode_and_remote_development.md) requires the IntelliJ Platform in version `241.14473` or later.
 >
@@ -268,7 +274,9 @@ See also:
 ### `splitModeTarget`
 {#intellijPlatform-splitModeTarget}
 
-**Changed in `2.14.0`:** Deprecated in favor of [](#intellijPlatform-pluginInstallationTarget) and retained as a compatibility alias.
+<secondary-label ref="gradle-plugin-changed-2.14.0"/>
+
+Deprecated in favor of [](#intellijPlatform-pluginInstallationTarget) and retained as a compatibility alias.
 Use `pluginInstallationTarget` for new configurations.
 
 {type="narrow"}
@@ -282,7 +290,7 @@ Default value
 ## Native Variants
 {#intellijPlatform-nativeVariants}
 
-**Since:** `2.19.0`.
+<primary-label ref="gradle-plugin-2.19.0"/>
 
 The `nativeVariants` extension configures OS- and architecture-specific files that are added to plugin distributions.
 It is useful when a plugin ships native executables or libraries that differ between target platforms.
@@ -779,13 +787,15 @@ See also:
 ### `sinceBuild`
 {#intellijPlatform-pluginConfiguration-ideaVersion-sinceBuild}
 
+<secondary-label ref="gradle-plugin-changed-2.14.0"/>
+
 The earliest IDE version that is compatible with the plugin.
 
 The provided value is used for the `<idea-version since-build=""/>` element attribute.
 
 When [`nativeVariants`](#intellijPlatform-nativeVariants) are enabled, the effective value must resolve to `261` (IntelliJ Platform 2026.1) or later.
 
-**Changed in `2.14.0`:** The default is the `MAJOR` build number of the currently selected IntelliJ Platform, like `233`, rather than `MAJOR.MINOR`.
+The default is the `MAJOR` build number of the currently selected IntelliJ Platform, like `233`, rather than `MAJOR.MINOR`.
 
 {type="narrow"}
 Type
@@ -801,13 +811,15 @@ See also:
 ### `untilBuild`
 {#intellijPlatform-pluginConfiguration-ideaVersion-untilBuild}
 
+<secondary-label ref="gradle-plugin-changed-2.6.0"/>
+
 The latest IDE version that is compatible with the plugin.
 An undefined value signifies compatibility with all IDEs starting from the version mentioned in `since-build`,
 including potential future builds that may cause compatibility issues.
 
 The provided value is used for the `<idea-version until-build=""/>` element attribute.
 
-**Changed in `2.6.0`:** The extension no longer assigns a default value (previously `MAJOR.*`).
+The extension no longer assigns a default value (previously `MAJOR.*`).
 To configure an upper compatibility bound, set a value such as `233.*` explicitly.
 
 The `until-build` attribute can be unset by providing `provider { null }` as a value:
@@ -951,7 +963,7 @@ See also:
 ## Caching
 {#intellijPlatform-caching}
 
-**Since:** `2.8.0`.
+<primary-label ref="gradle-plugin-2.8.0"/>
 
 Configures caching related to resolving IntelliJ Platform dependencies and storing plugin-generated artifacts.
 
@@ -1015,7 +1027,7 @@ The IntelliJ Platform cache is used for storing IntelliJ Platform Gradle Plugin-
 - extracted IntelliJ Platform archives instead of using Gradle cache
 - serialized IDE layout indices used for bundled plugin and module dependency resolution
 
-**Since `2.8.0`:** This path is read-only and finalized when the extension is registered.
+This path is read-only and finalized when the extension is registered.
 Configure it with the [`org.jetbrains.intellij.platform.intellijPlatformCache`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformCache) Gradle property rather than assigning it in the extension.
 
 {type="narrow"}
@@ -1032,7 +1044,7 @@ Default value
 ## Caching IDEs
 {#intellijPlatform-caching-ides}
 
-**Since:** `2.8.0`.
+<primary-label ref="gradle-plugin-2.8.0"/>
 
 Controls caching of IntelliJ Platform IDE distributions downloaded by the plugin.
 
@@ -1069,10 +1081,12 @@ intellijPlatform.caching.ides {
 #### `enabled`
 {#intellijPlatform-caching-ides-enabled}
 
+<secondary-label ref="gradle-plugin-changed-2.10.5"/>
+
 Indicates whether caching for IntelliJ Platform IDEs is enabled globally.
 Individual dependency declarations can override this value with `useCache`.
 
-**Changed in `2.10.5`:** The default comes from the [`intellijPlatformIdesCacheEnabled`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformIdesCacheEnabled) Gradle property.
+The default comes from the [`intellijPlatformIdesCacheEnabled`](tools_intellij_platform_gradle_plugin_gradle_properties.md#intellijPlatformIdesCacheEnabled) Gradle property.
 Caching remains disabled by default.
 
 {type="narrow"}
@@ -1102,8 +1116,10 @@ See also:
 #### `name`
 {#intellijPlatform-caching-ides-name}
 
+<secondary-label ref="gradle-plugin-changed-2.14.0"/>
+
 Function that returns a cache directory name for a given requested IntelliJ Platform artifact.
-**Changed in `2.14.0`:** The default appends the lowercase product mode for backend and frontend requests to keep their writable IDE homes separate.
+The default appends the lowercase product mode for backend and frontend requests to keep their writable IDE homes separate.
 Custom naming functions should also distinguish product modes.
 
 {type="narrow"}
@@ -1582,9 +1598,11 @@ See also:
 ### `failureLevel`
 {#intellijPlatform-pluginVerification-failureLevel}
 
+<secondary-label ref="gradle-plugin-changed-2.15.0"/>
+
 Defines the verification level at which the task should fail if any reported issue matches.
 
-**Changed in `2.15.0`:** The defaults also include `INTERNAL_API_USAGES` and `OVERRIDE_ONLY_API_USAGES`, in addition to `COMPATIBILITY_PROBLEMS`.
+The defaults also include `INTERNAL_API_USAGES` and `OVERRIDE_ONLY_API_USAGES`, in addition to `COMPATIBILITY_PROBLEMS`.
 An upgrade can therefore fail verification for issues that did not fail the build with earlier defaults.
 
 {type="narrow"}
@@ -1676,7 +1694,7 @@ See also:
 ### `useBundledRuntime`
 {#intellijPlatform-pluginVerification-useBundledRuntime}
 
-**Since:** `2.19.0`.
+<primary-label ref="gradle-plugin-2.19.0"/>
 
 Controls whether the IntelliJ Plugin Verifier resolves plugin classes against the JetBrains Runtime bundled with each verified IDE.
 When enabled, no `-runtime-dir` option is passed to the verifier.
@@ -1734,11 +1752,13 @@ See also:
 ## Verify Plugin IDEs
 {#intellijPlatform-pluginVerification-ides}
 
+<secondary-label ref="gradle-plugin-changed-2.14.0"/>
+
 The extension to define the IDEs to be used along with the IntelliJ Plugin Verifier CLI tool for the binary plugin verification.
 
 It provides a set of helpers which add relevant entries to the configuration, which later is used to resolve IntelliJ-based IDE binary releases.
 
-**Changed in `2.14.0`:** When no IDEs are configured explicitly, `recommended()` is applied by default.
+When no IDEs are configured explicitly, `recommended()` is applied by default.
 Disable this fallback with the [`verifyPluginDefaultRecommendedIdes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#verifyPluginDefaultRecommendedIdes) Gradle property.
 Explicit calls to `create()`, `local()`, `current()`, `latest()`, `recommended()`, or `select()` replace this automatic fallback.
 An explicit `recommended()` call still works when the fallback is disabled.

@@ -7,7 +7,9 @@
 ## Diagnose Gradle configuration
 {#diagnose-gradle-configuration}
 
-Since `2.20.0`, the [JSON reporting tasks](tools_intellij_platform_gradle_plugin_tasks.md#json-reports) provide project metadata and diagnostics without compiling or launching an IDE.
+<primary-label ref="gradle-plugin-2.20.0"/>
+
+The [JSON reporting tasks](tools_intellij_platform_gradle_plugin_tasks.md#json-reports) provide project metadata and diagnostics without compiling or launching an IDE.
 Start with [`intellijPlatformInfo`](tools_intellij_platform_gradle_plugin_tasks.md#intellijPlatformInfo), which reports the declared setup and available commands without resolving an IDE by default.
 
 For automation, use a fresh output directory for each invocation.
@@ -56,7 +58,9 @@ Review reports before sharing them: SDK and project paths can identify the local
 ## Run UI tests in CI
 {#run-ui-tests-in-ci}
 
-Since `2.20.0`, the main plugin provides the Starter-based [`testUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi) task and a separate `testUi` source set.
+<primary-label ref="gradle-plugin-2.20.0"/>
+
+The main plugin provides the Starter-based [`testUi`](tools_intellij_platform_gradle_plugin_tasks.md#testIdeUi) task and a separate `testUi` source set.
 Place UI tests in <path>src/testUi/java</path> or, with the Kotlin JVM plugin, <path>src/testUi/kotlin</path>, and resources in <path>src/testUi/resources</path>.
 The task uses JUnit Platform and adds the Starter test-framework dependencies automatically.
 See [](integration_tests_intro.md) for writing Starter tests.
@@ -499,7 +503,9 @@ For reproducible builds, resolve a compatible version and then pin it explicitly
 ## Exclude conflicting libraries
 {#exclude-conflicting-libraries}
 
-Since `2.19.0`, a plugin dependency's configuration block can exclude libraries bundled by that plugin.
+<primary-label ref="gradle-plugin-2.19.0"/>
+
+A plugin dependency's configuration block can exclude libraries bundled by that plugin.
 Use this when a dependency ships a library that conflicts with the version required by the project:
 
 <tabs group="languages">
@@ -538,7 +544,7 @@ The Groovy ID/version overload needs the explicit empty channel argument before 
 See [Bundled Library Exclusions](tools_intellij_platform_gradle_plugin_dependencies_extension.md#plugin-library-exclusions) for the full behavior.
 
 This differs from excluding a Maven dependency from the project's own sandbox runtime classpath.
-For that case, configure `intellijPlatformSandboxRuntimeClasspath` (also available since `2.19.0`):
+For that case, configure `intellijPlatformSandboxRuntimeClasspath`:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -568,7 +574,9 @@ Only exclude a library when the target IDE or another dependency supplies the re
 ## Provide a subscription key to sandbox IDEs
 {#provide-a-subscription-key}
 
-Since `2.19.0`, [`intellijPlatform.subscriptionKey`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-subscriptionKey) supplies a key file to sandbox preparation tasks:
+<primary-label ref="gradle-plugin-2.19.0"/>
+
+[`intellijPlatform.subscriptionKey`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-subscriptionKey) supplies a key file to sandbox preparation tasks:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -606,7 +614,9 @@ Treat prepared sandboxes as sensitive too, and do not upload the key with CI art
 ## Build and run native variants
 {#build-and-run-native-variants}
 
-Since `2.19.0`, [`nativeVariants`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-nativeVariants) can overlay OS- and architecture-specific files onto a shared plugin.
+<primary-label ref="gradle-plugin-2.19.0"/>
+
+[`nativeVariants`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-nativeVariants) can overlay OS- and architecture-specific files onto a shared plugin.
 This feature requires IntelliJ Platform `2026.1` or later and `since-build` of at least `261`.
 Keep common files in the normal plugin layout and configure each target's additional files separately:
 
@@ -670,7 +680,9 @@ Inspect the matching archive when checking a release; the base `buildPlugin` arc
 ## Try the latest IDE installer
 {#try-the-latest-ide-installer}
 
-Since `2.19.0`, the `"latest"` selector resolves the newest available installer for the selected product:
+<primary-label ref="gradle-plugin-2.19.0"/>
+
+The `"latest"` selector resolves the newest available installer for the selected product:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">
@@ -709,7 +721,7 @@ Pin a concrete version for the normal development target, and see [Target Versio
 
 ## Generate a lexer and parser with Grammar-Kit
 
-Since `2.12.0`.
+<primary-label ref="gradle-plugin-2.12.0"/>
 
 The [](tools_intellij_platform_gradle_plugin_plugins.md#grammarkit) sub-plugin adds the [`generateLexer`](tools_intellij_platform_gradle_plugin_tasks.md#generateLexer) and [`generateParser`](tools_intellij_platform_gradle_plugin_tasks.md#generateParser) tasks for generating a [custom language](custom_language_support.md) lexer and parser from [Grammar-Kit](https://github.com/JetBrains/Grammar-Kit) sources.
 It is not applied by the main plugin, so apply it explicitly next to `org.jetbrains.intellij.platform`:

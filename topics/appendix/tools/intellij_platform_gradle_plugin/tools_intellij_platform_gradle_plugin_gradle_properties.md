@@ -61,7 +61,7 @@ org.jetbrains.intellij.platform.intellijPlatformCache=/path/to/intellijPlatformC
 ## `intellijPlatformIdesCache`
 {#intellijPlatformIdesCache}
 
-**Since:** `2.7.0`.
+<primary-label ref="gradle-plugin-2.7.0"/>
 
 Specifies the location of the IntelliJ Platform IDEs cache directory for storing downloaded IDE distributions
 and related artifacts.
@@ -86,7 +86,7 @@ org.jetbrains.intellij.platform.intellijPlatformIdesCache=/path/to/ides-cache/
 ## `intellijPlatformIdesCacheEnabled`
 {#intellijPlatformIdesCacheEnabled}
 
-**Since:** `2.10.5`.
+<primary-label ref="gradle-plugin-2.10.5"/>
 
 Indicates whether caching for IntelliJ Platform IDEs is enabled globally.
 
@@ -140,7 +140,7 @@ org.jetbrains.intellij.platform.noSearchableOptionsWarning=false
 ## `forceBuildSearchableOptions`
 {#forceBuildSearchableOptions}
 
-**Since:** `2.15.0`.
+<primary-label ref="gradle-plugin-2.15.0"/>
 
 Forces the [`buildSearchableOptions`](tools_intellij_platform_gradle_plugin_tasks.md#buildSearchableOptions) task to run even when descriptor analysis doesn't find any `Configurable` extension points.
 This property overrides both the automatic skip optimization and the [`intellijPlatform.buildSearchableOptions`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-buildSearchableOptions) extension property.
@@ -177,9 +177,11 @@ org.jetbrains.intellij.platform.paidPluginSearchableOptionsWarning=false
 ## `productsReleasesAndroidStudioUrl`
 {#productsReleasesAndroidStudioUrl}
 
+<secondary-label ref="gradle-plugin-changed-2.18.0"/>
+
 Specifies the URL from which the list of all Android Studio releases is fetched.
 The JSON listing is used to resolve Android Studio distributions and select IDEs for the [`verifyPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#verifyPlugin) task.
-**Changed in `2.18.0`:** Custom mirrors must provide JSON rather than XML.
+Custom mirrors must provide JSON rather than XML.
 
 {type="narrow"}
 Default value
@@ -225,7 +227,7 @@ org.jetbrains.intellij.platform.selfUpdateCheck=false
 ## `subscriptionKey`
 {#subscriptionKey}
 
-**Since:** `2.19.0`.
+<primary-label ref="gradle-plugin-2.19.0"/>
 
 Specifies the path to an IntelliJ IDEA subscription key file used as the default for [`intellijPlatform.subscriptionKey`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-subscriptionKey).
 The key file is copied to <path>config/idea.key</path>, and `com.intellij.modules.ultimate` is removed from <path>config/disabled_plugins.txt</path> in each prepared sandbox.
@@ -283,7 +285,7 @@ org.jetbrains.intellij.platform.testIdeBundledPluginsClasspathExcludes=
 ## `verifyPluginDefaultRecommendedIdes`
 {#verifyPluginDefaultRecommendedIdes}
 
-**Since:** `2.14.0`.
+<primary-label ref="gradle-plugin-2.14.0"/>
 
 Controls whether [`intellijPlatform.pluginVerification.ides.recommended()`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-pluginVerification-ides) is used automatically when no IntelliJ Plugin Verifier IDEs were configured explicitly.
 Keep this enabled for normal compatibility checks.
@@ -340,7 +342,7 @@ org.jetbrains.intellij.platform.useCacheRedirector=false
 ## `useDefaultSandboxExclusions`
 {#useDefaultSandboxExclusions}
 
-**Since:** `2.19.0`.
+<primary-label ref="gradle-plugin-2.19.0"/>
 
 Controls whether Kotlin standard library and Kotlin Coroutines dependencies provided by the IntelliJ Platform are excluded from sandbox runtime classpaths by default.
 The exclusions apply to sandboxes prepared for running the IDE and tests, including the [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox) and [`prepareTestSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestSandbox) tasks.

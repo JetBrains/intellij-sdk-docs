@@ -94,6 +94,9 @@ All product helpers accept `version` as either a `String` or a `Provider<String>
 
 ### Default Target Platforms
 
+<secondary-label ref="gradle-plugin-intellij-idea-2.9.0"/>
+<secondary-label ref="gradle-plugin-pycharm-2.10.0"/>
+
 See [](#custom-target-platforms) for non-default targets.
 
 | Function                                 | Description                                                      |
@@ -113,8 +116,6 @@ See [](#custom-target-platforms) for non-default targets.
 | `rubymine(version, configure = {})`      | [RubyMine](rubymine.md)                                          |
 | `rustRover(version, configure = {})`     | [RustRover](https://www.jetbrains.com/rust/)                     |
 | `webstorm(version, configure = {})`      | [WebStorm](webstorm.md)                                          |
-
-The unified product helpers `intellijIdea()` and `pycharm()` are available since `2.9.0` and `2.10.0`, respectively.
 
 Notes:
 - Writerside (`WRS`) is deprecated and no longer available as a target IntelliJ Platform.
@@ -432,7 +433,7 @@ If defined explicitly, can be used along with any custom plugin repository, like
 #### Plugin Library Exclusions
 {#plugin-library-exclusions}
 
-Available since `2.19.0`.
+<primary-label ref="gradle-plugin-2.19.0"/>
 
 <p id="excluding-plugin-bundled-libraries">
 A non-bundled plugin may ship libraries in its <path>lib/</path> and <path>lib/modules/</path> directories that conflict with libraries provided by the target IntelliJ Platform or the developed plugin.
@@ -607,7 +608,11 @@ The default `configurationName` is `intellijPlatformTestDependencies`.
 In Groovy, the provider-based version overload requires all three arguments, including the configuration name.
 Published framework dependencies exclude transitive modules already supplied by the target IDE.
 
-Since `2.19.0`, use either `testFrameworks()` overload to add multiple Test Framework variants at once:
+#### `testFrameworks()`
+
+<primary-label ref="gradle-plugin-2.19.0"/>
+
+Use either `testFrameworks()` overload to add multiple Test Framework variants at once:
 
 <tabs group="languages">
 <tab title="Kotlin" group-key="kotlin">

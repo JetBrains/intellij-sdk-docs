@@ -88,6 +88,8 @@ Default value
 ## `ComposeHotReloadAware`
 {#ComposeHotReloadAware}
 
+<primary-label ref="gradle-plugin-2.11.0"/>
+
 <tldr>
 
 **Depends on**: [`initializeIntelliJPlatformPlugin`](tools_intellij_platform_gradle_plugin_tasks.md#initializeIntelliJPlatformPlugin) in non-module projects
@@ -99,7 +101,6 @@ Default value
 </tldr>
 
 Provides the path to the Java Agent file for the Compose Hot Reload agent required to enable hot reloading of Compose UIs.
-Available since `2.11.0`.
 
 
 ### `composeHotReload`
@@ -503,6 +504,8 @@ println("Plugin Name: $name")
 ## `PluginInstallationTargetAware`
 {#PluginInstallationTargetAware}
 
+<primary-label ref="gradle-plugin-2.14.0"/>
+
 <tldr>
 
 **Inherited by**: [`prepareSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareSandbox), [`prepareTestSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestSandbox), [`prepareTestIdePerformanceSandbox`](tools_intellij_platform_gradle_plugin_tasks.md#prepareTestIdePerformanceSandbox), [`runIde`](tools_intellij_platform_gradle_plugin_tasks.md#runIde), [`runIdeBackend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeBackend), [`runIdeFrontend`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeFrontend), [`runIdeSplitMode`](tools_intellij_platform_gradle_plugin_tasks.md#runIdeSplitMode)
@@ -512,7 +515,6 @@ println("Plugin Name: $name")
 </tldr>
 
 Provides the plugin installation-target property used by sandbox producers and split-mode launch tasks.
-Available since `2.14.0`.
 
 ### `pluginInstallationTarget`
 {#PluginInstallationTargetAware-pluginInstallationTarget}

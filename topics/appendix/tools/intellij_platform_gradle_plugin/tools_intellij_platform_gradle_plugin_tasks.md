@@ -11,13 +11,13 @@ The IntelliJ Platform Gradle Plugin introduces a set of tasks to handle activiti
 Task availability depends on the applied [plugin](tools_intellij_platform_gradle_plugin_plugins.md).
 Some registered tasks are skipped by configuration flags, while custom testing tasks must be registered explicitly.
 
-Since `2.19.0`, public tasks are organized into the `intellij platform`, `intellij platform verification`, and `intellij platform info` groups.
-Internal preparation tasks have no group and are hidden from the default task listing.
-Run `./gradlew tasks --all` to include them.
-
 Tasks can depend on each other, implement [](tools_intellij_platform_gradle_plugin_task_awares.md), and be configured independently.
 Caching is task-specific: interactive IDE runs, tests, and reports are untracked, while archive tasks and other utilities may disable build caching.
 However, most cases will be covered by the [](tools_intellij_platform_gradle_plugin_extension.md).
+
+## Task groups
+
+<secondary-label ref="gradle-plugin-changed-2.19.0"/>
 
 The plugin organizes the tasks it registers into dedicated Gradle groups, visible in the <control>Gradle</control> tool window and in the `gradle tasks` output:
 
@@ -26,6 +26,7 @@ The plugin organizes the tasks it registers into dedicated Gradle groups, visibl
 - <control>intellij platform info</control> – informational tasks that print resolved data, such as [`printBundledPlugins`](#printBundledPlugins), [`printBundledModules`](#printBundledModules), and [`printProductsReleases`](#printProductsReleases).
 
 Intermediate and internal tasks, such as [`prepareSandbox`](#prepareSandbox) or [`instrumentCode`](#instrumentCode), are not assigned to any group and appear under Gradle's other tasks.
+Run `./gradlew tasks --all` to include them in the task listing.
 
 
 
@@ -72,6 +73,8 @@ Type
 ## `buildPluginVariants`
 {#buildPluginVariants}
 
+<primary-label ref="gradle-plugin-2.19.0"/>
+
 <link-summary>Builds all OS- and architecture-specific plugin distributions.</link-summary>
 
 <tldr>
@@ -87,7 +90,6 @@ Type
 </tldr>
 
 Builds the fixed matrix of Linux, macOS, and Windows plugin distributions for `x86_64` and `arm64` architectures.
-Available since `2.19.0`.
 The task runs its variant tasks only when [`intellijPlatform.nativeVariants.enabled`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-nativeVariants-enabled) is `true`.
 It does not change the base archive produced by [`buildPlugin`](#buildPlugin).
 
@@ -462,6 +464,8 @@ Default value
 ## `generateLexer`
 {#generateLexer}
 
+<primary-label ref="gradle-plugin-2.12.0"/>
+
 <link-summary>Generates a lexer with JFlex for IntelliJ Platform GrammarKit projects.</link-summary>
 
 <tldr>
@@ -475,7 +479,6 @@ Default value
 </tldr>
 
 Generates a lexer from a `.flex` definition file using JFlex.
-Available since `2.12.0`.
 
 
 ### `sourceFile`
@@ -591,6 +594,8 @@ With the legacy [`targetOutputDir`](#generateLexer-targetOutputDir-deprecated), 
 ## `generateParser`
 {#generateParser}
 
+<primary-label ref="gradle-plugin-2.12.0"/>
+
 <link-summary>Generates a parser with GrammarKit for IntelliJ Platform projects.</link-summary>
 
 <tldr>
@@ -604,7 +609,6 @@ With the legacy [`targetOutputDir`](#generateLexer-targetOutputDir-deprecated), 
 </tldr>
 
 Generates parser and PSI files from a `.bnf` definition file using GrammarKit.
-Available since `2.12.0`.
 
 
 ### `sourceFile`
@@ -684,6 +688,8 @@ Type
 ## `generateSplitModeRunConfigurations`
 {#generateSplitModeRunConfigurations}
 
+<primary-label ref="gradle-plugin-2.14.0"/>
+
 <link-summary>Generates shared IntelliJ IDEA run configurations for split-mode frontend and backend runs.</link-summary>
 
 <tldr>
@@ -697,7 +703,6 @@ Type
 </tldr>
 
 Generates shared IntelliJ IDEA run configurations for split-mode frontend and backend runs, plus a compound run configuration that starts both.
-Available since `2.14.0`.
 The generated Gradle run configurations invoke [`runIdeBackend`](#runIdeBackend) and [`runIdeFrontend`](#runIdeFrontend) with `--purge-old-log-directories`.
 The compound configuration starts those two tasks, not the [`runIdeSplitMode`](#runIdeSplitMode) aggregate task.
 Execution rewrites the three configured output files.
@@ -1000,7 +1005,7 @@ The archive classifier defaults to `instrumented`, and instrumented classes take
 ## JSON Reporting Tasks
 {#json-reports}
 
-Available since `2.20.0`.
+<primary-label ref="gradle-plugin-2.20.0"/>
 
 The following non-interactive tasks write project and SDK observations for people, CI, and command-line agents.
 
@@ -1786,6 +1791,8 @@ Type
 ## `preparePluginVariant_<os>_<arch>`
 {#preparePluginVariant}
 
+<primary-label ref="gradle-plugin-2.19.0"/>
+
 <link-summary>Creates an OS- and architecture-specific plugin JAR.</link-summary>
 
 <tldr>
@@ -1801,7 +1808,6 @@ Type
 </tldr>
 
 The six `preparePluginVariant_<os>_<arch>` tasks create the plugin JARs consumed by the corresponding [`buildPluginVariants_<os>_<arch>`](#buildPluginVariants-variant-tasks) tasks.
-Available since `2.19.0`.
 They are registered for the same Linux, macOS, and Windows `x86_64`/`arm64` matrix and run only when [`intellijPlatform.nativeVariants.enabled`](tools_intellij_platform_gradle_plugin_extension.md#intellijPlatform-nativeVariants-enabled) is `true`.
 
 Before creating a variant JAR, each task validates the effective [`patchPluginXml.sinceBuild`](#patchPluginXml-sinceBuild) value.
@@ -1994,10 +2000,10 @@ Type
 ### `subscriptionKey`
 {#prepareSandbox-subscriptionKey}
 
+<primary-label ref="gradle-plugin-2.19.0"/>
 <secondary-label ref="incubating"/>
 
 Specifies the IntelliJ IDEA subscription key file used in this sandbox.
-Available since `2.19.0`.
 The key file is copied to <path>config/idea.key</path>, and `com.intellij.modules.ultimate` is removed from <path>config/disabled_plugins.txt</path>.
 
 {type="narrow"}
@@ -2034,8 +2040,10 @@ Type
 ### `runtimeClasspath`
 {#prepareSandbox-runtimeClasspath}
 
+<secondary-label ref="gradle-plugin-changed-2.19.0"/>
+
 Dependencies copied into the sandbox plugin's <path>lib</path> directory.
-Since `2.19.0`, regular sandboxes use `intellijPlatformSandboxRuntimeClasspath`, while test sandboxes use `intellijPlatformTestSandboxRuntimeClasspath`.
+Regular sandboxes use `intellijPlatformSandboxRuntimeClasspath`, while test sandboxes use `intellijPlatformTestSandboxRuntimeClasspath`.
 These dedicated configurations allow [sandbox-only dependency exclusions](tools_intellij_platform_gradle_plugin_dependencies_extension.md#sandbox-runtime-classpaths) without changing the project's compile or test classpaths.
 Plugin modules and composed modules are subtracted from this collection because they are packaged separately.
 
@@ -2411,8 +2419,10 @@ Values
 ### `splitModeServerPort`
 {#runIde-splitModeServerPort}
 
+<secondary-label ref="gradle-plugin-changed-2.17.0"/>
+
 The backend server port used by split-mode backend and frontend tasks.
-Since `2.17.0`, setting it to `0` chooses and logs a random free port in `5990..6989`, with an OS-assigned ephemeral port as a fallback.
+Setting it to `0` chooses and logs a random free port in `5990..6989`, with an OS-assigned ephemeral port as a fallback.
 The resolved value remains stable for that execution.
 
 {type="narrow"}
@@ -2444,8 +2454,9 @@ Type
 ### `purgeOldLogDirectories`
 {#runIde-purgeOldLogDirectories}
 
+<primary-label ref="gradle-plugin-2.15.0"/>
+
 Removes stale sandbox log directories before launching the IDE.
-Available since `2.15.0`.
 This is useful for split-mode run configurations where frontend and backend logs are attached to the IDE run configuration.
 
 {type="narrow"}
@@ -2473,6 +2484,8 @@ Type
 ## `runIdeBackend`
 {#runIdeBackend}
 
+<primary-label ref="gradle-plugin-2.14.0"/>
+
 <link-summary>Runs the IDE backend process in Split Mode.</link-summary>
 
 <tldr>
@@ -2488,7 +2501,6 @@ Type
 </tldr>
 
 Runs the IDE backend process in Split Mode.
-Available since `2.14.0`.
 The task writes the frontend join link to [`splitModeFrontendJoinLinkFile`](tools_intellij_platform_gradle_plugin_task_awares.md#SplitModeAware-splitModeFrontendJoinLinkFile), which is then consumed by [`runIdeFrontend`](#runIdeFrontend).
 It launches `serverMode -p <port>` and defaults to installing the plugin in the backend sandbox.
 The backend PID is recorded on a best-effort basis and removed when the process exits.
@@ -2502,6 +2514,8 @@ Use `argumentProviders` instead.
 
 ## `runIdeFrontend`
 {#runIdeFrontend}
+
+<primary-label ref="gradle-plugin-2.14.0"/>
 
 <link-summary>Runs the JetBrains Client frontend process in Split Mode.</link-summary>
 
@@ -2518,7 +2532,6 @@ Use `argumentProviders` instead.
 </tldr>
 
 Runs the JetBrains Client frontend process in Split Mode.
-Available since `2.14.0`.
 The task waits for the join link written by [`runIdeBackend`](#runIdeBackend), or uses [`splitModeFrontendJoinLink`](#runIde-splitModeFrontendJoinLink) when it is configured explicitly.
 Without an explicit link, it waits up to 30 seconds for an available backend and then fails.
 It launches `thinClient` from the full IDE distribution and defaults to installing the plugin in the frontend sandbox.
@@ -2531,6 +2544,8 @@ Use `argumentProviders` instead.
 
 ## `runIdeSplitMode`
 {#runIdeSplitMode}
+
+<primary-label ref="gradle-plugin-2.17.0"/>
 
 <link-summary>Runs the IDE backend and JetBrains Client frontend in one Gradle invocation.</link-summary>
 
@@ -2547,7 +2562,6 @@ Use `argumentProviders` instead.
 </tldr>
 
 Starts the backend, waits up to 30 seconds for its join link, then starts the frontend using the separate frontend sandbox.
-Available since `2.17.0`.
 It uses the [`runIde`](#runIde) properties and enables Split Mode by default.
 The backend launch is captured before frontend reconfiguration so backend restarts preserve its original settings.
 After the frontend finishes successfully, the task waits for the backend to exit.
@@ -2831,6 +2845,8 @@ Default value
 ## `test`
 {#test}
 
+<secondary-label ref="gradle-plugin-changed-2.20.0"/>
+
 <link-summary>The base Gradle test task preconfigured to run IntelliJ Platform tests.</link-summary>
 
 <tldr>
@@ -2849,7 +2865,7 @@ The base Gradle `test` task is preconfigured using [`TestCompanion`](%gh-ijpgp%/
 
 The task retains Gradle's `Test` type and uses [`prepareTest`](#prepareTest) for IntelliJ Platform and sandbox capabilities.
 
-Since `2.20.0`, bundled plugins declared in the target IDE's <path>product-info.json</path> are added to the test classpath automatically, subject to [`testIdeBundledPluginsClasspathExcludes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathExcludes), class-clash detection, and transitive exclusions.
+Bundled plugins declared in the target IDE's <path>product-info.json</path> are added to the test classpath automatically, subject to [`testIdeBundledPluginsClasspathExcludes`](tools_intellij_platform_gradle_plugin_gradle_properties.md#testIdeBundledPluginsClasspathExcludes), class-clash detection, and transitive exclusions.
 Explicitly declared plugins and modules, mandatory dependencies of the tested plugin and its plugin dependencies, and their dependencies are retained despite exclusions.
 Required content-module descriptors are considered, including descriptors in split JARs under <path>lib/modules</path>.
 Use `testBundledPlugin()` to declare a plugin explicitly when necessary, and `--info` to inspect exclusion reasons.
@@ -2954,6 +2970,7 @@ Required
 ## `testUi`
 {#testIdeUi}
 
+<primary-label ref="gradle-plugin-2.20.0"/>
 <secondary-label ref="incubating"/>
 
 <link-summary>Runs the IDE instance with the developed plugin and Starter framework for UI testing.</link-summary>
@@ -2971,7 +2988,7 @@ Required
 </tldr>
 
 Runs the IDE instance with the developed plugin and Starter framework for UI testing.
-Since `2.20.0`, the registered task name is `testUi`, not `testIdeUi`; the task type remains `TestIdeUiTask`.
+The registered task name is `testUi`, not `testIdeUi`; the task type remains `TestIdeUiTask`.
 It creates or reuses a source set matching the task name: <path>src/testUi</path> for the standard task and <path>src/extraUi</path> for a custom `extraUi` task.
 Dependencies use that source set's configurations, such as `testUiImplementation` and `testUiRuntimeOnly`.
 
@@ -3224,8 +3241,9 @@ Command-line option
 ### `useBundledRuntime`
 {#verifyPlugin-useBundledRuntime}
 
+<primary-label ref="gradle-plugin-2.19.0"/>
+
 Uses each verified IDE's bundled JetBrains Runtime for resolving plugin classes.
-Available since `2.19.0`.
 When enabled, the CLI receives no `-runtime-dir`; the task's resolved runtime is supplied through `JAVA_HOME` only as a fallback for IDEs without a bundled runtime.
 Set this to `false` to force the task's `runtimeDirectory` for every target IDE via `-runtime-dir`.
 This controls verification class resolution, not the JVM running Gradle.

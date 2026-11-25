@@ -67,7 +67,7 @@ application/project [services](plugin_services.md) provided by a plugin.
 <snippet id="serviceScopes">
 
 The **Application Service** and **Project Service** scopes are bound to an application and project [service](plugin_services.md#types) lifetimes accordingly.
-They are children of the [intersection scopes](#intersection-scopes), which means that they are canceled when the application/project is closed or a plugin is unloaded.
+They are children of the [intersection scopes](coroutine_scopes.md#intersection-scopes), which means that they are canceled when the application/project is closed or a plugin is unloaded.
 
 The service scope is provided to services via constructor injection.
 The following constructor signatures are supported:

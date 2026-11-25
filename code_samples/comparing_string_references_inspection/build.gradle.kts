@@ -9,7 +9,7 @@ plugins {
 
 dependencies {
   intellijPlatform {
-    intellijIdea("2026.1.5")
+    intellijIdea("2026.1.5.2")
     bundledPlugin("com.intellij.java")
 
     testFramework(TestFrameworkType.Platform)

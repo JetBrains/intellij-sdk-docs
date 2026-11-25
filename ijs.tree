@@ -207,7 +207,12 @@
     </toc-element>
     <toc-element topic="element_patterns.md"/>
     <toc-element topic="uast.md" toc-title="Unified AST"/>
-    <toc-element topic="xml_dom_api.md"/>
+    <toc-element topic="xml_models_dom.md" accepts-web-file-names="xml_dom_api.html">
+      <toc-element topic="defining_dom_model.md"/>
+      <toc-element topic="working_with_dom_elements.md"/>
+      <toc-element topic="dom_highlighting_and_resolving.md"/>
+      <toc-element topic="dom_based_gui.md"/>
+    </toc-element>
   </toc-element>
   <toc-element toc-title="Features">
     <!--<toc-element toc-title="Navigation"/>--> <!--TODO-->

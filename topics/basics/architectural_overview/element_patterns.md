@@ -30,7 +30,7 @@ Some built-in languages in the IntelliJ Platform implement their own pattern cla
 
 - [`XmlPatterns`](%gh-ic%/xml/xml-psi-api/src/com/intellij/patterns/XmlPatterns.java) provides patterns for XML attributes, values, entities, and texts.
 - [`PsiJavaPatterns`](%gh-ic%/java/java-psi-api/src/com/intellij/patterns/PsiJavaPatterns.java) provides patterns for literals, strings, arguments, and function/method arguments for Java.
-- [`DomPatterns`](%gh-ic%/xml/dom-openapi/src/com/intellij/patterns/DomPatterns.java) builds upon `XmlPatterns` and acts as a wrapper to provide further patterns for [DOM-API](xml_dom_api.md).
+- [`DomPatterns`](%gh-ic%/xml/dom-openapi/src/com/intellij/patterns/DomPatterns.java) builds upon `XmlPatterns` and acts as a wrapper to provide further patterns for [DOM API](xml_models_dom.md).
 
 ## Examples
 

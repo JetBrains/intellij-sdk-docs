@@ -18,7 +18,7 @@ See [](getting_help.topic#problems-with-code-support-issues) on how to post new 
 
 ## Working with XML and XML DOM
 
-> See also [](xml_dom_api.md).
+> See also [](xml_models_dom.md).
 
 ### How do I register a DTD or XSD?
 

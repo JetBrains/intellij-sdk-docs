@@ -53,7 +53,7 @@ Coroutine Scope {id=coroutine-scope}
 ## D
 
 Document Object Model _(DOM)_ {id=document-object-model}
-: [](xml_dom_api.md) abstracts working with XML files based on a custom semantic model.
+: [DOM](xml_models_dom.md) abstracts working with XML files based on a custom semantic model.
 
 ## E
 

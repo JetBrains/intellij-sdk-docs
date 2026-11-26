@@ -99,7 +99,7 @@ There are serializable (in terms of `kotlinx.serialization` framework) DTO class
    - Declare a project- or application-level topic in the shared plugin module by using the [`ProjectRemoteTopic`](%gh-ic%/platform/remote-topics/shared/src/com/intellij/platform/rpc/topics/ProjectRemoteTopic.kt) or [`ApplicationRemoteTopic`](%gh-ic%/platform/remote-topics/shared/src/com/intellij/platform/rpc/topics/ApplicationRemoteTopic.kt), respectively
    - Subscribe to the topic in the frontend plugin module via the <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.platform.rpc.applicationRemoteTopicListener"/></include> – code to display the desired notification can be invoked here
    - Push the serializable DTO class into the topic in the backend plugin module where necessary – as soon as the DTO is delivered, the frontend topic listener will do its job
-   - Example: [ShowStructurePopupRemoteTopicListener.kt](https://github.com/JetBrains/intellij-community/blob/1b63f9058d6285980c1eac14b8b59fca251751b7/platform/structure-view-impl/frontend/src/ShowStructurePopupRemoteTopicListener.kt)
+   - Example: [`FrameNotificationRemoteTopicListener`](%gh-ic%/platform/xdebugger-impl/frontend/src/com/intellij/platform/debugger/impl/frontend/frame/FrameNotificationRemoteTopicListener.kt)
 
 **Expected Outcome**<br>
 Frontend UI exchanges serializable data with backend via RPC or RemoteTopic API.
@@ -133,7 +133,7 @@ Necessity of tuning the code depends on the specifics of the feature.
    4. Consider asking on the [JetBrains Platform Forum](https://platform.jetbrains.com) to discuss what could be done in a specific case.
 3. Display empty state: UI must render without waiting for backend; show placeholders and progressively fill in data.
 4. Load large state: avoid “send everything at once” RPC implementations; use paging/lazy loading, and request only what the UI needs now.
-   Example: [BackendRecentFileEventsModel.kt](https://github.com/JetBrains/intellij-community/blob/1c3952828ff3af2d18f99a6721c48bb22f97bd57/platform/recentFiles/backend/src/com/intellij/platform/recentFiles/backend/BackendRecentFileEventsModel.kt#L164)
+   Example: `scheduleApplyChanges()` in [`RecentFileEventsModel`](%gh-ic%/platform/recentFiles/shared/src/com/intellij/platform/recentFiles/shared/RecentFileEventsModel.kt)
 5. Do not load data too frequently: avoid chatty RPC (per keystroke, per scroll tick).
    Batch requests, cache results, debounce UI events.
    Example: [`RecentFilesEditorTypingListener`](%gh-ic%/platform/recentFiles/frontend/src/com/intellij/platform/recentFiles/frontend/RecentFilesEditorTypingListener.kt)

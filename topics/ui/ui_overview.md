@@ -1,4 +1,7 @@
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+
 # User interface overview
+
 <link-summary>An introduction to IntelliJ IDE layout and core UI components</link-summary>
 
 By default, all IntelliJ-based IDEs use the following layout:

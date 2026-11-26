@@ -1,6 +1,6 @@
-# Notable Changes in IntelliJ Platform and Plugins API 2021.*
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
-<!-- Copyright 2000-2025 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+# Notable Changes in IntelliJ Platform and Plugins API 2021.*
 
 <link-summary>List of known Notable API Changes in 2021.*</link-summary>
 

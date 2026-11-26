@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Providing Translations
 
@@ -26,6 +26,7 @@ If it is required to translate a plugin, see the [](#bundled-translations) secti
 
 Language packs must define their language.
 The language definition is provided in the [`plugin.xml`](plugin_configuration_file.md) file with <include from="snippets.topic" element-id="ep"><var name="ep" value="com.intellij.languageBundle"/></include>, for example:
+
 ```xml
 <extensions defaultExtensionNs="com.intellij">
   <languageBundle locale="zh-CN"/>

@@ -94,11 +94,13 @@ The tag can also have the following optional attributes.
 ### Special Cases
 
 *Nested* tags are supported:
+
 ```xml
 <warning>warning_highlight<info>warning_and_info_highlight</info>warning_highlight</warning>
 ```
 
 *Overlapping* tags (annotations) are currently **not supported** in the test framework (but displayed correctly in the editor, albeit this is not an officially supported scenario):
+
 ```xml
 <warning>warning_highlight<info>warning-and_info_highlight</warning>info_highlight</info>
 ```

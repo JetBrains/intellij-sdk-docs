@@ -321,6 +321,7 @@ If an inspected component can be styled with the UI control key, it will include
 
 A new theme can be based on an existing theme and inherit its customizations.
 To define a parent there, in the root of a theme description file, add:
+
 ```json
 {
   ...
@@ -328,6 +329,7 @@ To define a parent there, in the root of a theme description file, add:
   ...
 }
 ```
+
 The parent theme's ID is the `id` attribute of the `themeProvider` element registered in the <path>plugin.xml</path> file, for example:
 
 ```xml

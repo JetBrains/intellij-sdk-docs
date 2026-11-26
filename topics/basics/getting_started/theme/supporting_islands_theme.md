@@ -25,6 +25,7 @@ An example for a **dark** custom theme:
     }
 }
 ```
+
 For a **light** theme, inherit from 'Islands Light'.
 
 Here is the Dark Purple theme without and with inheritance from 'Islands Dark':

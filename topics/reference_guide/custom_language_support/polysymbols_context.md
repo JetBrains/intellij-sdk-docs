@@ -234,6 +234,7 @@ because any unexpected change in the rules will cause rescanning of the project,
 > The `.ws-context` file support is available since 2024.1.2.
 
 The user can force a context with a `.ws-context` JSON file, e.g.:
+
 ```json
 {
   "framework": "vue",

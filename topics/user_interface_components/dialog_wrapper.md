@@ -62,6 +62,7 @@ To get the exit code of a modal dialog, use the `getExitCode()` method to check 
 The `showAndGet()` method can be used to combine these two calls.
 
 To execute some code after a non-modal dialog is closed, override the `doOKAction()`, `doCancelAction()`, or register a [disposable](disposers.md), for example:
+
 ```java
 Disposer.register(dialog.getDisposable(), () -> action());
 ```

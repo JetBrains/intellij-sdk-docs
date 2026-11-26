@@ -121,6 +121,7 @@ Overall, avoid overriding this method to provide property values
 and instead define property getters by annotating properties, fields, or methods with `PolySymbol.Property` annotation.
 
 E.g., to provide custom presentation for a symbol, implement getter for `PolySymbol.TextAttributesKeyProperty`:
+
 ```kotlin
   class MySymbol: PolySymbol {
 

@@ -111,6 +111,7 @@ public FrameworkSupportInModuleProvider createProvider() {
   };
 }
 ```
+
 ## Compile and Run the Plugin
 
 See [Code Samples](code_samples.md) on how to set up and run the plugin.

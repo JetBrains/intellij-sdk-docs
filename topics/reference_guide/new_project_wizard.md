@@ -127,6 +127,7 @@ title New Project
 @endsalt
 
 ```
+
 ### Root Step
 
 The root project wizard step initializes a data holder and other properties shared with all descendant steps in the wizard.
@@ -299,6 +300,7 @@ override val pathProperty: GraphProperty<String> =
 Both properties are lazily initialized with default values based on the current context.
 
 Data properties delegate to the graph properties:
+
 ```kotlin
 override var name: String by nameProperty
 override var path: String by pathProperty
@@ -308,6 +310,7 @@ Any read or update of a data or graph property will update its counterpart.
 
 
 Dependencies between properties are defined during step instance initialization:
+
 ```kotlin
 init {
   nameProperty.dependsOn(pathProperty, ::suggestUniqueName)
@@ -317,6 +320,7 @@ init {
 It means that whenever `pathProperty` is changed, the `nameProperty` will be updated using the provided `suggestUniqueName()` function.
 
 Properties are also bound to the UI allowing for synchronizing them with the UI in both directions:
+
 ```kotlin
 textField()
   .bindText(nameProperty.trim())
@@ -326,12 +330,14 @@ textFieldWithBrowseButton(fileChooserDescriptor, context.project)
 ```
 
 In addition, there is another graph property created from path and name graph properties:
+
 ```kotlin
 val locationProperty = pathProperty.joinCanonicalPath(nameProperty)
 ```
 
 `locationProperty` will be updated whenever `pathProperty` or `nameProperty` is updated, and it will contain a path built of the path and name.
 The value of the property is bound to the comment component displayed under the location row:
+
 ```kotlin
 textFieldWithBrowseButton(fileChooserDescriptor, context.project)
   // ...
@@ -350,6 +356,7 @@ When the user selects it for the first time, and later they create another proje
 This behavior can be implemented by binding graph properties to persistent storage via methods from
 [`BindUtil`](%gh-ic%/platform/platform-api/src/com/intellij/openapi/observable/util/BindUtil.kt),
 for example:
+
 ```kotlin
 private val gitProperty = propertyGraph.property(false)
     .bindBooleanStorage(GIT_PROPERTY_NAME)

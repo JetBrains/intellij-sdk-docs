@@ -156,6 +156,7 @@ A minimal SVG icon file:
   <rect width="100%" height="100%" fill="green"/>
 </svg>
 ```
+
 #### HiDPI Version
 
 The icon graphics of such an icon can be expressed in more details via double precision.
@@ -204,6 +205,7 @@ For each New UI icon, add a mapping entry inside `expui` block.
 Each directory starts a new block containing all its entries (see linked `MavenIconMappings.json` sample from above).
 
 In this example, the icon root directory is named <path>icons</path>:
+
 ```json
 {
   "icons": {

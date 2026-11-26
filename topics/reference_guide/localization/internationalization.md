@@ -318,12 +318,14 @@ concept.dependency=Zależność
 ```
 
 Correct result:
+
 ```kotlin
 message("dialog.title.name.0.1", message("concept.library"), "foo")
 // Biblioteka 'foo'
 ```
 
 Wrong result:
+
 ```kotlin
 message("dialog.title.add.0", message("concept.library"))
 // Dodaj Biblioteka

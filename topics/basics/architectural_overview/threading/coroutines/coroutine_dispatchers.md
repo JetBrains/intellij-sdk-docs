@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Coroutine Dispatchers
 <primary-label ref="2024.1"/>
@@ -94,6 +94,7 @@ A single coroutine is not bound to the same thread during the whole execution ti
 It may happen that a coroutine starts on thread A, is suspended, and finished on thread B, even if the whole is executed with the same dispatcher context.
 
 Consider the following code snippet:
+
 ```kotlin
 suspend fun doSomething() {
   val fetchedData = suspendingTask()

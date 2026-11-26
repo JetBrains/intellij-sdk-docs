@@ -20,6 +20,7 @@ Driver framework uses a standard Java Remote Method Invocation (RMI) protocol.
 This protocol allows tests to access objects and invoke methods in the JVM running the IDE.
 
 The architecture of RMI protocol is as follows:
+
 ```plantuml
 @startuml
 box "Test Process" #F0F0F0

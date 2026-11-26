@@ -242,6 +242,7 @@ Highlights:
 : Use `/html/vue-directives` to contribute Vue directives.
 Use `attribute-value` property to specify the type of value expression.
 E.g.:
+
 ```JSON
 {
     "attribute-value": {
@@ -274,6 +275,7 @@ A Vue `/html/vue-components` contribution supports:
 : Use `/html/slots` to contribute Vue component slots.
 For scoped slots, use `vue-properties` to provide a list of scoped slot properties.
 Example:
+
 ```JSON
 {
     "slots": [{
@@ -308,6 +310,7 @@ Example:
 `html/vue-model`
 : Use `html/vue-model` to contribute settings for Vue model directive.
 E.g.:
+
 ```JSON
 {
     "vue-model": {
@@ -324,6 +327,7 @@ A Vue `/html/vue-directives` contribution supports:
 `/html/argument`
 : Use `/html/argument` as a Vue directive argument.
 E.g.:
+
 ```JSON
 {
     "argument": {
@@ -344,6 +348,7 @@ E.g.:
 `/html/modifiers`
 : Use `/html/modifiers` as a Vue directive modifier.
 E.g.:
+
 ```JSON
 {
     "modifiers": [

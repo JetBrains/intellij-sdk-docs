@@ -342,6 +342,7 @@ If providing users with a TrustStore, generate one with the public key using `ke
 ```bash
 keytool -import -alias IdeaPlugin -file chain.crt -keystore pluginKeystore.jks -storepass changeit
 ```
+
 (note: the TrustStore password must remain `changeit`)
 
 Otherwise, users may add the public key manually to <ui-path>Settings | Plugins | Manage Plugin Certificates</ui-path>.

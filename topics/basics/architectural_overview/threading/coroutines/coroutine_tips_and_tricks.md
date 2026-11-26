@@ -1,4 +1,4 @@
-<!-- Copyright 2000-2024 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 
 # Coroutine Tips and Tricks
 <primary-label ref="2024.1"/>
@@ -106,10 +106,13 @@ val job = coroutineScope.launch {
 ```
 
 When the job is no longer needed, remember to cancel the launched coroutine:
+
 ```kotlin
 job.cancel()
 ```
+
 or the whole scope:
+
 ```kotlin
 coroutineScope.cancel()
 ```

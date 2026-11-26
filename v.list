@@ -26,6 +26,7 @@
   <var name="gh-ic-base" value="https://github.com/JetBrains/intellij-community"/>
   <var name="gh-ic" value="%gh-ic-base%/tree/%ijPlatformReleaseTag%"/>
   <var name="gh-ic-master" value="%gh-ic-base%/tree/master"/>
+  <!--<editor-fold desc="Major version branches">-->
   <var name="gh-ic-263-master" value="%gh-ic-base%/tree/263"/>
   <var name="gh-ic-262-master" value="%gh-ic-base%/tree/262"/>
   <var name="gh-ic-261-master" value="%gh-ic-base%/tree/261"/>
@@ -47,6 +48,7 @@
   <var name="gh-ic-203-master" value="%gh-ic-base%/tree/203"/>
   <var name="gh-ic-202-master" value="%gh-ic-base%/tree/202"/>
   <var name="gh-ic-201-master" value="%gh-ic-base%/tree/201"/>
+  <!--</editor-fold>-->
 
   <var name="gh-ij-android" value="https://github.com/JetBrains/android/tree/%ijPlatformReleaseTag%"/>
 

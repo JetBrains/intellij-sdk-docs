@@ -91,7 +91,7 @@ There are serializable (in terms of `kotlinx.serialization` framework) DTO class
      Remember that a proper UX is one of the main reasons for initiating the entire splitting process, see the [split-mode introduction](split_mode_and_remote_development.md).
    - RPC can't be called on [EDT](threading_model.md).
      Avoid wrapping it in `runBlockingCancellable` unless it is absolutely necessary and the consequences of such a decision are clear, namely blocking the caller thread and breaking the structured concurrency and suspending API concepts.
-   - Consider using the existing platform abstraction for shared state as a reference: [FlowWithHistory.kt](https://github.com/JetBrains/intellij-community/blob/1c3952828ff3af2d18f99a6721c48bb22f97bd57/platform/lang-impl/src/com/intellij/build/FlowWithHistory.kt).
+   - Consider using the existing platform abstraction for shared state as a reference: [`FlowWithHistory`](%gh-ic%/platform/lang-impl/src/com/intellij/build/FlowWithHistory.kt).
 5. RPC is designed to be initiated by the frontend, which implies that users always interact with one of the IDE UI components that naturally belong to the frontend.
    In some cases, however, it is required to initiate some UI display from within the backend code.
    For example, a long backend process may want to show a notification after it finishes.
@@ -119,7 +119,7 @@ Necessity of tuning the code depends on the specifics of the feature.
 
 1. Handle reconnection: wrap RPC calls in [`durable {}`](%gh-ic%/fleet/rpc/srcCommonMain/fleet/rpc/client/Durable.kt); this wrapper will restart the call if a network error occurs.
    Be careful with any side effects the code inside the durable block produces – ideally, avoid them.
-  Example: [RecentFileModelSynchronizer.kt](https://github.com/JetBrains/intellij-community/blob/1c3952828ff3af2d18f99a6721c48bb22f97bd57/platform/recentFiles/frontend/src/com/intellij/platform/recentFiles/frontend/model/RecentFileModelSynchronizer.kt)
+  Example: [`RecentFileModelSynchronizer`](%gh-ic%/platform/recentFiles/frontend/src/com/intellij/platform/recentFiles/frontend/model/RecentFileModelSynchronizer.kt)
 2. Register actions in proper plugin modules
    1. Register actions on the frontend side, if possible.
       The possibility is determined by the action's update method: if it requires backend entities, the action belongs on the backend.
@@ -136,7 +136,7 @@ Necessity of tuning the code depends on the specifics of the feature.
    Example: [BackendRecentFileEventsModel.kt](https://github.com/JetBrains/intellij-community/blob/1c3952828ff3af2d18f99a6721c48bb22f97bd57/platform/recentFiles/backend/src/com/intellij/platform/recentFiles/backend/BackendRecentFileEventsModel.kt#L164)
 5. Do not load data too frequently: avoid chatty RPC (per keystroke, per scroll tick).
    Batch requests, cache results, debounce UI events.
-   Example: [RecentFilesEditorTypingListener.kt](https://github.com/JetBrains/intellij-community/blob/1c3952828ff3af2d18f99a6721c48bb22f97bd57/platform/recentFiles/frontend/src/com/intellij/platform/recentFiles/frontend/RecentFilesEditorTypingListener.kt)
+   Example: [`RecentFilesEditorTypingListener`](%gh-ic%/platform/recentFiles/frontend/src/com/intellij/platform/recentFiles/frontend/RecentFilesEditorTypingListener.kt)
 
 **Expected Outcome**<br>
 Known issues are mitigated, and the plugin quality is now good enough.

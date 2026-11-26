@@ -26,6 +26,9 @@
       <option name="loggerFactoryMethodName" value="getLogger,getLogger,getLog,getLogger" />
     </inspection_tool>
     <inspection_tool class="LongLine" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="MarkdownGithubLinkVerifier" enabled="true" level="ERROR" enabled_by_default="true">
+      <option name="parallelRequests" value="16" />
+    </inspection_tool>
     <inspection_tool class="NonFinalFieldInImmutable" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SSBasedInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="TocElementsTocTitleRedundant" enabled="true" level="WEAK WARNING" enabled_by_default="true" />

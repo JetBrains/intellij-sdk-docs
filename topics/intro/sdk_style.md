@@ -16,6 +16,12 @@ That question might be broad or narrowly-focused, but either way, our goal is to
 
 To verify grammar and correct spelling, it is highly recommended to use [Grazie Professional](https://plugins.jetbrains.com/plugin/16136-grazie-professional) plugin to highlight any issues on-the-fly in the IDE.
 
+> Existing pages are not fully consistent with this guide, as some of them predate the current rules.
+> When a page and this guide disagree, follow the guide and do not copy the outdated patterns.
+> Fixing such issues in the lines being edited is welcome, but do not mass-rewrite unrelated pages in the same change.
+>
+{style="note" title="Existing pages"}
+
 ## Documentation Markup
 
 The documentation project is using [Writerside](https://plugins.jetbrains.com/plugin/20158-writerside), so the plugin should be installed to have full support in the IDE.
@@ -26,8 +32,11 @@ The topic files themselves are [Markdown](https://github.github.com/gfm/) files 
 Each Markdown file **must** start with a copyright notice, formatted using HTML comment notation:
 
 ```html
-<!-- Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
+<!-- Copyright 2000-2026 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license. -->
 ```
+
+Use the current year as the end year in new files.
+When editing an existing file, update the end year to the current year.
 
 It **must** be followed by a header defining its title using a level 1 heading:
 
@@ -45,9 +54,19 @@ Every page **should** provide a short excerpt (usually one sentence) using the d
 <link-summary>Defining groups of related settings.</link-summary>
 ```
 
+#### Version Label
+
+If the entire page describes a feature available since a specific version, add a `<primary-label>` below the title, referencing a label defined in <path>labels.list</path>:
+
+```html
+<primary-label ref="2026.1"/>
+```
+
+If only a section is version-specific, put the label right below the section heading instead.
+
 #### Highlighted Links
 
-A page can highlight related topics and other important links before the actual content using the `<tldr>` tag.
+The optional `<tldr>` tag highlights related topics and other important links before the actual content.
 Links must be grouped using "**Bold Category Name**: link1, link2, \[...]" ([Example](language_and_filetype.md)).
 
 Use _Reference_ to link to other topics, _Code_ to link to code/files, _UI Guidelines_ for links to [UI Guidelines](ui_guidelines_welcome.topic), and _Product Help_ for links to [IntelliJ IDEA Help](https://www.jetbrains.com/help/idea).
@@ -55,6 +74,15 @@ Use _Reference_ to link to other topics, _Code_ to link to code/files, _UI Guide
 #### Introductory Text
 
 Do **not** use headings like _Introduction_, _Overview_, etc. for any introductory text.
+Put the introductory text directly below the title, describing what the feature is and when a plugin needs it.
+
+#### Headings
+
+Use Title Case for all headings.
+
+Use `##` for main sections, which appear in the on-page navigation, and `###` for subsections.
+Use `####` sparingly, and `#####` only on reference-style pages.
+Deeper headings are not shown in the on-page navigation; if a page needs them, consider splitting it into child pages.
 
 ## Content Style
 
@@ -82,6 +110,7 @@ For very long sentences, add additional line breaks at clause boundaries
 (after `,` or `:`, or before `and`/`which`), never at a fixed width.
 Very long [links](#links), typically links to IntelliJ Platform classes, should also be on a separate line.
 Indent continuation lines in list items, and start them with `>` in callouts.
+Do not break lines in table cells or headings.
 
 Consistent text styles are used to standardize references and keywords:
 
@@ -144,7 +173,11 @@ General Markdown links have the default Markdown link style:
 #### Links to IntelliJ Platform Source
 
 Links to files in the IntelliJ Platform ([`intellij-community`](%gh-ic%/README.md)) repository use the `%\gh-ic%` prefix instead of the full URL to the repository.
+Never hard-code the `https://github.com/JetBrains/intellij-community/` URL.
 Links to files in source code packages in other GitHub repositories follow the same rules, except the links use a different custom `gh-...` prefix defined in <path>v.list</path>.
+
+The `%\gh-ic%` prefix points to the release tag defined by `%\ijPlatformReleaseTag%` in <path>v.list</path>, so the linked file must exist at this tag.
+If an API exists only on the `master` branch and is not released yet, use the `%\gh-ic-master%` prefix instead.
 
 * `[README.md](%\gh-ic%/README.md)`{disable-links} links to any general, non-code information files. ([README.md](%gh-ic%/README.md))
   Examples of this file type include _LICENSE.txt_ and _README.md_.
@@ -277,6 +310,8 @@ Complex callouts can also specify the `title` attribute:
 
 Every page typically has a dedicated subdirectory within root <path>/images</path>.
 
+Images are referenced by their file name only, so the file name must be unique across the whole <path>/images</path> directory.
+
 Images in this documentation are generally screenshots.
 For consistency, images should be 296, 460, or 706 pixels wide.
 The preferred image format is PNG at a resolution of 144 DPI.
@@ -326,16 +361,28 @@ For **SVG** images, use this notation:
 
 </tabs>
 
-### Other
+### Voice
 
-Use a concise and neutral voice when describing topics:
+Use a concise and neutral voice when describing topics, without marketing language like "powerful", "great", or "easy":
    - **Avoid:** "A custom icon for files with a substituted language would be a great addition to the plugin. It is easy as implementing the `xyz` extension point."
    - **Prefer:** "To add a custom icon for files with a substituted language, implement the `xyz` extension point."
 
-Avoid "your" and "we": the reader may not own the plugin, and the author is ambiguous.
-Prefer the imperative over "you can" or "you should", but keep "you" if the alternative is passive or "it is possible to…" phrasing.
-   - **Avoid:** "You can add a dependency in your plugin descriptor."
+Address the reader sparingly, but never at the cost of clarity.
+
+For instructions, use the imperative instead of "you should", "you can", or "you need to".
+   - **Avoid:** "You should override `generatePreview()`."
+   - **Prefer:** "Override `generatePreview()`."
+
+For statements, name the actual actor: the plugin, the IDE, the user, the IntelliJ Platform, or a class.
+   - **Avoid:** "The model is cached."
+   - **Prefer:** "DOM caches the model."
+
+Never use "your", as the reader may not own the plugin or project.
+   - **Avoid:** "Add a dependency in your plugin descriptor."
    - **Prefer:** "Add a dependency in the plugin descriptor."
+
+Use "you" when the only alternative is passive voice or constructs like "it is possible to…" or "allows doing…".
+For example, describe an optional capability as "In the dialog, you can restrict the search scope."
 
 Use "we", "our", or "us" only when it means JetBrains as an organization, for example, in recommendations, plans, or support information.
 Never use it for the IntelliJ Platform code, the author, or the author and reader together.
@@ -347,6 +394,8 @@ Never use it for the IntelliJ Platform code, the author, or the author and reade
 
 The table of contents for the site is displayed in the tree view on the left side of the site, and it is generated from the <path>ijs.tree</path> file.
 The list can have nested items, which are displayed as child items in the table of contents.
+
+Every page **must** be registered in <path>ijs.tree</path> using `<toc-element topic="file_name.md"/>`, nested under the most relevant parent page.
 
 If absolutely required, overriding the page title text to show in the table of contents is possible via the `toc-title` attribute.
 

@@ -15,6 +15,9 @@ See [GitHub Changelog](https://github.com/JetBrains/intellij-sdk-docs/commits/ma
 ### November
 {#november-26}
 
+Contributing to the SDK
+: Describe the authoring workflow in [](intellij-sdk-docs-original_CONTRIBUTING.md), and extend the [](sdk_style.md) with rules for headings, version labels, and voice.
+
 Minor Changes and Additions
 :
 - Document registering [color settings pages](syntax_highlighting_and_error_highlighting.md#registering-a-color-settings-page) with the declarative `com.intellij.colorSettings` extension point available since 2026.3.

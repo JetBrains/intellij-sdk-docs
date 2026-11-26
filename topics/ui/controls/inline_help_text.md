@@ -292,7 +292,7 @@ panel {
 }
 ```
 
-Find more examples by invoking the **Tools | Internal Actions | UI | Kotlin UI DSL | UI DSL Showcase** action (available in [internal mode](enabling_internal.md) and clicking the **View source** links on specific pages.
+Find more examples by invoking the <ui-path>Tools | Internal Actions | UI | Kotlin UI DSL | UI DSL Showcase</ui-path> action (available in [internal mode](enabling_internal.md)) and clicking the <control>View source</control> links on specific pages.
 
 </chapter>
 </chapter>

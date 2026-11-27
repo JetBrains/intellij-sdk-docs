@@ -257,7 +257,7 @@ The `NotificationGroupManager`, its `getNotificationGroup` method are no longer 
 - `NotificationsManager` is considered to be internal.
 Its methods should be replaced by the corresponding methods in `Notification`.
 
-# Summary
+## Summary
 
 - A *notification group* is a user-configurable channel for notifications.
 Directly maps to a configuration item in the IDE settings.
